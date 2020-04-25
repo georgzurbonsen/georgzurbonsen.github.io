@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>Provide Context for Partial Table Specification with 'with table' Procedure</h3>
+<h3>Simple Loops: while, until</h3>
 prev  next
 </header>
 
@@ -58,49 +58,41 @@ prev  next
 
 	<article>
 <h4> Function Names</h4>
-<code>with table</code>
+<code>while, until</code>
 <h4> Keywords</h4>
-<p>partial table specification</p>
+<p>Loops</p>
 <h4> Synopsis</h4>
-<code>with table ( table name, row number ) statement; <br/>
-with table ( table name, row number ) {statements; } </code>
+<code>while (...) {...}<br/>
+until (...) {...}</code>
 <h4> Description</h4>
-<p>      This procedure enables <i>partial table specification</i> in the subsequent code using the table name and current row number provide
-      through the procedure parameters. 
-</p>
+<p>Repeats executing statement or block after function name while parameter is true (for <b>while</b>) or false (for <b>until</b>).</p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
-<p>No indirect parameter passing<br/>
-<i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
+<p>No indirect parameter passing</p>
+<h4> OS differences</h4>
+<p>None</p>
+<h4> Parameter count: <span class="black_text">1</span></h4>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1.<br/>input</td>
-<td>literal</td>
-<td><b>Table Name</b><br/><p>Name of exsting table</p>
-</td></tr>
-<tr><td>2.<br/>input</td>
-<td>numeral</td>
-<td><b>Row Number</b><br/><p>Row number to apply apply</p>
+<tr><td>1<br/>input</td>
+<td>boolean</td>
+<td><b>Boolean expression</b><br/><p>If the expression is <i>true</i>, then the following statement or block will be executed.  Otherwise, it will be skipped.</p>
+<span class="black_text"><b> Default value: </b></span>n/a
 </td></tr>
 </table>
+<h4> Exceptions</h4>
+<p>none</p>
 <h4> Examples</h4>
-<code>&nbsp; &nbsp; &nbsp; table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
-<br/>
-&nbsp; &nbsp; &nbsp; with table ( colors, 2 )<br/>
-&nbsp; &nbsp; &nbsp; {<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo( row(), ": ", [EN]," / ", [FR] );<br/>
-&nbsp; &nbsp; &nbsp; }<br/>
-&nbsp; &nbsp; &nbsp; // Without the context, the full table specification is requierd, see below<br/>
-&nbsp; &nbsp; &nbsp; echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code>
+<code>&nbsp; &nbsp; a[] = 0;<br/>
+&nbsp; &nbsp; while ( a[]++ &lt; 10)&nbsp; print( a[], ' ' );<br/>
+&nbsp; &nbsp; until ( a[]-- &lt;= 5)&nbsp; print( a[], ' ' );<br/>
+&nbsp; &nbsp; echo;</code>
 <h4> Output</h4>
-<code>2: blue / blue<br/>
-2: blue / blue<br/>
+<code>1 2 3 4 5 6 7 8 9 10 10 9 8 7 6 5 <br/>
 </code>
 <h4> See also</h4>
-<p><span class="red_text">row</span><br/>
-<a href="Functions_for_all_table_rows.html">for all table rows</a><br/>
-<span class="red_text">table process</span></p>
+<p><a href="Functions_do.html">do</a><br/>
+<a href="Functions_for.html">for</a></p>
 	</article>
 </section>
 

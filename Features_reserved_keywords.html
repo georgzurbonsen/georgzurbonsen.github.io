@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>Provide Context for Partial Table Specification with 'with table' Procedure</h3>
+<h3>Reserved keywords</h3>
 prev  next
 </header>
 
@@ -57,50 +57,39 @@ prev  next
 	</nav>
 
 	<article>
-<h4> Function Names</h4>
-<code>with table</code>
-<h4> Keywords</h4>
-<p>partial table specification</p>
-<h4> Synopsis</h4>
-<code>with table ( table name, row number ) statement; <br/>
-with table ( table name, row number ) {statements; } </code>
-<h4> Description</h4>
-<p>      This procedure enables <i>partial table specification</i> in the subsequent code using the table name and current row number provide
-      through the procedure parameters. 
-</p>
-<h4> Call as: <span class="black_text">procedure</span></h4>
-<h4> Restrictions</h4>
-<p>No indirect parameter passing<br/>
-<i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1.<br/>input</td>
-<td>literal</td>
-<td><b>Table Name</b><br/><p>Name of exsting table</p>
-</td></tr>
-<tr><td>2.<br/>input</td>
-<td>numeral</td>
-<td><b>Row Number</b><br/><p>Row number to apply apply</p>
-</td></tr>
-</table>
-<h4> Examples</h4>
-<code>&nbsp; &nbsp; &nbsp; table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
-<br/>
-&nbsp; &nbsp; &nbsp; with table ( colors, 2 )<br/>
-&nbsp; &nbsp; &nbsp; {<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo( row(), ": ", [EN]," / ", [FR] );<br/>
-&nbsp; &nbsp; &nbsp; }<br/>
-&nbsp; &nbsp; &nbsp; // Without the context, the full table specification is requierd, see below<br/>
-&nbsp; &nbsp; &nbsp; echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code>
-<h4> Output</h4>
-<code>2: blue / blue<br/>
-2: blue / blue<br/>
+<h4> Introduction to reserved keywords</h4>
+<p>  Beyond4P has only six reserved symbols.  If not put into quotation marks, these special symbols are automatically converted into special characters or values.
+
+
+</p><table class="noframe" style = "width:600px"><col style = "width:120px"><col style = "width:120px"><col style = "width:360px">
+<tr><th>  Keyword     </th><th> Meaning </th><th> Description</th></tr>
+<tr><td>  tab     </td><td> Tabulator </td><td> Converts to a tab character (ANSI and UNICODE 9)</td></tr>
+<tr><td>  new line    </td><td> Line Break </td><td> Converts to CR+LF (Windows) or LF (LINUX) to continue on the next line</td></tr>
+<tr><td>  escape      </td><td> Escape chracter </td><td> Converts to an escape character (ANSI and UNICODE 27)</td></tr>
+<tr><td>  true        </td><td> Boolean true  </td><td> 'true' as boolean type, not literal</td></tr>
+<tr><td>  false       </td><td> Boolean false </td><td> 'false' as boolean type, not literal</td></tr>
+<tr><td>  else        </td><td> 'else' in code syntax </td><td> To be used in association with <b>if</b>, <b>switch</b> and other control flow functions</td></tr>
+</table><p>
+
+  You may wonder why obvious names such as 'if', 'while' and 'for' are not considered as similar reserved keywords.  In Beyond4P, the control flow statements
+  are actually procedure names which then influence executing further statements or blocks.  Therefore, you can actually use 'if' as the given function.</p>
+<h4> Examples 01</h4>
+<code>&nbsp; echo( type(true) );<br/>
+&nbsp; echo( 1st line, new line, 2nd line );</code>
+<h4> Output 01</h4>
+<code>boolean<br/>
+1st line<br/>
+2nd line<br/>
 </code>
+<h4> Examples 02</h4>
+<code>&nbsp; echo( 1, tab, 2, tab, 3 );</code>
+<h4> Output 02</h4>
+<code>1	2	3<br/>
+</code>
+<h4> OS differences</h4>
+<p>LINUX uses a different representation of 'new line' than Windows.</p>
 <h4> See also</h4>
-<p><span class="red_text">row</span><br/>
-<a href="Functions_for_all_table_rows.html">for all table rows</a><br/>
-<span class="red_text">table process</span></p>
+<p><span class="red_text">Flow control functions</span></p>
 	</article>
 </section>
 

@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>Provide Context for Partial Table Specification with 'with table' Procedure</h3>
+<h3>One-time Code Execution</h3>
 prev  next
 </header>
 
@@ -58,49 +58,43 @@ prev  next
 
 	<article>
 <h4> Function Names</h4>
-<code>with table</code>
+<code>once</code>
 <h4> Keywords</h4>
-<p>partial table specification</p>
+<p>one-time execution</p>
 <h4> Synopsis</h4>
-<code>with table ( table name, row number ) statement; <br/>
-with table ( table name, row number ) {statements; } </code>
+<code>once { statements; } else { statements }<br/>
+once () statement; else: statement<br/>
+once () { statements; }</code>
 <h4> Description</h4>
-<p>      This procedure enables <i>partial table specification</i> in the subsequent code using the table name and current row number provide
-      through the procedure parameters. 
+<p>      Executes the following statement or block only for the first time and once.
+      Further executions of this function will skip that code. This feature is very
+      useful for repeated invocations of code (with <b>start()</b> or <b>include()</b>) or user defined
+      functions and procedures where specific code should executed only once during the first invocation,
+      e.g. blocks where variables are initialized and functions being defined.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
-<p>No indirect parameter passing<br/>
-<i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1.<br/>input</td>
-<td>literal</td>
-<td><b>Table Name</b><br/><p>Name of exsting table</p>
-</td></tr>
-<tr><td>2.<br/>input</td>
-<td>numeral</td>
-<td><b>Row Number</b><br/><p>Row number to apply apply</p>
-</td></tr>
-</table>
+<p>No indirect parameter passing</p>
+<h4> Parameter count: <span class="black_text">0</span></h4>
 <h4> Examples</h4>
-<code>&nbsp; &nbsp; &nbsp; table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
+<code>&nbsp; define procedure ( hi )<br/>
+&nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; once()<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(Hey folks);<br/>
+&nbsp; &nbsp; &nbsp; else: <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(Good bye);<br/>
+&nbsp; }<br/>
 <br/>
-&nbsp; &nbsp; &nbsp; with table ( colors, 2 )<br/>
-&nbsp; &nbsp; &nbsp; {<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo( row(), ": ", [EN]," / ", [FR] );<br/>
-&nbsp; &nbsp; &nbsp; }<br/>
-&nbsp; &nbsp; &nbsp; // Without the context, the full table specification is requierd, see below<br/>
-&nbsp; &nbsp; &nbsp; echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code>
+&nbsp; // Main program part: Call 'hi' three times:<br/>
+<br/>
+&nbsp; hi;<br/>
+&nbsp; hi;<br/>
+&nbsp; hi;</code>
 <h4> Output</h4>
-<code>2: blue / blue<br/>
-2: blue / blue<br/>
+<code>Hey folks<br/>
+Good bye<br/>
+Good bye<br/>
 </code>
-<h4> See also</h4>
-<p><span class="red_text">row</span><br/>
-<a href="Functions_for_all_table_rows.html">for all table rows</a><br/>
-<span class="red_text">table process</span></p>
 	</article>
 </section>
 

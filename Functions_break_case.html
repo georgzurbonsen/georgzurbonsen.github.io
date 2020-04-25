@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>Provide Context for Partial Table Specification with 'with table' Procedure</h3>
+<h3>break and continue statements</h3>
 prev  next
 </header>
 
@@ -58,49 +58,74 @@ prev  next
 
 	<article>
 <h4> Function Names</h4>
-<code>with table</code>
-<h4> Keywords</h4>
-<p>partial table specification</p>
+<code>break case, continue case, continue with next case, break loop, continue loop, break, continue</code>
 <h4> Synopsis</h4>
-<code>with table ( table name, row number ) statement; <br/>
-with table ( table name, row number ) {statements; } </code>
+<code>break...; <br/>
+continue... ;</code>
 <h4> Description</h4>
-<p>      This procedure enables <i>partial table specification</i> in the subsequent code using the table name and current row number provide
-      through the procedure parameters. 
+<p>      The influence the control flow inside loops (including <b>do</b>, <b>while</b>, <b>until</b>, <b>for</b>, <b>for all .. </b>, 
+      <b>table process ...</b> as follows:<br/>
+      <b>break case</b> skips the remaining code till the end of the <b>switch/check</b> block.  Even the <b>else</b> statement will be skipped.
+      <b>continue case</b> skips the remaining code inside that <b>case</b> block, then continues checking the next <b>case</b> and <b>else</b> statements.<br/>
+      <b>break loop</b> skips the remaining code till loop end, stops the loop and continues with next statements after the loop.<br/>
+      <b>continue loop</b> skips the remaining code till loop end and continues with the next loop round, provided the loop condition is met.<br/>
+      <b>continue with next case</b> skips the remaining code inside that <b>case</b> block and executes the next case block, regardless if the condition inside the case is met or not.
+
+      <b>break</b> applies to loops or case, whatever is closer.<br/>
+      <b>continue</b> applies to loops or cases, whatever is closer.<br/>
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
 <p>No indirect parameter passing<br/>
 <i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1.<br/>input</td>
-<td>literal</td>
-<td><b>Table Name</b><br/><p>Name of exsting table</p>
-</td></tr>
-<tr><td>2.<br/>input</td>
-<td>numeral</td>
-<td><b>Row Number</b><br/><p>Row number to apply apply</p>
-</td></tr>
-</table>
+<h4> Parameter count: <span class="black_text">0</span></h4>
 <h4> Examples</h4>
-<code>&nbsp; &nbsp; &nbsp; table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
-<br/>
-&nbsp; &nbsp; &nbsp; with table ( colors, 2 )<br/>
+<code>&nbsp; &nbsp; &nbsp; echo("Try 'break' and 'continue with next case':'");<br/>
+&nbsp; &nbsp; &nbsp; for (a[] = 1, a[] &lt;= 4, a[]++)<br/>
 &nbsp; &nbsp; &nbsp; {<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo( row(), ": ", [EN]," / ", [FR] );<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print ( "&nbsp; ",a[], ": " );<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; switch( a [] )<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case (1)<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("= 1;&nbsp;  ");<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue with next case;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case (2)<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("= 2;&nbsp;  ");<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case (4,1)&nbsp; print("= 1 or 4;&nbsp;  ");<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else:&nbsp;  print("else;&nbsp; ");<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else:&nbsp; &nbsp; &nbsp;  print("2nd else;&nbsp; ");<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo;<br/>
 &nbsp; &nbsp; &nbsp; }<br/>
-&nbsp; &nbsp; &nbsp; // Without the context, the full table specification is requierd, see below<br/>
-&nbsp; &nbsp; &nbsp; echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code>
+&nbsp; &nbsp; &nbsp; echo("Break and continue loops");<br/>
+&nbsp; &nbsp; &nbsp; for (a[] = 1, a[] &lt;= 4, a[]++)<br/>
+&nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo("&nbsp; Loop begin ", a[] );<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[] = 2) continue;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (a[] = 3) break;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo("&nbsp; Loop end ", a[] );<br/>
+&nbsp; &nbsp; &nbsp; }</code>
 <h4> Output</h4>
-<code>2: blue / blue<br/>
-2: blue / blue<br/>
+<code>Try 'break' and 'continue with next case':'<br/>
+&nbsp; 1: = 1;&nbsp;  = 2;&nbsp;  <br/>
+&nbsp; 2: = 2;&nbsp;  <br/>
+&nbsp; 3: else;&nbsp; 2nd else;&nbsp; <br/>
+&nbsp; 4: = 1 or 4;&nbsp;  2nd else;&nbsp; <br/>
+Break and continue loops<br/>
+&nbsp; Loop begin 1<br/>
+&nbsp; Loop end 1<br/>
+&nbsp; Loop begin 2<br/>
+&nbsp; Loop begin 3<br/>
 </code>
 <h4> See also</h4>
-<p><span class="red_text">row</span><br/>
-<a href="Functions_for_all_table_rows.html">for all table rows</a><br/>
-<span class="red_text">table process</span></p>
+<p><a href="Functions_switch.html">switch</a><br/>
+<a href="Functions_switch.html">check</a><br/>
+<span class="red_text">various loops</span></p>
 	</article>
 </section>
 
