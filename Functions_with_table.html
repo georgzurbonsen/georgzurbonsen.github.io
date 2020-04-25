@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<logo>
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</logo>
+
+<header>
+<h3>Provide Context for Partial Table Specification with 'with table' Procedure</h3>
+prev  next
+</header>
+
+<section>
+	<nav>
+<ul>
+<li><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li><a href="Features_comments.html"><span> Comments </span></a></li>
+<li><a href="Functions_if.html"><span> Conditional Branch Functions </span></a></li>
+<li><a href="Functions_define_additional_procedure.html"><span> Defining additional procedures and functions </span></a></li>
+<li><a href="Functions_define_procedure.html"><span> Defining procedures and functions </span></a></li>
+<li><a href="Functions_do.html"><span> Do-Loops </span></a></li>
+<li><a href="Functions_for.html"><span> For-Loops </span></a></li>
+<li><a href="Functions_null.html"><span> Function 'null' </span></a></li>
+<li><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li><a href="Features_interactive.html"><span> Interactive Mode </span></a></li>
+<li><a href="Features_introduction.html"><span> Introduction </span></a></li>
+<li><a href="Features_licensing.html"><span> Licensing </span></a></li>
+<li><span>1 For Loops </span></li>
+<li><a href="Functions_for_all_current_table_columns.html"><span>1.1 Loop through Current Table Columns </span></a></li>
+<li><a href="Functions_for_all_parameters.html"><span>1.2 Loop through Parameter Elements </span></a></li>
+<li><a href="Functions_for_all_table_selected_rows.html"><span>1.2.1 Loop through Selected Table Rows </span></a></li>
+<li><a href="Functions_for_all_table_columns.html"><span>1.2.2 Loop through Table Columns </span></a></li>
+<li><a href="Functions_for_all_table_rows.html"><span>1.2.2.1.1 Loop through Table Rows </span></a></li>
+<li><a href="Functions_for_all_variables.html"><span>1 Loop through Variable Members </span></a></li>
+<li><a href="Functions_for_all_current_table_selected_columns.html"><span>1.1 Loop through selected Columns in the Current Table </span></a></li>
+<li><a href="Functions_for_all_table_selected_columns.html"><span>1.3 Loop through selected Columns in the Table </span></a></li>
+<li><a href="Functions_once.html"><span> One-time Code Execution </span></a></li>
+<li><a href="Functions_with_table.html"><span> Provide Context for Partial Table Specification with 'with table' Procedure </span></a></li>
+<li><a href="Features_reserved_keywords.html"><span> Reserved keywords </span></a></li>
+<li><a href="Functions_text_color.html"><span> Set console text and backgroun colors </span></a></li>
+<li><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li><a href="Functions_while.html"><span> Simple Loops: while, until </span></a></li>
+<li><a href="Features_starting.html"><span> Starting Beyond4P </span></a></li>
+<li><a href="Functions_break_case.html"><span> break and continue statements </span></a></li>
+<li><a href="Functions_case.html"><span> case Statements </span></a></li>
+<li><a href="Functions_switch.html"><span> switch and check Statements </span></a></li>
+</ul>
+
+	</nav>
+
+	<article>
+<h4> Function Names</h4>
+<code>with table</code>
+<h4> Keywords</h4>
+<p>partial table specification</p>
+<h4> Synopsis</h4>
+<code>with table ( table name, row number ) statement; <br/>
+with table ( table name, row number ) {statements; } </code>
+<h4> Description</h4>
+<p>      This procedure enables <i>partial table specification</i> in the subsequent code using the table name and current row number provide
+      through the procedure parameters. 
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>No indirect parameter passing<br/>
+<i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
+<h4> Parameter count: <span class="black_text">2</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>literal</td>
+<td><b>Table Name</b><br/><p>Name of exsting table</p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>numeral</td>
+<td><b>Row Number</b><br/><p>Row number to apply apply</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<code>&nbsp; &nbsp; &nbsp; table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; with table ( colors, 2 )<br/>
+&nbsp; &nbsp; &nbsp; {<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo( row(), ": ", [EN]," / ", [FR] );<br/>
+&nbsp; &nbsp; &nbsp; }<br/>
+&nbsp; &nbsp; &nbsp; // Without the context, the full table specification is requierd, see below<br/>
+&nbsp; &nbsp; &nbsp; echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code>
+<h4> Output</h4>
+<code>2: blue / blue<br/>
+2: blue / blue<br/>
+</code>
+<h4> See also</h4>
+<p><span class="red_text">row</span><br/>
+<a href="Functions_for_all_table_rows.html">for all table rows</a><br/>
+<span class="red_text">table process</span></p>
+	</article>
+</section>
+
+<footer>
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</footer>
+
+
+
+
+</html>	
+
+

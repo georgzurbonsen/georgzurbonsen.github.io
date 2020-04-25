@@ -1,0 +1,131 @@
+
+
+
+body
+{
+  font-family: calibri,arial,sans-serif;
+}
+
+code
+{
+  font-family: Lucida console,Courier New,Courier,monospace;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  margin-top:10px;
+  margin-bottom:3px;
+}
+
+p
+{
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+
+
+h3
+{
+  color: blue;
+  font-size: 200%;
+}
+
+h4
+{
+  font-size: 125%;
+  color: navy;
+}
+
+
+
+table
+{
+  border-spacing: 0px;
+  table-layout: fixed;
+}
+
+table, tr, th, td {
+  padding: 3px;
+}
+
+th, td
+{
+  padding: 3px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+/* Table style for overall outline */
+
+.outline th, .outline td, .outline tr
+{
+    border: 0px;
+}
+
+
+
+.boxonly th, .boxonly td, .boxonly tr
+{
+    border: 0px;
+}
+
+.noframe table, .noframe th, .noframe td, .noframe tr
+{
+    border: 0px;
+}
+
+.simple th, .simple td, .simple tr
+{
+  border: 1px solid black;
+}
+
+
+.noframe_1stcolbold th, .noframe_1stcolbold td, .noframe_1stcolbold tr
+{
+    border: 0px;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.noframe_1stcolbold td:first-child
+{
+    font-weight: bold;
+}
+
+
+
+
+/*
+
+
+table#full
+{
+    border: 0px
+    border-spacing: 25px;
+}
+
+table#full th, table#full td, table#full tr
+{
+    border: 1px solid red;
+}
+
+
+
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+  background-color: #fff;
+}
+table#t01 th {
+  color: white;
+  background-color: black;
+}
+
+
+
+*/
