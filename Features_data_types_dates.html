@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>For-Loops</h3>
+<h3>Basic Data Types: Dates</h3>
 prev  next
 </header>
 
@@ -70,53 +70,77 @@ prev  next
 	</nav>
 
 	<article>
-<h4> Function Names</h4>
-<code>for</code>
-<h4> Keywords</h4>
-<p>for-loop</p>
-<h4> Synopsis</h4>
-<code>for ( init statement, condition expression, loop statement ) statements;<br/>
-for ( start statement, condition, next statement ) { statements; }</code>
-<h4> Description</h4>
-<p>      Repeated execution of statements inside a for-loop.  First, the <i>init statement</i> is executed and the <i>condition expression</i> is checked. 
-      If this expression returns <i>true</i>, then the statements inside the loop will be executed.  The <i>loop statement</i> will be executed afterwards,
-      following checking the </i>condition expression</i> again.  If the expression is <i>false</i>, then loop execution has finishe.
+<h4> Dates</h4>
+<p>
+
+  This data type can store pure dates (beginning 1990-01-01), time of day (down to the second), combination of both date and time of day, or <i>no date</i> which 
+  is a blank value neither containing dates or times, referred to as 'blank date'.
+
+  Beyond4P distinguishes between two different sub-types of numerals:
+
+</p><table class="noframe_1stcolbold" style = "width:520px"><col style = "width:20px"><col style = "width:500px">
+<tr><td>  1. </td><td> (Regular) Dates</td></tr>
+<tr><td>  2. </td><td> Plain Dates</td></tr>
+</table><p>
+</p>
+<h4> (Regular) Dates</h4>
+<p>
+  Regular dates contain the digital date (and/or time of day) along the original text representation provided.  This sub-type applies only in a few cases
+  which includes accessing dates from tables (if enabled with the system variable table conversion[date] = true, otherwise the date is read in as a literal),
+        or the <span class="red_text">date</span>() function is used with a formatting parameter added.  The text representation can be used later for output purposes as
+  long the dates and times have not been manipulated.
+  <br><br>
+  Such manipulations include any form of arithmetics (e.g. adding a day (+1) or hour (+1/24) ) or processing them with functions such as <span class="red_text">reschedule</span>().
+  Even adding a 0 (0 days) to the date voids the text representation and the date turns into a plain date.
+  <br><br>
   </p>
-<h4> Call as: <span class="black_text">procedure</span></h4>
-<h4> Restrictions</h4>
-<p>No indirect parameter passing</p>
-<h4> Parameter count: <span class="black_text">3</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>init statement</b><br/><p>Will be executed once when the loop begins.  Useful to initialize loop counters.</p>
-</td></tr>
-<tr><td>2<br/>code</td>
-<td>expression<br/>:literal</td>
-<td><b>condition expression</b><br/><p>Will be calculated before every loop round.  The statements in the loop will be executed if this value is <i>true</i>.</p>
-</td></tr>
-<tr><td>3<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>loop statement</b><br/><p>Will be calculated after every loop round and before the <i>condition expression</i> is checked again.</p>
-</td></tr>
-</table>
-<h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for (a[] = 3, a[] &lt; 15, a[]+=2)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print(a[],' ');<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[]==9) a[]++; // Increment to 10<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+<h4> Plain Dates</h4>
+<p>
+  This is the simpler case.  Plain dates contain the digital date (and/or time of day) without any associateid text representation.
+  The easiest way to describe a date or time value is using one of the following functions:
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>  Function name   </th><th> Description</th></tr>
+<tr><td>  <span class="red_text">date</span>()      </td><td> Depending on the literal value provided, it returns a date, date and time, time only, or blank date.</td></tr>
+<tr><td>  <span class="red_text">pure date</span>() </td><td> Works like date, but ignores any time of day information.  Output is either a date or blank date.</td></tr>
+<tr><td>  <span class="red_text">date time</span>() </td><td> Works like date.  If input is not a blank, and if no time of day is provided, then 00:00:00 (midnight) is assumed as time of day.</td></tr>
+<tr><td>  <span class="red_text">time</span>()  </td><td> This function will only use the time information.  If the paramter contains a date only, then a blank date wil be returned.</td></tr>
+</table><p>
+
+  Dates turn into plain dates with original text representation voided.</p>
+<h5> Examples:</h5>
+<code> &nbsp;d1[] = "14. July 2021";<br/>
+ &nbsp;d2[] = "now";<br/>
+ &nbsp;d3[] = "20:15:00";<br/>
+ &nbsp;d4[] = ""; // Blank date<br/>
+ &nbsp;<br/>
+ &nbsp;echo("date &nbsp; &nbsp; (): ", date(d1[]), ", ", date(d2[]), ", ",date(d3[]), ", ",date(d4[]), ", ", type detailed(date(d1[])) );<br/>
+ &nbsp;echo("time &nbsp; &nbsp; (): ", time(d1[]), ", ", time(d2[]), ", ",time(d3[]), ", ",time(d4[]), ", ", type detailed(time(d1[])) );<br/>
+ &nbsp;echo("pure date(): ", pure date(d1[]), ", ", pure date(d2[]), ", ",pure date(d3[]), ", ",pure date(d4[]), ", ", <br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type detailed(pure date(d1[])) );<br/>
+ &nbsp;echo("date time(): ", date time(d1[]), ", ", date time(d2[]), ", ",date time(d3[]), ", ",date time(d4[]), ", ", <br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type detailed(date time(d1[])) );<br/>
+<br/>
+ &nbsp;echo;<br/>
+ &nbsp;echo(date("31. March 2021", "DD.MMMM.YYY"), " / ", type detailed(date("31. Dezember 2021", "DD.MMM.YYY")));<br/>
+ &nbsp;echo(date("2020 / 12 / 31 15:00")+1); &nbsp; &nbsp; // Date and time<br/>
+ &nbsp;echo(date time("2020-12-31")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Add a time (default 00:00:00)<br/>
+ &nbsp;echo(time("2020-12-31 15:00")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Time<br/>
+ &nbsp;echo(time("2020-12-31 15:00")+1/24); &nbsp; &nbsp; &nbsp;// Time, 1 hour later<br/>
+ &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code>
+<h5> Output:</h5>
+<code>date &nbsp; &nbsp; (): 14.07.2021, 01.05.2020 17:55:52, 20:15:00, , plain date<br/>
+time &nbsp; &nbsp; (): , 17:55:52, 20:15:00, , plain date<br/>
+pure date(): 14.07.2021, 01.05.2020, , , plain date<br/>
+date time(): 14.07.2021 00:00:00, 01.05.2020 17:55:52, 20:15:00, 00:00:00, plain date<br/>
+<br/>
+31.MARCH.2021 / date<br/>
+01.01.2021 15:00:00<br/>
+31.12.2020 00:00:00<br/>
+15:00:00<br/>
+16:00:00<br/>
+01.01.2022<br/>
 </code>
-<h4> Output</h4>
-<code>3 5 7 9 12 14 </code>
-<h4> See also</h4>
-<p><a href="Functions_while.html">while</a><br/>
-<a href="Functions_while.html">until</a><br/>
-<a href="Functions_do.html">do</a></p>
-<h4> Notes</h4>
-<p>      Do not confuse syntax with C/C++! The 3 parameters are separated with commas and not semicolons.  
-      You are allowed to add multiple statements into the 1st and 3rd parameter where these statements are separated with semicolons."</p>
 	</article>
 </section>
 

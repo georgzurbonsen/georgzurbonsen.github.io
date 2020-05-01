@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<logo>
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</logo>
+
+<header>
+<h3>Basic Data Types: Parameter sets - Value Ranges</h3>
+prev  next
+</header>
+
+<section>
+	<nav>
+<ul>
+<li><a href="Features_introduction.html"><span>1 Introduction </span></a></li>
+<li><a href="Features_data_types.html"><span>1.1 Basic Data Types </span></a></li>
+<li><a href="Features_data_types_literals.html"><span>1.1.1 Basic Data Types: Literals </span></a></li>
+<li><a href="Features_literals_indexing.html"><span>1.1.1.1 Basic Data Types: Literals - Indexing </span></a></li>
+<li><a href="Features_data_types_literals_extracting_substrings.html"><span>1.1.1.2 Basic Data Types: Literals - Extracting Substrings </span></a></li>
+<li><a href="Features_data_types_numerals.html"><span>1.1.2 Basic Data Types: Numerals </span></a></li>
+<li><a href="Features_data_types_dates.html"><span>1.1.3 Basic Data Types: Dates </span></a></li>
+<li><a href="Features_data_types_booleans.html"><span>1.1.4 Basic Data Types: Booleans </span></a></li>
+<li><a href="Features_data_types_voids.html"><span>1.1.5 Basic Data Types: Voids </span></a></li>
+<li><a href="Features_data_types_parameter_sets.html"><span>1.1.6 Basic Data Types: Parameter sets </span></a></li>
+<li><a href="Features_data_types_parameter_sets_indexing.html"><span>1.1.6.1 Basic Data Types: Parameter sets - Indexing </span></a></li>
+<li><a href="Features_data_types_parameter_sets_extracting_subsets.html"><span>1.1.6.2 Basic Data Types: Parameter sets - Extracting Subsets </span></a></li>
+<li><a href="Features_data_types_parameter_sets_value_ranges.html"><span>1.1.6.3 Basic Data Types: Parameter sets - Value Ranges </span></a></li>
+<li><a href="Features_data_types_parameter_sets_value_repetitions.html"><span>1.1.6.4 Basic Data Types: Parameter sets - Value Repetitions </span></a></li>
+<li><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li><a href="Features_comments.html"><span> Comments </span></a></li>
+<li><a href="Functions_if.html"><span> Conditional Branch Functions </span></a></li>
+<li><a href="Functions_define_additional_procedure.html"><span> Defining additional procedures and functions </span></a></li>
+<li><a href="Functions_define_procedure.html"><span> Defining procedures and functions </span></a></li>
+<li><a href="Functions_do.html"><span> Do-Loops </span></a></li>
+<li><a href="Functions_for.html"><span> For-Loops </span></a></li>
+<li><a href="Functions_null.html"><span> Function 'null' </span></a></li>
+<li><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li><a href="Features_interactive.html"><span> Interactive Mode </span></a></li>
+<li><a href="Features_licensing.html"><span> Licensing </span></a></li>
+<li><span> For Loops </span></li>
+<li><a href="Functions_for_all_current_table_columns.html"><span> Loop through Current Table Columns </span></a></li>
+<li><a href="Functions_for_all_parameters.html"><span> Loop through Parameter Elements </span></a></li>
+<li><a href="Functions_for_all_table_selected_rows.html"><span> Loop through Selected Table Rows </span></a></li>
+<li><a href="Functions_for_all_table_columns.html"><span> Loop through Table Columns </span></a></li>
+<li><a href="Functions_for_all_table_rows.html"><span> Loop through Table Rows </span></a></li>
+<li><a href="Functions_for_all_variables.html"><span> Loop through Variable Members </span></a></li>
+<li><a href="Functions_for_all_current_table_selected_columns.html"><span> Loop through selected Columns in the Current Table </span></a></li>
+<li><a href="Functions_for_all_table_selected_columns.html"><span> Loop through selected Columns in the Table </span></a></li>
+<li><a href="Functions_once.html"><span> One-time Code Execution </span></a></li>
+<li><a href="Functions_with_table.html"><span> Provide Context for Partial Table Specification with 'with table' Procedure </span></a></li>
+<li><a href="Features_reserved_keywords.html"><span> Reserved keywords </span></a></li>
+<li><a href="Functions_text_color.html"><span> Set console text and backgroun colors </span></a></li>
+<li><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li><a href="Functions_while.html"><span> Simple Loops: while, until </span></a></li>
+<li><a href="Features_starting.html"><span> Starting Beyond4P </span></a></li>
+<li><a href="Functions_break_case.html"><span> break and continue statements </span></a></li>
+<li><a href="Functions_case.html"><span> case Statements </span></a></li>
+<li><a href="Functions_switch.html"><span> switch and check Statements </span></a></li>
+</ul>
+
+	</nav>
+
+	<article>
+<h4> Parameter Sets - Simple Values</h4>
+<p>
+  Simple parameter set values are 0, 1 or more values of any types, regardless if values, variables, expressions or subsets, embedded inside braces
+  and separated with commas. Example:  {} (empty set),  { 1, a, {} } (contains 2 values and nested a empty set), and { {1,2},{3,4} } describing a
+  nested parameter set which looks like a 2-dimensional matrix and can be used as such.</p>
+<h4> Parameter Sets - Value Ranges (Numerals)</h4>
+<p>
+  Simple parameter sets become cumbersome when describing a sequence of incrementing values, e.g. { 1,2,3,4,5,6,7,8,9,10 }, especially much bigger
+  ones.  One way to do this is with a loop, but is cumbersome.  Alternatively, value ranges can be specified.  A range consists of a starting value
+  and an ending value with '..' inbetween, e.g. { 1..10 }.  The increment is 1, unless a <i>second value</i> in the middle is specified, e.g. { 2..4..10 }
+  to describe the 2nd value.  It may be bigger (for counting up), smaller (for counting down), but not equal to the 1st value (error message occurs).
+
+  <br><br>
+  A mixup of numerals and other types inside a range specification is invalid.</p>
+<h5> Examples:</h5>
+<code> &nbsp;print("Start with the classic way : ");<br/>
+ &nbsp;a[] = {};<br/>
+ &nbsp;for (i[]=1, i[]&lt;=10, i[]++) a[] += {i[]};<br/>
+ &nbsp;echo(a[]);<br/>
+<br/>
+ &nbsp;echo("And the easy way &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {1 .. 10});<br/>
+ &nbsp;echo("Steps of 2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {1 .. 3.5 .. 10});<br/>
+ &nbsp;echo("Steps of -1: Right way &nbsp; &nbsp; : ", {10 .. 9 .. 1});<br/>
+ &nbsp;echo("Steps of -1: Wrong way &nbsp; &nbsp; : ", {10 .. 1}); // Returns empty set<br/>
+ &nbsp;echo("Combination of 2 ranges &nbsp; &nbsp;: ", {2..4..10, 20..40..100} );<br/>
+ &nbsp;echo("Build a 3x3 matrix &nbsp; &nbsp; &nbsp; &nbsp; : ", {{11..13},{21..23},{31..33}} );</code>
+<h5> Output:</h5>
+<code>Start with the classic way : {1,2,3,4,5,6,7,8,9,10}<br/>
+And the easy way &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {1,2,3,4,5,6,7,8,9,10}<br/>
+Steps of 2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {1,3.5,6,8.5}<br/>
+Steps of -1: Right way &nbsp; &nbsp; : {10,9,8,7,6,5,4,3,2,1}<br/>
+Steps of -1: Wrong way &nbsp; &nbsp; : {}<br/>
+Combination of 2 ranges &nbsp; &nbsp;: {2,4,6,8,10,20,40,60,80,100}<br/>
+Build a 3x3 matrix &nbsp; &nbsp; &nbsp; &nbsp; : {{11,12,13},{21,22,23},{31,32,33}}<br/>
+</code>
+<h4> Parameter Sets - Value Ranges (Literals)</h4>
+<p>
+  Value ranges are also supported for literals.  The literal values may consist of one or more characters.  The intial value, optionally <i>second value</i>
+  and final values must contain literals with same number of characters and <u>only one character in the same position changing</u>.
+  An exception applies if the literal contains numeric digits.  Here, up to 8 digits are allowed.  This allows counting from smaller numbers (fewer digits)
+  to larger numbers (more digits).  Minus signs are not considered as part of numbers. A mixup of literals and other types inside a range specification is invalid.
+  
+  <br>
+  Following exampls are invalid: 
+  <br>{1 .. '5'}  (Type mixup)
+  <br>{Option A .. option C } (1st and last characters are different)
+  <br>{Option A .. Option   } (final value has fewer characters),
+  <br>{Option A .. Option AA} fails because final value has more characters, and
+  <br>{Point -3 .. Point 3  } fails because minus sign is an extra character.
+  <br>Valid examples: See below
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;echo("Start simple &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {a..z});<br/>
+ &nbsp;echo("Every 2nd letter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {a..c..z});<br/>
+ &nbsp;echo("1 letter in string &nbsp; &nbsp; &nbsp; &nbsp; : ", {'Article A:' .. 'Article F:'} );<br/>
+ &nbsp;echo("Combination of 2 ranges &nbsp; &nbsp;: ", {2..4..10, 'Article A:' .. 'Article F:'} );<br/>
+ &nbsp;echo("Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: ", {'Chapter 9:' .. 'Chapter 12:'} );<br/>
+ &nbsp;echo("Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: ", {'Chapter 09:' .. 'Chapter 12:'} );</code>
+<h5> Output:</h5>
+<code>Start simple &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}<br/>
+Every 2nd letter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'a','c','e','g','i','k','m','o','q','s','u','w','y'}<br/>
+1 letter in string &nbsp; &nbsp; &nbsp; &nbsp; : {'Article A:','Article B:','Article C:','Article D:','Article E:','Article F:'}<br/>
+Combination of 2 ranges &nbsp; &nbsp;: {2,4,6,8,10,'Article A:','Article B:','Article C:','Article D:','Article E:','Article F:'}<br/>
+Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: {'Chapter 9:','Chapter 10:','Chapter 11:','Chapter 12:'}<br/>
+Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: {'Chapter 09:','Chapter 10:','Chapter 11:','Chapter 12:'}<br/>
+</code>
+<h4> Parameter Sets - Value Ranges (Dates)</h4>
+<p>
+  Unique to Beyodn4P, Value ranges are also supported for dates and times.  If the value consists of
+  both date and time value, then the range may only be applied either on the date (with time kept
+  unchanged) or time (with date kept unchanged).
+
+  <br><br>
+  For dates, the default increment is +1 day.  For times, the default increment is +1 hour.  Use the <second value>
+  to influence the interval.  Both positive and negative intervals are allowed.  Time counting must not pass
+  across midnights to cover additional days.
+
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;echo("Dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", { date(30.03.2016) .. date(02.04.2016) });<br/>
+ &nbsp;echo("Dates, 3 day intervals &nbsp; &nbsp; &nbsp;: ", { date(01.04.2016) .. date(04.04.2016) .. date(10.04.2016) });<br/>
+ &nbsp;echo("Today to yesterday - bad &nbsp; &nbsp;: ", { date(today) .. date(today)-1 });<br/>
+ &nbsp;echo("Today to yesterday - OK &nbsp; &nbsp; : ", { date(today) .. date(today)-1 .. date(today)-1 });<br/>
+ &nbsp;echo("Times, 1 hour intervals &nbsp; &nbsp; : ", { time("12:15:00")..time("15:15:00") });<br/>
+ &nbsp;echo("Times, 5 minute intervals &nbsp; : ", { time("12:15:00")..time("12:20:00")..time("12:30:00") });<br/>
+ &nbsp;echo("30 seconds back - bad &nbsp; &nbsp; &nbsp; : ", { time(now) .. time(now)-30/(24*60*60) });<br/>
+ &nbsp;echo("30 seconds back, 10s interv.: ", { time(now) .. time(now)-10/(24*60*60) .. time(now)-30/(24*60*60) });<br/>
+ &nbsp;echo("Changing dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", { date("05.06.2016 10:00:00")..date("08.06.2016 10:00:00") });<br/>
+ &nbsp;echo("Changing times, seconds &nbsp; &nbsp; : ", { date("05.06.2016 10:00:00")..date("05.06.2016 10:00:01")..date("05.06.2016 10:00:03") });<br/>
+<br/>
+</code>
+<h5> Output:</h5>
+<code>Dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'2016-03-30','2016-03-31','2016-04-01','2016-04-02'}<br/>
+Dates, 3 day intervals &nbsp; &nbsp; &nbsp;: {'2016-04-01','2016-04-04','2016-04-07','2016-04-10'}<br/>
+Today to yesterday - bad &nbsp; &nbsp;: {}<br/>
+Today to yesterday - OK &nbsp; &nbsp; : {'2020-05-01','2020-04-30'}<br/>
+Times, 1 hour intervals &nbsp; &nbsp; : {'12:15:00','01:15:00','02:15:00','03:15:00'}<br/>
+Times, 5 minute intervals &nbsp; : {'12:15:00','12:20:00','12:25:00','12:30:00'}<br/>
+30 seconds back - bad &nbsp; &nbsp; &nbsp; : {}<br/>
+30 seconds back, 10s interv.: {'05:55:53','05:55:43','05:55:33','05:55:23'}<br/>
+Changing dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: {'2016-06-05 10:00:00','2016-06-06 10:00:00','2016-06-07 10:00:00','2016-06-08 10:00:00'}<br/>
+Changing times, seconds &nbsp; &nbsp; : {'2016-06-05 10:00:00','2016-06-05 10:00:01','2016-06-05 10:00:02','2016-06-05 10:00:03'}<br/>
+</code>
+	</article>
+</section>
+
+<footer>
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</footer>
+
+
+
+
+</html>	
+
+

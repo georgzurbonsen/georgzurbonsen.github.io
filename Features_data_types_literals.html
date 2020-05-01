@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<logo>
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</logo>
+
+<header>
+<h3>Basic Data Types: Literals</h3>
+prev  next
+</header>
+
+<section>
+	<nav>
+<ul>
+<li><a href="Features_introduction.html"><span>1 Introduction </span></a></li>
+<li><a href="Features_data_types.html"><span>1.1 Basic Data Types </span></a></li>
+<li><a href="Features_data_types_literals.html"><span>1.1.1 Basic Data Types: Literals </span></a></li>
+<li><a href="Features_literals_indexing.html"><span>1.1.1.1 Basic Data Types: Literals - Indexing </span></a></li>
+<li><a href="Features_data_types_literals_extracting_substrings.html"><span>1.1.1.2 Basic Data Types: Literals - Extracting Substrings </span></a></li>
+<li><a href="Features_data_types_numerals.html"><span>1.1.2 Basic Data Types: Numerals </span></a></li>
+<li><a href="Features_data_types_dates.html"><span>1.1.3 Basic Data Types: Dates </span></a></li>
+<li><a href="Features_data_types_booleans.html"><span>1.1.4 Basic Data Types: Booleans </span></a></li>
+<li><a href="Features_data_types_voids.html"><span>1.1.5 Basic Data Types: Voids </span></a></li>
+<li><a href="Features_data_types_parameter_sets.html"><span>1.1.6 Basic Data Types: Parameter sets </span></a></li>
+<li><a href="Features_data_types_parameter_sets_indexing.html"><span>1.1.6.1 Basic Data Types: Parameter sets - Indexing </span></a></li>
+<li><a href="Features_data_types_parameter_sets_extracting_subsets.html"><span>1.1.6.2 Basic Data Types: Parameter sets - Extracting Subsets </span></a></li>
+<li><a href="Features_data_types_parameter_sets_value_ranges.html"><span>1.1.6.3 Basic Data Types: Parameter sets - Value Ranges </span></a></li>
+<li><a href="Features_data_types_parameter_sets_value_repetitions.html"><span>1.1.6.4 Basic Data Types: Parameter sets - Value Repetitions </span></a></li>
+<li><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li><a href="Features_comments.html"><span> Comments </span></a></li>
+<li><a href="Functions_if.html"><span> Conditional Branch Functions </span></a></li>
+<li><a href="Functions_define_additional_procedure.html"><span> Defining additional procedures and functions </span></a></li>
+<li><a href="Functions_define_procedure.html"><span> Defining procedures and functions </span></a></li>
+<li><a href="Functions_do.html"><span> Do-Loops </span></a></li>
+<li><a href="Functions_for.html"><span> For-Loops </span></a></li>
+<li><a href="Functions_null.html"><span> Function 'null' </span></a></li>
+<li><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li><a href="Features_interactive.html"><span> Interactive Mode </span></a></li>
+<li><a href="Features_licensing.html"><span> Licensing </span></a></li>
+<li><span> For Loops </span></li>
+<li><a href="Functions_for_all_current_table_columns.html"><span> Loop through Current Table Columns </span></a></li>
+<li><a href="Functions_for_all_parameters.html"><span> Loop through Parameter Elements </span></a></li>
+<li><a href="Functions_for_all_table_selected_rows.html"><span> Loop through Selected Table Rows </span></a></li>
+<li><a href="Functions_for_all_table_columns.html"><span> Loop through Table Columns </span></a></li>
+<li><a href="Functions_for_all_table_rows.html"><span> Loop through Table Rows </span></a></li>
+<li><a href="Functions_for_all_variables.html"><span> Loop through Variable Members </span></a></li>
+<li><a href="Functions_for_all_current_table_selected_columns.html"><span> Loop through selected Columns in the Current Table </span></a></li>
+<li><a href="Functions_for_all_table_selected_columns.html"><span> Loop through selected Columns in the Table </span></a></li>
+<li><a href="Functions_once.html"><span> One-time Code Execution </span></a></li>
+<li><a href="Functions_with_table.html"><span> Provide Context for Partial Table Specification with 'with table' Procedure </span></a></li>
+<li><a href="Features_reserved_keywords.html"><span> Reserved keywords </span></a></li>
+<li><a href="Functions_text_color.html"><span> Set console text and backgroun colors </span></a></li>
+<li><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li><a href="Functions_while.html"><span> Simple Loops: while, until </span></a></li>
+<li><a href="Features_starting.html"><span> Starting Beyond4P </span></a></li>
+<li><a href="Functions_break_case.html"><span> break and continue statements </span></a></li>
+<li><a href="Functions_case.html"><span> case Statements </span></a></li>
+<li><a href="Functions_switch.html"><span> switch and check Statements </span></a></li>
+</ul>
+
+	</nav>
+
+	<article>
+<h4> Literals</h4>
+<p>
+  Literals are text representations (also known as strings) consisting of 0, 1 or any number of true UNICODE characters.
+  The number of characters per literal is only limited by the overall available free memory in the system.
+
+  Beyond4P distinguishes among three different sub-types of literals:
+
+</p><table class="noframe_1stcolbold" style = "width:520px"><col style = "width:20px"><col style = "width:500px">
+<tr><td>  1. </td><td> (Unquoted) literals</td></tr>
+<tr><td>  2. </td><td> Softquoted literals</td></tr>
+<tr><td>  3. </td><td> Quoted literals</td></tr>
+</table><p>
+
+  In the Beyond4P code text, the entire literal must be located in one line.
+</p>
+<h4> (Unquoted) Literals</h4>
+<p>
+  Unlike in most other common programming languages, all text expressions without use of quotation marks in the Beyond4P code are treated
+  as unquoted literals and not as variable and expression names. Every unquoted literal begins with the first non-blank symbol (i.e. all letters, non-ANSI
+  symbols such as foreign letters, numeric digits and special symbols not used by the Beyond4P language (e.g. @).  Unquoted literals may contain blanks
+  (spaces, tabs), but they intepreted as 1 space.  Literals containing numeric digits (with with or without decimal point) but no other symbols and blanks
+  are regarded as <a  href="Features_data_types_numerals.html">numerals</a>.  Unqoted literals ignore leading and trailing blanks.
+  <br><br>
+  Literals may take any legitimate value, except for <a  href="Features_reserved_keywords.html">reserved keywords</a> which are interpreted differently (e.g. true, false, else).
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;echo(Hello World);<br/>
+ &nbsp;echo( &nbsp;Hello &nbsp; World &nbsp; ); // To include the blanks, use quotation marks.<br/>
+ &nbsp;echo(Hello World, new line, Hello Folks, new line); // 'new line' is a reserved keyword.<br/>
+ &nbsp;echo( 31.12.2021 ); &nbsp; &nbsp; &nbsp; // No automatic conversion to __date__ type. &nbsp;Use: echo(date( 31.12.2021 ))<br/>
+ &nbsp;echo( 100 Flowers );<br/>
+ &nbsp;echo( mike@example.com ); // No need include quotation marks because the @-sign is not a Beyond4P symbol<br/>
+ &nbsp;echo( 1 2 3 ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Is a literal because of spaces between teh digits<br/>
+ &nbsp;echo( type( 1 2 3 ));</code>
+<h5> Output:</h5>
+<code>Hello World<br/>
+Hello World<br/>
+Hello World<br/>
+Hello Folks<br/>
+<br/>
+31.12.2021<br/>
+100 Flowers<br/>
+mike@example.com<br/>
+1 2 3<br/>
+literal<br/>
+</code>
+<h4> Softquoted Literals</h4>
+<p>
+  Softquoted literals are literals placed in <u>single quotation marks</u> (example: '123', 'true', '  Hello World').  Any contents inside single quotation marks
+  are part of softquoted literals, including leading and trailing blanks.  <span class="red_text">Entities</span> (known in HTML, for exmaple &amp;euro;) will be decoded automatically
+  (example: &euro;).  When using softquoted literals on the right hand of comparisons, then <span class="red_text">wildcard symbols</span> are supported in order to do smart
+  string comparisons.
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;echo(' &nbsp;Hello &nbsp; World &nbsp; ', new line, 'new line'); <br/>
+ &nbsp;echo(Hello World = 'Hell*'); // Example with wildcard symbol meaning 'true if beginning with Hell'<br/>
+ &nbsp;echo('&amp;euro;');<br/>
+ &nbsp;echo( length('&amp;euro;') );</code>
+<h5> Output:</h5>
+<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+new line<br/>
+true<br/>
+€<br/>
+1<br/>
+</code>
+<h4> Quoted Literals</h4>
+<p>
+  Quoted literals are literals placed in <u>double quotation marks</u> (example: "123", "true", "  Hello World").  Any contents inside single quotation marks
+  are part of softquoted literals, including leading and trailing blanks.  Entities will not be decoded.  If you still need to decode entities, then use the
+  function <span class="red_text">decode entitites</span>().  In comparison operations, the contents are interpreted as given, i.e. wildcard symbol interpretation will not happen.
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;echo(" &nbsp;Hello &nbsp; World &nbsp; ", new line, 'new line'); <br/>
+ &nbsp;echo("&amp;amp;");<br/>
+ &nbsp;echo(Hello World = "Hell*"); // 'Hello World' is not the same as 'Hell*'</code>
+<h5> Output:</h5>
+<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+new line<br/>
+&amp;amp;<br/>
+false<br/>
+</code>
+<h4> Summary</h4>
+<p>
+</p><table class="simple" style = "width:1000px"><col style = "width:400px"><col style = "width:200px"><col style = "width:200px"><col style = "width:200px">
+<tr><th>  Item </th><th> (Unquoted) literal </th><th> Softquoted literal </th><th> Quoted literal</th></tr>
+<tr><td>  Representation in Beyond4P code text        </td><td> Alphanumeric contents </td><td> Alphanumeric contents in single quotation marks   </td><td> Alphanumeric contents in double quotation marks</td></tr>
+<tr><td>  Resolving entities in Beyond4P code text    </td><td> No            </td><td> Yes                           </td><td> No</td></tr>
+<tr><td>  Wildcard symbols used for comparisons       </td><td> No            </td><td> Yes                           </td><td> No</td></tr>
+<tr><td>  Leading and trailing white spaces       </td><td> No            </td><td> Yes                           </td><td> Yes</td></tr>
+<tr><td>  Multiple consecutive white spaces       </td><td> No            </td><td> Yes                           </td><td> Yes</td></tr>
+<tr><td>  Line breaks in literal values           </td><td> No (use 'new line')   </td><td> No (use 'new line')                   </td><td> No (use 'new line')</td></tr>
+</table><p>
+</p>
+	</article>
+</section>
+
+<footer>
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</footer>
+
+
+
+
+</html>	
+
+

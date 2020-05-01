@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>For-Loops</h3>
+<h3>Basic Data Types: Parameter sets</h3>
 prev  next
 </header>
 
@@ -70,53 +70,36 @@ prev  next
 	</nav>
 
 	<article>
-<h4> Function Names</h4>
-<code>for</code>
-<h4> Keywords</h4>
-<p>for-loop</p>
-<h4> Synopsis</h4>
-<code>for ( init statement, condition expression, loop statement ) statements;<br/>
-for ( start statement, condition, next statement ) { statements; }</code>
-<h4> Description</h4>
-<p>      Repeated execution of statements inside a for-loop.  First, the <i>init statement</i> is executed and the <i>condition expression</i> is checked. 
-      If this expression returns <i>true</i>, then the statements inside the loop will be executed.  The <i>loop statement</i> will be executed afterwards,
-      following checking the </i>condition expression</i> again.  If the expression is <i>false</i>, then loop execution has finishe.
-  </p>
-<h4> Call as: <span class="black_text">procedure</span></h4>
-<h4> Restrictions</h4>
-<p>No indirect parameter passing</p>
-<h4> Parameter count: <span class="black_text">3</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>init statement</b><br/><p>Will be executed once when the loop begins.  Useful to initialize loop counters.</p>
-</td></tr>
-<tr><td>2<br/>code</td>
-<td>expression<br/>:literal</td>
-<td><b>condition expression</b><br/><p>Will be calculated before every loop round.  The statements in the loop will be executed if this value is <i>true</i>.</p>
-</td></tr>
-<tr><td>3<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>loop statement</b><br/><p>Will be calculated after every loop round and before the <i>condition expression</i> is checked again.</p>
-</td></tr>
-</table>
-<h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for (a[] = 3, a[] &lt; 15, a[]+=2)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print(a[],' ');<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[]==9) a[]++; // Increment to 10<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+<h4> Parameter Sets</h4>
+<p>
+  Parameter sets is be considered as the sixth Basic Data Type which allows to hold 0, 1 or more elements.
+  Each element is again a value of any of the six Data Types, including nested parameter sets.
+
+  In the program code, sets can be defined with any number of values or expressions inside braces { } and separated with commas. 
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><td>  Number of elements  </td><td> At least zero (empty set)</td></tr>
+<tr><td>  Empty sets      </td><td> Empty parameter sets { }are not the same as blank or void values</td></tr>
+<tr><td>  Mixed data types    </td><td> A parameter set may contain data of different types, e.g. { 1, Abc, true, date(31.12.2020) }</td></tr>
+<tr><td>  Nesting         </td><td> Parameter sets support nesting, e.g. { { 1, 2 }, { 3, 4 }, 5 }</td></tr>
+<tr><td>  Nested empty sets   </td><td> Nested empty sets are allowed.  E.g. { {} } is not the same as { } or { { {} } }.</td></tr>
+<tr><td>  Sequence of elements    </td><td> The sequence of elements is preserved, i.e. {a,b,c,d} and {d,c,b,a} are different.<br>Comparing them with '=' returns true (ordering does not care), but with '==' returns false (elements must be in same order).</td></tr>
+<tr><td>  Mulitple identical elements </td><td> Parameter sets may contain multiple identical elements, e.g. { a, b, a, a, c, c }.  You can use the <span class="red_text">trim</span>() function to eliminate duplicates.</td></tr>
+<tr><td>  Protection      </td><td> In contrast to variable array members and structure members, parameter sets provide no dedicated protection rules.</td></tr>
+<tr><td>  Embedding       </td><td> A paramter set can be embedded into another parameter set, e.g. a[] = {1,2}; b[] = {a[]};</td></tr>
+<tr><td>  <a  href="Features_data_types_parameter_sets_indexing.html">Parameter Set Indexing</a>  </td><td> One element can be extracted by indexing.  1st element begins wtih 0. Example:  a[] = {a,b,c,d}{1}; Here, the 1st element is accessed, a[] gets value 'b'.</td></tr>
+<tr><td>  <span class="red_text">Negative indexing</span>   </td><td> Negative indexing supported here. a[] = { a,b,c,d,e }{-2} assigns 'd' to a[].</td></tr>
+<tr><td>  <span class="red_text">Extracting subsets</span>  </td><td> Specify multiple index values and ranges to extract subsets.</td></tr>
+<tr><td>  Arithmetics     </td><td> A broad range of arithmetic operators are available to manipulate parameter sets.</td></tr>
+</table><p></p>
+<h5> Examples:</h5>
+<code> &nbsp;a[] = { 1, a, 2, {b,c}, true, date(today) };<br/>
+ &nbsp;echo( a[], " / ", type(a[]) );<br/>
+ &nbsp;echo( "First element: ", a[]{0}, " and last element: ", a[]{1} );</code>
+<h5> Output:</h5>
+<code>{1,'a',2,{'b','c'},true,'2020-05-01'} / parameter set<br/>
+First element: 1 and last element: a<br/>
 </code>
-<h4> Output</h4>
-<code>3 5 7 9 12 14 </code>
-<h4> See also</h4>
-<p><a href="Functions_while.html">while</a><br/>
-<a href="Functions_while.html">until</a><br/>
-<a href="Functions_do.html">do</a></p>
-<h4> Notes</h4>
-<p>      Do not confuse syntax with C/C++! The 3 parameters are separated with commas and not semicolons.  
-      You are allowed to add multiple statements into the 1st and 3rd parameter where these statements are separated with semicolons."</p>
 	</article>
 </section>
 

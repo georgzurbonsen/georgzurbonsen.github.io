@@ -13,7 +13,7 @@
 </logo>
 
 <header>
-<h3>For-Loops</h3>
+<h3>Variables</h3>
 prev  next
 </header>
 
@@ -70,53 +70,41 @@ prev  next
 	</nav>
 
 	<article>
-<h4> Function Names</h4>
-<code>for</code>
-<h4> Keywords</h4>
-<p>for-loop</p>
-<h4> Synopsis</h4>
-<code>for ( init statement, condition expression, loop statement ) statements;<br/>
-for ( start statement, condition, next statement ) { statements; }</code>
-<h4> Description</h4>
-<p>      Repeated execution of statements inside a for-loop.  First, the <i>init statement</i> is executed and the <i>condition expression</i> is checked. 
-      If this expression returns <i>true</i>, then the statements inside the loop will be executed.  The <i>loop statement</i> will be executed afterwards,
-      following checking the </i>condition expression</i> again.  If the expression is <i>false</i>, then loop execution has finishe.
-  </p>
-<h4> Call as: <span class="black_text">procedure</span></h4>
-<h4> Restrictions</h4>
-<p>No indirect parameter passing</p>
-<h4> Parameter count: <span class="black_text">3</span></h4>
-<h4> Parameters</h4>
-<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>init statement</b><br/><p>Will be executed once when the loop begins.  Useful to initialize loop counters.</p>
-</td></tr>
-<tr><td>2<br/>code</td>
-<td>expression<br/>:literal</td>
-<td><b>condition expression</b><br/><p>Will be calculated before every loop round.  The statements in the loop will be executed if this value is <i>true</i>.</p>
-</td></tr>
-<tr><td>3<br/>code</td>
-<td>statements<br/>:literal</td>
-<td><b>loop statement</b><br/><p>Will be calculated after every loop round and before the <i>condition expression</i> is checked again.</p>
-</td></tr>
-</table>
-<h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for (a[] = 3, a[] &lt; 15, a[]+=2)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print(a[],' ');<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[]==9) a[]++; // Increment to 10<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
-</code>
-<h4> Output</h4>
-<code>3 5 7 9 12 14 </code>
-<h4> See also</h4>
-<p><a href="Functions_while.html">while</a><br/>
-<a href="Functions_while.html">until</a><br/>
-<a href="Functions_do.html">do</a></p>
-<h4> Notes</h4>
-<p>      Do not confuse syntax with C/C++! The 3 parameters are separated with commas and not semicolons.  
-      You are allowed to add multiple statements into the 1st and 3rd parameter where these statements are separated with semicolons."</p>
+<h4> Variables</h4>
+<p>
+  Beyond4P provides variables which can either be simple variables, <span class="red_text">arrays</span> or <span class="red_text">structures</span>.  Nested variables are allowed, e.g.
+  an array of structures, arrays and simple variables, and a structure of arrays, structures and simple variables.  You can build up any <i>tree</i>
+  of variables in order to manage complex data structures efficiently.
+
+  <br><br>
+
+  Different from other programming languages, and actually for a good reason, all variables are specified with brackets at the end, e.g. <b>variable name[]</b>.
+  Variable names can take any literal value, even in quotation marks.  Variable names may consist of multiple words and special symbols, including non-ANSI
+  characters.  If the variable name
+  contains special symbols recognized otherwise by Beyond4P (e.g. +, -), or contains multiple consecutive white spaces, then the variable needs to be
+  encapsulated inside single or double quotation marks.  Variable names are case sensitive.
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
+<tr><th>  Variable Form </th><th> Description </th><th> Example</th></tr>
+<tr><td>  Simple Variables </td><td> Simple variables one value of any data type (numeral, literal, date, boolean, void and paramter set). </td><td> last name[]</td></tr>
+<tr><td>        Arrays           </td><td> Arrays contain a number of array members. The members are referred with index values. </td><td> member [1], member[3]</td></tr>
+<tr><td>  Structures       </td><td> Structures contain a number of named member variables </td><td> animal[dog], animal[cat]</td></tr>
+<tr><td>  Base Variables   </td><td> Arrays and structure can store, in addition to their member variables, a value in the base variable </td><td> parent[], parent[son]</td></tr>
+</table><p>
+
+  Every variable contains following information attributes:
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>  Attribute       </th><th> Description </th></tr>
+<tr><td>  Variable Name   </td><td> A literal of choice.</td></tr>
+<tr><td>  Value       </td><td> Stored value (Base Variable)</td></tr>
+<tr><td>  Type            </td><td> Data type of stored value (numeral, plain numeral, date, plain date, literal, softquoted literal, quoted literal, boolean, void, parmeter set)</td></tr>
+<tr><td>  Form            </td><td> Distinguishes whetehr the variable is a simple variable, an array or a structure, or a simple variable containing zero members</td></tr>
+<tr><td>  Members     </td><td> Contains all member variables (arrays, structures)</td></tr>
+<tr><td>  Protection Setting </td><td> Applies rules on accessing and/or modifying these variables, e.g. read-only, prevent deleting, etc.</td></tr>
+<tr><td>  Locked          </td><td> Variables will be locked during the time of executing an assignment to that variable (e.g. prevents deleting the variable while the calculation of the value to be assigend is ongoing).</td></tr>
+</table><p>
+</p>
 	</article>
 </section>
 
