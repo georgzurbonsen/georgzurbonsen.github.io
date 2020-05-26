@@ -49,14 +49,53 @@ a:hover {
 
 li
 {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  line-height: 100%;  
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 16px;
 }
+
+li li
+{
+  line-height: 100%;  
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+li li li
+{
+  line-height: 100%;  
+  padding-left: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+li li li li
+{
+  line-height: 100%;  
+  padding-left: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+li li li li li
+{
+  line-height: 100%;  
+  padding-left: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 14px;
+}
+
 
 
 /* Format the layout */
 
-logo {
+.logo {
   float:left;
   padding: 5px;
   background: #F0F0F0;
@@ -69,7 +108,7 @@ logo {
 
 
 /* Style the header */
-header {
+.header {
   float:left;
   padding: 5px;
   background: #F0F0F0;
@@ -82,7 +121,7 @@ header {
 
 
 /* Create two columns/boxes that floats next to each other */
-nav {
+.nav {
   clear:both;
   float:left;
   width: 300px;
@@ -92,12 +131,12 @@ nav {
 }
 
 /* Style the list inside the menu */
-nav ul {
+.nav ul {
   list-style-type: none;
   padding: 0;
 }
 
-article {
+.article {
   float: left;
   padding: 5px;
   width: 1000px;
@@ -113,7 +152,7 @@ section:after {
 }
 
 /* Style the footer */
-footer {
+.footer {
   width: 1300px;
   background-color: #777;
   padding: 10px;
