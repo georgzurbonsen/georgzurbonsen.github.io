@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>count Functions</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>4.2 Mathematics and Statistics </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_basic_math_functions.html"><span>+ 4.2.1 Basic Math Functions </span></a></li>
+<li class="navi"><a href="Features_transcendental_functions.html"><span>+ 4.2.2 Transcendental Functions </span></a></li>
+<li class="navi"><a href="Features_series_functions.html"><span>4.2.3 Series Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Functions_add.html"><span>4.2.3.1 Arithmetic and Boolean Series Functions </span></a></li>
+<li class="navi"><a href="Functions_min.html"><span>4.2.3.2 min, max Functions </span></a></li>
+<li class="navi"><a href="Functions_min_abc.html"><span>4.2.3.3 min, max Functions on Literals </span></a></li>
+<li class="navi"><a href="Functions_min_123.html"><span>4.2.3.4 min, max Functions on Numerals </span></a></li>
+<li class="navi"><a href="Functions_count.html"><span>4.2.3.5 count Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_matrix_functions.html"><span>+ 4.2.4 Matrix Functions </span></a></li>
+<li class="navi"><a href="Features_statistics_functions.html"><span>+ 4.2.5 Statistics Functions </span></a></li>
+<li class="navi"><a href="Functions_sum_if.html"><span>4.2.6 Conditional Combination Functions </span></a></li>
+<li class="navi"><a href="Features_finance_functions.html"><span>+ 4.2.7 Finance and Business Functions </span></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<code>count, count ignore zero, count ignore blanks, count ignore both</code>
+<h4> Description</h4>
+<p>
+These functions counts number of affected parameters.
+The suffix <b>... ignore zero</b> excludes all zero values: Numeral 0, Boolean false and blank dates.
+The suffix <b>... ignore blanks</b> excludes all literals with blank values: Literal blank (0 characters), blank dates and empty sets in parameter sets (but includes sets containing something, including nested empty sets).<br>
+The suffix <b>... ignore both</b> covers both of the above.<br>
+
+Please note that equivalent <a  href="Functions_sum_if.html">conditional combination functions</a> are also available for the function names listed above which allows
+you to pre-select specific parameters to include in the calculation using one or more comparisons .
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Parameter count: <span class="black_text">Min 1</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1, etc.<br/>input</td>
+<td>valid types</td>
+<td><b>All function parameters:</b><br/><p>Same parameter passing principle is applied like other series functions such as <a class="bold_text" href="Functions_add.html">add</a>(), <a class="bold_text" href="Functions_add.html">sub</a>(), etc. <br/>See <a  href="Functions_add.html">Two parameter passing methods for series functions</a> for details..</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Result</b><br/><p>Calculated value</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
+<h4> Examples</h4>
+<code> &nbsp; &nbsp; &nbsp;echo( count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 7<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore zero &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 6<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore blanks( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 5 (only pure blank ignored)<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore both &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 4 (both 0 and blank ignored)<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( date(today), date(""), true, false ) &nbsp;); // 4<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore zero &nbsp;( date(today), date(""), true, false ) &nbsp;); // 2 (blank date, false)<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore blanks( date(today), date(""), true, false ) &nbsp;); // 3 (blank date)<br/>
+ &nbsp; &nbsp; &nbsp;echo( count ignore both &nbsp;( date(today), date(""), true, false ) &nbsp;); // 2 (both)</code>
+<h4> Output</h4>
+<code>7<br/>
+6<br/>
+5<br/>
+4<br/>
+4<br/>
+2<br/>
+3<br/>
+2<br/>
+</code>
+<h4> See also</h4>
+<p><span class="red_text">counting parameter set elements with {}</span></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+

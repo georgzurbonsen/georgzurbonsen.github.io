@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>function / user function existing</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>4.1 Control Flow Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Loops.html"><span>+ 4.1.1 Loops </span></a></li>
+<li class="navi"><a href="Features_Branches.html"><span>+ 4.1.2 Branches </span></a></li>
+<li class="navi"><a href="Features_User_Defined_Procedures_and_Functiions.html"><span>4.1.3 User-Defined Procedures and Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Functions_define_procedure.html"><span>4.1.3.1 define procedure / function </span></a></li>
+<li class="navi"><a href="Functions_define_additional_procedure.html"><span>4.1.3.2 define additional procedure / function </span></a></li>
+<li class="navi"><a href="Features_user_parameter_types.html"><span>4.1.3.3 Parameter Types in User-Defined Functions </span></a></li>
+<li class="navi"><a href="Functions_return.html"><span>4.1.3.4 return </span></a></li>
+<li class="navi"><a href="Functions_function_existing.html"><span>4.1.3.5 function / user function existing </span></a></li>
+<li class="navi"><a href="Functions_delete_user_function.html"><span>4.1.3.6 delete user function </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Start_or_include_Beyond4P_Programs.html"><span>+ 4.1.4 Start or include Beyond4P Programs </span></a></li>
+<li class="navi"><a href="Features_Other_Control_Flow_Functions.html"><span>+ 4.1.5 Other Control Flow Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.2 Mathematics and Statistics </span></a></li>
+</ul></li>
+<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<code>function existing, user function existing</code>
+<h4> Synopsis</h4>
+<code>... function existing ( function name )</code>
+<h4> Description</h4>
+<p>
+Checks if the procedure function is existing.  <b>user function existing</b> returns <b>true</b> only if the specified function name refers to an existing user procedure or function.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Parameter count: <span class="black_text">1</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>literal</td>
+<td><b>Name of existing user function</b><br/><p>Any literal can be specified here</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>boolean</td>
+<td><b>returned value</b><br/><p>true if procedure or function (or user procedure or function) is existing</p></td></tr>
+</table>
+<h4> Examples</h4>
+<code> &nbsp; &nbsp; &nbsp;define procedure (foo) { echo( Fool ); };<br/>
+ &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;echo("Test if existing:");<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;foo : ", function existing( foo )); // user defined<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;bar : ", function existing( bar )); // not existing<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;abs : ", function existing( abs )); // existing<br/>
+ &nbsp; &nbsp; &nbsp;echo(new line, "Test if user function:");<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;foo : ", user function existing( foo )); // user defined<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;bar : ", user function existing( bar )); // not existing<br/>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;abs : ", user function existing( abs )); // existing</code>
+<h4> Output</h4>
+<code>Test if existing:<br/>
+ &nbsp;foo : true<br/>
+ &nbsp;bar : false<br/>
+ &nbsp;abs : true<br/>
+<br/>
+Test if user function:<br/>
+ &nbsp;foo : true<br/>
+ &nbsp;bar : false<br/>
+ &nbsp;abs : false<br/>
+</code>
+<h4> See also</h4>
+<p><a href="Functions_define_additional_procedure.html">additional function names</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+

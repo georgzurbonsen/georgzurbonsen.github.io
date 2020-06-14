@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>include - Function</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>4.1 Control Flow Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Loops.html"><span>+ 4.1.1 Loops </span></a></li>
+<li class="navi"><a href="Features_Branches.html"><span>+ 4.1.2 Branches </span></a></li>
+<li class="navi"><a href="Features_User_Defined_Procedures_and_Functiions.html"><span>+ 4.1.3 User-Defined Procedures and Functions </span></a></li>
+<li class="navi"><a href="Features_Start_or_include_Beyond4P_Programs.html"><span>4.1.4 Start or include Beyond4P Programs </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Functions_start.html"><span>4.1.4.1 start - Function </span></a></li>
+<li class="navi"><a href="Functions_include.html"><span>4.1.4.2 include - Function </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Other_Control_Flow_Functions.html"><span>+ 4.1.5 Other Control Flow Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.2 Mathematics and Statistics </span></a></li>
+</ul></li>
+<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<code>include</code>
+<h4> Synopsis</h4>
+<code>include ( program file name, parameters )</code>
+<h4> Description</h4>
+<p>
+Starts a separate beyond4P application script as a sub program and waits until the sub program has ended.
+In contrast to <a class="bold_text" href="Functions_start.html">start</a>(), this function provides specific features which are suitable to define Beyond4P libraries containing procedures and functions:
+
+</p><ul class="bullets"><li class="bullets">Global variables defined (with <span class="red_text">global</span>() function) will be preserved.</li>
+<li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="Functions_start.html">start</a>() since the internal compilation process is not repeated.</li>
+<li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create Beyond4P libraries and use <b>include()</b> to include them.</li>
+<li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.</li>
+<li class="bullets">The <a class="bold_text" href="Functions_once.html">once</a>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.</li>
+<li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then Beyond4P will look for the file in the standard libary directory.</li>
+</ul><p></p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Parameter count: <span class="black_text">Min. 1</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>literal</td>
+<td><b>Program Name</b><br/><p>Name of Beyond4P program or library to include. <br>
+If a file type is specified, e.g. '.b4p' or '.txt', then Beyond4P will look for this file in the current or specified directgory.<br>
+If no path and no file type is specified, then Beyond4P will look in the standard library folder.</p>
+</td></tr>
+<tr><td>Opt. 2, etc.<br/>input</td>
+<td>all types</td>
+<td><b>Additional parameters</b><br/><p>Any additional optional parameter. If specified, then they will replace the existing "command line parameters" by the ones supplied here.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>all types</td>
+<td><b>returned value</b><br/><p>Value returned by called program</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Program file not found</p>
+<h4> Examples</h4>
+<code> &nbsp; &nbsp; &nbsp;include ( Office Library ); // Looks for 'Office Library.b4p' in the standard Beyond4P library folder.<br/>
+ &nbsp; &nbsp; &nbsp;include ( My Library.b4p, English ); // Looks for "My Libary.b4p" in the current folder, and pass a parameter.<br/>
+ &nbsp; &nbsp; &nbsp;//<br/>
+ &nbsp; &nbsp; &nbsp;// command line argument[0]: start.txt &nbsp; (The file name of the program)<br/>
+ &nbsp; &nbsp; &nbsp;// command line argument[1]: English (literal)<br/>
+</code>
+<h4> See also</h4>
+<p><a href="Functions_start.html">start</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+
