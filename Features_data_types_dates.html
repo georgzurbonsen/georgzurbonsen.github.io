@@ -38,6 +38,7 @@ prev  next
 <li class="navi"><a href="Features_comments.html"><span>3.4 Comments </span></a></li>
 <li class="navi"><a href="Features_reserved_keywords.html"><span>3.5 Reserved keywords </span></a></li>
 <li class="navi"><a href="Features_path_names.html"><span>3.6 Path and File Names </span></a></li>
+<li class="navi"><a href="Features_Locales.html"><span>3.7 Locales </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Function_Library.html"><span>+ 4 Function Library </span></a></li>
 <li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
@@ -66,7 +67,7 @@ Beyond4P distinguishes between two different sub-types of numerals:
 <p>
 Regular dates contain the digital date (and/or time of day) along the original text representation provided.  This sub-type applies only in a few cases
 which includes accessing dates from tables (if enabled with the system variable table conversion[date] = true, otherwise the date is read in as a literal),
-or the <span class="red_text">date</span>() function is used with a formatting parameter added.  The text representation can be used later for output purposes as
+or the <a class="bold_text" href="Functions_date.html">date</a>() function is used with a formatting parameter added.  The text representation can be used later for output purposes as
 long the dates and times have not been manipulated.
 <br><br>
 Such manipulations include any form of arithmetics (e.g. adding a day (+1) or hour (+1/24) ) or processing them with functions such as <span class="red_text">reschedule</span>().
@@ -80,10 +81,10 @@ The easiest way to describe a date or time value is using one of the following f
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
 <tr><th>Function name   </th><th> Description</th></tr>
-<tr><td><span class="red_text">date</span>()      </td><td> Depending on the literal value provided, it returns a date, date and time, time only, or blank date.</td></tr>
-<tr><td><span class="red_text">pure date</span>() </td><td> Works like date, but ignores any time of day information.  Output is either a date or blank date.</td></tr>
-<tr><td><span class="red_text">date time</span>() </td><td> Works like date.  If input is not a blank, and if no time of day is provided, then 00:00:00 (midnight) is assumed as time of day.</td></tr>
-<tr><td><span class="red_text">time</span>()  </td><td> This function will only use the time information.  If the paramter contains a date only, then a blank date wil be returned.</td></tr>
+<tr><td><a class="bold_text" href="Functions_date.html">date</a>()      </td><td> Depending on the literal value provided, it returns a date, date and time, time only, or blank date.</td></tr>
+<tr><td><a class="bold_text" href="Functions_date.html">pure date</a>() </td><td> Works like date, but ignores any time of day information.  Output is either a date or blank date.</td></tr>
+<tr><td><a class="bold_text" href="Functions_date.html">date time</a>() </td><td> Works like date.  If input is not a blank, and if no time of day is provided, then 00:00:00 (midnight) is assumed as time of day.</td></tr>
+<tr><td><a class="bold_text" href="Functions_time.html">time</a>()  </td><td> This function will only use the time information.  If the paramter contains a date only, then a blank date wil be returned.</td></tr>
 </table><p>
 
 Dates turn into plain dates with original text representation voided.</p>
@@ -101,24 +102,24 @@ Dates turn into plain dates with original text representation voided.</p>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type detailed(date time(d1[])) );<br/>
 <br/>
  &nbsp;echo;<br/>
- &nbsp;echo(date("31. March 2021", "DD.MMMM.YYY"), " / ", type detailed(date("31. Dezember 2021", "DD.MMM.YYY")));<br/>
+ &nbsp;echo(date("31. March 2021"), " / ", type detailed(date("31. Dezember 2021")) );<br/>
  &nbsp;echo(date("2020 / 12 / 31 15:00")+1); &nbsp; &nbsp; // Date and time<br/>
  &nbsp;echo(date time("2020-12-31")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Add a time (default 00:00:00)<br/>
  &nbsp;echo(time("2020-12-31 15:00")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Time<br/>
  &nbsp;echo(time("2020-12-31 15:00")+1/24); &nbsp; &nbsp; &nbsp;// Time, 1 hour later<br/>
  &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code>
 <h5> Output:</h5>
-<code>date &nbsp; &nbsp; (): 14.07.2021, 14.06.2020 22:56:09, 20:15:00, , plain date<br/>
-time &nbsp; &nbsp; (): , 22:56:09, 20:15:00, , plain date<br/>
-pure date(): 14.07.2021, 14.06.2020, , , plain date<br/>
-date time(): 14.07.2021 00:00:00, 14.06.2020 22:56:09, 20:15:00, 00:00:00, plain date<br/>
+<code>date &nbsp; &nbsp; (): 2021-07-14, 2020-07-14 23:39:36, 20:15:00, , plain date<br/>
+time &nbsp; &nbsp; (): , 23:39:36, 20:15:00, , plain date<br/>
+pure date(): 2021-07-14, 2020-07-14, , , plain date<br/>
+date time(): 2021-07-14 00:00:00, 2020-07-14 23:39:36, 20:15:00, 00:00:00, plain date<br/>
 <br/>
-31.MARCH.2021 / date<br/>
-01.01.2021 15:00:00<br/>
-31.12.2020 00:00:00<br/>
+2021-03-31 / plain date<br/>
+2021-01-01 15:00:00<br/>
+2020-12-31 00:00:00<br/>
 15:00:00<br/>
 16:00:00<br/>
-01.01.2022<br/>
+2022-01-01<br/>
 </code>
 	</div>
 </section>

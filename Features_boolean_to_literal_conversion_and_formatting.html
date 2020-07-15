@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>Boolean to Literal Formatting</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
+<li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>4.2 Type Conversion and Formatting Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Functions_literal.html"><span>4.2.1 literal, quoted literal, softquoted literal </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_literal_to_literal_conversion_and_formatting.html"><span>4.2.1.1 Literal to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_void_to_literal_conversion_and_formatting.html"><span>4.2.1.2 Void to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_numeral_to_literal_conversion_and_formatting.html"><span>4.2.1.3 Numeral to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_date_to_literal_conversion_and_formatting.html"><span>4.2.1.4 Date to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_Parameter_Set_to_literal_conversion_and_formatting.html"><span>4.2.1.5 Parameter Set to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_boolean_to_literal_conversion_and_formatting.html"><span>4.2.1.6 Boolean to Literal Formatting </span></a></li>
+<li class="navi"><a href="Features_smart_conversion_and_formatting.html"><span>4.2.1.7 Smart Formatting </span></a></li>
+</ul></li>
+<li class="navi"><a href="Functions_numeral.html"><span>4.2.2 numeral </span></a></li>
+<li class="navi"><a href="Functions_clean_numeral.html"><span>4.2.3 clean (if) numeral </span></a></li>
+<li class="navi"><a href="Functions_smart_numeral.html"><span>4.2.4 smart (if) numeral </span></a></li>
+<li class="navi"><a href="Functions_date.html"><span>4.2.5 date, pure date, date time </span></a></li>
+<li class="navi"><a href="Functions_time.html"><span>4.2.6 time, pure time </span></a></li>
+<li class="navi"><a href="Features_Detects_dates_correctly_in_literals.html"><span>4.2.7 Date and Time Detection Rules </span></a></li>
+<li class="navi"><a href="Functions_boolean.html"><span>4.2.8 boolean </span></a></li>
+<li class="navi"><a href="Functions_parameter_set.html"><span>4.2.9 parameter set </span></a></li>
+<li class="navi"><a href="Functions_type.html"><span>4.2.10 type, type detailed </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.3 Mathematics and Statistics </span></a></li>
+<li class="navi"><a href="Features_date_functions.html"><span>+ 4.4 Date Functions </span></a></li>
+<li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.5 Parameter Set Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Some powerful formatting features are available for formatting <a  href="Features_data_types_booleans.html">booleans</a>.
+
+<br><br>
+The formatting template applies to following functions:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="Functions_literal.html">literal</a>(), 2nd parameter</li>
+</ul><p></p>
+<h4> Formatting Templates</h4>
+<p>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:350px"><col style = "width:400px"><col style = "width:100px">
+<tr><th>Formatting Template             </th><th> Description </th><th> Example  </th><th> Note</th></tr>
+<tr><td>T / t                           </td><td> True/False: 1st letter only                           </td><td> T, F / t, f                                   </td><td> <sup>1</sup></td></tr>
+<tr><td>TT / Tt / tt                    </td><td> True/False: Full word                                 </td><td> TRUE, FALSE / True, False / true / false      </td><td> <sup>1</sup></td></tr>
+<tr><td>Y / y                           </td><td> Yes/No: 1st letter only                               </td><td> Y, N / y, n                                   </td><td> <sup>1</sup></td></tr>
+<tr><td>YY / Yy / yy                    </td><td> Yes/No: Full word                                     </td><td> YES, NO / Yes, No / yes, no                   </td><td> <sup>1</sup></td></tr>
+<tr><td>#                               </td><td> Numeric value: 1 for true, 0 for false                </td><td> 1, 0                                          </td><td></td></tr>
+<tr><td>' ... '                         </td><td> Contents inside quotation marks are treated as given text, including spaces </td><td> "o'clock"             </td><td> See <sup>3</sup></td></tr>
+<tr><td>" ... "                           </td><td> See above                                             </td><td> 'time: '                                      </td><td> See <sup>3</sup></td></tr>
+<tr><td>All other characters            </td><td> Treated as given text                                 </td><td>                                               </td><td></td></tr>
+</table><p>
+<sup>1</sup> Uses the language as confgured by <a  href="Features_Locales.html">locale</a> parameter or setting.<br>
+<sup>2</sup> Applicable outside double quotation marks, otherwise symbols are treated as given text<br>
+<sup>3</sup> Applicable outside single quotation marks, otherwise symbols are treated as given text<br>
+</p>
+<h4> Locales</h4>
+<p>
+Specify a supported locale name, a country name or a language name.  See <a  href="Features_Locales.html">locales</a> for an overview of supported locales.  Choices are not case sensitive.
+<br><br>
+Examples: <b>en_US, DE_at, France, German, local, none</b>
+</p>
+<h4> Program Examples</h4>
+<p>Following examples show use of date to literal conversion without formatting template</p>
+<h5> Examples:</h5>
+<code> &nbsp; &nbsp; &nbsp;for all parameters( { en_us, de_de, fr_fr }, locale[] )<br/>
+ &nbsp; &nbsp; &nbsp;{<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( literal(true, "Tt Yy # ", locale[])," &nbsp; " );<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( literal(false, "TT y # ", locale[]) );<br/>
+ &nbsp; &nbsp; &nbsp;}</code>
+<h5> Output:</h5>
+<code>True Yes 1 &nbsp; &nbsp;FALSE n 0 <br/>
+Wahr Ja 1 &nbsp; &nbsp;FALSCH n 0 <br/>
+Vrai Oui 1 &nbsp; &nbsp;FAUX n 0 <br/>
+</code>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+

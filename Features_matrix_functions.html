@@ -26,22 +26,25 @@ prev  next
 <li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
-<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>4.2 Mathematics and Statistics </span></a></li>
+<li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>4.3 Mathematics and Statistics </span></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="Features_basic_math_functions.html"><span>+ 4.2.1 Basic Math Functions </span></a></li>
-<li class="navi"><a href="Features_transcendental_functions.html"><span>+ 4.2.2 Transcendental Functions </span></a></li>
-<li class="navi"><a href="Features_series_functions.html"><span>+ 4.2.3 Series Functions </span></a></li>
-<li class="navi"><a href="Features_matrix_functions.html"><span>4.2.4 Matrix Functions </span></a></li>
+<li class="navi"><a href="Features_basic_math_functions.html"><span>+ 4.3.1 Basic Math Functions </span></a></li>
+<li class="navi"><a href="Features_transcendental_functions.html"><span>+ 4.3.2 Transcendental Functions </span></a></li>
+<li class="navi"><a href="Features_series_functions.html"><span>+ 4.3.3 Series Functions </span></a></li>
+<li class="navi"><a href="Features_matrix_functions.html"><span>4.3.4 Matrix Functions </span></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="Functions_minv.html"><span>4.2.4.1 minv - Matrix Inversion </span></a></li>
-<li class="navi"><a href="Functions_mdet.html"><span>4.2.4.2 mdet - Matrix Determinant </span></a></li>
-<li class="navi"><a href="Functions_mmul.html"><span>4.2.4.3 mmul, mmdiv - Multiplication and Division </span></a></li>
-<li class="navi"><a href="Functions_linear.html"><span>4.2.4.4 linear - Solve Linear Equations </span></a></li>
+<li class="navi"><a href="Functions_minv.html"><span>4.3.4.1 minv - Matrix Inversion </span></a></li>
+<li class="navi"><a href="Functions_mdet.html"><span>4.3.4.2 mdet - Matrix Determinant </span></a></li>
+<li class="navi"><a href="Functions_mmul.html"><span>4.3.4.3 mmul, mmdiv - Multiplication and Division </span></a></li>
+<li class="navi"><a href="Functions_linear.html"><span>4.3.4.4 linear - Solve Linear Equations </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_statistics_functions.html"><span>+ 4.2.5 Statistics Functions </span></a></li>
-<li class="navi"><a href="Functions_sum_if.html"><span>4.2.6 Conditional Combination Functions </span></a></li>
-<li class="navi"><a href="Features_finance_functions.html"><span>+ 4.2.7 Finance and Business Functions </span></a></li>
+<li class="navi"><a href="Features_statistics_functions.html"><span>+ 4.3.5 Statistics Functions </span></a></li>
+<li class="navi"><a href="Functions_sum_if.html"><span>4.3.6 Conditional Combination Functions </span></a></li>
+<li class="navi"><a href="Features_finance_functions.html"><span>+ 4.3.7 Finance and Business Functions </span></a></li>
 </ul></li>
+<li class="navi"><a href="Features_date_functions.html"><span>+ 4.4 Date Functions </span></a></li>
+<li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.5 Parameter Set Functions </span></a></li>
 </ul></li>
 <li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
 <li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
@@ -52,16 +55,26 @@ prev  next
 	</div>
 
 	<div class="article">
-<h4> Functions</h4>
+<h4> Matrix Functions</h4>
 <p>
 Beyond4P provides a library of powerful matrix functions.  While vectors are modeled as 1-dimensional <a  href="Features_data_types_parameter_sets.html">parameter sets</a> containing <a  href="Features_data_types_numerals.html">numerals</a>,
-matrices are modeled as <a  href="Features_data_types_parameter_sets.html">parameter sets</a> (rows) containing <a  href="Features_data_types_parameter_sets.html">parameter sets</a> containing __numerals (columns).
+matrices are modeled as <a  href="Features_data_types_parameter_sets.html">parameter sets</a> (rows) containing <a  href="Features_data_types_parameter_sets.html">parameter sets</a> containing <a  href="Features_data_types_numerals.html">numerals</a> (columns).
 
 Example: <b>{{ 1, 2, 3 }, { 4, 5, 6 }}</b> is a matrix consisting of 2 rows and 3 columns:<br><br>
 
 | 1  2  3 |<br>
 | 4  5  6 |<br>
+
 <br>
+
+These matrix functions are a supplement to <span class="red_text">matrix arithmetics</span> which make use of so called <span class="red_text">deep operators</span>.
+You won't find a matrix addition function (like <i>madd(a[],b[])</i>) because it is realized with <b>a[] +^^ b[]</b>.
+
+<br><br>
+
+In addition to Matrix Functions which are part of the mathematical function library, <a  href="Features_matrix_manipulation_functions.html">Matrix Manipulations</a> provide additional
+matrix functions where the contents may be of any data type.  These functions do not apply any arithmetics on the values.
+
 </p>
 	</div>
 </section>
