@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>distribute - Value Distribution over Timeline</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
+<li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>4.3 Mathematics and Statistics </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_basic_math_functions.html"><span>+ 4.3.1 Basic Math Functions </span></a></li>
+<li class="navi"><a href="Features_transcendental_functions.html"><span>+ 4.3.2 Transcendental Functions </span></a></li>
+<li class="navi"><a href="Features_series_functions.html"><span>+ 4.3.3 Series Functions </span></a></li>
+<li class="navi"><a href="Features_matrix_functions.html"><span>+ 4.3.4 Matrix Functions </span></a></li>
+<li class="navi"><a href="Features_statistics_functions.html"><span>+ 4.3.5 Statistics Functions </span></a></li>
+<li class="navi"><a href="Function_sum_if.html"><span>4.3.6 Conditional Combination Functions </span></a></li>
+<li class="navi"><a href="Features_finance_functions.html"><span>4.3.7 Finance and Business Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Function_cagr.html"><span>4.3.7.1 cagr - Compond Annual Growth Rate </span></a></li>
+<li class="navi"><a href="Function_irr.html"><span>4.3.7.2 irr - Internal Rate of Return </span></a></li>
+<li class="navi"><a href="Function_tv.html"><span>4.3.7.3 tv - Terminal Value </span></a></li>
+<li class="navi"><a href="Function_discount.html"><span>4.3.7.4 discount - Discount Values </span></a></li>
+<li class="navi"><a href="Function_distribute.html"><span>4.3.7.5 distribute - Value Distribution over Timeline </span></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="Features_literal_functions.html"><span>+ 4.4 Literal Functions </span></a></li>
+<li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
+<li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<code>distribute, distribute advance</code>
+<h4> Description</h4>
+<p>
+This function distributes a value over a time line of intervals such as days, weeks, months, quarters and years.  Either a fixed total value is distributed
+between two specified dates, or a combination of start date and capacity (unit per day) is provided and the end date will be calculated automatically
+(e.g. Total value = 10, capacity per day = 2 means 5 days).
+
+<br><br>
+Doing a production planning with production start date, production end date and number of items to produce is a good example.<br>
+If a batch size is given (e.g. 10 items produced at a time), then specify it.<br>
+If the distribution should not be bound to deliveries, but to purchasing / receiving required material for these items, then use the function <b>distribute advance</b>.
+
+<br><br>
+Alternative to total value, <b>#days</b> (do not use quotation marks for this) can be specified instead of the total value in order to return the number of days instead.
+Note regarding dates: Dates are always considered as plain dates, ignoring time of day info if contained in the date values.
+
+<br><br>
+Detailed overview with many examples: See <a href="images/function_distribute_examples.pdf">available PDF overview</a>
+
+</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count: <span class="black_text">10-14</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>numerals or literals</td>
+<td><b>Total value</b><br/><p>Total value to be distributed over the timeline.<br>Alternatively, specify <b>#days</b> (only this literal value is allowed here), sot the total value will relate to the total number of identified work days.</p>
+</td></tr>
+<tr><td>2<br/>input</td>
+<td>numeral</td>
+<td><b>Batch size</b><br/><p>The batch size must be 0 or a positive value.<br>
+<b>0</b> = No subsivision.  The total value will be distributed proportionally across the periods.<br>
+<b>1</b> = Batch size of 1 unit.<br>
+The bach size must not necessarily be an integer.  Choosing <b>0.5</b> is valid and would rule batch sizes of half items.</p>
+</td></tr>
+<tr><td>3<br/>input</td>
+<td>date or literal converted to date</td>
+<td><b>Start date</b><br/><p>Must provide a valid date.  Any time of day info will be ignored.</p>
+</td></tr>
+<tr><td>4<br/>input</td>
+<td>date or literal converted to date</td>
+<td><b>End date</b><br/><p>Must provide a valid date which must be after the start date or at the same day.  Any time of day info will be ignored.</p>
+</td></tr>
+<tr><td>Alt. 4<br/>input</td>
+<td>numeral</td>
+<td><b>Capacity per day</b><br/><p>Instead of specifying an end date, you an also specify a capacity value in units per day.  The end date will be calculated automatically.</p>
+</td></tr>
+<tr><td>5<br/>input</td>
+<td>literal</td>
+<td><b>Intervals</b><br/><p>This parameter determinse if you want to do a plan on daily, weekly, monthly or other basis.  Note that a daily planning is the most fine-grained
+option and produces the biggest and most detailed plans.
+
+</p><table class="bold_column_1" style = "width:700px"><col style = "width:200px"><col style = "width:500px">
+<tr><th>Intervals parameter     </th><th> Description</th></tr>
+<tr><td>days                    </td><td> Distribution over days</td></tr>
+<tr><td>weeks                   </td><td> Distribution over weeks</td></tr>
+<tr><td>whole weeks             </td><td> Distribution over weeks, all weeks are considered as full weeks (even if start and/or end dates lie in the middle of the weeks)</td></tr>
+<tr><td>months                  </td><td> Distribution over months</td></tr>
+<tr><td>whole months            </td><td> Distribution over months, all months are considered full months (even if start and/or end dates lie in the middle of the months)</td></tr>
+<tr><td>quarters                </td><td> Distribution over quarters</td></tr>
+<tr><td>whole quarters          </td><td> Distribution over months, all quarters are considered full quarters (even if start and/or end dates lie in the middle of the quarters)</td></tr>
+<tr><td>quarters whole months   </td><td> Distribution over quarters, full months are considered if start and/or end dates are in the middle of the quarters)</td></tr>
+<tr><td>years                   </td><td> Distribution over years</td></tr>
+<tr><td>whole years             </td><td> Distribution over years, all years are considered full years (even if start and/or end dates lie in the middle of the years)</td></tr>
+<tr><td>years whole months      </td><td> Distribution over years, full months are considered if start and/or end dates are in the middle of the years)</td></tr>
+<tr><td>years whole quarters    </td><td> Distribution over years, fullquarters are considered if start and/or end dates are in the middle of the years)</td></tr>
+</table><p></p>
+</td></tr>
+<tr><td>6<br/>input</td>
+<td>literal</td>
+<td><b>Usance</b><br/><p>Usance is a work and trade practice parameter which is used in association with the 5th function parameter <i>Intervals</i>.
+
+</p><table class="bold_column_1" style = "width:700px"><col style = "width:100px"><col style = "width:600px">
+<tr><th>Usance Parameter    </th><th> Description</th></tr>
+<tr><td>calendar            </td><td> Based on 365/366 days per year calendar, 7 days per week work time.  Respects bank and school holidays if specified.</td></tr>
+<tr><td>mon_fri             </td><td> Based on 365/366 days per year calendar, 5 days per week work time (Mondays through Fridays).  Respects bank and school holidays if specified.</td></tr>
+<tr><td>mon_sat             </td><td> Based on 365/366 days per year calendar, 6 days per week work time (Mondays through Saturdays).  Respects bank and school holidays if specified.</td></tr>
+<tr><td>30_360              </td><td> Rules all months having 30 days and all years having 360 days.  Common in finance.  Ignores bank and school holidays if specified.<br>Only valid in combination with following Intervals: <b>months, whole months, quarters, whole quarters, years, whole years</b>.</td></tr>
+</table><p>
+</p>
+</td></tr>
+<tr><td>7<br/>input</td>
+<td>date or literal converted to date</td>
+<td><b>Output Start date</b><br/><p>This value specifies the starting date for the output to generate.  If 5th parameter is not 'days', then the date will be moved back to the begin of the chosen interval (weeks, months, quarters, years).
+E.g. if '31.05.2017' is specified for months, then the whole month of May will be considered.</p>
+</td></tr>
+<tr><td>8<br/>input</td>
+<td>date or literal converted to date</td>
+<td><b>Output End date</b><br/><p>This value specifies the ending date for the output to generate.  If 5th parameter is not 'days', then the date will be moved forward to the end of the chosen interval (weeks, months, quarters, years).
+E.g. if '01.05.2017' is specified for months, then the whole month May will be considered.</p>
+</td></tr>
+<tr><td>9<br/>output</td>
+<td>parameter set containing dates</td>
+<td><b>Timeline Start Dates</b><br/><p>Parameter set containing dates related to the values returned in the next parameter (Distributed values).  If interval other than days is specified, then the starting date of the week/month/etc... will be returned.</p>
+</td></tr>
+<tr><td>10<br/>output</td>
+<td>parameter set containing numerals</td>
+<td><b>Distributed Values</b><br/><p>Actual result: Total values distributed over the specified timeline</p>
+</td></tr>
+<tr><td>Opt. 11<br/>output</td>
+<td>numeral</td>
+<td><b>Earlier Sum</b><br/><p>Non-zero if distributed values exist before the output start date specified in order not to miss them.</p>
+</td></tr>
+<tr><td>Opt. 12<br/>output</td>
+<td>numeral</td>
+<td><b>Later Sum</b><br/><p>Non-zero if distributed values exist after the output end date specified in order not to miss them.</p>
+</td></tr>
+<tr><td>Opt. 13<br/>input</td>
+<td>parameter set containing dates</td>
+<td><b>Bank Holidays</b><br/><p>A set of dates may be supplied to declare specific days as bank holidays so these days will not be counted.  This parameter is rejected if the Usance '30_360' is chosen.
+The dates may be provided as data type <a  href="Features_data_types_dates.html">date</a> or <a  href="Features_data_types_literals.html">literal</a> containing legitimate dates.  Type conversion to dates takes place automatically.
+
+<br><br>
+Use the year 1900 (lies well in the past and this is good so) in order to declare bank holidays as anually repeating bank holidays.
+Example: "1900-07-14" declares French national holiday for every year.</p>
+<span class="black_text"><b> Default value: </b></span>{}  (Empty set)
+</td></tr>
+<tr><td>Opt. 13<br/>input</td>
+<td>parameter set containing dates</td>
+<td><b>School Holidays</b><br/><p>A set of dates may be supplied to declare school holidays (vacation days).  This parameter is rejected if the Usance '30_360' is chosen.
+The dates may be provided as data type <a  href="Features_data_types_dates.html">date</a> or <a  href="Features_data_types_literals.html">literal</a> containing legitimate dates.  Type conversion to dates takes place automatically.
+<b>An even number of dates</b> must be specified as the first date describes the first vacation day and the next date describes the last vacation day.
+
+<br><br>
+Use the year 1900 (lies well in the past and this is good so) in order to declare school holidays (vacation) as anually repeating events.<br>
+Example: "1900-07-01", "1900-07-21" declares the first 3 weeks of every July as vacation.
+</p>
+<span class="black_text"><b> Default value: </b></span>{}  (Empty set)
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>boolean</td>
+<td><b>Total value fully distributed</b><br/><p><b>true</b> if the total value has been fully distributed between output start and output end date and optionally to the output values Earlier Sum and Later Sum.<br></p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Division by zero error happens if WACC equals to the perpetual growth rate</p>
+<h4> Examples</h4>
+<code> &nbsp; &nbsp; &nbsp;distribute( #days, 0, '06.01.2018', '25.01.2018', days, calendar, '01.01.2018','31.01.2018', date line[], distributed values[] );<br/>
+ &nbsp; &nbsp; &nbsp;echo( date line[]{0},", ", date line[]{1},", ", date line[]{2},", ", date line[]{date line[]{}-1} );<br/>
+ &nbsp; &nbsp; &nbsp;echo( join( distributed values[], ", " ) );</code>
+<h4> Output</h4>
+<code>2018-01-01, 2018-01-02, 2018-01-03, 2018-01-31<br/>
+0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0<br/>
+</code>
+<h4> See also</h4>
+<p><span class="red_text">table distribute</span></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+

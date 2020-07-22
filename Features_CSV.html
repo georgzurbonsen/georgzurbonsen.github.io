@@ -40,11 +40,11 @@ prev  next
 <li class="navi"><a href="Features_Locales.html"><span>3.7 Locales </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Function_Library.html"><span>+ 4 Function Library </span></a></li>
-<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
-<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
-<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
-<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
-<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
 </ul>
 	</div>
 
@@ -66,7 +66,7 @@ applicable separators by checking for commas, semicolons and tabs.
 Regarding decimal symbols, the standard function <span class="red_text">table load</span>() will check for numerals in text and CSV files (but not HMTL files and likes) with decimal
 commas and convert them to decimal points.  The new function <span class="red_text">table load unchanged</span>() will not do the conversion.  You may need this if you need to
 discriminate between actual numbers and other numeric data separated with commas but not considered as regular numeric data.
-<br/>Consider using the <a class="bold_text" href="Functions_clean_numeral.html">clean numeral</a>()
+<br/>Consider using the <span class="red_text">clean numeral</span>()
 function to prepare numbers containing commas (and possibly more, such as thousand separators, currency symbols, etc.).
 <br/>Consider using <span class="red_text">table save with local decimal separator</span>() to save CSV files using the decimal separator symbol applicable with your country settings (comma or point).
 <br/>Consider using <span class="red_text">table save with decimal comma</span>() to make sure all numbers use decimal commas.

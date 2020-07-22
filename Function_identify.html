@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="logo">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</div>
+
+<div class="header">
+<h3>Identify variable forms (if structure, array, or simple)</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>+ 4 Function Library </span></a></li>
+<li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<code>identify</code>
+<h4> Synopsis</h4>
+<code>identify( variable name );</code>
+<h4> Description</h4>
+<p>This function identifies the form of the variable, i.e.<br/>
+- A simple variable without any further members<br/>
+- A structure with at least one member inside<br/>
+- An array with at least one member inside<br>
+- A zero-member array<br/>
+- Or the variable is not existing (no exception asserted in this case)<br/>
+Zero members arrays are close relative to simple variables with the only difference that provisions
+have been made to contain variable members.  Zero member array occur when deleting all members from
+the structure or array. Redimensionig (e.g. using <b>redim()</b> arrays to 0 elements result in simple variables.
+Zero members arrarys also apply when loading
+a JSON file containing empty arrays.  Beyond4P is able to clearly distinguish between <i>null</i>
+and empty arrays.</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>No indirect parameter passing</p>
+<h4> Parameter count: <span class="black_text">1</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>code</td>
+<td>variable<br/>:literal</td>
+<td><b>variable name</b><br/><p>Any variable name, regardless if it is a base variable or a member</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<code> &nbsp; &nbsp; &nbsp;a[] = "It's simple";<br/>
+ &nbsp; &nbsp; &nbsp;array( b[], { Item 1, Item 2 } );<br/>
+ &nbsp; &nbsp; &nbsp;structure( c[], { red, blue }, { rot, blau } );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( "a[]: ", identify(a[]), " &nbsp;b[]: ", identify(b[]), " &nbsp;c[]: ", identify(c[]), " &nbsp;d[]: ", identify(d[]) );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( "b[0]: ", identify(b[0]), " &nbsp;b[2]: ", identify(b[2]) );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( "c[red]: ", identify(c[red]), " &nbsp;c[green]: ", identify(c[green]), " &nbsp;c[red,yellow]: ", identify(c[red,yellow]) );<br/>
+ &nbsp; &nbsp; &nbsp;delete( c[red], c[blue]);<br/>
+ &nbsp; &nbsp; &nbsp;echo( "c[] without members: ", identify(c[]) );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;delete( b[0] );<br/>
+ &nbsp; &nbsp; &nbsp;delete( b[0] );<br/>
+ &nbsp; &nbsp; &nbsp;echo( "b[] without members: ", identify(b[]) );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Try with json" );<br/>
+ &nbsp; &nbsp; &nbsp;json to variable( v[], '{ "k" : 12, "l" : { "l1" : 23, "l2" : 34 }, "m" : [ 45, 56 ], "n" : [] }' );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Member k: ", identify(v[k]) );<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Member l: ", identify(v[l]) );<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Member m: ", identify(v[m]) );<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Member n: ", identify(v[n]) );</code>
+<h4> Output</h4>
+<code>a[]: simple &nbsp;b[]: array &nbsp;c[]: structure &nbsp;d[]: not found<br/>
+b[0]: simple &nbsp;b[2]: not found<br/>
+c[red]: simple &nbsp;c[green]: not found &nbsp;c[red,yellow]: not found<br/>
+c[] without members: zero members<br/>
+b[] without members: zero members<br/>
+Try with json<br/>
+Member k: simple<br/>
+Member l: structure<br/>
+Member m: array<br/>
+Member n: zero members<br/>
+</code>
+<h4> See also</h4>
+<p><span class="red_text">scope</span><br/>
+<span class="red_text">inspect</span><br/>
+<span class="red_text">existing</span></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+
+</html>	
+
+

@@ -235,6 +235,7 @@ table
 {
   border-spacing: 0px;
   table-layout: fixed;
+ border-collapse: collapse;
 }
 
 table, tr, th, td {

@@ -33,11 +33,11 @@ prev  next
 <li class="navi"><a href="Features_Locales.html"><span>3.7 Locales </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Function_Library.html"><span>+ 4 Function Library </span></a></li>
-<li class="navi"><a href="Functions_print.html"><span> Basic Text Output Functions </span></a></li>
-<li class="navi"><a href="Functions_cls.html"><span> Clear screen </span></a></li>
-<li class="navi"><a href="Functions_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
-<li class="navi"><a href="Functions_cursor.html"><span> Set cursor positions </span></a></li>
-<li class="navi"><a href="Functions_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
 </ul>
 	</div>
 
@@ -55,8 +55,8 @@ and generate simple as well as formatted outputs ready for analysis and visualiz
 Beyond4P is an <i>interpreted language</i> which provides very powerful syntax structure, highly flexible data structures without need
 of initial declarations and a large function library.  Small apps containing very few statements can already perform sophisticated operations
 such as merging two tables with different arrangements and formats.
-You may wonder why obvious names such as <a class="bold_text" href="Functions_if.html">if</a>(), <a class="bold_text" href="Functions_while.html">while</a>() and <a class="bold_text" href="Functions_for.html">for</a>() are not considered as similar reserved keywords.  In Beyond4P, the control flow statements
-are actually procedure names which then influence executing further statements or blocks.  Therefore, you can actually use <a class="bold_text" href="Functions_if.html">if</a>() as the given function.
+You may wonder why obvious names such as <span class="red_text">if</span>(), <span class="red_text">while</span>() and <span class="red_text">for</span>() are not considered as similar reserved keywords.  In Beyond4P, the control flow statements
+are actually procedure names which then influence executing further statements or blocks.  Therefore, you can actually use <span class="red_text">if</span>() as the given function.
 
 <br/><br/><img src="Images/Beyond4P_General_Overview_2.jpg" alt="Beyond4P General Overview"><br/>
 </p>
@@ -65,7 +65,7 @@ are actually procedure names which then influence executing further statements o
 The following key features makes the Beyond4P language distinct from other popular programming languages:
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:240px"><col style = "width:760px">
-<tr><td>Interpreted </td><td> The <span class="red_text">run-time machine</span> is designed to <a class="bold_text" href="Functions_print.html">echo</a>() interpret and process the code with very high performance. One performance aspects includes checking and tokenizing the code before starting to run.</td></tr>
+<tr><td>Interpreted </td><td> The <span class="red_text">run-time machine</span> is designed to <span class="red_text">echo</span>() interpret and process the code with very high performance. One performance aspects includes checking and tokenizing the code before starting to run.</td></tr>
 <tr><td>Fully portable across system platforms </td><td> Beyond4P runs on WINDOWS, LINUX and MAC-OS.  You can develop your apps so they run on all platforms without changing the code. Beyond4P provides harmonized functions for directory, file and system function calls, as well as system variables such as user names, key system directory names, etc.</td></tr>
 <tr><td>Names with spaces and special characters </td><td> You are allowed to use spaces and special characters in function names, variable names, table names, column header names, etc.  <b>max value[]</b> and <b>'1%'[]</b> are valid variable names. This allows you to use typical column headers, e.g. "Total Costs", without modifying them or putting quotations around. A valid function call could be " table create (customer table, supplier table, … ); " Function names like "table process selected rows" is easier to read than "TableProcessSelectedRows"</td></tr>
 <tr><td>Variables </td><td> All simple variables end with brackets <b>[]</b>  Example: <b>value[]</b>. If you forget them, then the name is just a text value.<br/>You can create child variables with any nesting, <br/>e.g. <b>animal[dog]=poodle; animal[cat]=tiger; animal[dog,leg count]=4;</b>.<br/>You can also define arrays, e.g. <b>matrix[2,3]</b></td></tr>
@@ -83,7 +83,7 @@ The following key features makes the Beyond4P language distinct from other popul
 <tr><td>User definable procedures and functions </td><td> You can defined own procedures and functions.  Functions provide return values whereas procedures don't.  You can assign multiple function names to the same user-defined code. In this case, the pre-defined local variable <b>function name[]</b> allows to identify the function name used to call the code.</td></tr>
 <tr><td>Indirect parameter passing </td><td> Some procedures and functions allow one <i>parameter set</i> variable to be used to provide all function parameters in one.<br/>Example: a[] = { 2,3,4 }; <b>echo</b>( <b>min</b>( 2,3,4 ), ' and ', <b>min</b>( a[] ) ); // Output in both cases is 2.</td></tr>
 <tr><td>Deep unary and binary operators </td><td> Deep operators (supplemented with the circumflex '^' symbol) can be used to calculate with elements inside parameter sets. <br/>Example: { 1,2,3 } +^ { 4,5,6 } results in { 5,7,9 }.  However, { 1,2,3 } + { 4,5,6 } results in {1,2,3,4,5,6} instead.  Deep operations are analogous to vector and matrix operations.</td></tr>
-<tr><td>Control flow </td><td> Unless in other programming languages, control flow features like <a class="bold_text" href="Functions_if.html">if</a>(), <a class="bold_text" href="Functions_for.html">for</a>(), <a class="bold_text" href="Functions_while.html">while</a>(), <a  href="Functions_return.html">return</a>, etc. are actually procedure and function calls.  Something as simple as <b>if</b> takes one boolean value as function parameter and decides whether to execute or skip the next statement or code block.  In fact, this is made possible because procedures and functions can accept code pieces as it is required for functions like <b>for</b>.</td></tr>
+<tr><td>Control flow </td><td> Unless in other programming languages, control flow features like <span class="red_text">if</span>(), <span class="red_text">for</span>(), <span class="red_text">while</span>(), <a  href="Function_return.html">return</a>, etc. are actually procedure and function calls.  Something as simple as <b>if</b> takes one boolean value as function parameter and decides whether to execute or skip the next statement or code block.  In fact, this is made possible because procedures and functions can accept code pieces as it is required for functions like <b>for</b>.</td></tr>
 <tr><td>Portable directory paths </td><td> Beyond4P accepts both '/' and '\' for path separators. They will be adjusted automatically to match with the operating system requirements.</td></tr>
 </table><p>
 </p>
