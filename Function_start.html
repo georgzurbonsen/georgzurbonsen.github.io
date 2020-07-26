@@ -39,9 +39,10 @@ prev  next
 </ul></li>
 <li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
 <li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.3 Mathematics and Statistics </span></a></li>
-<li class="navi"><a href="Features_literal_functions.html"><span>+ 4.4 Literal Functions </span></a></li>
+<li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
 <li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
 <li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.7 Directory and File System Functions </span></a></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
 <li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
@@ -64,8 +65,8 @@ Starts a separate beyond4P application script as a sub program and waits until t
 <li class="bullets">The code will not stay resident in memory after completion.  When called again with start (...), the program will be reloaded.</li>
 <li class="bullets">User procedures and functions defined in the called program will be deleted when execution of the program has ended.</li>
 <li class="bullets">Local variables created inside the program will be discarded when execution has ended</li>
-<li class="bullets">Since the code is removed after completion, memorized <span class="red_text">once</span>() calls will also get lost.  Next time the file will be loaded, <span class="red_text">once</span>() {} behaves as if the code is being run for the first time and the subsequent code is executed.</li>
-<li class="bullets">If a program previously called with <span class="red_text">include</span>() and is now called with start(), then the resident code is made non-resident again and will be removed when done.</li>
+<li class="bullets">Since the code is removed after completion, memorized <a class="bold_text" href="Function_once.html">once</a>() calls will also get lost.  Next time the file will be loaded, <a class="bold_text" href="Function_once.html">once</a>() {} behaves as if the code is being run for the first time and the subsequent code is executed.</li>
+<li class="bullets">If a program previously called with <a class="bold_text" href="Function_include.html">include</a>() and is now called with start(), then the resident code is made non-resident again and will be removed when done.</li>
 </ul><p></p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>

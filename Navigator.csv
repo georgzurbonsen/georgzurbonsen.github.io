@@ -112,7 +112,8 @@
 "<li class=""navi""><a href=""Features_Detects_dates_correctly_in_literals.html""><span>4.2.7 Date and Time Detection Rules </span></a></li>";3
 "<li class=""navi""><a href=""Function_boolean.html""><span>4.2.8 boolean </span></a></li>";3
 "<li class=""navi""><a href=""Function_parameter_set.html""><span>4.2.9 parameter set </span></a></li>";3
-"<li class=""navi""><a href=""Function_type.html""><span>4.2.10 type, type detailed </span></a></li>";3
+"<li class=""navi""><a href=""Function_join.html""><span>4.2.10 join ... </span></a></li>";3
+"<li class=""navi""><a href=""Function_type.html""><span>4.2.11 type, type detailed </span></a></li>";3
 </ul></li>;3
 "<li class=""navi""><a href=""Features_Mathematics_and_Statistics.html""><span>4.3 Mathematics and Statistics </span></a></li>";2
 "<li class=""navi""><ul>";3
@@ -170,7 +171,7 @@
 "<li class=""navi""><a href=""Function_distribute.html""><span>4.3.7.5 distribute - Value Distribution over Timeline </span></a></li>";4
 </ul></li>;4
 </ul></li>;3
-"<li class=""navi""><a href=""Features_literal_functions.html""><span>4.4 Literal Functions </span></a></li>";2
+"<li class=""navi""><a href=""Features_string_functions.html""><span>4.4 String Functions </span></a></li>";2
 "<li class=""navi""><ul>";3
 "<li class=""navi""><a href=""Features_string_search_and_extraction.html""><span>4.4.1 String Search and Extraction Functions </span></a></li>";3
 "<li class=""navi""><ul>";4
@@ -181,6 +182,17 @@
 "<li class=""navi""><a href=""Function_middle.html""><span>4.4.1.5 middle ... (string function) </span></a></li>";4
 "<li class=""navi""><a href=""Function_outside.html""><span>4.4.1.6 outside ... (string function) </span></a></li>";4
 "<li class=""navi""><a href=""Function_trim.html""><span>4.4.1.7 trim ... (string function) </span></a></li>";4
+"<li class=""navi""><a href=""Function_replace.html""><span>4.4.1.8 replace, replace all </span></a></li>";4
+"<li class=""navi""><a href=""Function_substitute.html""><span>4.4.1.9 substitute, substitute all </span></a></li>";4
+"<li class=""navi""><a href=""Function_get_differences.html""><span>4.4.1.10 get differences </span></a></li>";4
+"<li class=""navi""><a href=""Function_locate_differences.html""><span>4.4.1.11 locate differences </span></a></li>";4
+</ul></li>;4
+"<li class=""navi""><a href=""Features_character_coding.html""><span>4.4.2 Character Encoding and Decoding </span></a></li>";3
+"<li class=""navi""><ul>";4
+"<li class=""navi""><a href=""Function_chr.html""><span>4.4.2.1 chr </span></a></li>";4
+"<li class=""navi""><a href=""Function_code.html""><span>4.4.2.2 code </span></a></li>";4
+"<li class=""navi""><a href=""Function_decode_entities.html""><span>4.4.2.3 decode entities </span></a></li>";4
+"<li class=""navi""><a href=""Function_encode_entities.html""><span>4.4.2.4 encode entities </span></a></li>";4
 </ul></li>;4
 </ul></li>;3
 "<li class=""navi""><a href=""Features_date_and_time_functions.html""><span>4.5 Date and Time Functions </span></a></li>";2
@@ -219,6 +231,9 @@
 "<li class=""navi""><a href=""Function_middle_.html""><span>4.6.1.5 middle ... (parameter set function) </span></a></li>";4
 "<li class=""navi""><a href=""Function_outside_.html""><span>4.6.1.6 outside ... (parameter set function) </span></a></li>";4
 "<li class=""navi""><a href=""Function_trim_.html""><span>4.6.1.7 trim ... (parameter set function) </span></a></li>";4
+"<li class=""navi""><a href=""Function_count_elements.html""><span>4.6.1.8 count elements ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_subset.html""><span>4.6.1.9 subset ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_filter.html""><span>4.6.1.10 filter ... </span></a></li>";4
 </ul></li>;4
 "<li class=""navi""><a href=""Features_matrix_manipulation_functions.html""><span>4.6.2 Matrix Manipulation Functions </span></a></li>";3
 "<li class=""navi""><ul>";4
@@ -227,6 +242,18 @@
 "<li class=""navi""><a href=""Function_flat.html""><span>4.6.2.3 flat </span></a></li>";4
 "<li class=""navi""><a href=""Function_diagonal.html""><span>4.6.2.4 diagonal </span></a></li>";4
 "<li class=""navi""><a href=""Function_transpose.html""><span>4.6.2.5 transpose </span></a></li>";4
+</ul></li>;4
+</ul></li>;3
+"<li class=""navi""><a href=""Features_directory_and_file_system.html""><span>4.7 Directory and File System Functions </span></a></li>";2
+"<li class=""navi""><ul>";3
+"<li class=""navi""><a href=""Features_basic_directory_and_file_functions.html""><span>4.7.1 Basic Directory and File Functions </span></a></li>";3
+"<li class=""navi""><ul>";4
+"<li class=""navi""><a href=""Function_directory_existing.html""><span>4.7.1.1 directory existing, file existing </span></a></li>";4
+"<li class=""navi""><a href=""Function_read_access.html""><span>4.7.1.2 read access ..., write access ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_working_directory.html""><span>4.7.1.3 working directory </span></a></li>";4
+"<li class=""navi""><a href=""Function_starting_directory.html""><span>4.7.1.4 starting directory </span></a></li>";4
+"<li class=""navi""><a href=""Function_directory_size.html""><span>4.7.1.5 directory size </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_size.html""><span>4.7.1.6 file size </span></a></li>";4
 </ul></li>;4
 </ul></li>;3
 </ul></li>;2

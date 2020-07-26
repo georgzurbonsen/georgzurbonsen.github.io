@@ -39,9 +39,10 @@ prev  next
 </ul></li>
 <li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
 <li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.3 Mathematics and Statistics </span></a></li>
-<li class="navi"><a href="Features_literal_functions.html"><span>+ 4.4 Literal Functions </span></a></li>
+<li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
 <li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
 <li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.7 Directory and File System Functions </span></a></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
 <li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
@@ -59,13 +60,13 @@ prev  next
 <h4> Description</h4>
 <p>
 Starts a separate beyond4P application script as a sub program and waits until the sub program has ended.
-In contrast to <span class="red_text">start</span>(), this function provides specific features which are suitable to define Beyond4P libraries containing procedures and functions:
+In contrast to <a class="bold_text" href="Function_start.html">start</a>(), this function provides specific features which are suitable to define Beyond4P libraries containing procedures and functions:
 
 </p><ul class="bullets"><li class="bullets">Global variables defined (with <span class="red_text">global</span>() function) will be preserved.</li>
-<li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <span class="red_text">start</span>() since the internal compilation process is not repeated.</li>
+<li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="Function_start.html">start</a>() since the internal compilation process is not repeated.</li>
 <li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create Beyond4P libraries and use <b>include()</b> to include them.</li>
 <li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.</li>
-<li class="bullets">The <span class="red_text">once</span>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.</li>
+<li class="bullets">The <a class="bold_text" href="Function_once.html">once</a>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.</li>
 <li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then Beyond4P will look for the file in the standard libary directory.</li>
 </ul><p></p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>

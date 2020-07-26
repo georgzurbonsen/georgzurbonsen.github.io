@@ -66,7 +66,7 @@ applicable separators by checking for commas, semicolons and tabs.
 Regarding decimal symbols, the standard function <span class="red_text">table load</span>() will check for numerals in text and CSV files (but not HMTL files and likes) with decimal
 commas and convert them to decimal points.  The new function <span class="red_text">table load unchanged</span>() will not do the conversion.  You may need this if you need to
 discriminate between actual numbers and other numeric data separated with commas but not considered as regular numeric data.
-<br/>Consider using the <span class="red_text">clean numeral</span>()
+<br/>Consider using the <a class="bold_text" href="Function_clean_numeral.html">clean numeral</a>()
 function to prepare numbers containing commas (and possibly more, such as thousand separators, currency symbols, etc.).
 <br/>Consider using <span class="red_text">table save with local decimal separator</span>() to save CSV files using the decimal separator symbol applicable with your country settings (comma or point).
 <br/>Consider using <span class="red_text">table save with decimal comma</span>() to make sure all numbers use decimal commas.
@@ -75,8 +75,8 @@ function to prepare numbers containing commas (and possibly more, such as thousa
 <br><br>
 
 Notice on files with fixed column widths: The best is to load these files with "new line" as separator symbol so the table contains one item per row.
-Then create additional columns with dedicated data items using the <span class="red_text">left</span>() / <span class="red_text">middle</span>() / <span class="red_text">right</span>() functions where you can specify numeric column positions,
-and remove redundant white space symbos with the <span class="red_text">trim</span>() function.
+Then create additional columns with dedicated data items using the <a class="bold_text" href="Function_left.html">left</a>() / <a class="bold_text" href="Function_middle.html">middle</a>() / <a class="bold_text" href="Function_right.html">right</a>() functions where you can specify numeric column positions,
+and remove redundant white space symbos with the <a class="bold_text" href="Function_trim.html">trim</a>() function.
 </p>
 	</div>
 </section>

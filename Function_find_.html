@@ -28,7 +28,7 @@ prev  next
 <li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
 <li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
 <li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.3 Mathematics and Statistics </span></a></li>
-<li class="navi"><a href="Features_literal_functions.html"><span>+ 4.4 Literal Functions </span></a></li>
+<li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
 <li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
 <li class="navi"><a href="Features_parameter_set_functions.html"><span>4.6 Parameter Set Functions </span></a></li>
 <li class="navi"><ul>
@@ -41,9 +41,13 @@ prev  next
 <li class="navi"><a href="Function_middle_.html"><span>4.6.1.5 middle ... (parameter set function) </span></a></li>
 <li class="navi"><a href="Function_outside_.html"><span>4.6.1.6 outside ... (parameter set function) </span></a></li>
 <li class="navi"><a href="Function_trim_.html"><span>4.6.1.7 trim ... (parameter set function) </span></a></li>
+<li class="navi"><a href="Function_count_elements.html"><span>4.6.1.8 count elements ... </span></a></li>
+<li class="navi"><a href="Function_subset.html"><span>4.6.1.9 subset ... </span></a></li>
+<li class="navi"><a href="Function_filter.html"><span>4.6.1.10 filter ... </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_matrix_manipulation_functions.html"><span>+ 4.6.2 Matrix Manipulation Functions </span></a></li>
 </ul></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.7 Directory and File System Functions </span></a></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
 <li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
@@ -74,9 +78,9 @@ Searches the parameter set for specified patterns and returns the character posi
 <tr><td>2<br/>input</td>
 <td>valid types</td>
 <td><b>matching value</b><br/><p>The comparison looks into both value and type.  Providing a numeral 1 is not the same as a literal '1'.
-The parameter set will be compared with this value until a first match has been found.
-the options 'ignore case', 'ignore blanks' and both combined will only apply if values compared are literals.<br>
-<u>Attention:</u> Wildcard symbols in softquoted strings are not in use here.  They are treated as normal characters.</p>
+The parameter set will be compared with this value in order to count matches.
+The options 'ignore case', 'ignore blanks' and both combined will only apply if the values compared are literals.<br>
+If the value is an <a  href="Features_data_types_literals.html">unquoted literal</a> or <a  href="Features_data_types_literals.html">softquoted literal</a>, then <span class="red_text">wildcard symbols</span> are supported.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>numeral</td>
@@ -100,7 +104,7 @@ Negative numbers are supported: -1 = last element, -2 = previous element, etc..<
  &nbsp; &nbsp; &nbsp;echo( find( { {}, " ", 1, '1', {1} }, "?" ) ); &nbsp;// returns -1 (not found)<br/>
  &nbsp; &nbsp; &nbsp;echo( find( { {}, " ", 1, '1', {1} }, 1) ); &nbsp; // returns 2 (Numeral 1 compared)<br/>
  &nbsp; &nbsp; &nbsp;echo( find( { {}, " ", 1, '1', {1} }, '1') ); // returns 3 (Literal 1 compared)<br/>
- &nbsp; &nbsp; &nbsp;echo( find( { {}, " ", 1, '1', {1} }, {1}, 4, a[] ) );// returns 4 (1 in nested parameter set compared)</code>
+ &nbsp; &nbsp; &nbsp;echo( find( { {}, " ", 1, '1', {1} }, {1} ) );// returns 4 (1 in nested parameter set compared)</code>
 <h4> Output</h4>
 <code>3<br/>
 0<br/>
@@ -109,7 +113,7 @@ Negative numbers are supported: -1 = last element, -2 = previous element, etc..<
 1<br/>
 -1<br/>
 2<br/>
-3<br/>
+2<br/>
 4<br/>
 </code>
 <h4> See also</h4>
