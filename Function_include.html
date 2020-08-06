@@ -59,15 +59,15 @@ prev  next
 <code>include ( program file name, parameters )</code>
 <h4> Description</h4>
 <p>
-Starts a separate beyond4P application script as a sub program and waits until the sub program has ended.
-In contrast to <a class="bold_text" href="Function_start.html">start</a>(), this function provides specific features which are suitable to define Beyond4P libraries containing procedures and functions:
+Starts a separate B4P application script as a sub program and waits until the sub program has ended.
+In contrast to <a class="bold_text" href="Function_start.html">start</a>(), this function provides specific features which are suitable to define B4P libraries containing procedures and functions:
 
 </p><ul class="bullets"><li class="bullets">Global variables defined (with <span class="red_text">global</span>() function) will be preserved.</li>
 <li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="Function_start.html">start</a>() since the internal compilation process is not repeated.</li>
-<li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create Beyond4P libraries and use <b>include()</b> to include them.</li>
+<li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create B4P libraries and use <b>include()</b> to include them.</li>
 <li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a  href="Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.</li>
 <li class="bullets">The <a class="bold_text" href="Function_once.html">once</a>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.</li>
-<li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then Beyond4P will look for the file in the standard libary directory.</li>
+<li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then B4P will look for the file in the standard libary directory.</li>
 </ul><p></p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Parameter count: <span class="black_text">Min. 1</span></h4>
@@ -75,9 +75,9 @@ In contrast to <a class="bold_text" href="Function_start.html">start</a>(), this
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>literal</td>
-<td><b>Program Name</b><br/><p>Name of Beyond4P program or library to include. <br>
-If a file type is specified, e.g. '.b4p' or '.txt', then Beyond4P will look for this file in the current or specified directgory.<br>
-If no path and no file type is specified, then Beyond4P will look in the standard library folder.</p>
+<td><b>Program Name</b><br/><p>Name of B4P program or library to include. <br>
+If a file type is specified, e.g. '.b4p' or '.txt', then B4P will look for this file in the current or specified directgory.<br>
+If no path and no file type is specified, then B4P will look in the standard library folder.</p>
 </td></tr>
 <tr><td>Opt. 2, etc.<br/>input</td>
 <td>all types</td>
@@ -93,7 +93,7 @@ If no path and no file type is specified, then Beyond4P will look in the standar
 <h4> Exceptions</h4>
 <p>Program file not found</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;include ( Office Library ); // Looks for 'Office Library.b4p' in the standard Beyond4P library folder.<br/>
+<code> &nbsp; &nbsp; &nbsp;include ( Office Library ); // Looks for 'Office Library.b4p' in the standard B4P library folder.<br/>
  &nbsp; &nbsp; &nbsp;include ( My Library.b4p, English ); // Looks for "My Libary.b4p" in the current folder, and pass a parameter.<br/>
  &nbsp; &nbsp; &nbsp;//<br/>
  &nbsp; &nbsp; &nbsp;// command line argument[0]: start.txt &nbsp; (The file name of the program)<br/>

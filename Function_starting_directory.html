@@ -41,7 +41,10 @@ prev  next
 <li class="navi"><a href="Function_starting_directory.html"><span>4.7.1.4 starting directory </span></a></li>
 <li class="navi"><a href="Function_directory_size.html"><span>4.7.1.5 directory size </span></a></li>
 <li class="navi"><a href="Function_file_size.html"><span>4.7.1.6 file size </span></a></li>
+<li class="navi"><a href="Function_disk_space.html"><span>4.7.1.7 disk space ... </span></a></li>
 </ul></li>
+<li class="navi"><a href="Features_listing_directories_and_files.html"><span>+ 4.7.2 Listing and Searching Directories and Files </span></a></li>
+<li class="navi"><a href="Features_deleting_directories_and_files.html"><span>+ 4.7.3 Manipulating Directories and Files </span></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
@@ -57,8 +60,8 @@ prev  next
 <code>starting directory</code>
 <h4> Description</h4>
 <p>
-When Beyond4P is started, it will look for "Main.b4p" in the starting directory.
-The starting directory is stored in the file "Beyond4P User Settings.json"
+When B4P is started, it will look for "Main.b4p" in the starting directory.
+The starting directory is stored in the file "B4P User Settings.json"
 located in the directory for application data.
 
 <br><br>
@@ -80,7 +83,7 @@ If directory path is provided: Change the starting directory.<br>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>literal</td>
-<td><b>Starting directory</b><br/><p>Full path name of starting directory</p></td></tr>
+<td><b>Starting directory</b><br/><p>Full path name of starting directory. It does not have a directory separator symbol at the end.</p></td></tr>
 </table>
 <h4> Exceptions</h4>
 <p>Specified starting directory does not exist or is not accessible</p>
@@ -92,9 +95,9 @@ If directory path is provided: Change the starting directory.<br>
  &nbsp; &nbsp; &nbsp;starting directory( saved starting directory[] );<br/>
  &nbsp; &nbsp; &nbsp;echo(" Back to old starting directory: ", saved starting directory [] );</code>
 <h4> Output</h4>
-<code> Old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;Sandbox<br/>
+<code> Old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P Docu Generation<br/>
  New starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P Docu Generation<br/>
- Back to old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;Sandbox<br/>
+ Back to old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P Docu Generation<br/>
 </code>
 	</div>
 </section>

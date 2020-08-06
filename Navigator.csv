@@ -254,6 +254,28 @@
 "<li class=""navi""><a href=""Function_starting_directory.html""><span>4.7.1.4 starting directory </span></a></li>";4
 "<li class=""navi""><a href=""Function_directory_size.html""><span>4.7.1.5 directory size </span></a></li>";4
 "<li class=""navi""><a href=""Function_file_size.html""><span>4.7.1.6 file size </span></a></li>";4
+"<li class=""navi""><a href=""Function_disk_space.html""><span>4.7.1.7 disk space ... </span></a></li>";4
+</ul></li>;4
+"<li class=""navi""><a href=""Features_listing_directories_and_files.html""><span>4.7.2 Listing and Searching Directories and Files </span></a></li>";3
+"<li class=""navi""><ul>";4
+"<li class=""navi""><a href=""Function_directory_listing.html""><span>4.7.2.1 directory listing ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_search_files.html""><span>4.7.2.2 search files ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_count_files.html""><span>4.7.2.3 count files ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_resolve_path_name.html""><span>4.7.2.4 resolve path/directory/file name </span></a></li>";4
+</ul></li>;4
+"<li class=""navi""><a href=""Features_deleting_directories_and_files.html""><span>4.7.3 Manipulating Directories and Files </span></a></li>";3
+"<li class=""navi""><ul>";4
+"<li class=""navi""><a href=""Function_directory_create.html""><span>4.7.3.1 directory create ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_delete.html""><span>4.7.3.2 file delete ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_delete_multiple.html""><span>4.7.3.3 file delete multiple/recursive ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_directory_delete.html""><span>4.7.3.4 directory delete ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_directory_delete_multiple.html""><span>4.7.3.5 directory delete multiple/recursive ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_rename.html""><span>4.7.3.6 file rename ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_directory_rename.html""><span>4.7.3.7 directory rename ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_copy.html""><span>4.7.3.8 file copy ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_copy_multiple.html""><span>4.7.3.9 file copy mulitple/recursive ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_create_link.html""><span>4.7.3.10 file create link ... </span></a></li>";4
+"<li class=""navi""><a href=""Function_file_download.html""><span>4.7.3.11 file download ... </span></a></li>";4
 </ul></li>;4
 </ul></li>;3
 </ul></li>;2

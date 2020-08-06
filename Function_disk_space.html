@@ -13,7 +13,7 @@
 </div>
 
 <div class="header">
-<h3>file size</h3>
+<h3>disk space ...</h3>
 prev  next
 </div>
 
@@ -57,12 +57,10 @@ prev  next
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>file size</code>
+<code>disk space, disk space free</code>
 <h4> Description</h4>
-<p>
-Returns the size of the files matching the path name.  __Wildcards_ are allowed, where sum the size of all files found inside the specified directory
-are summed.  Subdirectories will not be touched.  Directory entries do not attribute to the total size, even if some operating systems report a non-zero
-size for subdirectories.</p>
+<p>Returns the total resp. free space of the specified drive.  It also works for network drives.
+</p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -71,26 +69,23 @@ size for subdirectories.</p>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>Opt. 1<br/>input</td>
 <td>literal</td>
-<td><b>path and file name</b><br/><p>Specify file name (in working directory) or combination of path and file name.</p>
+<td><b>drive or path name</b><br/><p>Specify a disk drive (e.g. C:\) or a path name (/usr/local, or \\server_name\path_name\...)</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Total size</b><br/><p>Size of all files identified, summed, unit is bytes.  -1 if not found</p></td></tr>
+<td><b>Size information</b><br/><p>Disk space / free disk space in bytes</p></td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>Specified file name is a directory</p>
+<p>Invalid path name or nonexisting drive</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;// Function 'literal' adds thousand separators to make numbers readable<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( file size( "C:&#92;Program Files&#92;Beyond4P&#92;*.*" ), "#,000", local ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( file size( "C:&#92;Program Files&#92;Beyond4P&#92;Beyond4P.exe" ), "#,000", local ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( file size( "Non-existing File.txt" ) ); // -1</code>
+<code> &nbsp; &nbsp; &nbsp;echo( literal( disk space( "C:&#92;" ), "#,000", local ) );<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal( disk space free( "C:&#92;" ), "#,000", local ) );</code>
 <h4> Output</h4>
-<code>9'012'586<br/>
-1'779'200<br/>
--1<br/>
+<code>234'483'609'600<br/>
+96'482'689'024<br/>
 </code>
 	</div>
 </section>
