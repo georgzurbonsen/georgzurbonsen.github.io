@@ -21,7 +21,7 @@ prev  next
 	<div class="nav">
 <ul>
 <li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
-<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting B4P </span></a></li>
 <li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
 <li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
 <li class="navi"><ul>
@@ -31,17 +31,18 @@ prev  next
 <li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
 <li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
 <li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
-<li class="navi"><a href="Features_directory_and_file_system.html"><span>4.7 Directory and File System Functions </span></a></li>
+<li class="navi"><a href="Features_table_functions.html"><span>+ 4.7 Table Functions </span></a></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>4.8 Directory and File System Functions </span></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="Features_basic_directory_and_file_functions.html"><span>+ 4.7.1 Basic Directory and File Functions </span></a></li>
-<li class="navi"><a href="Features_listing_directories_and_files.html"><span>4.7.2 Listing and Searching Directories and Files </span></a></li>
+<li class="navi"><a href="Features_basic_directory_and_file_functions.html"><span>+ 4.8.1 Basic Directory and File Functions </span></a></li>
+<li class="navi"><a href="Features_listing_directories_and_files.html"><span>4.8.2 Listing and Searching Directories and Files </span></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="Function_directory_listing.html"><span>4.7.2.1 directory listing ... </span></a></li>
-<li class="navi"><a href="Function_search_files.html"><span>4.7.2.2 search files ... </span></a></li>
-<li class="navi"><a href="Function_count_files.html"><span>4.7.2.3 count files ... </span></a></li>
-<li class="navi"><a href="Function_resolve_path_name.html"><span>4.7.2.4 resolve path/directory/file name </span></a></li>
+<li class="navi"><a href="Function_directory_listing.html"><span>4.8.2.1 directory listing ... </span></a></li>
+<li class="navi"><a href="Function_search_files.html"><span>4.8.2.2 search files ... </span></a></li>
+<li class="navi"><a href="Function_count_files.html"><span>4.8.2.3 count files ... </span></a></li>
+<li class="navi"><a href="Function_resolve_path_name.html"><span>4.8.2.4 resolve path/directory/file name </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_deleting_directories_and_files.html"><span>+ 4.7.3 Manipulating Directories and Files </span></a></li>
+<li class="navi"><a href="Features_deleting_directories_and_files.html"><span>+ 4.8.3 Manipulating Directories and Files </span></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
@@ -114,26 +115,17 @@ If no additional parameters are provided, then the path name may also contain a 
 <td><b>Identified names</b><br/><p>All file and directory names found as specified.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo("All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;Beyond4P&#92;" ), new line );<br/>
+<code> &nbsp; &nbsp; &nbsp;echo("All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;B4P&#92;" ), new line );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo("All files : ", search files( ".&#92;", "*.b4p" &nbsp; &nbsp; &nbsp;) );<br/>
  &nbsp; &nbsp; &nbsp;echo("1st file only (as literal) &nbsp; &nbsp; &nbsp;: ", search files( ".&#92;", "*.b4p", 0 &nbsp; ) );<br/>
  &nbsp; &nbsp; &nbsp;echo("1st file only (in parameter set): ", search files( ".&#92;", "*.b4p", 1 &nbsp; ) );<br/>
  &nbsp; &nbsp; &nbsp;echo("1st file only (as literal) &nbsp; &nbsp; &nbsp;: ", search files( "..&#92;", "*", 0 &nbsp; ), new line ); // One directory up<br/>
- &nbsp; &nbsp; &nbsp;echo("All subdirectories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;Beyond4P", "*", -1, directories &nbsp; ) );<br/>
+ &nbsp; &nbsp; &nbsp;echo("All subdirectories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;B4P", "*", -1, directories &nbsp; ) );<br/>
  &nbsp; &nbsp; &nbsp;echo("All .b4p/.txt recursively &nbsp; &nbsp; &nbsp; : ",<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;search files recursive( "C:&#92;Program Files&#92;Beyond4P", "*.txt,*.b4p", -1, files &nbsp;) );</code>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;search files recursive( "C:&#92;Program Files&#92;B4P", "*.txt,*.b4p", -1, files &nbsp;) );</code>
 <h4> Output</h4>
-<code>All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: {'C:&#92;Program Files&#92;Beyond4P&#92;b4picon.ico','C:&#92;Program Files&#92;Beyond4P&#92;Beyond4P Programmers Guide (V7.04) 2020-07-04.pdf','C:&#92;Program Files&#92;Beyond4P&#92;Beyond4P.exe','C:&#92;Program Files&#92;Beyond4P&#92;Install.txt','C:&#92;Program Files&#92;Beyond4P&#92;List of Locales.csv','C:&#92;Program Files&#92;Beyond4P&#92;Setup.exe','C:&#92;Program Files&#92;Beyond4P&#92;vcruntime140_1.dll'}<br/>
-<br/>
-All files : {'Example_Program.b4p','interactive.b4p','Main - Kopie.b4p','Main.b4p','Start B4P here.b4p'}<br/>
-1st file only (as literal) &nbsp; &nbsp; &nbsp;: Example_Program.b4p<br/>
-1st file only (in parameter set): {'Example_Program.b4p'}<br/>
-1st file only (as literal) &nbsp; &nbsp; &nbsp;: ..&#92;dir.csv<br/>
-<br/>
-All subdirectories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: {'C:&#92;Program Files&#92;Beyond4P&#92;Lib','C:&#92;Program Files&#92;Beyond4P&#92;weblib'}<br/>
-All .b4p/.txt recursively &nbsp; &nbsp; &nbsp; : {'C:&#92;Program Files&#92;Beyond4P&#92;Install.txt','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Interactive Help.txt','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Office Library.b4p','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Style Library.b4p','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Support Library.b4p','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Utility Library.b4p','C:&#92;Program Files&#92;Beyond4P&#92;Lib&#92;Zip Library.b4p'}<br/>
-</code>
+<code></code>
 <h4> See also</h4>
 <p><a href="Function_count_files.html">count files</a><br/>
 <a href="Function_directory_listing.html">directory listing</a></p>

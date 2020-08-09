@@ -21,7 +21,7 @@ prev  next
 	<div class="nav">
 <ul>
 <li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
-<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting B4P </span></a></li>
 <li class="navi"><a href="Features_introduction.html"><span>+ 3 Introduction </span></a></li>
 <li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
 <li class="navi"><ul>
@@ -53,7 +53,8 @@ prev  next
 <li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
 <li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
 <li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
-<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.7 Directory and File System Functions </span></a></li>
+<li class="navi"><a href="Features_table_functions.html"><span>+ 4.7 Table Functions </span></a></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
 </ul></li>
 <li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
 <li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
@@ -136,57 +137,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( "Permille: ", literal( 0.1234, '0.0 &amp;permil;') );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Directory assistance (USA): ", literal( 5551212, '"Dial 1-"000"-"0000') );</code>
 <h5> Output:</h5>
-<code>'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'EUR-1234', 'EUR-1,234', 'EUR-1.234', 'EUR-1,234', 'EUR-1 234', 'EUR-1'234', <br/>
-'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'- 1234.0', '- 1,234.0', '- 1.234,0', '- 1,234.0', '- 1 234.0', '- 1'234.0', <br/>
-'-1234.0000', '-1234.0000', '-1234,0000', '-1234.0000', '-1234.0000', '-1234.0000', <br/>
-'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'-1234. ', '-1,234. ', '-1.234,+', '-1,234. ', '-1 234. ', '-1'234. ', <br/>
-'-1234.', '-1,234.', '-1.234,', '-1,234.', '-1 234.', '-1'234.', <br/>
-'-1234.', '-1234.', '-1234,', '-1234.', '-1234.', '-1234.', <br/>
-'-1234.', '-1,234.', '-1.234,', '-1,234.', '-1 234.', '-1'234.', <br/>
-'(1234.00)', '(1,234.00)', '(1.234,00)', '(1,234.00)', '(1 234.00)', '(1'234.00)', <br/>
-<br/>
-'-0.29', '-0.29', '-0,29', '-0.29', '-0.29', '-0.29', <br/>
-'EUR-0.29', 'EUR-0.29', 'EUR-0,29', 'EUR-0.29', 'EUR-0.29', 'EUR-0.29', <br/>
-'-0', '-0', '-0', '-0', '-0', '-0', <br/>
-'- 0.3', '- 0.3', '- 0,3', '- 0.3', '- 0.3', '- 0.3', <br/>
-'-0000.2900', '-0000.2900', '-0000,2900', '-0000.2900', '-0000.2900', '-0000.2900', <br/>
-'- ', '- ', '-+', '- ', '- ', '- ', <br/>
-'- .3', '- .3', '-+,3', '- .3', '- .3', '- .3', <br/>
-'-.3', '-.3', '-,3', '-.3', '-.3', '-.3', <br/>
-'-.29', '-.29', '-,29', '-.29', '-.29', '-.29', <br/>
-'-0.29', '-0.29', '-0,29', '-0.29', '-0.29', '-0.29', <br/>
-'(0.29)', '(0.29)', '(0,29)', '(0.29)', '(0.29)', '(0.29)', <br/>
-<br/>
-'123456.78', '1,23,456.78', '123.456,78', '123,456.78', '123 456.78', '123'456.78', <br/>
-'EUR 123456.78', 'EUR 1,23,456.78', 'EUR+123.456,78', 'EUR 123,456.78', 'EUR 123 456.78', 'EUR 123'456.78', <br/>
-'123457', '1,23,457', '123.457', '123,457', '123 457', '123'457', <br/>
-'+ 123456.8', '+ 1,23,456.8', '+ 123.456,8', '+ 123,456.8', '+ 123 456.8', '+ 123'456.8', <br/>
-'123456.7800', '1,23456.7800', '123456,7800', '123456.7800', '123456.7800', '123456.7800', <br/>
-'123457', '1,23,457', '123.457', '123,457', '123 457', '123'457', <br/>
-'123456.8', '1,23,456.8', '123.456,8', '123,456.8', '123 456.8', '123'456.8', <br/>
-'123456.8', '1,23,456.8', '123.456,8', '123,456.8', '123 456.8', '123'456.8', <br/>
-'123456.78', '1,23456.78', '123456,78', '123456.78', '123456.78', '123456.78', <br/>
-'123456.78', '1,23,456.78', '123.456,78', '123,456.78', '123 456.78', '123'456.78', <br/>
-' 123456.78', ' 1,23,456.78', '+123.456,78', ' 123,456.78', ' 123 456.78', ' 123'456.78', <br/>
-<br/>
-'0', '0', '0', '0', '0', '0', <br/>
-'EUR 0', 'EUR 0', 'EUR+0', 'EUR 0', 'EUR 0', 'EUR 0', <br/>
-'0', '0', '0', '0', '0', '0', <br/>
-'+ 0.0', '+ 0.0', '+ 0,0', '+ 0.0', '+ 0.0', '+ 0.0', <br/>
-'0000.0000', '0000.0000', '0000,0000', '0000.0000', '0000.0000', '0000.0000', <br/>
-' ', ' ', '+', ' ', ' ', ' ', <br/>
-' . ', ' . ', '+,+', ' . ', ' . ', ' . ', <br/>
-'.', '.', ',', '.', '.', '.', <br/>
-'.', '.', ',', '.', '.', '.', <br/>
-'0.', '0.', '0,', '0.', '0.', '0.', <br/>
-' 0.00', ' 0.00', '+0,00', ' 0.00', ' 0.00', ' 0.00', <br/>
-<br/>
-Permille: 123.4 ‰<br/>
-Directory assistance (USA): Dial 1-555-1212<br/>
-</code>
+<code></code>
 	</div>
 </section>
 

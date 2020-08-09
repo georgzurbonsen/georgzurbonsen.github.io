@@ -21,7 +21,7 @@ prev  next
 	<div class="nav">
 <ul>
 <li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
-<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting Beyond4P </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>+ 2 Starting B4P </span></a></li>
 <li class="navi"><a href="Features_introduction.html"><span>3 Introduction </span></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="Features_UNICODE_character_set.html"><span>+ 3.1 UNICODE Character Set </span></a></li>
@@ -91,25 +91,7 @@ Individual member variables may be deleted using the <span class="red_text">dele
  &nbsp;inspect( a[] );<br/>
 </code>
 <h5> Output:</h5>
-<code>Initialize variable with dim function:<br/>
-void: No literal provided<br/>
-Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '.'<br/>
-Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '.'<br/>
-Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '.'<br/>
-Array [ &nbsp; 3] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '.'<br/>
-Array [ &nbsp; 4] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '.'<br/>
-<br/>
-<br/>
-Initialize variable with array function:<br/>
-void: No literal provided<br/>
-Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'Ha'<br/>
-Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'He'<br/>
-Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'Hi'<br/>
-Array [ &nbsp; 3] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'Ho'<br/>
-Array [ &nbsp; 4] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'Hu'<br/>
-Array [ &nbsp; 5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; literal: 'Ahoi'<br/>
-<br/>
-</code>
+<code></code>
 <h4> Nesting</h4>
 <p>Nesting is supported: Every array element may be a simple variable, a further array of any size or a structure.
 A (m x n) multi-dimensional array is a nested array with <i>m</i> members and each member containing <i>n</i> sub-members.
@@ -135,28 +117,7 @@ Syntax for referencing nested structures in arrays:  <b>Variable Name [ index, M
  &nbsp;inspect( b[] );<br/>
 </code>
 <h5> Output:</h5>
-<code>Initialize a 2-dimensional array:<br/>
-void: No literal provided<br/>
-Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
-Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
- &nbsp;Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; 'literal': '0'<br/>
-<br/>
-<br/>
-Initialize two arrays (2nd one is nested) implicitly:<br/>
-void: No literal provided<br/>
-Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
-Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; numeral: 123 &nbsp;and as literal: "123"<br/>
-Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; boolean: true<br/>
-<br/>
-</code>
+<code></code>
 	</div>
 </section>
 
