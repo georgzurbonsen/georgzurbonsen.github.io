@@ -103,7 +103,17 @@ Literals may take any legitimate value, except for <a  href="Features_reserved_k
  &nbsp;echo( 1 2 3 ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Is a literal because of spaces between teh digits<br/>
  &nbsp;echo( type( 1 2 3 ));</code>
 <h5> Output:</h5>
-<code></code>
+<code>Hello World<br/>
+Hello World<br/>
+Hello World<br/>
+Hello Folks<br/>
+<br/>
+31.12.2021<br/>
+100 Flowers<br/>
+mike@example.com<br/>
+1 2 3<br/>
+literal<br/>
+</code>
 <h4> Softquoted Literals</h4>
 <p>
 Softquoted literals are literals placed in <u>single quotation marks</u> (example: '123', 'true', '  Hello World').  Any contents inside single quotation marks
@@ -117,7 +127,12 @@ string comparisons.
  &nbsp;echo('&amp;euro;');<br/>
  &nbsp;echo( length('&amp;euro;') );</code>
 <h5> Output:</h5>
-<code></code>
+<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+new line<br/>
+true<br/>
+€<br/>
+1<br/>
+</code>
 <h4> Quoted Literals</h4>
 <p>
 Quoted literals are literals placed in <u>double quotation marks</u> (example: "123", "true", "  Hello World").  Any contents inside single quotation marks
@@ -129,7 +144,11 @@ function <span class="red_text">decode entitites</span>().  In comparison operat
  &nbsp;echo("&amp;amp;");<br/>
  &nbsp;echo(Hello World = "Hell*"); // 'Hello World' is not the same as 'Hell*'</code>
 <h5> Output:</h5>
-<code></code>
+<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+new line<br/>
+&amp;amp;<br/>
+false<br/>
+</code>
 <h4> Summary</h4>
 <p>
 </p><table class="simple" style = "width:1000px"><col style = "width:400px"><col style = "width:200px"><col style = "width:200px"><col style = "width:200px">

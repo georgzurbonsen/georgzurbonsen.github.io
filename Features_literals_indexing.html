@@ -91,7 +91,12 @@ Following rules apply to the indexing literals:
  &nbsp;echo( abcde, {10} ); &nbsp;// Attempts to access characters outside the string returns blank literals.<br/>
  &nbsp;echo( abcde, {-10} ); // Same case here.</code>
 <h5> Output:</h5>
-<code></code>
+<code>5<br/>
+abcde{0}<br/>
+abcde{-2}<br/>
+abcde{10}<br/>
+abcde{-10}<br/>
+</code>
 	</div>
 </section>
 

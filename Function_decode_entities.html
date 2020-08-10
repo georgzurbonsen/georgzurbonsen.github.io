@@ -102,7 +102,11 @@ HTML are supported.
  &nbsp; &nbsp; &nbsp;echo( '4.50 &amp;euro;' ); // Softquoted literal is already decoded implicitly.<br/>
  &nbsp; &nbsp; &nbsp;echo( '4.50 &amp;eur' + 'o;' ); // This one is not because full entity is not in one softquoted literal value</code>
 <h4> Output</h4>
-<code></code>
+<code>4.50 € / 4.50 € / 4.50 € / 4.50 €<br/>
+4.50 &amp;euro;<br/>
+4.50 €<br/>
+4.50 &amp;euro;<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_chr.html">chr</a><br/>
 <a href="Function_encode_entities.html">encode entities</a></p>

@@ -99,7 +99,9 @@ be transposed due missing values to include.
  &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6} } ) ); // Bottom rows with fewer elements<br/>
  &nbsp; &nbsp; &nbsp;// echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6,7,8} } ) ); // Would cause an exception</code>
 <h4> Output</h4>
-<code></code>
+<code>{{1,'a',5},{2,'b',6},{3,'c',7},{4,'d',8}}<br/>
+{{1,'a',5},{2,'b',6},{3,'c'},{4}}<br/>
+</code>
 	</div>
 </section>
 

@@ -97,7 +97,14 @@ Following rules apply to the indexing parameter sets:
  &nbsp;echo( "# elements in nested set: ", a[]{-2}{} ); &nbsp;// Number of elements in subset (cascaded indexing)<br/>
  &nbsp;echo( "Out of bounds case &nbsp; &nbsp; &nbsp;: ", a[]{99} ); &nbsp; &nbsp;// Empty is returned if index lies out of bounds</code>
 <h5> Output:</h5>
-<code></code>
+<code>a<br/>
+Last element &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: g<br/>
+Next element to the left: {'d','e','f'}<br/>
+Cascaded indexing &nbsp; &nbsp; &nbsp; : f<br/>
+# elements in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 5<br/>
+# elements in nested set: 3<br/>
+Out of bounds case &nbsp; &nbsp; &nbsp;: {}<br/>
+</code>
 <h4> Parameter Sets - Simple Indexing in Write Accesses</h4>
 <p>
 <i>Simple indexing</i> also works with write accesses in assignments.  The target variable must contain an existing parameter set.  Values of other types
@@ -110,7 +117,8 @@ are not allowed and will cause error messages.  Any data type may be assigned. F
  &nbsp;a[]{-1} = {G,H,I};<br/>
  &nbsp;echo( "Modified value in a[] = ", a[] );</code>
 <h5> Output:</h5>
-<code></code>
+<code>Modified value in a[] = {'a','B','c',{'d','e','f'},{'G','H','I'}}<br/>
+</code>
 	</div>
 </section>
 

@@ -131,7 +131,16 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
  &nbsp; &nbsp; &nbsp;echo( left( st[], 'c^ffee' ) ); // Softquoted literal (no or single quotation marks) - matched<br/>
  &nbsp; &nbsp; &nbsp;echo( left( st[], "c^ffee" ) ); // Quoted literal &nbsp; &nbsp; (double quotation marks) - not matched</code>
 <h4> Output</h4>
-<code></code>
+<code> / T / The taste of the coffe / The taste of the coffee<br/>
+The taste of the coffee! / <br/>
+<br/>
+The / The taste<br/>
+The / The taste of the<br/>
+The taste of the coffee<br/>
+<br/>
+The taste of the <br/>
+The taste of the coffee!<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_right.html">right (string function)</a><br/>
 <a href="Function_middle.html">middle (string function)</a><br/>

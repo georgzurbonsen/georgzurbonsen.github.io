@@ -131,7 +131,16 @@ If this function is called with 3 or more parameters, then this value is used as
  &nbsp; &nbsp; &nbsp;echo( join unique( { a,b,c,a,b,c}, "," ) ); &nbsp; &nbsp; &nbsp; &nbsp; // a,b,c<br/>
  &nbsp; &nbsp; &nbsp;echo( join( { a,b,{c,d},e }, '[', '; ', ']' ) ); &nbsp; &nbsp;// [a; b; [c; d]; e] (nested sets)</code>
 <h4> Output</h4>
-<code></code>
+<code>12 3 4<br/>
+1, , 2, &nbsp;3 , 4<br/>
+(1, , 2, &nbsp;3 , 4)<br/>
+(1, 2, &nbsp;3 , 4)<br/>
+<br/>
+<br/>
+a,b,c,a,b,c<br/>
+a,b,c<br/>
+[a; b; [c; d]; e]<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_literal.html">literal conversion functions</a></p>
 	</div>

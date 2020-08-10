@@ -169,7 +169,23 @@ Add any number of additional parameter set variables.  They will be manipulated 
  &nbsp; &nbsp; &nbsp;echo( "Extraction 2: ", set2[] );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] );</code>
 <h4> Output</h4>
-<code></code>
+<code>{'the','taste','of','the','!'} / {'the','!'}<br/>
+{'the','taste','of','the','!'} / {'the','!'}<br/>
+<br/>
+{'the','taste','of','the',12,'coffees','!'} / {'the','taste','of','the',12,'coffees','!'}<br/>
+{'the',12,'coffees','!'} / {12,'coffees','!'}<br/>
+<br/>
+{'the','taste','!'} / {'the','coffees','!'}<br/>
+{'the','taste','!'} / {'the','!'}<br/>
+{'the','taste','coffees','!'} / {'the','!'}<br/>
+{'coffees','!'} / {'the','taste','of','the',12,'coffees','!'}<br/>
+{} / {}<br/>
+<br/>
+Demonstrate the follower feature: <br/>
+Extraction 1: {'the','taste','of','!'}<br/>
+Extraction 2: {'A','fragrance','coming','!'}<br/>
+Extraction 3: {'Der','Geschmack','kommt','!'}<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_left_.html">left (parameter set function)</a><br/>
 <a href="Function_right_.html">right (parameter set function)</a><br/>

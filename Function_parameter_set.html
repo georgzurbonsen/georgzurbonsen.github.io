@@ -124,7 +124,13 @@ Reason: Literals in conversion from parameter sets to literal will be put into s
  &nbsp; &nbsp; &nbsp;echo( parameter set ( "2019/07/14,10:30" &nbsp;) ); &nbsp; &nbsp; &nbsp; &nbsp;// 2 literals: { '2019/07/14','10:30' } (not qualified as dates)<br/>
  &nbsp; &nbsp; &nbsp;echo( parameter set ( "{a,,b}" &nbsp;) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 4 literals: { 'a','','','b' } (2 literals are blank)</code>
 <h4> Output</h4>
-<code></code>
+<code>{{'a',1,{true,'TRUE',false}}}<br/>
+{'a',1,{true,'TRUE',false}}<br/>
+{'2019-07-14','10:30:00'}<br/>
+date<br/>
+{'2019/07/14','10:30'}<br/>
+{'a','','b'}<br/>
+</code>
 	</div>
 </section>
 

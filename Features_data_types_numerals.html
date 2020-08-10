@@ -103,7 +103,13 @@ Numerals turn into plain numerals with original text representation voided.</p>
  &nbsp;echo(type detailed(012.340 + 0));<br/>
  &nbsp;echo(numeral(012.340)); // Also plain numeral</code>
 <h5> Output:</h5>
-<code></code>
+<code>012.340<br/>
+numeral<br/>
+<br/>
+12.34<br/>
+plain numeral<br/>
+12.34<br/>
+</code>
 <h4> Scientific Notation</h4>
 <p>
 The Beyond4P code text does not support scientific notation, e.g. 1.2E+3 would assert a syntax error.  However, the function <span class="red_text">numeral)</span>
@@ -112,7 +118,8 @@ supports scientific notation.  However, scientific notation is supporte in readi
 <h5> Examples:</h5>
 <code> &nbsp;echo(numeral("1.2E+03"));</code>
 <h5> Output:</h5>
-<code></code>
+<code>1200<br/>
+</code>
 	</div>
 </section>
 

@@ -177,7 +177,15 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 1[] )); // assumes '*' and none<br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code>
 <h5> Output:</h5>
-<code></code>
+<code> &nbsp; &nbsp;*<br/>
+03/10/2020<br/>
+14/07/2020<br/>
+01.08.2020 22:30:00<br/>
+2020-07-14<br/>
+03.10.2020<br/>
+2020-07-04<br/>
+22:30:00<br/>
+</code>
 <h4> Program Examples with formatting templates</h4>
 <p>Following examples show use of date to literal conversion with formatting template</p>
 <h5> Examples:</h5>
@@ -195,7 +203,17 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2020-06-30"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Same<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code>
 <h5> Output:</h5>
-<code></code>
+<code>Saturday 04.July.20<br/>
+Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
+Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
+Sat 08/01/20 &nbsp;Time: &nbsp;10:30:00 p.m.<br/>
+शनिवार 04.जुलाई.20<br/>
+<br/>
+Show difference between ISO and adjusted week and year numbers: <br/>
+Week: 2020-01 and 2019-53<br/>
+Week: 2020-27 and 2020-27<br/>
+Week: 2020-53 and 2021-00<br/>
+</code>
 	</div>
 </section>
 

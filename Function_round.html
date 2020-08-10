@@ -108,7 +108,12 @@ rounding intervals is negative or zero</p>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "round ", p[]{0}, " using ", p[]{1}, ": ", round( p[]{0}, p[]{1} ),<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" &nbsp;up: ", round up( p[]{0}, p[]{1} ), " &nbsp;down: ", round down( p[]{0}, p[]{1} ) );</code>
 <h4> Output</h4>
-<code></code>
+<code>round 1.4 using 1: 1 &nbsp;up: 2 &nbsp;down: 1<br/>
+round 1.5 using 1: 2 &nbsp;up: 2 &nbsp;down: 1<br/>
+round -1.5 using 1: -2 &nbsp;up: -2 &nbsp;down: -1<br/>
+round 18 using 10: 20 &nbsp;up: 20 &nbsp;down: 10<br/>
+round 3.14159 using 0.01: 3.14 &nbsp;up: 3.15 &nbsp;down: 3.14<br/>
+</code>
 	</div>
 </section>
 

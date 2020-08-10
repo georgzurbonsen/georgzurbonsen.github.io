@@ -165,7 +165,17 @@ Options are available to include whole words or numbers in the comparison, so "M
  &nbsp; &nbsp; &nbsp;r[] &nbsp;= get differences( "20-Mar-2015", "21-Mar-2015" , c[], d[], spaces);<br/>
  &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 20-Mar-2015, 20-Mar-2016, 1</code>
 <h4> Output</h4>
-<code></code>
+<code>1st string: '', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 0<br/>
+1st string: 'offee', &nbsp; &nbsp;2nd string: 'affè' &nbsp; Result: 1<br/>
+1st string: 'coffee', &nbsp; &nbsp;2nd string: 'caffè' &nbsp; Result: 3<br/>
+1st string: 'of coffee ', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 2<br/>
+1st string: 'tasting of coffee', &nbsp; &nbsp;2nd string: 'taste of caffè' &nbsp; Result: 3<br/>
+1st string: '5', &nbsp; &nbsp;2nd string: '6' &nbsp; Result: 1<br/>
+1st string: '5', &nbsp; &nbsp;2nd string: '6' &nbsp; Result: 1<br/>
+1st string: '2015', &nbsp; &nbsp;2nd string: '2016' &nbsp; Result: 3<br/>
+1st string: '0', &nbsp; &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
+1st string: '20-Mar-2015', &nbsp; &nbsp;2nd string: '21-Mar-2015' &nbsp; Result: 3<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_locate_differences.html">locate differences</a></p>
 	</div>

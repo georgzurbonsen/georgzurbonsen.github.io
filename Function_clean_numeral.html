@@ -122,7 +122,21 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( 1.2E3 ), " and &nbsp;", clean numeral ( '1.2E+03' ) ); // &nbsp;return 1200<br/>
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( "1 2 E - 0 3" ) ); // returns 0.012</code>
 <h4> Output</h4>
-<code></code>
+<code>1234.5 and 1234.5<br/>
+2500 and 2.5<br/>
+-2500<br/>
+-2500, -2500<br/>
+2500 and -2500<br/>
+-1000 and 1000<br/>
+3040500<br/>
+0.123 and 123<br/>
+0 and ''<br/>
+0 and abc<br/>
+<br/>
+Scientific Notations:<br/>
+1200 and &nbsp;1200<br/>
+0.012<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_numeral.html">numeral conversion function</a><br/>
 <a href="Function_smart_numeral.html">smart numeral</a><br/>

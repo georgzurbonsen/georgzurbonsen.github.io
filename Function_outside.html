@@ -153,7 +153,15 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
  &nbsp; &nbsp; &nbsp;echo;<br/>
  &nbsp; &nbsp; &nbsp;echo( outside ( st[], 'taste', ' the' ), " / ", outside exclude( st[], 'taste ', 'the ' ) ); //</code>
 <h4> Output</h4>
-<code></code>
+<code>The taste of coffee! / The coffee!<br/>
+The taste of the coffee! / The taste of the coffee!<br/>
+e of the coffee! / &nbsp;of the coffee!<br/>
+<br/>
+The taste coffee! / The coffee!<br/>
+The taste of the coffee! / The taste of the coffee!<br/>
+<br/>
+The taste the coffee! / The coffee!<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_left.html">left (string function)</a><br/>
 <a href="Function_right.html">right (string function)</a><br/>

@@ -101,7 +101,23 @@ Following approaches are avialable to create structures:
  &nbsp;inspect( leg count[] );<br/>
 </code>
 <h5> Output:</h5>
-<code></code>
+<code>Initialize a structure directly<br/>
+Katze<br/>
+void: No literal provided<br/>
+cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Katze'<br/>
+dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Hund'<br/>
+gnu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Gnu'<br/>
+<br/>
+<br/>
+Initialize with the structure function<br/>
+void: No literal provided<br/>
+bird &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 2 &nbsp;and as literal: "2"<br/>
+dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
+fly &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 6 &nbsp;and as literal: "6"<br/>
+snake &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 0 &nbsp;and as literal: "0"<br/>
+tick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 8 &nbsp;and as literal: "8"<br/>
+<br/>
+</code>
 <h4> Nesting</h4>
 <p>Nesting is supported: Every structure element may be a simple variable, a further structure or array of any size.^
 Since Beyond4P variable structure is a tree with values possible in both root, intermediate and end nodes, the base variables as well as
@@ -124,7 +140,20 @@ Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member N
 <br/>
  &nbsp;inspect( city[] );</code>
 <h5> Output:</h5>
-<code></code>
+<code>Initialize a nested structure containing structure and array<br/>
+1st &nbsp;district = Louvre &nbsp; last district = etc.<br/>
+literal: 'Paris'<br/>
+district &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
+ &nbsp;Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'ignoe 0'<br/>
+ &nbsp;Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Louvre'<br/>
+ &nbsp;Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Bourse'<br/>
+ &nbsp; &nbsp;area &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; numeral: 99 &nbsp;and as literal: "99"<br/>
+ &nbsp; &nbsp;inhabitants &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; numeral: 19500 &nbsp;and as literal: "19500"<br/>
+ &nbsp;Array [ &nbsp; 3] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Temple'<br/>
+ &nbsp;Array [ &nbsp; 4] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Hotel de Ville'<br/>
+ &nbsp;Array [ &nbsp; 5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'etc.'<br/>
+<br/>
+</code>
 <h4> Default Members</h4>
 <p>
 Normally, attempting to access a structure with a non-existing element name will cause an error.  Beyond4P supports default members
@@ -139,7 +168,10 @@ which will be returned in case of no matches.  Assign the default value using a 
  &nbsp;echo( "goat: ", a[goat] );<br/>
 </code>
 <h5> Output:</h5>
-<code></code>
+<code>Demonstrate default values<br/>
+cow : Pferd<br/>
+goat: No translation<br/>
+</code>
 	</div>
 </section>
 

@@ -168,7 +168,23 @@ Add any number of additional parameter set variables.  They will be manipulated 
  &nbsp; &nbsp; &nbsp;echo( "Extraction 2: ", set2[] );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] );</code>
 <h4> Output</h4>
-<code></code>
+<code>{12,'coffees'} / {'taste','of','the',12,'coffees'}<br/>
+{12,'coffees'} / {'taste','of','the',12,'coffees'}<br/>
+<br/>
+{} / {}<br/>
+{'the','taste','of'} / {'the','taste','of','the'}<br/>
+<br/>
+{'of','the',12,'coffees'} / {'taste','of','the',12}<br/>
+{'of','the',12,'coffees'} / {'taste','of','the',12,'coffees'}<br/>
+{'of','the',12} / {'taste','of','the',12,'coffees'}<br/>
+{'the','taste','of','the',12} / {}<br/>
+{} / {}<br/>
+<br/>
+Demonstrate the follower feature: <br/>
+Extraction 1: {'the',12,'coffees'}<br/>
+Extraction 2: {'from',120,'espressos'}<br/>
+Extraction 3: {'von',120,'Tassen Kaffee'}<br/>
+</code>
 <h4> See also</h4>
 <p><a href="Function_left_.html">left (parameter set function)</a><br/>
 <a href="Function_right_.html">right (parameter set function)</a><br/>
