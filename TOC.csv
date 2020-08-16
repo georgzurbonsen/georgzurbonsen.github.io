@@ -185,6 +185,16 @@ OK;Body;4;B 4.7.1.3;Function_table_configure.html;table configure;table configur
 OK;Body;4;B 4.7.1.4;Function_table_clear.html;table clear ...;table clear;;
 OK;Body;4;B 4.7.1.5;Function_table_delete.html;table delete ...;table delete,table delete silently;;
 OK;Body;4;B 4.7.1.6;Function_table_existing.html;table existing;table existing;;
+OK;Body;3;B 4.7.2;Features_basic_table_functions.html;Accessing Table Contents;basic table functions;;
+OK;Body;4;B 4.7.2.1;Function_row.html;row;row;;
+OK;Body;4;B 4.7.2.2;Function_forget_memorized_table_columns.html;forget memorized table columns;forget memorized table columns;;
+OK;Body;3;B 4.7.3;Features_loading_and_saving_tables.html;Loading and Saving Tables;loading and saving tables;;
+OK;Body;4;B 4.7.3.1;Function_table_load.html;table load ...;table load,table load unchanged;;
+OK;Body;4;B 4.7.3.2;Features_Loading_HTML_files.html;Loading HTML files;Loading HTML files;loading HTML files;
+OK;Body;4;B 4.7.3.3;Features_Loading_XML_files.html;Loading XML files;Loading XML files;loading XML files;
+OK;Body;4;B 4.7.3.4;Features_Loading_JSON_files.html;Loading JSON files;Loading JSON files;loading JSON files;
+OK;Body;4;B 4.7.3.5;Function_table_save.html;table save ...;table save,table save with local decimal separator,table save with decimal comma,table save multiple;;
+OK;Body;4;B 4.7.3.6;Features_Saving_JSON_files.html;Saving JSON files;Saving JSON files;;
 OK;Body;2;B 4.8;Features_directory_and_file_system.html;Directory and File System Functions;directory and file system;short error messages on directories and files;
 OK;Body;3;B 4.8.1;Features_basic_directory_and_file_functions.html;Basic Directory and File Functions;basic directory and file functions;;
 OK;Body;4;B 4.8.1.1;Function_directory_existing.html;directory existing, file existing;directory existing,file existing;;

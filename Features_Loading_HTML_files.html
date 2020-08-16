@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Loading HTML files</h3>
+prev  next
+</div>
+
+<section>
+	<div class="nav">
+<ul>
+<li class="navi"><a href="Features_Table_of_Contents.html"><span>1 Table of Contents </span></a></li>
+<li class="navi"><a href="Features_starting.html"><span>2 Starting B4P </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_interactive.html"><span>2.1 Interactive Mode </span></a></li>
+<li class="navi"><a href="Features_licensing.html"><span>2.2 Licensing </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_introduction.html"><span>3 Introduction </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_UNICODE_character_set.html"><span>+ 3.1 UNICODE Character Set </span></a></li>
+<li class="navi"><a href="Features_data_types.html"><span>+ 3.2 Basic Data Types </span></a></li>
+<li class="navi"><a href="Features_variables.html"><span>+ 3.3 Variables </span></a></li>
+<li class="navi"><a href="Features_comments.html"><span>3.4 Comments </span></a></li>
+<li class="navi"><a href="Features_reserved_keywords.html"><span>3.5 Reserved keywords </span></a></li>
+<li class="navi"><a href="Features_path_names.html"><span>3.6 Path and File Names </span></a></li>
+<li class="navi"><a href="Features_Locales.html"><span>3.7 Locales </span></a></li>
+</ul></li>
+<li class="navi"><a href="Features_Function_Library.html"><span>4 Function Library </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_Control_Flow_Functions.html"><span>+ 4.1 Control Flow Functions </span></a></li>
+<li class="navi"><a href="Features_Type_Conversion_Functions.html"><span>+ 4.2 Type Conversion and Formatting Functions </span></a></li>
+<li class="navi"><a href="Features_Mathematics_and_Statistics.html"><span>+ 4.3 Mathematics and Statistics </span></a></li>
+<li class="navi"><a href="Features_string_functions.html"><span>+ 4.4 String Functions </span></a></li>
+<li class="navi"><a href="Features_date_and_time_functions.html"><span>+ 4.5 Date and Time Functions </span></a></li>
+<li class="navi"><a href="Features_parameter_set_functions.html"><span>+ 4.6 Parameter Set Functions </span></a></li>
+<li class="navi"><a href="Features_table_functions.html"><span>4.7 Table Functions </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Features_table_creating_deleting.html"><span>+ 4.7.1 Creating and Deleting Tables </span></a></li>
+<li class="navi"><a href="Features_basic_table_functions.html"><span>+ 4.7.2 Accessing Table Contents </span></a></li>
+<li class="navi"><a href="Features_loading_and_saving_tables.html"><span>4.7.3 Loading and Saving Tables </span></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="Function_table_load.html"><span>4.7.3.1 table load ... </span></a></li>
+<li class="navi"><a href="Features_Loading_HTML_files.html"><span>4.7.3.2 Loading HTML files </span></a></li>
+<li class="navi"><a href="Features_Loading_XML_files.html"><span>4.7.3.3 Loading XML files </span></a></li>
+<li class="navi"><a href="Features_Loading_JSON_files.html"><span>4.7.3.4 Loading JSON files </span></a></li>
+<li class="navi"><a href="Function_table_save.html"><span>4.7.3.5 table save ... </span></a></li>
+<li class="navi"><a href="Features_Saving_JSON_files.html"><span>4.7.3.6 Saving JSON files </span></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
+</ul></li>
+<li class="navi"><a href="Function_print.html"><span> Basic Text Output Functions </span></a></li>
+<li class="navi"><a href="Function_cls.html"><span> Clear screen </span></a></li>
+<li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
+<li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
+<li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+With the procedure <a class="bold_text" href="Function_table_load.html">table load</a>(),
+B4P loads tables defined inside HTML files.  Only the actual contents and without any tags and formatting features will be loaded.
+The table must be in the syntax <br>
+<b> &lt;table&gt;, &lt;tr&gt; </b> optionally <b>&lt;th&gt;</b> and <b>&lt;/th&gt;</b>, <b>&lt;/td&gt;</b> and <b>&lt;/td&gt;</b>, , <b>&lt;/tr&gt;</b>.
+Script files and nested tables inside tables will be ignored.  In order to load a specific table in the HTML file, use the 4th function parameter in the function <a class="bold_text" href="Function_table_load.html">table load</a>() to
+specify a text pattern.
+
+
+</p><table class="bold_column_1 noframe" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><td>XML Level       </td><td> Nesting level.  Begins with 1</td></tr>
+<tr><td>XML Tag         </td><td> Applied tag.  E.g. <b>&lt;Country&gt;</b>; puts "Country" into a new row at column "XML Tag".</td></tr>
+<tr><td>XML Usage       </td><td> <b>&lt;Country&gt;</b> specifies "Start", <br><b>&lt;/Country&gt;</b> specifies "End", and<br><b>&lt;Country/&gt;</b> specifies "Empty".</td></tr>
+<tr><td>XML Contents    </td><td> Payload contents following the tag.  E.g. <b>&lt;Country&gt;UK&lt;Country/&gt;</b> specifies "UK". Note: All ine breaks are included in the contents.</td></tr>
+<tr><td>XML Attributes  </td><td> Lists all attribute names (but not the values) referenced in the XML tag</td></tr>
+<tr><td>Additional columns: <br>Atribute names </td><td> The table gets additional columns with header names corresponding to the identified attribute names.  Whenever attributes are specified in the tags, then the attribute values are listed below these headers.</td></tr>
+</table><p>
+</p>
+<h5> Examples:</h5>
+<code> &nbsp;include( Support Library );<br/>
+<br/>
+ &nbsp;echo(new line, "Look up some Roman emperors:" );<br/>
+ &nbsp;file download overwrite( "en.wikipedia.org/wiki/List_of_Roman_emperors", Emperors.html );<br/>
+ &nbsp;table load( emperors, Emperors.html, HTML, 'id="The_Principate"' );<br/>
+ &nbsp;table keep columns ( emperors, Name ); // Otherwise the table is too wide<br/>
+ &nbsp;table list( emperors );<br/>
+ &nbsp;file delete silently( Emperors.html );</code>
+<h5> Output:</h5>
+<code>Look up some Roman emperors:<br/>
+Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Augustus Imperator Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Tiberius Tiberius Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+Caligula (formally Gaius) Gaius Caesar Augustus Germanicus &nbsp;<br/>
+Claudius Tiberius Claudius Caesar Augustus Germanicus &nbsp; &nbsp; &nbsp; <br/>
+Nero Nero Claudius Caesar Augustus Germanicus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+</code>
+<h4> See also</h4>
+<p><a href="Function_table_load.html">table load</a><br/>
+<a href="Features_Loading_XML_files.html">Loading XML files</a><br/>
+<a href="Features_Loading_JSON_files.html">Loading JSON files</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+

@@ -8,8 +8,12 @@
 </head>
 
 
+<div class="wrapper">
+
 <div class="logo">
+<a href="index.html">
 <img src="Images/Beyond4P_Logo.jpg" alt="Beyond4P">
+</a>
 </div>
 
 <div class="header">
@@ -77,14 +81,14 @@ THe biggest drawback is the ignorance towards country settings.  CSV generated f
 The files can be loaded with and without specifying the list separators.  If no list separator is specified, then Beyond4P tries to automatically detect the
 applicable separators by checking for commas, semicolons and tabs.
 
-Regarding decimal symbols, the standard function <span class="red_text">table load</span>() will check for numerals in text and CSV files (but not HMTL files and likes) with decimal
-commas and convert them to decimal points.  The new function <span class="red_text">table load unchanged</span>() will not do the conversion.  You may need this if you need to
+Regarding decimal symbols, the standard function <a class="bold_text" href="Function_table_load.html">table load</a>() will check for numerals in text and CSV files (but not HMTL files and likes) with decimal
+commas and convert them to decimal points.  The new function <a class="bold_text" href="Function_table_load.html">table load unchanged</a>() will not do the conversion.  You may need this if you need to
 discriminate between actual numbers and other numeric data separated with commas but not considered as regular numeric data.
 <br/>Consider using the <a class="bold_text" href="Function_clean_numeral.html">clean numeral</a>()
 function to prepare numbers containing commas (and possibly more, such as thousand separators, currency symbols, etc.).
-<br/>Consider using <span class="red_text">table save with local decimal separator</span>() to save CSV files using the decimal separator symbol applicable with your country settings (comma or point).
-<br/>Consider using <span class="red_text">table save with decimal comma</span>() to make sure all numbers use decimal commas.
-<br>The original function <span class="red_text">table save</span>() saves numbers with decimal points, regardless of the applicable country settings.
+<br/>Consider using <a class="bold_text" href="Function_table_save.html">table save with local decimal separator</a>() to save CSV files using the decimal separator symbol applicable with your country settings (comma or point).
+<br/>Consider using <a class="bold_text" href="Function_table_save.html">table save with decimal comma</a>() to make sure all numbers use decimal commas.
+<br>The original function <a class="bold_text" href="Function_table_save.html">table save</a>() saves numbers with decimal points, regardless of the applicable country settings.
 
 <br><br>
 
@@ -99,6 +103,7 @@ and remove redundant white space symbos with the <a class="bold_text" href="Func
 Copyright (C) 2007 - 2020 Georg zur Bonsen
 </div>
 
+</div>
 
 </html>	
 
