@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>replace, replace all</code>
+<div class="white_background_color" ><code>replace, replace all</code></div>
 <h4> Description</h4>
 <p>
 The function <b>replace</b> replaces the first occurrence of the specified old contents by new contents.<br>
@@ -127,7 +128,7 @@ If provided as a parameter set: Number of elements must either be equal to the n
 <h4> Exceptions</h4>
 <p>3rd parameter contains different number of elements than 2nd parameter, and is not 1</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;st[] = "the house, the mouse, and the spouse";<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "the house, the mouse, and the spouse";<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( replace &nbsp; &nbsp; ( st[], the, a ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( replace all ( st[], the, a ) );<br/>
@@ -141,16 +142,16 @@ If provided as a parameter set: Number of elements must either be equal to the n
  &nbsp; &nbsp; &nbsp;echo( replace all ( st[], { spouse, mouse, house }, { one } ) ); // Replace all by 'home'<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( replace &nbsp; &nbsp;( "Café Café Café", Café, Caffè, 1 ) ); // Skip first 'Café'<br/>
- &nbsp; &nbsp; &nbsp;echo( replace all( "Café Café Café", Café, Caffè, 1 ) ); // Skip first 'Café'</code>
+ &nbsp; &nbsp; &nbsp;echo( replace all( "Café Café Café", Café, Caffè, 1 ) ); // Skip first 'Café'</code></div>
 <h4> Output</h4>
-<code>a house, the mouse, and the spouse<br/>
+<div class="output_background_color" ><code>a house, the mouse, and the spouse<br/>
 a house, a mouse, and a spouse<br/>
 THE HOUSE, the MOUSE, and the SPOUSE<br/>
 THE HOUSE, THE MOUSE, and THE SPOUSE<br/>
 the one, the one, and the one<br/>
 Café Caffè Café<br/>
 Café Caffè Caffè<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_substitute.html">substitute</a><br/>
 <a href="Function_substitute.html">substitute all</a></p>

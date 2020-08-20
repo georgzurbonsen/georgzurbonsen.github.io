@@ -70,15 +70,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>break case, continue case, continue with next case, break loop, continue loop, break, continue</code>
+<div class="white_background_color" ><code>break case, continue case, continue with next case, break loop, continue loop, break, continue</code></div>
 <h4> Synopsis</h4>
-<code>break...; <br/>
-continue... ;</code>
+<div class="white_background_color" ><code>break...; <br/>
+continue... ;</code></div>
 <h4> Description</h4>
 <p>The influence the control flow inside loops (including <b>do</b>, <b>while</b>, <b>until</b>, <b>for</b>, <b>for all .. </b>,
 <b>table process ...</b> as follows:<br/>
@@ -97,7 +98,7 @@ continue... ;</code>
 <i>Partial table specifications</i> referring to current table name and row number is enabled for the subsequent statement(s).</p>
 <h4> Parameter count: <span class="black_text">0</span></h4>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo("Try 'break' and 'continue with next case':'");<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("Try 'break' and 'continue with next case':'");<br/>
  &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 4, a[]++)<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print ( " &nbsp;",a[], ": " );<br/>
@@ -126,9 +127,9 @@ continue... ;</code>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[] = 2) continue;<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[] = 3) break;<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo(" &nbsp;Loop end ", a[] );<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>Try 'break' and 'continue with next case':'<br/>
+<div class="output_background_color" ><code>Try 'break' and 'continue with next case':'<br/>
  &nbsp;1: = 1; &nbsp; = 2; &nbsp; <br/>
  &nbsp;2: = 2; &nbsp; <br/>
  &nbsp;3: else; &nbsp;2nd else; &nbsp;<br/>
@@ -138,7 +139,7 @@ Break and continue loops<br/>
  &nbsp;Loop end 1<br/>
  &nbsp;Loop begin 2<br/>
  &nbsp;Loop begin 3<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_switch.html">switch</a><br/>
 <a href="Function_switch.html">check</a><br/>

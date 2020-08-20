@@ -56,18 +56,19 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>print, print line, echo, compose, compose line</code>
+<div class="white_background_color" ><code>print, print line, echo, compose, compose line</code></div>
 <h4> Synopsis</h4>
-<code>print (...)<br/>
+<div class="white_background_color" ><code>print (...)<br/>
 print line (...)<br/>
 echo (...)<br/>
 compose (...)<br/>
-compose line (...)</code>
+compose line (...)</code></div>
 <h4> Description</h4>
 <p><b>print</b> outputs contents to the screen without next line and provides them as return value, too.<br/>
 <b>print line</b>: works like <b>print</b>, but adds new line at the end.    <br/>
@@ -97,20 +98,20 @@ The values provided through the parameters will be converted to literals before 
 <h4> Exceptions</h4>
 <p>none</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;print('Hello '); // Without line break<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;print('Hello '); // Without line break<br/>
  &nbsp; &nbsp; &nbsp;echo(World); // With line break<br/>
  &nbsp; &nbsp; &nbsp;echo("My name is ", system info[user name] );<br/>
  &nbsp; &nbsp; &nbsp;echo( { This, is, a, parameter, set } ); // Output a parameter set<br/>
  &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp; &nbsp;// While echo(...) suppresses indirect parameter passing, the print... functions<br/>
  &nbsp; &nbsp; &nbsp;// treat the parameter set provided as 1st parameter as actual list of function parameters.<br/>
- &nbsp; &nbsp; &nbsp;print line( { This, is, a, parameter, set } );</code>
+ &nbsp; &nbsp; &nbsp;print line( { This, is, a, parameter, set } );</code></div>
 <h4> Output</h4>
-<code>Hello World<br/>
+<div class="output_background_color" ><code>Hello World<br/>
 My name is Zur Bonsen Georg<br/>
 {'This','is','a','parameter','set'}<br/>
 Thisisaparameterset<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

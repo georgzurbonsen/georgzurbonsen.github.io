@@ -78,6 +78,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -130,7 +131,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples</h4>
 <p>A few loop show the combination of different values.</p>
 <h5> Examples:</h5>
-<code> &nbsp; &nbsp; &nbsp;numbers [] = { -1234, -0.29, 123456.78, 0 };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;numbers [] = { -1234, -0.29, 123456.78, 0 };<br/>
  &nbsp; &nbsp; &nbsp;patterns[] = { '*', 'EUR_-*', '0', '+ 0.0', '0000.0000', '?', '?.?', '#.#', '####.####', '0.####', '_(0.00)' };<br/>
  &nbsp; &nbsp; &nbsp;3rd p[] = { "", india, german, en_us, french, de_ch };<br/>
  &nbsp; &nbsp; &nbsp;4th p[] = { "", "", &nbsp; &nbsp; "+", &nbsp; &nbsp;"", &nbsp; &nbsp; &nbsp;"", &nbsp; &nbsp; "" &nbsp; &nbsp; };<br/>
@@ -152,9 +153,9 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
  &nbsp; &nbsp; &nbsp;}<br/>
  &nbsp; &nbsp; &nbsp;echo( "Permille: ", literal( 0.1234, '0.0 &amp;permil;') );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Directory assistance (USA): ", literal( 5551212, '"Dial 1-"000"-"0000') );</code>
+ &nbsp; &nbsp; &nbsp;echo( "Directory assistance (USA): ", literal( 5551212, '"Dial 1-"000"-"0000') );</code></div>
 <h5> Output:</h5>
-<code>'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
+<div class="output_background_color" ><code>'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
 'EUR-1234', 'EUR-1,234', 'EUR-1.234', 'EUR-1,234', 'EUR-1 234', 'EUR-1'234', <br/>
 '-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
 '- 1234.0', '- 1,234.0', '- 1.234,0', '- 1,234.0', '- 1 234.0', '- 1'234.0', <br/>
@@ -204,7 +205,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <br/>
 Permille: 123.4 ‰<br/>
 Directory assistance (USA): Dial 1-555-1212<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

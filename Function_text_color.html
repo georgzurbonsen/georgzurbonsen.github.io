@@ -56,15 +56,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>text color, background colors</code>
+<div class="white_background_color" ><code>text color, background colors</code></div>
 <h4> Synopsis</h4>
-<code>text color ( ... );<br/>
-background color ( ... );</code>
+<div class="white_background_color" ><code>text color ( ... );<br/>
+background color ( ... );</code></div>
 <h4> Description</h4>
 <p>Standard and portable approach to set the text and background colors on the console.
 This function memorizes one previous text and background color (and not more) and can be recalled with color name 'previous'.</p>
@@ -93,15 +94,15 @@ LINUX / MACOS: Terminal chosen to use must support escape sequences.  Scrolling 
 <h4> Exceptions</h4>
 <p>none</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp;echo( Default color );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp;echo( Default color );<br/>
  &nbsp; &nbsp;text color( red ); // Will not show up in red in this documentation<br/>
  &nbsp; &nbsp;echo( Red text );<br/>
  &nbsp; &nbsp;text color; // Back to default color<br/>
- &nbsp; &nbsp;echo( Back to default color );</code>
+ &nbsp; &nbsp;echo( Back to default color );</code></div>
 <h4> Output</h4>
-<code> &nbsp; &nbsp;Default color<br/>
+<div class="output_background_color" ><code> &nbsp; &nbsp;Default color<br/>
  &nbsp; &nbsp;Red text<br/>
- &nbsp; &nbsp;Back to default color</code>
+ &nbsp; &nbsp;Back to default color</code></div>
 <h4> Notes</h4>
 <p>Highly recommend to set default color before the app is finishing.</p>
 	</div>

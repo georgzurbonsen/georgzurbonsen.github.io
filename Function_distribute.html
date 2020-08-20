@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>distribute, distribute advance</code>
+<div class="white_background_color" ><code>distribute, distribute advance</code></div>
 <h4> Description</h4>
 <p>
 This function distributes a value over a time line of intervals such as days, weeks, months, quarters and years.  Either a fixed total value is distributed
@@ -218,13 +219,13 @@ Example: "1900-07-01", "1900-07-21" declares the first 3 weeks of every July as 
 <h4> Exceptions</h4>
 <p>Division by zero error happens if WACC equals to the perpetual growth rate</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;distribute( #days, 0, '06.01.2018', '25.01.2018', days, calendar, '01.01.2018','31.01.2018', date line[], distributed values[] );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;distribute( #days, 0, '06.01.2018', '25.01.2018', days, calendar, '01.01.2018','31.01.2018', date line[], distributed values[] );<br/>
  &nbsp; &nbsp; &nbsp;echo( date line[]{0},", ", date line[]{1},", ", date line[]{2},", ", date line[]{date line[]{}-1} );<br/>
- &nbsp; &nbsp; &nbsp;echo( join( distributed values[], ", " ) );</code>
+ &nbsp; &nbsp; &nbsp;echo( join( distributed values[], ", " ) );</code></div>
 <h4> Output</h4>
-<code>2018-01-01, 2018-01-02, 2018-01-03, 2018-01-31<br/>
+<div class="output_background_color" ><code>2018-01-01, 2018-01-02, 2018-01-03, 2018-01-31<br/>
 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">table distribute</span></p>
 	</div>

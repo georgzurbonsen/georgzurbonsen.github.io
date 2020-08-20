@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>vertical</code>
+<div class="white_background_color" ><code>vertical</code></div>
 <h4> Description</h4>
 <p>
 Converts a vector (parameter set) or (horizontal 1D) matrix (nested parameter set) to a vertical 1D-matrix.
@@ -99,16 +100,16 @@ The matrices may contain contents of all data types and not just numerals.
 <td><b>Vertical matrix</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( vertical ( {1,2,abc } ) ); &nbsp; &nbsp; // returns { {1},{2},{abc} }<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( vertical ( {1,2,abc } ) ); &nbsp; &nbsp; // returns { {1},{2},{abc} }<br/>
  &nbsp; &nbsp; &nbsp;echo( vertical( {{1},{2},{abc}} ) ); // Same (is already a vertical matrix)<br/>
  &nbsp; &nbsp; &nbsp;echo( vertical( {{1,2,abc}} ) ); &nbsp; &nbsp; // Same (horizontal to vertical matrix)<br/>
- &nbsp; &nbsp; &nbsp;echo( vertical( { } ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // returns { } &nbsp;(empty set)</code>
+ &nbsp; &nbsp; &nbsp;echo( vertical( { } ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // returns { } &nbsp;(empty set)</code></div>
 <h4> Output</h4>
-<code>{{1},{2},{'abc'}}<br/>
+<div class="output_background_color" ><code>{{1},{2},{'abc'}}<br/>
 {{1},{2},{'abc'}}<br/>
 {{1},{2},{'abc'}}<br/>
 {}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_horizontal.html">horizontal</a><br/>
 <a href="Function_flat.html">flat</a><br/>

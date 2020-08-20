@@ -54,16 +54,16 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
-<li class="navi"><a href="Features_Searching_tables.html"><span>4.7.6 Searching Tables </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="Function_table_search.html"><span>4.7.6.1 table search ... </span></a></li>
-<li class="navi"><a href="Function_table_search_row.html"><span>4.7.6.2 table search row </span></a></li>
-<li class="navi"><a href="Function_table_selected_rows.html"><span>4.7.6.3 table selected rows </span></a></li>
-<li class="navi"><a href="Function_table_selected_columns.html"><span>4.7.6.4 table selected columns/headers ... </span></a></li>
-<li class="navi"><a href="Function_table_search_header_row.html"><span>4.7.6.5 table search header row </span></a></li>
-<li class="navi"><a href="Function_table_lift_header_row.html"><span>4.7.6.6 table lift ... </span></a></li>
+<li class="navi"><a href="Function_table_check_header.html"><span>4.7.5.1 table check header </span></a></li>
+<li class="navi"><a href="Function_table_column_number.html"><span>4.7.5.2 table column number </span></a></li>
+<li class="navi"><a href="Function_table_check_headers.html"><span>4.7.5.3 table check headers ... </span></a></li>
+<li class="navi"><a href="Function_table_rename_headers.html"><span>4.7.5.4 table rename ... headers </span></a></li>
+<li class="navi"><a href="Function_table_correct_headers.html"><span>4.7.5.5 table correct headers ... </span></a></li>
+<li class="navi"><a href="Function_table_lift_header_row.html"><span>4.7.5.6 table lift ... </span></a></li>
 </ul></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
 </ul></li>
@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table lift header row, table lift headers, table lift contents</code>
+<div class="white_background_color" ><code>table lift header row, table lift headers, table lift contents</code></div>
 <h4> Description</h4>
 <p>
 This function is particularly useful for imported tables where the headers are not necessarily be located in the top row but somewhere else.
@@ -133,7 +134,7 @@ in the rows below until the criteria are met.
 <td><b>Row number where header row has been found</b><br/><p>-1 is returned if no header row has been found</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;include( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
  &nbsp;line[]= "______________________________________________________________________";<br/>
 <br/>
  &nbsp;table initialize( 2 tables,<br/>
@@ -189,9 +190,9 @@ in the rows below until the criteria are met.
  &nbsp;echo(line[]);<br/>
  &nbsp;table list( table );<br/>
  &nbsp;echo(line[], new line);<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>Original table:<br/>
+<div class="output_background_color" ><code>Original table:<br/>
 ______________________________________________________________________<br/>
 Created by &nbsp;Nick &nbsp; &nbsp; &nbsp; Miller &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Last Update &nbsp;31.12.2019 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Tennis &nbsp; &nbsp; &nbsp;Players &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Squash &nbsp; &nbsp; &nbsp; Players &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -254,7 +255,7 @@ Dominique &nbsp; Miller &nbsp; &nbsp; Trenton &nbsp; &nbsp; &nbsp; &nbsp; Miller
 <br/>
 ______________________________________________________________________<br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_search_header_row.html">table search header row</a></p>
 	</div>

@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>type, typd detailed</code>
+<div class="white_background_color" ><code>type, typd detailed</code></div>
 <h4> Description</h4>
 <p>
 The function <b>type</b> returns one of the following values:
@@ -108,7 +109,7 @@ The function <b>type detailed</b> also distinguishes between following values:
 <td><b>Type of value</b><br/><p>See main function desription</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;a[num 1] = 1;<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[num 1] = 1;<br/>
  &nbsp; &nbsp; &nbsp;a[num 2] = a[num 1] + 0;<br/>
  &nbsp; &nbsp; &nbsp;a[lit 1] = An unquoted literal;<br/>
  &nbsp; &nbsp; &nbsp;a[lit 2] = 'A softquoted literal';<br/>
@@ -122,10 +123,10 @@ The function <b>type detailed</b> also distinguishes between following values:
  &nbsp; &nbsp; &nbsp;for all variables( a[], value[], counter[], name[] )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( name[], ": ", value[], " --&gt; ", type( value[] ), ", ", type detailed( value[] ) );<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>bool: true --&gt; boolean, boolean<br/>
-date: 2020-08-19 --&gt; date, plain date<br/>
+<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br/>
+date: 2020-08-20 --&gt; date, plain date<br/>
 lit 1: An unquoted literal --&gt; literal, literal<br/>
 lit 2: A softquoted literal --&gt; literal, 'literal'<br/>
 lit 3: A quoted literal --&gt; literal, "literal"<br/>
@@ -134,7 +135,7 @@ num 1: 1 --&gt; numeral, numeral<br/>
 num 2: 1 --&gt; numeral, plain numeral<br/>
 pset: {1,2,3} --&gt; parameter set, parameter set<br/>
 void: null --&gt; literal, literal<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

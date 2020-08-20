@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>diagonal</code>
+<div class="white_background_color" ><code>diagonal</code></div>
 <h4> Description</h4>
 <p>
 This function converts 1-dimensional vectors (i.e. parameter sets containing values) into 2-dimensional matrices with values
@@ -101,12 +102,12 @@ arranged diagonally and all remaining values are zero or a different value if sp
 <td><b>Output matrix</b><br/><p>Contains values across the diagonal</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( diagonal( { 5:1 } ) ); // 5x5 identity matrix<br/>
- &nbsp; &nbsp; &nbsp;echo( diagonal( { a, 1, true, 2 } ) );</code>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( diagonal( { 5:1 } ) ); // 5x5 identity matrix<br/>
+ &nbsp; &nbsp; &nbsp;echo( diagonal( { a, 1, true, 2 } ) );</code></div>
 <h4> Output</h4>
-<code>{{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}}<br/>
+<div class="output_background_color" ><code>{{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}}<br/>
 {{'a',0,0,0},{0,1,0,0},{0,0,true,0},{0,0,0,2}}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_vertical.html">vertical</a><br/>
 <a href="Function_horizontal.html">horizontal</a><br/>

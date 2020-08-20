@@ -17,7 +17,7 @@
 </div>
 
 <div class="header">
-<h3>table column number</h3>
+<h3>table correct headers ...</h3>
 prev  next
 </div>
 
@@ -78,16 +78,25 @@ prev  next
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>table column number</code></div>
+<div class="white_background_color" ><code>table correct headers, table correct headers ignore case</code></div>
 <h4> Description</h4>
 <p>
-This function checks if a header with the specified header name is existing.
-If the header is found, then the column number will be returned.  Otherwise, -1 is returned.
+This function helps to correct or align column header names and is particularly useful for tables originating from different sources where
+wordings or spellings of header names show slight differences and you want to harmonize them easily be correcting them.  The functions described
+here differ from <a class="bold_text" href="Function_table_rename_headers.html">table rename headers</a>() in the 2nd parameter: Instead of specifying specific columns, comparison patterns are used to check
+all headers from left to right until the first match is found.
+<br><br>
+The function name <b>table correct headers ignore case</b> ignore case sensitivity while comparing headers with comparison patterns provided.<br>
+No exceptions are asserted if a comparison of a matching pattern with the table headers results in no matches.
+
+<br><br>
+<u>Note:</u> This function supports <span class="red_text">wildcard symbols</span> if the literals used for comparison patterns are softquoted, i.e. using single quotation marks.
+
 </p>
-<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
+<h4> Parameter count: <span class="black_text">3</span></h4>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
@@ -95,33 +104,48 @@ If the header is found, then the column number will be returned.  Otherwise, -1 
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>table column</td>
-<td><b>Header name or column number</b><br/><p>Specify exactly one table header name or column number.</p>
+<td>parameter set or literal</td>
+<td><b>Existing header name(s) or column number(s)</b><br/><p>Specify the comparison patterns.<br>
+</p><ul class="bullets"><li class="bullets">Unquoted or quoted literals as elements in parameter set: True comparison of contents without wildcards, e.g. { Name, "Street" }<br></li>
+<li class="bullets">Softquoted literals in parameter set: You can use <span class="red_text">wildcard symbols</span>, e.g. { '* Name', 'City,Town' }<br></li>
+<li class="bullets">One quoted literal specifies just one item to compare, e.g. "Last Name"<br></li>
+<li class="bullets">One softquoted literal converts the contents into a parameter set and treats contents as unquoted resp. quoted literals.</li></p>
+</td></tr>
+<tr><td>3<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>New header name(s)</b><br/><p>List the new header names corresponding to the existing ones specified in the previous function parameter.<br>
+Use literal to specify a single table, or a parameter set or softquoted literal (single quotation marks) with names separated by comma to specify multiple columns.</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Column number</b><br/><p>Note: 1st column begins with 0. -1 is returned if the column cannot be found.</p></td></tr>
+<td><b>Number of corrections accomplished</b><br/><p></p></td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>Table not found</p>
+<p>Table not found<br/>
+number of comparison pattersn and new headers is inconsistent</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
- &nbsp;table initialize ( table 1,<br/>
- &nbsp;{ { Last Name, First Name, Phone No, Age }, { Larsson, Lara, "1-212-555-1212", 28 } } );<br/>
+ &nbsp;table initialize ( table, { { first &nbsp;name, Lastname, Phone No, Age }, { Jim, Archer, "1-212-555-1212", 28 } } );<br/>
 <br/>
- &nbsp;echo( table column number ( table 1, Phone No ) );<br/>
- &nbsp;echo( table column number ( table 1, Gender ) ); // Returns -1<br/>
-</code></div>
+ &nbsp;count[] = table correct headers ignore case( table, {'Last*name', 'First*name', 'Family*' },<br/>
+ &nbsp; &nbsp; &nbsp;{ Last Name, First Name, Last Name } );<br/>
+<br/>
+ &nbsp;table list ( table );<br/>
+ &nbsp;echo;<br/>
+ &nbsp;echo("Number of headers corrected: ", count[]);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2<br/>
--1<br/>
+<div class="output_background_color" ><code>First Name &nbsp;Last Name &nbsp;Phone No &nbsp; &nbsp; &nbsp; &nbsp;Age &nbsp;<br/>
+Jim &nbsp; &nbsp; &nbsp; &nbsp; Archer &nbsp; &nbsp; 1-212-555-1212 &nbsp;28 &nbsp; <br/>
+<br/>
+<br/>
+Number of headers corrected: 2<br/>
 </code></div>
 <h4> See also</h4>
-<p><a href="Function_table_check_header.html">table check header</a></p>
+<p><a href="Function_table_rename_headers.html">table rename existing headers</a></p>
 	</div>
 </section>
 

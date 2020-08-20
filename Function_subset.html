@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>subset, subset ignore case, subset ignore blanks, subset ignore both, subset recursive, subset recursive ignore case, subset recursive ignore blanks, subset recursive ignore both</code>
+<div class="white_background_color" ><code>subset, subset ignore case, subset ignore blanks, subset ignore both, subset recursive, subset recursive ignore case, subset recursive ignore blanks, subset recursive ignore both</code></div>
 <h4> Description</h4>
 <p>This function checks whether the parameter set in the 2nd function parameter is a subset of the 1st parameter set.<br>
 The <b>recursive</b> will also include the nested parameter sets into subset checking, e.g. subset( {{a,b,c},c,d}, {{a,b},d} ) is true.  Otherwise, {a,b,c} and {a,b} ares treated as different elements.
@@ -111,7 +112,7 @@ If provided as a unquoted or softquoted literal: The comma-separated substrings 
 <td><b>2nd parameter set is a subset of 1st parameter set</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;a[] = { a, b, c, {d, e}, f, {} };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[] = { a, b, c, {d, e}, f, {} };<br/>
  &nbsp; &nbsp; &nbsp;echo ( subset( a[], {} ) ); // True (Empty set is always subset)<br/>
  &nbsp; &nbsp; &nbsp;print( subset ( a[], {A} ), ", " ); // False (A is not in the set)<br/>
  &nbsp; &nbsp; &nbsp;echo ( subset ignore case( a[], {B,A} ) ); // True (cases ignored)<br/>
@@ -119,12 +120,12 @@ If provided as a unquoted or softquoted literal: The comma-separated substrings 
  &nbsp; &nbsp; &nbsp;print( subset( a[], {c,{},f} ), ", " ); // True (Empty set is always subset)<br/>
  &nbsp; &nbsp; &nbsp;print( subset( a[], {f,{d,e}} ), ", " ); // True (Empty set is always subset)<br/>
  &nbsp; &nbsp; &nbsp;print( subset( a[], {f,{e,d}} ), ", " ); // False. {e,d} not equal to {d,e}<br/>
- &nbsp; &nbsp; &nbsp;echo ( subset recursive( a[], {{d,e}} ) ); // True. {e,d} not equal to {d,e}</code>
+ &nbsp; &nbsp; &nbsp;echo ( subset recursive( a[], {{d,e}} ) ); // True. {e,d} not equal to {d,e}</code></div>
 <h4> Output</h4>
-<code>true<br/>
+<div class="output_background_color" ><code>true<br/>
 false, true<br/>
 true, true, false, true<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

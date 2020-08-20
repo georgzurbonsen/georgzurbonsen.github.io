@@ -71,14 +71,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>function existing, user function existing</code>
+<div class="white_background_color" ><code>function existing, user function existing</code></div>
 <h4> Synopsis</h4>
-<code>... function existing ( function name )</code>
+<div class="white_background_color" ><code>... function existing ( function name )</code></div>
 <h4> Description</h4>
 <p>
 Checks if the procedure function is existing.  <b>user function existing</b> returns <b>true</b> only if the specified function name refers to an existing user procedure or function.
@@ -99,7 +100,7 @@ Checks if the procedure function is existing.  <b>user function existing</b> ret
 <td><b>returned value</b><br/><p>true if procedure or function (or user procedure or function) is existing</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;define procedure (foo) { echo( Fool ); };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define procedure (foo) { echo( Fool ); };<br/>
  &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp; &nbsp;echo("Test if existing:");<br/>
  &nbsp; &nbsp; &nbsp;echo(" &nbsp;foo : ", function existing( foo )); // user defined<br/>
@@ -108,9 +109,9 @@ Checks if the procedure function is existing.  <b>user function existing</b> ret
  &nbsp; &nbsp; &nbsp;echo(new line, "Test if user function:");<br/>
  &nbsp; &nbsp; &nbsp;echo(" &nbsp;foo : ", user function existing( foo )); // user defined<br/>
  &nbsp; &nbsp; &nbsp;echo(" &nbsp;bar : ", user function existing( bar )); // not existing<br/>
- &nbsp; &nbsp; &nbsp;echo(" &nbsp;abs : ", user function existing( abs )); // existing</code>
+ &nbsp; &nbsp; &nbsp;echo(" &nbsp;abs : ", user function existing( abs )); // existing</code></div>
 <h4> Output</h4>
-<code>Test if existing:<br/>
+<div class="output_background_color" ><code>Test if existing:<br/>
  &nbsp;foo : true<br/>
  &nbsp;bar : false<br/>
  &nbsp;abs : true<br/>
@@ -119,7 +120,7 @@ Test if user function:<br/>
  &nbsp;foo : true<br/>
  &nbsp;bar : false<br/>
  &nbsp;abs : false<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_define_additional_procedure.html">additional function names</a></p>
 	</div>

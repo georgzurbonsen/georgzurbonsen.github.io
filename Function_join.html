@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>join, join ignore blanks, join unique, join unique ignore blanks</code>
+<div class="white_background_color" ><code>join, join ignore blanks, join unique, join unique ignore blanks</code></div>
 <h4> Description</h4>
 <p>
 This function converts the contents of a parameter set into a string where the opening string (e.g. an opening bracket),
@@ -124,7 +125,7 @@ If this function is called with 3 or more parameters, then this value is used as
 <td><b>Composed string</b><br/><p>      Contains all parameter set elements with the specified opening, separator and closing strings.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code><br/>
+<div class="code_background_color" ><code><br/>
  &nbsp; &nbsp; &nbsp;echo( join( {1,'',2,' 3 ',4} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Returns: 12 3 4<br/>
  &nbsp; &nbsp; &nbsp;echo( join( {1,'',2,' 3 ',4}, ', ' ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Returns: 1, , 2, &nbsp;3 , 4<br/>
  &nbsp; &nbsp; &nbsp;echo( join( {1,'',2,' 3 ',4}, '(',', ',')' ) ); &nbsp; &nbsp; // Returns: (1, , 2, &nbsp;3 , 4)<br/>
@@ -133,9 +134,9 @@ If this function is called with 3 or more parameters, then this value is used as
  &nbsp; &nbsp; &nbsp;echo( join ( { }, '(',', ',')' ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Returns blank literal<br/>
  &nbsp; &nbsp; &nbsp;echo( join( { a,b,c,a,b,c}, "," ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// a,b,c,a,b,c<br/>
  &nbsp; &nbsp; &nbsp;echo( join unique( { a,b,c,a,b,c}, "," ) ); &nbsp; &nbsp; &nbsp; &nbsp; // a,b,c<br/>
- &nbsp; &nbsp; &nbsp;echo( join( { a,b,{c,d},e }, '[', '; ', ']' ) ); &nbsp; &nbsp;// [a; b; [c; d]; e] (nested sets)</code>
+ &nbsp; &nbsp; &nbsp;echo( join( { a,b,{c,d},e }, '[', '; ', ']' ) ); &nbsp; &nbsp;// [a; b; [c; d]; e] (nested sets)</code></div>
 <h4> Output</h4>
-<code>12 3 4<br/>
+<div class="output_background_color" ><code>12 3 4<br/>
 1, , 2, &nbsp;3 , 4<br/>
 (1, , 2, &nbsp;3 , 4)<br/>
 (1, 2, &nbsp;3 , 4)<br/>
@@ -144,7 +145,7 @@ If this function is called with 3 or more parameters, then this value is used as
 a,b,c,a,b,c<br/>
 a,b,c<br/>
 [a; b; [c; d]; e]<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_literal.html">literal conversion functions</a></p>
 	</div>

@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>resolve path name, resolve directory name, resolve file name</code>
+<div class="white_background_color" ><code>resolve path name, resolve directory name, resolve file name</code></div>
 <h4> Description</h4>
 <p>
 This function resolves specified directory path and file names (containing <span class="red_text">wildcard</span> symbols in various directory and/or file names) to existing path and file names where<br>
@@ -112,15 +113,15 @@ directores in the B4P process, too.  Reason: Operating System commands executed 
 <td><b>Fully resolveld path name</b><br/><p>All __wildcards__ have been resolved.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( resolve path name( "C:&#92;Program*&#92;*&#92;*4P.exe" ) ); // Look for B4p Program<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( resolve path name( "C:&#92;Program*&#92;*&#92;*4P.exe" ) ); // Look for B4p Program<br/>
  &nbsp; &nbsp; &nbsp;echo( resolve path name( "~/" ) ); &nbsp; &nbsp;// Your home directory<br/>
  &nbsp; &nbsp; &nbsp;echo( resolve path name( "~/.." ) ); &nbsp;// Parent directory of home directory<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>C:&#92;Program Files&#92;B4P&#92;B4P.exe<br/>
+<div class="output_background_color" ><code>C:&#92;Program Files&#92;B4P&#92;B4P.exe<br/>
 C:&#92;Users&#92;Zur Bonsen Georg&#92;<br/>
 C:&#92;Users&#92;<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_search_files.html">search files</a><br/>
 <a href="Function_directory_listing.html">directory listing</a></p>

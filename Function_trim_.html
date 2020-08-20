@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>trim </code>
+<div class="white_background_color" ><code>trim </code></div>
 <h4> Description</h4>
 <p>
 This function removes all duplicate elements (multiple element with same value or contents) so every element inside
@@ -101,7 +102,7 @@ is unique.
 <td><b>trimmed parameter set</b><br/><p>Parameter set contains unique elements</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( trim( { a, b, c, d, c, b, a } ) );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( trim( { a, b, c, d, c, b, a } ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( trim( { 'a', "a", A, "A" } ) ); &nbsp; // No difference made on quoted strings<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( trim( { 1, {}, {a,b}, 1, {}, {b,a}, {a,b}, {a,b} } ) ); &nbsp; // No difference made on quoted strings<br/>
@@ -109,14 +110,14 @@ is unique.
 <br/>
  &nbsp; &nbsp; &nbsp;echo( trim( { 1, '1', 2, '2' } ) ); &nbsp; // No trimming (numerals differ from literals)<br/>
  &nbsp; &nbsp; &nbsp;echo( trim( { } ), " / ", trim( { {},{},{} } ) ); // No element and 1 element<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>{'a','b','c','d'}<br/>
+<div class="output_background_color" ><code>{'a','b','c','d'}<br/>
 {'a','A'}<br/>
 {1,{},{'a','b'},{'b','a'}}<br/>
 {1,'1',2,'2'}<br/>
 {} / {{}}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_trim.html">trim (string function)</a></p>
 	</div>

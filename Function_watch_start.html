@@ -65,12 +65,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>watch start, watch stop, watch continue, watch reset,  watch read</code>
+<div class="white_background_color" ><code>watch start, watch stop, watch continue, watch reset,  watch read</code></div>
 <h4> Description</h4>
 <p>
 </p><table class="noframe bold_column_1" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
@@ -92,7 +93,7 @@ prev  next
 <td><b>Stopwatch time in milliseconds elapsed</b><br/><p>The watch time will be returned before the indicated action will happen.  E.g. <b>watch reset</b> returns the time before the reset operation.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;watch start;<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;watch start;<br/>
  &nbsp; &nbsp; &nbsp;sleep (0.05); // 50 ms<br/>
  &nbsp; &nbsp; &nbsp;echo( "Started: ", watch read(), " ms" );<br/>
  &nbsp; &nbsp; &nbsp;sleep (0.05);<br/>
@@ -102,10 +103,10 @@ prev  next
  &nbsp; &nbsp; &nbsp;sleep (0.05);<br/>
  &nbsp; &nbsp; &nbsp;echo( "Before continuing: ", watch continue() );<br/>
  &nbsp; &nbsp; &nbsp;sleep (0.05);<br/>
- &nbsp; &nbsp; &nbsp;echo( watch stop(),", ", watch reset(), " and now back at zero: ", watch reset() ); </code>
+ &nbsp; &nbsp; &nbsp;echo( watch stop(),", ", watch reset(), " and now back at zero: ", watch reset() ); </code></div>
 <h4> Output</h4>
-<code>Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-Started: 50 ms<br/>
+<div class="output_background_color" ><code>Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Started: 51 ms<br/>
 Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Before resetting: 101<br/>
 Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
@@ -113,8 +114,8 @@ Before stopping: 51<br/>
 Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Before continuing: 51<br/>
 Done. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-101, 101 and now back at zero: 0<br/>
-</code>
+102, 102 and now back at zero: 0<br/>
+</code></div>
 	</div>
 </section>
 

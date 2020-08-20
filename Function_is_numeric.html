@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>is numeric, is integer, is numeric or blank, is integer or blank, is strictly numeric, is strictly integer, is strictly numeric or blank, is strictly integer or blank</code>
+<div class="white_background_color" ><code>is numeric, is integer, is numeric or blank, is integer or blank, is strictly numeric, is strictly integer, is strictly numeric or blank, is strictly integer or blank</code></div>
 <h4> Description</h4>
 <p>
 <b>is numeric</b> returns true if the value provided is a numeral<br/>
@@ -110,7 +111,7 @@ decimal point, minus sign and scientific notation (exponents) are also considere
 <td><b>Result</b><br/><p>true if criteria is met.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for all parameters( { 1, '1', 1.1, '1.1', '1.1E+03', '1.1234E+03', '', ' ', 'a' }, p[] )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { 1, '1', 1.1, '1.1', '1.1E+03', '1.1234E+03', '', ' ', 'a' }, p[] )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print(p[],": is ");<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is numeric(p[])) print ("numeric, ");<br/>
@@ -122,9 +123,9 @@ decimal point, minus sign and scientific notation (exponents) are also considere
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is integer or blank(p[])) print ("integer or blank, ");<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is strictly integer or blank(p[])) print ("strictly integer or blank, ");<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>1: is numeric, strictly numeric, integer, strictly integer, numeric or blank, strictly numeric or blank, integer or blank, strictly integer or blank, <br/>
+<div class="output_background_color" ><code>1: is numeric, strictly numeric, integer, strictly integer, numeric or blank, strictly numeric or blank, integer or blank, strictly integer or blank, <br/>
 1: is numeric, integer, numeric or blank, integer or blank, <br/>
 1.1: is numeric, strictly numeric, numeric or blank, strictly numeric or blank, <br/>
 1.1: is numeric, numeric or blank, <br/>
@@ -133,7 +134,7 @@ decimal point, minus sign and scientific notation (exponents) are also considere
 : is numeric or blank, strictly numeric or blank, integer or blank, strictly integer or blank, <br/>
  : is <br/>
 a: is <br/>
-</code>
+</code></div>
 	</div>
 </section>
 

@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>count elements, count elements ignore case, count elements ignore blanks, count elements ignore both</code>
+<div class="white_background_color" ><code>count elements, count elements ignore case, count elements ignore blanks, count elements ignore both</code></div>
 <h4> Description</h4>
 <p>
 Counts the number of elements which match with the supplied value.  The ordering of the elements in the parameter sets do not matter.
@@ -112,7 +113,7 @@ If the value is an <a  href="Features_data_types_literals.html">unquoted literal
 <td><b>Number of elements identified</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;print ( count elements( { Amy, Amsel, Bea, Beat, Charles, Charly }, 'Am*' ),", " ); // 2<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;print ( count elements( { Amy, Amsel, Bea, Beat, Charles, Charly }, 'Am*' ),", " ); // 2<br/>
  &nbsp; &nbsp; &nbsp;print( count elements( { Amy, Amsel, Bea, Beat, Charles, Charly }, "Am*" ), ", " ); // 0<br/>
  &nbsp; &nbsp; &nbsp;echo ( count elements ignore case( { Amy, Amsel, Bea, Beat, Charles, Charly }, amsel ) ); // 1<br/>
  &nbsp; &nbsp; &nbsp;print ( count elements( { 1, true, false, true, 2 }, true ), ", " ); // 2<br/>
@@ -122,12 +123,12 @@ If the value is an <a  href="Features_data_types_literals.html">unquoted literal
  &nbsp; &nbsp; &nbsp;// Subsets<br/>
  &nbsp; &nbsp; &nbsp;print( count elements( { a,b,c,{d,e} }, {d,e} ), ", " ); // 1<br/>
  &nbsp; &nbsp; &nbsp;echo( count elements( { a,b,c,{d,e} }, {e,d} ) ); // 1<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>2, 0, 1<br/>
+<div class="output_background_color" ><code>2, 0, 1<br/>
 2, 2, 0<br/>
 1, 1<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_length_.html">length (parameter set function)</a><br/>
 <a href="Features_data_types_parameter_sets_indexing.html">length of parameter sets</a></p>

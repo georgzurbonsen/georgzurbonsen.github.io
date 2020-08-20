@@ -70,6 +70,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -92,23 +93,23 @@ Following rules apply to the indexing parameter sets:
 </ul><p>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo( { a,b,c,d &nbsp; &nbsp; &nbsp;} {0} ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Access the 1st element<br/>
+<div class="code_background_color" ><code> &nbsp;echo( { a,b,c,d &nbsp; &nbsp; &nbsp;} {0} ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Access the 1st element<br/>
  &nbsp;a[] = { a,b,c, {d,e,f}, g }; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Assign a parameter set to variable a[]<br/>
  &nbsp;echo( "Last element &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", a[]{-1} ); &nbsp; &nbsp;// Retrieve the last element<br/>
  &nbsp;echo( "Next element to the left: ", a[]{-2} ); &nbsp; &nbsp;// Retrieve the 2nd last element<br/>
  &nbsp;echo( "Cascaded indexing &nbsp; &nbsp; &nbsp; : ", a[]{3}{2} ); &nbsp;// retrieve 3rd element, and inside the subset the 2nd element (cascaded indexing)<br/>
  &nbsp;echo( "# elements in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", a[]{} ); &nbsp; &nbsp; &nbsp;// Number of elements<br/>
  &nbsp;echo( "# elements in nested set: ", a[]{-2}{} ); &nbsp;// Number of elements in subset (cascaded indexing)<br/>
- &nbsp;echo( "Out of bounds case &nbsp; &nbsp; &nbsp;: ", a[]{99} ); &nbsp; &nbsp;// Empty is returned if index lies out of bounds</code>
+ &nbsp;echo( "Out of bounds case &nbsp; &nbsp; &nbsp;: ", a[]{99} ); &nbsp; &nbsp;// Empty is returned if index lies out of bounds</code></div>
 <h5> Output:</h5>
-<code>a<br/>
+<div class="output_background_color" ><code>a<br/>
 Last element &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: g<br/>
 Next element to the left: {'d','e','f'}<br/>
 Cascaded indexing &nbsp; &nbsp; &nbsp; : f<br/>
 # elements in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 5<br/>
 # elements in nested set: 3<br/>
 Out of bounds case &nbsp; &nbsp; &nbsp;: {}<br/>
-</code>
+</code></div>
 <h4> Parameter Sets - Simple Indexing in Write Accesses</h4>
 <p>
 <i>Simple indexing</i> also works with write accesses in assignments.  The target variable must contain an existing parameter set.  Values of other types
@@ -116,13 +117,13 @@ are not allowed and will cause error messages.  Any data type may be assigned. F
 (a subset).  Using multiple indexes as allowed for read accesses is not possible (e.g. [a]{1,2} = {A,B};).
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;a[] = { a,b,c, {d,e,f}, g }; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Assign a parameter set to variable a[]<br/>
+<div class="code_background_color" ><code> &nbsp;a[] = { a,b,c, {d,e,f}, g }; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Assign a parameter set to variable a[]<br/>
  &nbsp;a[]{1} = B;<br/>
  &nbsp;a[]{-1} = {G,H,I};<br/>
- &nbsp;echo( "Modified value in a[] = ", a[] );</code>
+ &nbsp;echo( "Modified value in a[] = ", a[] );</code></div>
 <h5> Output:</h5>
-<code>Modified value in a[] = {'a','B','c',{'d','e','f'},{'G','H','I'}}<br/>
-</code>
+<div class="output_background_color" ><code>Modified value in a[] = {'a','B','c',{'d','e','f'},{'G','H','I'}}<br/>
+</code></div>
 	</div>
 </section>
 

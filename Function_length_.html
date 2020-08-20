@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>length </code>
+<div class="white_background_color" ><code>length </code></div>
 <h4> Description</h4>
 <p>
 Returns number of characters.  If the value provided is not a literal, then it will be converted to a literal first.<br>
@@ -105,16 +106,16 @@ A simpler approach is to use {} behind the parameter set value, referred as <a  
 <td><b>Length</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( length( {a,b,1} ) ); &nbsp;// 3 elements<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( length( {a,b,1} ) ); &nbsp;// 3 elements<br/>
  &nbsp; &nbsp; &nbsp;echo( length( {a,{b,2,3}} ) ); &nbsp;// 2 elements (nested ones are not counted)<br/>
  &nbsp; &nbsp; &nbsp;echo( length( {} ) ); &nbsp; &nbsp; &nbsp; // 0 elements (empty set)<br/>
- &nbsp; &nbsp; &nbsp;echo( length( {{}} ) ); &nbsp; &nbsp; // 1 elements (contains 1 element which is a nested empty set)</code>
+ &nbsp; &nbsp; &nbsp;echo( length( {{}} ) ); &nbsp; &nbsp; // 1 elements (contains 1 element which is a nested empty set)</code></div>
 <h4> Output</h4>
-<code>3<br/>
+<div class="output_background_color" ><code>3<br/>
 2<br/>
 0<br/>
 1<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_length.html">length (string function)</a><br/>
 <a href="Features_data_types_parameter_sets_indexing.html">length of parameter sets</a></p>

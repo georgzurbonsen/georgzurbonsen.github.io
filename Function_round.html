@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>round, round up, round down</code>
+<div class="white_background_color" ><code>round, round up, round down</code></div>
 <h4> Description</h4>
 <p>
 Rounds the number (automatically or up or down) to the next rounding interval.  The rounding intervals may be integers as well as non-integers.
@@ -108,16 +109,16 @@ Example: 0.25 rounds in steps of 0.25.
 <p>Values provided is not a numerals<br/>
 rounding intervals is negative or zero</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for all parameters( { {1.4, 1}, {1.5,1}, {-1.5,1}, {18, 10}, { 3.14159, 0.01 } }, p[] )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { {1.4, 1}, {1.5,1}, {-1.5,1}, {18, 10}, { 3.14159, 0.01 } }, p[] )<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "round ", p[]{0}, " using ", p[]{1}, ": ", round( p[]{0}, p[]{1} ),<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" &nbsp;up: ", round up( p[]{0}, p[]{1} ), " &nbsp;down: ", round down( p[]{0}, p[]{1} ) );</code>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" &nbsp;up: ", round up( p[]{0}, p[]{1} ), " &nbsp;down: ", round down( p[]{0}, p[]{1} ) );</code></div>
 <h4> Output</h4>
-<code>round 1.4 using 1: 1 &nbsp;up: 2 &nbsp;down: 1<br/>
+<div class="output_background_color" ><code>round 1.4 using 1: 1 &nbsp;up: 2 &nbsp;down: 1<br/>
 round 1.5 using 1: 2 &nbsp;up: 2 &nbsp;down: 1<br/>
 round -1.5 using 1: -2 &nbsp;up: -2 &nbsp;down: -1<br/>
 round 18 using 10: 20 &nbsp;up: 20 &nbsp;down: 10<br/>
 round 3.14159 using 0.01: 3.14 &nbsp;up: 3.15 &nbsp;down: 3.14<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

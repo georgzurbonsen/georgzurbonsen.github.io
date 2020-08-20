@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>right, right include, right last match, right last match include</code>
+<div class="white_background_color" ><code>right, right include, right last match, right last match include</code></div>
 <h4> Description</h4>
 <p>
 This function extracts a right part of the string either with a character position number or a matching pattern.
@@ -123,7 +124,7 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( right( st[], 0 ), " / ", right( st[], 1 ), " / ", right( st[], -2 ), " / ", right( st[], -1 ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( right( st[],99 ), " / ", right( st[],-99) );<br/>
@@ -133,9 +134,9 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
  &nbsp; &nbsp; &nbsp;echo( right last match include( st[], 'e' ) ); // Last 'e' and exclamation mark<br/>
  &nbsp; &nbsp; &nbsp;echo;<br/>
  &nbsp; &nbsp; &nbsp;echo( right( st[], 't?ste' ) ); // Softquoted literal (no or single quotation marks) - matched<br/>
- &nbsp; &nbsp; &nbsp;echo( right( st[], "t?ste" ) ); // Quoted literal (double quotation marks) - not matched</code>
+ &nbsp; &nbsp; &nbsp;echo( right( st[], "t?ste" ) ); // Quoted literal (double quotation marks) - not matched</code></div>
 <h4> Output</h4>
-<code> / ! / e taste of the coffee! / he taste of the coffee!<br/>
+<div class="output_background_color" ><code> / ! / e taste of the coffee! / he taste of the coffee!<br/>
 The taste of the coffee! / <br/>
 <br/>
  of the coffee! / &nbsp;taste of the coffee!<br/>
@@ -144,7 +145,7 @@ e!<br/>
 <br/>
  of the coffee!<br/>
 The taste of the coffee!<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_left.html">left (string function)</a><br/>
 <a href="Function_middle.html">middle (string function)</a><br/>

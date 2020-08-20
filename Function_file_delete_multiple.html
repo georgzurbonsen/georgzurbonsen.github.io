@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>file delete multiple, file delete multiple all, file delete recursive, file delete recursive all</code>
+<div class="white_background_color" ><code>file delete multiple, file delete multiple all, file delete recursive, file delete recursive all</code></div>
 <h4> Description</h4>
 <p>
 These functions delete multiple files in specified directories.  <span class="red_text">Wildcards</span> are supported to select files to delete.<br>
@@ -124,7 +125,7 @@ File locked by another application<br/>
 File not accessible<br/>
 File is a directory</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;directory create( My Folder );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;directory create( My Folder );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;file copy ( {3 : Example_Program.b4p}, { Test123.txt, Test456.txt, "My Folder&#92;Test789.txt" } );<br/>
  &nbsp; &nbsp; &nbsp;echo(file delete multiple all ( ".", "Test???.txt" ) ); // Returns 2<br/>
@@ -132,11 +133,11 @@ File is a directory</p>
  &nbsp; &nbsp; &nbsp;file copy overwrite ( {3 : Example_Program.b4p}, { Test123.txt, Test456.txt, "My Folder&#92;Test789.txt" } );<br/>
  &nbsp; &nbsp; &nbsp;echo(file delete recursive all ( ".", "Test???.txt" ) ); // Returns 3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;directory delete( My Folder );</code>
+ &nbsp; &nbsp; &nbsp;directory delete( My Folder );</code></div>
 <h4> Output</h4>
-<code>2<br/>
+<div class="output_background_color" ><code>2<br/>
 3<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_file_delete.html">file delete ... Functions</a><br/>
 <a href="Function_directory_delete_multiple.html">directory delete multiple/recursive ... Functions</a></p>

@@ -64,6 +64,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -101,29 +102,29 @@ unnecessary thousand separators and commercial variants of negation such as pare
 <p>
 Numerals turn into plain numerals with original text representation voided.</p>
 <h5> Examples:</h5>
-<code> &nbsp;echo(012.340); &nbsp; &nbsp; &nbsp;// Numeral<br/>
+<div class="code_background_color" ><code> &nbsp;echo(012.340); &nbsp; &nbsp; &nbsp;// Numeral<br/>
  &nbsp;echo(type detailed(012.340), new line);<br/>
  &nbsp;echo(012.340 + 0); &nbsp;// Plain numeral - Original text representation is lost<br/>
  &nbsp;echo(type detailed(012.340 + 0));<br/>
- &nbsp;echo(numeral(012.340)); // Also plain numeral</code>
+ &nbsp;echo(numeral(012.340)); // Also plain numeral</code></div>
 <h5> Output:</h5>
-<code>012.340<br/>
+<div class="output_background_color" ><code>012.340<br/>
 numeral<br/>
 <br/>
 12.34<br/>
 plain numeral<br/>
 12.34<br/>
-</code>
+</code></div>
 <h4> Scientific Notation</h4>
 <p>
 The Beyond4P code text does not support scientific notation, e.g. 1.2E+3 would assert a syntax error.  However, the function <span class="red_text">numeral)</span>
 supports scientific notation.  However, scientific notation is supporte in reading values from tables (provided the <span class="red_text">system variable</span>
 <b>table conversion[scientific]</b> is set to true, JSON files and user input.</p>
 <h5> Examples:</h5>
-<code> &nbsp;echo(numeral("1.2E+03"));</code>
+<div class="code_background_color" ><code> &nbsp;echo(numeral("1.2E+03"));</code></div>
 <h5> Output:</h5>
-<code>1200<br/>
-</code>
+<div class="output_background_color" ><code>1200<br/>
+</code></div>
 	</div>
 </section>
 

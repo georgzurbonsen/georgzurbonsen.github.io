@@ -62,7 +62,7 @@ prev  next
 <li class="navi"><a href="Function_table_save.html"><span>4.7.4.5 table save ... </span></a></li>
 <li class="navi"><a href="Features_Saving_JSON_files.html"><span>4.7.4.6 Saving JSON files </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,6 +72,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -96,16 +97,16 @@ specify a text pattern.
 </table><p>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;include( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
 <br/>
  &nbsp;echo(new line, "Look up some Roman emperors:" );<br/>
  &nbsp;file download overwrite( "en.wikipedia.org/wiki/List_of_Roman_emperors", Emperors.html );<br/>
  &nbsp;table load( emperors, Emperors.html, HTML, 'id="The_Principate"' );<br/>
  &nbsp;table keep columns ( emperors, Name ); // Otherwise the table is too wide<br/>
  &nbsp;table list( emperors );<br/>
- &nbsp;file delete silently( Emperors.html );</code>
+ &nbsp;file delete silently( Emperors.html );</code></div>
 <h5> Output:</h5>
-<code>Look up some Roman emperors:<br/>
+<div class="output_background_color" ><code>Look up some Roman emperors:<br/>
 Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Augustus Imperator Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Tiberius Tiberius Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -113,7 +114,7 @@ Caligula (formally Gaius) Gaius Caesar Augustus Germanicus &nbsp;<br/>
 Claudius Tiberius Claudius Caesar Augustus Germanicus &nbsp; &nbsp; &nbsp; <br/>
 Nero Nero Claudius Caesar Augustus Germanicus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_load.html">table load</a><br/>
 <a href="Features_Loading_XML_files.html">Loading XML files</a><br/>

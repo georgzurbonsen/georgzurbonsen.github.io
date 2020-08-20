@@ -65,12 +65,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>sum if, sum if any, product if, product if any, product ignore blanks if, product ignore blanks if any, product ignore zero if, product ignore zero if any, average if, average if any, average ignore blanks if, average ignore blanks if any, average ignore zero if, average ignore zero if any, rms if, rms if any, rms ignore blanks if, rms ignore blanks if any, rms ignore zero if, rms ignore zero if any, geometric mean if, geometric mean if any, geometric mean ignore blanks if, geometric mean ignore blanks if any, geometric mean ignore zero if, geometric mean ignore zero if any, harmonic mean if, harmonic mean if any, median if, median if any, median ignore zero if, median ignore zero if any, variance if, variance if any, variance ignore blanks if, variance ignore blanks if any, variance ignore zero if, variance ignore zero if any, deviation if, deviation if any, deviation ignore blanks if, deviation ignore blanks if any, deviation ignore zero if, deviation ignore zero if any, parallel if, parallel if any, count if, count if any, count ignore blanks if, count ignore blanks if any, count ignore zero if, count ignore zero if any, count ignore both if, count ignore both if any, max if, max if any, max ignore zero if, max ignore zero if any, max ignore blanks if, max ignore blanks if any, min if, min if any, min ignore zero if, min ignore zero if any, min ignore blanks if, min ignore blanks if any, max abc if, max abc if any, min abc if, min abc if any, min abc ignore blanks if, min abc ignore blanks if any, max abc ignore case if, min abc ignore case if any, min abc ignore case if, min abc ignore case if any, min abc ignore both if, min abc ignore both if any, max literal if, max literal if any, min literal if, min literal if any, min literal ignore blanks if, min literal ignore blanks if any, max literal ignore case if, min literal ignore case if any, min literal ignore case if, min literal ignore case if any, min literal ignore both if, min literal ignore both if any, max 123 if, max 123 if any, min 123 if, min 123 if any, max 123 ignore zero if, max 123 ignore zero if any, min 123 ignore zero if, min 123 ignore zero if any, max numeral if, max numeral if any, min numeral if, min numeral if any, max numeral ignore zero if, max numeral ignore zero if any, min numeral ignore zero if, min numeral ignore zero if any, join if, join if any, join ignore blanks if, join ignore blanks if any, join unique if, join if any, join unique ignore blanks if, join ignore blanks if any</code>
+<div class="white_background_color" ><code>sum if, sum if any, product if, product if any, product ignore blanks if, product ignore blanks if any, product ignore zero if, product ignore zero if any, average if, average if any, average ignore blanks if, average ignore blanks if any, average ignore zero if, average ignore zero if any, rms if, rms if any, rms ignore blanks if, rms ignore blanks if any, rms ignore zero if, rms ignore zero if any, geometric mean if, geometric mean if any, geometric mean ignore blanks if, geometric mean ignore blanks if any, geometric mean ignore zero if, geometric mean ignore zero if any, harmonic mean if, harmonic mean if any, median if, median if any, median ignore zero if, median ignore zero if any, variance if, variance if any, variance ignore blanks if, variance ignore blanks if any, variance ignore zero if, variance ignore zero if any, deviation if, deviation if any, deviation ignore blanks if, deviation ignore blanks if any, deviation ignore zero if, deviation ignore zero if any, parallel if, parallel if any, count if, count if any, count ignore blanks if, count ignore blanks if any, count ignore zero if, count ignore zero if any, count ignore both if, count ignore both if any, max if, max if any, max ignore zero if, max ignore zero if any, max ignore blanks if, max ignore blanks if any, min if, min if any, min ignore zero if, min ignore zero if any, min ignore blanks if, min ignore blanks if any, max abc if, max abc if any, min abc if, min abc if any, min abc ignore blanks if, min abc ignore blanks if any, max abc ignore case if, min abc ignore case if any, min abc ignore case if, min abc ignore case if any, min abc ignore both if, min abc ignore both if any, max literal if, max literal if any, min literal if, min literal if any, min literal ignore blanks if, min literal ignore blanks if any, max literal ignore case if, min literal ignore case if any, min literal ignore case if, min literal ignore case if any, min literal ignore both if, min literal ignore both if any, max 123 if, max 123 if any, min 123 if, min 123 if any, max 123 ignore zero if, max 123 ignore zero if any, min 123 ignore zero if, min 123 ignore zero if any, max numeral if, max numeral if any, min numeral if, min numeral if any, max numeral ignore zero if, max numeral ignore zero if any, min numeral ignore zero if, min numeral ignore zero if any, join if, join if any, join ignore blanks if, join ignore blanks if any, join unique if, join if any, join unique ignore blanks if, join ignore blanks if any</code></div>
 <h4> Description</h4>
 <p>
 The conditional combination functions apply a specific function not on all values supplied, but on a selected set of values for which the comparison specified in the following
@@ -133,7 +134,7 @@ The differenntiation between <b>if</b> or <b>if any</b> at the end of the functi
 <h4> Exceptions</h4>
 <p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( sum if &nbsp;( { 1, 2, 3, 4, 5 }, { 10, 8, 6, 4, 2 }, &gt;4 ) ); // 6, because first 3 elements are added<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( sum if &nbsp;( { 1, 2, 3, 4, 5 }, { 10, 8, 6, 4, 2 }, &gt;4 ) ); // 6, because first 3 elements are added<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( sum if &nbsp;( { 1, 2, 3, 4, 5 }, { 2, 8, 6, 4, 2 }, &gt;=4, { a, b, c, d, e }, c..e ) );<br/>
  &nbsp; &nbsp; &nbsp;// Returns 7 because comparisons of the 2nd-4th elements in 2nd parameter and last 3 elements in the 4th<br/>
@@ -144,13 +145,13 @@ The differenntiation between <b>if</b> or <b>if any</b> at the end of the functi
  &nbsp; &nbsp; &nbsp;// parameter give true. &nbsp;Taking the union of both, the 2nd - 5th elements will be summed.<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( join if ( { Jim, Jane, John, Kate, Nic }, { 25, 18, 30, 17, 40 }, &gt;=20, {"(", ", ",")"} ) );<br/>
- &nbsp; &nbsp; &nbsp;// Returns (Jim, John, Nic) because their ages are 20 or higher.</code>
+ &nbsp; &nbsp; &nbsp;// Returns (Jim, John, Nic) because their ages are 20 or higher.</code></div>
 <h4> Output</h4>
-<code>6<br/>
+<div class="output_background_color" ><code>6<br/>
 7<br/>
 14<br/>
 (Jim, John, Nic)<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_average.html">sum</a><br/>
 <a href="Function_average.html">product</a><br/>

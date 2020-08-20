@@ -64,6 +64,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -107,7 +108,7 @@ The easiest way to describe a date or time value is using one of the following f
 
 Dates turn into plain dates with original text representation voided.</p>
 <h5> Examples:</h5>
-<code> &nbsp;d1[] = "14. July 2021";<br/>
+<div class="code_background_color" ><code> &nbsp;d1[] = "14. July 2021";<br/>
  &nbsp;d2[] = "now";<br/>
  &nbsp;d3[] = "20:15:00";<br/>
  &nbsp;d4[] = ""; // Blank date<br/>
@@ -125,12 +126,12 @@ Dates turn into plain dates with original text representation voided.</p>
  &nbsp;echo(date time("2020-12-31")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Add a time (default 00:00:00)<br/>
  &nbsp;echo(time("2020-12-31 15:00")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Time<br/>
  &nbsp;echo(time("2020-12-31 15:00")+1/24); &nbsp; &nbsp; &nbsp;// Time, 1 hour later<br/>
- &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code>
+ &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code></div>
 <h5> Output:</h5>
-<code>date &nbsp; &nbsp; (): 2021-07-14, 2020-08-19 23:31:20, 20:15:00, , plain date<br/>
-time &nbsp; &nbsp; (): , 23:31:20, 20:15:00, , plain date<br/>
-pure date(): 2021-07-14, 2020-08-19, , , plain date<br/>
-date time(): 2021-07-14 00:00:00, 2020-08-19 23:31:20, 20:15:00, 00:00:00, plain date<br/>
+<div class="output_background_color" ><code>date &nbsp; &nbsp; (): 2021-07-14, 2020-08-20 19:08:54, 20:15:00, , plain date<br/>
+time &nbsp; &nbsp; (): , 19:08:54, 20:15:00, , plain date<br/>
+pure date(): 2021-07-14, 2020-08-20, , , plain date<br/>
+date time(): 2021-07-14 00:00:00, 2020-08-20 19:08:54, 20:15:00, 00:00:00, plain date<br/>
 <br/>
 2021-03-31 / plain date<br/>
 2021-01-01 15:00:00<br/>
@@ -138,7 +139,7 @@ date time(): 2021-07-14 00:00:00, 2020-08-19 23:31:20, 20:15:00, 00:00:00, plain
 15:00:00<br/>
 16:00:00<br/>
 2022-01-01<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

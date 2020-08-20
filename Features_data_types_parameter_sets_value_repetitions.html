@@ -70,6 +70,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -80,7 +81,7 @@ Large parameter sets with same values repeating can be built up with value repet
 a colon symbol and following the paramter set element to repeat.  Multiple repetitions may be specified inside a parameter set value.
 </p>
 <h5> Examples:</h5>
-<code><br/>
+<div class="code_background_color" ><code><br/>
  &nbsp;echo({ 5:0 } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { 0,0,0,0,0 }<br/>
  &nbsp;echo({ 2:3,3:2 } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { 3,3,2,2,2 }<br/>
  &nbsp;echo({ 0.9:A } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { A } &nbsp;Rounded up<br/>
@@ -90,9 +91,9 @@ a colon symbol and following the paramter set element to repeat.  Multiple repet
  &nbsp;echo({ -2:Hello } ); &nbsp; &nbsp; &nbsp; &nbsp; // Generates { }<br/>
  &nbsp;echo({ 3:{a,b} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {a,b},{a,b},{a,b} }<br/>
  &nbsp;echo({ 2:{3:1} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {1,1,1},{1,1,1} }<br/>
- &nbsp;echo({ 2:{1..4} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {1,2,3,4},{1,2,3,4} }</code>
+ &nbsp;echo({ 2:{1..4} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {1,2,3,4},{1,2,3,4} }</code></div>
 <h5> Output:</h5>
-<code>{0,0,0,0,0}<br/>
+<div class="output_background_color" ><code>{0,0,0,0,0}<br/>
 {3,3,2,2,2}<br/>
 {'A'}<br/>
 {}<br/>
@@ -102,7 +103,7 @@ a colon symbol and following the paramter set element to repeat.  Multiple repet
 {{'a','b'},{'a','b'},{'a','b'}}<br/>
 {{1,1,1},{1,1,1}}<br/>
 {{1,2,3,4},{1,2,3,4}}<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

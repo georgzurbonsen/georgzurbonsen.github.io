@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>gini, gini ignore blanks, gini ignore zero</code>
+<div class="white_background_color" ><code>gini, gini ignore blanks, gini ignore zero</code></div>
 <h4> Description</h4>
 <p>
 Calculates the gini coefficient (e.g. to identify the income disparity) of a set of values.  This function will also return the corresponding Lorenz curve
@@ -110,16 +111,16 @@ The suffix <b>... ignore blanks</b> excludes blank values, but includes zeros.<b
 <h4> Exceptions</h4>
 <p>1st parameter is not a parameter set containing positive numerals and/or blank literals.</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( gini( { 1,1,1,1,1 } ) ); // Everyone is equal, returns 1<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( gini( { 1,1,1,1,1 } ) ); // Everyone is equal, returns 1<br/>
  &nbsp; &nbsp; &nbsp;echo( gini( { 1, 1.2, 1.3, 1, 1.4, 1.2 } ) ); // ca 0.93, some dispartiy<br/>
  &nbsp; &nbsp; &nbsp;echo( gini( { 1, 1, 1, 1, 16 }, lorenz[] ) ); // 0.4, big disparity<br/>
- &nbsp; &nbsp; &nbsp;echo( "Lorenz curve: ", lorenz[] );</code>
+ &nbsp; &nbsp; &nbsp;echo( "Lorenz curve: ", lorenz[] );</code></div>
 <h4> Output</h4>
-<code>1<br/>
+<div class="output_background_color" ><code>1<br/>
 0.9319248826<br/>
 0.4<br/>
 Lorenz curve: {0,0.05,0.1,0.15,0.2,1}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_average.html">variance</a><br/>
 <a href="Function_average.html">deviation</a></p>

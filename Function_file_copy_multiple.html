@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>file copy multiple, file copy multiple all, file copy multiple overwrite, file copy multiple overwrite all, file copy recursive, file copy recursive all, file copy recursive overwrite, file copy recursive overwrite all</code>
+<div class="white_background_color" ><code>file copy multiple, file copy multiple all, file copy multiple overwrite, file copy multiple overwrite all, file copy recursive, file copy recursive all, file copy recursive overwrite, file copy recursive overwrite all</code></div>
 <h4> Description</h4>
 <p>
 These functions copy files as well as directories including their files.<br><br>
@@ -130,7 +131,7 @@ Target file already existing<br/>
 attempting to create sub-directories which exist as files<br/>
 subdirectories cannot be created</p>
 <h4> Examples</h4>
-<code> &nbsp;<br/>
+<div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp; &nbsp; &nbsp;file copy overwrite( {}, "D:&#92;abc" ); // Nothing copied.<br/>
  &nbsp; &nbsp; &nbsp;file copy overwrite ( "D:&#92;abc", {} ); // Nothing copied.<br/>
  &nbsp; &nbsp; &nbsp;file copy recursive( "D:&#92;abc", "D:&#92;def&#92;" ); // Copy everything from abc to def including sudirectories (case a)<br/>
@@ -146,7 +147,7 @@ subdirectories cannot be created</p>
  &nbsp; &nbsp; &nbsp;file copy multiple('D:&#92;a,D:&#92;b,D:&#92;c,D:&#92;d,D:&#92;e', 'D:&#92;m,D:&#92;n' );<br/>
  &nbsp; &nbsp; &nbsp;// Copies contents from a, c and e to m, and contents from b and d to n. (case e)<br/>
  &nbsp; &nbsp; &nbsp;file copy recursive('D:&#92;a,D:&#92;b,D:&#92;c', 'D:&#92;m,D:&#92;n,D:&#92;o,D:&#92;p,D:&#92;q' );<br/>
- &nbsp; &nbsp; &nbsp;// Copies contents incl. subidrectories from a to m and p, from b to n and q, and from c to o. (case f)</code>
+ &nbsp; &nbsp; &nbsp;// Copies contents incl. subidrectories from a to m and p, from b to n and q, and from c to o. (case f)</code></div>
 <h4> See also</h4>
 <p><a href="Function_file_copy.html">file copy ... Functions</a></p>
 	</div>

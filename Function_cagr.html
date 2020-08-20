@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>cagr</code>
+<div class="white_background_color" ><code>cagr</code></div>
 <h4> Description</h4>
 <p>
 Calculates the compound annual growth rate (CAGR).  The traditional appraoch is to calculate the growth by considering the first value
@@ -122,14 +123,14 @@ If quarter or month are chosen, then the compound avarage growth rate will be au
 <h4> Exceptions</h4>
 <p>Growth figure from zero yields mathematics error.</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( cagr( { 1, 3, 2, 3, 4, 6, 8, 3 } ) ); &nbsp;// ca 17%. Ignores values in the middle<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( cagr( { 1, 3, 2, 3, 4, 6, 8, 3 } ) ); &nbsp;// ca 17%. Ignores values in the middle<br/>
  &nbsp; &nbsp; &nbsp;echo( cagr( { 1, 3, 2, 3, 4, 6, 8, 3 }, 3 ) ); &nbsp;// ca 23%, looks better now<br/>
- &nbsp; &nbsp; &nbsp;echo( cagr( { 1, 1.2, 1.1, 1.2, 1.3 }, 1, quarters ) ); &nbsp;// 30% growth in 1 year</code>
+ &nbsp; &nbsp; &nbsp;echo( cagr( { 1, 1.2, 1.1, 1.2, 1.3 }, 1, quarters ) ); &nbsp;// 30% growth in 1 year</code></div>
 <h4> Output</h4>
-<code>0.1699308128<br/>
+<div class="output_background_color" ><code>0.1699308128<br/>
 0.2315712276<br/>
 0.3<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_average.html">average</a></p>
 	</div>

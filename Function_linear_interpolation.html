@@ -75,12 +75,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>linear interpolation, nearest neighbor interpolation, nearest right neighbor interpolation, spline interpolation, polynomial interpolation</code>
+<div class="white_background_color" ><code>linear interpolation, nearest neighbor interpolation, nearest right neighbor interpolation, spline interpolation, polynomial interpolation</code></div>
 <h4> Description</h4>
 <p>
 These functions calculate a value based on known points in a 2-dimensional space by applying one of the following interpolation schemes:
@@ -146,14 +147,14 @@ The spline interpolation does not have this problem.
 X-values not in ascending order<br/>
 Empty sets or sets of different lengths provided for X- and/or Y-coordinates</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;x[] = {-1 .. 12 };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;x[] = {-1 .. 12 };<br/>
  &nbsp; &nbsp; &nbsp;y[] = linear interpolation( x[], {0, 4, 8, 10}, {0, 8, 5, 0}, flat, continue );<br/>
  &nbsp; &nbsp; &nbsp;// Note: Extrapolation is done for for x[] = -1, 11 and 12.<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo(y[]);</code>
+ &nbsp; &nbsp; &nbsp;echo(y[]);</code></div>
 <h4> Output</h4>
-<code>{0,0,2,4,6,8,7.25,6.5,5.75,5,2.5,0,-2.5,-5}<br/>
-</code>
+<div class="output_background_color" ><code>{0,0,2,4,6,8,7.25,6.5,5.75,5,2.5,0,-2.5,-5}<br/>
+</code></div>
 <h4> See also</h4>
 <p><a href="Features_Interpolation_Examples.html">Interpolation Examples</a></p>
 	</div>

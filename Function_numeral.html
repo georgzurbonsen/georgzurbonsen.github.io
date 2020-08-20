@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>numeral</code>
+<div class="white_background_color" ><code>numeral</code></div>
 <h4> Description</h4>
 <p>
 This function converts a variable to a plain numeral.
@@ -101,16 +102,16 @@ Dates are converted to a number in YYYYMMDD.  Time will be added as fraction of 
 <td><b>number</b><br/><p>Contains resulting number.  No literal context of the number is preserved or included.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( numeral( '1.2E+03' ) );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( numeral( '1.2E+03' ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( numeral( true ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( numeral( 0123 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( numeral( date ( "05. Nov 2019 12:00" ) ) );</code>
+ &nbsp; &nbsp; &nbsp;echo( numeral( date ( "05. Nov 2019 12:00" ) ) );</code></div>
 <h4> Output</h4>
-<code>1200<br/>
+<div class="output_background_color" ><code>1200<br/>
 1<br/>
 123<br/>
 20191105.5<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_literal.html">literal conversion functions</a><br/>
 <a href="Features_data_types_dates.html">date</a><br/>

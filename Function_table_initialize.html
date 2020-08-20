@@ -61,7 +61,7 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -71,12 +71,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table initialize, table append, table append on same row, table append on same field</code>
+<div class="white_background_color" ><code>table initialize, table append, table append on same row, table append on same field</code></div>
 <h4> Description</h4>
 <p><b>table initalize</b> creates resp. initializes tables and puts the contents provided in the further function parameters into the table.<br>
 <b>table append</b> assumes tables already existing.  Contents are addeded on the next row.<br>
@@ -113,7 +114,7 @@ One string which will be appended to the existing contents (without any separato
 <td><b>Feedback</b><br/><p>true if successful. false is returned in case of memory allocation exceptions (very rare cases, if at all).</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;include ( Support Library ); // for 'table list'. Will be included automatically when using B4P normally, i.e. not needed.<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library ); // for 'table list'. Will be included automatically when using B4P normally, i.e. not needed.<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table initialize( t1,<br/>
  &nbsp; &nbsp; &nbsp;{ { Name, Street, Nr }, { Alex,Main St., 231 },Tom,Jerry,{ Tillman,South St., 1 }, { Jane,East Coast St.,3200 East Entrance } } );<br/>
@@ -125,9 +126,9 @@ One string which will be appended to the existing contents (without any separato
  &nbsp; &nbsp; &nbsp;table append &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( t1, { { Matteo, Springs Lane, 964 } } );<br/>
  &nbsp; &nbsp; &nbsp;table append on same field ( t1, " Suite 3" );<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table list( t1 );</code>
+ &nbsp; &nbsp; &nbsp;table list( t1 );</code></div>
 <h4> Output</h4>
-<code>Name &nbsp; &nbsp; Street &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Nr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Name &nbsp; &nbsp; Street &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Nr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Alex &nbsp; &nbsp; Main St. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;231 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Tom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Jerry &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -136,7 +137,7 @@ Jane &nbsp; &nbsp; East Coast St. &nbsp; &nbsp;3200 East Entrance &nbsp; &nbsp; 
 Corinne &nbsp;River Side Blvd. &nbsp;987 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Runs a Café &nbsp;Tel: +1 202 555 1212 &nbsp;<br/>
 Matteo &nbsp; Springs Lane &nbsp; &nbsp; &nbsp;964 Suite 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-</code>
+</code></div>
 	</div>
 </section>
 

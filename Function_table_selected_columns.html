@@ -54,7 +54,7 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>4.7.6 Searching Tables </span></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="Function_table_search.html"><span>4.7.6.1 table search ... </span></a></li>
@@ -62,7 +62,6 @@ prev  next
 <li class="navi"><a href="Function_table_selected_rows.html"><span>4.7.6.3 table selected rows </span></a></li>
 <li class="navi"><a href="Function_table_selected_columns.html"><span>4.7.6.4 table selected columns/headers ... </span></a></li>
 <li class="navi"><a href="Function_table_search_header_row.html"><span>4.7.6.5 table search header row </span></a></li>
-<li class="navi"><a href="Function_table_lift_header_row.html"><span>4.7.6.6 table lift ... </span></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,12 +71,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table selected columns, table selected column numbers, table selected headers</code>
+<div class="white_background_color" ><code>table selected columns, table selected column numbers, table selected headers</code></div>
 <h4> Description</h4>
 <p>
 This function searches the contents in one specified table row and returns the following:<br>
@@ -121,7 +121,7 @@ literal is of type <a  href="Features_data_types_literals.html">softquoted liter
 <td><b>Retrieved values</b><br/><p>Contains literals or numerals, depending on the function name used.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;table initialize( table 1,<br/>
+<div class="code_background_color" ><code> &nbsp;table initialize( table 1,<br/>
  &nbsp; &nbsp; &nbsp;{ { Last Name, 1st Name, Street, Town, Postal Code, "Spouse's Name", Zip Code },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp;{ Miller, &nbsp; &nbsp;Phil, &nbsp; &nbsp; Main St., Denver, 80208, Ann, 80123 } } );<br/>
 <br/>
@@ -132,13 +132,13 @@ literal is of type <a  href="Features_data_types_literals.html">softquoted liter
 <br/>
  &nbsp;echo( table selected columns( table 1, (=80208), 1 ) );<br/>
  &nbsp;echo( table selected headers( table 1, ( '80*' ), 1 ) );<br/>
- &nbsp;echo( table selected column numbers( table 1, ( '80*' ), 1, 5 ) ); // Column 4 skipped</code>
+ &nbsp;echo( table selected column numbers( table 1, ( '80*' ), 1, 5 ) ); // Column 4 skipped</code></div>
 <h4> Output</h4>
-<code>{'Postal Code','Zip Code'}<br/>
+<div class="output_background_color" ><code>{'Postal Code','Zip Code'}<br/>
 {80208}<br/>
 {'Postal Code','Zip Code'}<br/>
 {6}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_selected_rows.html">table selected rows</a></p>
 	</div>

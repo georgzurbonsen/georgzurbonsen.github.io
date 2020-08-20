@@ -17,7 +17,7 @@
 </div>
 
 <div class="header">
-<h3>table column number</h3>
+<h3>table rename ... headers</h3>
 prev  next
 </div>
 
@@ -78,16 +78,25 @@ prev  next
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>table column number</code></div>
+<div class="white_background_color" ><code>table rename headers, table rename column headers, table rename existing headers</code></div>
 <h4> Description</h4>
 <p>
-This function checks if a header with the specified header name is existing.
-If the header is found, then the column number will be returned.  Otherwise, -1 is returned.
+This function renames specified table headers.
+Whereas <b>table rename column headers</b> asserts exceptions if headers are not found, the <b>table rename existing headers</b> will simply ignore
+the headers not found.
+
+<br><br>
+
+<u>Note: </u>Every table header will be renamed only once.
+
+<br><br>
+The function name <b>table rename column headers</b> is declared obsolete and will be replaced by the new name <b>table rename headers</b> in order to make
+the naming more consistent.
 </p>
-<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
-<h4> Parameter count: <span class="black_text">2</span></h4>
+<h4> Parameter count: <span class="black_text">3</span></h4>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
@@ -95,33 +104,58 @@ If the header is found, then the column number will be returned.  Otherwise, -1 
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>table column</td>
-<td><b>Header name or column number</b><br/><p>Specify exactly one table header name or column number.</p>
+<td>table columns</td>
+<td><b>Existing header name(s) or column number(s)</b><br/><p>Specify any number of table header names and/or column numbers.</p>
+</td></tr>
+<tr><td>3<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>New header name(s)</b><br/><p>List the new header names corresponding to the existing ones specified in the previous function parameter.<br>
+Use literal to specify a single table, or a parameter set or softquoted literal (single quotation marks) with names separated by comma to specify multiple columns.</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Column number</b><br/><p>Note: 1st column begins with 0. -1 is returned if the column cannot be found.</p></td></tr>
+<td><b>Number of renamings done</b><br/><p></p></td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>Table not found</p>
+<p>Table not found<br/>
+Header name not found<br/>
+number of existing and new headers is inconsistent</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
 <br/>
- &nbsp;table initialize ( table 1,<br/>
- &nbsp;{ { Last Name, First Name, Phone No, Age }, { Larsson, Lara, "1-212-555-1212", 28 } } );<br/>
+ &nbsp;table initialize ( table, { { First Name, Last Name, Phone No, Age }, { Archer, Jim, "1-212-555-1212", 28 } } );<br/>
 <br/>
- &nbsp;echo( table column number ( table 1, Phone No ) );<br/>
- &nbsp;echo( table column number ( table 1, Gender ) ); // Returns -1<br/>
-</code></div>
+ &nbsp;count[] = table rename existing headers( table, ' Last Name, First Name, Family Name ', ' First Name, Last Name, Other Name ' );<br/>
+ &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp;table rename existing headers( table, { Last Name, First Name, Family Name }, {First Name, Last Name, Other Name} );<br/>
+ &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp;Both formulations are valid (see 2+3. parameter: Either softquoted literal with comma separated items or parameters)<br/>
+<br/>
+ &nbsp;table list ( table );<br/>
+ &nbsp;echo;<br/>
+ &nbsp;echo("Number of headers renamed: ", count[]);<br/>
+<br/>
+ &nbsp;echo( new line, "This example demonstrates that each "First Name" column is touched only once.", new line );<br/>
+ &nbsp;table initialize ( table, &nbsp; { { First Name, First Name, Phone No, Age }, { Tanner, Lisa, "1-212-555-1212", 28 } } );<br/>
+ &nbsp;table rename headers( table, &nbsp;{ First Name, First Name }, { Last Name, Given Name } );<br/>
+ &nbsp;table list ( table );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2<br/>
--1<br/>
+<div class="output_background_color" ><code>Last Name &nbsp;First Name &nbsp;Phone No &nbsp; &nbsp; &nbsp; &nbsp;Age &nbsp;<br/>
+Archer &nbsp; &nbsp; Jim &nbsp; &nbsp; &nbsp; &nbsp; 1-212-555-1212 &nbsp;28 &nbsp; <br/>
+<br/>
+<br/>
+Number of headers renamed: 2<br/>
+<br/>
+This example demonstrates that each "First Name" column is touched only once.<br/>
+<br/>
+Last Name &nbsp;Given Name &nbsp;Phone No &nbsp; &nbsp; &nbsp; &nbsp;Age &nbsp;<br/>
+Tanner &nbsp; &nbsp; Lisa &nbsp; &nbsp; &nbsp; &nbsp;1-212-555-1212 &nbsp;28 &nbsp; <br/>
+<br/>
 </code></div>
 <h4> See also</h4>
-<p><a href="Function_table_check_header.html">table check header</a></p>
+<p><a href="Function_table_correct_headers.html">table correct headers</a><br/>
+<a href="Function_table_check_headers.html">table check headers</a></p>
 	</div>
 </section>
 

@@ -62,7 +62,7 @@ prev  next
 <li class="navi"><a href="Function_table_save.html"><span>4.7.4.5 table save ... </span></a></li>
 <li class="navi"><a href="Features_Saving_JSON_files.html"><span>4.7.4.6 Saving JSON files </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,6 +72,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -91,7 +92,7 @@ B4P loads complete XML files.  The XML file will be put into a structured table.
 </table><p>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;include ( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
  &nbsp;table load( t, "Examples&#92;Example.xml", TEXT );<br/>
 <br/>
  &nbsp;echo("This is the XML file:");<br/>
@@ -106,9 +107,9 @@ B4P loads complete XML files.  The XML file will be put into a structured table.
  &nbsp;echo("____________________________________________________________");<br/>
  &nbsp;table list( t );<br/>
  &nbsp;echo("____________________________________________________________");<br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>This is the XML file:<br/>
+<div class="output_background_color" ><code>This is the XML file:<br/>
 ____________________________________________________________<br/>
 &lt;?xml encoding=utf-8 ?&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -146,7 +147,7 @@ XML Level &nbsp;XML Tag &nbsp;XML Usage &nbsp;XML Contents &nbsp; &nbsp; &nbsp;X
 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Country &nbsp;End &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>
 ____________________________________________________________<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_load.html">table load</a><br/>
 <a href="Features_Loading_HTML_files.html">Loading HTML files</a><br/>

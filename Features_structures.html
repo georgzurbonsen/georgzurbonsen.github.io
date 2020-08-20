@@ -62,6 +62,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -92,7 +93,7 @@ Following approaches are avialable to create structures:
 <tr><td>Direct referencing </td><td> Assigning a simple variable with a member name will initialize it with a structure.  This will not be possible if the variable is already an array.</td></tr>
 </table><p></p>
 <h5> Examples:</h5>
-<code> &nbsp;<br/>
+<div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Initialize a structure directly");<br/>
  &nbsp;a[dog] = Hund;<br/>
  &nbsp;a[cat] = Katze;<br/>
@@ -103,9 +104,9 @@ Following approaches are avialable to create structures:
  &nbsp;echo(new line, "Initialize with the structure function");<br/>
  &nbsp;structure( leg count[], { snake, bird, dog, fly, tick }, { 0, 2, 4, 6, 8 } );<br/>
  &nbsp;inspect( leg count[] );<br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>Initialize a structure directly<br/>
+<div class="output_background_color" ><code>Initialize a structure directly<br/>
 Katze<br/>
 void: No literal provided<br/>
 cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Katze'<br/>
@@ -121,7 +122,7 @@ fly &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 snake &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 0 &nbsp;and as literal: "0"<br/>
 tick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 8 &nbsp;and as literal: "8"<br/>
 <br/>
-</code>
+</code></div>
 <h4> Nesting</h4>
 <p>Nesting is supported: Every structure element may be a simple variable, a further structure or array of any size.^
 Since Beyond4P variable structure is a tree with values possible in both root, intermediate and end nodes, the base variables as well as
@@ -133,7 +134,7 @@ Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member N
 <br/><br/>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;<br/>
+<div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Initialize a nested structure containing structure and array");<br/>
 <br/>
  &nbsp;city[] = Paris;<br/>
@@ -142,9 +143,9 @@ Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member N
  &nbsp;city[district,2,inhabitants] = 19500;<br/>
  &nbsp;echo("1st &nbsp;district = ", city[district,1], " &nbsp; last district = ", city[district,-1] );<br/>
 <br/>
- &nbsp;inspect( city[] );</code>
+ &nbsp;inspect( city[] );</code></div>
 <h5> Output:</h5>
-<code>Initialize a nested structure containing structure and array<br/>
+<div class="output_background_color" ><code>Initialize a nested structure containing structure and array<br/>
 1st &nbsp;district = Louvre &nbsp; last district = etc.<br/>
 literal: 'Paris'<br/>
 district &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
@@ -157,25 +158,25 @@ district &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &
  &nbsp;Array [ &nbsp; 4] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Hotel de Ville'<br/>
  &nbsp;Array [ &nbsp; 5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'etc.'<br/>
 <br/>
-</code>
+</code></div>
 <h4> Default Members</h4>
 <p>
 Normally, attempting to access a structure with a non-existing element name will cause an error.  Beyond4P supports default members
 which will be returned in case of no matches.  Assign the default value using a blank literal ('') as member name and that's it.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;<br/>
+<div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Demonstrate default values");<br/>
 <br/>
  &nbsp;structure( a[], { cow, horse, pig, sheep, '' }, { Kuh, Pferd, Schwein, Schaf, No translation } );<br/>
  &nbsp;echo( "cow : ", a[horse] );<br/>
  &nbsp;echo( "goat: ", a[goat] );<br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>Demonstrate default values<br/>
+<div class="output_background_color" ><code>Demonstrate default values<br/>
 cow : Pferd<br/>
 goat: No translation<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

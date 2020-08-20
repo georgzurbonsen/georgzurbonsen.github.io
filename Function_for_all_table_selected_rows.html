@@ -76,15 +76,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>for all table selected rows</code>
+<div class="white_background_color" ><code>for all table selected rows</code></div>
 <h4> Synopsis</h4>
-<code>for all table selected rows ( table name, reference column, iterator value, iterator counter  ) statement; <br/>
-for all table selected rows ( table name, reference column, iterator value, iterator counter  ) {statements; } </code>
+<div class="white_background_color" ><code>for all table selected rows ( table name, reference column, iterator value, iterator counter  ) statement; <br/>
+for all table selected rows ( table name, reference column, iterator value, iterator counter  ) {statements; } </code></div>
 <h4> Description</h4>
 <p>This loop works through all selected rows (except the header row) in the table and executes teh subsequent statements accordingly.<br/><br/>
 
@@ -121,16 +122,16 @@ The variable is always of type 'quoted literal', even if containing numbers or d
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
  &nbsp; &nbsp; &nbsp;for all table selected rows( colors, EN, ([FR]='*e'), value[], index[] )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( index, ": ", value[], " / ", [FR] ); // All French colors ending with 'e'<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>index: red / rouge<br/>
+<div class="output_background_color" ><code>index: red / rouge<br/>
 index: blue / blue<br/>
 index: yellow / jaune<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">table process selected rows</span><br/>
 <a href="Function_for_all_table_selected_columns.html">for all table selected columns</a></p>

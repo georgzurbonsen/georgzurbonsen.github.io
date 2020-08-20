@@ -54,7 +54,7 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>4.7.6 Searching Tables </span></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="Function_table_search.html"><span>4.7.6.1 table search ... </span></a></li>
@@ -62,7 +62,6 @@ prev  next
 <li class="navi"><a href="Function_table_selected_rows.html"><span>4.7.6.3 table selected rows </span></a></li>
 <li class="navi"><a href="Function_table_selected_columns.html"><span>4.7.6.4 table selected columns/headers ... </span></a></li>
 <li class="navi"><a href="Function_table_search_header_row.html"><span>4.7.6.5 table search header row </span></a></li>
-<li class="navi"><a href="Function_table_lift_header_row.html"><span>4.7.6.6 table lift ... </span></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,12 +71,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table search, table search vertically</code>
+<div class="white_background_color" ><code>table search, table search vertically</code></div>
 <h4> Description</h4>
 <p>
 The table will be searched until the first (or next) pattern is matching the comparison expression. <br>
@@ -129,7 +129,7 @@ literal is of type <a  href="Features_data_types_literals.html">softquoted liter
 <td><b>Match found</b><br/><p>true if match has been found, otherwise false.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;table initialize( table 1,<br/>
+<div class="code_background_color" ><code> &nbsp;table initialize( table 1,<br/>
  &nbsp; &nbsp; &nbsp;{ { A, &nbsp;B, &nbsp;C, &nbsp;D, &nbsp;E, &nbsp;A, &nbsp;G },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp;{ E, &nbsp;C, &nbsp;D, &nbsp;B, &nbsp;A, &nbsp;H, &nbsp;X },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp;{ T, &nbsp;E, &nbsp;B, &nbsp;C, &nbsp;A, &nbsp;E, &nbsp;A &nbsp;} } );<br/>
@@ -153,9 +153,9 @@ literal is of type <a  href="Features_data_types_literals.html">softquoted liter
  &nbsp;while ( table search( table 1, (A), row[], col[], B, E ) = true)<br/>
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;echo("Row: ", row[], " &nbsp;Col: ", col[]++ );<br/>
- &nbsp;}</code>
+ &nbsp;}</code></div>
 <h4> Output</h4>
-<code>Search entire table<br/>
+<div class="output_background_color" ><code>Search entire table<br/>
 Row: 0 &nbsp;Col: 0<br/>
 Row: 0 &nbsp;Col: 5<br/>
 Row: 1 &nbsp;Col: 4<br/>
@@ -169,7 +169,7 @@ Row: 2 &nbsp;Col: 6<br/>
 Limit search to column 1 - 4:<br/>
 Row: 1 &nbsp;Col: 4<br/>
 Row: 2 &nbsp;Col: 4<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_search_header_row.html">table search header row</a></p>
 	</div>

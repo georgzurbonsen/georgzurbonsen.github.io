@@ -62,6 +62,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -75,7 +76,7 @@ been deleted meanwhile.  In some application cases, e.g. loading variables from 
 between loading empty arrys and no arrays at all.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;<br/>
+<div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Distinguish between simple and zero members variables");<br/>
  &nbsp;a[] = Hi;<br/>
  &nbsp;echo(identify(a[0])); // simple<br/>
@@ -90,15 +91,15 @@ between loading empty arrys and no arrays at all.
  &nbsp;a[dog] = Hund;<br/>
  &nbsp;echo(identify(a[])); // structure<br/>
 <br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>Distinguish between simple and zero members variables<br/>
+<div class="output_background_color" ><code>Distinguish between simple and zero members variables<br/>
 not found<br/>
 simple<br/>
 not found<br/>
 zero members<br/>
 structure<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

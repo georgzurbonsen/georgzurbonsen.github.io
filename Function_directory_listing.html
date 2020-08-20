@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>directory listing, directory listing recursive</code>
+<div class="white_background_color" ><code>directory listing, directory listing recursive</code></div>
 <h4> Description</h4>
 <p>
 This function creates a table containing the directory listing of the specified path. The table contains following columns:
@@ -140,7 +141,7 @@ If no additional parameters are provided, then the path name may also contain a 
 <td><b>Entry count</b><br/><p>Total number of files and/or directories found.  -1 = Error (e.g. invalid path). Table will be empty in this case.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;define procedure ( listing, {{ description, literal }, {count, numeral}} )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define procedure ( listing, {{ description, literal }, {count, numeral}} )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( new line, description[], " &nbsp; &nbsp;(Containing ", count[], " entries)" );<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;table process( list, echo( [Date Created]," ", [Path], [Name] ) );<br/>
@@ -166,9 +167,9 @@ If no additional parameters are provided, then the path name may also contain a 
  &nbsp; &nbsp; &nbsp;listing( "All .b4p and .txt files in current and subdirectories", rv[]);<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;rv[] = directory listing recursive( list, "C:&#92;dk3@ç%45*&#92;" );<br/>
- &nbsp; &nbsp; &nbsp;listing( "Empty table, -1 returned due to invalid path name", rv[]);</code>
+ &nbsp; &nbsp; &nbsp;listing( "Empty table, -1 returned due to invalid path name", rv[]);</code></div>
 <h4> Output</h4>
-<code>All files in specified subdirectory &nbsp; &nbsp;(Containing 9 entries)<br/>
+<div class="output_background_color" ><code>All files in specified subdirectory &nbsp; &nbsp;(Containing 9 entries)<br/>
 2020-08-16 C:&#92;Program Files&#92;B4P&#92;B4P Programmers Guide (V7.05) 2020-07-04.pdf<br/>
 2020-08-16 C:&#92;Program Files&#92;B4P&#92;B4P.exe<br/>
 2020-08-16 C:&#92;Program Files&#92;B4P&#92;b4picon.ico<br/>
@@ -205,7 +206,7 @@ All .b4p and .txt files in current and subdirectories &nbsp; &nbsp;(Containing 7
 2020-08-16 C:&#92;Program Files&#92;B4P&#92;Lib&#92;Zip Library.b4p<br/>
 <br/>
 Empty table, -1 returned due to invalid path name &nbsp; &nbsp;(Containing -1 entries)<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">file </span><br/>
 <a href="Function_count_files.html">count files</a></p>

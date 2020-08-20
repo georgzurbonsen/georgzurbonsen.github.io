@@ -68,6 +68,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -98,16 +99,16 @@ are regarded as <a  href="Features_data_types_numerals.html">numerals</a>.  Unqo
 Literals may take any legitimate value, except for <a  href="Features_reserved_keywords.html">reserved keywords</a> which are interpreted differently (e.g. true, false, else).
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo(Hello World);<br/>
+<div class="code_background_color" ><code> &nbsp;echo(Hello World);<br/>
  &nbsp;echo( &nbsp;Hello &nbsp; World &nbsp; ); // To include the blanks, use quotation marks.<br/>
  &nbsp;echo(Hello World, new line, Hello Folks, new line); // 'new line' is a reserved keyword.<br/>
  &nbsp;echo( 31.12.2021 ); &nbsp; &nbsp; &nbsp; // No automatic conversion to __date__ type. &nbsp;Use: echo(date( 31.12.2021 ))<br/>
  &nbsp;echo( 100 Flowers );<br/>
  &nbsp;echo( mike@example.com ); // No need include quotation marks because the @-sign is not a Beyond4P symbol<br/>
  &nbsp;echo( 1 2 3 ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Is a literal because of spaces between teh digits<br/>
- &nbsp;echo( type( 1 2 3 ));</code>
+ &nbsp;echo( type( 1 2 3 ));</code></div>
 <h5> Output:</h5>
-<code>Hello World<br/>
+<div class="output_background_color" ><code>Hello World<br/>
 Hello World<br/>
 Hello World<br/>
 Hello Folks<br/>
@@ -117,7 +118,7 @@ Hello Folks<br/>
 mike@example.com<br/>
 1 2 3<br/>
 literal<br/>
-</code>
+</code></div>
 <h4> Softquoted Literals</h4>
 <p>
 Softquoted literals are literals placed in <u>single quotation marks</u> (example: '123', 'true', '  Hello World').  Any contents inside single quotation marks
@@ -126,17 +127,17 @@ are part of softquoted literals, including leading and trailing blanks.  <a  hre
 string comparisons.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo(' &nbsp;Hello &nbsp; World &nbsp; ', new line, 'new line'); <br/>
+<div class="code_background_color" ><code> &nbsp;echo(' &nbsp;Hello &nbsp; World &nbsp; ', new line, 'new line'); <br/>
  &nbsp;echo(Hello World = 'Hell*'); // Example with wildcard symbol meaning 'true if beginning with Hell'<br/>
  &nbsp;echo('&amp;euro;');<br/>
- &nbsp;echo( length('&amp;euro;') );</code>
+ &nbsp;echo( length('&amp;euro;') );</code></div>
 <h5> Output:</h5>
-<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+<div class="output_background_color" ><code> &nbsp;Hello &nbsp; World &nbsp; <br/>
 new line<br/>
 true<br/>
 €<br/>
 1<br/>
-</code>
+</code></div>
 <h4> Quoted Literals</h4>
 <p>
 Quoted literals are literals placed in <u>double quotation marks</u> (example: "123", "true", "  Hello World").  Any contents inside single quotation marks
@@ -144,15 +145,15 @@ are part of softquoted literals, including leading and trailing blanks.  Entitie
 function <span class="red_text">decode entitites</span>().  In comparison operations, the contents are interpreted as given, i.e. wildcard symbol interpretation will not happen.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo(" &nbsp;Hello &nbsp; World &nbsp; ", new line, 'new line'); <br/>
+<div class="code_background_color" ><code> &nbsp;echo(" &nbsp;Hello &nbsp; World &nbsp; ", new line, 'new line'); <br/>
  &nbsp;echo("&amp;amp;");<br/>
- &nbsp;echo(Hello World = "Hell*"); // 'Hello World' is not the same as 'Hell*'</code>
+ &nbsp;echo(Hello World = "Hell*"); // 'Hello World' is not the same as 'Hell*'</code></div>
 <h5> Output:</h5>
-<code> &nbsp;Hello &nbsp; World &nbsp; <br/>
+<div class="output_background_color" ><code> &nbsp;Hello &nbsp; World &nbsp; <br/>
 new line<br/>
 &amp;amp;<br/>
 false<br/>
-</code>
+</code></div>
 <h4> Summary</h4>
 <p>
 </p><table class="simple" style = "width:1000px"><col style = "width:400px"><col style = "width:200px"><col style = "width:200px"><col style = "width:200px">

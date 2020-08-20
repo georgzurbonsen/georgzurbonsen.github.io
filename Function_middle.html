@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>middle, middle include, middle until, middle until include</code>
+<div class="white_background_color" ><code>middle, middle include, middle until, middle until include</code></div>
 <h4> Description</h4>
 <p>
 This function extracts a middle part of the string either with two character position numbers or matching patterns or a combination of both.
@@ -144,7 +145,7 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( middle( st[], 4, 8 ), " / ", &nbsp;middle until ( st[], 4, 8 ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( middle( st[], -6, 3 ), " / ", middle until( st[], -7, -2 ) ); // "off", "coffee"<br/>
@@ -157,9 +158,9 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
  &nbsp; &nbsp; &nbsp;echo( middle until( st[], 'taste ', -2 ), " / ", middle until include( st[], 'taste ', -2 ) ); // "of the coffee", "tast of the coffee"<br/>
  &nbsp; &nbsp; &nbsp;echo( middle until include( st[], 'taste ', 3 ), " / ", middle until include( st[], 'taste ', 6 ) ); // "", "tas"<br/>
  &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( middle ( st[], 'taste ', ' coffee' ), " / ", middle include( st[], 'taste ', ' coffee' ) ); // "of the", "tast of the coffee"</code>
+ &nbsp; &nbsp; &nbsp;echo( middle ( st[], 'taste ', ' coffee' ), " / ", middle include( st[], 'taste ', ' coffee' ) ); // "of the", "tast of the coffee"</code></div>
 <h4> Output</h4>
-<code>taste of / taste<br/>
+<div class="output_background_color" ><code>taste of / taste<br/>
 off / coffee<br/>
 <br/>
  / <br/>
@@ -171,7 +172,7 @@ of the coffee / taste of the coffee<br/>
  / tas<br/>
 <br/>
 of the / taste of the coffee<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_left.html">left (string function)</a><br/>
 <a href="Function_right.html">right (string function)</a><br/>

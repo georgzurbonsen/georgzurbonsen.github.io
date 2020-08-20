@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>file delete, file delete all, file delete silently</code>
+<div class="white_background_color" ><code>file delete, file delete all, file delete silently</code></div>
 <h4> Description</h4>
 <p>
 These functions delete specified files and come in following flavors:<br>
@@ -116,18 +117,18 @@ File locked by another application<br/>
 File not accessible<br/>
 Attempting to delete a directory</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;file copy ( {3 : Example_Program.b4p}, { Test123.txt, Test456.txt, Test789.txt } );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;file copy ( {3 : Example_Program.b4p}, { Test123.txt, Test456.txt, Test789.txt } );<br/>
  &nbsp; &nbsp; &nbsp;print( file delete all ( Test123.txt, TestXXX.txt, Test456.txt ), " / " ); // Returns 2<br/>
  &nbsp; &nbsp; &nbsp;print( file delete ( Test789.txt ), " / " ); // Returns OK<br/>
  &nbsp; &nbsp; &nbsp;echo( file delete silently ( Test789.txt )); // Returns "File not found"<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;files[] = { Test123.txt, Test456.txt, Test789.txt };<br/>
  &nbsp; &nbsp; &nbsp;file copy ( {3 : Example_Program.b4p}, files[] );<br/>
- &nbsp; &nbsp; &nbsp;echo( file delete all ( files[] ) ); // Returns 3</code>
+ &nbsp; &nbsp; &nbsp;echo( file delete all ( files[] ) ); // Returns 3</code></div>
 <h4> Output</h4>
-<code>2 / 1 / File not Found<br/>
+<div class="output_background_color" ><code>2 / 1 / File not Found<br/>
 3<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_directory_delete.html">directory delete ... Functions</a><br/>
 <a href="Function_file_delete_multiple.html">file delete multiple/recursive ... Functions</a></p>

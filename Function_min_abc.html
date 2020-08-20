@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>min abc, max abc, min abc ignore blanks, min abc ignore case, max abc ignore case, min abc ignore both, min literal, max literal, min literal ignore blanks, min literal ignore case, max literal ignore case, min literal ignore both</code>
+<div class="white_background_color" ><code>min abc, max abc, min abc ignore blanks, min abc ignore case, max abc ignore case, min abc ignore both, min literal, max literal, min literal ignore blanks, min literal ignore case, max literal ignore case, min literal ignore both</code></div>
 <h4> Description</h4>
 <p>
 These functions identify the minimum or maximum literal values using alphabetic ordering rules based on UNICODE character codes.  If cases are not ignored, then min( 'A', 'a' ) returns 'A' because
@@ -123,20 +124,20 @@ you to pre-select specific parameters to include in the calculation using one or
 <h4> Exceptions</h4>
 <p>Function names containing 'literal' assert exceptions if values provided are not of type iteral</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( min abc ( 13, 100 ) ); // It's 100<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( min abc ( 13, 100 ) ); // It's 100<br/>
  &nbsp; &nbsp; &nbsp;echo( max abc ( AH, ah, aH, Ah ) ); // Picks ah<br/>
  &nbsp; &nbsp; &nbsp;echo( max abc ignore case ( AH, ah, aH, Ah ) ); // Picks 1st parameter<br/>
  &nbsp; &nbsp; &nbsp;echo( min abc ( Abel, '', '', Beat, '' ) ); // Unpleasant outcome<br/>
  &nbsp; &nbsp; &nbsp;echo( min literal ignore blanks ( Abel, '', '', Beat, '' ) ); // This one is better <br/>
- &nbsp; &nbsp; &nbsp;echo( min literal ignore both( Beat, Abel, ABEL, '' ) ); // Picks Abel (cases ignored)</code>
+ &nbsp; &nbsp; &nbsp;echo( min literal ignore both( Beat, Abel, ABEL, '' ) ); // Picks Abel (cases ignored)</code></div>
 <h4> Output</h4>
-<code>100<br/>
+<div class="output_background_color" ><code>100<br/>
 ah<br/>
 AH<br/>
 <br/>
 Abel<br/>
 Abel<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_min_123.html">min 123</a><br/>
 <a href="Function_min_123.html">max 123</a><br/>

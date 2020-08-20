@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>boolean</code>
+<div class="white_background_color" ><code>boolean</code></div>
 <h4> Description</h4>
 <p>
 This function converts a value to a voolean value.
@@ -104,18 +105,18 @@ Dates are converted to a number in YYYYMMDD.  Time will be added as fraction of 
 <td><b>Result</b><br/><p>Identified boolean value</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( boolean (TRUE), " ", boolean(Falsch) ); // true, false<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( boolean (TRUE), " ", boolean(Falsch) ); // true, false<br/>
  &nbsp; &nbsp; &nbsp;echo( boolean ("Ja"), " ", boolean("No") ); &nbsp; &nbsp; &nbsp; // true, false<br/>
  &nbsp; &nbsp; &nbsp;echo( boolean ("1"), " ", &nbsp;boolean(0) ); &nbsp; &nbsp; &nbsp; &nbsp;// true, false<br/>
  &nbsp; &nbsp; &nbsp;echo( boolean ({{}}), " ", boolean ({}) ); &nbsp; &nbsp; &nbsp; &nbsp;// true, false<br/>
- &nbsp; &nbsp; &nbsp;echo( boolean ( date( '10:30:00' )), " ", boolean( date("") ) ); &nbsp; &nbsp;// true, fasle</code>
+ &nbsp; &nbsp; &nbsp;echo( boolean ( date( '10:30:00' )), " ", boolean( date("") ) ); &nbsp; &nbsp;// true, fasle</code></div>
 <h4> Output</h4>
-<code>true false<br/>
+<div class="output_background_color" ><code>true false<br/>
 true false<br/>
 true false<br/>
 true false<br/>
 true false<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

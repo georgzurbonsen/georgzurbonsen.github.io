@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>covariance, correlation</code>
+<div class="white_background_color" ><code>covariance, correlation</code></div>
 <h4> Description</h4>
 <p>
 Calculates the covariance resp. correlation of two vectors (= parameter sets containing numerals).
@@ -107,21 +108,21 @@ Zero is returned if number of parameter elements is 0 or 1.
 <p>Vectors have different lengths<br/>
 parameter sets provided contain non-numeric elements</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( covariance( {},{} ) ); // Returns 0<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( covariance( {},{} ) ); // Returns 0<br/>
  &nbsp; &nbsp; &nbsp;echo( covariance( {10,20,30}, {10,30,20} ) ); // &nbsp; 50<br/>
  &nbsp; &nbsp; &nbsp;echo( covariance( {10,20,30}, {30,20,10} ) ); // -100<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( correlation( {1},{1} ) ); // 0<br/>
  &nbsp; &nbsp; &nbsp;echo( correlation( {10,20,30}, {10,30,20} ) ); // &nbsp;0.5<br/>
- &nbsp; &nbsp; &nbsp;echo( correlation( {10,20,30}, {30,20,10} ) ); // &nbsp;-1</code>
+ &nbsp; &nbsp; &nbsp;echo( correlation( {10,20,30}, {30,20,10} ) ); // &nbsp;-1</code></div>
 <h4> Output</h4>
-<code>0<br/>
+<div class="output_background_color" ><code>0<br/>
 50<br/>
 -100<br/>
 0<br/>
 0.5<br/>
 -1<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_average.html">variance</a><br/>
 <a href="Function_average.html">deviation</a></p>

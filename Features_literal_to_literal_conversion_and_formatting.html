@@ -78,6 +78,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -125,7 +126,7 @@ If not formatting option is specified (e.g. no parameter provided, or empty set 
 <h4> Program Examples</h4>
 <p></p>
 <h5> Examples:</h5>
-<code> &nbsp; &nbsp; &nbsp;echo ( "(", literal( "Dog","######", align left &nbsp;), ")");<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo ( "(", literal( "Dog","######", align left &nbsp;), ")");<br/>
  &nbsp; &nbsp; &nbsp;echo ( "(", literal( "Dog","######", align middle ), ")" );<br/>
  &nbsp; &nbsp; &nbsp;echo ( "(", literal( "Dog","######", {align middle, align right} ), ")" ); // Last align option applies<br/>
  &nbsp; &nbsp; &nbsp;echo ( literal( "Hello World","Result: [####-####]" ) );<br/>
@@ -136,9 +137,9 @@ If not formatting option is specified (e.g. no parameter provided, or empty set 
  &nbsp; &nbsp; &nbsp;echo ( literal( "News", "##########", align right, "+" ) );<br/>
  &nbsp; &nbsp; &nbsp;echo ( literal( "Daily Newspapers", "###### # # # #" ) );<br/>
  &nbsp; &nbsp; &nbsp;echo ( literal( "Daily Newspapers", "###### # # # # *" ) );<br/>
- &nbsp; &nbsp; &nbsp;echo ( literal( "Daily Newspapers", "###### # # # # ****" ) );</code>
+ &nbsp; &nbsp; &nbsp;echo ( literal( "Daily Newspapers", "###### # # # # ****" ) );</code></div>
 <h5> Output:</h5>
-<code>(Dog &nbsp; )<br/>
+<div class="output_background_color" ><code>(Dog &nbsp; )<br/>
 ( Dog &nbsp;)<br/>
 ( &nbsp; Dog)<br/>
 Result: [Hell-o Wo]<br/>
@@ -150,7 +151,7 @@ News++++++<br/>
 Daily &nbsp;N e w s<br/>
 Daily &nbsp;N e w s papers<br/>
 Daily &nbsp;N e w s papers***<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

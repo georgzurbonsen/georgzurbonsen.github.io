@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>search files, search files recursive</code>
+<div class="white_background_color" ><code>search files, search files recursive</code></div>
 <h4> Description</h4>
 <p>
 Searches the disk for a particular files and/or directories and returns the full paths.
@@ -132,7 +133,7 @@ If no additional parameters are provided, then the path name may also contain a 
 <td><b>Identified names</b><br/><p>All file and directory names found as specified.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo("All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;B4P&#92;" ), new line );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;B4P&#92;" ), new line );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo("All files : ", search files( ".&#92;", "*.b4p" &nbsp; &nbsp; &nbsp;) );<br/>
  &nbsp; &nbsp; &nbsp;echo("1st file only (as literal) &nbsp; &nbsp; &nbsp;: ", search files( ".&#92;", "*.b4p", 0 &nbsp; ) );<br/>
@@ -140,9 +141,9 @@ If no additional parameters are provided, then the path name may also contain a 
  &nbsp; &nbsp; &nbsp;echo("1st file only (as literal) &nbsp; &nbsp; &nbsp;: ", search files( "..&#92;", "*", 0 &nbsp; ), new line ); // One directory up<br/>
  &nbsp; &nbsp; &nbsp;echo("All subdirectories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", search files( "C:&#92;Program Files&#92;B4P", "*", -1, directories &nbsp; ) );<br/>
  &nbsp; &nbsp; &nbsp;echo("All .b4p/.txt recursively &nbsp; &nbsp; &nbsp; : ",<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;search files recursive( "C:&#92;Program Files&#92;B4P", "*.txt,*.b4p", -1, files &nbsp;) );</code>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;search files recursive( "C:&#92;Program Files&#92;B4P", "*.txt,*.b4p", -1, files &nbsp;) );</code></div>
 <h4> Output</h4>
-<code>All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: {'C:&#92;Program Files&#92;B4P&#92;B4P Programmers Guide (V7.05) 2020-07-04.pdf','C:&#92;Program Files&#92;B4P&#92;B4P.exe','C:&#92;Program Files&#92;B4P&#92;b4picon.ico','C:&#92;Program Files&#92;B4P&#92;Install.txt','C:&#92;Program Files&#92;B4P&#92;List of Locales.csv','C:&#92;Program Files&#92;B4P&#92;Setup.exe','C:&#92;Program Files&#92;B4P&#92;vcruntime140_1.dll'}<br/>
+<div class="output_background_color" ><code>All files in a directory &nbsp; &nbsp; &nbsp; &nbsp;: {'C:&#92;Program Files&#92;B4P&#92;B4P Programmers Guide (V7.05) 2020-07-04.pdf','C:&#92;Program Files&#92;B4P&#92;B4P.exe','C:&#92;Program Files&#92;B4P&#92;b4picon.ico','C:&#92;Program Files&#92;B4P&#92;Install.txt','C:&#92;Program Files&#92;B4P&#92;List of Locales.csv','C:&#92;Program Files&#92;B4P&#92;Setup.exe','C:&#92;Program Files&#92;B4P&#92;vcruntime140_1.dll'}<br/>
 <br/>
 All files : {'Build_Docu.b4p','Example_Program.b4p','interactive.b4p','Start B4P here.b4p'}<br/>
 1st file only (as literal) &nbsp; &nbsp; &nbsp;: Build_Docu.b4p<br/>
@@ -151,7 +152,7 @@ All files : {'Build_Docu.b4p','Example_Program.b4p','interactive.b4p','Start B4P
 <br/>
 All subdirectories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: {'C:&#92;Program Files&#92;B4P&#92;Lib','C:&#92;Program Files&#92;B4P&#92;weblib'}<br/>
 All .b4p/.txt recursively &nbsp; &nbsp; &nbsp; : {'C:&#92;Program Files&#92;B4P&#92;Install.txt','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Interactive Help.txt','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Office Library.b4p','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Style Library.b4p','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Support Library.b4p','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Utility Library.b4p','C:&#92;Program Files&#92;B4P&#92;Lib&#92;Zip Library.b4p'}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_count_files.html">count files</a><br/>
 <a href="Function_directory_listing.html">directory listing</a></p>

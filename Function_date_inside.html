@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>date inside, time inside</code>
+<div class="white_background_color" ><code>date inside, time inside</code></div>
 <h4> Description</h4>
 <p>
 Checks if the variable contains a date or time information
@@ -98,10 +99,10 @@ Checks if the variable contains a date or time information
 <td><b>Result</b><br/><p>Function <b>date inside</b> returns true if the variable contains a date.<br>Function <b>time inside</b> returns true if the variable contains a time.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;dates[] = { "2020-01-01", today, "2020-01-01 13:00:00", now, "13:00:00", time(now), "", date("") };<br/>
- &nbsp; &nbsp; &nbsp;for all parameters( dates[], date[] ) echo( date inside(date[]), " / ", time inside(date[]) );</code>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;dates[] = { "2020-01-01", today, "2020-01-01 13:00:00", now, "13:00:00", time(now), "", date("") };<br/>
+ &nbsp; &nbsp; &nbsp;for all parameters( dates[], date[] ) echo( date inside(date[]), " / ", time inside(date[]) );</code></div>
 <h4> Output</h4>
-<code>true / false<br/>
+<div class="output_background_color" ><code>true / false<br/>
 true / false<br/>
 true / true<br/>
 true / true<br/>
@@ -109,7 +110,7 @@ false / true<br/>
 false / true<br/>
 false / false<br/>
 false / false<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

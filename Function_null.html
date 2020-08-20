@@ -67,14 +67,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>null</code>
+<div class="white_background_color" ><code>null</code></div>
 <h4> Synopsis</h4>
-<code>null ( parameters ... );</code>
+<div class="white_background_color" ><code>null ( parameters ... );</code></div>
 <h4> Description</h4>
 <p>This function does nothing, but is otherwise useful:
 </p><ul class="bullets"><li class="bullets">As it accepts any number and type of parameters, it is automatically used as a placeholder function in case the original function name is not found but the code should not run (e.g. false condition inside an if(…) block).</li>
@@ -94,14 +95,14 @@ prev  next
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;null; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // No effect<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;null; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // No effect<br/>
  &nbsp; &nbsp; &nbsp;null (a, 1, true); &nbsp; &nbsp; &nbsp;// No effect<br/>
  &nbsp; &nbsp; &nbsp;echo( null( ) ); &nbsp; &nbsp; &nbsp; &nbsp;// Outputs '# void value #'<br/>
- &nbsp; &nbsp; &nbsp;echo( null( a, 1, true ) ); // Outputs '# void value #'</code>
+ &nbsp; &nbsp; &nbsp;echo( null( a, 1, true ) ); // Outputs '# void value #'</code></div>
 <h4> Output</h4>
-<code># Invalid Value #<br/>
+<div class="output_background_color" ><code># Invalid Value #<br/>
 # Invalid Value #<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

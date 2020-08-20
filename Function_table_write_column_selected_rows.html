@@ -60,7 +60,7 @@ prev  next
 <li class="navi"><a href="Function_table_write_column_selected_rows.html"><span>4.7.3.4 table write column selected rows </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table write column selected rows</code>
+<div class="white_background_color" ><code>table write column selected rows</code></div>
 <h4> Description</h4>
 <p>
 This function  writes values in a parameter set vertically into a specified table column where the rows are chosen with a boolean expression.
@@ -113,7 +114,7 @@ The write operation ends if either one of the two criteria are met:
 <td><b>Feedback</b><br/><p>true if operation was successful, and false if not.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;include( Support Library ); // for 'table list' function<br/>
+<div class="code_background_color" ><code> &nbsp;include( Support Library ); // for 'table list' function<br/>
 <br/>
  &nbsp;table initialize ( table 1, { { Animal, leg count },<br/>
  &nbsp; &nbsp; &nbsp;{ Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
@@ -122,16 +123,16 @@ The write operation ends if either one of the two criteria are met:
  &nbsp;table write column selected rows( table 1, size, ([Animal]=Dog,Bird), { Not small, Big, Tiny } );<br/>
  &nbsp;// Note: 'Tiny' will not be written.<br/>
 <br/>
- &nbsp;table list( table 1 );</code>
+ &nbsp;table list( table 1 );</code></div>
 <h4> Output</h4>
-<code>Animal &nbsp;leg count &nbsp;size &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Animal &nbsp;leg count &nbsp;size &nbsp; &nbsp; &nbsp; <br/>
 Worm &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Bird &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Not small &nbsp;<br/>
 Dog &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Big &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 Fly &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Tick &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_read_column_selected_rows.html">table read column selected rows</a></p>
 	</div>

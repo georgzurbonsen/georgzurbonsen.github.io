@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>smart numeral, smart if numeral</code>
+<div class="white_background_color" ><code>smart numeral, smart if numeral</code></div>
 <h4> Description</h4>
 <p>
 These two functions are an upgrade variant of <a class="bold_text" href="Function_clean_numeral.html">clean numeral</a>() and <a class="bold_text" href="Function_clean_numeral.html">clean if numeral</a>().
@@ -161,22 +162,22 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>smart if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( smart numeral( "5.0 MUSD" )); // 5,000,000<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( smart numeral( "5.0 MUSD" )); // 5,000,000<br/>
  &nbsp; &nbsp; &nbsp;echo( smart numeral( "EUR 1.2mn" )); // 1,200,000<br/>
  &nbsp; &nbsp; &nbsp;echo( smart numeral( "INR 0.5 lk" )); // 50,000<br/>
  &nbsp; &nbsp; &nbsp;echo( smart numeral( '50%' )); // 0.5<br/>
  &nbsp; &nbsp; &nbsp;echo( smart numeral( 'Alc. 0.5 &amp;permil;' )); // 0.0005<br/>
  &nbsp; &nbsp; &nbsp;echo( smart numeral( "1.23cr" )); &nbsp;// 12,300,000<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( 1.23m, ".", { m, M }, {0.000001, 1000000} ));</code>
+ &nbsp; &nbsp; &nbsp;echo( smart numeral( 1.23m, ".", { m, M }, {0.000001, 1000000} ));</code></div>
 <h4> Output</h4>
-<code>5000000<br/>
+<div class="output_background_color" ><code>5000000<br/>
 1200000<br/>
 50000<br/>
 0.5<br/>
 0.00005<br/>
 12300000<br/>
 0.00000123<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_numeral.html">numeral conversion function</a><br/>
 <a href="Function_clean_numeral.html">clean numeral</a><br/>

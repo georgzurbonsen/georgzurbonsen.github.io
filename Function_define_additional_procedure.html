@@ -71,14 +71,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>define additional procedure, define additional function, define additional procedure and function</code>
+<div class="white_background_color" ><code>define additional procedure, define additional function, define additional procedure and function</code></div>
 <h4> Synopsis</h4>
-<code>define additional ... ( expression, parameters ... ); </code>
+<div class="white_background_color" ><code>define additional ... ( expression, parameters ... ); </code></div>
 <h4> Description</h4>
 <p>
 You want to define an additional function which is very similar to a custom function defined before, i.e. most of the code
@@ -134,7 +135,7 @@ No subsequent code is expected for these procedures</p>
 <p>Procedure or function name is already defined<br/>
 Original procedure or function not found</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;define function( private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define function( private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "Name of function: ", function name[] );<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;main menu[] = select if( function name[] == bbq party, " (beef menu)", " (fish menu)" );<br/>
@@ -159,9 +160,9 @@ Original procedure or function not found</p>
 <br/>
  &nbsp; &nbsp; &nbsp;guest count[] = bbq party( Jim Bean, true, Tina Turner, false, Tom Cruise, false, Amsel Adams, true );<br/>
  &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited bbq: ", guest count[]);<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>Name of function: fish for 2<br/>
+<div class="output_background_color" ><code>Name of function: fish for 2<br/>
 First invited guest: Susanne Ellen (fish menu)<br/>
 <br/>
 Number of guests invited: 1<br/>
@@ -173,7 +174,7 @@ And: Tom Cruise (beef menu)<br/>
 And: Amsel Adams (vegetarian menu)<br/>
 <br/>
 Number of guests invited bbq: 4<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_define_procedure.html">define procedure</a><br/>
 <a href="Function_define_procedure.html">define function</a><br/>

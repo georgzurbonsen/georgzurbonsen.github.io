@@ -60,7 +60,7 @@ prev  next
 <li class="navi"><a href="Function_table_write_column_selected_rows.html"><span>4.7.3.4 table write column selected rows </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>forget memorized table columns</code>
+<div class="white_background_color" ><code>forget memorized table columns</code></div>
 <h4> Description</h4>
 <p>
 Table columns referenced with fixed column names, e.g. <b>[table:Last Name,1]</b>, or simply <b>[Last Name]</b> where context infor are avaible for <span class="red_text">partial table references</span>,
@@ -101,7 +102,7 @@ Implicitly memorizing column numbers can be suppressed with following options:
 context for partial table specification is required</p>
 <h4> Parameter count: <span class="black_text">0</span></h4>
 <h4> Examples</h4>
-<code> &nbsp;table initialize ( table 1,<br/>
+<div class="code_background_color" ><code> &nbsp;table initialize ( table 1,<br/>
  &nbsp;{ { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
 <br/>
  &nbsp;table initialize ( table 2,<br/>
@@ -126,9 +127,9 @@ context for partial table specification is required</p>
  &nbsp;runtime settings[memorize table columns] = false;<br/>
 <br/>
  &nbsp;legs( table 1 );<br/>
- &nbsp;legs( table 2 ); // All output will be right. &nbsp;But looking up continuously may slow performance a bit.</code>
+ &nbsp;legs( table 2 ); // All output will be right. &nbsp;But looking up continuously may slow performance a bit.</code></div>
 <h4> Output</h4>
-<code>Bird: 2 and 2<br/>
+<div class="output_background_color" ><code>Bird: 2 and 2<br/>
 Dog: 4 and 4<br/>
 Fly: 6 and 6<br/>
 <br/>
@@ -151,7 +152,7 @@ Snake: 0 and 0<br/>
 Tiger: 4 and 4<br/>
 Lobster: 8 and 8<br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">memorized table columns</span></p>
 	</div>

@@ -61,7 +61,7 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -71,12 +71,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table configure</code>
+<div class="white_background_color" ><code>table configure</code></div>
 <h4> Description</h4>
 <p>
 This function applies configuration settings to all tables specified.  These configuration settings affect the following cases:
@@ -125,7 +126,7 @@ first name [ ] = [ table, last name, Bonaparte, first name ] returns a blank bec
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>Min. 1<br/>input</td>
 <td>parameter set or literal</td>
-<td><b>Names of existing tables</b><br/><p>Use literal to to specify a single table, or a parameter set or softquoted literal (single quotation marks) with names separated by comma to specify multiple tables.</p>
+<td><b>Names of existing tables</b><br/><p>Use literal to specify a single table, or a parameter set or softquoted literal (single quotation marks) with names separated by comma to specify multiple tables.</p>
 </td></tr>
 <tr><td>2, 4, ...<br/>input</td>
 <td>literal</td>
@@ -137,7 +138,7 @@ first name [ ] = [ table, last name, Bonaparte, first name ] returns a blank bec
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;table initialize( a,<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( a,<br/>
  &nbsp; &nbsp; &nbsp;{ { Name, Answer, Date, &nbsp; &nbsp; &nbsp; &nbsp; Time, &nbsp; &nbsp; &nbsp; Blank, Number, Scientific },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp;{ Nic, &nbsp;TRUE, &nbsp; '2020-01-03', '15:30:00', '', '123', '1.2E+3' } } );<br/>
 <br/>
@@ -156,9 +157,9 @@ first name [ ] = [ table, last name, Bonaparte, first name ] returns a blank bec
  &nbsp; &nbsp; &nbsp;table configure( a, column not found, new column );<br/>
  &nbsp; &nbsp; &nbsp;[a:Color,1] = green; // Creates an additional header called "Color" instead of asserting an exception<br/>
  &nbsp; &nbsp; &nbsp;echo( "Header names: ", [a:..,0]);<br/>
- &nbsp; &nbsp; &nbsp;echo( [a:Color,1] );</code>
+ &nbsp; &nbsp; &nbsp;echo( [a:Color,1] );</code></div>
 <h4> Output</h4>
-<code>Nic &nbsp;(literal)<br/>
+<div class="output_background_color" ><code>Nic &nbsp;(literal)<br/>
 TRUE &nbsp;(literal)<br/>
 2020-01-03 &nbsp;(literal)<br/>
 15:30:00 &nbsp;(literal)<br/>
@@ -177,7 +178,7 @@ true &nbsp;(boolean)<br/>
 0<br/>
 Header names: {'Name','Answer','Date','Time','Blank','Number','Scientific','Color'}<br/>
 green<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

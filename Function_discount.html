@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>discount</code>
+<div class="white_background_color" ><code>discount</code></div>
 <h4> Description</h4>
 <p>
 Applies a discounting on a sequence of values (typically annual cashflow figures) using a Working Average Cost of Capital (WACC) value.
@@ -106,12 +107,12 @@ If quarter or month are chosen, then the compound avarage growth rate will be au
 <h4> Exceptions</h4>
 <p>Input parameter set contains values of invalid type (e.g. literals)</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;fcf [ ] = { 100, 150, 200, 250 };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;fcf [ ] = { 100, 150, 200, 250 };<br/>
  &nbsp; &nbsp; &nbsp;discount ( fcf[ ] , 0.1);<br/>
- &nbsp; &nbsp; &nbsp;echo( fcf[ ] );</code>
+ &nbsp; &nbsp; &nbsp;echo( fcf[ ] );</code></div>
 <h4> Output</h4>
-<code>{100,135,162,182.25}<br/>
-</code>
+<div class="output_background_color" ><code>{100,135,162,182.25}<br/>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_irr.html">irr</a></p>
 	</div>

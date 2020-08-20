@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>reschedule</code>
+<div class="white_background_color" ><code>reschedule</code></div>
 <h4> Description</h4>
 <p>
 This function reschedules the date provided to a different date.  At least 3 parameters are required: The date, and at least one pair
@@ -182,7 +183,7 @@ Following rescheduling parameter pairs are supported to reschedule date and time
 <td><b>rescheduled date</b><br/><p>Rescheduled date.  Plain dates remain as plain dates regardless how they are rescheduled.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-12-24", -1, days )); // &nbsp;2011-12-23<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-12-24", -1, days )); // &nbsp;2011-12-23<br/>
  &nbsp; &nbsp; &nbsp;echo( reschedule ( "2012-01-31", 1, month )); // &nbsp;2012-02-29<br/>
  &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-12-06", end, month )); // 2011-12-31<br/>
  &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-03-04", next, week)); // &nbsp;2011-03-11<br/>
@@ -190,9 +191,9 @@ Following rescheduling parameter pairs are supported to reschedule date and time
  &nbsp; &nbsp; &nbsp;echo( reschedule ( "2012-12-31", next, week, end, week)); // 2013-01-13<br/>
  &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-03-04", week, 25)); // &nbsp;2011-06-20<br/>
  &nbsp; &nbsp; &nbsp;echo( reschedule ("", 1, day)); // &nbsp; &nbsp; &nbsp; &nbsp;Returns blank date<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( now, time, "15:30" )); // &nbsp; &nbsp;Changes time to 15:30. &nbsp; &nbsp;</code>
+ &nbsp; &nbsp; &nbsp;echo( reschedule ( now, time, "15:30" )); // &nbsp; &nbsp;Changes time to 15:30. &nbsp; &nbsp;</code></div>
 <h4> Output</h4>
-<code>2011-12-23<br/>
+<div class="output_background_color" ><code>2011-12-23<br/>
 2012-02-29<br/>
 2011-12-31<br/>
 2011-03-11<br/>
@@ -200,8 +201,8 @@ Following rescheduling parameter pairs are supported to reschedule date and time
 2013-01-13<br/>
 2011-06-20<br/>
 <br/>
-2020-08-19 15:30:00<br/>
-</code>
+2020-08-20 15:30:00<br/>
+</code></div>
 	</div>
 </section>
 

@@ -76,15 +76,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>for all parameters</code>
+<div class="white_background_color" ><code>for all parameters</code></div>
 <h4> Synopsis</h4>
-<code>for all parameters( parameter set value, iterator value, iterator counter ) statement; <br/>
-for all parameters( parameter set value, iterator value, iterator counter ) {statements; } </code>
+<div class="white_background_color" ><code>for all parameters( parameter set value, iterator value, iterator counter ) statement; <br/>
+for all parameters( parameter set value, iterator value, iterator counter ) {statements; } </code></div>
 <h4> Description</h4>
 <p>The loop works through all elements in the parameter set provided in the 1st function parameter.
 If the parameter set is empty, then the loop will not be executed.  This loop will not step into nested parameter elements.
@@ -112,7 +113,7 @@ Empty parameter sets (and literal: '') make the loop skip.</p>
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for all parameters( { He, Hi, Ho }, greetings[] ) print( " &nbsp; Say: ",greetings[]);<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { He, Hi, Ho }, greetings[] ) print( " &nbsp; Say: ",greetings[]);<br/>
  &nbsp; &nbsp; &nbsp;echo;<br/>
  &nbsp; &nbsp; &nbsp;for all parameters( 'He,Hi,Ho', greetings[] ) &nbsp; &nbsp; print( " &nbsp; Say: ",greetings[]);<br/>
  &nbsp; &nbsp; &nbsp;echo;<br/>
@@ -120,12 +121,12 @@ Empty parameter sets (and literal: '') make the loop skip.</p>
  &nbsp; &nbsp; &nbsp;echo;<br/>
  &nbsp; &nbsp; &nbsp;a[] = {A..C};<br/>
  &nbsp; &nbsp; &nbsp;for all parameters( a[], greetings[], i[] ) &nbsp; &nbsp; print( " &nbsp; Say: ", i[], ":", greetings[]);<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code> &nbsp; Say: He &nbsp; Say: Hi &nbsp; Say: Ho<br/>
+<div class="output_background_color" ><code> &nbsp; Say: He &nbsp; Say: Hi &nbsp; Say: Ho<br/>
  &nbsp; Say: He &nbsp; Say: Hi &nbsp; Say: Ho<br/>
  &nbsp; Say: He,Hi,Ho<br/>
- &nbsp; Say: 0:A &nbsp; Say: 1:B &nbsp; Say: 2:C</code>
+ &nbsp; Say: 0:A &nbsp; Say: 1:B &nbsp; Say: 2:C</code></div>
 <h4> See also</h4>
 <p><a href="Function_for_all_variables.html">for all variables</a></p>
 <h4> Notes</h4>

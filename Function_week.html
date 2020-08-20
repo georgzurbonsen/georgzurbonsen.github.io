@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>week</code>
+<div class="white_background_color" ><code>week</code></div>
 <h4> Description</h4>
 <p>This function calculates the week number from the date. -1 is returned if the input parameter contains no recognizable date.
 </p>
@@ -106,20 +107,20 @@ Other values: -1 is returned</p>
 <td><b>week number</b><br/><p>-1 is returned if no recognizable date is provided or wrong option value is used.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;d[1] = { 31.12.2020, 31.12.2021, 31.12.2022 }; // still a literal. week() converts to date<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;d[1] = { 31.12.2020, 31.12.2021, 31.12.2022 }; // still a literal. week() converts to date<br/>
  &nbsp; &nbsp; &nbsp;d[2] = { 01.01.2020, 01.01.2021, 01.01.2022 };<br/>
  &nbsp; &nbsp; &nbsp;for (option[] = 0, option[] &lt;= 4, option[]++)<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( week( d[1]{0}, option[] ), " ", week( d[1]{1}, option[] ), " ", week( d[1]{2}, option[] ), " &nbsp; " );<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo ( week( d[2]{0}, option[] ), " ", week( d[2]{1}, option[] ), " ", week( d[2]{2}, option[] ) );<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>53 52 52 &nbsp; 1 53 52<br/>
+<div class="output_background_color" ><code>53 52 52 &nbsp; 1 53 52<br/>
 53 52 52 &nbsp; 1 0 0<br/>
 20.53 21.52 22.52 &nbsp; 20.01 21 22<br/>
 2020.53 2021.52 2022.52 &nbsp; 2020.01 2021 2022<br/>
 -1 -1 -1 &nbsp; -1 -1 -1<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

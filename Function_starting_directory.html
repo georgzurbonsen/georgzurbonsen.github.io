@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>starting directory</code>
+<div class="white_background_color" ><code>starting directory</code></div>
 <h4> Description</h4>
 <p>
 When B4P is started, it will look for "Main.b4p" in the starting directory.
@@ -106,17 +107,17 @@ If directory path is provided: Change the starting directory.<br>
 <h4> Exceptions</h4>
 <p>Specified starting directory does not exist or is not accessible</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;saved starting directory[] = starting directory();<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;saved starting directory[] = starting directory();<br/>
  &nbsp; &nbsp; &nbsp;echo(" Old starting directory: ", saved starting directory [] );<br/>
  &nbsp; &nbsp; &nbsp;starting directory( working directory () );<br/>
  &nbsp; &nbsp; &nbsp;echo(" New starting directory: ", starting directory () );<br/>
  &nbsp; &nbsp; &nbsp;starting directory( saved starting directory[] );<br/>
- &nbsp; &nbsp; &nbsp;echo(" Back to old starting directory: ", saved starting directory [] );</code>
+ &nbsp; &nbsp; &nbsp;echo(" Back to old starting directory: ", saved starting directory [] );</code></div>
 <h4> Output</h4>
-<code> Old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker<br/>
+<div class="output_background_color" ><code> Old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker<br/>
  New starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker<br/>
  Back to old starting directory: C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

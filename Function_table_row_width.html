@@ -60,7 +60,7 @@ prev  next
 </ul></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table row width</code>
+<div class="white_background_color" ><code>table row width</code></div>
 <h4> Description</h4>
 <p>This table returns the width of a specific table row.<br>
 <a  href="Function_with_table.html">partial table specification</a> is supported: If the context is available, then the current table and optionally current row number will be used.</p>
@@ -107,7 +108,7 @@ prev  next
 No context available for partial table specifications<br/>
 row number is outside table boundaries</p>
 <h4> Examples</h4>
-<code> &nbsp;include ( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp;table initialize ( table 1,<br/>
  &nbsp;{ { Animal, leg count, hair color }, { Worm, &nbsp;0}, { Bird, 2, white, brown, yellow }, { Dog, 4 }, { Fly }, {}, { Tick, 8 } } );<br/>
@@ -123,9 +124,9 @@ row number is outside table boundaries</p>
  &nbsp; &nbsp; &nbsp;print( table row width( 2 )); // 5 (Row 3)<br/>
  &nbsp; &nbsp; &nbsp;echo( ", ", table row width( &nbsp;)); // 2 (Row 1)<br/>
  &nbsp;}<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>table 1 ________________________<br/>
+<div class="output_background_color" ><code>table 1 ________________________<br/>
 Animal &nbsp;leg count &nbsp;hair color &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Worm &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 Bird &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;white &nbsp; &nbsp; &nbsp; brown &nbsp;yellow &nbsp;<br/>
@@ -136,7 +137,7 @@ Tick &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs
 <br/>
 2, 3, 0<br/>
 5, 2<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_min_width.html">table min width</a><br/>
 <a href="Function_table_min_width.html">table max width</a></p>

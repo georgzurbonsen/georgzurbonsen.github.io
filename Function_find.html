@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>find, find ignore case, find ignore blanks, find ignore both</code>
+<div class="white_background_color" ><code>find, find ignore case, find ignore blanks, find ignore both</code></div>
 <h4> Description</h4>
 <p>
 Searches the string for specified patterns and returns the character position number (0 = 1st character).
@@ -122,7 +123,7 @@ Negative numbers are supported: -1 = last character, -2 = character before last 
 <td><b>Character position number</b><br/><p>Positive or zero: Found and position number returned.  -1: Not found.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;st[] = "We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.";<br/>
+<div class="code_background_color" ><code> &nbsp;st[] = "We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.";<br/>
 <br/>
  &nbsp;// 1st two finds point on 'pizza', the 3rd fine points to 'pasta'<br/>
  &nbsp;echo( "Testing '", st[], "':" );<br/>
@@ -145,9 +146,9 @@ Negative numbers are supported: -1 = last character, -2 = character before last 
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;index[] = find ignore case( st[], { gelati, pasta, desert }, index[]+1, choice[] );<br/>
  &nbsp; &nbsp; &nbsp;echo &nbsp;( i[], ". order is ", foods[]{choice[]} );<br/>
- &nbsp;}</code>
+ &nbsp;}</code></div>
 <h4> Output</h4>
-<code>Testing 'We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.':<br/>
+<div class="output_background_color" ><code>Testing 'We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.':<br/>
 7 / -1 / 7 / 14<br/>
 Looking for Desert: 24<br/>
 Ignore spaces: 5<br/>
@@ -157,7 +158,7 @@ Locating a digit: 6 / 2<br/>
 2. order is Pasta<br/>
 3. order is Gelati<br/>
 4. order is Caffè<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_find_.html">find (parameter set function)</a></p>
 	</div>

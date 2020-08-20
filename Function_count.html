@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>count, count ignore zero, count ignore blanks, count ignore both</code>
+<div class="white_background_color" ><code>count, count ignore zero, count ignore blanks, count ignore both</code></div>
 <h4> Description</h4>
 <p>
 These functions counts number of affected parameters.
@@ -106,7 +107,7 @@ you to pre-select specific parameters to include in the calculation using one or
 <h4> Exceptions</h4>
 <p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 7<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 7<br/>
  &nbsp; &nbsp; &nbsp;echo( count ignore zero &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 6<br/>
  &nbsp; &nbsp; &nbsp;echo( count ignore blanks( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 5 (only pure blank ignored)<br/>
  &nbsp; &nbsp; &nbsp;echo( count ignore both &nbsp;( 1, 2, 3, a, '', ' ',0 ) &nbsp;); // 4 (both 0 and blank ignored)<br/>
@@ -114,9 +115,9 @@ you to pre-select specific parameters to include in the calculation using one or
  &nbsp; &nbsp; &nbsp;echo( count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( date(today), date(""), true, false ) &nbsp;); // 4<br/>
  &nbsp; &nbsp; &nbsp;echo( count ignore zero &nbsp;( date(today), date(""), true, false ) &nbsp;); // 2 (blank date, false)<br/>
  &nbsp; &nbsp; &nbsp;echo( count ignore blanks( date(today), date(""), true, false ) &nbsp;); // 3 (blank date)<br/>
- &nbsp; &nbsp; &nbsp;echo( count ignore both &nbsp;( date(today), date(""), true, false ) &nbsp;); // 2 (both)</code>
+ &nbsp; &nbsp; &nbsp;echo( count ignore both &nbsp;( date(today), date(""), true, false ) &nbsp;); // 2 (both)</code></div>
 <h4> Output</h4>
-<code>7<br/>
+<div class="output_background_color" ><code>7<br/>
 6<br/>
 5<br/>
 4<br/>
@@ -124,7 +125,7 @@ you to pre-select specific parameters to include in the calculation using one or
 2<br/>
 3<br/>
 2<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">counting parameter set elements with {}</span></p>
 	</div>

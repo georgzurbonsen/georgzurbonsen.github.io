@@ -70,15 +70,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>if, unless</code>
+<div class="white_background_color" ><code>if, unless</code></div>
 <h4> Synopsis</h4>
-<code>if/unless (expression) { statements } [ else { statements } ]<br/>
-if/unless (expression) statement; else : statement</code>
+<div class="white_background_color" ><code>if/unless (expression) { statements } [ else { statements } ]<br/>
+if/unless (expression) statement; else : statement</code></div>
 <h4> Description</h4>
 <p>Executes statement or block after function name if parameter is true (for <b>if</b>) or false (for <b>unless</b>).</p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
@@ -98,14 +99,14 @@ if/unless (expression) statement; else : statement</code>
 <h4> Exceptions</h4>
 <p>none</p>
 <h4> Examples</h4>
-<code> &nbsp;for (a[] = 0, a[] &lt;= 6, a[]++)<br/>
+<div class="code_background_color" ><code> &nbsp;for (a[] = 0, a[] &lt;= 6, a[]++)<br/>
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;if &nbsp; &nbsp; ( even(a[])) echo(a[], " is even" );<br/>
  &nbsp; &nbsp; &nbsp;unless ( a[] &lt; 5 &nbsp;) echo(a[], " is not smaller than 5" );<br/>
  &nbsp; &nbsp; &nbsp;else: &nbsp;echo (a[], " is smaller than 5");<br/>
- &nbsp;}</code>
+ &nbsp;}</code></div>
 <h4> Output</h4>
-<code>0 is even<br/>
+<div class="output_background_color" ><code>0 is even<br/>
 0 is smaller than 5<br/>
 1 is smaller than 5<br/>
 2 is even<br/>
@@ -116,7 +117,7 @@ if/unless (expression) statement; else : statement</code>
 5 is not smaller than 5<br/>
 6 is even<br/>
 6 is not smaller than 5<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

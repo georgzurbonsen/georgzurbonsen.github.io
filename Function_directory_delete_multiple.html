@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>directory delete multiple, directory delete multiple all, directory delete recursive, directory delete recursive all, directory delete recursive if empty</code>
+<div class="white_background_color" ><code>directory delete multiple, directory delete multiple all, directory delete recursive, directory delete recursive all, directory delete recursive if empty</code></div>
 <h4> Description</h4>
 <p>
 These functions delete multiple directories in specified directories.  <span class="red_text">Wildcards</span> are supported to select directories to delete.<br>
@@ -127,7 +128,7 @@ Directory not empty<br/>
 Directory not accessible<br/>
 Directory is a file</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;directory delete multiple( "D:&#92;A", "*");<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;directory delete multiple( "D:&#92;A", "*");<br/>
  &nbsp; &nbsp; &nbsp;// Deletes all subdirectories in directory A if they are empty. The directory A will not be deleted.<br/>
  &nbsp; &nbsp; &nbsp;// Deleting will stop when encountering first issue, e.g. non-empty or blocked directory.<br/>
  &nbsp; &nbsp; &nbsp;<br/>
@@ -154,7 +155,7 @@ Directory is a file</p>
 <br/>
  &nbsp; &nbsp; &nbsp;directory delete recursive if empty ( "", "A");<br/>
  &nbsp; &nbsp; &nbsp;// &nbsp;Deletes subdirectory A including their nested sub-directories in directory A if empty<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_directory_delete.html">directory delete ... Functions</a><br/>
 <a href="Function_file_delete_multiple.html">file delete multiple/recursive ... Functions</a></p>

@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>flat</code>
+<div class="white_background_color" ><code>flat</code></div>
 <h4> Description</h4>
 <p>
 In a parameter set, all elements which are also parameter sets (for example matrices), will be flattened by shifting all members upward.
@@ -98,16 +99,16 @@ The matrices may contain contents of all data types and not just numerals.
 <td><b>Flattened vector</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( flat( {1,2,3} ) ); &nbsp; &nbsp; &nbsp; &nbsp;// Returns {1,2,3}<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( flat( {1,2,3} ) ); &nbsp; &nbsp; &nbsp; &nbsp;// Returns {1,2,3}<br/>
  &nbsp; &nbsp; &nbsp;echo( flat( {{1,2,3}} ) ); &nbsp; &nbsp; &nbsp;// Same<br/>
  &nbsp; &nbsp; &nbsp;echo( flat( {{1},{2},{3}} ) ); &nbsp;// Same<br/>
- &nbsp; &nbsp; &nbsp;echo( flat( {{{1,2}}, {3}} ) ); // Returns {{1,2},3} (Only 2-level flattening(</code>
+ &nbsp; &nbsp; &nbsp;echo( flat( {{{1,2}}, {3}} ) ); // Returns {{1,2},3} (Only 2-level flattening(</code></div>
 <h4> Output</h4>
-<code>{1,2,3}<br/>
+<div class="output_background_color" ><code>{1,2,3}<br/>
 {1,2,3}<br/>
 {1,2,3}<br/>
 {{1,2},3}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_vertical.html">vertical</a><br/>
 <a href="Function_horizontal.html">horizontal</a><br/>

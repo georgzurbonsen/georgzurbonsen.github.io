@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>get differences</code>
+<div class="white_background_color" ><code>get differences</code></div>
 <h4> Description</h4>
 <p>
 This function checks two literals for deviating contents and copies them in two substrings.
@@ -138,7 +139,7 @@ Options are available to include whole words or numbers in the comparison, so "M
       3 = Differences identified, and the different string section has been extended to cover whoel words, numbers or non-blank text depending on option chosen.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code><br/>
+<div class="code_background_color" ><code><br/>
  &nbsp; &nbsp; &nbsp;r[] = get differences(Good taste of coffee counts, Good taste of coffee counts, c[], d[] );<br/>
  &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // '', '', 0 (equal)<br/>
 <br/>
@@ -167,9 +168,9 @@ Options are available to include whole words or numbers in the comparison, so "M
  &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 0, 1, 1<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;r[] &nbsp;= get differences( "20-Mar-2015", "21-Mar-2015" , c[], d[], spaces);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 20-Mar-2015, 20-Mar-2016, 1</code>
+ &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 20-Mar-2015, 20-Mar-2016, 1</code></div>
 <h4> Output</h4>
-<code>1st string: '', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 0<br/>
+<div class="output_background_color" ><code>1st string: '', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 0<br/>
 1st string: 'offee', &nbsp; &nbsp;2nd string: 'affè' &nbsp; Result: 1<br/>
 1st string: 'coffee', &nbsp; &nbsp;2nd string: 'caffè' &nbsp; Result: 3<br/>
 1st string: 'of coffee ', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 2<br/>
@@ -179,7 +180,7 @@ Options are available to include whole words or numbers in the comparison, so "M
 1st string: '2015', &nbsp; &nbsp;2nd string: '2016' &nbsp; Result: 3<br/>
 1st string: '0', &nbsp; &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
 1st string: '20-Mar-2015', &nbsp; &nbsp;2nd string: '21-Mar-2015' &nbsp; Result: 3<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_locate_differences.html">locate differences</a></p>
 	</div>

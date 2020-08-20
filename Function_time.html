@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>time, pure time</code>
+<div class="white_background_color" ><code>time, pure time</code></div>
 <h4> Description</h4>
 <p>
 This function converts time information contained in literals or numeric date information into B4P <a  href="Features_data_types_dates.html">plain date</a> type.  The differences
@@ -131,21 +132,21 @@ of the two function names are described below:
 <td><b>Date and/or time</b><br/><p>Contains date, time, date and time combined or blank date.  No literal context of the date is preserved or included.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( time ( now ) );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( time ( now ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( pure time ( today ) ); &nbsp; // 00:00:00<br/>
  &nbsp; &nbsp; &nbsp;echo( time ( "08:30 p.m." )); &nbsp;// 20:30:00<br/>
  &nbsp; &nbsp; &nbsp;a[] = { 20, 15, 30 };<br/>
  &nbsp; &nbsp; &nbsp;echo( time ( a[] )); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // 20:15:30<br/>
  &nbsp; &nbsp; &nbsp;echo( time ( '2020-12-31' ) ); // Blank date value<br/>
- &nbsp; &nbsp; &nbsp;echo( time ( 19/24 )); &nbsp; &nbsp; &nbsp; &nbsp; // 19:00:00</code>
+ &nbsp; &nbsp; &nbsp;echo( time ( 19/24 )); &nbsp; &nbsp; &nbsp; &nbsp; // 19:00:00</code></div>
 <h4> Output</h4>
-<code>23:31:48<br/>
+<div class="output_background_color" ><code>19:09:14<br/>
 00:00:00<br/>
 20:30:00<br/>
 20:15:30<br/>
 <br/>
 19:00:00<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_date.html">date conversion functions</a><br/>
 <a href="Features_data_types_dates.html">date</a><br/>

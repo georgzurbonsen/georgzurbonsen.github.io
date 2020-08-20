@@ -70,15 +70,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>switch, check</code>
+<div class="white_background_color" ><code>switch, check</code></div>
 <h4> Synopsis</h4>
-<code>switch/check ( expression ) { case ( comparison expression ) statement; case ...  [ else : statement; ]<br/>
-switch/check ( expression ) { case ( comparison expression ) { statements }; case ...  [ else { statements } ]</code>
+<div class="white_background_color" ><code>switch/check ( expression ) { case ( comparison expression ) statement; case ...  [ else : statement; ]<br/>
+switch/check ( expression ) { case ( comparison expression ) { statements }; case ...  [ else { statements } ]</code></div>
 <h4> Description</h4>
 <p>The <b>switch</b> function allows to execute exactly one code block among alternatives where the condition is met.<br/>
 The <b>check</b> function allows to execute multiple code blocks wherever the conditions are met.
@@ -98,7 +99,7 @@ Following the <b>else</b>, additional <b>case</b> statements are allowed to do a
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo("Try 'switch:'");<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("Try 'switch:'");<br/>
  &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 6, a[]++)<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print ( " &nbsp;",a[], ": " );<br/>
@@ -128,9 +129,9 @@ Following the <b>else</b>, additional <b>case</b> statements are allowed to do a
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print ("Else: at most 2; &nbsp;");<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: echo ("Done");<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>Try 'switch:'<br/>
+<div class="output_background_color" ><code>Try 'switch:'<br/>
  &nbsp;1: Not equal to 3; &nbsp; Else: at most 2; &nbsp;Done<br/>
  &nbsp;2: Greater than 1; &nbsp; Else: at most 2; &nbsp;Done<br/>
  &nbsp;3: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
@@ -144,7 +145,7 @@ Try 'check':<br/>
  &nbsp;4: Greater than 1; &nbsp; Not equal to 3; &nbsp; Equals to 4 and 6; &nbsp; Greater than 2; &nbsp;Done<br/>
  &nbsp;5: Greater than 1; &nbsp; Not equal to 3; &nbsp; Greater than 2; &nbsp;Done<br/>
  &nbsp;6: Greater than 1; &nbsp; Not equal to 3; &nbsp; Equals to 4 and 6; &nbsp; Greater than 2; &nbsp;Done<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_case.html">case</a></p>
 	</div>

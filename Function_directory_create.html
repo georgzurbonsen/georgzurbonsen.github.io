@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>directory create, directory create all, directory create silently</code>
+<div class="white_background_color" ><code>directory create, directory create all, directory create silently</code></div>
 <h4> Description</h4>
 <p>
 
@@ -116,20 +117,20 @@ to call this function for "dir1"; "dir1/dir2", "dir1/dir2/dir3" ... etc.</p>
 <p>Directory is already existing<br/>
 invalid path name</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;directory create( { My Folder 1 .. My Folder 5 } ); // Create 5 directories<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;directory create( { My Folder 1 .. My Folder 5 } ); // Create 5 directories<br/>
  &nbsp; &nbsp; &nbsp;system( 'dir /W "My Folder*"' ); // Show directory listing<br/>
  &nbsp; &nbsp; &nbsp;directory delete recursive( "", "My Folder *" ); // Delete "My Folder 1" and "... 2".<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code> Datenträger in Laufwerk C: ist Windows<br/>
+<div class="output_background_color" ><code> Datenträger in Laufwerk C: ist Windows<br/>
  Volumeseriennummer: 3AE9-E853<br/>
 <br/>
  Verzeichnis von C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker<br/>
 <br/>
 [My Folder 1] [My Folder 2] [My Folder 3] [My Folder 4] [My Folder 5]<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 Datei(en), &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 Bytes<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 Verzeichnis(se), 86’203’478’016 Bytes frei<br/>
-</code>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 Verzeichnis(se), 85’044’453’376 Bytes frei<br/>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_directory_delete.html">directory delete ... Functions</a></p>
 	</div>

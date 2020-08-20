@@ -62,7 +62,7 @@ prev  next
 <li class="navi"><a href="Function_table_save.html"><span>4.7.4.5 table save ... </span></a></li>
 <li class="navi"><a href="Features_Saving_JSON_files.html"><span>4.7.4.6 Saving JSON files </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table save, table save with local decimal separator, table save with decimal comma, table save multiple</code>
+<div class="white_background_color" ><code>table save, table save with local decimal separator, table save with decimal comma, table save multiple</code></div>
 <h4> Description</h4>
 <p>
 This function saves 1 or more tables to a file.  Following file formats are supported and can be specified in the 2nd function parameter:
@@ -170,7 +171,7 @@ File locked<br/>
 Syntax errors in table formats, e.g in HTML, JSON, XML<br/>
 File locked. Close the file in the other application and retry</p>
 <h4> Examples</h4>
-<code> &nbsp;include( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
 <br/>
  &nbsp;table initialize( t, { { Object, Height in meters }, { dog, 0.5 }, { horse, 1.8 }, { elephant, 2.5 }} );<br/>
 <br/>
@@ -184,9 +185,9 @@ File locked. Close the file in the other application and retry</p>
  &nbsp;echo("Table loaded with wrong separator symbol. &nbsp;Outcome looks like this:");<br/>
  &nbsp;table list ( t ); echo;<br/>
 <br/>
- &nbsp;file delete silently( animals.csv );</code>
+ &nbsp;file delete silently( animals.csv );</code></div>
 <h4> Output</h4>
-<code>Object &nbsp; &nbsp;Height in meters &nbsp;<br/>
+<div class="output_background_color" ><code>Object &nbsp; &nbsp;Height in meters &nbsp;<br/>
 dog &nbsp; &nbsp; &nbsp; 0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 horse &nbsp; &nbsp; 1.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 elephant &nbsp;2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -205,7 +206,7 @@ horse;1.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 elephant;2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_load.html">table load</a><br/>
 <a href="Features_Saving_JSON_files.html">Saving JSON files</a></p>

@@ -54,11 +54,14 @@ prev  next
 <li class="navi"><a href="Features_accessing_table_info.html"><span>+ 4.7.2 Accessing Table Information </span></a></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="Function_table_check_header.html"><span>4.7.5.1 table check header </span></a></li>
 <li class="navi"><a href="Function_table_column_number.html"><span>4.7.5.2 table column number </span></a></li>
 <li class="navi"><a href="Function_table_check_headers.html"><span>4.7.5.3 table check headers ... </span></a></li>
+<li class="navi"><a href="Function_table_rename_headers.html"><span>4.7.5.4 table rename ... headers </span></a></li>
+<li class="navi"><a href="Function_table_correct_headers.html"><span>4.7.5.5 table correct headers ... </span></a></li>
+<li class="navi"><a href="Function_table_lift_header_row.html"><span>4.7.5.6 table lift ... </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
@@ -69,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table check headers, table check headers silently</code>
+<div class="white_background_color" ><code>table check headers, table check headers silently</code></div>
 <h4> Description</h4>
 <p>
 THis function checks the table for column headers in a smart way according to specific rules you can provide.
@@ -157,7 +161,7 @@ The function <b>table check headers silently</b> suppresses exceptions in case t
 <p>Table not found<br/>
 Various exceptions resulting from issues identified while checking headers</p>
 <h4> Examples</h4>
-<code> &nbsp;table initialize ( table 1,<br/>
+<div class="code_background_color" ><code> &nbsp;table initialize ( table 1,<br/>
  &nbsp;{ { Name, Street, Town, Country }, { Miller, "..." } } );<br/>
 <br/>
  &nbsp;echo("1. Demonstrate 'must not exist':");<br/>
@@ -246,9 +250,9 @@ Various exceptions resulting from issues identified while checking headers</p>
  &nbsp;echo( table check headers silently( table 1, { Name, Town }, must exist, max 1 ) ); // Not OK<br/>
  &nbsp;echo( table check headers silently( table 1, { Name &nbsp;}, must exist, max 1 ) ); &nbsp;// &nbsp;OK<br/>
  &nbsp;echo( table check headers silently( table 1, { &nbsp;}, must exist, max 1 ) ); &nbsp; // &nbsp;OK<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>1. Demonstrate 'must not exist':<br/>
+<div class="output_background_color" ><code>1. Demonstrate 'must not exist':<br/>
 ok<br/>
 already existing<br/>
 ok<br/>
@@ -318,7 +322,7 @@ ok<br/>
 wrong count<br/>
 ok<br/>
 empty and ok<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_check_header.html">table check header</a><br/>
 <span class="red_text">table insert missing columns</span></p>

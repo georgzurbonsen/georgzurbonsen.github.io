@@ -62,6 +62,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -75,7 +76,7 @@ Syntax for a simple variable:  <b>Variable Name [ ]  </b>
 <br/><br/>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;a[] = Hello;<br/>
+<div class="code_background_color" ><code> &nbsp;a[] = Hello;<br/>
  &nbsp;(a[])[] = Hi; // Parentheses required on left hand side, <br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// otherwise seen as "right hand" expression and not "left hand" expression<br/>
  &nbsp;(a[] + ' World')[] = Ahoi;<br/>
@@ -93,9 +94,9 @@ Syntax for a simple variable:  <b>Variable Name [ ]  </b>
  &nbsp;me too[] = Hmm;<br/>
  &nbsp;me &nbsp;too[] = Me; &nbsp; // Unquoted literal ignores redundant spaces, same as 'me too'<br/>
  &nbsp;'me &nbsp;too'[] = Mee too;<br/>
- &nbsp;echo( me too[], ", ", me &nbsp;too[], ", ", 'me &nbsp;too'[] );</code>
+ &nbsp;echo( me too[], ", ", me &nbsp;too[], ", ", 'me &nbsp;too'[] );</code></div>
 <h5> Output:</h5>
-<code>a[] &nbsp; &nbsp; = Hello<br/>
+<div class="output_background_color" ><code>a[] &nbsp; &nbsp; = Hello<br/>
 a[][] &nbsp; = Hi<br/>
 Hello[] = Hi<br/>
 Hello World[] = Ahoi<br/>
@@ -103,7 +104,7 @@ Hello World[] = Ahoi<br/>
 One Space Blank aaaah<br/>
 <br/>
 Me, Me, Mee too<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

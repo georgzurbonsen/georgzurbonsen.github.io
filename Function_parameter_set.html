@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>parameter set</code>
+<div class="white_background_color" ><code>parameter set</code></div>
 <h4> Description</h4>
 <p>
 This function converts a value provided to a parameter set.
@@ -121,20 +122,20 @@ Reason: Literals in conversion from parameter sets to literal will be put into s
 <td><b>Result</b><br/><p>Identified parameter set</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( parameter set ( "{a,1,{true,TRUE,false}} " ) ); &nbsp; &nbsp; // {{'a',1,{true,'TRUE',false}}}<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( parameter set ( "{a,1,{true,TRUE,false}} " ) ); &nbsp; &nbsp; // {{'a',1,{true,'TRUE',false}}}<br/>
  &nbsp; &nbsp; &nbsp;echo( parameter set ( "a,1,{true,TRUE,false} " ) ); &nbsp; // {'a',1,{true,'TRUE',false}}<br/>
  &nbsp; &nbsp; &nbsp;echo( parameter set ( "2019-07-14,10:30:00" &nbsp;) ); // 2 date values: { 2019-07-14,10:30:00 }<br/>
  &nbsp; &nbsp; &nbsp;echo( type( parameter set ( "2019-07-14,10:30:00" ){0} ) ); &nbsp; // Check type of date<br/>
  &nbsp; &nbsp; &nbsp;echo( parameter set ( "2019/07/14,10:30" &nbsp;) ); &nbsp; &nbsp; &nbsp; &nbsp;// 2 literals: { '2019/07/14','10:30' } (not qualified as dates)<br/>
- &nbsp; &nbsp; &nbsp;echo( parameter set ( "{a,,b}" &nbsp;) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 4 literals: { 'a','','','b' } (2 literals are blank)</code>
+ &nbsp; &nbsp; &nbsp;echo( parameter set ( "{a,,b}" &nbsp;) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 4 literals: { 'a','','','b' } (2 literals are blank)</code></div>
 <h4> Output</h4>
-<code>{{'a',1,{true,'TRUE',false}}}<br/>
+<div class="output_background_color" ><code>{{'a',1,{true,'TRUE',false}}}<br/>
 {'a',1,{true,'TRUE',false}}<br/>
 {'2019-07-14','10:30:00'}<br/>
 date<br/>
 {'2019/07/14','10:30'}<br/>
 {'a','','b'}<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

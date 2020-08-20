@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>clean numeral, clean if numeral</code>
+<div class="white_background_color" ><code>clean numeral, clean if numeral</code></div>
 <h4> Description</h4>
 <p>
 This function converts a literal into numeral, including eliminating redundant contents in commercial number representations such as currency symbols
@@ -111,7 +112,7 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>clean if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( clean numeral ( "EUR 1'234.50" ), " and ", clean if numeral ( "EUR 1'234.50" ) ); // Both 1234.5<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( clean numeral ( "EUR 1'234.50" ), " and ", clean if numeral ( "EUR 1'234.50" ) ); // Both 1234.5<br/>
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( "2,500 € " ), &nbsp; &nbsp; " and ", clean numeral ( "2,500 €", ",") ); // &nbsp;2500 and 2.5<br/>
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( "2,500- € " ) ); // -2500<br/>
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( "- &nbsp; 2,500" ), &nbsp; &nbsp;", ", &nbsp; &nbsp;clean numeral ( "(2,500)" ) ); // &nbsp;Both -2500<br/>
@@ -124,9 +125,9 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <br/>
  &nbsp; &nbsp; &nbsp;echo( new line, "Scientific Notations:");<br/>
  &nbsp; &nbsp; &nbsp;echo( clean numeral ( 1.2E3 ), " and &nbsp;", clean numeral ( '1.2E+03' ) ); // &nbsp;return 1200<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "1 2 E - 0 3" ) ); // returns 0.012</code>
+ &nbsp; &nbsp; &nbsp;echo( clean numeral ( "1 2 E - 0 3" ) ); // returns 0.012</code></div>
 <h4> Output</h4>
-<code>1234.5 and 1234.5<br/>
+<div class="output_background_color" ><code>1234.5 and 1234.5<br/>
 2500 and 2.5<br/>
 -2500<br/>
 -2500, -2500<br/>
@@ -140,7 +141,7 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 Scientific Notations:<br/>
 1200 and &nbsp;1200<br/>
 0.012<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_numeral.html">numeral conversion function</a><br/>
 <a href="Function_smart_numeral.html">smart numeral</a><br/>

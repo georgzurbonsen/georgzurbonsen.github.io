@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>weekday</code>
+<div class="white_background_color" ><code>weekday</code></div>
 <h4> Description</h4>
 <p>
 Retrieves the weekday number from the date.  If you need the weekday name, the use following function instead:<br>
@@ -107,14 +108,13 @@ All other values are treated as 2.</p>
 <td><b>Weekday number</b><br/><p>-1 is returned if no recognizable date is provided.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;for all parameters( { date(today) .. date(today)+10, date("15:00:00") }, date[] )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { date(today) .. date(today)+10, date("15:00:00") }, date[] )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( literal( date[], "Ttt, DD.Mmm.YYYY: " ), weekday(date[], 1), " ",<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;weekday(date[], 2), " ", weekday(date[], 3) );<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>Wed, 19.Aug.2020: 4 3 2<br/>
-Thu, 20.Aug.2020: 5 4 3<br/>
+<div class="output_background_color" ><code>Thu, 20.Aug.2020: 5 4 3<br/>
 Fri, 21.Aug.2020: 6 5 4<br/>
 Sat, 22.Aug.2020: 7 6 5<br/>
 Sun, 23.Aug.2020: 1 7 6<br/>
@@ -124,8 +124,9 @@ Wed, 26.Aug.2020: 4 3 2<br/>
 Thu, 27.Aug.2020: 5 4 3<br/>
 Fri, 28.Aug.2020: 6 5 4<br/>
 Sat, 29.Aug.2020: 7 6 5<br/>
+Sun, 30.Aug.2020: 1 7 6<br/>
 ___, __.___.____: -1 -1 -1<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

@@ -70,6 +70,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -97,13 +98,13 @@ In the program code, sets can be defined with any number of values or expression
 <tr><td>Arithmetics     </td><td> A broad range of arithmetic operators are available to manipulate parameter sets.</td></tr>
 </table><p></p>
 <h5> Examples:</h5>
-<code> &nbsp;a[] = { 1, a, 2, {b,c}, true, date(today) };<br/>
+<div class="code_background_color" ><code> &nbsp;a[] = { 1, a, 2, {b,c}, true, date(today) };<br/>
  &nbsp;echo( a[], " / ", type(a[]) );<br/>
- &nbsp;echo( "First element: ", a[]{0}, " and last element: ", a[]{1} );</code>
+ &nbsp;echo( "First element: ", a[]{0}, " and last element: ", a[]{1} );</code></div>
 <h5> Output:</h5>
-<code>{1,'a',2,{'b','c'},true,'2020-08-19'} / parameter set<br/>
+<div class="output_background_color" ><code>{1,'a',2,{'b','c'},true,'2020-08-20'} / parameter set<br/>
 First element: 1 and last element: a<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

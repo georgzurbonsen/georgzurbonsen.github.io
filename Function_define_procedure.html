@@ -71,14 +71,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>define procedure, define function, define procedure and function</code>
+<div class="white_background_color" ><code>define procedure, define function, define procedure and function</code></div>
 <h4> Synopsis</h4>
-<code>define ... ( expression, parameters ... ) { statement(s); } </code>
+<div class="white_background_color" ><code>define ... ( expression, parameters ... ) { statement(s); } </code></div>
 <h4> Description</h4>
 <p><b>define procedure </b> defines a user procedure to be called as statements and without providing return values.<br/>
 <b>define function </b> defines a user function which provides a return value and must be called inside an expression.<br/>
@@ -144,7 +145,7 @@ then the last two parameter types apply sequentially.  Similar rules apply to  l
 <h4> Exceptions</h4>
 <p>Procedure or function name is already defiend</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;define function( my private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define function( my private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "Name of function: ", function name[] );<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "First invited guest: ", guest name[], select if( vegetarian[], " (vegetarian menu)", " (fish menu)" ) );<br/>
@@ -167,9 +168,9 @@ then the last two parameter types apply sequentially.  Similar rules apply to  l
 <br/>
  &nbsp; &nbsp; &nbsp;guest count[] = my private function( Jim Bean, true, Tina Turner, false, Tom Cruise, false, Amsel Adams, true );<br/>
  &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited to bigger party: ", guest count[]); &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp; &nbsp;</code>
+ &nbsp; &nbsp; &nbsp;</code></div>
 <h4> Output</h4>
-<code>Name of function: my private function<br/>
+<div class="output_background_color" ><code>Name of function: my private function<br/>
 First invited guest: Jim Bean (vegetarian menu)<br/>
 <br/>
 Number of guests invited: 1<br/>
@@ -181,7 +182,7 @@ And: Tom Cruise (fish menu)<br/>
 And: Amsel Adams (vegetarian menu)<br/>
 <br/>
 Number of guests invited to bigger party: 4<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_define_additional_procedure.html">define additional procedure</a><br/>
 <a href="Function_define_additional_procedure.html">define additional function</a><br/>

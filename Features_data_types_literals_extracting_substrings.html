@@ -68,6 +68,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -78,16 +79,16 @@ Instead of specifying single index values to retrieve single characters, substri
 The range operator '..' is available to specify a range.  The result will always be a literal.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo( abcdefg { 0,2,4,2,0 } ); &nbsp; &nbsp;// Returns 'aceca'<br/>
+<div class="code_background_color" ><code> &nbsp;echo( abcdefg { 0,2,4,2,0 } ); &nbsp; &nbsp;// Returns 'aceca'<br/>
  &nbsp;echo( abcdefg { 3..5 } ); &nbsp; &nbsp; &nbsp; &nbsp; // Returns 'def'<br/>
  &nbsp;echo( abcdefg { 5..3 } ); &nbsp; &nbsp; &nbsp; &nbsp; // Empty string. &nbsp;Ranges cannot be listed in reverse direction<br/>
  &nbsp;echo( abcdefg { -3..-1 } ); &nbsp; &nbsp; &nbsp; // Returns 'efg' - Last 3 characters<br/>
  &nbsp;echo( abcdefg { 4..-1 } ); &nbsp; &nbsp; &nbsp; &nbsp;// Same result<br/>
  &nbsp;echo( abcdefg { 3..99 } ); &nbsp; &nbsp; &nbsp; &nbsp;// Returns 'defg'<br/>
  &nbsp;echo( abcdefg { -99..2 } ); &nbsp; &nbsp; &nbsp; // Returns 'abc'<br/>
- &nbsp;echo( abcdefg { 0..2,5,1..3 } ); &nbsp;// Combinations</code>
+ &nbsp;echo( abcdefg { 0..2,5,1..3 } ); &nbsp;// Combinations</code></div>
 <h5> Output:</h5>
-<code>aceca<br/>
+<div class="output_background_color" ><code>aceca<br/>
 def<br/>
 <br/>
 efg<br/>
@@ -95,7 +96,7 @@ efg<br/>
 defg<br/>
 abc<br/>
 abcfbcd<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

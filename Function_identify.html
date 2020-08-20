@@ -56,14 +56,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>identify</code>
+<div class="white_background_color" ><code>identify</code></div>
 <h4> Synopsis</h4>
-<code>identify( variable name );</code>
+<div class="white_background_color" ><code>identify( variable name );</code></div>
 <h4> Description</h4>
 <p>This function identifies the form of the variable, i.e.<br/>
 - A simple variable without any further members<br/>
@@ -89,7 +90,7 @@ and empty arrays.</p>
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;a[] = "It's simple";<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[] = "It's simple";<br/>
  &nbsp; &nbsp; &nbsp;array( b[], { Item 1, Item 2 } );<br/>
  &nbsp; &nbsp; &nbsp;structure( c[], { red, blue }, { rot, blau } );<br/>
 <br/>
@@ -111,9 +112,9 @@ and empty arrays.</p>
  &nbsp; &nbsp; &nbsp;echo( "Member k: ", identify(v[k]) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Member l: ", identify(v[l]) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Member m: ", identify(v[m]) );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Member n: ", identify(v[n]) );</code>
+ &nbsp; &nbsp; &nbsp;echo( "Member n: ", identify(v[n]) );</code></div>
 <h4> Output</h4>
-<code>a[]: simple &nbsp;b[]: array &nbsp;c[]: structure &nbsp;d[]: not found<br/>
+<div class="output_background_color" ><code>a[]: simple &nbsp;b[]: array &nbsp;c[]: structure &nbsp;d[]: not found<br/>
 b[0]: simple &nbsp;b[2]: not found<br/>
 c[red]: simple &nbsp;c[green]: not found &nbsp;c[red,yellow]: not found<br/>
 c[] without members: zero members<br/>
@@ -123,7 +124,7 @@ Member k: simple<br/>
 Member l: structure<br/>
 Member m: array<br/>
 Member n: zero members<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><span class="red_text">scope</span><br/>
 <span class="red_text">inspect</span><br/>

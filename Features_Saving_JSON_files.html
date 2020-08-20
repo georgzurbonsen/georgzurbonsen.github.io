@@ -62,7 +62,7 @@ prev  next
 <li class="navi"><a href="Function_table_save.html"><span>4.7.4.5 table save ... </span></a></li>
 <li class="navi"><a href="Features_Saving_JSON_files.html"><span>4.7.4.6 Saving JSON files </span></a></li>
 </ul></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -72,6 +72,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -99,7 +100,7 @@ In this appraoch, the JSON files uses two distinct names:
 </ul><p>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;include ( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp;table initialize( table 1, {{ Last Name, 1st Name, Age},<br/>
  &nbsp; &nbsp; &nbsp;{ Miller, Michelle, 30 }, { Johnson, Jane, 40 }, { '', Nick, 50 }} );<br/>
@@ -119,9 +120,9 @@ In this appraoch, the JSON files uses two distinct names:
 <br/>
  &nbsp;echo("table 1 &amp; 2 as JSON arrays _____________________");<br/>
  &nbsp;table list( text );<br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>table 1 ________________________________________<br/>
+<div class="output_background_color" ><code>table 1 ________________________________________<br/>
 Last Name &nbsp;1st Name &nbsp;Age &nbsp;<br/>
 Miller &nbsp; &nbsp; Michelle &nbsp;30 &nbsp; <br/>
 Johnson &nbsp; &nbsp;Jane &nbsp; &nbsp; &nbsp;40 &nbsp; <br/>
@@ -160,7 +161,7 @@ table 1 &amp; 2 as JSON arrays _____________________<br/>
 } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
-</code>
+</code></div>
 <h4> Using 'JSON objects' and 'JSON lean' approach</h4>
 <p>
 In this appraoch, the JSON files uses two distinct names:
@@ -171,7 +172,7 @@ In this appraoch, the JSON files uses two distinct names:
 assigned to same JSON names.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;include ( Support Library );<br/>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp;table initialize( table 1, {{ Last Name, 1st Name, Age},<br/>
  &nbsp; &nbsp; &nbsp;{ Miller, Michelle, 30 }, { Johnson, Jane, 40 }, { '', Nick, 50 }} );<br/>
@@ -201,9 +202,9 @@ assigned to same JSON names.
  &nbsp;table list( text );<br/>
 <br/>
  &nbsp;file delete silently( Output.json );<br/>
-</code>
+</code></div>
 <h5> Output:</h5>
-<code>table 1 ________________________________________<br/>
+<div class="output_background_color" ><code>table 1 ________________________________________<br/>
 Last Name &nbsp;1st Name &nbsp;Age &nbsp;<br/>
 Miller &nbsp; &nbsp; Michelle &nbsp;30 &nbsp; <br/>
 Johnson &nbsp; &nbsp;Jane &nbsp; &nbsp; &nbsp;40 &nbsp; <br/>
@@ -265,7 +266,7 @@ table 1 &amp; 2 as JSON objects ____________________<br/>
 } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_save.html">table save</a><br/>
 <a href="Features_Loading_JSON_files.html">Loading JSON files</a></p>

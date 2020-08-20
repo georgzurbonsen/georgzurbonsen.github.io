@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>right , right include , right last match , right last match include </code>
+<div class="white_background_color" ><code>right , right include , right last match , right last match include </code></div>
 <h4> Description</h4>
 <p>
 This function extracts a right part of the parameter set either with a element position number or a subset resembling a matching element.
@@ -128,7 +129,7 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <td><b>Extracted subset</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;set[] = { the, taste, of, the, 12, coffees, '!' };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;set[] = { the, taste, of, the, 12, coffees, '!' };<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( right( set[], 0 ), ", ", right( set[], 1 ), ", ", right( set[], -2 ), ", ", right( set[], -1 ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( right( set[],99 ), ", ", right( set[], -99) );<br/>
@@ -144,9 +145,9 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <br/>
  &nbsp; &nbsp; &nbsp;echo( "Extraction 1: ", right include ( set[], {the}, set2[], set3[] ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "Extraction 2: ", set2[] );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] ); </code>
+ &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] ); </code></div>
 <h4> Output</h4>
-<code>{}, {'!'}, {'of','the',12,'coffees','!'}, {'taste','of','the',12,'coffees','!'}<br/>
+<div class="output_background_color" ><code>{}, {'!'}, {'of','the',12,'coffees','!'}, {'taste','of','the',12,'coffees','!'}<br/>
 {'the','taste','of','the',12,'coffees','!'}, {}<br/>
 <br/>
 {'the',12,'coffees','!'} / {'of','the',12,'coffees','!'}<br/>
@@ -157,7 +158,7 @@ Demonstrate the follower feature: <br/>
 Extraction 1: {'the','taste','of','the',12,'coffees','!'}<br/>
 Extraction 2: {'A','fragrance','coming','from',120,'espressos','!'}<br/>
 Extraction 3: {'Der','Geschmack','kommt','von',120,'Tassen Kaffee','!'}<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_left_.html">left (parameter set function)</a><br/>
 <a href="Function_middle_.html">middle (parameter set function)</a><br/>

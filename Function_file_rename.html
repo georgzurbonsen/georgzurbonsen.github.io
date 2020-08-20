@@ -74,12 +74,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>file rename, file rename all, file rename silently</code>
+<div class="white_background_color" ><code>file rename, file rename all, file rename silently</code></div>
 <h4> Description</h4>
 <p>
 These functions rename files or move files from one location to another and come in following flavors:<br>
@@ -121,23 +122,23 @@ File not accessible<br/>
 File is a directory<br/>
 Number of existing and new path and file names are not equal</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;directory create( My Folder 1, My Folder 2 );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;directory create( My Folder 1, My Folder 2 );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;file copy( Example_Program.b4p, "My Folder 1/Test123.txt" );<br/>
  &nbsp; &nbsp; &nbsp;file rename( My Folder 1&#92;test123.txt, My Folder 2&#92;test456.txt ); // Move and rename<br/>
  &nbsp; &nbsp; &nbsp;system( 'dir /A-D /W "My Folder 2"' ); // Show directory listing<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;directory delete recursive( "", "My Folder ?" ); // Delete "My Folder 1" and "... 2".</code>
+ &nbsp; &nbsp; &nbsp;directory delete recursive( "", "My Folder ?" ); // Delete "My Folder 1" and "... 2".</code></div>
 <h4> Output</h4>
-<code> Datenträger in Laufwerk C: ist Windows<br/>
+<div class="output_background_color" ><code> Datenträger in Laufwerk C: ist Windows<br/>
  Volumeseriennummer: 3AE9-E853<br/>
 <br/>
  Verzeichnis von C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;My Folder 2<br/>
 <br/>
 test456.txt &nbsp; <br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Datei(en), &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;384 Bytes<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 Verzeichnis(se), 86’202’888’192 Bytes frei<br/>
-</code>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 Verzeichnis(se), 85’049’692’160 Bytes frei<br/>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_directory_rename.html">directory rename ... Functions</a><br/>
 <a href="Function_file_copy.html">file copy ... Functions</a></p>

@@ -67,12 +67,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>transpose</code>
+<div class="white_background_color" ><code>transpose</code></div>
 <h4> Description</h4>
 <p>
 This function transposes an <i>m x n</i> matrix to a <i>n x m</i> matrix.
@@ -99,13 +100,13 @@ be transposed due missing values to include.
 <td><b>Transposed matrix</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c,d}, {5,6,7,8} } ) ); // Rectangular matrix<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c,d}, {5,6,7,8} } ) ); // Rectangular matrix<br/>
  &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6} } ) ); // Bottom rows with fewer elements<br/>
- &nbsp; &nbsp; &nbsp;// echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6,7,8} } ) ); // Would cause an exception</code>
+ &nbsp; &nbsp; &nbsp;// echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6,7,8} } ) ); // Would cause an exception</code></div>
 <h4> Output</h4>
-<code>{{1,'a',5},{2,'b',6},{3,'c',7},{4,'d',8}}<br/>
+<div class="output_background_color" ><code>{{1,'a',5},{2,'b',6},{3,'c',7},{4,'d',8}}<br/>
 {{1,'a',5},{2,'b',6},{3,'c'},{4}}<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

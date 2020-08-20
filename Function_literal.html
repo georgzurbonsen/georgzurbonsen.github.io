@@ -78,12 +78,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>literal, softquoted literal</code>
+<div class="white_background_color" ><code>literal, softquoted literal</code></div>
 <h4> Description</h4>
 <p>
 These functions convert variables of any type to literals, including void values.
@@ -179,17 +180,17 @@ conversion.
 <td><b>Result</b><br/><p>Converted and formatted string</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp;echo( literal( Abc ), ", ", literal( 123.45 ), ", ", literal(true) );<br/>
+<div class="code_background_color" ><code> &nbsp;echo( literal( Abc ), ", ", literal( 123.45 ), ", ", literal(true) );<br/>
  &nbsp;echo( literal(date('14.juillet.2020')), ", ", literal( date('1. Aug 20 22:30')), ", ", literal( time( '10:15' ) ) );<br/>
  &nbsp;echo( null() ); // void<br/>
  &nbsp;echo( {a,1,date(today),false} ); // void<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>Abc, 123.45, true<br/>
+<div class="output_background_color" ><code>Abc, 123.45, true<br/>
 2020-07-14, 2020-08-01 22:30:00, 10:15:00<br/>
 # Invalid Value #<br/>
-{'a',1,'2020-08-19',false}<br/>
-</code>
+{'a',1,'2020-08-20',false}<br/>
+</code></div>
 	</div>
 </section>
 

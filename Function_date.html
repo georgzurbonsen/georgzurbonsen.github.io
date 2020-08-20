@@ -69,12 +69,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>date, pure date, date time</code>
+<div class="white_background_color" ><code>date, pure date, date time</code></div>
 <h4> Description</h4>
 <p>
 <i>Sorry! This is not the function where you can find your date.</i><br><br>
@@ -156,22 +157,22 @@ Specific treatment applies to keywords 'today' and 'now' in english and other su
 <td><b>Date and/or time</b><br/><p>Contains date, time, date and time combined or blank date.  No literal context of the date is preserved or included.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( date ( now ) ); &nbsp; &nbsp; &nbsp; // Date and time<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( date ( now ) ); &nbsp; &nbsp; &nbsp; // Date and time<br/>
  &nbsp; &nbsp; &nbsp;echo( date ( today ) ); &nbsp; &nbsp; // Date only<br/>
  &nbsp; &nbsp; &nbsp;echo( pure date ( now ) ); &nbsp; &nbsp; &nbsp;// Date only<br/>
  &nbsp; &nbsp; &nbsp;a[] = { 2020, 07, 14 };<br/>
  &nbsp; &nbsp; &nbsp;echo( date ( a[] )); &nbsp; &nbsp; &nbsp; &nbsp;// Quatorze Juillet<br/>
  &nbsp; &nbsp; &nbsp;a[] += { 22, 33, 44 }; &nbsp; &nbsp; &nbsp;// Add time<br/>
  &nbsp; &nbsp; &nbsp;echo( date ( a[] )); &nbsp; &nbsp; &nbsp; &nbsp;// 2020-07-04 22:33:44<br/>
- &nbsp; &nbsp; &nbsp;echo( date("03. Oktober 1990 21 Uhr") ); // 1990-10-03 21:00:00</code>
+ &nbsp; &nbsp; &nbsp;echo( date("03. Oktober 1990 21 Uhr") ); // 1990-10-03 21:00:00</code></div>
 <h4> Output</h4>
-<code>2020-08-19 23:31:30<br/>
-2020-08-19<br/>
-2020-08-19<br/>
+<div class="output_background_color" ><code>2020-08-20 19:09:04<br/>
+2020-08-20<br/>
+2020-08-20<br/>
 2020-07-14<br/>
 2020-07-14 22:33:44<br/>
 1990-10-03 21:00:00<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_time.html">time</a><br/>
 <a href="Function_time.html">pure time</a></p>

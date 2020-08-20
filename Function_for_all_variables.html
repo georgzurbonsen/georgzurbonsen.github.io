@@ -76,15 +76,16 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>for all variables, for all variables if existing</code>
+<div class="white_background_color" ><code>for all variables, for all variables if existing</code></div>
 <h4> Synopsis</h4>
-<code>for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) statement; <br/>
-for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) {statements; } </code>
+<div class="white_background_color" ><code>for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) statement; <br/>
+for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) {statements; } </code></div>
 <h4> Description</h4>
 <p>The loop works through all direct member variables specified in the base variable provided in the 1st parameter.<br/><br/>
 The base variable provided may either be an array or a structure.
@@ -117,7 +118,7 @@ then the value "# Array Member #" will be assigned.  This fourth parameter is no
 </td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;structure( a[], { Animal, Plant, Alien }, { Ape, Tulip, Chewbacca } );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;structure( a[], { Animal, Plant, Alien }, { Ape, Tulip, Chewbacca } );<br/>
  &nbsp; &nbsp; &nbsp;for all variables( a[], value[], i[] , name[])<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( i[],": ", name[]," = ", value[] );<br/>
@@ -126,16 +127,16 @@ then the value "# Array Member #" will be assigned.  This fourth parameter is no
  &nbsp; &nbsp; &nbsp;for all variables( a[], value[], i[] , name[])<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( i[],": ", name[]," = ", value[] );<br/>
- &nbsp; &nbsp; &nbsp;}</code>
+ &nbsp; &nbsp; &nbsp;}</code></div>
 <h4> Output</h4>
-<code>0: Alien = Chewbacca<br/>
+<div class="output_background_color" ><code>0: Alien = Chewbacca<br/>
 1: Animal = Ape<br/>
 2: Plant = Tulip<br/>
 0: # Array Member # = Charles<br/>
 1: # Array Member # = Dave<br/>
 2: # Array Member # = Abel<br/>
 3: # Array Member # = Birgit<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_for_all_parameters.html">for all parameters</a></p>
 <h4> Notes</h4>

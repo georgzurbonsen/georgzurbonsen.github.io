@@ -66,12 +66,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>code</code>
+<div class="white_background_color" ><code>code</code></div>
 <h4> Description</h4>
 <p>
 This function returns the UNICODE character code of the character supplied.
@@ -101,20 +102,20 @@ This function returns the UNICODE character code of the character supplied.
           -1: Attempted to decode character at positition outside the string</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( code( 'Café 4.0 €' ) ); // C<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( code( 'Café 4.0 €' ) ); // C<br/>
  &nbsp; &nbsp; &nbsp;echo( code( 'Café 4.0 €', 3 ) ); // é<br/>
  &nbsp; &nbsp; &nbsp;echo( code( 'Café 4.0 €', -1 ) ); // €<br/>
  &nbsp; &nbsp; &nbsp;echo( code( 'Café 4.0 €', 99 ) ); // -1 (out of bounds)<br/>
  &nbsp; &nbsp; &nbsp;echo( code( '&amp;#119070;' ) ); // Violin clef<br/>
- &nbsp; &nbsp; &nbsp;echo( code( '' ) ); // 0 returned</code>
+ &nbsp; &nbsp; &nbsp;echo( code( '' ) ); // 0 returned</code></div>
 <h4> Output</h4>
-<code>67<br/>
+<div class="output_background_color" ><code>67<br/>
 233<br/>
 8364<br/>
 -1<br/>
 119070<br/>
 0<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_chr.html">chr</a></p>
 	</div>

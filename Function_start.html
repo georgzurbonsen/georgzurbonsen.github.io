@@ -67,14 +67,15 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>start</code>
+<div class="white_background_color" ><code>start</code></div>
 <h4> Synopsis</h4>
-<code>start  ( program file name, parameters )</code>
+<div class="white_background_color" ><code>start  ( program file name, parameters )</code></div>
 <h4> Description</h4>
 <p>
 Starts a separate B4P application script as a sub program and waits until the sub program has ended.
@@ -112,7 +113,7 @@ Starts a separate B4P application script as a sub program and waits until the su
 <h4> Exceptions</h4>
 <p>Program file not found</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;start( "start.txt", 123, abc, true, date(24.12.2015),{});<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;start( "start.txt", 123, abc, true, date(24.12.2015),{});<br/>
  &nbsp; &nbsp; &nbsp;// The parameters will be passed in their given typs to 'command line arguments.<br/>
  &nbsp; &nbsp; &nbsp;// command line argument[0]: start.txt &nbsp; (The file name of the program)<br/>
  &nbsp; &nbsp; &nbsp;// command line argument[1]: 123 (numeral)<br/>
@@ -123,7 +124,7 @@ Starts a separate B4P application script as a sub program and waits until the su
  &nbsp; &nbsp; &nbsp;//<br/>
  &nbsp; &nbsp; &nbsp;// How to start this program in interactive mode:<br/>
  &nbsp; &nbsp; &nbsp;{ start( "start.txt", 123, abc, true, date(24.12.2015),{}); } <br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_include.html">include</a></p>
 	</div>

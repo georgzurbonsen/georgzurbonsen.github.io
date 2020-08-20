@@ -68,6 +68,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -89,18 +90,18 @@ Following rules apply to the indexing literals:
 </ul><p>
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;echo( abcde {} ); &nbsp; &nbsp; // Returns 5 (character count)<br/>
+<div class="code_background_color" ><code> &nbsp;echo( abcde {} ); &nbsp; &nbsp; // Returns 5 (character count)<br/>
  &nbsp;echo( abcde, {0} ); &nbsp; // Access the 1st element<br/>
  &nbsp;echo( abcde, {-2} ); &nbsp;// Access the 2nd last element<br/>
  &nbsp;echo( abcde, {10} ); &nbsp;// Attempts to access characters outside the string returns blank literals.<br/>
- &nbsp;echo( abcde, {-10} ); // Same case here.</code>
+ &nbsp;echo( abcde, {-10} ); // Same case here.</code></div>
 <h5> Output:</h5>
-<code>5<br/>
+<div class="output_background_color" ><code>5<br/>
 abcde{0}<br/>
 abcde{-2}<br/>
 abcde{10}<br/>
 abcde{-10}<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

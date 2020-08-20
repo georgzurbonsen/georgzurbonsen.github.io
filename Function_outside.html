@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>outside, outside exclude, outside until, outside until exclude</code>
+<div class="white_background_color" ><code>outside, outside exclude, outside until, outside until exclude</code></div>
 <h4> Description</h4>
 <p>
 This function extracts a outside parts of the string either with two character position numbers or matching patterns or a combination of both.
@@ -145,7 +146,7 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( outside( st[], 13, 4 ), " / ", &nbsp;outside until ( st[], 4, -8 ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( outside( st[], 99, 1 ), " / ", &nbsp;outside until ( st[], &nbsp;99, 8 ) ); // full strings<br/>
@@ -155,9 +156,9 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
  &nbsp; &nbsp; &nbsp;echo( outside( st[], ' taste', 7 ), " / ", outside exclude( st[], 'taste ', 7 ) ); // "of the coffee", "tast of the coffee"<br/>
  &nbsp; &nbsp; &nbsp;echo( outside( st[], ' taste', 0 ), " / ", outside exclude( st[], 'taste ', 0 ) ); // full string, and without taste<br/>
  &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( outside ( st[], 'taste', ' the' ), " / ", outside exclude( st[], 'taste ', 'the ' ) ); //</code>
+ &nbsp; &nbsp; &nbsp;echo( outside ( st[], 'taste', ' the' ), " / ", outside exclude( st[], 'taste ', 'the ' ) ); //</code></div>
 <h4> Output</h4>
-<code>The taste of coffee! / The coffee!<br/>
+<div class="output_background_color" ><code>The taste of coffee! / The coffee!<br/>
 The taste of the coffee! / The taste of the coffee!<br/>
 e of the coffee! / &nbsp;of the coffee!<br/>
 <br/>
@@ -165,7 +166,7 @@ The taste coffee! / The coffee!<br/>
 The taste of the coffee! / The taste of the coffee!<br/>
 <br/>
 The taste the coffee! / The coffee!<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_left.html">left (string function)</a><br/>
 <a href="Function_right.html">right (string function)</a><br/>

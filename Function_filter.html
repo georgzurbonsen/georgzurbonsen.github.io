@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>filter, filter 1, filter n, filter start, filter start include, filter start n, filter start n include, filter stop, filter stop include</code>
+<div class="white_background_color" ><code>filter, filter 1, filter n, filter start, filter start include, filter start n, filter start n include, filter stop, filter stop include</code></div>
 <h4> Description</h4>
 <p>
 This function extracts a middle part with those elements which fulfill the matching criteria specified in the 2nd parameter.
@@ -138,7 +139,7 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <td><b>Filtered parameter set</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;a[] = {A,1,2,3,4,E,5,2,6 };<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[] = {A,1,2,3,4,E,5,2,6 };<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;print( filter &nbsp; &nbsp; &nbsp;( a[], &gt;= 3 ), ", " ); &nbsp; &nbsp;// {3,4,5,6}<br/>
  &nbsp; &nbsp; &nbsp;echo ( filter &nbsp; &nbsp; &nbsp;( a[], (2,3) ) ); &nbsp; &nbsp; &nbsp; &nbsp; // {2,3,2}<br/>
@@ -173,16 +174,16 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <br/>
  &nbsp; &nbsp; &nbsp;filter start n ( a[], (=2), 3, b[], c[] ); // Attn: (=2) in parentheses<br/>
  &nbsp; &nbsp; &nbsp;echo( b[], " / ", c[] ); // Outputs {d,e,f}, {D,E,F}<br/>
-</code>
+</code></div>
 <h4> Output</h4>
-<code>{3,4,5,6}, {2,3,2}<br/>
+<div class="output_background_color" ><code>{3,4,5,6}, {2,3,2}<br/>
 {3}, {3,4,5}<br/>
 {'A',1,2}, {'A',1,2,3}<br/>
 {'E',5,2,6}, {'E',5,2}<br/>
 {4,'E',5,2,6}, {4,'E',5}<br/>
 {'c','h'} / {'C','H'}<br/>
 {'d','e','f'} / {'D','E','F'}<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

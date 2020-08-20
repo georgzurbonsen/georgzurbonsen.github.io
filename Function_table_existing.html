@@ -60,7 +60,7 @@ prev  next
 </ul></li>
 <li class="navi"><a href="Features_Accessing_table_contents.html"><span>+ 4.7.3 Accessing Table Contents </span></a></li>
 <li class="navi"><a href="Features_Loading_and_saving_tables.html"><span>+ 4.7.4 Loading and Saving Tables </span></a></li>
-<li class="navi"><a href="Features_Checking_table_headers.html"><span>+ 4.7.5 Checking Table Headers </span></a></li>
+<li class="navi"><a href="Features_Checking_headers.html"><span>+ 4.7.5 Checking and Processing Headers </span></a></li>
 <li class="navi"><a href="Features_Searching_tables.html"><span>+ 4.7.6 Searching Tables </span></a></li>
 </ul></li>
 <li class="navi"><a href="Features_directory_and_file_system.html"><span>+ 4.8 Directory and File System Functions </span></a></li>
@@ -70,12 +70,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>table existing</code>
+<div class="white_background_color" ><code>table existing</code></div>
 <h4> Description</h4>
 <p>This function checks if a table under this name is existing.  The table is also considered existing if it is empty.</p>
 <h4> Call as: <span class="black_text">function</span></h4>
@@ -96,13 +97,13 @@ prev  next
 <td><b>Result</b><br/><p>true if existing, false if not existing.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;table create( my table );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table create( my table );<br/>
  &nbsp; &nbsp; &nbsp;echo( table existing ( my table ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( table existing ( my other table ) );</code>
+ &nbsp; &nbsp; &nbsp;echo( table existing ( my other table ) );</code></div>
 <h4> Output</h4>
-<code>true<br/>
+<div class="output_background_color" ><code>true<br/>
 false<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_table_clear.html">table clear</a></p>
 	</div>

@@ -72,12 +72,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>min, max ignore zero, min ignore blanks, max, max ignore zero, max ignore blanks</code>
+<div class="white_background_color" ><code>min, max ignore zero, min ignore blanks, max, max ignore zero, max ignore blanks</code></div>
 <h4> Description</h4>
 <p>
 min / max…: Compares all values inside the function parameter or parameter set together, using type checking and comparison rules as given for
@@ -116,17 +117,17 @@ you to pre-select specific parameters to include in the calculation using one or
 <h4> Exceptions</h4>
 <p>Attempting to compare incompatible types, e.g. numerals with literals</p>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( "dates, 0 ignored &nbsp;: ", min ignore zero( date(""), date("2020-03-23"), date("2020-03-20") ) );<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( "dates, 0 ignored &nbsp;: ", min ignore zero( date(""), date("2020-03-23"), date("2020-03-20") ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "dates compared &nbsp; &nbsp;: ", min ( date(""), date("2020-03-23"), date("2020-03-20") ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "numbers w/o blanks: ", min ignore blanks( 5, 8, "", 1 ) );<br/>
  &nbsp; &nbsp; &nbsp;echo( "literals &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: ", max( "He", "he", "hi", "Hi" ) ); // Max = last in alphabetic order<br/>
-// &nbsp; &nbsp; &nbsp; &nbsp;echo( "causes exception &nbsp;: ", max ( 1, a, 2, b ) ); // Commented out because it's wrong.</code>
+// &nbsp; &nbsp; &nbsp; &nbsp;echo( "causes exception &nbsp;: ", max ( 1, a, 2, b ) ); // Commented out because it's wrong.</code></div>
 <h4> Output</h4>
-<code>dates, 0 ignored &nbsp;: 2020-03-20<br/>
+<div class="output_background_color" ><code>dates, 0 ignored &nbsp;: 2020-03-20<br/>
 dates compared &nbsp; &nbsp;: <br/>
 numbers w/o blanks: 1<br/>
 literals &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: hi<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_min_123.html">min 123</a><br/>
 <a href="Function_min_123.html">max 123</a><br/>

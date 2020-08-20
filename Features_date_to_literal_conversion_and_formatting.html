@@ -78,6 +78,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -166,7 +167,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples without formatting templates</h4>
 <p>Following examples show use of date to literal conversion without formatting template</p>
 <h5> Examples:</h5>
-<code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
  &nbsp; &nbsp; &nbsp;date 2[] = date("2020-10-03");<br/>
  &nbsp; &nbsp; &nbsp;date 3[] = date("2020-07-14");<br/>
  &nbsp; &nbsp; &nbsp;date 4[] = date("2020-08-01 22:30:00");<br/>
@@ -179,9 +180,9 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 3[], "*", none ));<br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", local ));<br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 1[] )); // assumes '*' and none<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code></div>
 <h5> Output:</h5>
-<code> &nbsp; &nbsp;*<br/>
+<div class="output_background_color" ><code> &nbsp; &nbsp;*<br/>
 03/10/2020<br/>
 14/07/2020<br/>
 01.08.2020 22:30:00<br/>
@@ -189,11 +190,11 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 03.10.2020<br/>
 2020-07-04<br/>
 22:30:00<br/>
-</code>
+</code></div>
 <h4> Program Examples with formatting templates</h4>
 <p>Following examples show use of date to literal conversion with formatting template</p>
 <h5> Examples:</h5>
-<code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
  &nbsp; &nbsp; &nbsp;date 2[] = date("2020-08-01 22:30:00");<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], "Tttt DD.Mmmm.YY", EN_us ));<br/>
@@ -205,9 +206,9 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( new line, "Show difference between ISO and adjusted week and year numbers: ");<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2019-12-31"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2020-06-30"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Same<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code>
+ &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code></div>
 <h5> Output:</h5>
-<code>Saturday 04.July.20<br/>
+<div class="output_background_color" ><code>Saturday 04.July.20<br/>
 Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
 Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
 Sat 08/01/20 &nbsp;Time: &nbsp;10:30:00 p.m.<br/>
@@ -217,7 +218,7 @@ Show difference between ISO and adjusted week and year numbers: <br/>
 Week: 2020-01 and 2019-53<br/>
 Week: 2020-27 and 2020-27<br/>
 Week: 2020-53 and 2021-00<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

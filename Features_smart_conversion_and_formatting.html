@@ -78,6 +78,7 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
@@ -121,20 +122,20 @@ In case you have different formats for positive (or negative) numbers and the re
 numbers first because the checking is done from left to right.
 </p>
 <h5> Examples:</h5>
-<code> &nbsp;for all parameters( { 5678.91, 0, true, "Abc" }, v[] )<br/>
+<div class="code_background_color" ><code> &nbsp;for all parameters( { 5678.91, 0, true, "Abc" }, v[] )<br/>
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( v[], {<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ positive, "#,##0.0", de_ch },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ literal, &nbsp;"x x x x", '', '-' },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ numeral, &nbsp;"0 'zero or negative'" },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ boolean, &nbsp;"'Boolean: ' TT" } } ) );<br/>
- &nbsp;}</code>
+ &nbsp;}</code></div>
 <h5> Output:</h5>
-<code>5'678.9<br/>
+<div class="output_background_color" ><code>5'678.9<br/>
 0 zero or negative<br/>
 Boolean: &nbsp;TRUE<br/>
 a b c -<br/>
-</code>
+</code></div>
 	</div>
 </section>
 

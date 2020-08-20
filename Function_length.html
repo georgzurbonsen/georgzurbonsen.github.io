@@ -73,12 +73,13 @@ prev  next
 <li class="navi"><a href="Function_identify.html"><span> Identify variable forms (if structure, array, or simple) </span></a></li>
 <li class="navi"><a href="Function_cursor.html"><span> Set cursor positions </span></a></li>
 <li class="navi"><a href="Function_text_color.html"><span> Set console text and background colors </span></a></li>
+<li class="navi"><a href="Features_Searching_tables.html"><span> Processing Table Columns </span></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<code>length</code>
+<div class="white_background_color" ><code>length</code></div>
 <h4> Description</h4>
 <p>
 Returns number of characters.  If the value provided is not a literal, then it will be converted to a literal first.<br>
@@ -107,18 +108,18 @@ a literal value to be provided all times.
 <td><b>Length</b><br/><p>Number of characters</p></td></tr>
 </table>
 <h4> Examples</h4>
-<code> &nbsp; &nbsp; &nbsp;echo( length( 007.0 ) ); &nbsp; &nbsp;// 5 characters (literal context preserved)<br/>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( length( 007.0 ) ); &nbsp; &nbsp;// 5 characters (literal context preserved)<br/>
  &nbsp; &nbsp; &nbsp;echo( length( 007.0 + 0 ) ); &nbsp; &nbsp;// 1 character (7) after a calculation<br/>
  &nbsp; &nbsp; &nbsp;echo( length( 1=1 ) ); &nbsp; &nbsp; &nbsp;// 4 characters (true)<br/>
  &nbsp; &nbsp; &nbsp;echo( length( Hello ) ); &nbsp; &nbsp;// 5 chracters<br/>
- &nbsp; &nbsp; &nbsp;echo( length( date(today)) ); &nbsp; // 10 characters: YYYY-MM-DD</code>
+ &nbsp; &nbsp; &nbsp;echo( length( date(today)) ); &nbsp; // 10 characters: YYYY-MM-DD</code></div>
 <h4> Output</h4>
-<code>5<br/>
+<div class="output_background_color" ><code>5<br/>
 1<br/>
 4<br/>
 5<br/>
 10<br/>
-</code>
+</code></div>
 <h4> See also</h4>
 <p><a href="Function_length_.html">length (parameter set function)</a><br/>
 <a href="Features_literals_indexing.html">length of literals</a></p>
