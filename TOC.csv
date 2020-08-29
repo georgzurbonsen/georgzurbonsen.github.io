@@ -247,6 +247,8 @@ OK;Body;4;B 4.7.8.8;table check row;REF_Function_table_check_row.html;table chec
 OK;Body;4;B 4.7.8.9;table rearrange selected rows;REF_Function_table_rearrange_selected_rows.html;table rearrange selected rows;table rearrange selected rows;
 OK;Body;4;B 4.7.8.10;table sort (selected) rows;REF_Function_table_sort_rows.html;table sort rows,table sort selected rows;table sort rows,table sort selected rows;
 OK;Body;4;B 4.7.8.11;table rank (selected) rows;REF_Function_table_rank_rows.html;table rank rows,table rank selected rows;table rank rows,table rank selected rows;
+OK;Body;3;B 4.7.9;Processing Table Contents;REF_Features_Processing_table_contents.html;Processing table contents;Processing table contents;
+OK;Body;4;B 4.7.9.1;table process (selected) rows;REF_Function_table_process.html;table process,table process selected rows;table process,table process selected rows;
 OK;Body;2;B 4.8;Directory and File System Functions;REF_Features_directory_and_file_system.html;directory and file system;directory and file system,short error messages on directories and files;
 OK;Body;3;B 4.8.1;Basic Directory and File Functions;REF_Features_basic_directory_and_file_functions.html;basic directory and file functions;basic directory and file functions;
 OK;Body;4;B 4.8.1.1;directory existing, file existing;REF_Function_directory_existing.html;directory existing,file existing;directory existing,file existing;
