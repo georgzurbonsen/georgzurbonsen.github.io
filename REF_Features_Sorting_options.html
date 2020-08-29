@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Sorting and Ranking Options</h3>
-<a href="REF_Features_Cross-functional_info.html"><span>Prev</span></a> <a href="REF_Function_print.html"><span>Next</span></a> 
+<a href="REF_Features_Cross-functional_info.html"><span>Prev</span></a> 
 </div>
 
 <section>
@@ -64,12 +64,6 @@
 <li class="navi"><a href="REF_Features_Sorting_options.html"><div class="navi navi-selected">4.9.1 Sorting and Ranking Options </div></a></li>
 </ul></li>
 </ul></li>
-<li class="navi"><a href="REF_Function_print.html"><div class="navi"> Basic Text Output Functions </div></a></li>
-<li class="navi"><a href="REF_Function_cls.html"><div class="navi"> Clear screen </div></a></li>
-<li class="navi"><a href="REF_Function_identify.html"><div class="navi"> Identify variable forms (if structure, array, or simple) </div></a></li>
-<li class="navi"><a href="REF_Function_cursor.html"><div class="navi"> Set cursor positions </div></a></li>
-<li class="navi"><a href="REF_Function_text_color.html"><div class="navi"> Set console text and background colors </div></a></li>
-<li class="navi"><div> Provide Context for Partial Table Specification with 'with table' Procedure </div></li>
 </ul>
 	</div>
 
@@ -78,10 +72,10 @@
 <p>
 The sorting options are used (amongst others) by following functions:
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_table_sort_columns.html">table sort columns</a>()</li>
-<li class="bullets"><span class="red_text">table sort rows</span>()</li>
-<li class="bullets"><span class="red_text">table sort selected rows</span>()</li>
-<li class="bullets"><span class="red_text">table rank rows</span>()</li>
-<li class="bullets"><span class="red_text">table rank selected rows</span>()</li>
+<li class="bullets"><a class="bold_text" href="REF_Function_table_sort_rows.html">table sort rows</a>()</li>
+<li class="bullets"><a class="bold_text" href="REF_Function_table_sort_rows.html">table sort selected rows</a>()</li>
+<li class="bullets"><a class="bold_text" href="REF_Function_table_rank_rows.html">table rank rows</a>()</li>
+<li class="bullets"><a class="bold_text" href="REF_Function_table_rank_rows.html">table rank selected rows</a>()</li>
 </ul><p></p>
 <h4> Overview of Available Options</h4>
 <p>
@@ -140,17 +134,17 @@ Following example shows a ranking based on the different options applied.</p>
  &nbsp;table transpose (t);<br/>
  &nbsp;table list (t); &nbsp; &nbsp; </code></div>
 <h5> Output:</h5>
-<div class="output_background_color" ><code>Scheme &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 02-Dec-2020 10:00 &nbsp;02-Nov-2020 11:00 &nbsp;05 &nbsp;1 &nbsp;Dec &nbsp;apr 15 &nbsp;-1 &nbsp; &nbsp; begin &nbsp;<br/>
-alphabetic &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 6 &nbsp;7 &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; 2 &nbsp; 1 &nbsp;9 &nbsp; &nbsp; &nbsp;<br/>
-alphabetic down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 4 &nbsp;3 &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 8 &nbsp; 9 &nbsp;1 &nbsp; &nbsp; &nbsp;<br/>
-alphabetic ignore case &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 6 &nbsp;9 &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; 2 &nbsp; 1 &nbsp;8 &nbsp; &nbsp; &nbsp;<br/>
-alphabetic down ignore case &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 4 &nbsp;1 &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 8 &nbsp; 9 &nbsp;2 &nbsp; &nbsp; &nbsp;<br/>
-numeric &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9 &nbsp; 6 &nbsp;2 &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; 2 &nbsp;2 &nbsp; &nbsp; &nbsp;<br/>
-numeric down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; 4 &nbsp;5 &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 9 &nbsp; 5 &nbsp;5 &nbsp; &nbsp; &nbsp;<br/>
-date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; 1 &nbsp;8 &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; 1 &nbsp; 1 &nbsp;1 &nbsp; &nbsp; &nbsp;<br/>
-date down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 5 &nbsp;2 &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 5 &nbsp; 5 &nbsp;5 &nbsp; &nbsp; &nbsp;<br/>
-time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 5 &nbsp;1 &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 5 &nbsp; 1 &nbsp;1 &nbsp; &nbsp; &nbsp;<br/>
-time down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; 3 &nbsp;6 &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; 3 &nbsp; 6 &nbsp;6 &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code> &nbsp; &nbsp;0 | Scheme &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 02-Dec-2020 10:00 | 02-Nov-2020 11:00 | 05 | 1 | Dec | apr 15 | -1 | &nbsp; | begin<br/>
+ &nbsp; &nbsp;1 | alphabetic &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 6 | 7 &nbsp; | 8 &nbsp; &nbsp; &nbsp;| 2 &nbsp;| 1 | 9 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 | alphabetic down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 4 | 3 &nbsp; | 2 &nbsp; &nbsp; &nbsp;| 8 &nbsp;| 9 | 1 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 | alphabetic ignore case &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 6 | 9 &nbsp; | 7 &nbsp; &nbsp; &nbsp;| 2 &nbsp;| 1 | 8 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 | alphabetic down ignore case | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 4 | 1 &nbsp; | 3 &nbsp; &nbsp; &nbsp;| 8 &nbsp;| 9 | 2 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 | numeric &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 9 &nbsp;| 6 | 2 &nbsp; | 2 &nbsp; &nbsp; &nbsp;| 1 &nbsp;| 2 | 2 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;6 | numeric down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp;| 4 | 5 &nbsp; | 5 &nbsp; &nbsp; &nbsp;| 9 &nbsp;| 5 | 5 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;7 | date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp;| 1 | 8 &nbsp; | 6 &nbsp; &nbsp; &nbsp;| 1 &nbsp;| 1 | 1 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 | date down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 5 | 2 &nbsp; | 4 &nbsp; &nbsp; &nbsp;| 5 &nbsp;| 5 | 5 &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;9 | time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 5 | 1 &nbsp; | 1 &nbsp; &nbsp; &nbsp;| 5 &nbsp;| 1 | 1 &nbsp; &nbsp;<br/>
+ &nbsp; 10 | time down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp;| 3 | 6 &nbsp; | 6 &nbsp; &nbsp; &nbsp;| 3 &nbsp;| 6 | 6 &nbsp; &nbsp;<br/>
 <br/>
 </code></div>
 	</div>

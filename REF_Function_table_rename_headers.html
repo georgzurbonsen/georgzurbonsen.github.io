@@ -79,12 +79,7 @@
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Function_print.html"><div class="navi"> Basic Text Output Functions </div></a></li>
-<li class="navi"><a href="REF_Function_cls.html"><div class="navi"> Clear screen </div></a></li>
-<li class="navi"><a href="REF_Function_identify.html"><div class="navi"> Identify variable forms (if structure, array, or simple) </div></a></li>
-<li class="navi"><a href="REF_Function_cursor.html"><div class="navi"> Set cursor positions </div></a></li>
-<li class="navi"><a href="REF_Function_text_color.html"><div class="navi"> Set console text and background colors </div></a></li>
-<li class="navi"><div> Provide Context for Partial Table Specification with 'with table' Procedure </div></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -156,16 +151,16 @@ number of existing and new headers is inconsistent</p>
  &nbsp;table rename headers( table, &nbsp;{ First Name, First Name }, { Last Name, Given Name } );<br/>
  &nbsp;table list ( table );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Last Name &nbsp;First Name &nbsp;Phone No &nbsp; &nbsp; &nbsp; &nbsp;Age &nbsp;<br/>
-Archer &nbsp; &nbsp; Jim &nbsp; &nbsp; &nbsp; &nbsp; 1-212-555-1212 &nbsp;28 &nbsp; <br/>
+<div class="output_background_color" ><code> &nbsp; &nbsp;0 | Last Name | First Name | Phone No &nbsp; &nbsp; &nbsp; | Age<br/>
+ &nbsp; &nbsp;1 | Archer &nbsp; &nbsp;| Jim &nbsp; &nbsp; &nbsp; &nbsp;| 1-212-555-1212 | 28 <br/>
 <br/>
 <br/>
 Number of headers renamed: 2<br/>
 <br/>
 This example demonstrates that each "First Name" column is touched only once.<br/>
 <br/>
-Last Name &nbsp;Given Name &nbsp;Phone No &nbsp; &nbsp; &nbsp; &nbsp;Age &nbsp;<br/>
-Tanner &nbsp; &nbsp; Lisa &nbsp; &nbsp; &nbsp; &nbsp;1-212-555-1212 &nbsp;28 &nbsp; <br/>
+ &nbsp; &nbsp;0 | Last Name | Given Name | Phone No &nbsp; &nbsp; &nbsp; | Age<br/>
+ &nbsp; &nbsp;1 | Tanner &nbsp; &nbsp;| Lisa &nbsp; &nbsp; &nbsp; | 1-212-555-1212 | 28 <br/>
 <br/>
 </code></div>
 <h4> See also</h4>

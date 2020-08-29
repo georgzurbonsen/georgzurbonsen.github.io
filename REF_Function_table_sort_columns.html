@@ -82,12 +82,7 @@
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Function_print.html"><div class="navi"> Basic Text Output Functions </div></a></li>
-<li class="navi"><a href="REF_Function_cls.html"><div class="navi"> Clear screen </div></a></li>
-<li class="navi"><a href="REF_Function_identify.html"><div class="navi"> Identify variable forms (if structure, array, or simple) </div></a></li>
-<li class="navi"><a href="REF_Function_cursor.html"><div class="navi"> Set cursor positions </div></a></li>
-<li class="navi"><a href="REF_Function_text_color.html"><div class="navi"> Set console text and background colors </div></a></li>
-<li class="navi"><div> Provide Context for Partial Table Specification with 'with table' Procedure </div></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -164,23 +159,24 @@ Header name not found</p>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Original table: __________________<br/>
-Name &nbsp;Town &nbsp; &nbsp; &nbsp; Street &nbsp; &nbsp;Phone &nbsp;Gender &nbsp;Country &nbsp;Province &nbsp;Favorite Pet &nbsp;<br/>
-Dan &nbsp; La Spezia &nbsp;Main St. &nbsp;None &nbsp; M &nbsp; &nbsp; &nbsp; Italy &nbsp; &nbsp;Liguria &nbsp; Toad &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-Jane &nbsp;Miami &nbsp; &nbsp; &nbsp;Hill St. &nbsp;None &nbsp; F &nbsp; &nbsp; &nbsp; USA &nbsp; &nbsp; &nbsp;Florida &nbsp; Alligator &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 | Name | Town &nbsp; &nbsp; &nbsp;| Street &nbsp; | Phone | Gender | Country | Province | Favorite Pet<br/>
+ &nbsp; &nbsp;1 | Dan &nbsp;| La Spezia | Main St. | None &nbsp;| M &nbsp; &nbsp; &nbsp;| Italy &nbsp; | Liguria &nbsp;| Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 | Jane | Miami &nbsp; &nbsp; | Hill St. | None &nbsp;| F &nbsp; &nbsp; &nbsp;| USA &nbsp; &nbsp; | Florida &nbsp;| Alligator &nbsp; <br/>
 <br/>
 Sort all columns by header name except 1st and last one __________<br/>
-Name &nbsp;Country &nbsp;Gender &nbsp;Phone &nbsp;Province &nbsp;Street &nbsp; &nbsp;Town &nbsp; &nbsp; &nbsp; Favorite Pet &nbsp;<br/>
-Dan &nbsp; Italy &nbsp; &nbsp;M &nbsp; &nbsp; &nbsp; None &nbsp; Liguria &nbsp; Main St. &nbsp;La Spezia &nbsp;Toad &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-Jane &nbsp;USA &nbsp; &nbsp; &nbsp;F &nbsp; &nbsp; &nbsp; None &nbsp; Florida &nbsp; Hill St. &nbsp;Miami &nbsp; &nbsp; &nbsp;Alligator &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 | Name | Country | Gender | Phone | Province | Street &nbsp; | Town &nbsp; &nbsp; &nbsp;| Favorite Pet<br/>
+ &nbsp; &nbsp;1 | Dan &nbsp;| Italy &nbsp; | M &nbsp; &nbsp; &nbsp;| None &nbsp;| Liguria &nbsp;| Main St. | La Spezia | Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 | Jane | USA &nbsp; &nbsp; | F &nbsp; &nbsp; &nbsp;| None &nbsp;| Florida &nbsp;| Hill St. | Miami &nbsp; &nbsp; | Alligator &nbsp; <br/>
 <br/>
 Sort all columns Z-A by Row 2 __________<br/>
-Country &nbsp;Phone &nbsp;Town &nbsp; &nbsp; &nbsp; Name &nbsp;Street &nbsp; &nbsp;Province &nbsp;Gender &nbsp;Favorite Pet &nbsp;<br/>
-Italy &nbsp; &nbsp;None &nbsp; La Spezia &nbsp;Dan &nbsp; Main St. &nbsp;Liguria &nbsp; M &nbsp; &nbsp; &nbsp; Toad &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-USA &nbsp; &nbsp; &nbsp;None &nbsp; Miami &nbsp; &nbsp; &nbsp;Jane &nbsp;Hill St. &nbsp;Florida &nbsp; F &nbsp; &nbsp; &nbsp; Alligator &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 | Country | Phone | Town &nbsp; &nbsp; &nbsp;| Name | Street &nbsp; | Province | Gender | Favorite Pet<br/>
+ &nbsp; &nbsp;1 | Italy &nbsp; | None &nbsp;| La Spezia | Dan &nbsp;| Main St. | Liguria &nbsp;| M &nbsp; &nbsp; &nbsp;| Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 | USA &nbsp; &nbsp; | None &nbsp;| Miami &nbsp; &nbsp; | Jane | Hill St. | Florida &nbsp;| F &nbsp; &nbsp; &nbsp;| Alligator &nbsp; <br/>
 <br/>
 </code></div>
 <h4> See also</h4>
-<p><a href="REF_Function_table_rearrange_columns.html">table rearrange columns</a></p>
+<p><a href="REF_Function_table_rearrange_columns.html">table rearrange columns</a><br/>
+<a href="REF_Function_table_sort_rows.html">table sort rows</a></p>
 	</div>
 </section>
 
