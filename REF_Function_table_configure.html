@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table configure</h3>
+<a href="REF_Function_table_initialize.html"><span>Prev</span></a> <a href="REF_Function_table_clear.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">2.3 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.4 Comments </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.5 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.6 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.7 Locales </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">3 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">3.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">3.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">3.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">4 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">4.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">4.2 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">4.3 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">4.4 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">4.5 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">4.6 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">4.7 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_table_creating_deleting.html"><div class="navi">4.7.1 Creating and Deleting Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_table_create.html"><div class="navi">4.7.1.1 table create ... </div></a></li>
+<li class="navi"><a href="REF_Function_table_initialize.html"><div class="navi">4.7.1.2 table initialize/append ... </div></a></li>
+<li class="navi"><a href="REF_Function_table_configure.html"><div class="navi navi-selected">4.7.1.3 table configure </div></a></li>
+<li class="navi"><a href="REF_Function_table_clear.html"><div class="navi">4.7.1.4 table clear ... </div></a></li>
+<li class="navi"><a href="REF_Function_table_delete.html"><div class="navi">4.7.1.5 table delete ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_accessing_table_info.html"><div class="navi">+ 4.7.2 Accessing Table Information </div></a></li>
+<li class="navi"><a href="REF_Features_Accessing_table_contents.html"><div class="navi">+ 4.7.3 Accessing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_and_saving_tables.html"><div class="navi">+ 4.7.4 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_headers.html"><div class="navi">+ 4.7.5 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="REF_Features_Searching_tables.html"><div class="navi">+ 4.7.6 Searching Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 4.7.7 Processing Table Columns </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">+ 4.7.8 Processing Table Rows </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Function_print.html"><div class="navi"> Basic Text Output Functions </div></a></li>
+<li class="navi"><a href="REF_Function_cls.html"><div class="navi"> Clear screen </div></a></li>
+<li class="navi"><a href="REF_Function_identify.html"><div class="navi"> Identify variable forms (if structure, array, or simple) </div></a></li>
+<li class="navi"><a href="REF_Function_cursor.html"><div class="navi"> Set cursor positions </div></a></li>
+<li class="navi"><a href="REF_Function_text_color.html"><div class="navi"> Set console text and background colors </div></a></li>
+<li class="navi"><div> Provide Context for Partial Table Specification with 'with table' Procedure </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table configure</code></div>
+<h4> Description</h4>
+<p>
+This function applies configuration settings to all tables specified.  These configuration settings affect the following cases:
+</p><ul class="bullets"><li class="bullets">Behavior on <b>row not found</b>, e.g. when referencing tables  = [ table: Name, Mike, Phone Nr ] where "Mike" is not in the table</li>
+<li class="bullets">Behavior on <b>column not found</b>, e.g. when referencing header names</li>
+<li class="bullets">Behavior or reading values, i.e. enabling / disabling automatic conversion to numerals, booleans and dates.</li>
+</ul><p>
+<u>Attention</u>: The table configuration settings are retained even if the table is initialized or cleared, but not if new contents are loaded from a file or destination table for table transpose(…) and table copy table (…)..  In order restore default configuration, do them with this function call or delete and then re-initialize the table.
+
+
+Available: <b>configuration parameter names</b>:
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:150px"><col style = "width:700px">
+<tr><th>Configuration Parameter Name    </th><th> Configuration Parameter Values    </th><th> Explanation</th></tr>
+<tr><td>row not found                   </td><td>                                   </td><td> Behavior if a table row cannot be found if a table is accessed by a content where the first row with matching content will be used.  <br>Example case: <b>[table : Name, Mike, Phone Nr]</b> is referenced, but no row with "Mike" as name is found.</td></tr>
+<tr><td></td><td> exception                         </td><td> Default value.  Exception asserted. Or -1 if row number is retrieved, e.g. in <b>[table : Name, Mike ]</b></td></tr>
+<tr><td></td><td> header row                        </td><td> Return the header row instead.  Exception asserted in case no header row is available.</td></tr>
+<tr><td></td><td> first row                         </td><td> Return the first row instead.  Exception asserted if this row is not existing.</td></tr>
+<tr><td></td><td> last row                          </td><td> Return the last row istead.   Exception asserted if this row is not existing.</td></tr>
+<tr><td></td><td> new row                           </td><td> Creates a new row.  See description further below.</td></tr>
+<tr><td>column not found                </td><td>                                   </td><td></td></tr>
+<tr><td></td><td> exception column                  </td><td> Default value.  Exception asserted.  E.g. in <b>[table: Last Name, 1 ]</b> where "Last Name" does not exist as a header name.</td></tr>
+<tr><td></td><td> first column                      </td><td> Refer to first column (column 0) instead.</td></tr>
+<tr><td></td><td> last column                       </td><td> Refer to last column at the right instead.</td></tr>
+<tr><td></td><td> new column                        </td><td> Create a new column with the specified name, even when using this option for reading data.</td></tr>
+<tr><td>read numerals                   </td><td> 'no' or 'yes'                     </td><td> Table contents looking like numbers (incl. minus sign, decial point) will be read as numbers</td></tr>
+<tr><td>scientific notation             </td><td> 'no' or 'yes'                     </td><td> Table contents looking like numbers in scientific notation format will be read as numbers</td></tr>
+<tr><td>read booleans                   </td><td> 'no' or 'yes'                     </td><td> 'true' and 'false' will be converted to boolean values</td></tr>
+<tr><td>read dates                      </td><td> 'no' or 'yes'                     </td><td> Table contents looking like recognizable dates and times will be converted to dates</td></tr>
+<tr><td>blank to zero                   </td><td> 'no' or 'yes'                     </td><td> Blank fields will be read as 0 (zero).</td></tr>
+</table><p>
+
+<b>Case on new rows created</b>
+A new row, with the contents inserted will be created.<br>
+<b>Example 1:</b> [ table : last name, Bonaparte, first name ] = Napoleon;<br>
+A new row will be created and two fields ('last name' and 'first name' will be written as specified.<br>
+<b>Example 2:</b> row number [] = [ table : last name, Bonaparte ];<br>
+The row number of the new row, where last name has already been filled in, will be returned.<br>
+first name [ ] = [ table, last name, Bonaparte, first name ] returns a blank because these contents in the new row are not yet written
+
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count: <span class="black_text">3, 5, 7, ...</span></h4>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>Min. 1<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Names of existing tables</b><br/><p>Use literal to specify a single table, or a parameter set or softquoted literal (single quotation marks) with names separated by comma to specify multiple tables.</p>
+</td></tr>
+<tr><td>2, 4, ...<br/>input</td>
+<td>literal</td>
+<td><b>Configuration parameter names</b><br/><p>Valid names: See table above</p>
+</td></tr>
+<tr><td>3, 5, ...<br/>input</td>
+<td>literal</td>
+<td><b>Configuration parameter values</b><br/><p>Valid values: See table above.  Different set of values apply for different configuration parameter names.</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( a,<br/>
+ &nbsp; &nbsp; &nbsp;{ { Name, Answer, Date, &nbsp; &nbsp; &nbsp; &nbsp; Time, &nbsp; &nbsp; &nbsp; Blank, Number, Scientific },<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;{ Nic, &nbsp;TRUE, &nbsp; '2020-01-03', '15:30:00', '', '123', '1.2E+3' } } );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;for all table columns( a, 0, col[], x[] ) echo( [a:x[],1] , " &nbsp;(", type( [a:x[],1] ), ")" );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table configure( a, read dates, yes, read booleans, yes, blank to zero, yes, scientific notation, yes );<br/>
+ &nbsp; &nbsp; &nbsp;echo;<br/>
+ &nbsp; &nbsp; &nbsp;for all table columns( a, 0, col[], x[] ) echo( [a:x[],1] , " &nbsp;(", type( [a:x[],1] ), ")" );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table append ( a, &nbsp;{ Jim } );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( [a:Name,John] ); &nbsp; // Returns -1 as row number. &nbsp;When refering to other columsn; Exception<br/>
+ &nbsp; &nbsp; &nbsp;table configure( a, row not found, header row );<br/>
+ &nbsp; &nbsp; &nbsp;echo( [a:Name,John] ); // Header row<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table configure( a, column not found, new column );<br/>
+ &nbsp; &nbsp; &nbsp;[a:Color,1] = green; // Creates an additional header called "Color" instead of asserting an exception<br/>
+ &nbsp; &nbsp; &nbsp;echo( "Header names: ", [a:..,0]);<br/>
+ &nbsp; &nbsp; &nbsp;echo( [a:Color,1] );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Nic &nbsp;(literal)<br/>
+TRUE &nbsp;(literal)<br/>
+2020-01-03 &nbsp;(literal)<br/>
+15:30:00 &nbsp;(literal)<br/>
+ &nbsp;(literal)<br/>
+123 &nbsp;(numeral)<br/>
+1.2E+3 &nbsp;(literal)<br/>
+<br/>
+Nic &nbsp;(literal)<br/>
+true &nbsp;(boolean)<br/>
+2020-01-03 &nbsp;(date)<br/>
+15:30:00 &nbsp;(date)<br/>
+0 &nbsp;(numeral)<br/>
+123 &nbsp;(numeral)<br/>
+1.2E+3 &nbsp;(numeral)<br/>
+-1<br/>
+0<br/>
+Header names: {'Name','Answer','Date','Time','Blank','Number','Scientific','Color'}<br/>
+green<br/>
+</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+

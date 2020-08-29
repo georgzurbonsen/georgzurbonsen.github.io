@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>Beyond 4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Date to Literal Formatting</h3>
+<a href="REF_Features_numeral_to_literal_conversion_and_formatting.html"><span>Prev</span></a> <a href="REF_Features_Parameter_Set_to_literal_conversion_and_formatting.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">2.3 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.4 Comments </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.5 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.6 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.7 Locales </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">3 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">3.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">3.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">3.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">4 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">4.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">4.2 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_literal.html"><div class="navi">4.2.1 literal, quoted literal, softquoted literal </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_literal_to_literal_conversion_and_formatting.html"><div class="navi">4.2.1.1 Literal to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_void_to_literal_conversion_and_formatting.html"><div class="navi">4.2.1.2 Void to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_numeral_to_literal_conversion_and_formatting.html"><div class="navi">4.2.1.3 Numeral to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_date_to_literal_conversion_and_formatting.html"><div class="navi navi-selected">4.2.1.4 Date to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_Parameter_Set_to_literal_conversion_and_formatting.html"><div class="navi">4.2.1.5 Parameter Set to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_boolean_to_literal_conversion_and_formatting.html"><div class="navi">4.2.1.6 Boolean to Literal Formatting </div></a></li>
+<li class="navi"><a href="REF_Features_smart_conversion_and_formatting.html"><div class="navi">4.2.1.7 Smart Formatting </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Function_numeral.html"><div class="navi">4.2.2 numeral </div></a></li>
+<li class="navi"><a href="REF_Function_clean_numeral.html"><div class="navi">4.2.3 clean (if) numeral </div></a></li>
+<li class="navi"><a href="REF_Function_smart_numeral.html"><div class="navi">4.2.4 smart (if) numeral </div></a></li>
+<li class="navi"><a href="REF_Function_date.html"><div class="navi">4.2.5 date, pure date, date time </div></a></li>
+<li class="navi"><a href="REF_Function_time.html"><div class="navi">4.2.6 time, pure time </div></a></li>
+<li class="navi"><a href="REF_Features_Detects_dates_correctly_in_literals.html"><div class="navi">4.2.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="REF_Function_boolean.html"><div class="navi">4.2.8 boolean </div></a></li>
+<li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.2.9 parameter set </div></a></li>
+<li class="navi"><a href="REF_Function_join.html"><div class="navi">4.2.10 join ... </div></a></li>
+<li class="navi"><a href="REF_Function_type.html"><div class="navi">4.2.11 type, type detailed </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.3 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.4 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 4.5 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.6 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.7 Table Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Function_print.html"><div class="navi"> Basic Text Output Functions </div></a></li>
+<li class="navi"><a href="REF_Function_cls.html"><div class="navi"> Clear screen </div></a></li>
+<li class="navi"><a href="REF_Function_identify.html"><div class="navi"> Identify variable forms (if structure, array, or simple) </div></a></li>
+<li class="navi"><a href="REF_Function_cursor.html"><div class="navi"> Set cursor positions </div></a></li>
+<li class="navi"><a href="REF_Function_text_color.html"><div class="navi"> Set console text and background colors </div></a></li>
+<li class="navi"><div> Provide Context for Partial Table Specification with 'with table' Procedure </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Some powerful formatting features are available for formatting <a  href="REF_Features_data_types_dates.html">dates</a>, possibly combined with time of day information
+in any combinations.
+
+
+The formatting template applies to following functions:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter</li>
+<li class="bullets"><span class="red_text">table distribute</span>() function family, 10th parameter on header date format</li>
+</ul><p></p>
+<h4> Formatting Templates</h4>
+<p>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:350px"><col style = "width:400px"><col style = "width:100px">
+<tr><th>Formatting Template             </th><th> Description </th><th> Example  </th><th> Note</th></tr>
+<tr><td>D                               </td><td> Day, 1 or 2 digits                                    </td><td>  1 .. 31                              </td><td> See <sup>1</sup></td></tr>
+<tr><td>DD                              </td><td> Day, 2 digits                                         </td><td> 01 ... 31                             </td><td> See <sup>1</sup></td></tr>
+<tr><td>DDD / Ddd / ddd                 </td><td> Day, 1 or 2 digits, followd by ordinal                </td><td> 1ST ... 31ST / 1St ... 31St / 1st ... 31st </td><td>  See <sup>2</sup></td></tr>
+<tr><td>DDDD / Dddd / dddd              </td><td> Day, 2 digits, followd by ordinal                     </td><td> 01ST ... 31ST / 01St ... 31St / 01st ... 31st </td><td>  See <sup>2,3</sup></td></tr>
+<tr><td>M                               </td><td> Month, 1 or 2 digits                                  </td><td>  1 .. 12                              </td><td> See <sup>1</sup></td></tr>
+<tr><td>MM                              </td><td> Month, 2 digits                                       </td><td> 01 ... 12                             </td><td> See <sup>1</sup></td></tr>
+<tr><td>MMM / Mmm / mmm                 </td><td> Month name, abbreviated                               </td><td> JAN / Jan / jan                       </td><td> See <sup>2,3</sup></td></tr>
+<tr><td>MMM / Mmm / mmm                 </td><td> Month name                                            </td><td> JANUARY / January / january           </td><td> See <sup>2,3</sup></td></tr>
+<tr><td>Q                               </td><td> Quarter, 1 digit                                      </td><td>  1 ... 4                              </td><td> See <sup>1</sup></td></tr>
+<tr><td>QQ / qq                         </td><td> Quarter, 1 digit after Q                              </td><td>  Q1 ... Q4 / q1 ... q4                </td><td> See <sup>4</sup></td></tr>
+<tr><td>QQQ / qqq                       </td><td> Quarter, 1 digit before Q                             </td><td>  1Q ... 4Q / 1q ... 4q                </td><td> See <sup>4</sup></td></tr>
+<tr><td>T                               </td><td> Weekday number                                        </td><td>  1 (Monday) .. 7 (Sunday)             </td><td> See <sup>1</sup></td></tr>
+<tr><td>TT / Tt / tt                    </td><td> Weekday name, abbreviated (typ. 2 chars)              </td><td> MO ... SU / Mo ... Su / mo ... su     </td><td> See <sup>2,3</sup></td></tr>
+<tr><td>TTT / Ttt / ttt                 </td><td> Weekday name, abbreviated (typ. 3 chars)              </td><td> MON...SUN / Mon...Sun / mon...sun     </td><td> See <sup>2,3</sup></td></tr>
+<tr><td>TTTT / Tttt / tttt              </td><td> Weekday name                                          </td><td> MONDAY / Monday / monday              </td><td> See <sup>2,3</sup></td></tr>
+<tr><td>W                               </td><td> ISO week number, 1 or 2 digits                        </td><td>  1 .. 53                              </td><td> See <sup>1,5</sup></td></tr>
+<tr><td>WW                              </td><td> ISO week number, 2 digits                             </td><td> 01 .. 53                              </td><td> See <sup>1,5</sup></td></tr>
+<tr><td>WWW / www                       </td><td> ISO week number, 1 letter + 1 or 2 digits             </td><td> W1 .. W53 / w1 .. w53                 </td><td> See <sup>3,4,5</sup></td></tr>
+<tr><td>WWWW / wwww                     </td><td> ISO week number, 1 letter + 2 digits                  </td><td> W01 .. W53 / w01 .. w53               </td><td> See <sup>3,4,5</sup></td></tr>
+<tr><td>WWWWW / Wwwww / wwwww           </td><td> ISO week number, abbreviation + 1 or 2 digits         </td><td> WK 1 / Wk 1 / wk 1                    </td><td> See <sup>2,3,5</sup></td></tr>
+<tr><td>WWWWWW / Wwwwww / wwwwww        </td><td> ISO week number, abbreviation + 2 digits              </td><td> WK 01 / Wk 01 / wk 01                 </td><td> See <sup>2,3,5</sup></td></tr>
+<tr><td>WWWWWWW / Wwwwwww / wwwwwww     </td><td> ISO week number, week name + 1 or 2 digits            </td><td> WEEK 1 / Week 1 / week 1              </td><td> See <sup>2,3,5</sup></td></tr>
+<tr><td>WWWWWWWW / Wwwwwwww / wwwwwwww  </td><td> ISO week number, week name + 2 digits                 </td><td> WEEK 01 / Week 01 / week 01           </td><td> See <sup>2,3,5</sup></td></tr>
+<tr><td>X                               </td><td> Adjusted week number, 1 or 2 digits                   </td><td>  0 .. 53                              </td><td> See <sup>1,6</sup></td></tr>
+<tr><td>XX                              </td><td> Adjusted week number, 2 digits                        </td><td> 00 .. 53                              </td><td> See <sup>1,6</sup></td></tr>
+<tr><td>XXX / xxx                       </td><td> Adjusted week number, 1 letter + 1 or 2 digits        </td><td> W0 .. W53 / w1 .. w53                 </td><td> See <sup>3,4,6</sup></td></tr>
+<tr><td>XXXX / xxxx                     </td><td> Adjusted week number, 1 letter + 2 digits             </td><td> W01 .. W53 / w01 .. w53               </td><td> See <sup>3,4,6</sup></td></tr>
+<tr><td>XXXXX / Xxxxx / xxxxx           </td><td> Adjusted week number, abbreviation + 1 or 2 digits    </td><td> WK 00 / Wk 00 / wk 00                 </td><td> See <sup>2,3,6</sup></td></tr>
+<tr><td>XXXXXX / Xxxxxx / xxxxxx        </td><td> Adjusted week number, abbreviation + 2 digits         </td><td> WK 00 / Wk 00 / wk 00                 </td><td> See <sup>2,3,6</sup></td></tr>
+<tr><td>XXXXXXX / Xxxxxxx / xxxxxx      </td><td> Adjusted week number, week name + 1 or 2 digits       </td><td> WEEK 0 / Week 0 / week 0              </td><td> See <sup>2,3,6</sup></td></tr>
+<tr><td>XXXXXXXX / Xxxxxxxx / xxxxxxx   </td><td> Adjusted week number, week name + 2 digits            </td><td> WEEK 00 / Week 00 / week 00           </td><td> See <sup>2,3,6</sup></td></tr>
+<tr><td>Y and YY                        </td><td> Year, 2 digits                                        </td><td> 20                                    </td><td> See <sup>1</sup></td></tr>
+<tr><td>YYY and YYYY                    </td><td> Year, 4 digits                                        </td><td> 2020                                  </td><td> See <sup>1</sup></td></tr>
+<tr><td>Z and ZZ                        </td><td> Adjusted Year, 2 digits, use with ISO week number     </td><td> E.g. literal( date("2019-12-31"), "YY-WW" -> 20-01        </td><td> See <sup>1,7</sup></td></tr>
+<tr><td>ZZZ and ZZZZ                    </td><td> Adjusted Year, 4 digits, use with ISO week number     </td><td> E.g. literal( date("2019-12-31"), "YYYY-WW" -> 2020-01    </td><td> See <sup>1,7</sup></td></tr>
+<tr><td>H                               </td><td> Hour, 1 or 2 digits, 0 - 23 range                     </td><td> 0 ... 23                              </td><td></td></tr>
+<tr><td>h                               </td><td> Hour, 1 or 2 digits, 1 - 12 range                     </td><td> 1 ... 12                              </td><td></td></tr>
+<tr><td>HH                              </td><td> Hour, 2 digits, 0 - 23 range                          </td><td> 00 ... 23                             </td><td></td></tr>
+<tr><td>hh                              </td><td> Hour, 2 digits, 1 - 12 range                          </td><td> 01 ... 12                             </td><td> See <sup>8</sup></td></tr>
+<tr><td>I                               </td><td> Minute, 1 or 2 digits                                 </td><td> 0 ... 59                              </td><td> See <sup>1</sup></td></tr>
+<tr><td>II                              </td><td> Minute, 2 digits                                      </td><td> 00 ... 59                             </td><td> See <sup>1</sup></td></tr>
+<tr><td>S                               </td><td> Second, 1 or 2 digits                                 </td><td> 0 ... 59                              </td><td> See <sup>1</sup></td></tr>
+<tr><td>SS                              </td><td> Second, 2 digits                                      </td><td> 00 ... 59                             </td><td> See <sup>1</sup></td></tr>
+<tr><td>A / a                           </td><td> a.m. / p.m. info, 1 letter                            </td><td> A, P / a, p                           </td><td></td></tr>
+<tr><td>AA / Aa / aa                    </td><td> a.m. / p.m. info, 2 letters                           </td><td> AM, PM / Am, Pm / am, pm              </td><td></td></tr>
+<tr><td>AAA / Aaa / aaa                 </td><td> a.m. / p.m. info, 4 letters                           </td><td> A.M., P.M. / A.m., P.m. / a.m., p.m.  </td><td> See <sup>2</sup></td></tr>
+<tr><td>' ... '                         </td><td> Contents inside quotation marks are treated as given text, including spaces </td><td> "o'clock"     </td><td> See <sup>9</sup></td></tr>
+<tr><td>" ... "                           </td><td> See above                                             </td><td> 'time: '                              </td><td>   See <sup>10</sup></td></tr>
+<tr><td>All other characters            </td><td> Treated as given text                                 </td><td>                                       </td><td></td></tr>
+</table><p>
+<sup>1</sup> Template letter is case insensitive.  E.g. 'DD', 'Dd', 'dD' and 'dd' make no difference. <br>
+<sup>2</sup> Case of 1st letter determines 1st letter in the output, case of 2nd letter determines case of all remaining letters.  The cases of following letters (if 3 or more consecutive letters specified) are ignored.<br>
+<sup>3</sup> Uses the language as confgured by <a  href="REF_Features_Locales.html">locale</a> parameter or setting.<br>
+<sup>4</sup> Case of 1st letter determines 1st letter in the output. The cases of following letters (if 2 or more consecutive letters specified) are ignored.<br>
+<sup>5</sup> ISO Week numbers: In some years, the first day lies in week 53 of the previous year. In some other years, the last day lies in week 1 of the following year.<br>
+<sup>6</sup> Adjusted week numbers: In some years, the first day lies in week 0. Last day in all years are either week 52 or 53, but not 0.<br>
+<sup>7</sup> Referring to <sup>5</sup>, thse are the matching year numbers adjusted to the ISO week numbers.<br>
+<sup>8</sup> Case of 1st letter determines the output format.  The cases in the following consecutive letters are ignored.<br>
+<sup>9</sup> Applicable outside double quotation marks, otherwise symbols are treated as given text<br>
+<sup>10</sup> Applicable outside single quotation marks, otherwise symbols are treated as given text<br>
+</p>
+<h4> Locales</h4>
+<p>
+Specify a supported locale name, a country name or a language name.  See <a  href="REF_Features_Locales.html">locales</a> for an overview of supported locales.  Choices are not case sensitive.
+<br><br>
+Examples: <b>en_US, DE_at, France, German, local, none</b>
+</p>
+<h4> Program Examples without formatting templates</h4>
+<p>Following examples show use of date to literal conversion without formatting template</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
+ &nbsp; &nbsp; &nbsp;date 2[] = date("2020-10-03");<br/>
+ &nbsp; &nbsp; &nbsp;date 3[] = date("2020-07-14");<br/>
+ &nbsp; &nbsp; &nbsp;date 4[] = date("2020-08-01 22:30:00");<br/>
+ &nbsp; &nbsp; &nbsp;date 5[] = date("22:30:00");<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], " &nbsp; &nbsp;*", EN_us ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", EN_de ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 3[], "*", France ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 4[], "*", de_CH ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 3[], "*", none ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", local ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 1[] )); // assumes '*' and none<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code> &nbsp; &nbsp;*<br/>
+03/10/2020<br/>
+14/07/2020<br/>
+01.08.2020 22:30:00<br/>
+2020-07-14<br/>
+03.10.2020<br/>
+2020-07-04<br/>
+22:30:00<br/>
+</code></div>
+<h4> Program Examples with formatting templates</h4>
+<p>Following examples show use of date to literal conversion with formatting template</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
+ &nbsp; &nbsp; &nbsp;date 2[] = date("2020-08-01 22:30:00");<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], "Tttt DD.Mmmm.YY", EN_us ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt DD.mm.YYYY ' Zeit: ' HH:ii:ss", DE_de ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt DD.mm.YYYY ' Zeit: ' HH:ii:ss", DE_de ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt MM/DD/YY ' Time: ' hh:ii:ss aaa", en_US ));<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], "Tttt DD.Mmmm.YY", Hindi ));<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo( new line, "Show difference between ISO and adjusted week and year numbers: ");<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal( date( "2019-12-31"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal( date( "2020-06-30"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Same<br/>
+ &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>Saturday 04.July.20<br/>
+Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
+Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
+Sat 08/01/20 &nbsp;Time: &nbsp;10:30:00 p.m.<br/>
+शनिवार 04.जुलाई.20<br/>
+<br/>
+Show difference between ISO and adjusted week and year numbers: <br/>
+Week: 2020-01 and 2019-53<br/>
+Week: 2020-27 and 2020-27<br/>
+Week: 2020-53 and 2021-00<br/>
+</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+
