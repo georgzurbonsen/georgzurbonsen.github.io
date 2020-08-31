@@ -233,92 +233,92 @@ works similarly as <b>repeat</b>, but following differences apply:
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Original table, sorted by name: <br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 Example 1: Demonstrate processing option 'continue':<br/>
 Row number returned: 4, &nbsp;Items processed: 3<br/>
 Row number returned: 9, &nbsp;Items processed: 2<br/>
 Row number returned: 11, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 Example 2: Demonstrate processing option 'stop':<br/>
 Row number returned: 4, &nbsp;Items processed: 3<br/>
 Row number returned: 4, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 Example 3: Demonstrate processing option 'repeat':<br/>
 Row number returned: 4, &nbsp;Items processed: 2<br/>
 Row number returned: 9, &nbsp;Items processed: 1<br/>
 Row number returned: 10, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 Example 4: Demonstrate processing option 'repeat remaining':<br/>
 Row number returned: 3, &nbsp;Items processed: 3<br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 Example 5: Demonstrate processing option 'repeat revolving':<br/>
 Row number returned: 1, &nbsp;Items processed: 3<br/>
- &nbsp; &nbsp;0 | Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 | Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 | Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 | Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 | Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 | Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 | Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 | Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 | Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
+ &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
+ &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
+ &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
+ &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+ &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
 <br/>
 </code></div>
 <h4> See also</h4>

@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Table Comparison Strategy</h3>
-<a href="REF_Function_table_compare.html"><span>Prev</span></a> <a href="REF_Features_directory_and_file_system.html"><span>Next</span></a> 
+<a href="REF_Function_table_compare.html"><span>Prev</span></a> <a href="REF_Features_Table_comparison_reports.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -74,7 +74,10 @@
 <li class="navi"><a href="REF_Function_table_compare.html"><div class="navi">4.7.11.1 table compare ... </div></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Table_comparison_strategy.html"><div class="navi navi-selected">4.7.11.1.1 Table Comparison Strategy </div></a></li>
+<li class="navi"><a href="REF_Features_Table_comparison_reports.html"><div class="navi">4.7.11.1.2 Table Comparison Reports </div></a></li>
+<li class="navi"><a href="REF_Function_(This_is_a_user-defined_function_you_need_to_create).html"><div class="navi">4.7.11.1.3 Change Indication Function </div></a></li>
 </ul></li>
+<li class="navi"><a href="REF_Function_table_check.html"><div class="navi">+ 4.7.11.2 table check </div></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
@@ -88,7 +91,6 @@
 <h4> Introduction</h4>
 <p>
 The table comparison strategy consist of the following steps:
-
 
 
 <br><br><b>Step 1 - Check column headers</b><br>
@@ -112,14 +114,14 @@ these rows will be matched by comparing the remaining columns (or all columns if
 <b>1st round</b>: Zero tolerance is applied.  All identical rows are matched.  If matches exist, mate them and consider them as done.<br>
 <b>2nd round</b>: Check for rows where all entries <u>except one</u> are equal.  If matches exist, mate them.<br>
 <b>3rd round</b>: Check for rows where all entries <u>except two</u> are equal.  If matches exist, mate them.<br>
-<b>4th round</b>: Continue like above, opening up the comparison tolerance.
+<b>4th round</b>: Continue like above, opening up the comparison tolerance.<br>
 <b>Finally</b>: If all contents in a row are different, then the row in the old table is considered 'removed' and the new row considered 'added'.
 
-<br><br><b>Step 5 - Generate the report</b> according to the chosen reporting option<br>
+<br><br><b>Step 5 - Generate the report</b> according to the chosen reporting option
 
 <br><br><b>Step 6 - Add statistical summary</b><br>
 The statistical summary will be added to the right hand side of the report.  In this case, two additionals columns called <b>Statistics Parameters</b>
-and <b>Statistics Values</b> are introduced.
+and <b>Statistics Values</b> are introduced.<br>
 
 </p><table style = "width:800px"><col style = "width:500px"><col style = "width:300px">
 <tr><th>Statistics Parameters                           </th><th> Statistics Values</th></tr>
@@ -134,23 +136,13 @@ and <b>Statistics Values</b> are introduced.
 <tr><td>Values added                                    </td><td> 0 or higher</td></tr>
 <tr><td>Values removed                                  </td><td> 0 or higher</td></tr>
 <tr><td>Values modified                                 </td><td> 0 or higher</td></tr>
-<tr><td>Old table found orphan columns                  </td><td> No or Yes</td></tr>
-<tr><td>New table found orphan columns                  </td><td> No or Yes</td></tr>
+<tr><td>Old table found orphan columns                  </td><td> No or Yes (Yes if data below blank headers exist)</td></tr>
+<tr><td>New table found orphan columns                  </td><td> No or Yes (Yes if data below blank headers exist)</td></tr>
 <tr><td>Old table non-unique orientation identifiers    </td><td> No or Yes</td></tr>
 <tr><td>New table non-unique orientation identifiers    </td><td> No or Yes</td></tr>
-</table><p>
-
-</p>
-<h5> Examples:</h5>
-<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
-<br/>
-<br/>
-<br/>
-</code></div>
-<h5> Output:</h5>
-<div class="output_background_color" ><code></code></div>
+</table><p></p>
 <h4> See also</h4>
-<p><span class="red_text">table check</span></p>
+<p><a href="REF_Features_Table_comparison_reports.html">Table Comparison Reports</a></p>
 	</div>
 </section>
 

@@ -115,65 +115,65 @@ B4P loads complete XML files.  The XML file will be put into a structured table.
  &nbsp;table list( t );</code></div>
 <h5> Output:</h5>
 <div class="output_background_color" ><code>This is the JSON file:<br/>
- &nbsp; &nbsp;0 | { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 | &nbsp; "table_0" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 | &nbsp; { "name" : "My Pals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 | &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 | &nbsp; &nbsp; &nbsp; [ "Last Name", "First Name", "Age" ], &nbsp;[ "Miller", "Michelle", 30 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 | &nbsp; &nbsp; &nbsp; [ "Johnsson", "Jane", 40 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[ "", "Nick", 50 ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 | &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 | &nbsp; "table_1" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 | &nbsp; { "name" : "My Animals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 | &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 11 | &nbsp; &nbsp; &nbsp; { "Pet" : "Dog", "Color" : "Beige" }, &nbsp;{ "Color" : "Black", "Pet" : "Cat" } &nbsp; <br/>
- &nbsp; 12 | &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 13 | &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 14 | &nbsp; "Misc" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 15 | &nbsp; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 16 | &nbsp; &nbsp; &nbsp; "Dates" : "2020-12-31", "Bools" : true, "Voids" : null, "Sets" : "{a,b,1,2,3}"<br/>
- &nbsp; 17 | &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 18 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 19 | } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 20 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;0 : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;1 : &nbsp; "table_0" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : &nbsp; { "name" : "My Pals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; [ "Last Name", "First Name", "Age" ], &nbsp;[ "Miller", "Michelle", 30 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; [ "Johnsson", "Jane", 40 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[ "", "Nick", 50 ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : &nbsp; "table_1" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : &nbsp; { "name" : "My Animals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 10 : &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : &nbsp; &nbsp; &nbsp; { "Pet" : "Dog", "Color" : "Beige" }, &nbsp;{ "Color" : "Black", "Pet" : "Cat" } &nbsp; <br/>
+ &nbsp; 12 : &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 14 : &nbsp; "Misc" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 15 : &nbsp; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 16 : &nbsp; &nbsp; &nbsp; "Dates" : "2020-12-31", "Bools" : true, "Voids" : null, "Sets" : "{a,b,1,2,3}"<br/>
+ &nbsp; 17 : &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 18 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 19 : } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 20 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
 <br/>
 <br/>
 This is the loaded table from the JSON file:<br/>
- &nbsp; &nbsp;0 | JSON Level | JSON Name | JSON Type &nbsp; &nbsp; | JSON Value &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 | 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_0 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Pals &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Last Name &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | First Name &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;9 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Miller &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 10 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Michelle &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 11 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 30 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 12 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 13 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Johnsson &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 14 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Jane &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 15 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 40 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 16 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 17 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 18 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 19 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 20 | 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_1 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 21 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Animals &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 22 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 23 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 24 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 25 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Beige &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 26 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 27 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Black &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 28 | 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 29 | 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Misc &nbsp; &nbsp; &nbsp;| object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 30 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Dates &nbsp; &nbsp; | date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2020-12-31 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 31 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Bools &nbsp; &nbsp; | boolean &nbsp; &nbsp; &nbsp; | true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 32 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Voids &nbsp; &nbsp; | void &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| # Invalid Value #<br/>
- &nbsp; 33 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Sets &nbsp; &nbsp; &nbsp;| parameter set | {'a','b',1,2,3} &nbsp;<br/>
+ &nbsp; &nbsp;0 : JSON Level | JSON Name | JSON Type &nbsp; &nbsp; | JSON Value &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;1 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_0 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Pals &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Last Name &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;6 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | First Name &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;9 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Miller &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 10 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Michelle &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 30 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 12 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 13 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Johnsson &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 14 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Jane &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 15 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 40 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 16 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 17 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 18 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 19 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 20 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_1 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 21 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Animals &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 22 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 23 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 24 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 25 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Beige &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 26 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 27 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Black &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 28 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 29 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Misc &nbsp; &nbsp; &nbsp;| object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 30 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Dates &nbsp; &nbsp; | date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2020-12-31 &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 31 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Bools &nbsp; &nbsp; | boolean &nbsp; &nbsp; &nbsp; | true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 32 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Voids &nbsp; &nbsp; | void &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| # Invalid Value #<br/>
+ &nbsp; 33 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Sets &nbsp; &nbsp; &nbsp;| parameter set | {'a','b',1,2,3} &nbsp;<br/>
 <br/>
 </code></div>
 <h4> Loading tables in JSON Files</h4>
@@ -234,17 +234,17 @@ the header name.  If the header name is missing, then it will be added to the he
 <br/>
 <br/>
 First tabe loaded:<br/>
- &nbsp; &nbsp;0 | Last Name | First Name | Age<br/>
- &nbsp; &nbsp;1 | Miller &nbsp; &nbsp;| Michelle &nbsp; | 30 <br/>
- &nbsp; &nbsp;2 | Johnsson &nbsp;| Jane &nbsp; &nbsp; &nbsp; | 40 <br/>
- &nbsp; &nbsp;3 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; | 50 <br/>
+ &nbsp; &nbsp;0 : Last Name | First Name | Age<br/>
+ &nbsp; &nbsp;1 : Miller &nbsp; &nbsp;| Michelle &nbsp; | 30 <br/>
+ &nbsp; &nbsp;2 : Johnsson &nbsp;| Jane &nbsp; &nbsp; &nbsp; | 40 <br/>
+ &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; | 50 <br/>
 <br/>
 <br/>
 <br/>
 This is the loaded table below table_1:<br/>
- &nbsp; &nbsp;0 | Pet | Color<br/>
- &nbsp; &nbsp;1 | Dog | Beige<br/>
- &nbsp; &nbsp;2 | Cat | Black<br/>
+ &nbsp; &nbsp;0 : Pet | Color<br/>
+ &nbsp; &nbsp;1 : Dog | Beige<br/>
+ &nbsp; &nbsp;2 : Cat | Black<br/>
 <br/>
 </code></div>
 <h4> See also</h4>
