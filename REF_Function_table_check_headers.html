@@ -76,6 +76,8 @@
 <li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 4.7.7 Processing Table Columns </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">+ 4.7.8 Processing Table Rows </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -113,7 +115,7 @@ Specific rules apply for this function:
 <td>literal</td>
 <td><b>Check header option 1</b><br/><p>This option affects the header checking rules.  See table below for available values.  The value <i>n</i> used in the table below stands for number of columns in row 0.
 
-</p><table class="noframe_1stcolbold" style = "width:750px"><col style = "width:200px"><col style = "width:550px">
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>must not exist              </td><td>   Specified header names <i>must not exist</i> in the table.<br>Specified column numbers must like outside range 0..<i>n</i>-1.<br>All negative numbers are rejected.</td></tr>
 <tr><td>may exist                   </td><td>   Specified headers names may exist, i.e. all header names are accepted.<br>All positive column numbers are accepted.<br>Negative numbers from -<i>n</i>..-1 are accepted.</td></tr>
 <tr><td>create if missing           </td><td>   Create additional headers if the headers do not yet exist.  The rows below those new headers will not be initialized!<br>Positive column numbers from 0 to <i>n</i> are accepted.  If <i>n</i> is specified, then an additional blank column will be created.  <br>Negative numbers: -1 refers to next blank column beyond the last existing one.  Smaller numbers refer to existing columns further to the left.  Values smaller than -(<i>n</i>+1) will be rejected.</td></tr>
@@ -132,7 +134,7 @@ Specific rules apply for this function:
 <td>literal</td>
 <td><b>Additional option(s)</b><br/><p>Additional checking options:
 
-</p><table class="noframe_1stcolbold" style = "width:750px"><col style = "width:200px"><col style = "width:550px">
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>no repetition               </td><td>   Column specifications must not repeat (i.e. no repeated header names, no repeated column numbers)</td></tr>
 <tr><td>no numbers                  </td><td>   No column numbers allowed in the 2nd parameter. Only header names are allowed</td></tr>
 <tr><td>no blanks                   </td><td>   No blank headers allowed.</td></tr>

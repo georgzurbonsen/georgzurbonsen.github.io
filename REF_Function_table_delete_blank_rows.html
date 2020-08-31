@@ -81,6 +81,8 @@
 <li class="navi"><a href="REF_Function_table_rank_rows.html"><div class="navi">4.7.8.11 table rank (selected) rows </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -176,7 +178,7 @@ table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
 table delete blank rows ( u, 0, entirely empty row );<br/>
 table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
 <br/>
-echo (new line, "Reduce # blank rows to 1 ________");<br/>
+echo (new line, "Reduce # blank rows to 1:");<br/>
 table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
 table delete blank rows ( u, 1 );<br/>
 table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
@@ -217,7 +219,7 @@ Demonstrate deleting empty rows (0 columns) -&gt; only 1 row removed<br/>
  &nbsp; &nbsp;6 | Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>
 <br/>
-Reduce # blank rows to 1 ________<br/>
+Reduce # blank rows to 1:<br/>
  &nbsp; &nbsp;0 | Last Name | First Name | Favorite Sports &nbsp;<br/>
  &nbsp; &nbsp;1 | Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
  &nbsp; &nbsp;2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>

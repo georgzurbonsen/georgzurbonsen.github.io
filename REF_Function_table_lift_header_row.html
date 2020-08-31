@@ -76,6 +76,8 @@
 <li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 4.7.7 Processing Table Columns </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">+ 4.7.8 Processing Table Rows </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -127,7 +129,7 @@ Checking option 1 affecting the table headers.  Only one option can be chosen.  
 option "full match" expects that the header row contains all specified headers and not more in oder to consider them found.  Otherwise, searching continues
 in the rows below until the criteria are met.
 
-</p><table class="noframe_1stcolbold" style = "width:750px"><col style = "width:200px"><col style = "width:550px">
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>must exist                  </td><td>   The specified header names must exist<br>Specifeid column numbers must be within 0..<i>n</i>-1 or -<i>n</i>..-1.</td></tr>
 <tr><td>unique                      </td><td>   Like <b>must exist</b>, but also checks that the specified column headers are unique in the table, i.e. they exist only once.</td></tr>
 <tr><td>full match                  </td><td>   Like <b>unique</b>, however the table must not contain more (or less) headers than those specified to check.  The ordering does not matter. It's like tolerating full number of white pins after a guess in the <i>Master Mind</i> game.</td></tr>
@@ -146,7 +148,6 @@ in the rows below until the criteria are met.
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
- &nbsp;line[]= "______________________________________________________________________";<br/>
 <br/>
  &nbsp;table initialize( 2 tables,<br/>
  &nbsp;{ { Created by, &nbsp;Nick, Miller, "", Last Update, "31.12.2019" },<br/>
@@ -160,9 +161,7 @@ in the rows below until the criteria are met.
 <br/>
 <br/>
  &nbsp;echo("Original table:");<br/>
- &nbsp;echo(line[]);<br/>
  &nbsp;table list( 2 tables );<br/>
- &nbsp;echo(line[], new line);<br/>
 <br/>
 <br/>
  &nbsp;table copy table( 2 tables, table );<br/>
@@ -171,9 +170,7 @@ in the rows below until the criteria are met.
  &nbsp;echo("Note: Contents below headers are not moved up.");<br/>
 <br/>
  &nbsp;table lift headers( table, {First Name, Last Name, City} ); // 'must exist' is default<br/>
- &nbsp;echo(line[]);<br/>
  &nbsp;table list( table );<br/>
- &nbsp;echo(line[], new line);<br/>
 <br/>
 <br/>
  &nbsp;table copy table( 2 tables, table );<br/>
@@ -181,30 +178,23 @@ in the rows below until the criteria are met.
  &nbsp;echo("Note: It will recognize the headers in the right table. Entire rows below move up.");<br/>
 <br/>
  &nbsp;table lift header row( table, {First Name, Last Name, City} ); // 'must exist' is default<br/>
- &nbsp;echo(line[]);<br/>
  &nbsp;table list( table );<br/>
- &nbsp;echo(line[], new line);<br/>
 <br/>
  &nbsp;table copy table( 2 tables, table );<br/>
  &nbsp;echo("Show 'table lift header row(..., sequence)':" );<br/>
  &nbsp;echo("Note: It will recognize the headers in the left table because they have same sequence.");<br/>
 <br/>
  &nbsp;table lift header row( table, {First Name, Last Name, City}, sequence );<br/>
- &nbsp;echo(line[]);<br/>
  &nbsp;table list( table );<br/>
- &nbsp;echo(line[], new line);<br/>
 <br/>
  &nbsp;table copy table( 2 tables, table );<br/>
  &nbsp;echo("Following code puts both tables with headers to 1st row" );<br/>
  &nbsp;table lift contents( table, {First Name, Last Name, City}, sequence );<br/>
  &nbsp;table lift contents( table, {Last Name, First Name, City}, sequence );<br/>
- &nbsp;echo(line[]);<br/>
  &nbsp;table list( table );<br/>
- &nbsp;echo(line[], new line);<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Original table:<br/>
-______________________________________________________________________<br/>
  &nbsp; &nbsp;0 | Created by | Nick &nbsp; &nbsp; &nbsp;| Miller &nbsp; &nbsp;| &nbsp; &nbsp; | Last Update | 31.12.2019 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;1 | Tennis &nbsp; &nbsp; | Players &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Squash &nbsp; &nbsp; &nbsp;| Players &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;2 | Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Last Name &nbsp; | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
@@ -214,12 +204,9 @@ ______________________________________________________________________<br/>
  &nbsp; &nbsp;6 | Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;7 | Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-______________________________________________________________________<br/>
-<br/>
 Show 'table lift headers(..., must exist)':<br/>
 Note: It will recognize the headers in the right table.<br/>
 Note: Contents below headers are not moved up.<br/>
-______________________________________________________________________<br/>
  &nbsp; &nbsp;0 | Created by | Nick &nbsp; &nbsp; &nbsp;| Miller &nbsp; &nbsp;| &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 | Tennis &nbsp; &nbsp; | Players &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Squash &nbsp; &nbsp;| Players &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;2 | Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -229,11 +216,8 @@ ______________________________________________________________________<br/>
  &nbsp; &nbsp;6 | Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;7 | Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-______________________________________________________________________<br/>
-<br/>
 Show 'table lift header row(..., must exist)':<br/>
 Note: It will recognize the headers in the right table. Entire rows below move up.<br/>
-______________________________________________________________________<br/>
  &nbsp; &nbsp;0 | Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 | Draft &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Weber &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
  &nbsp; &nbsp;2 | First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
@@ -241,20 +225,14 @@ ______________________________________________________________________<br/>
  &nbsp; &nbsp;4 | Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;5 | Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-______________________________________________________________________<br/>
-<br/>
 Show 'table lift header row(..., sequence)':<br/>
 Note: It will recognize the headers in the left table because they have same sequence.<br/>
-______________________________________________________________________<br/>
  &nbsp; &nbsp;0 | First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner | Berta &nbsp; &nbsp; | San Monica<br/>
  &nbsp; &nbsp;1 | Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Miller | Dominique | Trenton &nbsp; <br/>
  &nbsp; &nbsp;2 | Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp;| Alex &nbsp; &nbsp; &nbsp;| Denver &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;3 | Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen | Patricia &nbsp;| Albany &nbsp; &nbsp;<br/>
 <br/>
-______________________________________________________________________<br/>
-<br/>
 Following code puts both tables with headers to 1st row<br/>
-______________________________________________________________________<br/>
  &nbsp; &nbsp;0 | First Name | Last Name | City &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 | Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Weber &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
  &nbsp; &nbsp;2 | Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Tanner &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
@@ -263,8 +241,6 @@ ______________________________________________________________________<br/>
  &nbsp; &nbsp;5 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;6 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;7 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
-<br/>
-______________________________________________________________________<br/>
 <br/>
 </code></div>
 <h4> See also</h4>

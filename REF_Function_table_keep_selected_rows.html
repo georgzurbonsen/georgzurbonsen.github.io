@@ -81,6 +81,8 @@
 <li class="navi"><a href="REF_Function_table_rank_rows.html"><div class="navi">4.7.8.11 table rank (selected) rows </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -144,32 +146,32 @@ If offset is negative and reach into the header row, the header rows are protect
  &nbsp;{ { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
 <br/>
  &nbsp;table copy table( table 1, t1 );<br/>
- &nbsp;echo("Keep 2 rows: Bird and Tick. __________________");<br/>
+ &nbsp;echo("Keep 2 rows: Bird and Tick:");<br/>
  &nbsp;table keep selected rows( t1, ([Animal]='*i*') ); // Bird, Tick kept<br/>
  &nbsp;table list( t1 ); // Only Dog and Fly are left<br/>
 <br/>
- &nbsp;echo("Dog will also be kept. __________________");<br/>
+ &nbsp;echo("Dog will also be kept:");<br/>
  &nbsp;table copy table( table 1, t1 );<br/>
  &nbsp;table keep selected rows( t1, ([Animal]='*i*'), 2 ); // Bird, Tick, Dog kept<br/>
  &nbsp;table list( t1 ); // Only Dog and Fly are left<br/>
 <br/>
- &nbsp;echo("Keep animal above Dog and Worm. __________________");<br/>
+ &nbsp;echo("Keep animal above Dog and Worm:");<br/>
  &nbsp;table copy table( table 1, t1 );<br/>
  &nbsp;table keep selected rows( t1, ([Animal]='*o*'), 1, -2 ); // Rows above Worm, Dog. Worm is header. Ignore.<br/>
  &nbsp;table list( t1 ); // Only Dog and Fly are left</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Keep 2 rows: Bird and Tick. __________________<br/>
+<div class="output_background_color" ><code>Keep 2 rows: Bird and Tick:<br/>
  &nbsp; &nbsp;0 | Animal | leg count<br/>
  &nbsp; &nbsp;1 | Bird &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 | Tick &nbsp; | 8 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-Dog will also be kept. __________________<br/>
+Dog will also be kept:<br/>
  &nbsp; &nbsp;0 | Animal | leg count<br/>
  &nbsp; &nbsp;1 | Bird &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 | Dog &nbsp; &nbsp;| 4 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;3 | Tick &nbsp; | 8 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>
-Keep animal above Dog and Worm. __________________<br/>
+Keep animal above Dog and Worm:<br/>
  &nbsp; &nbsp;0 | Animal | leg count<br/>
  &nbsp; &nbsp;1 | Bird &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
 <br/>

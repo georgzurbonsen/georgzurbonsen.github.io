@@ -76,6 +76,8 @@
 <li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 4.7.7 Processing Table Columns </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">+ 4.7.8 Processing Table Rows </div></a></li>
 <li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -116,27 +118,27 @@ In this appraoch, the JSON files uses two distinct names:
  &nbsp;table initialize( table 2, {{ Pet, Hair color},<br/>
  &nbsp; &nbsp; &nbsp;{ Dog, Beige }, { Cat, '' }, { Mouse, Gray }} );<br/>
 <br/>
- &nbsp;echo("table 1 ________________________________________");<br/>
+ &nbsp;echo("table 1:");<br/>
  &nbsp;table list( table 1 );<br/>
 <br/>
- &nbsp;echo("table 2 ________________________________________");<br/>
+ &nbsp;echo("table 2:");<br/>
  &nbsp;table list( table 2 );<br/>
 <br/>
  &nbsp;echo(new line, "Save both tables as JSON arrays" );<br/>
  &nbsp;table save( { table 1, table 2} , "Output.json", JSON arrays );<br/>
  &nbsp;table load( text, "Output.json", TEXT );<br/>
 <br/>
- &nbsp;echo("table 1 &amp; 2 as JSON arrays _____________________");<br/>
+ &nbsp;echo("table 1 &amp; 2 as JSON arrays:_");<br/>
  &nbsp;table list( text );<br/>
 </code></div>
 <h5> Output:</h5>
-<div class="output_background_color" ><code>table 1 ________________________________________<br/>
+<div class="output_background_color" ><code>table 1:<br/>
  &nbsp; &nbsp;0 | Last Name | 1st Name | Age<br/>
  &nbsp; &nbsp;1 | Miller &nbsp; &nbsp;| Michelle | 30 <br/>
  &nbsp; &nbsp;2 | Johnson &nbsp; | Jane &nbsp; &nbsp; | 40 <br/>
  &nbsp; &nbsp;3 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; | 50 <br/>
 <br/>
-table 2 ________________________________________<br/>
+table 2:<br/>
  &nbsp; &nbsp;0 | Pet &nbsp; | Hair color<br/>
  &nbsp; &nbsp;1 | Dog &nbsp; | Beige &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;2 | Cat &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -145,7 +147,7 @@ table 2 ________________________________________<br/>
 <br/>
 Save both tables as JSON arrays<br/>
 INFO: Saved table to file Output.json containing 2 sheets<br/>
-table 1 &amp; 2 as JSON arrays _____________________<br/>
+table 1 &amp; 2 as JSON arrays:_<br/>
  &nbsp; &nbsp;0 | // JSON File format. &nbsp;Contains table(s). Reference: https://www.json.org <br/>
  &nbsp; &nbsp;1 | // Created with B4P &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
@@ -188,37 +190,36 @@ assigned to same JSON names.
  &nbsp;table initialize( table 2, {{ Pet, Hair color},<br/>
  &nbsp; &nbsp; &nbsp;{ Dog, Beige }, { Cat, '' }, { Mouse, Gray }} );<br/>
 <br/>
- &nbsp;echo("table 1 ________________________________________");<br/>
+ &nbsp;echo("table 1:");<br/>
  &nbsp;table list( table 1 );<br/>
 <br/>
- &nbsp;echo("table 2 ________________________________________");<br/>
+ &nbsp;echo("table 2:");<br/>
  &nbsp;table list( table 2 );<br/>
 <br/>
  &nbsp;echo(new line, "Save both tables as JSON objects" );<br/>
  &nbsp;table save( { table 1, table 2} , "Output.json", JSON objects );<br/>
  &nbsp;table load( text, "Output.json", TEXT );<br/>
 <br/>
- &nbsp;echo("table 1 &amp; 2 as JSON objects ____________________");<br/>
+ &nbsp;echo("table 1 &amp; 2 as JSON objects");<br/>
  &nbsp;table list( text );<br/>
-<br/>
 <br/>
  &nbsp;echo(new line, "Save both tables as JSON objects" );<br/>
  &nbsp;table save( { table 1, table 2} , "Output.json", JSON lean );<br/>
  &nbsp;table load( text, "Output.json", TEXT );<br/>
 <br/>
- &nbsp;echo("table 1 &amp; 2 as JSON objects ____________________");<br/>
+ &nbsp;echo("table 1 &amp; 2 as JSON objects:");<br/>
  &nbsp;table list( text );<br/>
 <br/>
  &nbsp;file delete silently( Output.json );<br/>
 </code></div>
 <h5> Output:</h5>
-<div class="output_background_color" ><code>table 1 ________________________________________<br/>
+<div class="output_background_color" ><code>table 1:<br/>
  &nbsp; &nbsp;0 | Last Name | 1st Name | Age<br/>
  &nbsp; &nbsp;1 | Miller &nbsp; &nbsp;| Michelle | 30 <br/>
  &nbsp; &nbsp;2 | Johnson &nbsp; | Jane &nbsp; &nbsp; | 40 <br/>
  &nbsp; &nbsp;3 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; | 50 <br/>
 <br/>
-table 2 ________________________________________<br/>
+table 2:<br/>
  &nbsp; &nbsp;0 | Pet &nbsp; | Hair color<br/>
  &nbsp; &nbsp;1 | Dog &nbsp; | Beige &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;2 | Cat &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -227,7 +228,7 @@ table 2 ________________________________________<br/>
 <br/>
 Save both tables as JSON objects<br/>
 INFO: Saved table to file Output.json containing 2 sheets<br/>
-table 1 &amp; 2 as JSON objects ____________________<br/>
+table 1 &amp; 2 as JSON objects<br/>
  &nbsp; &nbsp;0 | // JSON File format. &nbsp;Contains table(s). Reference: https://www.json.org <br/>
  &nbsp; &nbsp;1 | // Created with B4P &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
@@ -252,7 +253,7 @@ table 1 &amp; 2 as JSON objects ____________________<br/>
 <br/>
 Save both tables as JSON objects<br/>
 INFO: Saved table to file Output.json containing 2 sheets<br/>
-table 1 &amp; 2 as JSON objects ____________________<br/>
+table 1 &amp; 2 as JSON objects:<br/>
  &nbsp; &nbsp;0 | // JSON File format. &nbsp;Contains table(s). Reference: https://www.json.org <br/>
  &nbsp; &nbsp;1 | // Created with B4P &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
