@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8"/>
-<title>Beyond 4P Reference</title>
+<title>B4P Reference</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>table check</h3>
-<a href="REF_Function_(This_is_a_user-defined_function_you_need_to_create).html"><span>Prev</span></a> <a href="REF_Features_checking_tables_row_results.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Function_(This_is_a_user-defined_function_you_need_to_create).html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_checking_tables_row_results.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -77,7 +77,9 @@
 <li class="navi"><a href="REF_Features_checking_tables_row_results.html"><div class="navi">4.7.11.2.1 Checking Tables - Row and Group Results </div></a></li>
 <li class="navi"><a href="REF_Features_checking_tables_examples.html"><div class="navi">4.7.11.2.2 Checking Tables - Examples </div></a></li>
 </ul></li>
+<li class="navi"><a href="REF_Function_table_check_duplicates.html"><div class="navi">4.7.11.3 table check duplicates ... </div></a></li>
 </ul></li>
+<li class="navi"><a href="REF_Features_Looking_up_Other_Tables.html"><div class="navi">+ 4.7.12 Looking up Other Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
@@ -101,13 +103,13 @@ This function requires at least 3 parameters:
 <li class="bullets">The columns to be checked (target data in target table, checking comparison expressions in the reference table).</li>
 </ul><p>
 In the target table, the following four columns will be added with header names as listed below if they are not yet existing.
-If they exist, contents will be overwritten.
+If they exist, contents will overwritten, and "Explanations" appended.
 
 </p><table class="noframe bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
 <tr><td>Row Result          </td><td> Comparison result statement related to particular row.  See <a  href="REF_Features_checking_tables_row_results.html">checking tables row results</a>.</td></tr>
 <tr><td>Group Result        </td><td> Result related to entire group  See <a  href="REF_Features_checking_tables_row_results.html">checking tables group results</a>.</td></tr>
 <tr><td>Explanations        </td><td> Details about mismatch. In case multiple mismatches,  exist, only the first mismatch will be explained</td></tr>
-<tr><td>Ref Table Row No    </td><td> Identified row in the reference table where the comparison has been made.</td></tr>
+<tr><td>Ref Row             </td><td> Identified row number in the reference table where the comparison has been made.</td></tr>
 </table><p>
 
 The reference table contains rows which are being used to check the contents in the target table.
@@ -119,10 +121,11 @@ As long all conditions in the columns are met in at least one of the rows, then 
 <u>Note</u>: The sequential order of the rows in the target table as well as in the reference table do not matter.
 Grouped rows do not need to lie in blocks of adjacent rows and may be scattered throughout the entire table.
 
+
 </p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
-<p>Indirect parameter passing is enabled</p>
+<p>Indirect parameter passing is disabled</p>
 <h4> Parameter count: <span class="black_text">4 - 7</span></h4>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
@@ -226,10 +229,55 @@ In the reference table, the data below this header may contain the following val
 <td><b>Table is OK</b><br/><p>true if no mismatches identified.  Otherwise false.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
-</code></div>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table initialize( target, {{ Name, Gender}, { Philippe, male }, { Pascale, female }, { Michele, female }} );<br/>
+ &nbsp; &nbsp; &nbsp;echo("Target table:"); table list ( target );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table initialize( reference, { Gender, male, female } &nbsp;);<br/>
+ &nbsp; &nbsp; &nbsp;echo("Reference table:"); table list ( reference );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;res[] = table check( target, reference, Gender );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Target table after checking (result = ", res[], "):");<br/>
+ &nbsp; &nbsp; &nbsp;table list ( target );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Add a mistake.");<br/>
+ &nbsp; &nbsp; &nbsp;[target:Name,Philippe,Gender] = "Male"; // Upper case deviates<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;res[] = table check( target, reference, Gender );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Target table after checking (result = ", res[], "):");<br/>
+ &nbsp; &nbsp; &nbsp;table list ( target );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;// See following sub-sections for more sophisticated examples.</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code></code></div>
+<div class="output_background_color" ><code>Target table:<br/>
+ &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender<br/>
+ &nbsp; &nbsp;1 : Philippe | male &nbsp;<br/>
+ &nbsp; &nbsp;2 : Pascale &nbsp;| female<br/>
+ &nbsp; &nbsp;3 : Michele &nbsp;| female<br/>
+<br/>
+Reference table:<br/>
+ &nbsp; &nbsp;0 : Gender<br/>
+ &nbsp; &nbsp;1 : male &nbsp;<br/>
+ &nbsp; &nbsp;2 : female<br/>
+<br/>
+Target table after checking (result = true):<br/>
+ &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender | Row Result | Group Result | Explanations | Ref Row<br/>
+ &nbsp; &nbsp;1 : Philippe | male &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : Pascale &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : Michele &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+<br/>
+Add a mistake.<br/>
+Target table after checking (result = false):<br/>
+ &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender | Row Result | Group Result | Explanations &nbsp; &nbsp; &nbsp; &nbsp; | Ref Row<br/>
+ &nbsp; &nbsp;1 : Philippe | Male &nbsp; | Mismatch &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | [Gender] = 'male'? &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| [Gender] = 'female'? | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : Pascale &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : Michele &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+<br/>
+</code></div>
 	</div>
 </section>
 
