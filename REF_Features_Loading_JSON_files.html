@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Loading JSON files</h3>
+<a accesskey="p" href="REF_Features_Loading_XML_files.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_table_save.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">2.3 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.4 Comments </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.5 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.6 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.7 Locales </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">3 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">3.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">3.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">3.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">4 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">4.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">4.2 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">4.3 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">4.4 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">4.5 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">4.6 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">4.7 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_table_creating_deleting.html"><div class="navi">4.7.1 Creating and Deleting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_accessing_table_info.html"><div class="navi">4.7.2 Accessing Table Information </div></a></li>
+<li class="navi"><a href="REF_Features_Accessing_table_contents.html"><div class="navi">4.7.3 Accessing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_and_saving_tables.html"><div class="navi">4.7.4 Loading and Saving Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_table_load.html"><div class="navi">4.7.4.1 table load ... </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_HTML_files.html"><div class="navi">4.7.4.2 Loading HTML files </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_XML_files.html"><div class="navi">4.7.4.3 Loading XML files </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_JSON_files.html"><div class="navi navi-selected">4.7.4.4 Loading JSON files </div></a></li>
+<li class="navi"><a href="REF_Function_table_save.html"><div class="navi">4.7.4.5 table save ... </div></a></li>
+<li class="navi"><a href="REF_Features_Saving_JSON_files.html"><div class="navi">4.7.4.6 Saving JSON files </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Checking_headers.html"><div class="navi">+ 4.7.5 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="REF_Features_Searching_tables.html"><div class="navi">+ 4.7.6 Searching Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 4.7.7 Processing Table Columns </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">+ 4.7.8 Processing Table Rows </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">+ 4.7.11 Checking and Comparing Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Looking_up_Other_Tables.html"><div class="navi">+ 4.7.12 Looking up Other Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Loading whole JSON files</h4>
+<p>
+Whole json files can be loaded into tables using a similar structural decomposition as applied with <a  href="REF_Features_Loading_XML_files.html">loading XML files</a>.
+
+
+B4P loads complete XML files.  The XML file will be put into a structured table.  The table will contain following header names:
+
+</p><table class="bold_column_1 noframe" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><td>JSON Level      </td><td> Nesting level.  Begins with 0</td></tr>
+<tr><td>JSON Name       </td><td> For objects, the <b>object name</b> is listed.<br>For simple values, value name is listed.<br>For <b>arrays</b>, the index number is listed.</td></tr>
+<tr><td>JSON Type       </td><td> One of:<b>object</b>, <b>array</b>, or identified type such as <b>numeral, literal, date, boolean, parameter set</b> and <b>vodi</b>.  The <b>null</b> value translates to <b>void</b>.</td></tr>
+<tr><td>JSON Value      </td><td> Corresponding values.  Fields are blank for object and array declarations as values follow in the rows below</td></tr>
+</table><p>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
+ &nbsp;table load( t, "Examples&#92;Example1.json", TEXT );<br/>
+<br/>
+ &nbsp;echo("This is the JSON file:");<br/>
+ &nbsp;table list( t );<br/>
+<br/>
+ &nbsp;table load( t, "Examples&#92;Example1.json", JSON );<br/>
+<br/>
+ &nbsp;echo; echo;<br/>
+ &nbsp;echo("This is the loaded table from the JSON file:");<br/>
+ &nbsp;table list( t );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>This is the JSON file:<br/>
+ &nbsp; &nbsp;0 : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;1 : &nbsp; "table_0" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : &nbsp; { "name" : "My Pals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; [ "Last Name", "First Name", "Age" ], &nbsp;[ "Miller", "Michelle", 30 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; [ "Johnsson", "Jane", 40 ], &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[ "", "Nick", 50 ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : &nbsp; "table_1" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : &nbsp; { "name" : "My Animals", "table" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 10 : &nbsp; &nbsp; [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : &nbsp; &nbsp; &nbsp; { "Pet" : "Dog", "Color" : "Beige" }, &nbsp;{ "Color" : "Black", "Pet" : "Cat" } &nbsp; <br/>
+ &nbsp; 12 : &nbsp; &nbsp; ] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : &nbsp; }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 14 : &nbsp; "Misc" : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 15 : &nbsp; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 16 : &nbsp; &nbsp; &nbsp; "Dates" : "2020-12-31", "Bools" : true, "Voids" : null, "Sets" : "{a,b,1,2,3}"<br/>
+ &nbsp; 17 : &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 18 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 19 : } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 20 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+<br/>
+<br/>
+This is the loaded table from the JSON file:<br/>
+ &nbsp; &nbsp;0 : JSON Level | JSON Name | JSON Type &nbsp; &nbsp; | JSON Value &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;1 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_0 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Pals &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Last Name &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;6 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | First Name &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;9 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Miller &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 10 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Michelle &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 30 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 12 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 13 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Johnsson &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 14 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Jane &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 15 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 40 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 16 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 17 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 18 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 19 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp; &nbsp; | numeral &nbsp; &nbsp; &nbsp; | 50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 20 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table_1 &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 21 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| name &nbsp; &nbsp; &nbsp;| literal &nbsp; &nbsp; &nbsp; | My Animals &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 22 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| table &nbsp; &nbsp; | array &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 23 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 24 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 25 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Beige &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 26 : 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; | object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 27 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Black &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 28 : 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Pet &nbsp; &nbsp; &nbsp; | literal &nbsp; &nbsp; &nbsp; | Cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 29 : 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Misc &nbsp; &nbsp; &nbsp;| object &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 30 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Dates &nbsp; &nbsp; | date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2020-12-31 &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 31 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Bools &nbsp; &nbsp; | boolean &nbsp; &nbsp; &nbsp; | true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 32 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Voids &nbsp; &nbsp; | void &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| # Invalid Value #<br/>
+ &nbsp; 33 : 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Sets &nbsp; &nbsp; &nbsp;| parameter set | {'a','b',1,2,3} &nbsp;<br/>
+<br/>
+</code></div>
+<h4> Loading tables in JSON Files</h4>
+<p>
+With the procedure <a class="bold_text" href="REF_Function_table_load.html">table load</a>(),
+B4P is able to load arrays embedded in JSON files into tables.  Without specifying a text pattern, the first array will be used.
+If a text pattern is specified, then B4P will skip all contents until the text pattern is found and then parses forward until the
+next array is found.
+
+<br><br>
+
+Since tables are only two-dimensional objects and not trees, some rules and restrictions apply:
+
+<br><br>
+
+<b>1. </b>The data to load must be inside an array where each array element represents one row: <b>[ ..., ..., ... ]</b><br>
+The elements inside the array may one of further<br>
+arrays <b>[ ..., ..., ... ]</b>, <br>
+objects <b>{ ... : ..., ... : ... ]</b>, and <br>
+simple values like "literals" (in double quotation marks), numerals (if needed: use decimal points, not commas), <i>true</i>, <i>false</i> and <i>null</i>.
+
+<br><br>
+
+<b>2. </b>  In case of arrays, the elements correspond to the table columns added from left to right.<br>
+<u>Restriction: </u>No further nested arrays or objects are allowed.<br>
+<u>Note:</u>        If the first row is an array, then it is considered to contain header names.
+
+<br><br>
+
+<b>3. </b>In case of objects, the tuples consist of header names followed by colon (:) followed by value.  The column location in the table will be matched with
+the header name.  If the header name is missing, then it will be added to the header row.<br>
+<u>Restriction:</u> No further nested arrays or objects are allowed.<br>
+<u>Note:</u>        If the first row is a collection of objects, then the header names will written into the header row and the data in the 2nd row below.
+
+<br><br>
+
+4.  In case of simple values, these values will be written into the first column.
+
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp;echo("The same JSON file is loaded as shown in the 1st code example.", new line);<br/>
+ &nbsp;table load( t, "Examples&#92;Example1.json", JSON TABLE );<br/>
+<br/>
+ &nbsp;echo; echo;<br/>
+ &nbsp;echo("First tabe loaded:");<br/>
+ &nbsp;table list( t );<br/>
+<br/>
+ &nbsp;table load( t, "Examples&#92;Example1.json", JSON TABLE, "table_1" );<br/>
+<br/>
+ &nbsp;echo; echo;<br/>
+ &nbsp;echo("This is the loaded table below table_1:");<br/>
+ &nbsp;table list( t );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>The same JSON file is loaded as shown in the 1st code example.<br/>
+<br/>
+<br/>
+<br/>
+First tabe loaded:<br/>
+ &nbsp; &nbsp;0 : Last Name | First Name | Age<br/>
+ &nbsp; &nbsp;1 : Miller &nbsp; &nbsp;| Michelle &nbsp; | 30 <br/>
+ &nbsp; &nbsp;2 : Johnsson &nbsp;| Jane &nbsp; &nbsp; &nbsp; | 40 <br/>
+ &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Nick &nbsp; &nbsp; &nbsp; | 50 <br/>
+<br/>
+<br/>
+<br/>
+This is the loaded table below table_1:<br/>
+ &nbsp; &nbsp;0 : Pet | Color<br/>
+ &nbsp; &nbsp;1 : Dog | Beige<br/>
+ &nbsp; &nbsp;2 : Cat | Black<br/>
+<br/>
+</code></div>
+<h4> See also</h4>
+<p><a href="REF_Function_table_load.html">table load</a><br/>
+<a href="REF_Features_Loading_XML_files.html">Loading XML files</a><br/>
+<a href="REF_Features_Loading_HTML_files.html">Loading HTML files</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+
