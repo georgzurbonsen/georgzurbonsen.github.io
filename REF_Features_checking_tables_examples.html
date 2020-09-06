@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Checking Tables - Examples</h3>
+<a accesskey="p" href="REF_Features_checking_tables_row_results.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_table_check_duplicates.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">2.3 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.4 Comments </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.5 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.6 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.7 Locales </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">3 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">3.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">3.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">3.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">4 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">4.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">4.2 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">4.3 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">4.4 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">4.5 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">4.6 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">4.7 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_table_creating_deleting.html"><div class="navi">4.7.1 Creating and Deleting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_accessing_table_info.html"><div class="navi">4.7.2 Accessing Table Information </div></a></li>
+<li class="navi"><a href="REF_Features_Accessing_table_contents.html"><div class="navi">4.7.3 Accessing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_and_saving_tables.html"><div class="navi">4.7.4 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_headers.html"><div class="navi">4.7.5 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="REF_Features_Searching_tables.html"><div class="navi">4.7.6 Searching Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">4.7.7 Processing Table Columns </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">4.7.8 Processing Table Rows </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">4.7.9 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">4.7.10 Renaming, Copying and Splitting Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Checking_and_comparing_tables.html"><div class="navi">4.7.11 Checking and Comparing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_table_compare.html"><div class="navi">4.7.11.1 table compare ... </div></a></li>
+<li class="navi"><a href="REF_Function_table_check.html"><div class="navi">4.7.11.2 table check </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_checking_tables_row_results.html"><div class="navi">4.7.11.2.1 Checking Tables - Row and Group Results </div></a></li>
+<li class="navi"><a href="REF_Features_checking_tables_examples.html"><div class="navi navi-selected">4.7.11.2.2 Checking Tables - Examples </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Function_table_check_duplicates.html"><div class="navi">4.7.11.3 table check duplicates ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Looking_up_Other_Tables.html"><div class="navi">+ 4.7.12 Looking up Other Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Pivoting_and_consolidating_tables.html"><div class="navi">+ 4.7.13 Pivoting and Conosolidating Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> table check (...) with 3 Parameters</h4>
+<p>
+<br/><img src="Images/Function_table_check_1.jpg" alt="'table check' with 3 function parameters"><br/>
+
+
+In the example below, the fuction call provides 3 parameters: Target and reference table, and checking for
+the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entries are OK in following cases:
+</p><ul class="bullets"><li class="bullets">A valid tennis rating is provided, and golf handicap does not matter.</li>
+<li class="bullets">A valid handicap value is provided, but the player shall nto have any tennis rating (blank)</li>
+</ul><p>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp;table load( target, "Examples/Tennis and Golf Players.csv" );<br/>
+ &nbsp;table list( target );<br/>
+<br/>
+ &nbsp;table keep columns( target, {Name, Sport, Hcp, NTRP} ); // Look how skilled they are<br/>
+ &nbsp;table initialize( ref,<br/>
+ &nbsp;{<br/>
+ &nbsp; &nbsp; &nbsp;// Hcp = Golf Handicap, NTRP = National Tennis Rating Program<br/>
+ &nbsp; &nbsp; &nbsp;{ Sport, &nbsp; &nbsp;Hcp, &nbsp; &nbsp; NTRP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+ &nbsp; &nbsp; &nbsp;{ Tennis, &nbsp; '*', &nbsp; &nbsp; 'Lvl ?.0,Lvl ?.5' &nbsp;},<br/>
+ &nbsp; &nbsp; &nbsp;{ Golf, &nbsp; &nbsp; '0..54', '' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+ &nbsp;} );<br/>
+<br/>
+ &nbsp;table check( target, ref, {Hcp, NTRP} );<br/>
+ &nbsp;table list( target );<br/>
+</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Name &nbsp;| Gender | Hcp | NTRP &nbsp; &nbsp;| Sport <br/>
+ &nbsp; &nbsp;1 : Mike &nbsp;| male &nbsp; | 24 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
+ &nbsp; &nbsp;2 : Jan &nbsp; | Male &nbsp; | 30 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
+ &nbsp; &nbsp;3 : Tina &nbsp;| female | 36 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
+ &nbsp; &nbsp;4 : Nico &nbsp;| male &nbsp; | 99 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; | male &nbsp; | 45 &nbsp;| Lvl 1.0 | Golf &nbsp;<br/>
+ &nbsp; &nbsp;6 : Lynn &nbsp;| female | &nbsp; &nbsp; | Lvl 4.5 | Tennis<br/>
+ &nbsp; &nbsp;7 : Yves &nbsp;| female | &nbsp; &nbsp; | Lvl 2.0 | Squash<br/>
+ &nbsp; &nbsp;8 : Zoë &nbsp; | female | 18 &nbsp;| Lvl 1.5 | Tennis<br/>
+ &nbsp; &nbsp;9 : Chris | male &nbsp; | &nbsp; &nbsp; | Lvl 3.0 | Tennis<br/>
+ &nbsp; 10 : Willy | male &nbsp; | &nbsp; &nbsp; | Lvl 6.1 | Tennis<br/>
+ &nbsp; 11 : Andy &nbsp;| male &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | Tennis<br/>
+<br/>
+ &nbsp; &nbsp;0 : Name &nbsp;| Sport &nbsp;| Hcp | NTRP &nbsp; &nbsp;| Row Result | Group Result | Explanations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Ref Row<br/>
+ &nbsp; &nbsp;1 : Mike &nbsp;| Golf &nbsp; | 24 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : Jan &nbsp; | Golf &nbsp; | 30 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : Tina &nbsp;| Golf &nbsp; | 36 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 : Nico &nbsp;| Golf &nbsp; | 99 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Mismatch &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = 'Lvl ?.0,Lvl ?.5'? | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| [Hcp] = '0..54'? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; | Golf &nbsp; | 45 &nbsp;| Lvl 1.0 | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;6 : Lynn &nbsp;| Tennis | &nbsp; &nbsp; | Lvl 4.5 | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;7 : Yves &nbsp;| Squash | &nbsp; &nbsp; | Lvl 2.0 | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : Zoë &nbsp; | Tennis | 18 &nbsp;| Lvl 1.5 | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;9 : Chris | Tennis | &nbsp; &nbsp; | Lvl 3.0 | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 10 : Willy | Tennis | &nbsp; &nbsp; | Lvl 6.1 | Mismatch &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = 'Lvl ?.0,Lvl ?.5'? | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| [Hcp] = '0..54'? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 11 : Andy &nbsp;| Tennis | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | Mismatch &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = 'Lvl ?.0,Lvl ?.5'? | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| [Hcp] = '0..54'? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<br/>
+</code></div>
+<h4> table check (...) with 4 Parameters</h4>
+<p>
+In the previous table, the same checks have been applied to both tennis and golf players, and indicate if the target table contains
+sports not listed in the reference table.  This is done by specifying common row match identifiers for both tables.
+In the discussed example it's the column "Sport".
+
+<br/><img src="Images/Function_table_check_2.jpg" alt="'table check' with 4 function parameters"><br/>
+
+In the example below, the fuction call provides 4 parameters: Target and reference table, and checking for
+the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entries are OK in following cases:
+</p><ul class="bullets"><li class="bullets">If the person favors Golf (column 'Sport' conains 'Golf'), then the handicap will be checked.</li>
+<li class="bullets">If the person favors Tennis, then the NTRP rating will be checked.</li>
+<li class="bullets">A valid handicap value is provided, but the player shall nto have any tennis rating (blank)</li>
+</ul><p>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp;table load( target, "Examples/Tennis and Golf Players.csv" );<br/>
+ &nbsp;// table list( target ); // See previous section. It's the same table.<br/>
+<br/>
+ &nbsp;table keep columns( target, {Name, Sport, Hcp, NTRP} ); // Look how skilled they are<br/>
+ &nbsp;table initialize( ref,<br/>
+ &nbsp;{<br/>
+ &nbsp; &nbsp; &nbsp;// Hcp = Golf Handicap, NTRP = National Tennis Rating Program<br/>
+ &nbsp; &nbsp; &nbsp;{ Sport, &nbsp; &nbsp;Hcp, &nbsp; &nbsp; NTRP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
+ &nbsp; &nbsp; &nbsp;{ Tennis, &nbsp; '*', &nbsp; &nbsp; 'Lvl ?.0,Lvl ?.5' &nbsp;},<br/>
+ &nbsp; &nbsp; &nbsp;{ Golf, &nbsp; &nbsp; '0..54', '' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+ &nbsp;} );<br/>
+<br/>
+ &nbsp;table check( target, ref, {Hcp, NTRP}, Sport );<br/>
+ &nbsp;table list( target );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Name &nbsp;| Sport &nbsp;| Hcp | NTRP &nbsp; &nbsp;| Row Result &nbsp; &nbsp; &nbsp;| Group Result | Explanations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Ref Row<br/>
+ &nbsp; &nbsp;1 : Mike &nbsp;| Golf &nbsp; | 24 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;2 : Jan &nbsp; | Golf &nbsp; | 30 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;3 : Tina &nbsp;| Golf &nbsp; | 36 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 : Nico &nbsp;| Golf &nbsp; | 99 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Mismatch &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | [Hcp] = '0..54'? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; | Golf &nbsp; | 45 &nbsp;| Lvl 1.0 | Mismatch &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = ''? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;6 : Lynn &nbsp;| Tennis | &nbsp; &nbsp; | Lvl 4.5 | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;7 : Yves &nbsp;| Squash | &nbsp; &nbsp; | Lvl 2.0 | Not in ref list | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;8 : Zoë &nbsp; | Tennis | 18 &nbsp;| Lvl 1.5 | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;9 : Chris | Tennis | &nbsp; &nbsp; | Lvl 3.0 | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 10 : Willy | Tennis | &nbsp; &nbsp; | Lvl 6.1 | Mismatch &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = 'Lvl ?.0,Lvl ?.5'? | 1 &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 11 : Andy &nbsp;| Tennis | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | Mismatch &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | [NTRP] = 'Lvl ?.0,Lvl ?.5'? | 1 &nbsp; &nbsp; &nbsp;<br/>
+<br/>
+</code></div>
+<h4> table check (...) with 6 Parameters</h4>
+<p>
+Advanced table checking is possible where different groups can be defined in order to apply different checking rules which can even be independent from each other.
+
+<br/><img src="Images/Function_table_check_3.jpg" alt="'table check' with 6 function parameters"><br/>
+
+Let's check some sophisticated tables: A list of electrical equipment for different locomotives which need to be checked against different contents.
+</p><ul class="bullets"><li class="bullets">Locomotives:  AC locomotive, Hybrid locomotive (runs on AC power and Diesel), and DE Loco (Diesel)</li>
+<li class="bullets">2 Groups: Different rules applicable to DE-Locos and the remaining locos</li>
+<li class="bullets"> Every locomotive contains equipment like traction converter, motor, gear, etc.</li>
+<li class="bullets"> Every equipment has different parameters (e.g.: Qty (numbers of units per locomotive), power, speed, weight).</li>
+</ul><p>
+Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
+<a href="Images/Table Check Reference Output 03.html" target="_blank">Open output as HTML file in a separate tab</a>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" );<br/>
+ &nbsp; &nbsp; &nbsp;table load( ref, &nbsp; &nbsp; &nbsp;"Examples/Table Check Reference In.csv" );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Target table: Locomotives with technical data");<br/>
+ &nbsp; &nbsp; &nbsp;table list( products );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type );<br/>
+ &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;echo("Reference table");<br/>
+ &nbsp; &nbsp; &nbsp;table list( ref );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 03.html", HTML );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>Target table: Locomotives with technical data<br/>
+ &nbsp; &nbsp;0 : Vehicle Name | Vehicle Type | Equipment | Power | Speed | Qty | Comments &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;1 : AC Loco &nbsp; &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Converter | 5400 &nbsp;| &nbsp; &nbsp; &nbsp; | 2 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : AC Loco &nbsp; &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; | 1200 &nbsp;| 160 &nbsp; | 4 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : AC Loco &nbsp; &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Gear &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; | 140 &nbsp; | 4 &nbsp; | Different speeds &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; &nbsp;4 : AC Loco &nbsp; &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Control &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | 1 &nbsp; | Safe TCMS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Converter | 6000 &nbsp;| &nbsp; &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; | 6000 &nbsp;| 120 &nbsp; | 4 &nbsp; | Power &nbsp;too high, speed too low<br/>
+ &nbsp; &nbsp;7 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; | 1000 &nbsp;| 150 &nbsp; | 4 &nbsp; | But 2 motors listed &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Control &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Bogie &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | 150 &nbsp; | &nbsp; &nbsp; | Bogie not in reference list &nbsp; <br/>
+ &nbsp; 10 : AC Hybrid &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Engine &nbsp; &nbsp;| 300 &nbsp; | &nbsp; &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : DE Loco &nbsp; &nbsp; &nbsp;| DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp;| 2000 &nbsp;| &nbsp; &nbsp; &nbsp; | 4 &nbsp; | Alternator missing ! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+ &nbsp; 12 : DE Loco &nbsp; &nbsp; &nbsp;| DE-Loco &nbsp; &nbsp; &nbsp;| Converter | 2400 &nbsp;| &nbsp; &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : DE Loco &nbsp; &nbsp; &nbsp;| DE-Loco &nbsp; &nbsp; &nbsp;| Motor &nbsp; &nbsp; | 600 &nbsp; | 140 &nbsp; | 4 &nbsp; | Wrong power &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 14 : DE Loco &nbsp; &nbsp; &nbsp;| DE-Loco &nbsp; &nbsp; &nbsp;| Gear &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | 4 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 15 : DE Loco &nbsp; &nbsp; &nbsp;| DE-Loco &nbsp; &nbsp; &nbsp;| Control &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; | 4 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+Reference table<br/>
+ &nbsp; &nbsp;0 : Vehicle Type | Equipment &nbsp;| Power &nbsp; &nbsp; &nbsp;| Speed &nbsp; &nbsp;| Qty &nbsp;| Additional Check &nbsp; &nbsp;| Quantity Check<br/>
+ &nbsp; &nbsp;1 : E-Loco &nbsp; &nbsp; &nbsp; | Converter &nbsp;| 5000..6000 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; &nbsp;| 1000..1500 | 140..200 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | equal 1 &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : E-Loco &nbsp; &nbsp; &nbsp; | Gear &nbsp; &nbsp; &nbsp; | * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : E-Loco &nbsp; &nbsp; &nbsp; | Control &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| [Comments]='*Safe*' | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : E-Loco &nbsp; &nbsp; &nbsp; | Engine &nbsp; &nbsp; | 300 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 10 : DE-Loco &nbsp; &nbsp; &nbsp;| Converter &nbsp;| 2400 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : DE-Loco &nbsp; &nbsp; &nbsp;| Motor &nbsp; &nbsp; &nbsp;| 425..600 &nbsp; | 100..140 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 12 : DE-Loco &nbsp; &nbsp; &nbsp;| Gear &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : DE-Loco &nbsp; &nbsp; &nbsp;| Control &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+INFO: Saved tables to file Images/Table Check Reference Output 03.html.<br/>
+</code></div>
+<h4> table check (...) with 7 Parameters</h4>
+<p>
+The function expects an additional column in the reference table which may contain expressions which return Boolean values.
+The row is considered OK if true is returned, otherwise it's Mismatch.  Blank rows will be ignored.
+Exceptions will be asserted if the returned value is not Boolean.
+Partial table specifications refer directly to the columns in the target table and not the reference table.
+
+<br/><img src="Images/Function_table_check_4.jpg" alt="'table check' with 7 function parameters"><br/>
+
+In the reference table, the column [Comments] is checked if it contains 'Safe', provided this is in relation to
+Vehicle Type being "E-Locos" and "Equipment" being "Control".  The resulting table now contains 1 additional message:
+The "Control" for hybrid locomotives contains no remark such as "Safe Electronics" in the column "Comments".
+
+Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
+<a href="Images/Table Check Reference Output 04.html" target="_blank">Open output as HTML file in a separate tab</a>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" ); &nbsp; &nbsp; // Same tables as in previous example. &nbsp;<br/>
+ &nbsp; &nbsp; &nbsp;table load( ref, &nbsp; &nbsp; &nbsp;"Examples/Table Check Reference In.csv" ); &nbsp;// They will not be listed here again<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type, Additional Check );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Reference table");<br/>
+ &nbsp; &nbsp; &nbsp;table list( ref );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 04.html", HTML );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>Reference table<br/>
+ &nbsp; &nbsp;0 : Vehicle Type | Equipment &nbsp;| Power &nbsp; &nbsp; &nbsp;| Speed &nbsp; &nbsp;| Qty &nbsp;| Additional Check &nbsp; &nbsp;| Quantity Check<br/>
+ &nbsp; &nbsp;1 : E-Loco &nbsp; &nbsp; &nbsp; | Converter &nbsp;| 5000..6000 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; &nbsp;| 1000..1500 | 140..200 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | equal 1 &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : E-Loco &nbsp; &nbsp; &nbsp; | Gear &nbsp; &nbsp; &nbsp; | * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : E-Loco &nbsp; &nbsp; &nbsp; | Control &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| [Comments]='*Safe*' | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : E-Loco &nbsp; &nbsp; &nbsp; | Engine &nbsp; &nbsp; | 300 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 10 : DE-Loco &nbsp; &nbsp; &nbsp;| Converter &nbsp;| 2400 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : DE-Loco &nbsp; &nbsp; &nbsp;| Motor &nbsp; &nbsp; &nbsp;| 425..600 &nbsp; | 100..140 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 12 : DE-Loco &nbsp; &nbsp; &nbsp;| Gear &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : DE-Loco &nbsp; &nbsp; &nbsp;| Control &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+INFO: Saved tables to file Images/Table Check Reference Output 04.html.<br/>
+</code></div>
+<h4> table check (...) with 8 Parameters</h4>
+<p>
+This last example also considers comparison directions as additional rules.  Before that, "min 1" has been the standard rule.
+
+<br/><img src="Images/Function_table_check_5.jpg" alt="'table check' with 8 function parameters"><br/>
+
+Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
+<a href="Images/Table Check Reference Output 05.html" target="_blank">Open output as HTML file in a separate tab</a>
+</p>
+<h5> Examples:</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" ); &nbsp; &nbsp; // Same tables as in previous example.<br/>
+ &nbsp; &nbsp; &nbsp;table load( ref, &nbsp; &nbsp; &nbsp;"Examples/Table Check Reference In.csv" ); &nbsp;// They will not be listed here again<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type, Additional Check, Quantity Check);<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;echo("Reference table");<br/>
+ &nbsp; &nbsp; &nbsp;table list( ref );<br/>
+<br/>
+ &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 05.html", HTML );</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>Reference table<br/>
+ &nbsp; &nbsp;0 : Vehicle Type | Equipment &nbsp;| Power &nbsp; &nbsp; &nbsp;| Speed &nbsp; &nbsp;| Qty &nbsp;| Additional Check &nbsp; &nbsp;| Quantity Check<br/>
+ &nbsp; &nbsp;1 : E-Loco &nbsp; &nbsp; &nbsp; | Converter &nbsp;| 5000..6000 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;2 : E-Loco &nbsp; &nbsp; &nbsp; | Motor &nbsp; &nbsp; &nbsp;| 1000..1500 | 140..200 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | equal 1 &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : E-Loco &nbsp; &nbsp; &nbsp; | Gear &nbsp; &nbsp; &nbsp; | * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : E-Loco &nbsp; &nbsp; &nbsp; | Control &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| [Comments]='*Safe*' | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;5 : E-Loco &nbsp; &nbsp; &nbsp; | Engine &nbsp; &nbsp; | 300 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;6 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : DE-Loco &nbsp; &nbsp; &nbsp;| Engine &nbsp; &nbsp; | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 1700..2400 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;9 : DE-Loco &nbsp; &nbsp; &nbsp;| Alternator | 425..600 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | min 1 &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 10 : DE-Loco &nbsp; &nbsp; &nbsp;| Converter &nbsp;| 2400 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 11 : DE-Loco &nbsp; &nbsp; &nbsp;| Motor &nbsp; &nbsp; &nbsp;| 425..600 &nbsp; | 100..140 | 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 12 : DE-Loco &nbsp; &nbsp; &nbsp;| Gear &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; 13 : DE-Loco &nbsp; &nbsp; &nbsp;| Control &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<br/>
+INFO: Saved tables to file Images/Table Check Reference Output 05.html.<br/>
+</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+
