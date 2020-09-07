@@ -91,7 +91,7 @@ The expressions may return values of following types:
 
 <u>Note:</u>The expression will be calculated only once and not for every row if it has returned a numeral or parameter set.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;table initialize ( table,<br/>
  &nbsp;{ { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
 <br/>
@@ -108,7 +108,7 @@ The expressions may return values of following types:
  &nbsp;table process selected rows( <br/>
  &nbsp; &nbsp; &nbsp;table, {1,3,-2}, &nbsp;// -2 -&gt; Row 4 (Negative indexing)<br/>
  &nbsp; &nbsp; &nbsp;echo( "row nr.: ", row()," &nbsp;Animal: ", [Animal], " has ", [leg count], " legs" ) );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>row nr.: 2 &nbsp;Animal: Bird has 2 legs<br/>
 row nr.: 5 &nbsp;Animal: Tick has 8 legs<br/>
 <br/>

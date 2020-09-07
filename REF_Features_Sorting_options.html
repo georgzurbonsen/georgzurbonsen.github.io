@@ -124,7 +124,7 @@ Rules on times:
 <li class="bullets">Date values are ignored.  "14.07.2016 10:00” and “15.07.2016 10:00” are treated as identical values</li>
 </ul><p>
 Following example shows a ranking based on the different options applied.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
  &nbsp;<br/>
  &nbsp;table initialize ( t,<br/>
@@ -134,7 +134,7 @@ Following example shows a ranking based on the different options applied.</p>
  &nbsp;for all parameters( [t:1..,0], option[] ) &nbsp;table rank rows( t, option[], Scheme, option[], 113 ); // 113 - Same ranking share same ranking position<br/>
  &nbsp;table transpose (t);<br/>
  &nbsp;table list (t); &nbsp; &nbsp; </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code> &nbsp; &nbsp;0 : Scheme &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 02-Dec-2020 10:00 | 02-Nov-2020 11:00 | 05 | 1 | Dec | apr 15 | -1 | &nbsp; | begin<br/>
  &nbsp; &nbsp;1 : alphabetic &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 6 | 7 &nbsp; | 8 &nbsp; &nbsp; &nbsp;| 2 &nbsp;| 1 | 9 &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 : alphabetic down &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp;| 4 | 3 &nbsp; | 2 &nbsp; &nbsp; &nbsp;| 8 &nbsp;| 9 | 1 &nbsp; &nbsp;<br/>

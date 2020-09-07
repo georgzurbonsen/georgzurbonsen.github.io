@@ -85,10 +85,10 @@ The parameters supplied to the function are values.  They can be constants, exis
 and any form of right-hand expressions containing calculations and/or other function calls.  Variables passed as paramters
 must be defined (i.e. values assigned) prior to calling the function.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;a[] = World;<br/>
  &nbsp;echo( "Hello ", a[], ' ', abs(-1)+2+3 );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Hello World 6<br/>
 </code></div>
 <h4> Output Parameters</h4>
@@ -97,10 +97,10 @@ The parameters must either be a <span class="red_text">variable</span> or <span 
 Constants and calculated expressions are not allowed.  Before the function is called, variables which are not yet existing,
 will be defined automatically. After the function call has been completed, the value will be written back to the variable or table.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;a[] = find( 'Say Hi!', { Ha, Hä, He, Hi, Ho }, 0, which[] );<br/>
  &nbsp;echo( which[] ); // 3, because Hi is in position 3 in the parameter set</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>3<br/>
 </code></div>
 <h4> Input / Output Parameters</h4>
@@ -110,12 +110,12 @@ Constants and calculated expressions are not allowed.
 Before the function is called, the value will be retrieved from the variable or table.  After the function call has been completed,
 the value will be written back to the table.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Hi, He }} );<br/>
  &nbsp;a[] = Ho;<br/>
  &nbsp;exchange( [t:0,0], a[] );<br/>
  &nbsp;echo( [t:..,0], " and ", a[] );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>{'Ho','He'} and Hi<br/>
 </code></div>
 <h4> References</h4>
@@ -129,7 +129,7 @@ Some functions take over the reference to the variables provided in the function
 The following code example shows how the user-defined procedure <b>my funct</b> accesses a member variable and defines an additional
 member variable.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;define procedure( my func, { { a, all, reference } } )<br/>
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;echo(a[one]);<br/>
@@ -139,7 +139,7 @@ member variable.
  &nbsp;b[one] = ONE;<br/>
  &nbsp;my func( b[] );<br/>
  &nbsp;echo(b[two]);</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>ONE<br/>
 TWO<br/>
 </code></div>

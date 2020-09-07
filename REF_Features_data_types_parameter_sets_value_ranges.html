@@ -94,7 +94,7 @@ to describe the 2nd value.  It may be bigger (for counting up), smaller (for cou
 
 <br><br>
 A mixup of numerals and other types inside a range specification is invalid.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;print("Start with the classic way : ");<br/>
  &nbsp;a[] = {};<br/>
  &nbsp;for (i[]=1, i[]&lt;=10, i[]++) a[] += {i[]};<br/>
@@ -106,7 +106,7 @@ A mixup of numerals and other types inside a range specification is invalid.</p>
  &nbsp;echo("Steps of -1: Wrong way &nbsp; &nbsp; : ", {10 .. 1}); // Returns empty set<br/>
  &nbsp;echo("Combination of 2 ranges &nbsp; &nbsp;: ", {2..4..10, 20..40..100} );<br/>
  &nbsp;echo("Build a 3x3 matrix &nbsp; &nbsp; &nbsp; &nbsp; : ", {{11..13},{21..23},{31..33}} );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Start with the classic way : {1,2,3,4,5,6,7,8,9,10}<br/>
 And the easy way &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {1,2,3,4,5,6,7,8,9,10}<br/>
 Steps of 2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {1,3.5,6,8.5}<br/>
@@ -131,14 +131,14 @@ Following exampls are invalid:
 <br>{Point -3 .. Point 3  } fails because minus sign is an extra character.
 <br>Valid examples: See below
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;echo("Start simple &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {a..z});<br/>
  &nbsp;echo("Every 2nd letter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", {a..c..z});<br/>
  &nbsp;echo("1 letter in string &nbsp; &nbsp; &nbsp; &nbsp; : ", {'Article A:' .. 'Article F:'} );<br/>
  &nbsp;echo("Combination of 2 ranges &nbsp; &nbsp;: ", {2..4..10, 'Article A:' .. 'Article F:'} );<br/>
  &nbsp;echo("Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: ", {'Chapter 9:' .. 'Chapter 12:'} );<br/>
  &nbsp;echo("Numbers in literals &nbsp; &nbsp; &nbsp; &nbsp;: ", {'Chapter 09:' .. 'Chapter 12:'} );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Start simple &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}<br/>
 Every 2nd letter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'a','c','e','g','i','k','m','o','q','s','u','w','y'}<br/>
 1 letter in string &nbsp; &nbsp; &nbsp; &nbsp; : {'Article A:','Article B:','Article C:','Article D:','Article E:','Article F:'}<br/>
@@ -158,7 +158,7 @@ to influence the interval.  Both positive and negative intervals are allowed.  T
 across midnights to cover additional days.
 
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;echo("Dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : ", { date(30.03.2016) .. date(02.04.2016) });<br/>
  &nbsp;echo("Dates, 3 day intervals &nbsp; &nbsp; &nbsp;: ", { date(01.04.2016) .. date(04.04.2016) .. date(10.04.2016) });<br/>
  &nbsp;echo("Today to yesterday - bad &nbsp; &nbsp;: ", { date(today) .. date(today)-1 });<br/>
@@ -171,15 +171,15 @@ across midnights to cover additional days.
  &nbsp;echo("Changing times, seconds &nbsp; &nbsp; : ", { date("05.06.2016 10:00:00")..date("05.06.2016 10:00:01")..date("05.06.2016 10:00:03") });<br/>
 <br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : {'2016-03-30','2016-03-31','2016-04-01','2016-04-02'}<br/>
 Dates, 3 day intervals &nbsp; &nbsp; &nbsp;: {'2016-04-01','2016-04-04','2016-04-07','2016-04-10'}<br/>
 Today to yesterday - bad &nbsp; &nbsp;: {}<br/>
-Today to yesterday - OK &nbsp; &nbsp; : {'2020-09-06','2020-09-05'}<br/>
+Today to yesterday - OK &nbsp; &nbsp; : {'2020-09-07','2020-09-06'}<br/>
 Times, 1 hour intervals &nbsp; &nbsp; : {'12:15:00','01:15:00','02:15:00','03:15:00'}<br/>
 Times, 5 minute intervals &nbsp; : {'12:15:00','12:20:00','12:25:00','12:30:00'}<br/>
 30 seconds back - bad &nbsp; &nbsp; &nbsp; : {}<br/>
-30 seconds back, 10s interv.: {'10:44:30','10:44:20','10:44:10','10:44:00'}<br/>
+30 seconds back, 10s interv.: {'11:11:37','11:11:27','11:11:17','11:11:07'}<br/>
 Changing dates &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: {'2016-06-05 10:00:00','2016-06-06 10:00:00','2016-06-07 10:00:00','2016-06-08 10:00:00'}<br/>
 Changing times, seconds &nbsp; &nbsp; : {'2016-06-05 10:00:00','2016-06-05 10:00:01','2016-06-05 10:00:02','2016-06-05 10:00:03'}<br/>
 </code></div>

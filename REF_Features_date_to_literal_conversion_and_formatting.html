@@ -171,7 +171,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 </p>
 <h4> Program Examples without formatting templates</h4>
 <p>Following examples show use of date to literal conversion without formatting template</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
  &nbsp; &nbsp; &nbsp;date 2[] = date("2020-10-03");<br/>
  &nbsp; &nbsp; &nbsp;date 3[] = date("2020-07-14");<br/>
@@ -186,7 +186,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", local ));<br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 1[] )); // assumes '*' and none<br/>
  &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code> &nbsp; &nbsp;*<br/>
 03/10/2020<br/>
 14/07/2020<br/>
@@ -198,7 +198,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 </code></div>
 <h4> Program Examples with formatting templates</h4>
 <p>Following examples show use of date to literal conversion with formatting template</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
  &nbsp; &nbsp; &nbsp;date 2[] = date("2020-08-01 22:30:00");<br/>
 <br/>
@@ -212,7 +212,7 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2019-12-31"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2020-06-30"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Same<br/>
  &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Saturday 04.July.20<br/>
 Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
 Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>

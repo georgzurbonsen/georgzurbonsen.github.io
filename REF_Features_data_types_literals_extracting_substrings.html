@@ -83,7 +83,7 @@
 Instead of specifying single index values to retrieve single characters, substrings can be retrieved by listing muliple values and/or ranges.
 The range operator '..' is available to specify a range.  The result will always be a literal.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;echo( abcdefg { 0,2,4,2,0 } ); &nbsp; &nbsp;// Returns 'aceca'<br/>
  &nbsp;echo( abcdefg { 3..5 } ); &nbsp; &nbsp; &nbsp; &nbsp; // Returns 'def'<br/>
  &nbsp;echo( abcdefg { 5..3 } ); &nbsp; &nbsp; &nbsp; &nbsp; // Empty string. &nbsp;Ranges cannot be listed in reverse direction<br/>
@@ -92,7 +92,7 @@ The range operator '..' is available to specify a range.  The result will always
  &nbsp;echo( abcdefg { 3..99 } ); &nbsp; &nbsp; &nbsp; &nbsp;// Returns 'defg'<br/>
  &nbsp;echo( abcdefg { -99..2 } ); &nbsp; &nbsp; &nbsp; // Returns 'abc'<br/>
  &nbsp;echo( abcdefg { 0..2,5,1..3 } ); &nbsp;// Combinations</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>aceca<br/>
 def<br/>
 <br/>

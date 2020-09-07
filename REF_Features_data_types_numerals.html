@@ -106,13 +106,13 @@ unnecessary thousand separators and commercial variants of negation such as pare
 <h4> Plain Numerals</h4>
 <p>
 Numerals turn into plain numerals with original text representation voided.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;echo(012.340); &nbsp; &nbsp; &nbsp;// Numeral<br/>
  &nbsp;echo(type detailed(012.340), new line);<br/>
  &nbsp;echo(012.340 + 0); &nbsp;// Plain numeral - Original text representation is lost<br/>
  &nbsp;echo(type detailed(012.340 + 0));<br/>
  &nbsp;echo(numeral(012.340)); // Also plain numeral</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>012.340<br/>
 numeral<br/>
 <br/>
@@ -125,9 +125,9 @@ plain numeral<br/>
 The Beyond4P code text does not support scientific notation, e.g. 1.2E+3 would assert a syntax error.  However, the function <span class="red_text">numeral)</span>
 supports scientific notation.  However, scientific notation is supporte in reading values from tables (provided the <span class="red_text">system variable</span>
 <b>table conversion[scientific]</b> is set to true, JSON files and user input.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;echo(numeral("1.2E+03"));</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>1200<br/>
 </code></div>
 	</div>

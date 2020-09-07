@@ -101,7 +101,7 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
 <li class="bullets">A valid handicap value is provided, but the player shall nto have any tennis rating (blank)</li>
 </ul><p>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp;table load( target, "Examples/Tennis and Golf Players.csv" );<br/>
@@ -119,7 +119,7 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
  &nbsp;table check( target, ref, {Hcp, NTRP} );<br/>
  &nbsp;table list( target );<br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code> &nbsp; &nbsp;0 : Name &nbsp;| Gender | Hcp | NTRP &nbsp; &nbsp;| Sport <br/>
  &nbsp; &nbsp;1 : Mike &nbsp;| male &nbsp; | 24 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
  &nbsp; &nbsp;2 : Jan &nbsp; | Male &nbsp; | 30 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Golf &nbsp;<br/>
@@ -165,7 +165,7 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
 <li class="bullets">A valid handicap value is provided, but the player shall nto have any tennis rating (blank)</li>
 </ul><p>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp;table load( target, "Examples/Tennis and Golf Players.csv" );<br/>
@@ -182,7 +182,7 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
 <br/>
  &nbsp;table check( target, ref, {Hcp, NTRP}, Sport );<br/>
  &nbsp;table list( target );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code> &nbsp; &nbsp;0 : Name &nbsp;| Sport &nbsp;| Hcp | NTRP &nbsp; &nbsp;| Row Result &nbsp; &nbsp; &nbsp;| Group Result | Explanations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Ref Row<br/>
  &nbsp; &nbsp;1 : Mike &nbsp;| Golf &nbsp; | 24 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 : Jan &nbsp; | Golf &nbsp; | 30 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
@@ -212,7 +212,7 @@ Let's check some sophisticated tables: A list of electrical equipment for differ
 Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
 <a href="Images/Table Check Reference Output 03.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" );<br/>
@@ -227,7 +227,7 @@ Because the output file contains more columns than they fit in this screen, clic
  &nbsp; &nbsp; &nbsp;table list( ref );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 03.html", HTML );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Target table: Locomotives with technical data<br/>
  &nbsp; &nbsp;0 : Vehicle Name | Vehicle Type | Equipment | Power | Speed | Qty | Comments &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 : AC Loco &nbsp; &nbsp; &nbsp;| E-Loco &nbsp; &nbsp; &nbsp; | Converter | 5400 &nbsp;| &nbsp; &nbsp; &nbsp; | 2 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -280,7 +280,7 @@ The "Control" for hybrid locomotives contains no remark such as "Safe Electronic
 Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
 <a href="Images/Table Check Reference Output 04.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" ); &nbsp; &nbsp; // Same tables as in previous example. &nbsp;<br/>
@@ -292,7 +292,7 @@ Because the output file contains more columns than they fit in this screen, clic
  &nbsp; &nbsp; &nbsp;table list( ref );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 04.html", HTML );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Reference table<br/>
  &nbsp; &nbsp;0 : Vehicle Type | Equipment &nbsp;| Power &nbsp; &nbsp; &nbsp;| Speed &nbsp; &nbsp;| Qty &nbsp;| Additional Check &nbsp; &nbsp;| Quantity Check<br/>
  &nbsp; &nbsp;1 : E-Loco &nbsp; &nbsp; &nbsp; | Converter &nbsp;| 5000..6000 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
@@ -320,7 +320,7 @@ This last example also considers comparison directions as additional rules.  Bef
 Because the output file contains more columns than they fit in this screen, click on the following hyperlink to open the output as HTML file<br>
 <a href="Images/Table Check Reference Output 05.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Support Library );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table load( products, "Examples/Table Check Target In.csv" ); &nbsp; &nbsp; // Same tables as in previous example.<br/>
@@ -332,7 +332,7 @@ Because the output file contains more columns than they fit in this screen, clic
  &nbsp; &nbsp; &nbsp;table list( ref );<br/>
 <br/>
  &nbsp; &nbsp; &nbsp;table save( products, "Images/Table Check Reference Output 05.html", HTML );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Reference table<br/>
  &nbsp; &nbsp;0 : Vehicle Type | Equipment &nbsp;| Power &nbsp; &nbsp; &nbsp;| Speed &nbsp; &nbsp;| Qty &nbsp;| Additional Check &nbsp; &nbsp;| Quantity Check<br/>
  &nbsp; &nbsp;1 : E-Loco &nbsp; &nbsp; &nbsp; | Converter &nbsp;| 5000..6000 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..2 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>

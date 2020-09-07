@@ -110,7 +110,7 @@ Your goal: You want to identify the maximum purchase volume every person has don
 <h4> Conventional Appraoch but Slow</h4>
 <p>If you use the function table process selected rows (…) for table A to work off every name, and in a nested way on table B to gather all the purchases,
 the a total of 20,000 x 5,000 = one hundred million rows will be checked and this processor intensive process can take several minutes to complete.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table insert columns( A, Total Purchase Value );<br/>
  &nbsp; &nbsp; &nbsp;table process( A,<br/>
  &nbsp; &nbsp; &nbsp;{<br/>
@@ -124,7 +124,7 @@ the a total of 20,000 x 5,000 = one hundred million rows will be checked and thi
 Let's assume that table A contains the details of all names which are also mentioned in table B, but some customers in table A may not have done
 purchases recently, so they are not listed in table B.  The function <a class="bold_text" href="REF_Function_table_process_selected_rows_fast.html">table process selected rows fast</a>() uses variable row[ ] as starting point
 and will be updated after every call.</p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table sort rows( A, Name ); // Sort the table if not yet in alphabetic order<br/>
  &nbsp; &nbsp; &nbsp;table sort rows( B, Name ); // "<br/>
  &nbsp; &nbsp; &nbsp;table insert columns( A, Total Purchase Value );<br/>

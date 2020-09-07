@@ -94,7 +94,7 @@ put into parameter sets.
 The following code example demonstrates this parameter type ruling using a user-defined function.  The user-defined function gets all
 values in form of parameter sets and prints the contents.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;define procedure( demonstrate, { { parameter 1, to parameters } }, 1, unlimited )<br/>
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;for (i[] = 1, i[] &lt;= parameter count[], i[]++)<br/>
@@ -121,7 +121,7 @@ values in form of parameter sets and prints the contents.
  &nbsp;demonstrate &nbsp; ( { 1, 2, '3' } );<br/>
  &nbsp;demonstrate 2 ( { 1, 2, '3' } ); // Note: All numbers are converted to literals<br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>{'A'} &nbsp;(1 items) {'B'} &nbsp;(1 items) <br/>
 {'Hello World'} &nbsp;(1 items) {'Hello World'} &nbsp;(1 items) <br/>
 {'A,B'} &nbsp;(1 items) {' A, B '} &nbsp;(1 items) <br/>

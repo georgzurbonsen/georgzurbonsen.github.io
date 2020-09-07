@@ -118,7 +118,7 @@ symobls can be cascaded to refer to nearby columns which are not immediate neigh
 Attempting to left-shift beyond the first column (column 0) will assert exceptions.  Attempting to right-shift beyond the last column is OK as long
 the function allows it.  Otherwise exceptions will be asserted, too.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;table initialize( t, &nbsp;{ { Col A, Col B, Col C, Col D, Col E, Col F },<br/>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Val A, Val B, Val C, Val D, Val E, Val F, Val G } } );<br/>
 <br/>
@@ -128,7 +128,7 @@ the function allows it.  Otherwise exceptions will be asserted, too.
  &nbsp;echo( table read column selected rows ( t, '&lt;&gt;Col B', true ) ); // Val B<br/>
  &nbsp;echo( table read column selected rows ( t, '&gt;Col E', true ) ); // Val F<br/>
  &nbsp;echo( table read column selected rows ( t, '&gt;&gt;Col E', true ) ); // Val G</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>{'Val B'}<br/>
 {'Val A'}<br/>
 {'Val B'}<br/>

@@ -97,7 +97,7 @@ Following approaches are avialable to create structures:
 <tr><td>structure...() </td><td> Functions like <span class="red_text">structure</span>() and <span class="red_text">structure protect</span>() create structures with intial member names and values provided in two parameter sets.</td></tr>
 <tr><td>Direct referencing </td><td> Assigning a simple variable with a member name will initialize it with a structure.  This will not be possible if the variable is already an array.</td></tr>
 </table><p></p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Initialize a structure directly");<br/>
  &nbsp;a[dog] = Hund;<br/>
@@ -110,7 +110,7 @@ Following approaches are avialable to create structures:
  &nbsp;structure( leg count[], { snake, bird, dog, fly, tick }, { 0, 2, 4, 6, 8 } );<br/>
  &nbsp;inspect( leg count[] );<br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Initialize a structure directly<br/>
 Katze<br/>
 void: No literal provided<br/>
@@ -138,7 +138,7 @@ Syntax for referencing nested arrays:  <b>Variable Name [ Member Name 1, Member 
 Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member Name, index, ... ]  </b>
 <br/><br/>
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Initialize a nested structure containing structure and array");<br/>
 <br/>
@@ -149,7 +149,7 @@ Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member N
  &nbsp;echo("1st &nbsp;district = ", city[district,1], " &nbsp; last district = ", city[district,-1] );<br/>
 <br/>
  &nbsp;inspect( city[] );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Initialize a nested structure containing structure and array<br/>
 1st &nbsp;district = Louvre &nbsp; last district = etc.<br/>
 literal: 'Paris'<br/>
@@ -169,7 +169,7 @@ district &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &
 Normally, attempting to access a structure with a non-existing element name will cause an error.  Beyond4P supports default members
 which will be returned in case of no matches.  Assign the default value using a blank literal ('') as member name and that's it.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;<br/>
  &nbsp;echo("Demonstrate default values");<br/>
 <br/>
@@ -177,7 +177,7 @@ which will be returned in case of no matches.  Assign the default value using a 
  &nbsp;echo( "cow : ", a[horse] );<br/>
  &nbsp;echo( "goat: ", a[goat] );<br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Demonstrate default values<br/>
 cow : Pferd<br/>
 goat: No translation<br/>

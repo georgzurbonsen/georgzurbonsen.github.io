@@ -81,14 +81,14 @@ In general indirect parameter passing is not enabled whenever the functions incl
 input/output parameters, references and/or code pieces.  Indirect parameter passing is also not allowed for
 <a  href="REF_Features_Control_Flow_Functions.html">control flow functions</a> and <a  href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a>.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;table create( table1, table 2 ); // The direct way<br/>
 <br/>
  &nbsp;indirect[]= { table 1, table 2 }; // The indirect way<br/>
  &nbsp;table create( indirect[] );<br/>
  &nbsp;echo("Created two tables in both cases" );<br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Created two tables in both cases<br/>
 </code></div>
 	</div>

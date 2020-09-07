@@ -108,7 +108,7 @@ No extra parentheses are required when the comparison expression is in the last 
 No extraparentheses are required if the comparison expression begins with following operators: &lt;, &lt;=, &gt;, &lt;=, ==, and !=.<br>
 No extra parentheses are required if the comparison expression is provided in a string value.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;p[] = { 2, 3, 5, 7, 10, 11, 13, 17, 23, 31, 37, A, a, Hello };<br/>
 <br/>
  &nbsp;for all parameters( p[], var[] )<br/>
@@ -139,7 +139,7 @@ No extra parentheses are required if the comparison expression is provided in a 
  &nbsp;// let the comparison expression support wildcard symbols.<br/>
 <br/>
 </code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>2: other &nbsp;/ other<br/>
 3: is one of 3..5, 10 &nbsp;/ is one of 3..5, 10<br/>
 5: is one of 3..5, 10 &nbsp;/ is one of 3..5, 10<br/>
@@ -176,7 +176,7 @@ No extra parentheses are required when the expression is in the last function pa
 No extra parentheses are required if the expression begins with following operators: &lt;, &lt;=, &gt;, &lt;=, ==, and !=.<br>
 No extra parentheses are required if the expression is provided in a string value.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;table initialize( primes, <br/>
  &nbsp; &nbsp;{ Number, 2, 3, 5, 7, 10, 11, 13, 17, 23, 31, 37, A, a, Hello } );<br/>
 <br/>
@@ -192,7 +192,7 @@ No extra parentheses are required if the expression is provided in a string valu
 <br/>
  &nbsp;c[] = "[Number] = 'H*'";<br/>
  &nbsp;table process selected rows( primes, :c[], echo( [Number],": ", "Begins with H" ) );</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>11: is 11 or 37<br/>
 37: is 11 or 37<br/>
 13: thirteen<br/>
@@ -214,7 +214,7 @@ are allowed).
 
 <span class="red_text">dim</span>(), <span class="red_text">structure</span>(), <span class="red_text">array</span>() and <span class="red_text">protect</span>() are common functions which utilize this variant of code pieces.
 </p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;var 1[] = my array;<br/>
  &nbsp;var 2[] = 'my array[]';<br/>
 <br/>
@@ -224,7 +224,7 @@ are allowed).
  &nbsp;<br/>
  &nbsp;echo( var 0[1] ); // bat<br/>
  &nbsp;echo( my array[1] ); // cat</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>bat<br/>
 cat<br/>
 </code></div>
@@ -238,7 +238,7 @@ statements encapsulated with { ... } braces.
 The <a class="bold_text" href="REF_Function_for.html">for</a>() and <a class="bold_text" href="REF_Function_table_process.html">table process</a>() are common functions making use of statements.<br>
 
 <u>Attention: </u>Don't confuse with C/C++: The three parameters inside the for-function must be separated with commas, not semicolons.  And use semicolons instead of commas to separate statements.<br></p>
-<h5> Examples:</h5>
+<h5> </h5>
 <div class="code_background_color" ><code> &nbsp;// Demonstrates direct use of code and code in string using colon<br/>
 <br/>
  &nbsp;next[] = "a[]++; print( Next )";<br/>
@@ -246,7 +246,7 @@ The <a class="bold_text" href="REF_Function_for.html">for</a>() and <a class="bo
  &nbsp;{<br/>
  &nbsp; &nbsp; &nbsp;echo( " ", a[] );<br/>
  &nbsp;}</code></div>
-<h5> Output:</h5>
+<h5> </h5>
 <div class="output_background_color" ><code>Start 1<br/>
 Next 2<br/>
 Next 3<br/>

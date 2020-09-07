@@ -68,51 +68,67 @@
 	<div class="article">
 <h4> Starting B4P</h4>
 <p>
-Start B4P by double-clicking on the icon or typing <b>b4p</b> on command line</p>
-<h4> Start B4P</h4>
-<p>Change directory to data directory</p>
-<h5> Examples:</h5>
-<div class="code_background_color" ><code> &nbsp;&gt;&gt; $ cd &nbsp;path/to/data/directory</code></div>
-<h4> Load the Files</h4>
-<p>A CSV and an Excel file will be loaded</p>
-<h5> Examples:</h5>
-<div class="code_background_color" ><code> &nbsp;&gt;&gt; table load excel file ( football club, Football Membership List.xlsx );<br/>
- &nbsp;&gt;&gt; table list (football club); &nbsp;<br/>
+A simple example</p>
+<h5> Start B4P by double-clicking the icon or entering 'b4p' on a command shell</h5>
+<div class="code_background_color" ><code> &nbsp;&gt;b4p</code></div>
+<h5> B4P starts with a welcome text</h5>
+<div class="output_background_color" ><code>B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
 <br/>
- &nbsp;&gt;&gt; table load ( soccer club, Soccer Membership List.csv ); &nbsp;// Beginners are Novices here<br/>
- &nbsp;&gt;&gt; table list (soccer club); </code></div>
-<h4> Rename column headers to reconcile naming conventions between datasets</h4>
-<p></p>
-<h5> Examples:</h5>
-<div class="code_background_color" ><code> &nbsp;&gt;&gt; table rename column headers ( football club, { Family Name, City }, { Last Name, Town } );<br/>
- &nbsp;&gt;&gt; table list (football club); &nbsp;</code></div>
-<h4> Complete code</h4>
-<p>Code below with output generated from code execution</p>
-<h5> Examples:</h5>
-<div class="code_background_color" ><code> &nbsp;include( Support Library );<br/>
- &nbsp;include( Office Library );<br/>
- &nbsp;runtime settings[verbose]=quiet;<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;table load excel file &nbsp; &nbsp; &nbsp; ( football club, Examples&#92;Football Membership List.xlsx ); <br/>
- &nbsp; &nbsp; &nbsp;table load &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club, &nbsp; Examples&#92;Soccer Membership List.csv ); // Beginners are Novices here<br/>
- &nbsp; &nbsp; &nbsp;echo("Football club:"); &nbsp; &nbsp; &nbsp; table list( football club );<br/>
- &nbsp; &nbsp; &nbsp;echo("Soccer club:"); &nbsp; &nbsp; &nbsp; &nbsp; table list( soccer club );<br/>
+Version 8.00 Candidate (2020-08-08) 'Wilhelm Tell'<br/>
+Copyright (C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+Licensed (local machine) with standard privileges for Rafael Richards.<br/>
+...<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table rename column headers ( football club, { Family Name, City }, { Last Name, Town } );<br/>
- &nbsp; &nbsp; &nbsp;table process selected rows ( soccer club, &nbsp; [Level]==Novice, [Level]=Beginner );<br/>
- &nbsp; &nbsp; &nbsp;table merge &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( football club, soccer club, { Last Name, First Name }, { Level, Town }, append, " or " );<br/>
- &nbsp; &nbsp; &nbsp;table sort rows &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( soccer club, &nbsp; { Level, Last Name, &nbsp;First Name });<br/>
- &nbsp; &nbsp; &nbsp;table rearrange columns &nbsp; &nbsp; ( soccer club, &nbsp; { Level, First Name, Last Name, Town } );<br/>
- &nbsp; &nbsp; &nbsp;table save &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club, New Soccer Club Membership List.xls, EXCEL );<br/>
+Included: Support Library &nbsp;2.01<br/>
+Included: Utility Library &nbsp;2.00<br/>
+Included: Office Libarary &nbsp;2.00<br/>
+Included: Zip Library &nbsp;2.20 &nbsp; &nbsp;Path to 7z.exe already memorized (OK): C:&#92;Program Files&#92;7-Zip&#92;7z.exe<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo ("New soccer club has ", table length( soccer club ), " members. Enjoy playing.");<br/>
- &nbsp; &nbsp; &nbsp;table list( soccer club );<br/>
- &nbsp;}</code></div>
-<h5> Output:</h5>
-<div class="output_background_color" ><code>Load Excel file 'Examples&#92;Football Membership List.xlsx'.<br/>
+Type 'help' for help, 'docs' for B4P docs, 'web docs' for online docs.</code></div>
+<h5> Change to the directory where the soccer and footbal member data are located</h5>
+<div class="code_background_color" ><code>&gt;&gt; $ cd "C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;Examples"</code></div>
+<h5> B4P executes the 'cd' but also changes working directory of B4P itself</h5>
+<div class="output_background_color" ><code>B4P: Verify and resolve path '"C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;Examples"' ...<br/>
+ &nbsp; &nbsp; OK. Current directory changed to 'C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;Examples&#92;'</code></div>
+<h5> Load the two files</h5>
+<div class="code_background_color" ><code>&gt;&gt; table load excel file ( football club, Football Membership List.xlsx );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Load Excel file 'Football Membership List.xlsx'.<br/>
+...<br/>
+Done. Table contains 12 rows and up to 4 columns. </code></div>
+<h5> </h5>
+<div class="code_background_color" ><code>&gt;&gt; table load excel file ( football club, Football Membership List.xlsx );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Text file 'Soccer Membership List.csv' loaded (13 rows, 4..4 columns)</code></div>
+<h4> </h4>
+<p>You have successfully loaded both membership files.<br>
+<b>Congratulations</b>!!!
+
+"Description 06:Running the whole program": "",</p>
+<h5>  Code example</h5>
+<div class="code_background_color" ><code> &nbsp; &nbsp;runtime settings[verbose] = quiet;<br/>
+ &nbsp; &nbsp;include ( Support Library );<br/>
+ &nbsp; &nbsp;include ( Office Library );<br/>
+ &nbsp; &nbsp;working directory ( Examples );<br/>
+<br/>
+ &nbsp; &nbsp;table load excel file &nbsp; &nbsp; &nbsp; ( football club, Football Membership List.xlsx ); <br/>
+ &nbsp; &nbsp;table load &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club, &nbsp; Soccer Membership List.csv ); // Beginners are Novices here<br/>
+ &nbsp; &nbsp;table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( football club );<br/>
+ &nbsp; &nbsp;table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club );<br/>
+<br/>
+ &nbsp; &nbsp;table rename column headers ( football club, { Family Name, City }, { Last Name, Town } );<br/>
+ &nbsp; &nbsp;table process selected rows ( soccer club, &nbsp; [Level]==Novice, [Level]=Beginner );<br/>
+ &nbsp; &nbsp;table merge &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( football club, soccer club, { Last Name, First Name }, { Level, Town }, append, " or " );<br/>
+ &nbsp; &nbsp;table sort rows &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( soccer club, &nbsp; { Level, Last Name, &nbsp;First Name });<br/>
+ &nbsp; &nbsp;table rearrange columns &nbsp; &nbsp; ( soccer club, &nbsp; { Level, First Name, Last Name, Town } );<br/>
+ &nbsp; &nbsp;table save &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club, &nbsp; New Soccer Club Membership List.xls, EXCEL );<br/>
+ &nbsp; &nbsp;table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( soccer club );<br/>
+ &nbsp; &nbsp;echo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;("New soccer club has ", table length( soccer club ), " members. Enjoy playing.");</code></div>
+<h5> Successful program execution</h5>
+<div class="output_background_color" ><code>Load Excel file 'Football Membership List.xlsx'.<br/>
 Done. Table contains 12 rows and up to 4 columns.<br/>
 <br/>
-Football club:<br/>
  &nbsp; &nbsp;0 : First Name | Family Name | City &nbsp; &nbsp; &nbsp; &nbsp; | Level &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 : Abel &nbsp; &nbsp; &nbsp; | Amberstone &nbsp;| Amsterdam &nbsp; &nbsp;| Beginner &nbsp; <br/>
  &nbsp; &nbsp;2 : Beata &nbsp; &nbsp; &nbsp;| Berghill &nbsp; &nbsp;| Barcelona &nbsp; &nbsp;| Experienced<br/>
@@ -126,7 +142,6 @@ Football club:<br/>
  &nbsp; 10 : John &nbsp; &nbsp; &nbsp; | Janssen &nbsp; &nbsp; | Johannesburg | Beginner &nbsp; <br/>
  &nbsp; 11 : Karl &nbsp; &nbsp; &nbsp; | Karlsson &nbsp; &nbsp;| Kansas City &nbsp;| Experienced<br/>
 <br/>
-Soccer club:<br/>
  &nbsp; &nbsp;0 : Level &nbsp; &nbsp; &nbsp; &nbsp;| Town &nbsp; &nbsp; &nbsp; &nbsp;| Last Name &nbsp;| First Name<br/>
  &nbsp; &nbsp;1 : Questionable | Kyoto &nbsp; &nbsp; &nbsp; | Karlsson &nbsp; | Karl &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 : Novice &nbsp; &nbsp; &nbsp; | London &nbsp; &nbsp; &nbsp;| Lee &nbsp; &nbsp; &nbsp; &nbsp;| Linda &nbsp; &nbsp; <br/>
@@ -142,7 +157,6 @@ Soccer club:<br/>
  &nbsp; 12 : Novice &nbsp; &nbsp; &nbsp; | Venice &nbsp; &nbsp; &nbsp;| Viking &nbsp; &nbsp; | Victor &nbsp; &nbsp;<br/>
 <br/>
 INFO: Saved table to file New Soccer Club Membership List.xls containing 1 sheets<br/>
-New soccer club has 23 members. Enjoy playing.<br/>
  &nbsp; &nbsp;0 : Level &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | First Name | Last Name &nbsp;| Town &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;1 : Beginner &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Abel &nbsp; &nbsp; &nbsp; | Amberstone | Amsterdam &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;2 : Beginner &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Corinne &nbsp; &nbsp;| Carlson &nbsp; &nbsp;| Copenhagen &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
@@ -167,6 +181,7 @@ New soccer club has 23 members. Enjoy playing.<br/>
  &nbsp; 21 : Questionable &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Uwe &nbsp; &nbsp; &nbsp; &nbsp;| Ufford &nbsp; &nbsp; | Ulm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; 22 : Questionable or Experienced | Karl &nbsp; &nbsp; &nbsp; | Karlsson &nbsp; | Kyoto or Kansas City<br/>
 <br/>
+New soccer club has 23 members. Enjoy playing.<br/>
 </code></div>
 	</div>
 </section>
