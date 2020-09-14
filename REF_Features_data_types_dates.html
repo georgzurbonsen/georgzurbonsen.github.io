@@ -91,10 +91,10 @@ Beyond4P distinguishes between two different sub-types of numerals:
 <p>
 Regular dates contain the digital date (and/or time of day) along the original text representation provided.  This sub-type applies only in a few cases
 which includes accessing dates from tables (if enabled with the system variable table conversion[date] = true, otherwise the date is read in as a literal),
-or the <span class="red_text">date</span>() function is used with a formatting parameter added.  The text representation can be used later for output purposes as
+or the <a class="bold_text" href="REF_Function_date.html">date</a>() function is used with a formatting parameter added.  The text representation can be used later for output purposes as
 long the dates and times have not been manipulated.
 <br><br>
-Such manipulations include any form of arithmetics (e.g. adding a day (+1) or hour (+1/24) ) or processing them with functions such as <span class="red_text">reschedule</span>().
+Such manipulations include any form of arithmetics (e.g. adding a day (+1) or hour (+1/24) ) or processing them with functions such as <a class="bold_text" href="REF_Function_reschedule.html">reschedule</a>().
 Even adding a 0 (0 days) to the date voids the text representation and the date turns into a plain date.
 <br><br>
 </p>
@@ -105,10 +105,10 @@ The easiest way to describe a date or time value is using one of the following f
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
 <tr><th>Function name   </th><th> Description</th></tr>
-<tr><td><span class="red_text">date</span>()      </td><td> Depending on the literal value provided, it returns a date, date and time, time only, or blank date.</td></tr>
-<tr><td><span class="red_text">pure date</span>() </td><td> Works like date, but ignores any time of day information.  Output is either a date or blank date.</td></tr>
-<tr><td><span class="red_text">date time</span>() </td><td> Works like date.  If input is not a blank, and if no time of day is provided, then 00:00:00 (midnight) is assumed as time of day.</td></tr>
-<tr><td><span class="red_text">time</span>()  </td><td> This function will only use the time information.  If the paramter contains a date only, then a blank date wil be returned.</td></tr>
+<tr><td><a class="bold_text" href="REF_Function_date.html">date</a>()      </td><td> Depending on the literal value provided, it returns a date, date and time, time only, or blank date.</td></tr>
+<tr><td><a class="bold_text" href="REF_Function_date.html">pure date</a>() </td><td> Works like date, but ignores any time of day information.  Output is either a date or blank date.</td></tr>
+<tr><td><a class="bold_text" href="REF_Function_date.html">date time</a>() </td><td> Works like date.  If input is not a blank, and if no time of day is provided, then 00:00:00 (midnight) is assumed as time of day.</td></tr>
+<tr><td><a class="bold_text" href="REF_Function_time.html">time</a>()  </td><td> This function will only use the time information.  If the paramter contains a date only, then a blank date wil be returned.</td></tr>
 </table><p>
 
 Dates turn into plain dates with original text representation voided.</p>
@@ -133,10 +133,10 @@ Dates turn into plain dates with original text representation voided.</p>
  &nbsp;echo(time("2020-12-31 15:00")+1/24); &nbsp; &nbsp; &nbsp;// Time, 1 hour later<br/>
  &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>date &nbsp; &nbsp; (): 2021-07-14, 2020-09-14 18:40:33, 20:15:00, , plain date<br/>
-time &nbsp; &nbsp; (): , 18:40:33, 20:15:00, , plain date<br/>
+<div class="output_background_color" ><code>date &nbsp; &nbsp; (): 2021-07-14, 2020-09-14 18:48:38, 20:15:00, , plain date<br/>
+time &nbsp; &nbsp; (): , 18:48:38, 20:15:00, , plain date<br/>
 pure date(): 2021-07-14, 2020-09-14, , , plain date<br/>
-date time(): 2021-07-14 00:00:00, 2020-09-14 18:40:33, 20:15:00, 00:00:00, plain date<br/>
+date time(): 2021-07-14 00:00:00, 2020-09-14 18:48:38, 20:15:00, 00:00:00, plain date<br/>
 <br/>
 2021-03-31 / plain date<br/>
 2021-01-01 15:00:00<br/>

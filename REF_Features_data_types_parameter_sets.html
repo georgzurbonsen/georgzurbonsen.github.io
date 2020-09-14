@@ -94,7 +94,7 @@ In the program code, sets can be defined with any number of values or expression
 <tr><td>Nesting         </td><td> Parameter sets support nesting, e.g. { { 1, 2 }, { 3, 4 }, 5 }</td></tr>
 <tr><td>Nested empty sets   </td><td> Nested empty sets are allowed.  E.g. { {} } is not the same as { } or { { {} } }.</td></tr>
 <tr><td>Sequence of elements    </td><td> The sequence of elements is preserved, i.e. {a,b,c,d} and {d,c,b,a} are different.<br>Comparing them with '=' returns true (ordering does not care), but with '==' returns false (elements must be in same order).</td></tr>
-<tr><td>Mulitple identical elements </td><td> Parameter sets may contain multiple identical elements, e.g. { a, b, a, a, c, c }.  You can use the <span class="red_text">trim</span>() function to eliminate duplicates.</td></tr>
+<tr><td>Mulitple identical elements </td><td> Parameter sets may contain multiple identical elements, e.g. { a, b, a, a, c, c }.  You can use the <a class="bold_text" href="REF_Function_trim.html">trim</a>() function to eliminate duplicates.</td></tr>
 <tr><td>Protection      </td><td> In contrast to variable array members and structure members, parameter sets provide no dedicated protection rules.</td></tr>
 <tr><td>Embedding       </td><td> A paramter set can be embedded into another parameter set, e.g. a[] = {1,2}; b[] = {a[]};</td></tr>
 <tr><td><a  href="REF_Features_data_types_parameter_sets_indexing.html">Parameter Set Indexing</a>  </td><td> One element can be extracted by indexing.  1st element begins wtih 0. Example:  a[] = {a,b,c,d}{1}; Here, the 1st element is accessed, a[] gets value 'b'.</td></tr>

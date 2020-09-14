@@ -78,7 +78,7 @@ Whenever a function expects a <span class="red_text">function parameter</span> f
 
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:500px"><col style = "width:300px">
 <tr><th>Type            </th><th> Description               </th><th> Example</th></tr>
-<tr><td>Numeral         </td><td> Specifies a <span class="red_text">table column number</span>, beginning with 0.  <span class="red_text">Negative indexing</span> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
+<tr><td>Numeral         </td><td> Specifies a <a  href="REF_Function_table_column_number.html">table column number</a>, beginning with 0.  <span class="red_text">Negative indexing</span> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
 <tr><td>Quoted literals     </td><td> The content of the entire string is interpreted as one header name </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
 <tr><td>Quoted literals     </td><td> "" Empty string, will be treated as one blank header name </td><td> "" translates to {""}</td></tr>
 <tr><td>Softquoted literal  </td><td> Contents separated with commas are broken down into individual header names. Spaces around commas are ignored. </td><td> 'Last Name, First Name' results in 2 headers: 'Last Name' and 'First Name'.</td></tr>
