@@ -87,10 +87,10 @@ Code pieces come in 4 different flavors:
 
 </p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
 <tr><th>Code Piece Type         </th><th> Description                                                                                   </th><th> Syntax Examples</th></tr>
-<tr><td>Comparison expression       </td><td> Expression to compare something without value on left hand side.<br>The parameter inside the <a class="bold_text" href="REF_Function_case.html">case</a>() function is a comparison expression.                  </td><td> &gt;30<br>3..4<br>A  (equals A)</td></tr>
-<tr><td>Expression          </td><td> Any form of B4P expression as expected on right hand side of assignments<br>The parameter inside the <a class="bold_text" href="REF_Function_while.html">while</a>() function is an expression which must return a boolean result.    </td><td> a[]+1<br>abs(-1)</td></tr>
+<tr><td>Comparison expression       </td><td> Expression to compare something without value on left hand side.<br>The parameter inside the <span class="red_text">case</span>() function is a comparison expression.                  </td><td> &gt;30<br>3..4<br>A  (equals A)</td></tr>
+<tr><td>Expression          </td><td> Any form of B4P expression as expected on right hand side of assignments<br>The parameter inside the <span class="red_text">while</span>() function is an expression which must return a boolean result.    </td><td> a[]+1<br>abs(-1)</td></tr>
 <tr><td>Variables           </td><td> Expression on left hand side of assignments, which are destination variables, but not tables.<br>The <span class="red_text">dim</span>() function makes use of this.    </td><td> a[]<br>[table:Name,1]</td></tr>
-<tr><td>Statements          </td><td> 1 or more statements, separated with semicolons. Braces are allowed.<br>The <a class="bold_text" href="REF_Function_for.html">for</a>() function expects two such statements.           </td><td> a[]=b[]+2;<br>{ echo(test); c[]=1 }</td></tr>
+<tr><td>Statements          </td><td> 1 or more statements, separated with semicolons. Braces are allowed.<br>The <span class="red_text">for</span>() function expects two such statements.           </td><td> a[]=b[]+2;<br>{ echo(test); c[]=1 }</td></tr>
 </table><p>
 </p>
 <h4> Comparison Expressions</h4>
@@ -99,7 +99,7 @@ A comparison expression is part of an expression where one left-hand value is co
 expression contains left-hand value, comparison operator and right values, the comparison expression leaves out the left-hand value out.
 <br><br>
 
-<a class="bold_text" href="REF_Function_case.html">case</a>() and <span class="red_text">compare select</span>() are two common functions which utilize comparison expressions.
+<span class="red_text">case</span>() and <span class="red_text">compare select</span>() are two common functions which utilize comparison expressions.
 
 <br><br>
 <u>Attention</u>: Extra arentheses are required when specifying individual values, multiple values spearated with commas, ranges, and when using following comparison operators in front: = and &lt;&gt;.  The reason is
@@ -163,7 +163,7 @@ values <b>true</b> or <b>false</b>.
 
 <br><br>
 
-The <a class="bold_text" href="REF_Function_while.html">while</a>() loop function is a good example where the expression inside is calculated several times while the
+The <span class="red_text">while</span>() loop function is a good example where the expression inside is calculated several times while the
 function is executed.  In addition, various functions containing <b>... selected rows ...</b> in their names make
 use expressions as code pieces.
 
@@ -235,7 +235,7 @@ statements encapsulated with { ... } braces.
 
 <br><br>
 
-The <a class="bold_text" href="REF_Function_for.html">for</a>() and <a class="bold_text" href="REF_Function_table_process.html">table process</a>() are common functions making use of statements.<br>
+The <span class="red_text">for</span>() and <span class="red_text">table process</span>() are common functions making use of statements.<br>
 
 <u>Attention: </u>Don't confuse with C/C++: The three parameters inside the for-function must be separated with commas, not semicolons.  And use semicolons instead of commas to separate statements.<br></p>
 <h5> </h5>
