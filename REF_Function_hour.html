@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>hour, minute, second</h3>
+<a accesskey="p" href="REF_Features_time_and_stopwatch_functions.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_watch_start.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">2.3 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.4 Comments </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.5 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.6 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.7 Locales </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">3 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">3.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">3.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">3.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">4 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">4.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">4.2 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">4.3 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">4.4 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">4.5 Date and Time Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_date_functions.html"><div class="navi">4.5.1 Date Functions </div></a></li>
+<li class="navi"><a href="REF_Features_time_and_stopwatch_functions.html"><div class="navi">4.5.2 Time and Stopwatch Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_hour.html"><div class="navi navi-selected">4.5.2.1 hour, minute, second </div></a></li>
+<li class="navi"><a href="REF_Function_watch_start.html"><div class="navi">4.5.2.2 Stopwatch Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_sleep_and_wait_functions.html"><div class="navi">+ 4.5.3 Sleep and Wait Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.6 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.7 Table Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>hour, minute, second</code></div>
+<h4> Description</h4>
+<p>
+These functions extract specific numeric info of the times. 0 is returned if the input value contains no recognizable time.
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>Function Name   </th><th> Result</th></tr>
+<tr><td>hour            </td><td> hour 0-23</td></tr>
+<tr><td>minute          </td><td> minute 0-59</td></tr>
+<tr><td>second          </td><td> second 0-59</td></tr>
+</table><p>
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>date or literal converted to date</td>
+<td><b>Date with time info</b><br/><p>Value to extract as described above</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Result</b><br/><p>Returned value as described above</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[] = "14. July 2020, 15:30:40";<br/>
+ &nbsp; &nbsp; &nbsp;echo( hour( a[] ), ", ", minute( a[] ), ", ", second( a[] ) );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>15, 30, 40<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Function_hour.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="REF_Function_serial_date.html">Date info functions</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+
