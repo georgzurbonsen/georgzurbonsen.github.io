@@ -64,8 +64,9 @@
 <li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 4.5 Date and Time Functions </div></a></li>
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.6 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.7 Table Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.8 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.9 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.8 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.9 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.10 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -89,7 +90,7 @@ Code pieces come in 4 different flavors:
 <tr><th>Code Piece Type         </th><th> Description                                                                                   </th><th> Syntax Examples</th></tr>
 <tr><td>Comparison expression       </td><td> Expression to compare something without value on left hand side.<br>The parameter inside the <a class="bold_text" href="REF_Function_case.html">case</a>() function is a comparison expression.                  </td><td> &gt;30<br>3..4<br>A  (equals A)</td></tr>
 <tr><td>Expression          </td><td> Any form of B4P expression as expected on right hand side of assignments<br>The parameter inside the <a class="bold_text" href="REF_Function_while.html">while</a>() function is an expression which must return a boolean result.    </td><td> a[]+1<br>abs(-1)</td></tr>
-<tr><td>Variables           </td><td> Expression on left hand side of assignments, which are destination variables, but not tables.<br>The <span class="red_text">dim</span>() function makes use of this.    </td><td> a[]<br>[table:Name,1]</td></tr>
+<tr><td>Variables           </td><td> Expression on left hand side of assignments, which are destination variables, but not tables.<br>The <a class="bold_text" href="REF_Function_dim.html">dim</a>() function makes use of this.    </td><td> a[]<br>[table:Name,1]</td></tr>
 <tr><td>Statements          </td><td> 1 or more statements, separated with semicolons. Braces are allowed.<br>The <a class="bold_text" href="REF_Function_for.html">for</a>() function expects two such statements.           </td><td> a[]=b[]+2;<br>{ echo(test); c[]=1 }</td></tr>
 </table><p>
 </p>
@@ -212,7 +213,7 @@ Variable are expressions which must refer directly to a variable.  Any other for
 function calls, table references, etc, are forbidden and assert exceptions.  However, variable members (in <a class="bold_text" href="REF_Features_structures.html">structures</a> and __arrays_
 are allowed).
 
-<span class="red_text">dim</span>(), <span class="red_text">structure</span>(), <span class="red_text">array</span>() and <span class="red_text">protect</span>() are common functions which utilize this variant of code pieces.
+<a class="bold_text" href="REF_Function_dim.html">dim</a>(), <span class="red_text">structure</span>(), <a class="bold_text" href="REF_Function_array.html">array</a>() and <span class="red_text">protect</span>() are common functions which utilize this variant of code pieces.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code> &nbsp;var 1[] = my array;<br/>
