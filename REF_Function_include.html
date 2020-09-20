@@ -87,7 +87,7 @@
 Starts a separate B4P application script as a sub program and waits until the sub program has ended.
 In contrast to <a class="bold_text" href="REF_Function_start.html">start</a>(), this function provides specific features which are suitable to define B4P libraries containing procedures and functions:
 
-</p><ul class="bullets"><li class="bullets">Global variables defined (with <span class="red_text">global</span>() function) will be preserved.</li>
+</p><ul class="bullets"><li class="bullets">Global variables defined (with <a class="bold_text" href="REF_Function_global.html">global</a>() function) will be preserved.</li>
 <li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="REF_Function_start.html">start</a>() since the internal compilation process is not repeated.</li>
 <li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create B4P libraries and use <b>include()</b> to include them.</li>
 <li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.</li>

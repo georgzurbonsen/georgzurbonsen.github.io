@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>delete ...</h3>
-<a accesskey="p" href="REF_Function_exchange.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Arrays_and_Structures.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Function_protect.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_global.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -67,9 +67,12 @@
 <li class="navi"><a href="REF_Function_scope.html"><div class="navi">4.8.1.3 scope </div></a></li>
 <li class="navi"><a href="REF_Function_name.html"><div class="navi">4.8.1.4 name </div></a></li>
 <li class="navi"><a href="REF_Function_exchange.html"><div class="navi">4.8.1.5 exchange </div></a></li>
-<li class="navi"><a href="REF_Function_delete.html"><div class="navi navi-selected">4.8.1.6 delete ... </div></a></li>
+<li class="navi"><a href="REF_Function_protect.html"><div class="navi">4.8.1.6 protect ... </div></a></li>
+<li class="navi"><a href="REF_Function_delete.html"><div class="navi navi-selected">4.8.1.7 delete ... </div></a></li>
+<li class="navi"><a href="REF_Function_global.html"><div class="navi">4.8.1.8 global </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Arrays_and_Structures.html"><div class="navi">+ 4.8.2 Arrays and Structures </div></a></li>
+<li class="navi"><a href="REF_Features_Loading_and_saving_variables.html"><div class="navi">+ 4.8.3 Loading and Saving Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.9 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.10 Cross-Functional Info </div></a></li>
@@ -92,7 +95,7 @@ The function <b>delete members</b> will remove all member variables, but leave t
 <br><br>
 <u>Attention</u>: If the function call is executed in a local varaible contect (e.g inside a user-defined fuction or a B4P program called by another B4P
 program using <a class="bold_text" href="REF_Function_start.html">start</a>() or <a class="bold_text" href="REF_Function_include.html">include</a>(), then attempting to delete a non-local variable asserts an exception.
-You can circumvent this by deleting the global variable in a global context provided with the <span class="red_text">global</span>() function.<br>
+You can circumvent this by deleting the global variable in a global context provided with the <a class="bold_text" href="REF_Function_global.html">global</a>() function.<br>
 example: <b>global ( ) delete ( a global variable [ ] );</b><br>
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
@@ -157,9 +160,7 @@ Delete all pets<br/>
 pets[] is identified as 'not found'.<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_delete.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
-<p><a class = "bold_text" href="REF_Function_dim_protect.html">dim protect</a><br/>
-<a class = "bold_text" href="REF_Function_dim_protect.html">redim protect</a><br/>
-<a class = "bold_text" href="REF_Features_arrays.html">array</a></p>
+<p><span class="red_text">release</span></p>
 	</div>
 </section>
 
