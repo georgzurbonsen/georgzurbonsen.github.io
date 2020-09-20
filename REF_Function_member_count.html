@@ -17,8 +17,8 @@
 </div>
 
 <div class="header">
-<h3>directory size</h3>
-<a accesskey="p" href="REF_Function_starting_directory.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_file_size.html"><span>Next</span></a> 
+<h3>member count</h3>
+<a accesskey="p" href="REF_Function_strcture.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_structure_to_array.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -59,21 +59,21 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">4.6 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">4.7 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">4.8 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">4.9 Directory and File System Functions </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="REF_Features_basic_directory_and_file_functions.html"><div class="navi">4.9.1 Basic Directory and File Functions </div></a></li>
+<li class="navi"><a href="REF_Features_basic_variables_functions.html"><div class="navi">4.8.1 Basic Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Arrays_and_Structures.html"><div class="navi">4.8.2 Arrays and Structures </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="REF_Function_directory_existing.html"><div class="navi">4.9.1.1 directory existing, file existing </div></a></li>
-<li class="navi"><a href="REF_Function_read_access.html"><div class="navi">4.9.1.2 read access ..., write access ... </div></a></li>
-<li class="navi"><a href="REF_Function_working_directory.html"><div class="navi">4.9.1.3 working directory </div></a></li>
-<li class="navi"><a href="REF_Function_starting_directory.html"><div class="navi">4.9.1.4 starting directory </div></a></li>
-<li class="navi"><a href="REF_Function_directory_size.html"><div class="navi navi-selected">4.9.1.5 directory size </div></a></li>
-<li class="navi"><a href="REF_Function_file_size.html"><div class="navi">4.9.1.6 file size </div></a></li>
-<li class="navi"><a href="REF_Function_disk_space.html"><div class="navi">4.9.1.7 disk space ... </div></a></li>
+<li class="navi"><a href="REF_Function_dim.html"><div class="navi">4.8.2.1 dim / redim </div></a></li>
+<li class="navi"><a href="REF_Function_dim_protect.html"><div class="navi">4.8.2.2 dim / redim protect </div></a></li>
+<li class="navi"><a href="REF_Function_array.html"><div class="navi">4.8.2.3 array, array protect </div></a></li>
+<li class="navi"><a href="REF_Function_strcture.html"><div class="navi">4.8.2.4 structure, structure protect </div></a></li>
+<li class="navi"><a href="REF_Function_member_count.html"><div class="navi navi-selected">4.8.2.5 member count </div></a></li>
+<li class="navi"><a href="REF_Function_structure_to_array.html"><div class="navi">4.8.2.6 structure to array ... </div></a></li>
+<li class="navi"><a href="REF_Function_array_to_structure.html"><div class="navi">4.8.2.7 array to structure ... </div></a></li>
+<li class="navi"><a href="REF_Function_set.html"><div class="navi">4.8.2.8 set, set names </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_listing_directories_and_files.html"><div class="navi">+ 4.9.2 Listing and Searching Directories and Files </div></a></li>
-<li class="navi"><a href="REF_Features_deleting_directories_and_files.html"><div class="navi">+ 4.9.3 Manipulating Directories and Files </div></a></li>
 </ul></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.9 Directory and File System Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.10 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
@@ -82,10 +82,9 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>directory size</code></div>
+<div class="white_background_color" ><code>member count</code></div>
 <h4> Description</h4>
-<p>Returns the total number of bytes used by all files specified in the directory, including all their subdirectories.  Hidden and inaccessible files will not be counted.
-</p>
+<p>This function returns the number of members in <a class="bold_text" href="REF_Features_arrays.html">arrays</a> and <a class="bold_text" href="REF_Features_structures.html">structures</a>.  Nested members will not be counted.</p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -93,27 +92,34 @@
 <p>1</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>Opt. 1<br/>input</td>
-<td>literal</td>
-<td><b>path and directory name</b><br/><p>Specify the directory name (subdirectory in working directory) or path name.  Do not use wildcards.</p>
+<tr><td>1<br/>code</td>
+<td>variable<br/>:literal</td>
+<td><b>Variable name</b><br/><p></p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Total size</b><br/><p>Size of all files identified, summed, unit is bytes.</p></td></tr>
+<td><b>Member count</b><br/><p></p></td></tr>
 </table>
-<h4> Exceptions</h4>
-<p>Specified directory not found or not existing</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;// Function 'literal' adds thousand separators to make numbers readable<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( directory size( "C:&#92;Program Files&#92;B4P" ), "#,000", local ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( directory size( "Images" ), "#,000", local ) );</code></div>
+<div class="code_background_color" ><code> &nbsp;dim( a[], 10, Hey ); &nbsp; &nbsp;// An array with 10 elements<br/>
+ &nbsp;dim( a[3], 3, Hi ); // 3 sub-members in a[3]<br/>
+ &nbsp;b[Name]= Jim; &nbsp; &nbsp; &nbsp; // A structure with 2 members<br/>
+ &nbsp;b[Age] = 38;<br/>
+<br/>
+ &nbsp;c[] = 1; &nbsp; &nbsp; &nbsp; &nbsp;// A simple variable, 0 members<br/>
+<br/>
+ &nbsp;echo( member count( a[] ), ", ", member count( a[3]), ", ",<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;member count( b[] ), ", ", member count( c[] ) );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>10'679'625<br/>
-5'775'040<br/>
-</code></div><u>Try it yourself:</u> Open <b>REF_Function_directory_size.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>10, 3, 2, 0<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Function_member_count.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="REF_Function_dim.html">dim</a><br/>
+<a class = "bold_text" href="REF_Features_arrays.html">array</a><br/>
+<a class = "bold_text" href="REF_Features_structures.html">structure</a></p>
 	</div>
 </section>
 

@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>structure, structure protect</h3>
-<a accesskey="p" href="REF_Function_array.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_directory_and_file_system.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Function_array.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_member_count.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -60,13 +60,17 @@
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">4.7 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">4.8 Variables Functions </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">4.8.1 Information about Variables </div></a></li>
+<li class="navi"><a href="REF_Features_basic_variables_functions.html"><div class="navi">4.8.1 Basic Variables Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Arrays_and_Structures.html"><div class="navi">4.8.2 Arrays and Structures </div></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Function_dim.html"><div class="navi">4.8.2.1 dim / redim </div></a></li>
 <li class="navi"><a href="REF_Function_dim_protect.html"><div class="navi">4.8.2.2 dim / redim protect </div></a></li>
 <li class="navi"><a href="REF_Function_array.html"><div class="navi">4.8.2.3 array, array protect </div></a></li>
 <li class="navi"><a href="REF_Function_strcture.html"><div class="navi navi-selected">4.8.2.4 structure, structure protect </div></a></li>
+<li class="navi"><a href="REF_Function_member_count.html"><div class="navi">4.8.2.5 member count </div></a></li>
+<li class="navi"><a href="REF_Function_structure_to_array.html"><div class="navi">4.8.2.6 structure to array ... </div></a></li>
+<li class="navi"><a href="REF_Function_array_to_structure.html"><div class="navi">4.8.2.7 array to structure ... </div></a></li>
+<li class="navi"><a href="REF_Function_set.html"><div class="navi">4.8.2.8 set, set names </div></a></li>
 </ul></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.9 Directory and File System Functions </div></a></li>
@@ -82,7 +86,7 @@
 <h4> Description</h4>
 <p>The function <b>structure</b> defines a structure with members and their initial values provided directly. Already existing variable members will be eliminated.
 The function <b>structure project</b> will also apply the protection settings on all member variables created.  See description for function <span class="red_text">protect</span>() for details.
-It may be useful to choose protection setting <b>limited access</b> in order to avoid accidental type changes on the array members.
+It may be useful to choose protection setting <b>limited access</b> in order to avoid accidental type changes on the structure members.
 
 <br><br>
 Impact on base variables:  The base variable values remain unaffected.  These functions affect the members only.</p>
@@ -99,7 +103,7 @@ Impact on base variables:  The base variable values remain unaffected.  These fu
 </td></tr>
 <tr><td>1, 4, ... or 2, 5, ...<br/>code</td>
 <td>variable<br/>:literal</td>
-<td><b>Variable name</b><br/><p>The array will be built on the specified variable.  Member variables of existing arrays and structures are allowed so you can build more complex data structures.</p>
+<td><b>Variable name</b><br/><p>The structure will be built on the specified variable.  Member variables of existing arrays and structures are allowed so you can build more complex data structures.</p>
 </td></tr>
 <tr><td>2, 5, ... or 3, 6, ...<br/>input</td>
 <td>parameter set</td>
