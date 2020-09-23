@@ -86,7 +86,7 @@ The functions perform the following:
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
 <tr><td>attribute read      </td><td> Reads a resident attribute from a file</td></tr>
 <tr><td>attribute write     </td><td> Writes attribute.  If file is missing, then new file (incl. directory path) is created. If attribute is missing, then new attribute name will be added.</td></tr>
-<tr><td>attribute modify    </td><td> Updates attribute if file is existing and attribute name available.  Returns false otherwise.</td></tr>
+<tr><td>attribute modify    </td><td> Updates attribute if file is existing and the attribute name is also available.  Returns false otherwise.</td></tr>
 <tr><td>attribute delete    </td><td> Deletes the attribute entry.  Will refuse if sub-attributes still exist.</td></tr>
 <tr><td>attribute remove    </td><td> Deletes the attribute entry as well as sub-attributes.</td></tr>
 <tr><td>attribute listing   </td><td> Lists all attribute names</td></tr>
@@ -139,10 +139,11 @@ File locked</p>
 <div class="code_background_color" ><code><br/>
  &nbsp;my file[] = "My attributes.json";<br/>
  &nbsp;attribute write ( "", my file[], { Name, First Name }, Nic ); &nbsp;// Use 'write' in 1st call so it creates the JSON file<br/>
+ &nbsp;attribute write ( "", my file[], { Name, Middle Initial }, M. );<br/>
  &nbsp;attribute modify( "", my file[], { Name, Middle Initial }, N. );<br/>
- &nbsp;attribute modify( "", my file[], { Name, Last Name }, &nbsp;Nicholas );<br/>
- &nbsp;attribute modify( "", my file[], { Name, Graduated at MIT }, true &nbsp;);<br/>
- &nbsp;attribute write( "", my file[], { Name, Birth Date }, &nbsp;date( "2000-02-03") &nbsp;);<br/>
+ &nbsp;attribute write ( "", my file[], { Name, Last Name }, &nbsp;Nicholas );<br/>
+ &nbsp;attribute write ( "", my file[], { Name, Graduated at MIT }, true &nbsp;);<br/>
+ &nbsp;attribute write ( "", my file[], { Name, Birth Date }, &nbsp;date( "2000-02-03") &nbsp;);<br/>
 <br/>
  &nbsp;attribute listing( "", my file[], Name, listing[] );<br/>
  &nbsp;echo("List all attribute names behind 'Name': ", listing[] );<br/>
@@ -182,22 +183,31 @@ File locked</p>
 <br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>List all attribute names behind 'Name': {'Birth Date','First Name'}<br/>
+<div class="output_background_color" ><code>List all attribute names behind 'Name': {'Birth Date','First Name','Graduated at MIT','Last Name','Middle Initial'}<br/>
  &nbsp; &nbsp;Birth Date: 2000-02-03<br/>
  &nbsp; &nbsp;First Name: Nic<br/>
+ &nbsp; &nbsp;Graduated at MIT: true<br/>
+ &nbsp; &nbsp;Last Name: Nicholas<br/>
+ &nbsp; &nbsp;Middle Initial: N.<br/>
 <br/>
 Take a quick look at the JSON file:<br/>
  &nbsp; &nbsp;0 : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
  &nbsp; &nbsp;1 : &nbsp; "Name" : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
  &nbsp; &nbsp;2 : &nbsp; &nbsp; "Birth Date" : "2000-02-03",<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; "First Name" : "Nic" &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;3 : &nbsp; &nbsp; "First Name" : "Nic", &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;4 : &nbsp; &nbsp; "Graduated at MIT" : true, &nbsp;<br/>
+ &nbsp; &nbsp;5 : &nbsp; &nbsp; "Last Name" : "Nicholas", &nbsp; <br/>
+ &nbsp; &nbsp;6 : &nbsp; &nbsp; "Middle Initial" : "N." &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;7 : &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+ &nbsp; &nbsp;8 : } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
 <br/>
 Try deleting some items<br/>
 Success: Delete birth date: true; &nbsp;Harvard U.: false; &nbsp;Name: false<br/>
  &nbsp; &nbsp;Birth Date: <br/>
  &nbsp; &nbsp;First Name: Nic<br/>
+ &nbsp; &nbsp;Graduated at MIT: true<br/>
+ &nbsp; &nbsp;Last Name: Nicholas<br/>
+ &nbsp; &nbsp;Middle Initial: N.<br/>
 Try removing the Name<br/>
 <br/>
 Take a quick look at the empty JSON file:<br/>
@@ -205,7 +215,8 @@ Take a quick look at the empty JSON file:<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_attribute_read.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
-<p><a class = "bold_text" href="REF_Function_release.html">release</a></p>
+<p><a class = "bold_text" href="REF_Function_variable_load.html">variable load</a><br/>
+<a class = "bold_text" href="REF_Function_variable_save.html">variable save</a></p>
 	</div>
 </section>
 
