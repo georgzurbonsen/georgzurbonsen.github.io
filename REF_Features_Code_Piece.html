@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Code Pieces (Func. Param. Type)</h3>
-<a accesskey="p" href="REF_Features_Table_columns.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Expressions_to_select_rows.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Features_Table_columns.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Comparison_Expression_(func._params).html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -51,6 +51,12 @@
 <li class="navi"><a href="REF_Features_parameter_set_or_literal.html"><div class="navi">3.3.1 Parameter Set or Literal (Func. Param. Type) </div></a></li>
 <li class="navi"><a href="REF_Features_Table_columns.html"><div class="navi">3.3.2 Table Columns (Func. Param. Type) </div></a></li>
 <li class="navi"><a href="REF_Features_Code_Piece.html"><div class="navi navi-selected">3.3.3 Code Pieces (Func. Param. Type) </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Comparison_Expression_(func._params).html"><div class="navi">3.3.3.1 Comparison Expressions (func. params) </div></a></li>
+<li class="navi"><a href="REF_Features_Expressions_(func_params).html"><div class="navi">3.3.3.2 Expressions (func. params) </div></a></li>
+<li class="navi"><a href="REF_Features_Variables_(func_params).html"><div class="navi">3.3.3.3 Variables (func. params) </div></a></li>
+<li class="navi"><a href="REF_Features_Statements_(func_params).html"><div class="navi">3.3.3.4 Statements (func. params) </div></a></li>
+</ul></li>
 <li class="navi"><a href="REF_Features_Expressions_to_select_rows.html"><div class="navi">3.3.4 Expressions to Select Rows </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">3.4 Indirect Parameter Passing </div></a></li>
@@ -94,165 +100,6 @@ Code pieces come in 4 different flavors:
 <tr><td>Statements          </td><td> 1 or more statements, separated with semicolons. Braces are allowed.<br>The <a class="bold_text" href="REF_Function_for.html">for</a>() function expects two such statements.           </td><td> a[]=b[]+2;<br>{ echo(test); c[]=1 }</td></tr>
 </table><p>
 </p>
-<h4> Comparison Expressions</h4>
-<p>
-A comparison expression is part of an expression where one left-hand value is compared with one or more other right-hand values.  While the a regular
-expression contains left-hand value, comparison operator and right values, the comparison expression leaves out the left-hand value out.
-<br><br>
-
-<a class="bold_text" href="REF_Function_case.html">case</a>() and <span class="red_text">compare select</span>() are two common functions which utilize comparison expressions.
-
-<br><br>
-<u>Attention</u>: Extra arentheses are required when specifying individual values, multiple values spearated with commas, ranges, and when using following comparison operators in front: = and &lt;&gt;.  The reason is
-that with out parentheses, the comparison tries to hijack all further parameters separated with commas as their own right-hand values to compare, too.<br>
-No extra parentheses are required when the comparison expression is in the last function parameter or is the only one function parameter.<br>
-No extraparentheses are required if the comparison expression begins with following operators: &lt;, &lt;=, &gt;, &lt;=, ==, and !=.<br>
-No extra parentheses are required if the comparison expression is provided in a string value.
-</p>
-<h5> </h5>
-<div class="code_background_color" ><code> &nbsp;p[] = { 2, 3, 5, 7, 10, 11, 13, 17, 23, 31, 37, A, a, Hello };<br/>
-<br/>
- &nbsp;for all parameters( p[], var[] )<br/>
- &nbsp;{ &nbsp; <br/>
- &nbsp; &nbsp; &nbsp;result[] = compare select( var[], other, <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(11,37), &nbsp; &nbsp; &nbsp;is 11 or 37, // Parentheses required if no operator put in front<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;==13, &nbsp; &nbsp; &nbsp; &nbsp; thirteen, &nbsp; &nbsp; <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(=+a), &nbsp; &nbsp; &nbsp; &nbsp;1st letter in alphabet, // Parentheses required with = and &lt;&gt;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;('H*'), &nbsp; &nbsp; &nbsp; Begins with H,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&gt;15, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;greater than 15,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(3..5,10), &nbsp; &nbsp;"is one of 3..5, 10" );<br/>
- &nbsp; &nbsp; &nbsp;print(var[],": ", result[]," &nbsp;/ ");<br/>
-<br/>
- &nbsp; &nbsp; &nbsp;// Demonstrate the same with comparison expressions in strings. &nbsp;Note the colons used in front.<br/>
-<br/>
- &nbsp; &nbsp; &nbsp;c[] = '(3..5,10)';<br/>
- &nbsp; &nbsp; &nbsp;result[] = compare select( var[], other, <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:literal(11)+",37", is 11 or 37, &nbsp; &nbsp;// Expression returning a string<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:'==13', &nbsp; &nbsp; &nbsp;thirteen, &nbsp; &nbsp; // Softquoted string: No difference to quoted string<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:'=+a', &nbsp; &nbsp; &nbsp; 1st letter in alphabet, <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:"'H*'", &nbsp; &nbsp; &nbsp;Begins with H, // See note below !<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:"&gt;15", &nbsp; &nbsp; &nbsp; greater than 15,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:c[], &nbsp; &nbsp; &nbsp; &nbsp; "is one of 3..5, 10" ); // Referring to a variable<br/>
- &nbsp; &nbsp; &nbsp;echo(result[]);<br/>
- &nbsp;}<br/>
-<br/>
- &nbsp;// Note :"'H*'" with nested quotation marks: &nbsp;Expression inside requires a single quotation mark to<br/>
- &nbsp;// let the comparison expression support wildcard symbols.<br/>
-<br/>
-</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code>2: other &nbsp;/ other<br/>
-3: is one of 3..5, 10 &nbsp;/ is one of 3..5, 10<br/>
-5: is one of 3..5, 10 &nbsp;/ is one of 3..5, 10<br/>
-7: other &nbsp;/ other<br/>
-10: is one of 3..5, 10 &nbsp;/ is one of 3..5, 10<br/>
-11: is 11 or 37 &nbsp;/ is 11 or 37<br/>
-13: thirteen &nbsp;/ thirteen<br/>
-17: greater than 15 &nbsp;/ greater than 15<br/>
-23: greater than 15 &nbsp;/ greater than 15<br/>
-31: greater than 15 &nbsp;/ greater than 15<br/>
-37: is 11 or 37 &nbsp;/ is 11 or 37<br/>
-A: 1st letter in alphabet &nbsp;/ 1st letter in alphabet<br/>
-a: 1st letter in alphabet &nbsp;/ 1st letter in alphabet<br/>
-Hello: Begins with H &nbsp;/ Begins with H<br/>
-</code></div><u>Try it yourself:</u> Open <b>REF_Features_Code_Piece.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
-<h4> Expressions</h4>
-<p>
-A expression is a a value, a fuction call or a calculation which returns a value.
-The individual functions may impose additional requirements, for exmplae that the expression must return boolean
-values <b>true</b> or <b>false</b>.
-
-<br><br>
-
-The <a class="bold_text" href="REF_Function_while.html">while</a>() loop function is a good example where the expression inside is calculated several times while the
-function is executed.  In addition, various functions containing <b>... selected rows ...</b> in their names make
-use expressions as code pieces.
-
-<br><br>
-
-<u>Attention</u>: Parentheses are required when the expression coontains a comparison operator using = or &lt;&gt.  The reason is that
-these two comparison operators may expect more than one value separated with commas and they would, if parenthese are not used,
-hijack the remaining function parameters as additional values to compare.
-No extra parentheses are required when the expression is in the last function parameter or is the only one function parameter.<br>
-No extra parentheses are required if the expression begins with following operators: &lt;, &lt;=, &gt;, &lt;=, ==, and !=.<br>
-No extra parentheses are required if the expression is provided in a string value.
-</p>
-<h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table initialize( primes, <br/>
- &nbsp; &nbsp;{ Number, 2, 3, 5, 7, 10, 11, 13, 17, 23, 31, 37, A, a, Hello } );<br/>
-<br/>
- &nbsp;table process selected rows( primes, ([Number]=11,37), &nbsp; echo( [Number],": ", "is 11 or 37" ) );<br/>
- &nbsp;table process selected rows( primes, &nbsp;[Number]==13, &nbsp; &nbsp; &nbsp;echo( [Number],": ", "thirteen" ) );<br/>
- &nbsp;table process selected rows( primes, ([Number]='H*'), &nbsp; &nbsp;echo( [Number],": ", "Begins with H" ) );<br/>
- &nbsp;table process selected rows( primes, ([Number]=3..5,10), echo( [Number],": ", "is one of 3..5,10" ) );<br/>
-<br/>
- &nbsp;echo; // Do the same with expression in strings. &nbsp;No parentheses needed-<br/>
-<br/>
- &nbsp;c[] = '[Number] = 3..5,10'; //<br/>
- &nbsp;table process selected rows( primes, :c[], echo( [Number],": ", "is one of 3..5,10" ) );<br/>
-<br/>
- &nbsp;c[] = "[Number] = 'H*'";<br/>
- &nbsp;table process selected rows( primes, :c[], echo( [Number],": ", "Begins with H" ) );</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code>11: is 11 or 37<br/>
-37: is 11 or 37<br/>
-13: thirteen<br/>
-Hello: Begins with H<br/>
-3: is one of 3..5,10<br/>
-5: is one of 3..5,10<br/>
-10: is one of 3..5,10<br/>
-<br/>
-3: is one of 3..5,10<br/>
-5: is one of 3..5,10<br/>
-10: is one of 3..5,10<br/>
-Hello: Begins with H<br/>
-</code></div><u>Try it yourself:</u> Open <b>REF_Features_Code_Piece_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
-<h4> Variables</h4>
-<p>
-Variable are expressions which must refer directly to a variable.  Any other forms of expressions such as constants, calculations,
-function calls, table references, etc, are forbidden and assert exceptions.  However, variable members (in <a class="bold_text" href="REF_Features_structures.html">structures</a> and __arrays_
-are allowed).
-
-<a class="bold_text" href="REF_Function_dim.html">dim</a>(), <span class="red_text">structure</span>(), <a class="bold_text" href="REF_Function_array.html">array</a>() and <a class="bold_text" href="REF_Function_protect.html">protect</a>() are common functions which utilize this variant of code pieces.
-</p>
-<h5> </h5>
-<div class="code_background_color" ><code> &nbsp;var 1[] = my array;<br/>
- &nbsp;var 2[] = 'my array[]';<br/>
-<br/>
- &nbsp; &nbsp; array( &nbsp;var 0[], &nbsp; {hog, bat, pig} );<br/>
- &nbsp;// array( &nbsp;var 1[][], {dog, cat, rat} ); &nbsp; // This one is wrong<br/>
- &nbsp; &nbsp; array( :var 2[], &nbsp; {dog, cat, rat} ); &nbsp; // This one is OK<br/>
- &nbsp;<br/>
- &nbsp;echo( var 0[1] ); // bat<br/>
- &nbsp;echo( my array[1] ); // cat</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code>bat<br/>
-cat<br/>
-</code></div><u>Try it yourself:</u> Open <b>REF_Features_Code_Piece_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
-<h4> Statements</h4>
-<p>
-Statements may consist of one single statement, multiple statements separated with semicolons, and blocks.  Blocks are one or more
-statements encapsulated with { ... } braces.
-
-<br><br>
-
-The <a class="bold_text" href="REF_Function_for.html">for</a>() and <a class="bold_text" href="REF_Function_table_process.html">table process</a>() are common functions making use of statements.<br>
-
-<u>Attention: </u>Don't confuse with C/C++: The three parameters inside the for-function must be separated with commas, not semicolons.  And use semicolons instead of commas to separate statements.<br></p>
-<h5> </h5>
-<div class="code_background_color" ><code> &nbsp;// Demonstrates direct use of code and code in string using colon<br/>
-<br/>
- &nbsp;next[] = "a[]++; print( Next )";<br/>
- &nbsp;for ( a[] = 1; print( Start ), a[] &lt; 5, :next[] )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo( " ", a[] );<br/>
- &nbsp;}</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code>Start 1<br/>
-Next 2<br/>
-Next 3<br/>
-Next 4<br/>
-Next</code></div><u>Try it yourself:</u> Open <b>REF_Features_Code_Piece_03.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 
