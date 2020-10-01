@@ -88,8 +88,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -141,38 +142,38 @@ Negative number are supported for indexing from right to left, however -1 refers
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>-1 (behind last column)
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( colors,<br/>
- &nbsp; &nbsp; &nbsp;{ { Color, &nbsp;Delight, Another Delight },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ red, &nbsp; &nbsp;tomatoes, &nbsp;strawberries },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ yellow, bananas, &nbsp; lemons },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ green, &nbsp;lettuce, &nbsp; cucumbers },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ blue, &nbsp; plums, &nbsp; &nbsp; blueberries } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;colors,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Color,&nbsp;&nbsp;Delight,&nbsp;Another&nbsp;Delight&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;red,&nbsp;&nbsp;&nbsp;&nbsp;tomatoes,&nbsp;&nbsp;strawberries&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;yellow,&nbsp;bananas,&nbsp;&nbsp;&nbsp;lemons&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;green,&nbsp;&nbsp;lettuce,&nbsp;&nbsp;&nbsp;cucumbers&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;blue,&nbsp;&nbsp;&nbsp;plums,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blueberries&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table initialize( shades,<br/>
- &nbsp; &nbsp; &nbsp;{ { Shade, &nbsp; Example 2 }, { Dark, moonshine }, { Light, sunshine } } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;shades,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Shade,&nbsp;&nbsp;&nbsp;Example&nbsp;2&nbsp;},&nbsp;{&nbsp;Dark,&nbsp;moonshine&nbsp;},&nbsp;{&nbsp;Light,&nbsp;sunshine&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table multiply selected rows( shades, colors, ([Color]&lt;&gt;green), Another Delight );<br/>
+&nbsp;&nbsp;table&nbsp;multiply&nbsp;selected&nbsp;rows(&nbsp;shades,&nbsp;colors,&nbsp;([Color]&lt;&gt;green),&nbsp;Another&nbsp;Delight&nbsp;);<br/>
 <br/>
- &nbsp;// Why parentheses used in the 3rd parameter?<br/>
- &nbsp;// Comparison would otherwise hijack the 4th parameter.<br/>
- &nbsp;// Alternatively, use '!=' which expects only 1 comparison operand.<br/>
+&nbsp;&nbsp;//&nbsp;Why&nbsp;parentheses&nbsp;used&nbsp;in&nbsp;the&nbsp;3rd&nbsp;parameter?<br/>
+&nbsp;&nbsp;//&nbsp;Comparison&nbsp;would&nbsp;otherwise&nbsp;hijack&nbsp;the&nbsp;4th&nbsp;parameter.<br/>
+&nbsp;&nbsp;//&nbsp;Alternatively,&nbsp;use&nbsp;'!='&nbsp;which&nbsp;expects&nbsp;only&nbsp;1&nbsp;comparison&nbsp;operand.<br/>
 <br/>
- &nbsp;table list ( colors );</code></div>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;colors&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Color &nbsp;| Delight &nbsp;| Shade | Example 2 | Another Delight<br/>
- &nbsp; &nbsp;1 : red &nbsp; &nbsp;| tomatoes | Dark &nbsp;| moonshine | strawberries &nbsp; <br/>
- &nbsp; &nbsp;2 : red &nbsp; &nbsp;| tomatoes | Light | sunshine &nbsp;| strawberries &nbsp; <br/>
- &nbsp; &nbsp;3 : yellow | bananas &nbsp;| Dark &nbsp;| moonshine | lemons &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : yellow | bananas &nbsp;| Light | sunshine &nbsp;| lemons &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : green &nbsp;| lettuce &nbsp;| &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | cucumbers &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : blue &nbsp; | plums &nbsp; &nbsp;| Dark &nbsp;| moonshine | blueberries &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : blue &nbsp; | plums &nbsp; &nbsp;| Light | sunshine &nbsp;| blueberries &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Color&nbsp;&nbsp;|&nbsp;Delight&nbsp;&nbsp;|&nbsp;Shade&nbsp;|&nbsp;Example&nbsp;2&nbsp;|&nbsp;Another&nbsp;Delight<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tomatoes&nbsp;|&nbsp;Dark&nbsp;&nbsp;|&nbsp;moonshine&nbsp;|&nbsp;strawberries&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tomatoes&nbsp;|&nbsp;Light&nbsp;|&nbsp;sunshine&nbsp;&nbsp;|&nbsp;strawberries&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;yellow&nbsp;|&nbsp;bananas&nbsp;&nbsp;|&nbsp;Dark&nbsp;&nbsp;|&nbsp;moonshine&nbsp;|&nbsp;lemons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;yellow&nbsp;|&nbsp;bananas&nbsp;&nbsp;|&nbsp;Light&nbsp;|&nbsp;sunshine&nbsp;&nbsp;|&nbsp;lemons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;green&nbsp;&nbsp;|&nbsp;lettuce&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cucumbers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;blue&nbsp;&nbsp;&nbsp;|&nbsp;plums&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dark&nbsp;&nbsp;|&nbsp;moonshine&nbsp;|&nbsp;blueberries&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;blue&nbsp;&nbsp;&nbsp;|&nbsp;plums&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Light&nbsp;|&nbsp;sunshine&nbsp;&nbsp;|&nbsp;blueberries&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_multiply.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

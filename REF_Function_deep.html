@@ -78,8 +78,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -95,10 +96,10 @@ The depth is also adjustable and is by default 1 (corresponding to operators lik
 to process contents in 2-dimensinoal matrices.
 <br><br>
 Restrictions:<br>
-</p><ul class="bullets"><li class="bullets">No flow control functions</li>
-<li class="bullets">Functions taking code pieces must take them as strings.  The variables in the code piece are used as given (no deep operations).</li>
-<li class="bullets">For functions with I/O parameters, e.g. exchange(), the function itself will be called successfully, but resulting parameters will not be written back.</li>
-</ul><p>Allowed: User defined functions.
+</p><ul class="bullets"><li class="bullets">No flow control functions
+</li><li class="bullets">Functions taking code pieces must take them as strings.  The variables in the code piece are used as given (no deep operations).
+</li><li class="bullets">For functions with I/O parameters, e.g. exchange(), the function itself will be called successfully, but resulting parameters will not be written back.
+</li></ul><p>Allowed: User defined functions.
 <br><br>
 The differences in the functions deep and deepr come into effect if the size of the parameter sets are different so the remaining elements in the shorter sets
 need to be repeated or padded with 0 or 1 as long they are not treated as scalars:
@@ -139,55 +140,55 @@ Limited choice of function names, see above</p>
 <td><b>Return value</b><br/><p>It is the return value as provided by the specified target function</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;echo(new line, "Processing 2 vectors of equal sizes:");<br/>
- &nbsp;a[] = {1..6}; &nbsp;b[] = 7 -^ a[]; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output: b[] contains {6,5,4,3,2,1}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Processing&nbsp;2&nbsp;vectors&nbsp;of&nbsp;equal&nbsp;sizes:");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{1..6};&nbsp;&nbsp;b[]&nbsp;=&nbsp;7&nbsp;-^&nbsp;a[];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Output:&nbsp;b[]&nbsp;contains&nbsp;{6,5,4,3,2,1}<br/>
 <br/>
- &nbsp;echo( deep ( sum, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {7,7,7,7,7,7}<br/>
- &nbsp;echo( deepr( sum, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {7,7,7,7,7,7}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{7,7,7,7,7,7}<br/>
+&nbsp;&nbsp;echo(&nbsp;deepr(&nbsp;sum,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{7,7,7,7,7,7}<br/>
 <br/>
- &nbsp;echo(new line, "Processing 1 vector and 1 scalar:");<br/>
- &nbsp;a[] = {1..6}; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Output:<br/>
- &nbsp;echo( deep( sum, {a[], 10} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {11,12,13,14,15,16}, same also for deepr<br/>
- &nbsp;echo( deep( sum, {20, a[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {21,22,23,24,25,26}, same also for deepr<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Processing&nbsp;1&nbsp;vector&nbsp;and&nbsp;1&nbsp;scalar:");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{1..6};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Output:<br/>
+&nbsp;&nbsp;echo(&nbsp;deep(&nbsp;sum,&nbsp;{a[],&nbsp;10}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{11,12,13,14,15,16},&nbsp;same&nbsp;also&nbsp;for&nbsp;deepr<br/>
+&nbsp;&nbsp;echo(&nbsp;deep(&nbsp;sum,&nbsp;{20,&nbsp;a[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{21,22,23,24,25,26},&nbsp;same&nbsp;also&nbsp;for&nbsp;deepr<br/>
 <br/>
 <br/>
- &nbsp;echo(new line, "Processing with 2 vectors of different sizes:", new line,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Shorter vectors are extended to match length of longest one:");<br/>
- &nbsp;a[] = {1..6}; &nbsp;b[] = {10,20}; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Output:<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Processing&nbsp;with&nbsp;2&nbsp;vectors&nbsp;of&nbsp;different&nbsp;sizes:",&nbsp;new&nbsp;line,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Shorter&nbsp;vectors&nbsp;are&nbsp;extended&nbsp;to&nbsp;match&nbsp;length&nbsp;of&nbsp;longest&nbsp;one:");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{1..6};&nbsp;&nbsp;b[]&nbsp;=&nbsp;{10,20};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Output:<br/>
 <br/>
- &nbsp;echo( deep ( sum, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {11,22,3,4,5,6} &nbsp;(shorter vector padded with 0)<br/>
- &nbsp;echo( deep ( sum, {a[], b[]}, 1, 0) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// {11,22,3,4,5,6} &nbsp;(shorter vector padded with 0)<br/>
- &nbsp;echo( deep ( sum, {a[], b[]}, 1, 1) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// {11,22,4,5,6,7} &nbsp;(shorter vector padded with 1)<br/>
- &nbsp;echo( deepr( sum, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {11,22,13,24,15,26} (shorter vector repeated)<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{11,22,3,4,5,6}&nbsp;&nbsp;(shorter&nbsp;vector&nbsp;padded&nbsp;with&nbsp;0)<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],&nbsp;b[]},&nbsp;1,&nbsp;0)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{11,22,3,4,5,6}&nbsp;&nbsp;(shorter&nbsp;vector&nbsp;padded&nbsp;with&nbsp;0)<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],&nbsp;b[]},&nbsp;1,&nbsp;1)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{11,22,4,5,6,7}&nbsp;&nbsp;(shorter&nbsp;vector&nbsp;padded&nbsp;with&nbsp;1)<br/>
+&nbsp;&nbsp;echo(&nbsp;deepr(&nbsp;sum,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{11,22,13,24,15,26}&nbsp;(shorter&nbsp;vector&nbsp;repeated)<br/>
 <br/>
- &nbsp;echo( deep ( product, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {10,40,0,0,0,0}<br/>
- &nbsp;echo( deep ( product, {a[], b[]}, 1, 0 ) ); &nbsp; &nbsp; // {10,40,0,0,0,0}<br/>
- &nbsp;echo( deep ( product, {a[], b[]}, 1, 1 ) ); &nbsp; &nbsp; // {10,40,3,4,5,6}<br/>
- &nbsp;echo( deepr( product, {a[], b[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {10,40,30,80,50,120}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;product,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{10,40,0,0,0,0}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;product,&nbsp;{a[],&nbsp;b[]},&nbsp;1,&nbsp;0&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{10,40,0,0,0,0}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;product,&nbsp;{a[],&nbsp;b[]},&nbsp;1,&nbsp;1&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{10,40,3,4,5,6}<br/>
+&nbsp;&nbsp;echo(&nbsp;deepr(&nbsp;product,&nbsp;{a[],&nbsp;b[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{10,40,30,80,50,120}<br/>
 <br/>
- &nbsp;echo(new line, "Example with 3 vectors of different sizes:");<br/>
- &nbsp;a[]={1}; b[]={10,11}; c[]={100,101,102}; &nbsp; &nbsp; &nbsp; &nbsp;// Output<br/>
- &nbsp;echo( deep ( sum, {a[],b[],c[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// {111,112,102}<br/>
- &nbsp;echo( deep ( sum, {a[],b[],c[]}, 1, 1 ) ); &nbsp; &nbsp; &nbsp;// {111,113,104}<br/>
- &nbsp;echo( deepr( sum, {a[],b[],c[]} ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// {111,113,113}<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Example&nbsp;with&nbsp;3&nbsp;vectors&nbsp;of&nbsp;different&nbsp;sizes:");<br/>
+&nbsp;&nbsp;a[]={1};&nbsp;b[]={10,11};&nbsp;c[]={100,101,102};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Output<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],b[],c[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{111,112,102}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep&nbsp;(&nbsp;sum,&nbsp;{a[],b[],c[]},&nbsp;1,&nbsp;1&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{111,113,104}<br/>
+&nbsp;&nbsp;echo(&nbsp;deepr(&nbsp;sum,&nbsp;{a[],b[],c[]}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{111,113,113}<br/>
 <br/>
- &nbsp;echo(new line, "Example with 2-dimensional Vectors:");<br/>
- &nbsp;a[] = {{1..5},{11..15},{21..25}};<br/>
- &nbsp;b[] = a[]*^^2; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// b[] contains {{2,4,6,8,10},… } all values doubled<br/>
- &nbsp;echo( deep( sum, {a[], 1}, 2 ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {{2,3,4,5,6},{12,13,14,15,16},{22,23,24,25,26}}<br/>
- &nbsp;echo( deep( sum, {a[], {1,2,3}},2 ) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// {{2,3,4,5,6},{13,14,15,16,17},{24,25,26,27,28}}<br/>
- &nbsp;echo( deep( sum, {a[],b[]}, 2) ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // {{3,6,9,12,15},{33,36,39,42,45},{63,66,69,72,75}}</code></div>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Example&nbsp;with&nbsp;2-dimensional&nbsp;Vectors:");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{{1..5},{11..15},{21..25}};<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;a[]*^^2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;b[]&nbsp;contains&nbsp;{{2,4,6,8,10},…&nbsp;}&nbsp;all&nbsp;values&nbsp;doubled<br/>
+&nbsp;&nbsp;echo(&nbsp;deep(&nbsp;sum,&nbsp;{a[],&nbsp;1},&nbsp;2&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{{2,3,4,5,6},{12,13,14,15,16},{22,23,24,25,26}}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep(&nbsp;sum,&nbsp;{a[],&nbsp;{1,2,3}},2&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{{2,3,4,5,6},{13,14,15,16,17},{24,25,26,27,28}}<br/>
+&nbsp;&nbsp;echo(&nbsp;deep(&nbsp;sum,&nbsp;{a[],b[]},&nbsp;2)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{{3,6,9,12,15},{33,36,39,42,45},{63,66,69,72,75}}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Processing 2 vectors of equal sizes:<br/>
+<div class="output_background_color" ><code>Processing&nbsp;2&nbsp;vectors&nbsp;of&nbsp;equal&nbsp;sizes:<br/>
 {7,7,7,7,7,7}<br/>
 {7,7,7,7,7,7}<br/>
 <br/>
-Processing 1 vector and 1 scalar:<br/>
+Processing&nbsp;1&nbsp;vector&nbsp;and&nbsp;1&nbsp;scalar:<br/>
 {11,12,13,14,15,16}<br/>
 {21,22,23,24,25,26}<br/>
 <br/>
-Processing with 2 vectors of different sizes:<br/>
-Shorter vectors are extended to match length of longest one:<br/>
+Processing&nbsp;with&nbsp;2&nbsp;vectors&nbsp;of&nbsp;different&nbsp;sizes:<br/>
+Shorter&nbsp;vectors&nbsp;are&nbsp;extended&nbsp;to&nbsp;match&nbsp;length&nbsp;of&nbsp;longest&nbsp;one:<br/>
 {11,22,3,4,5,6}<br/>
 {11,22,3,4,5,6}<br/>
 {11,22,4,5,6,7}<br/>
@@ -197,12 +198,12 @@ Shorter vectors are extended to match length of longest one:<br/>
 {10,40,3,4,5,6}<br/>
 {10,40,30,80,50,120}<br/>
 <br/>
-Example with 3 vectors of different sizes:<br/>
+Example&nbsp;with&nbsp;3&nbsp;vectors&nbsp;of&nbsp;different&nbsp;sizes:<br/>
 {111,112,102}<br/>
 {111,113,104}<br/>
 {111,113,113}<br/>
 <br/>
-Example with 2-dimensional Vectors:<br/>
+Example&nbsp;with&nbsp;2-dimensional&nbsp;Vectors:<br/>
 {{2,3,4,5,6},{12,13,14,15,16},{22,23,24,25,26}}<br/>
 {{2,3,4,5,6},{13,14,15,16,17},{24,25,26,27,28}}<br/>
 {{3,6,9,12,15},{33,36,39,42,45},{63,66,69,72,75}}<br/>

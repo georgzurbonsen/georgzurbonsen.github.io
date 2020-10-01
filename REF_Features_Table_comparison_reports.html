@@ -88,8 +88,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -130,77 +131,77 @@ Journals contain a sequential summary of all changes found.  One row is devoted 
 <tr><td>Change Remarks                                  </td><td> Row added, Row deleted, Column deleted, Column added, or blank if just contents have changed.</td></tr>
 </table><p></p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table load( t1, "Examples/Cities.csv" );<br/>
- &nbsp;table keep columns ( t1, {City, Country, Inhabitants, Famous attraction, Moving along } );<br/>
- &nbsp;table keep selected rows ( t1, [Inhabitants]&gt;=1000000 );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;t1,&nbsp;"Examples/Cities.csv"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;keep&nbsp;columns&nbsp;(&nbsp;t1,&nbsp;{City,&nbsp;Country,&nbsp;Inhabitants,&nbsp;Famous&nbsp;attraction,&nbsp;Moving&nbsp;along&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;keep&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t1,&nbsp;[Inhabitants]&gt;=1000000&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list ( t1 );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Create a modified table:");<br/>
- &nbsp;table copy table ( t1, t2 );<br/>
- &nbsp;table sort rows ( t2, City );<br/>
- &nbsp;table delete selected rows( t2, [City]==Los Angeles);<br/>
- &nbsp;table delete columns( t2, Country );<br/>
- &nbsp;table insert columns( t2, Time Zone, "", 3 );<br/>
- &nbsp;table append( t2, {{ Shanghai, 23000000, "Jing'an Temple", "UTC+8", Bicycle, Bla }} );<br/>
- &nbsp; &nbsp; &nbsp;// Last entry 'Bla' lies outside the colums with headers and is considered an orphan.<br/>
- &nbsp;[t2:City,Paris,Famous attraction] = Moulin Rouge;<br/>
- &nbsp;[t2:City,Paris,Time Zone] = "UTC+1";<br/>
- &nbsp;[t2:City,New York City,Inhabitants] = 8323340;<br/>
- &nbsp;table list ( t2 );<br/>
+&nbsp;&nbsp;echo("Create&nbsp;a&nbsp;modified&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t1,&nbsp;t2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;sort&nbsp;rows&nbsp;(&nbsp;t2,&nbsp;City&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;selected&nbsp;rows(&nbsp;t2,&nbsp;[City]==Los&nbsp;Angeles);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;columns(&nbsp;t2,&nbsp;Country&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;columns(&nbsp;t2,&nbsp;Time&nbsp;Zone,&nbsp;"",&nbsp;3&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;append(&nbsp;t2,&nbsp;{{&nbsp;Shanghai,&nbsp;23000000,&nbsp;"Jing'an&nbsp;Temple",&nbsp;"UTC+8",&nbsp;Bicycle,&nbsp;Bla&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Last&nbsp;entry&nbsp;'Bla'&nbsp;lies&nbsp;outside&nbsp;the&nbsp;colums&nbsp;with&nbsp;headers&nbsp;and&nbsp;is&nbsp;considered&nbsp;an&nbsp;orphan.<br/>
+&nbsp;&nbsp;[t2:City,Paris,Famous&nbsp;attraction]&nbsp;=&nbsp;Moulin&nbsp;Rouge;<br/>
+&nbsp;&nbsp;[t2:City,Paris,Time&nbsp;Zone]&nbsp;=&nbsp;"UTC+1";<br/>
+&nbsp;&nbsp;[t2:City,New&nbsp;York&nbsp;City,Inhabitants]&nbsp;=&nbsp;8323340;<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t2&nbsp;);<br/>
 <br/>
- &nbsp;echo("Compare and create journal as output:");<br/>
- &nbsp;table compare( t2, t1, report, City, journal );<br/>
- &nbsp;table delete columns( report, {Statistics Parameters, Statistics Values} ); // Ignore them for now<br/>
- &nbsp;table delete blank rows( report );<br/>
- &nbsp;echo("Comparison Report:");<br/>
+&nbsp;&nbsp;echo("Compare&nbsp;and&nbsp;create&nbsp;journal&nbsp;as&nbsp;output:");<br/>
+&nbsp;&nbsp;table&nbsp;compare(&nbsp;t2,&nbsp;t1,&nbsp;report,&nbsp;City,&nbsp;journal&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;columns(&nbsp;report,&nbsp;{Statistics&nbsp;Parameters,&nbsp;Statistics&nbsp;Values}&nbsp;);&nbsp;//&nbsp;Ignore&nbsp;them&nbsp;for&nbsp;now<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;blank&nbsp;rows(&nbsp;report&nbsp;);<br/>
+&nbsp;&nbsp;echo("Comparison&nbsp;Report:");<br/>
 <br/>
- &nbsp;table rename headers( report, { Old Table Row Number, Old Table Column Number, New Table Row Number,<br/>
- &nbsp; &nbsp; &nbsp;New Table Column Number }, { OR, OC, NR, NC } ); // Abreviate headers to fit on page<br/>
+&nbsp;&nbsp;table&nbsp;rename&nbsp;headers(&nbsp;report,&nbsp;{&nbsp;Old&nbsp;Table&nbsp;Row&nbsp;Number,&nbsp;Old&nbsp;Table&nbsp;Column&nbsp;Number,&nbsp;New&nbsp;Table&nbsp;Row&nbsp;Number,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New&nbsp;Table&nbsp;Column&nbsp;Number&nbsp;},&nbsp;{&nbsp;OR,&nbsp;OC,&nbsp;NR,&nbsp;NC&nbsp;}&nbsp;);&nbsp;//&nbsp;Abreviate&nbsp;headers&nbsp;to&nbsp;fit&nbsp;on&nbsp;page<br/>
 <br/>
- &nbsp;table list ( report );</code></div>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;report&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Country | Inhabitants | Famous attraction &nbsp;| Moving along <br/>
- &nbsp; &nbsp;1 : New York City | USA &nbsp; &nbsp; | 8300000 &nbsp; &nbsp; | St. of Liberty &nbsp; &nbsp; | Taxi &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Philadelphia &nbsp;| USA &nbsp; &nbsp; | 1500000 &nbsp; &nbsp; | Independence hall &nbsp;| PCC streetcar<br/>
- &nbsp; &nbsp;3 : Montréal &nbsp; &nbsp; &nbsp;| CAN &nbsp; &nbsp; | 1700000 &nbsp; &nbsp; | Hôtel du Parlement | Skidoo &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Los Angeles &nbsp; | USA &nbsp; &nbsp; | 3800000 &nbsp; &nbsp; | Hollywood &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Car &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Vienna &nbsp; &nbsp; &nbsp; &nbsp;| AUT &nbsp; &nbsp; | 1800000 &nbsp; &nbsp; | Prater &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Fiacre &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Bangkok &nbsp; &nbsp; &nbsp; | THA &nbsp; &nbsp; | 8250000 &nbsp; &nbsp; | Wat Phra Kaeo &nbsp; &nbsp; &nbsp;| Longtail boat<br/>
- &nbsp; &nbsp;7 : Paris &nbsp; &nbsp; &nbsp; &nbsp; | FRA &nbsp; &nbsp; | 2240000 &nbsp; &nbsp; | Eiffel Tower &nbsp; &nbsp; &nbsp; | Métro &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;|&nbsp;Inhabitants&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;&nbsp;|&nbsp;Moving&nbsp;along&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;New&nbsp;York&nbsp;City&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8300000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;St.&nbsp;of&nbsp;Liberty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Taxi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Philadelphia&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1500000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Independence&nbsp;hall&nbsp;&nbsp;|&nbsp;PCC&nbsp;streetcar<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Montréal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;CAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1700000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hôtel&nbsp;du&nbsp;Parlement&nbsp;|&nbsp;Skidoo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Los&nbsp;Angeles&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3800000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hollywood&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Car&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Vienna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;AUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1800000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Prater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fiacre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Bangkok&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;THA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8250000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wat&nbsp;Phra&nbsp;Kaeo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Longtail&nbsp;boat<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;FRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2240000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Eiffel&nbsp;Tower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Métro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Create a modified table:<br/>
- &nbsp; &nbsp;0 : City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Inhabitants | Famous attraction &nbsp;| Time Zone | Moving along &nbsp;| &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Bangkok &nbsp; &nbsp; &nbsp; | 8250000 &nbsp; &nbsp; | Wat Phra Kaeo &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Longtail boat | &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Montréal &nbsp; &nbsp; &nbsp;| 1700000 &nbsp; &nbsp; | Hôtel du Parlement | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Skidoo &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : New York City | 8323340 &nbsp; &nbsp; | St. of Liberty &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Taxi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Paris &nbsp; &nbsp; &nbsp; &nbsp; | 2240000 &nbsp; &nbsp; | Moulin Rouge &nbsp; &nbsp; &nbsp; | UTC+1 &nbsp; &nbsp; | Métro &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Philadelphia &nbsp;| 1500000 &nbsp; &nbsp; | Independence hall &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | PCC streetcar | &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Vienna &nbsp; &nbsp; &nbsp; &nbsp;| 1800000 &nbsp; &nbsp; | Prater &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Fiacre &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Shanghai &nbsp; &nbsp; &nbsp;| 23000000 &nbsp; &nbsp;| Jing'an Temple &nbsp; &nbsp; | UTC+8 &nbsp; &nbsp; | Bicycle &nbsp; &nbsp; &nbsp; | Bla<br/>
+Create&nbsp;a&nbsp;modified&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Inhabitants&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;&nbsp;|&nbsp;Time&nbsp;Zone&nbsp;|&nbsp;Moving&nbsp;along&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Bangkok&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8250000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wat&nbsp;Phra&nbsp;Kaeo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Longtail&nbsp;boat&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Montréal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1700000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hôtel&nbsp;du&nbsp;Parlement&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Skidoo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;New&nbsp;York&nbsp;City&nbsp;|&nbsp;8323340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;St.&nbsp;of&nbsp;Liberty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Taxi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2240000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Moulin&nbsp;Rouge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTC+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Métro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Philadelphia&nbsp;&nbsp;|&nbsp;1500000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Independence&nbsp;hall&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;PCC&nbsp;streetcar&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Vienna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1800000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Prater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fiacre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Shanghai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23000000&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jing'an&nbsp;Temple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTC+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bicycle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bla<br/>
 <br/>
-Compare and create journal as output:<br/>
-Comparison Report:<br/>
- &nbsp; &nbsp;0 : OR | OC | NR | NC | City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Header Name &nbsp; &nbsp; &nbsp; | Old Value &nbsp; &nbsp;| New Value &nbsp; &nbsp; &nbsp;| Change Remarks<br/>
- &nbsp; &nbsp;1 : 6 &nbsp;| 1 &nbsp;| 1 &nbsp;| &nbsp; &nbsp;| Bangkok &nbsp; &nbsp; &nbsp; | Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | THA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; &nbsp;2 : 3 &nbsp;| 1 &nbsp;| 2 &nbsp;| &nbsp; &nbsp;| Montréal &nbsp; &nbsp; &nbsp;| Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | CAN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; &nbsp;3 : 1 &nbsp;| 2 &nbsp;| 3 &nbsp;| 1 &nbsp;| New York City | Inhabitants &nbsp; &nbsp; &nbsp; | 8300000 &nbsp; &nbsp; &nbsp;| 8323340 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : 1 &nbsp;| 1 &nbsp;| 3 &nbsp;| &nbsp; &nbsp;| New York City | Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | USA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; &nbsp;5 : 7 &nbsp;| 3 &nbsp;| 4 &nbsp;| 2 &nbsp;| Paris &nbsp; &nbsp; &nbsp; &nbsp; | Famous attraction | Eiffel Tower | Moulin Rouge &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : 7 &nbsp;| &nbsp; &nbsp;| 4 &nbsp;| 3 &nbsp;| Paris &nbsp; &nbsp; &nbsp; &nbsp; | Time Zone &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| UTC+1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column added &nbsp;<br/>
- &nbsp; &nbsp;7 : 7 &nbsp;| 1 &nbsp;| 4 &nbsp;| &nbsp; &nbsp;| Paris &nbsp; &nbsp; &nbsp; &nbsp; | Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | FRA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; &nbsp;8 : 2 &nbsp;| 1 &nbsp;| 5 &nbsp;| &nbsp; &nbsp;| Philadelphia &nbsp;| Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | USA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; &nbsp;9 : 5 &nbsp;| 1 &nbsp;| 6 &nbsp;| &nbsp; &nbsp;| Vienna &nbsp; &nbsp; &nbsp; &nbsp;| Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | AUT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Column deleted<br/>
- &nbsp; 10 : &nbsp; &nbsp;| &nbsp; &nbsp;| 7 &nbsp;| 1 &nbsp;| Shanghai &nbsp; &nbsp; &nbsp;| Inhabitants &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 23000000 &nbsp; &nbsp; &nbsp; | Row added &nbsp; &nbsp; <br/>
- &nbsp; 11 : &nbsp; &nbsp;| &nbsp; &nbsp;| 7 &nbsp;| 2 &nbsp;| Shanghai &nbsp; &nbsp; &nbsp;| Famous attraction | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Jing'an Temple | Row added &nbsp; &nbsp; <br/>
- &nbsp; 12 : &nbsp; &nbsp;| &nbsp; &nbsp;| 7 &nbsp;| 3 &nbsp;| Shanghai &nbsp; &nbsp; &nbsp;| Time Zone &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| UTC+8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Row added &nbsp; &nbsp; <br/>
- &nbsp; 13 : &nbsp; &nbsp;| &nbsp; &nbsp;| 7 &nbsp;| 4 &nbsp;| Shanghai &nbsp; &nbsp; &nbsp;| Moving along &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Bicycle &nbsp; &nbsp; &nbsp; &nbsp;| Row added &nbsp; &nbsp; <br/>
- &nbsp; 14 : 4 &nbsp;| 2 &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| Los Angeles &nbsp; | Inhabitants &nbsp; &nbsp; &nbsp; | 3800000 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Row deleted &nbsp; <br/>
- &nbsp; 15 : 4 &nbsp;| 3 &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| Los Angeles &nbsp; | Famous attraction | Hollywood &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Row deleted &nbsp; <br/>
- &nbsp; 16 : 4 &nbsp;| 4 &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| Los Angeles &nbsp; | Moving along &nbsp; &nbsp; &nbsp;| Car &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Row deleted &nbsp; <br/>
- &nbsp; 17 : 4 &nbsp;| 1 &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| Los Angeles &nbsp; | Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | USA &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Row deleted &nbsp; <br/>
+Compare&nbsp;and&nbsp;create&nbsp;journal&nbsp;as&nbsp;output:<br/>
+Comparison&nbsp;Report:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;OR&nbsp;|&nbsp;OC&nbsp;|&nbsp;NR&nbsp;|&nbsp;NC&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Header&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Old&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;New&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Change&nbsp;Remarks<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;6&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bangkok&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;THA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;3&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Montréal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;CAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;1&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;New&nbsp;York&nbsp;City&nbsp;|&nbsp;Inhabitants&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8300000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8323340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;1&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;New&nbsp;York&nbsp;City&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;7&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;|&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;|&nbsp;Eiffel&nbsp;Tower&nbsp;|&nbsp;Moulin&nbsp;Rouge&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;7&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Time&nbsp;Zone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTC+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;added&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;7&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;FRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;2&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Philadelphia&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;5&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vienna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;AUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Column&nbsp;deleted<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;Shanghai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Inhabitants&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;|&nbsp;Shanghai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jing'an&nbsp;Temple&nbsp;|&nbsp;Row&nbsp;added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;Shanghai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Time&nbsp;Zone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTC+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;|&nbsp;Shanghai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Moving&nbsp;along&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bicycle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;14&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Los&nbsp;Angeles&nbsp;&nbsp;&nbsp;|&nbsp;Inhabitants&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3800000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;deleted&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;15&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Los&nbsp;Angeles&nbsp;&nbsp;&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;|&nbsp;Hollywood&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;deleted&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;16&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Los&nbsp;Angeles&nbsp;&nbsp;&nbsp;|&nbsp;Moving&nbsp;along&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Car&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;deleted&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;17&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Los&nbsp;Angeles&nbsp;&nbsp;&nbsp;|&nbsp;Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;deleted&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Table_comparison_reports.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -204,8 +205,8 @@ call the function <b>table distribute</b> followed by <b>table distribute accumu
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>-1 (append the columns after the right-most column)
 </td></tr>
 <tr><td>Opt. 12<br/>input</td>
@@ -215,8 +216,8 @@ Specific rules apply for this function:
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">At most 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">At most 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no column specified)
 </td></tr>
 <tr><td>Opt. 13<br/>input</td>
@@ -226,8 +227,8 @@ Specific rules apply for this function:
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">At most 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">At most 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no column specified)
 </td></tr>
 <tr><td>Opt. 14<br/>input</td>
@@ -265,41 +266,41 @@ Example: "1900-07-01", "1900-07-21" declares the first 3 weeks of every July as 
 <h4> Exceptions</h4>
 <p>Batch size is negative, end date is earlier than start date, invalid combinations of intervals and usances.</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( demo table,<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;{ Total Value, Start Date, End Date, &nbsp; &nbsp;Batch Size &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp; &nbsp;{ #days, &nbsp; &nbsp; &nbsp; 01.01.2017, 20.08.2017, &nbsp;1 }, &nbsp;// Count number of days<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.01.2017, 20.08.2017, &nbsp;0 }, &nbsp;// Produce 500 in 200 days (shifts on 7 days/week)<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.01.2017, 20.08.2017, &nbsp;1 }, &nbsp;// Use whole numbers<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.01.2017, 20.08.2017, 10 }, &nbsp;// Deliver in batches of 10<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.01.2018, 20.08.2017, 10 }, &nbsp;// Skipped (end date is before start date)<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// and causes return value to be 'false'<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.01.2017, 2 &nbsp; &nbsp; &nbsp; &nbsp; , 10 }, &nbsp;// Capacity: 2 per unit<br/>
- &nbsp; &nbsp; &nbsp;{ 500, &nbsp; &nbsp; &nbsp; &nbsp; 01.12.2016, 2 &nbsp; &nbsp; &nbsp; &nbsp; , 10 } &nbsp; // Start a month earlier<br/>
- &nbsp;} );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;demo&nbsp;table,<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Total&nbsp;Value,&nbsp;Start&nbsp;Date,&nbsp;End&nbsp;Date,&nbsp;&nbsp;&nbsp;&nbsp;Batch&nbsp;Size&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;#days,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2017,&nbsp;20.08.2017,&nbsp;&nbsp;1&nbsp;},&nbsp;&nbsp;//&nbsp;Count&nbsp;number&nbsp;of&nbsp;days<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2017,&nbsp;20.08.2017,&nbsp;&nbsp;0&nbsp;},&nbsp;&nbsp;//&nbsp;Produce&nbsp;500&nbsp;in&nbsp;200&nbsp;days&nbsp;(shifts&nbsp;on&nbsp;7&nbsp;days/week)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2017,&nbsp;20.08.2017,&nbsp;&nbsp;1&nbsp;},&nbsp;&nbsp;//&nbsp;Use&nbsp;whole&nbsp;numbers<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2017,&nbsp;20.08.2017,&nbsp;10&nbsp;},&nbsp;&nbsp;//&nbsp;Deliver&nbsp;in&nbsp;batches&nbsp;of&nbsp;10<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2018,&nbsp;20.08.2017,&nbsp;10&nbsp;},&nbsp;&nbsp;//&nbsp;Skipped&nbsp;(end&nbsp;date&nbsp;is&nbsp;before&nbsp;start&nbsp;date)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;and&nbsp;causes&nbsp;return&nbsp;value&nbsp;to&nbsp;be&nbsp;'false'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.01.2017,&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;10&nbsp;},&nbsp;&nbsp;//&nbsp;Capacity:&nbsp;2&nbsp;per&nbsp;unit<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;500,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01.12.2016,&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;10&nbsp;}&nbsp;&nbsp;&nbsp;//&nbsp;Start&nbsp;a&nbsp;month&nbsp;earlier<br/>
+&nbsp;&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;holidays[] = { 01.08.1900 }; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Public holiday every year<br/>
- &nbsp;vacation[] = { 01.07.2017,31.07.2017 }; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Summer vacation<br/>
+&nbsp;&nbsp;holidays[]&nbsp;=&nbsp;{&nbsp;01.08.1900&nbsp;};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Public&nbsp;holiday&nbsp;every&nbsp;year<br/>
+&nbsp;&nbsp;vacation[]&nbsp;=&nbsp;{&nbsp;01.07.2017,31.07.2017&nbsp;};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Summer&nbsp;vacation<br/>
 <br/>
- &nbsp;ret[] = table distribute( demo table, Total Value, Batch Size, Start Date, End Date,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;months, calendar, '15.01.2017', '15.08.2017',Mmm,-1, Earlier, Later, holidays[], vacation[] );<br/>
+&nbsp;&nbsp;ret[]&nbsp;=&nbsp;table&nbsp;distribute(&nbsp;demo&nbsp;table,&nbsp;Total&nbsp;Value,&nbsp;Batch&nbsp;Size,&nbsp;Start&nbsp;Date,&nbsp;End&nbsp;Date,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;months,&nbsp;calendar,&nbsp;'15.01.2017',&nbsp;'15.08.2017',Mmm,-1,&nbsp;Earlier,&nbsp;Later,&nbsp;holidays[],&nbsp;vacation[]&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Note: For monthly intervals, output start date is moved back<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// to 1st day and output end date to last day of month.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;For&nbsp;monthly&nbsp;intervals,&nbsp;output&nbsp;start&nbsp;date&nbsp;is&nbsp;moved&nbsp;back<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;to&nbsp;1st&nbsp;day&nbsp;and&nbsp;output&nbsp;end&nbsp;date&nbsp;to&nbsp;last&nbsp;day&nbsp;of&nbsp;month.<br/>
 <br/>
- &nbsp;table list( demo table);<br/>
- &nbsp;echo("return value = ", ret[] );</code></div>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;demo&nbsp;table);<br/>
+&nbsp;&nbsp;echo("return&nbsp;value&nbsp;=&nbsp;",&nbsp;ret[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Total Value | Start Date | End Date &nbsp; | Batch Size | Earlier | Jan &nbsp;| Feb | Mar &nbsp;| Apr | May &nbsp;| Jun | Jul | Aug &nbsp;| Later<br/>
- &nbsp; &nbsp;1 : #days &nbsp; &nbsp; &nbsp; | 01.01.2017 | 20.08.2017 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; | 31 &nbsp; | 28 &nbsp;| 31 &nbsp; | 30 &nbsp;| 31 &nbsp; | 30 &nbsp;| 0 &nbsp; | 19 &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.01.2017 | 20.08.2017 | 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; | 77.5 | 70 &nbsp;| 77.5 | 75 &nbsp;| 77.5 | 75 &nbsp;| 0 &nbsp; | 47.5 | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.01.2017 | 20.08.2017 | 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; | 77 &nbsp; | 70 &nbsp;| 78 &nbsp; | 75 &nbsp;| 77 &nbsp; | 75 &nbsp;| 0 &nbsp; | 48 &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.01.2017 | 20.08.2017 | 10 &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp; &nbsp; | 70 &nbsp; | 70 &nbsp;| 80 &nbsp; | 80 &nbsp;| 70 &nbsp; | 80 &nbsp;| 0 &nbsp; | 50 &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.01.2018 | 20.08.2017 | 10 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.01.2017 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 10 &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp; &nbsp; | 60 &nbsp; | 50 &nbsp;| 70 &nbsp; | 60 &nbsp;| 60 &nbsp; | 60 &nbsp;| 0 &nbsp; | 60 &nbsp; | 80 &nbsp; <br/>
- &nbsp; &nbsp;7 : 500 &nbsp; &nbsp; &nbsp; &nbsp; | 01.12.2016 | 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 10 &nbsp; &nbsp; &nbsp; &nbsp; | 60 &nbsp; &nbsp; &nbsp;| 60 &nbsp; | 60 &nbsp;| 60 &nbsp; | 60 &nbsp;| 60 &nbsp; | 60 &nbsp;| 0 &nbsp; | 60 &nbsp; | 20 &nbsp; <br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Total&nbsp;Value&nbsp;|&nbsp;Start&nbsp;Date&nbsp;|&nbsp;End&nbsp;Date&nbsp;&nbsp;&nbsp;|&nbsp;Batch&nbsp;Size&nbsp;|&nbsp;Earlier&nbsp;|&nbsp;Jan&nbsp;&nbsp;|&nbsp;Feb&nbsp;|&nbsp;Mar&nbsp;&nbsp;|&nbsp;Apr&nbsp;|&nbsp;May&nbsp;&nbsp;|&nbsp;Jun&nbsp;|&nbsp;Jul&nbsp;|&nbsp;Aug&nbsp;&nbsp;|&nbsp;Later<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;#days&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2017&nbsp;|&nbsp;20.08.2017&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2017&nbsp;|&nbsp;20.08.2017&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;77.5&nbsp;|&nbsp;70&nbsp;&nbsp;|&nbsp;77.5&nbsp;|&nbsp;75&nbsp;&nbsp;|&nbsp;77.5&nbsp;|&nbsp;75&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;47.5&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2017&nbsp;|&nbsp;20.08.2017&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;77&nbsp;&nbsp;&nbsp;|&nbsp;70&nbsp;&nbsp;|&nbsp;78&nbsp;&nbsp;&nbsp;|&nbsp;75&nbsp;&nbsp;|&nbsp;77&nbsp;&nbsp;&nbsp;|&nbsp;75&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;48&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2017&nbsp;|&nbsp;20.08.2017&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;70&nbsp;&nbsp;&nbsp;|&nbsp;70&nbsp;&nbsp;|&nbsp;80&nbsp;&nbsp;&nbsp;|&nbsp;80&nbsp;&nbsp;|&nbsp;70&nbsp;&nbsp;&nbsp;|&nbsp;80&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2018&nbsp;|&nbsp;20.08.2017&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.01.2017&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;|&nbsp;70&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;80&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;01.12.2016&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;60&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-return value = false<br/>
+return&nbsp;value&nbsp;=&nbsp;false<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_distribute.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_distribute.html">distribute</a></p>

@@ -66,6 +66,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -73,8 +75,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -84,28 +87,28 @@
 <h4> Introduction</h4>
 <p>
 The date and time detecion rules in literals is applied in following functions
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_date.html">date</a>()</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_date.html">pure date</a>()</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_date.html">date time</a>()</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_time.html">time</a>()</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_time.html">pure time</a>()</li>
-<li class="bullets">Retriving values from tables wiht automatic date conversion enabled ( system variable <b>table conversion[date]</b> = true ).</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_date.html">date</a>()
+</li><li class="bullets"><a class="bold_text" href="REF_Function_date.html">pure date</a>()
+</li><li class="bullets"><a class="bold_text" href="REF_Function_date.html">date time</a>()
+</li><li class="bullets"><a class="bold_text" href="REF_Function_time.html">time</a>()
+</li><li class="bullets"><a class="bold_text" href="REF_Function_time.html">pure time</a>()
+</li><li class="bullets">Retriving values from tables wiht automatic date conversion enabled ( system variable <b>table conversion[date]</b> = true ).
+</li></ul><p>
 <br><br>
 Please pay attention to ambiguous dates, e.g. '10/11/12' which can be interpreted differently with different locale settings (YY/MM/DD, MM/DD/YY, DD/MM/YY in this case).
 The universal YYYY-MM-DD format (e.g. 2020-12-31) is robust and shows same behavior regardless of locale settings applied.
 
 <br><br>
 Input format legend for following table:
-</p><ul class="bullets"><li class="bullets">xx = 1 or 2 numeric digits</li>
-<li class="bullets">yyyy = 4 numeric digits (year)</li>
-<li class="bullets">MMM = min 3 letters to describe month. Multiple languages are supported.</li>
-<li class="bullets">h = Time related suffix, not case sensitive (h, time, o'clock, am, pm, a.m., p.m., a, p). Different languages are supported, e.g. "Uhr".<br></li>
-</ul><p>am/pm and related formulation influence the hour values.
-</p><ul class="bullets"><li class="bullets">Symbols between values, e.g. ., -, /, are not relevant unless indicated explicitly.</li>
-<li class="bullets">Values between colons (:) relate to time info</li>
-<li class="bullets">Spaces between letters and numbers are ignored, e.g. 23August is accepted.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">xx = 1 or 2 numeric digits
+</li><li class="bullets">yyyy = 4 numeric digits (year)
+</li><li class="bullets">MMM = min 3 letters to describe month. Multiple languages are supported.
+</li><li class="bullets">h = Time related suffix, not case sensitive (h, time, o'clock, am, pm, a.m., p.m., a, p). Different languages are supported, e.g. "Uhr".<br>
+</li></ul><p>am/pm and related formulation influence the hour values.
+</p><ul class="bullets"><li class="bullets">Symbols between values, e.g. ., -, /, are not relevant unless indicated explicitly.
+</li><li class="bullets">Values between colons (:) relate to time info
+</li><li class="bullets">Spaces between letters and numbers are ignored, e.g. 23August is accepted.
+</li></ul><p>
 
 </p><table style = "width:1000px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px">
 <tr><th>Input Formats                       </th><th> Examples                          </th><th> Outputs                                                           </th><th> Remarks</th></tr>
@@ -185,14 +188,14 @@ Input format legend for following table:
 <sup>6</sup> A complete time has been specified in a valid and unambiguous format.  A date may follow afterwards, e.g. '20:30:40 2020-02-02'<br>
 </p>
 <h5> Some code examples</h5>
-<div class="code_background_color" ><code> &nbsp;set locale( en_us );<br/>
- &nbsp;echo( date("10-11-12 8:15p") );<br/>
- &nbsp;set locale( de_ch );<br/>
- &nbsp;echo( date("10-11-12 8:15p") );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;set&nbsp;locale(&nbsp;en_us&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;date("10-11-12&nbsp;8:15p")&nbsp;);<br/>
+&nbsp;&nbsp;set&nbsp;locale(&nbsp;de_ch&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;date("10-11-12&nbsp;8:15p")&nbsp;);<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>2012-10-11 20:15:00<br/>
-2012-11-10 20:15:00<br/>
+<div class="output_background_color" ><code>2012-10-11&nbsp;20:15:00<br/>
+2012-11-10&nbsp;20:15:00<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Detects_dates_correctly_in_literals.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>attribute ...</h3>
-<a accesskey="p" href="REF_Features_Resident_attributes_functions.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_directory_and_file_system.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Features_Resident_attributes_functions.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_directory_and_file_system_functions.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -70,8 +70,9 @@
 <li class="navi"><a href="REF_Function_attribute_read.html"><div class="navi navi-selected">4.9.5.1 attribute ... </div></a></li>
 </ul></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -113,10 +114,10 @@ The functions perform the following:
 <td>parameter set or literal</td>
 <td><b>Attribute name(s)</b><br/><p>A hierarchical structure of attribute names is supported by putting the subsequent names into one parameter set.  Empty parameter set is not allowed.
 Except for <b>attribute listing</b>, at least one attribute name must be provided.
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value</li>
-<li class="bullets">Use parameter set to specify multiple values</li>
-<li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas</li>
-<li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.</li></p>
+</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</li><li class="bullets">Use parameter set to specify multiple values
+</li><li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas
+</li><li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.</li></ul><p></p>
 </td></tr>
 <tr><td>4<br/>output</td>
 <td>valid types</td>
@@ -138,81 +139,81 @@ Except for <b>attribute listing</b>, at least one attribute name must be provide
 File locked</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
- &nbsp;my file[] = "My attributes.json";<br/>
- &nbsp;attribute write ( "", my file[], { Name, First Name }, Nic ); &nbsp;// Use 'write' in 1st call so it creates the JSON file<br/>
- &nbsp;attribute write ( "", my file[], { Name, Middle Initial }, M. );<br/>
- &nbsp;attribute modify( "", my file[], { Name, Middle Initial }, N. );<br/>
- &nbsp;attribute write ( "", my file[], { Name, Last Name }, &nbsp;Nicholas );<br/>
- &nbsp;attribute write ( "", my file[], { Name, Graduated at MIT }, true &nbsp;);<br/>
- &nbsp;attribute write ( "", my file[], { Name, Birth Date }, &nbsp;date( "2000-02-03") &nbsp;);<br/>
+&nbsp;&nbsp;my&nbsp;file[]&nbsp;=&nbsp;"My&nbsp;attributes.json";<br/>
+&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;First&nbsp;Name&nbsp;},&nbsp;Nic&nbsp;);&nbsp;&nbsp;//&nbsp;Use&nbsp;'write'&nbsp;in&nbsp;1st&nbsp;call&nbsp;so&nbsp;it&nbsp;creates&nbsp;the&nbsp;JSON&nbsp;file<br/>
+&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Middle&nbsp;Initial&nbsp;},&nbsp;M.&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;modify(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Middle&nbsp;Initial&nbsp;},&nbsp;N.&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Last&nbsp;Name&nbsp;},&nbsp;&nbsp;Nicholas&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Graduated&nbsp;at&nbsp;MIT&nbsp;},&nbsp;true&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Birth&nbsp;Date&nbsp;},&nbsp;&nbsp;date(&nbsp;"2000-02-03")&nbsp;&nbsp;);<br/>
 <br/>
- &nbsp;attribute listing( "", my file[], Name, listing[] );<br/>
- &nbsp;echo("List all attribute names behind 'Name': ", listing[] );<br/>
+&nbsp;&nbsp;attribute&nbsp;listing(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;Name,&nbsp;listing[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("List&nbsp;all&nbsp;attribute&nbsp;names&nbsp;behind&nbsp;'Name':&nbsp;",&nbsp;listing[]&nbsp;);<br/>
 <br/>
- &nbsp;for all parameters( listing[], attribute name[] )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;attribute read( "", my file[], {Name, attribute name[]}, attribute value[] );<br/>
- &nbsp; &nbsp; &nbsp;echo(" &nbsp; &nbsp;", attribute name[], ": ", attribute value[] );<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;listing[],&nbsp;attribute&nbsp;name[]&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;attribute&nbsp;name[]},&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute&nbsp;name[],&nbsp;":&nbsp;",&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;echo(new line, "Take a quick look at the JSON file:" );<br/>
- &nbsp;table load( t, my file[], TEXT );<br/>
- &nbsp;table list (t);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;JSON&nbsp;file:"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;my&nbsp;file[],&nbsp;TEXT&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(t);<br/>
 <br/>
- &nbsp;echo("Try deleting some items");<br/>
+&nbsp;&nbsp;echo("Try&nbsp;deleting&nbsp;some&nbsp;items");<br/>
 <br/>
- &nbsp;res[1] = attribute delete( "", my file[], {Name, Birth Date });<br/>
- &nbsp;res[2] = attribute delete( "", my file[], {Name, Graduated at Harvard } );<br/>
- &nbsp;res[3] = attribute delete( "", my file[], &nbsp;Name );<br/>
+&nbsp;&nbsp;res[1]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;Birth&nbsp;Date&nbsp;});<br/>
+&nbsp;&nbsp;res[2]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;Graduated&nbsp;at&nbsp;Harvard&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;res[3]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;&nbsp;Name&nbsp;);<br/>
 <br/>
- &nbsp;echo("Success: Delete birth date: ", res[1],"; &nbsp;Harvard U.: ", res[2], "; &nbsp;Name: ", res[3] );<br/>
+&nbsp;&nbsp;echo("Success:&nbsp;Delete&nbsp;birth&nbsp;date:&nbsp;",&nbsp;res[1],";&nbsp;&nbsp;Harvard&nbsp;U.:&nbsp;",&nbsp;res[2],&nbsp;";&nbsp;&nbsp;Name:&nbsp;",&nbsp;res[3]&nbsp;);<br/>
 <br/>
- &nbsp;for all parameters( listing[], attribute name[] )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;attribute read( "", my file[], {Name, attribute name[]}, attribute value[] );<br/>
- &nbsp; &nbsp; &nbsp;echo(" &nbsp; &nbsp;", attribute name[], ": ", attribute value[] );<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;listing[],&nbsp;attribute&nbsp;name[]&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;attribute&nbsp;name[]},&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute&nbsp;name[],&nbsp;":&nbsp;",&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;echo("Try removing the Name");<br/>
+&nbsp;&nbsp;echo("Try&nbsp;removing&nbsp;the&nbsp;Name");<br/>
 <br/>
- &nbsp;attribute remove( "", my file[], Name );<br/>
+&nbsp;&nbsp;attribute&nbsp;remove(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;Name&nbsp;);<br/>
 <br/>
- &nbsp;echo(new line, "Take a quick look at the empty JSON file:" );<br/>
- &nbsp;table load( t, my file[], TEXT );<br/>
- &nbsp;table list (t);<br/>
- &nbsp;file delete( my file[] );<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;empty&nbsp;JSON&nbsp;file:"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;my&nbsp;file[],&nbsp;TEXT&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(t);<br/>
+&nbsp;&nbsp;file&nbsp;delete(&nbsp;my&nbsp;file[]&nbsp;);<br/>
 <br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>List all attribute names behind 'Name': {'Birth Date','First Name','Graduated at MIT','Last Name','Middle Initial'}<br/>
- &nbsp; &nbsp;Birth Date: 2000-02-03<br/>
- &nbsp; &nbsp;First Name: Nic<br/>
- &nbsp; &nbsp;Graduated at MIT: true<br/>
- &nbsp; &nbsp;Last Name: Nicholas<br/>
- &nbsp; &nbsp;Middle Initial: N.<br/>
+<div class="output_background_color" ><code>List&nbsp;all&nbsp;attribute&nbsp;names&nbsp;behind&nbsp;'Name':&nbsp;{'Birth&nbsp;Date','First&nbsp;Name','Graduated&nbsp;at&nbsp;MIT','Last&nbsp;Name','Middle&nbsp;Initial'}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Birth&nbsp;Date:&nbsp;2000-02-03<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;Name:&nbsp;Nic<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Graduated&nbsp;at&nbsp;MIT:&nbsp;true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;Name:&nbsp;Nicholas<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Middle&nbsp;Initial:&nbsp;N.<br/>
 <br/>
-Take a quick look at the JSON file:<br/>
- &nbsp; &nbsp;0 : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : &nbsp; "Name" : { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; "Birth Date" : "2000-02-03",<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; "First Name" : "Nic", &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; "Graduated at MIT" : true, &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; "Last Name" : "Nicholas", &nbsp; <br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; "Middle Initial" : "N." &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;JSON&nbsp;file:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;&nbsp;&nbsp;"Name"&nbsp;:&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Birth&nbsp;Date"&nbsp;:&nbsp;"2000-02-03",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"First&nbsp;Name"&nbsp;:&nbsp;"Nic",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Graduated&nbsp;at&nbsp;MIT"&nbsp;:&nbsp;true,&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Last&nbsp;Name"&nbsp;:&nbsp;"Nicholas",&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Middle&nbsp;Initial"&nbsp;:&nbsp;"N."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Try deleting some items<br/>
-Success: Delete birth date: true; &nbsp;Harvard U.: false; &nbsp;Name: false<br/>
- &nbsp; &nbsp;Birth Date: <br/>
- &nbsp; &nbsp;First Name: Nic<br/>
- &nbsp; &nbsp;Graduated at MIT: true<br/>
- &nbsp; &nbsp;Last Name: Nicholas<br/>
- &nbsp; &nbsp;Middle Initial: N.<br/>
-Try removing the Name<br/>
+Try&nbsp;deleting&nbsp;some&nbsp;items<br/>
+Success:&nbsp;Delete&nbsp;birth&nbsp;date:&nbsp;true;&nbsp;&nbsp;Harvard&nbsp;U.:&nbsp;false;&nbsp;&nbsp;Name:&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Birth&nbsp;Date:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;Name:&nbsp;Nic<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Graduated&nbsp;at&nbsp;MIT:&nbsp;true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;Name:&nbsp;Nicholas<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Middle&nbsp;Initial:&nbsp;N.<br/>
+Try&nbsp;removing&nbsp;the&nbsp;Name<br/>
 <br/>
-Take a quick look at the empty JSON file:<br/>
- &nbsp; &nbsp;0 : []<br/>
+Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;empty&nbsp;JSON&nbsp;file:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;[]<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_attribute_read.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

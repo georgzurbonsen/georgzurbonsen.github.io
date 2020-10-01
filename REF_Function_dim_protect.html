@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -125,26 +126,26 @@ No impact on protection settings on already existing array members with the redi
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;dim protect( limited access, a[], 5, 123 );<br/>
- &nbsp;a[0] = 1;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;dim&nbsp;protect(&nbsp;limited&nbsp;access,&nbsp;a[],&nbsp;5,&nbsp;123&nbsp;);<br/>
+&nbsp;&nbsp;a[0]&nbsp;=&nbsp;1;<br/>
 <br/>
- &nbsp;a[1] = Hi; // Will issue an exception<br/>
- &nbsp;echo("Test");</code></div>
+&nbsp;&nbsp;a[1]&nbsp;=&nbsp;Hi;&nbsp;//&nbsp;Will&nbsp;issue&nbsp;an&nbsp;exception<br/>
+&nbsp;&nbsp;echo("Test");</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Row #: Code Text _______________________________________________________<br/>
- &nbsp;1: &nbsp; &nbsp; dim protect( limited access, a[], 5, 123 );<br/>
- &nbsp;2: &nbsp; &nbsp;a[0] = 1;<br/>
- &nbsp;3:<br/>
- &nbsp;4: &nbsp; &nbsp;a[1] = Hi; // Will issue an exception<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^<br/>
-Inside the started program code:<br/>
-Assignment on variable with limited access and type numeral<br/>
-with value of type literal is not allowed<br/>
-Failed to access variable, protections apply.<br/>
-Code execution will stop. &nbsp;Going to interactive mode<br/>
+<div class="output_background_color" ><code>Row&nbsp;#:&nbsp;Code&nbsp;Text&nbsp;_______________________________________________________<br/>
+&nbsp;&nbsp;1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dim&nbsp;protect(&nbsp;limited&nbsp;access,&nbsp;a[],&nbsp;5,&nbsp;123&nbsp;);<br/>
+&nbsp;&nbsp;2:&nbsp;&nbsp;&nbsp;&nbsp;a[0]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;3:<br/>
+&nbsp;&nbsp;4:&nbsp;&nbsp;&nbsp;&nbsp;a[1]&nbsp;=&nbsp;Hi;&nbsp;//&nbsp;Will&nbsp;issue&nbsp;an&nbsp;exception<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br/>
+Inside&nbsp;the&nbsp;started&nbsp;program&nbsp;code:<br/>
+Assignment&nbsp;on&nbsp;variable&nbsp;with&nbsp;limited&nbsp;access&nbsp;and&nbsp;type&nbsp;numeral<br/>
+with&nbsp;value&nbsp;of&nbsp;type&nbsp;literal&nbsp;is&nbsp;not&nbsp;allowed<br/>
+Failed&nbsp;to&nbsp;access&nbsp;variable,&nbsp;protections&nbsp;apply.<br/>
+Code&nbsp;execution&nbsp;will&nbsp;stop.&nbsp;&nbsp;Going&nbsp;to&nbsp;interactive&nbsp;mode<br/>
 ________________________________________________________________________<br/>
 <br/>
-Type 'help' for help, 'docs' for B4P docs, 'web docs' for online docs.<br/>
+Type&nbsp;'help'&nbsp;for&nbsp;help,&nbsp;'docs'&nbsp;for&nbsp;B4P&nbsp;docs,&nbsp;'web&nbsp;docs'&nbsp;for&nbsp;online&nbsp;docs.<br/>
 &gt;&gt;</code></div><u>Try it yourself:</u> Open <b>REF_Function_dim_protect.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_dim.html">dim</a><br/>

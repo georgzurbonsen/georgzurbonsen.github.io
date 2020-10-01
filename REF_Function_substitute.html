@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -131,26 +132,26 @@ If provided as a parameter set: Number of elements must either be equal to the n
 <h4> Exceptions</h4>
 <p>3rd parameter contains different number of elements than 2nd parameter, and is not 1</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;original[] = "the house, the mouse, and the spouse";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;original[]&nbsp;=&nbsp;"the&nbsp;house,&nbsp;the&nbsp;mouse,&nbsp;and&nbsp;the&nbsp;spouse";<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;st1[] = original[];<br/>
- &nbsp; &nbsp; &nbsp;st2[] = original[];<br/>
- &nbsp; &nbsp; &nbsp;substitute &nbsp; &nbsp; ( st1[], the, a );<br/>
- &nbsp; &nbsp; &nbsp;substitute all ( st2[], the, a );<br/>
- &nbsp; &nbsp; &nbsp;echo(st1[]);<br/>
- &nbsp; &nbsp; &nbsp;echo(st2[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st1[]&nbsp;=&nbsp;original[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st2[]&nbsp;=&nbsp;original[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;st1[],&nbsp;the,&nbsp;a&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitute&nbsp;all&nbsp;(&nbsp;st2[],&nbsp;the,&nbsp;a&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(st1[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(st2[]);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;st1[] = original[];<br/>
- &nbsp; &nbsp; &nbsp;st2[] = original[];<br/>
- &nbsp; &nbsp; &nbsp;substitute &nbsp; &nbsp; ( st1[], { the, spouse, mouse, house }, { THE, SPOUSE, MOUSE, HOUSE } );<br/>
- &nbsp; &nbsp; &nbsp;substitute all ( st2[], { the, spouse, mouse, house }, { THE, SPOUSE, MOUSE, HOUSE } );<br/>
- &nbsp; &nbsp; &nbsp;echo(st1[]);<br/>
- &nbsp; &nbsp; &nbsp;echo(st2[]);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st1[]&nbsp;=&nbsp;original[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st2[]&nbsp;=&nbsp;original[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;st1[],&nbsp;{&nbsp;the,&nbsp;spouse,&nbsp;mouse,&nbsp;house&nbsp;},&nbsp;{&nbsp;THE,&nbsp;SPOUSE,&nbsp;MOUSE,&nbsp;HOUSE&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitute&nbsp;all&nbsp;(&nbsp;st2[],&nbsp;{&nbsp;the,&nbsp;spouse,&nbsp;mouse,&nbsp;house&nbsp;},&nbsp;{&nbsp;THE,&nbsp;SPOUSE,&nbsp;MOUSE,&nbsp;HOUSE&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(st1[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(st2[]);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>a house, the mouse, and the spouse<br/>
-a house, a mouse, and a spouse<br/>
-THE HOUSE, the MOUSE, and the SPOUSE<br/>
-THE HOUSE, THE MOUSE, and THE SPOUSE<br/>
+<div class="output_background_color" ><code>a&nbsp;house,&nbsp;the&nbsp;mouse,&nbsp;and&nbsp;the&nbsp;spouse<br/>
+a&nbsp;house,&nbsp;a&nbsp;mouse,&nbsp;and&nbsp;a&nbsp;spouse<br/>
+THE&nbsp;HOUSE,&nbsp;the&nbsp;MOUSE,&nbsp;and&nbsp;the&nbsp;SPOUSE<br/>
+THE&nbsp;HOUSE,&nbsp;THE&nbsp;MOUSE,&nbsp;and&nbsp;THE&nbsp;SPOUSE<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_substitute.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_replace.html">replace</a><br/>

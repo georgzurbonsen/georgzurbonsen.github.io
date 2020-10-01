@@ -89,8 +89,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -122,70 +123,70 @@ The function names contaiing <b>... all ...</b> will cover the full table widht,
 <h4> Exceptions</h4>
 <p>Table not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table, { { First Name, "", &nbsp; &nbsp;Last Name, "", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Phone No, " &nbsp; ", Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Jane, &nbsp; &nbsp; &nbsp; "E.", &nbsp;Archer, &nbsp; &nbsp;"1. Main St.", "", &nbsp; &nbsp; &nbsp; " &nbsp; ", 28, " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ", Plays softball } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;Name,&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone&nbsp;No,&nbsp;"&nbsp;&nbsp;&nbsp;",&nbsp;Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jane,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"E.",&nbsp;&nbsp;Archer,&nbsp;&nbsp;&nbsp;&nbsp;"1.&nbsp;Main&nbsp;St.",&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;",&nbsp;28,&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;Plays&nbsp;softball&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table: ", table max width(table), " columns. __________________ ");<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(table),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete blank columns(t1);<br/>
- &nbsp;echo("Blank columns deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;blank&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("Blank&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete all blank columns(t1);<br/>
- &nbsp;echo("All blank columns deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;all&nbsp;blank&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("All&nbsp;blank&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete empty columns(t1);<br/>
- &nbsp;echo("Empty columns deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;empty&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("Empty&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete all empty columns(t1);<br/>
- &nbsp;echo("All empty columns deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;all&nbsp;empty&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("All&nbsp;empty&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete unnamed columns(t1);<br/>
- &nbsp;echo("Unnamed deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;unnamed&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("Unnamed&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table delete all unnamed columns(t1);<br/>
- &nbsp;echo("All unnamed deleted: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;all&nbsp;unnamed&nbsp;columns(t1);<br/>
+&nbsp;&nbsp;echo("All&nbsp;unnamed&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table: 9 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | &nbsp; &nbsp;| Last Name | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Phone No | &nbsp; &nbsp; | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. | Archer &nbsp; &nbsp;| 1. Main St. | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | 28 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Plays softball<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:&nbsp;9&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Phone&nbsp;No&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-Blank columns deleted: 8 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | &nbsp; &nbsp;| Last Name | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Phone No | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. | Archer &nbsp; &nbsp;| 1. Main St. | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 28 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Plays softball<br/>
+Blank&nbsp;columns&nbsp;deleted:&nbsp;8&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Phone&nbsp;No&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-All blank columns deleted: 7 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | &nbsp; &nbsp;| Last Name | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Phone No | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. | Archer &nbsp; &nbsp;| 1. Main St. | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 28 &nbsp;| Plays softball<br/>
+All&nbsp;blank&nbsp;columns&nbsp;deleted:&nbsp;7&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Phone&nbsp;No&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-Empty columns deleted: 7 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | &nbsp; &nbsp;| Last Name | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. | Archer &nbsp; &nbsp;| 1. Main St. | 28 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Plays softball<br/>
+Empty&nbsp;columns&nbsp;deleted:&nbsp;7&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-All empty columns deleted: 6 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | &nbsp; &nbsp;| Last Name | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. | Archer &nbsp; &nbsp;| 1. Main St. | 28 &nbsp;| Plays softball<br/>
+All&nbsp;empty&nbsp;columns&nbsp;deleted:&nbsp;6&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-Unnamed deleted: 6 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | Last Name | Phone No | Age | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | Archer &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 28 &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Plays softball<br/>
+Unnamed&nbsp;deleted:&nbsp;6&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;|&nbsp;Age&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Plays&nbsp;softball<br/>
 <br/>
-All unnamed deleted: 4 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | Last Name | Phone No | Age<br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | Archer &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 28 <br/>
+All&nbsp;unnamed&nbsp;deleted:&nbsp;4&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_delete_blank_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

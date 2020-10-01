@@ -75,6 +75,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -82,8 +84,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -98,9 +101,9 @@ to be provided and is described in the following table.
 <br><br>
 
 The formatting template applies to following functions:
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_table_format_numbers.html">table format numbers</a>(), 3rd parameter</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter
+</li><li class="bullets"><a class="bold_text" href="REF_Function_table_format_numbers.html">table format numbers</a>(), 3rd parameter
+</li></ul><p></p>
 <h4> Formatting Templates</h4>
 <p>
 </p><table style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
@@ -138,80 +141,80 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples</h4>
 <p>A few loop show the combination of different values.</p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;numbers [] = { -1234, -0.29, 123456.78, 0 };<br/>
- &nbsp; &nbsp; &nbsp;patterns[] = { '*', 'EUR_-*', '0', '+ 0.0', '0000.0000', '?', '?.?', '#.#', '####.####', '0.####', '_(0.00)' };<br/>
- &nbsp; &nbsp; &nbsp;3rd p[] = { "", india, german, en_us, french, de_ch };<br/>
- &nbsp; &nbsp; &nbsp;4th p[] = { "", "", &nbsp; &nbsp; "+", &nbsp; &nbsp;"", &nbsp; &nbsp; &nbsp;"", &nbsp; &nbsp; "" &nbsp; &nbsp; };<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numbers&nbsp;[]&nbsp;=&nbsp;{&nbsp;-1234,&nbsp;-0.29,&nbsp;123456.78,&nbsp;0&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns[]&nbsp;=&nbsp;{&nbsp;'*',&nbsp;'EUR_-*',&nbsp;'0',&nbsp;'+&nbsp;0.0',&nbsp;'0000.0000',&nbsp;'?',&nbsp;'?.?',&nbsp;'#.#',&nbsp;'####.####',&nbsp;'0.####',&nbsp;'_(0.00)'&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;p[]&nbsp;=&nbsp;{&nbsp;"",&nbsp;india,&nbsp;german,&nbsp;en_us,&nbsp;french,&nbsp;de_ch&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;p[]&nbsp;=&nbsp;{&nbsp;"",&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+",&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;for all parameters( numbers[], number[] )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for all parameters( patterns[], pattern[] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for all parameters( 3rd p[], para 3[], index[] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;para 4[] = 4th p[]{index[]};<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if &nbsp; &nbsp; &nbsp; (para 3[] &nbsp; = '') &nbsp;l[] = literal( number[], pattern[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: if (para 4[] = '') &nbsp;l[] = literal( number[], pattern[], para 3[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; l[] = literal( number[], pattern[], para 3[], para 4[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( "'" + l[] + "', " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;echo( "Permille: ", literal( 0.1234, '0.0 &amp;permil;') );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Directory assistance (USA): ", literal( 5551212, '"Dial 1-"000"-"0000') );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;numbers[],&nbsp;number[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;patterns[],&nbsp;pattern[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;3rd&nbsp;p[],&nbsp;para&nbsp;3[],&nbsp;index[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para&nbsp;4[]&nbsp;=&nbsp;4th&nbsp;p[]{index[]};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(para&nbsp;3[]&nbsp;&nbsp;&nbsp;=&nbsp;'')&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;if&nbsp;(para&nbsp;4[]&nbsp;=&nbsp;'')&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[],&nbsp;para&nbsp;3[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[],&nbsp;para&nbsp;3[],&nbsp;para&nbsp;4[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;"'"&nbsp;+&nbsp;l[]&nbsp;+&nbsp;"',&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Permille:&nbsp;",&nbsp;literal(&nbsp;0.1234,&nbsp;'0.0&nbsp;&amp;permil;')&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Directory&nbsp;assistance&nbsp;(USA):&nbsp;",&nbsp;literal(&nbsp;5551212,&nbsp;'"Dial&nbsp;1-"000"-"0000')&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'EUR-1234', 'EUR-1,234', 'EUR-1.234', 'EUR-1,234', 'EUR-1 234', 'EUR-1'234', <br/>
-'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'- 1234.0', '- 1,234.0', '- 1.234,0', '- 1,234.0', '- 1 234.0', '- 1'234.0', <br/>
-'-1234.0000', '-1234.0000', '-1234,0000', '-1234.0000', '-1234.0000', '-1234.0000', <br/>
-'-1234', '-1,234', '-1.234', '-1,234', '-1 234', '-1'234', <br/>
-'-1234. ', '-1,234. ', '-1.234,+', '-1,234. ', '-1 234. ', '-1'234. ', <br/>
-'-1234.', '-1,234.', '-1.234,', '-1,234.', '-1 234.', '-1'234.', <br/>
-'-1234.', '-1234.', '-1234,', '-1234.', '-1234.', '-1234.', <br/>
-'-1234.', '-1,234.', '-1.234,', '-1,234.', '-1 234.', '-1'234.', <br/>
-'(1234.00)', '(1,234.00)', '(1.234,00)', '(1,234.00)', '(1 234.00)', '(1'234.00)', <br/>
+<div class="output_background_color" ><code>'-1234',&nbsp;'-1,234',&nbsp;'-1.234',&nbsp;'-1,234',&nbsp;'-1&nbsp;234',&nbsp;'-1'234',&nbsp;<br/>
+'EUR-1234',&nbsp;'EUR-1,234',&nbsp;'EUR-1.234',&nbsp;'EUR-1,234',&nbsp;'EUR-1&nbsp;234',&nbsp;'EUR-1'234',&nbsp;<br/>
+'-1234',&nbsp;'-1,234',&nbsp;'-1.234',&nbsp;'-1,234',&nbsp;'-1&nbsp;234',&nbsp;'-1'234',&nbsp;<br/>
+'-&nbsp;1234.0',&nbsp;'-&nbsp;1,234.0',&nbsp;'-&nbsp;1.234,0',&nbsp;'-&nbsp;1,234.0',&nbsp;'-&nbsp;1&nbsp;234.0',&nbsp;'-&nbsp;1'234.0',&nbsp;<br/>
+'-1234.0000',&nbsp;'-1234.0000',&nbsp;'-1234,0000',&nbsp;'-1234.0000',&nbsp;'-1234.0000',&nbsp;'-1234.0000',&nbsp;<br/>
+'-1234',&nbsp;'-1,234',&nbsp;'-1.234',&nbsp;'-1,234',&nbsp;'-1&nbsp;234',&nbsp;'-1'234',&nbsp;<br/>
+'-1234.&nbsp;',&nbsp;'-1,234.&nbsp;',&nbsp;'-1.234,+',&nbsp;'-1,234.&nbsp;',&nbsp;'-1&nbsp;234.&nbsp;',&nbsp;'-1'234.&nbsp;',&nbsp;<br/>
+'-1234.',&nbsp;'-1,234.',&nbsp;'-1.234,',&nbsp;'-1,234.',&nbsp;'-1&nbsp;234.',&nbsp;'-1'234.',&nbsp;<br/>
+'-1234.',&nbsp;'-1234.',&nbsp;'-1234,',&nbsp;'-1234.',&nbsp;'-1234.',&nbsp;'-1234.',&nbsp;<br/>
+'-1234.',&nbsp;'-1,234.',&nbsp;'-1.234,',&nbsp;'-1,234.',&nbsp;'-1&nbsp;234.',&nbsp;'-1'234.',&nbsp;<br/>
+'(1234.00)',&nbsp;'(1,234.00)',&nbsp;'(1.234,00)',&nbsp;'(1,234.00)',&nbsp;'(1&nbsp;234.00)',&nbsp;'(1'234.00)',&nbsp;<br/>
 <br/>
-'-0.29', '-0.29', '-0,29', '-0.29', '-0.29', '-0.29', <br/>
-'EUR-0.29', 'EUR-0.29', 'EUR-0,29', 'EUR-0.29', 'EUR-0.29', 'EUR-0.29', <br/>
-'-0', '-0', '-0', '-0', '-0', '-0', <br/>
-'- 0.3', '- 0.3', '- 0,3', '- 0.3', '- 0.3', '- 0.3', <br/>
-'-0000.2900', '-0000.2900', '-0000,2900', '-0000.2900', '-0000.2900', '-0000.2900', <br/>
-'- ', '- ', '-+', '- ', '- ', '- ', <br/>
-'- .3', '- .3', '-+,3', '- .3', '- .3', '- .3', <br/>
-'-.3', '-.3', '-,3', '-.3', '-.3', '-.3', <br/>
-'-.29', '-.29', '-,29', '-.29', '-.29', '-.29', <br/>
-'-0.29', '-0.29', '-0,29', '-0.29', '-0.29', '-0.29', <br/>
-'(0.29)', '(0.29)', '(0,29)', '(0.29)', '(0.29)', '(0.29)', <br/>
+'-0.29',&nbsp;'-0.29',&nbsp;'-0,29',&nbsp;'-0.29',&nbsp;'-0.29',&nbsp;'-0.29',&nbsp;<br/>
+'EUR-0.29',&nbsp;'EUR-0.29',&nbsp;'EUR-0,29',&nbsp;'EUR-0.29',&nbsp;'EUR-0.29',&nbsp;'EUR-0.29',&nbsp;<br/>
+'-0',&nbsp;'-0',&nbsp;'-0',&nbsp;'-0',&nbsp;'-0',&nbsp;'-0',&nbsp;<br/>
+'-&nbsp;0.3',&nbsp;'-&nbsp;0.3',&nbsp;'-&nbsp;0,3',&nbsp;'-&nbsp;0.3',&nbsp;'-&nbsp;0.3',&nbsp;'-&nbsp;0.3',&nbsp;<br/>
+'-0000.2900',&nbsp;'-0000.2900',&nbsp;'-0000,2900',&nbsp;'-0000.2900',&nbsp;'-0000.2900',&nbsp;'-0000.2900',&nbsp;<br/>
+'-&nbsp;',&nbsp;'-&nbsp;',&nbsp;'-+',&nbsp;'-&nbsp;',&nbsp;'-&nbsp;',&nbsp;'-&nbsp;',&nbsp;<br/>
+'-&nbsp;.3',&nbsp;'-&nbsp;.3',&nbsp;'-+,3',&nbsp;'-&nbsp;.3',&nbsp;'-&nbsp;.3',&nbsp;'-&nbsp;.3',&nbsp;<br/>
+'-.3',&nbsp;'-.3',&nbsp;'-,3',&nbsp;'-.3',&nbsp;'-.3',&nbsp;'-.3',&nbsp;<br/>
+'-.29',&nbsp;'-.29',&nbsp;'-,29',&nbsp;'-.29',&nbsp;'-.29',&nbsp;'-.29',&nbsp;<br/>
+'-0.29',&nbsp;'-0.29',&nbsp;'-0,29',&nbsp;'-0.29',&nbsp;'-0.29',&nbsp;'-0.29',&nbsp;<br/>
+'(0.29)',&nbsp;'(0.29)',&nbsp;'(0,29)',&nbsp;'(0.29)',&nbsp;'(0.29)',&nbsp;'(0.29)',&nbsp;<br/>
 <br/>
-'123456.78', '1,23,456.78', '123.456,78', '123,456.78', '123 456.78', '123'456.78', <br/>
-'EUR 123456.78', 'EUR 1,23,456.78', 'EUR+123.456,78', 'EUR 123,456.78', 'EUR 123 456.78', 'EUR 123'456.78', <br/>
-'123457', '1,23,457', '123.457', '123,457', '123 457', '123'457', <br/>
-'+ 123456.8', '+ 1,23,456.8', '+ 123.456,8', '+ 123,456.8', '+ 123 456.8', '+ 123'456.8', <br/>
-'123456.7800', '1,23456.7800', '123456,7800', '123456.7800', '123456.7800', '123456.7800', <br/>
-'123457', '1,23,457', '123.457', '123,457', '123 457', '123'457', <br/>
-'123456.8', '1,23,456.8', '123.456,8', '123,456.8', '123 456.8', '123'456.8', <br/>
-'123456.8', '1,23,456.8', '123.456,8', '123,456.8', '123 456.8', '123'456.8', <br/>
-'123456.78', '1,23456.78', '123456,78', '123456.78', '123456.78', '123456.78', <br/>
-'123456.78', '1,23,456.78', '123.456,78', '123,456.78', '123 456.78', '123'456.78', <br/>
-' 123456.78', ' 1,23,456.78', '+123.456,78', ' 123,456.78', ' 123 456.78', ' 123'456.78', <br/>
+'123456.78',&nbsp;'1,23,456.78',&nbsp;'123.456,78',&nbsp;'123,456.78',&nbsp;'123&nbsp;456.78',&nbsp;'123'456.78',&nbsp;<br/>
+'EUR&nbsp;123456.78',&nbsp;'EUR&nbsp;1,23,456.78',&nbsp;'EUR+123.456,78',&nbsp;'EUR&nbsp;123,456.78',&nbsp;'EUR&nbsp;123&nbsp;456.78',&nbsp;'EUR&nbsp;123'456.78',&nbsp;<br/>
+'123457',&nbsp;'1,23,457',&nbsp;'123.457',&nbsp;'123,457',&nbsp;'123&nbsp;457',&nbsp;'123'457',&nbsp;<br/>
+'+&nbsp;123456.8',&nbsp;'+&nbsp;1,23,456.8',&nbsp;'+&nbsp;123.456,8',&nbsp;'+&nbsp;123,456.8',&nbsp;'+&nbsp;123&nbsp;456.8',&nbsp;'+&nbsp;123'456.8',&nbsp;<br/>
+'123456.7800',&nbsp;'1,23456.7800',&nbsp;'123456,7800',&nbsp;'123456.7800',&nbsp;'123456.7800',&nbsp;'123456.7800',&nbsp;<br/>
+'123457',&nbsp;'1,23,457',&nbsp;'123.457',&nbsp;'123,457',&nbsp;'123&nbsp;457',&nbsp;'123'457',&nbsp;<br/>
+'123456.8',&nbsp;'1,23,456.8',&nbsp;'123.456,8',&nbsp;'123,456.8',&nbsp;'123&nbsp;456.8',&nbsp;'123'456.8',&nbsp;<br/>
+'123456.8',&nbsp;'1,23,456.8',&nbsp;'123.456,8',&nbsp;'123,456.8',&nbsp;'123&nbsp;456.8',&nbsp;'123'456.8',&nbsp;<br/>
+'123456.78',&nbsp;'1,23456.78',&nbsp;'123456,78',&nbsp;'123456.78',&nbsp;'123456.78',&nbsp;'123456.78',&nbsp;<br/>
+'123456.78',&nbsp;'1,23,456.78',&nbsp;'123.456,78',&nbsp;'123,456.78',&nbsp;'123&nbsp;456.78',&nbsp;'123'456.78',&nbsp;<br/>
+'&nbsp;123456.78',&nbsp;'&nbsp;1,23,456.78',&nbsp;'+123.456,78',&nbsp;'&nbsp;123,456.78',&nbsp;'&nbsp;123&nbsp;456.78',&nbsp;'&nbsp;123'456.78',&nbsp;<br/>
 <br/>
-'0', '0', '0', '0', '0', '0', <br/>
-'EUR 0', 'EUR 0', 'EUR+0', 'EUR 0', 'EUR 0', 'EUR 0', <br/>
-'0', '0', '0', '0', '0', '0', <br/>
-'+ 0.0', '+ 0.0', '+ 0,0', '+ 0.0', '+ 0.0', '+ 0.0', <br/>
-'0000.0000', '0000.0000', '0000,0000', '0000.0000', '0000.0000', '0000.0000', <br/>
-' ', ' ', '+', ' ', ' ', ' ', <br/>
-' . ', ' . ', '+,+', ' . ', ' . ', ' . ', <br/>
-'.', '.', ',', '.', '.', '.', <br/>
-'.', '.', ',', '.', '.', '.', <br/>
-'0.', '0.', '0,', '0.', '0.', '0.', <br/>
-' 0.00', ' 0.00', '+0,00', ' 0.00', ' 0.00', ' 0.00', <br/>
+'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;<br/>
+'EUR&nbsp;0',&nbsp;'EUR&nbsp;0',&nbsp;'EUR+0',&nbsp;'EUR&nbsp;0',&nbsp;'EUR&nbsp;0',&nbsp;'EUR&nbsp;0',&nbsp;<br/>
+'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;'0',&nbsp;<br/>
+'+&nbsp;0.0',&nbsp;'+&nbsp;0.0',&nbsp;'+&nbsp;0,0',&nbsp;'+&nbsp;0.0',&nbsp;'+&nbsp;0.0',&nbsp;'+&nbsp;0.0',&nbsp;<br/>
+'0000.0000',&nbsp;'0000.0000',&nbsp;'0000,0000',&nbsp;'0000.0000',&nbsp;'0000.0000',&nbsp;'0000.0000',&nbsp;<br/>
+'&nbsp;',&nbsp;'&nbsp;',&nbsp;'+',&nbsp;'&nbsp;',&nbsp;'&nbsp;',&nbsp;'&nbsp;',&nbsp;<br/>
+'&nbsp;.&nbsp;',&nbsp;'&nbsp;.&nbsp;',&nbsp;'+,+',&nbsp;'&nbsp;.&nbsp;',&nbsp;'&nbsp;.&nbsp;',&nbsp;'&nbsp;.&nbsp;',&nbsp;<br/>
+'.',&nbsp;'.',&nbsp;',',&nbsp;'.',&nbsp;'.',&nbsp;'.',&nbsp;<br/>
+'.',&nbsp;'.',&nbsp;',',&nbsp;'.',&nbsp;'.',&nbsp;'.',&nbsp;<br/>
+'0.',&nbsp;'0.',&nbsp;'0,',&nbsp;'0.',&nbsp;'0.',&nbsp;'0.',&nbsp;<br/>
+'&nbsp;0.00',&nbsp;'&nbsp;0.00',&nbsp;'+0,00',&nbsp;'&nbsp;0.00',&nbsp;'&nbsp;0.00',&nbsp;'&nbsp;0.00',&nbsp;<br/>
 <br/>
-Permille: 123.4 ‰<br/>
-Directory assistance (USA): Dial 1-555-1212<br/>
+Permille:&nbsp;123.4&nbsp;‰<br/>
+Directory&nbsp;assistance&nbsp;(USA):&nbsp;Dial&nbsp;1-555-1212<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_numeral_to_literal_conversion_and_formatting.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

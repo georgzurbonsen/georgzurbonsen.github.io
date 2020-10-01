@@ -95,8 +95,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -115,45 +116,45 @@ This function combines the lookup strategy from <span class="red_text">table loo
 <h4> Parameter count</h4>
 <p>7 - 9 (For parameter description and return values: see <a class="bold_text" href="REF_Function_table_expand.html">table expand</a>() )</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table load( lookup, "Examples/Table Lookup Example 2.csv" );<br/>
- &nbsp;table delete remaining rows ( lookup, -2 ); // Remove last 2 rows (the mom's place and 'not found' row)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;lookup,&nbsp;"Examples/Table&nbsp;Lookup&nbsp;Example&nbsp;2.csv"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;remaining&nbsp;rows&nbsp;(&nbsp;lookup,&nbsp;-2&nbsp;);&nbsp;//&nbsp;Remove&nbsp;last&nbsp;2&nbsp;rows&nbsp;(the&nbsp;mom's&nbsp;place&nbsp;and&nbsp;'not&nbsp;found'&nbsp;row)<br/>
 <br/>
- &nbsp;table initialize( target, { Seating, inside, balcony, outside, bar } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{&nbsp;Seating,&nbsp;inside,&nbsp;balcony,&nbsp;outside,&nbsp;bar&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;count[] = table expand fast smart ignore case<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ( target, &nbsp; Seating, {Place to go, Table size}, lookup, Ambience, {Restaurant Name, Table size} );<br/>
+&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;expand&nbsp;fast&nbsp;smart&nbsp;ignore&nbsp;case<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;target,&nbsp;&nbsp;&nbsp;Seating,&nbsp;{Place&nbsp;to&nbsp;go,&nbsp;Table&nbsp;size},&nbsp;lookup,&nbsp;Ambience,&nbsp;{Restaurant&nbsp;Name,&nbsp;Table&nbsp;size}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Lookup table:");<br/>
- &nbsp;table list( lookup );<br/>
+&nbsp;&nbsp;echo("Lookup&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;lookup&nbsp;);<br/>
 <br/>
- &nbsp;// Additional rows have been added to the end of the table.<br/>
+&nbsp;&nbsp;//&nbsp;Additional&nbsp;rows&nbsp;have&nbsp;been&nbsp;added&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;table.<br/>
 <br/>
- &nbsp;echo("Target table after lookup (", count[], " items found):");<br/>
- &nbsp;table list( target );<br/>
+&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;lookup&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;items&nbsp;found):");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;target&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Lookup table:<br/>
- &nbsp; &nbsp;0 : Offering &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Table size | Ambience &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Restaurant Name &nbsp; &nbsp; &nbsp; | Phone Number &nbsp;<br/>
- &nbsp; &nbsp;1 : *Chicken* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2,4,6 &nbsp; &nbsp; &nbsp;| inside,bar &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Rôtisserie de Paris &nbsp; | (212) 555-1234<br/>
- &nbsp; &nbsp;2 : *Curry* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1..10 &nbsp; &nbsp; &nbsp;| "self-service" &nbsp; &nbsp; &nbsp; &nbsp; | Bharat take-away &nbsp; &nbsp; &nbsp;| (212) 555-2345<br/>
- &nbsp; &nbsp;3 : *Pizza*,*Pasta* &nbsp; &nbsp;| 4,6,8 &nbsp; &nbsp; &nbsp;| inside,outside &nbsp; &nbsp; &nbsp; &nbsp; | Luigis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| (212) 555-3456<br/>
- &nbsp; &nbsp;4 : *Beer*,*Wine* &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| bar &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Luigis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| (212) 555-3456<br/>
- &nbsp; &nbsp;5 : *Pizza*,*sea*food* | * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| inside,outside &nbsp; &nbsp; &nbsp; &nbsp; | All-Italian Trattoria | (212) 555-4567<br/>
- &nbsp; &nbsp;6 : *Fish*,*sea*food* &nbsp;| 2..8 &nbsp; &nbsp; &nbsp; | outside &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Wharf Place &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | (212) 555-5678<br/>
- &nbsp; &nbsp;7 : *Burger*,Fries &nbsp; &nbsp; | 1..20 &nbsp; &nbsp; &nbsp;| =inside,"self-service" | Mr. Burgermeister &nbsp; &nbsp; | (212) 555-6789<br/>
+<div class="output_background_color" ><code>Lookup&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Offering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Table&nbsp;size&nbsp;|&nbsp;Ambience&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Phone&nbsp;Number&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;*Chicken*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2,4,6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;inside,bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Rôtisserie&nbsp;de&nbsp;Paris&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-1234<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;*Curry*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1..10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;"self-service"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bharat&nbsp;take-away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-2345<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;*Pizza*,*Pasta*&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4,6,8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;inside,outside&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Luigis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-3456<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;*Beer*,*Wine*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Luigis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-3456<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;*Pizza*,*sea*food*&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;inside,outside&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;All-Italian&nbsp;Trattoria&nbsp;|&nbsp;(212)&nbsp;555-4567<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;*Fish*,*sea*food*&nbsp;&nbsp;|&nbsp;2..8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;outside&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wharf&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-5678<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;*Burger*,Fries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1..20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;=inside,"self-service"&nbsp;|&nbsp;Mr.&nbsp;Burgermeister&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(212)&nbsp;555-6789<br/>
 <br/>
-Target table after lookup (9 items found):<br/>
- &nbsp; &nbsp;0 : Seating | Place to go &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Table size<br/>
- &nbsp; &nbsp;1 : inside &nbsp;| Rôtisserie de Paris &nbsp; | 2,4,6 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : balcony | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : outside | Luigis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4,6,8 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : bar &nbsp; &nbsp; | Rôtisserie de Paris &nbsp; | 2,4,6 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : inside &nbsp;| Luigis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 4,6,8 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : inside &nbsp;| All-Italian Trattoria | * &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : inside &nbsp;| Mr. Burgermeister &nbsp; &nbsp; | 1..20 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : outside | All-Italian Trattoria | * &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : outside | Wharf Place &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2..8 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 : bar &nbsp; &nbsp; | Luigis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| * &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+Target&nbsp;table&nbsp;after&nbsp;lookup&nbsp;(9&nbsp;items&nbsp;found):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Seating&nbsp;|&nbsp;Place&nbsp;to&nbsp;go&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Table&nbsp;size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;inside&nbsp;&nbsp;|&nbsp;Rôtisserie&nbsp;de&nbsp;Paris&nbsp;&nbsp;&nbsp;|&nbsp;2,4,6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;balcony&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;outside&nbsp;|&nbsp;Luigis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4,6,8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Rôtisserie&nbsp;de&nbsp;Paris&nbsp;&nbsp;&nbsp;|&nbsp;2,4,6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;inside&nbsp;&nbsp;|&nbsp;Luigis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4,6,8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;inside&nbsp;&nbsp;|&nbsp;All-Italian&nbsp;Trattoria&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;inside&nbsp;&nbsp;|&nbsp;Mr.&nbsp;Burgermeister&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1..20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;outside&nbsp;|&nbsp;All-Italian&nbsp;Trattoria&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;outside&nbsp;|&nbsp;Wharf&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2..8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;bar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Luigis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_expand_fast_smart.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

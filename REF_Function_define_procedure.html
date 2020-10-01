@@ -78,8 +78,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -156,43 +157,43 @@ then the last two parameter types apply sequentially.  Similar rules apply to  l
 <h4> Exceptions</h4>
 <p>Procedure or function name is already defiend</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define function( my private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "Name of function: ", function name[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "First invited guest: ", guest name[], select if( vegetarian[], " (vegetarian menu)", " (fish menu)" ) );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;function(&nbsp;my&nbsp;private&nbsp;function,&nbsp;{&nbsp;{&nbsp;guest&nbsp;name,&nbsp;literal&nbsp;},&nbsp;{&nbsp;vegetarian,&nbsp;boolean&nbsp;}&nbsp;},&nbsp;2,&nbsp;-1,&nbsp;2&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Name&nbsp;of&nbsp;function:&nbsp;",&nbsp;function&nbsp;name[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"First&nbsp;invited&nbsp;guest:&nbsp;",&nbsp;guest&nbsp;name[],&nbsp;select&nbsp;if(&nbsp;vegetarian[],&nbsp;"&nbsp;(vegetarian&nbsp;menu)",&nbsp;"&nbsp;(fish&nbsp;menu)"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (i[] = 3, i[] &lt;= parameter count[], i[]+=2 ) // Additional guests<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;name[] = ("parameter " + literal(i[] &nbsp;))[];<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;vegi[] = ("parameter " + literal(i[]+1))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;3,&nbsp;i[]&nbsp;&lt;=&nbsp;parameter&nbsp;count[],&nbsp;i[]+=2&nbsp;)&nbsp;//&nbsp;Additional&nbsp;guests<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name[]&nbsp;=&nbsp;("parameter&nbsp;"&nbsp;+&nbsp;literal(i[]&nbsp;&nbsp;))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vegi[]&nbsp;=&nbsp;("parameter&nbsp;"&nbsp;+&nbsp;literal(i[]+1))[];<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "And: ", name[], select if( vegi[], " (vegetarian menu)", " (fish menu)" ) );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
-<br/>
-<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return( parameter count[] / 2 ); // Number of guests<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"And:&nbsp;",&nbsp;name[],&nbsp;select&nbsp;if(&nbsp;vegi[],&nbsp;"&nbsp;(vegetarian&nbsp;menu)",&nbsp;"&nbsp;(fish&nbsp;menu)"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
 <br/>
- &nbsp; &nbsp; &nbsp;guest count[] = my private function( Jim Bean, true );<br/>
- &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited: ", guest count[], new line);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;parameter&nbsp;count[]&nbsp;/&nbsp;2&nbsp;);&nbsp;//&nbsp;Number&nbsp;of&nbsp;guests<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;guest count[] = my private function( Jim Bean, true, Tina Turner, false, Tom Cruise, false, Amsel Adams, true );<br/>
- &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited to bigger party: ", guest count[]); &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp; &nbsp;</code></div>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;count[]&nbsp;=&nbsp;my&nbsp;private&nbsp;function(&nbsp;Jim&nbsp;Bean,&nbsp;true&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Number&nbsp;of&nbsp;guests&nbsp;invited:&nbsp;",&nbsp;guest&nbsp;count[],&nbsp;new&nbsp;line);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;count[]&nbsp;=&nbsp;my&nbsp;private&nbsp;function(&nbsp;Jim&nbsp;Bean,&nbsp;true,&nbsp;Tina&nbsp;Turner,&nbsp;false,&nbsp;Tom&nbsp;Cruise,&nbsp;false,&nbsp;Amsel&nbsp;Adams,&nbsp;true&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Number&nbsp;of&nbsp;guests&nbsp;invited&nbsp;to&nbsp;bigger&nbsp;party:&nbsp;",&nbsp;guest&nbsp;count[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Name of function: my private function<br/>
-First invited guest: Jim Bean (vegetarian menu)<br/>
+<div class="output_background_color" ><code>Name&nbsp;of&nbsp;function:&nbsp;my&nbsp;private&nbsp;function<br/>
+First&nbsp;invited&nbsp;guest:&nbsp;Jim&nbsp;Bean&nbsp;(vegetarian&nbsp;menu)<br/>
 <br/>
-Number of guests invited: 1<br/>
+Number&nbsp;of&nbsp;guests&nbsp;invited:&nbsp;1<br/>
 <br/>
-Name of function: my private function<br/>
-First invited guest: Jim Bean (vegetarian menu)<br/>
-And: Tina Turner (fish menu)<br/>
-And: Tom Cruise (fish menu)<br/>
-And: Amsel Adams (vegetarian menu)<br/>
+Name&nbsp;of&nbsp;function:&nbsp;my&nbsp;private&nbsp;function<br/>
+First&nbsp;invited&nbsp;guest:&nbsp;Jim&nbsp;Bean&nbsp;(vegetarian&nbsp;menu)<br/>
+And:&nbsp;Tina&nbsp;Turner&nbsp;(fish&nbsp;menu)<br/>
+And:&nbsp;Tom&nbsp;Cruise&nbsp;(fish&nbsp;menu)<br/>
+And:&nbsp;Amsel&nbsp;Adams&nbsp;(vegetarian&nbsp;menu)<br/>
 <br/>
-Number of guests invited to bigger party: 4<br/>
+Number&nbsp;of&nbsp;guests&nbsp;invited&nbsp;to&nbsp;bigger&nbsp;party:&nbsp;4<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_define_procedure.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_define_additional_procedure.html">define additional procedure</a><br/>

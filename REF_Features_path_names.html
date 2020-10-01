@@ -60,8 +60,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -74,21 +75,21 @@ The different operating systems (Windows, LINUX, MACOS) use different convention
 and file names.  Directory separators (slash or backslash) is one example.  FUll case sensitivity of path and file names in LINUX and MACOS
 environments is another example. Beyond4P supports some measures in order to make path and file naming more portable for the applications.
 
-</p><ul class="bullets"><li class="bullets">Both directory separator symbols "/" (UNIX/ / LINUX style) and "\" (WINDOWS style) are supported.  They will be changed to the right symbol automatically before accessing directories and files in the present operating system.</li>
-<li class="bullets">Returned directory and file names, e.g. in directory listings, <span class="red_text">file search</span>() function, etc. will use the directory separator native to the operating system (e.g. "/" under LINUX).</li>
-<li class="bullets">Under LINUX and MACOS, the file names are fully case sensitive.</li>
-<li class="bullets">Under Windows, case sensitivity only applies to creating new directory and file names.</li>
-<li class="bullets">Please avoid using following special symbols in file names:</li>
-<li class="bullets"><ul class="bullets"><li class="bullets">: Colon - Used to specify drives in Windows environments</li>
-<li class="bullets">", ' quotation marks - Not valid as part of file name.  Quotation marks may be needed at command level to specify path and file names containing spaces, but not to be done in Beyond4P code.</li>
-<li class="bullets">*, ? wildcard symbols</li>
-<li class="bullets">, comma - Beyond4P uses commas to specify multiple file names, e.g. in the <a class="bold_text" href="REF_Function_directory_listing.html">directory listing</a>() function</li>
-<li class="bullets">& ampersand - Typically a control symbol for operating system command shells</li>
-<li class="bullets">&lt;, &gt;, | - Rediction and piping</li>
-<li class="bullets">/, \ - Directory separators</li>
-</ul></li><li class="bullets">Further OS-specific restrictions on path and file names may apply</li>
-<li class="bullets"><span class="red_text">Wildcard symbols</span> are resolved by Beyond4P and not by the operating system.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Both directory separator symbols "/" (UNIX/ / LINUX style) and "\" (WINDOWS style) are supported.  They will be changed to the right symbol automatically before accessing directories and files in the present operating system.
+</li><li class="bullets">Returned directory and file names, e.g. in directory listings, <span class="red_text">file search</span>() function, etc. will use the directory separator native to the operating system (e.g. "/" under LINUX).
+</li><li class="bullets">Under LINUX and MACOS, the file names are fully case sensitive.
+</li><li class="bullets">Under Windows, case sensitivity only applies to creating new directory and file names.
+</li><li class="bullets">Please avoid using following special symbols in file names:
+<ul class="bullets"><li class="bullets">: Colon - Used to specify drives in Windows environments
+</li><li class="bullets">", ' quotation marks - Not valid as part of file name.  Quotation marks may be needed at command level to specify path and file names containing spaces, but not to be done in Beyond4P code.
+</li><li class="bullets">*, ? wildcard symbols
+</li><li class="bullets">, comma - Beyond4P uses commas to specify multiple file names, e.g. in the <a class="bold_text" href="REF_Function_directory_listing.html">directory listing</a>() function
+</li><li class="bullets">& ampersand - Typically a control symbol for operating system command shells
+</li><li class="bullets">&lt;, &gt;, | - Rediction and piping
+</li><li class="bullets">/, \ - Directory separators
+</li></ul></li><li class="bullets">Further OS-specific restrictions on path and file names may apply
+</li><li class="bullets"><span class="red_text">Wildcard symbols</span> are resolved by Beyond4P and not by the operating system.
+</li></ul><p></p>
 	</div>
 </section>
 

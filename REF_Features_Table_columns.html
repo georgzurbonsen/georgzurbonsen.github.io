@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -90,12 +91,12 @@ Whenever a function expects a <span class="red_text">function parameter</span> f
 </table><p>
 
 Various functions specific rules may apply:
-</p><ul class="bullets"><li class="bullets">Header names must exist</li>
-<li class="bullets">Header names may exist (missing ones may be created as additinal columns in the table)</li>
-<li class="bullets">Header names must not exist (e.g. to check if specific header names are <i>not</i> used in a specific table</li>
-<li class="bullets">Column numbers are allowed, or not allowed</li>
-<li class="bullets">Column numbers may only refer to existing colums, or alternatively all columns even if not yet existing</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Header names must exist
+</li><li class="bullets">Header names may exist (missing ones may be created as additinal columns in the table)
+</li><li class="bullets">Header names must not exist (e.g. to check if specific header names are <i>not</i> used in a specific table
+</li><li class="bullets">Column numbers are allowed, or not allowed
+</li><li class="bullets">Column numbers may only refer to existing colums, or alternatively all columns even if not yet existing
+</li></ul><p>
 <br>
 <u>Note</u>: If Table headers contain numbers, the put the numbers into quotation marks.
 </p>
@@ -106,12 +107,12 @@ known. In this case, put the header name into <u>single</u> quotation marks so i
 add one or multiple '&lt;' or '&gt' symbols before the name starts, but inside the single quotation marks.  Multiple consecutive
 symobls can be cascaded to refer to nearby columns which are not immediate neighbors.
 
-</p><ul class="bullets"><li class="bullets">&lt; = Refer to the next column to the left.  Example:  '&lt;First Name'</li>
-<li class="bullets">&gt; = Refer to the next column to the right.  Example:  '&lt;State or Province'</li>
-<li class="bullets">&lt;&lt; = Refer to 2 columns to the left left.  Example:  '&lt;&lt;First Name'</li>
-<li class="bullets">&gt;&gt; = Refer to 2 columns to the left right..  Example:  '&lt;&lt;State or Province'</li>
-<li class="bullets">&gt;&gt; = The two shift operations facing to opposite directions neutralize each other, regardless how they are arranged</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">&lt; = Refer to the next column to the left.  Example:  '&lt;First Name'
+</li><li class="bullets">&gt; = Refer to the next column to the right.  Example:  '&lt;State or Province'
+</li><li class="bullets">&lt;&lt; = Refer to 2 columns to the left left.  Example:  '&lt;&lt;First Name'
+</li><li class="bullets">&gt;&gt; = Refer to 2 columns to the left right..  Example:  '&lt;&lt;State or Province'
+</li><li class="bullets">&gt;&gt; = The two shift operations facing to opposite directions neutralize each other, regardless how they are arranged
+</li></ul><p>
 
 <u>Attention</u>: The &lt; and &gt; symbols must be the 1st characters after the quotation marks.  If spaces lie inbetween, then these symbols are considered as part of header names.<br>
 <u>Attention</u>: Shifting does not happen in quoted literals, e.g. "&gt;Last Name". It assumes the header name containing the &gt; symbol.<br>
@@ -121,21 +122,21 @@ Attempting to left-shift beyond the first column (column 0) will assert exceptio
 the function allows it.  Otherwise exceptions will be asserted, too.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, &nbsp;{ { Col A, Col B, Col C, Col D, Col E, Col F },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Val A, Val B, Val C, Val D, Val E, Val F, Val G } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;&nbsp;{&nbsp;{&nbsp;Col&nbsp;A,&nbsp;Col&nbsp;B,&nbsp;Col&nbsp;C,&nbsp;Col&nbsp;D,&nbsp;Col&nbsp;E,&nbsp;Col&nbsp;F&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Val&nbsp;A,&nbsp;Val&nbsp;B,&nbsp;Val&nbsp;C,&nbsp;Val&nbsp;D,&nbsp;Val&nbsp;E,&nbsp;Val&nbsp;F,&nbsp;Val&nbsp;G&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo( table read column selected rows ( t, Col B, true ) ); // Val B<br/>
- &nbsp;echo( table read column selected rows ( t, '&lt;Col B', true ) ); // Val A<br/>
- &nbsp;// echo( table read column selected rows ( t, '&lt;&lt;Col B', true ) ); // would assert exception<br/>
- &nbsp;echo( table read column selected rows ( t, '&lt;&gt;Col B', true ) ); // Val B<br/>
- &nbsp;echo( table read column selected rows ( t, '&gt;Col E', true ) ); // Val F<br/>
- &nbsp;echo( table read column selected rows ( t, '&gt;&gt;Col E', true ) ); // Val G</code></div>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;Col&nbsp;B,&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;B<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;A<br/>
+&nbsp;&nbsp;//&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;&lt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;would&nbsp;assert&nbsp;exception<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;&gt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;B<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&gt;Col&nbsp;E',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;F<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&gt;&gt;Col&nbsp;E',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;G</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>{'Val B'}<br/>
-{'Val A'}<br/>
-{'Val B'}<br/>
-{'Val F'}<br/>
-{'Val G'}<br/>
+<div class="output_background_color" ><code>{'Val&nbsp;B'}<br/>
+{'Val&nbsp;A'}<br/>
+{'Val&nbsp;B'}<br/>
+{'Val&nbsp;F'}<br/>
+{'Val&nbsp;G'}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Table_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

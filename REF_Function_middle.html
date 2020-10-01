@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -155,33 +156,33 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[]&nbsp;=&nbsp;"The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!";<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( middle( st[], 4, 8 ), " / ", &nbsp;middle until ( st[], 4, 8 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( middle( st[], -6, 3 ), " / ", middle until( st[], -7, -2 ) ); // "off", "coffee"<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( middle( st[], &nbsp;99, 8 ), " / ", &nbsp;middle until ( st[], &nbsp;99, 8 ) ); // empty strings<br/>
- &nbsp; &nbsp; &nbsp;echo( middle( st[], -99, 8 ), " / ", &nbsp;middle until ( st[], -99, 8 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( middle( st[], 'taste ', 13 ), " / ", middle include( st[], 'taste ', 13 ) ); // "of the coffee", "tast of the coffee"<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( middle until( st[], 'taste ', -2 ), " / ", middle until include( st[], 'taste ', -2 ) ); // "of the coffee", "tast of the coffee"<br/>
- &nbsp; &nbsp; &nbsp;echo( middle until include( st[], 'taste ', 3 ), " / ", middle until include( st[], 'taste ', 6 ) ); // "", "tas"<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( middle ( st[], 'taste ', ' coffee' ), " / ", middle include( st[], 'taste ', ' coffee' ) ); // "of the", "tast of the coffee"</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle(&nbsp;st[],&nbsp;4,&nbsp;8&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;middle&nbsp;until&nbsp;(&nbsp;st[],&nbsp;4,&nbsp;8&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle(&nbsp;st[],&nbsp;-6,&nbsp;3&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;middle&nbsp;until(&nbsp;st[],&nbsp;-7,&nbsp;-2&nbsp;)&nbsp;);&nbsp;//&nbsp;"off",&nbsp;"coffee"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle(&nbsp;st[],&nbsp;&nbsp;99,&nbsp;8&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;middle&nbsp;until&nbsp;(&nbsp;st[],&nbsp;&nbsp;99,&nbsp;8&nbsp;)&nbsp;);&nbsp;//&nbsp;empty&nbsp;strings<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;middle&nbsp;until&nbsp;(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;13&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;middle&nbsp;include(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;13&nbsp;)&nbsp;);&nbsp;//&nbsp;"of&nbsp;the&nbsp;coffee",&nbsp;"tast&nbsp;of&nbsp;the&nbsp;coffee"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle&nbsp;until(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;-2&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;middle&nbsp;until&nbsp;include(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;-2&nbsp;)&nbsp;);&nbsp;//&nbsp;"of&nbsp;the&nbsp;coffee",&nbsp;"tast&nbsp;of&nbsp;the&nbsp;coffee"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle&nbsp;until&nbsp;include(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;3&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;middle&nbsp;until&nbsp;include(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;6&nbsp;)&nbsp;);&nbsp;//&nbsp;"",&nbsp;"tas"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;middle&nbsp;(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;'&nbsp;coffee'&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;middle&nbsp;include(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;'&nbsp;coffee'&nbsp;)&nbsp;);&nbsp;//&nbsp;"of&nbsp;the",&nbsp;"tast&nbsp;of&nbsp;the&nbsp;coffee"</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>taste of / taste<br/>
-off / coffee<br/>
+<div class="output_background_color" ><code>taste&nbsp;of&nbsp;/&nbsp;taste<br/>
+off&nbsp;/&nbsp;coffee<br/>
 <br/>
- / <br/>
-The tast / The taste<br/>
+&nbsp;/&nbsp;<br/>
+The&nbsp;tast&nbsp;/&nbsp;The&nbsp;taste<br/>
 <br/>
-of the coffee / taste of the coffee<br/>
+of&nbsp;the&nbsp;coffee&nbsp;/&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee<br/>
 <br/>
-of the coffee / taste of the coffee<br/>
- / tas<br/>
+of&nbsp;the&nbsp;coffee&nbsp;/&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee<br/>
+&nbsp;/&nbsp;tas<br/>
 <br/>
-of the / taste of the coffee<br/>
+of&nbsp;the&nbsp;/&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_middle.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_left.html">left (string function)</a><br/>

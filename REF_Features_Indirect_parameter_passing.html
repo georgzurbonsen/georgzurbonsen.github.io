@@ -60,8 +60,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -84,14 +85,14 @@ input/output parameters, references and/or code pieces.  Indirect parameter pass
 <a class="bold_text" href="REF_Features_Control_Flow_Functions.html">control flow functions</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a>.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table create( table1, table 2 ); // The direct way<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;create(&nbsp;table1,&nbsp;table&nbsp;2&nbsp;);&nbsp;//&nbsp;The&nbsp;direct&nbsp;way<br/>
 <br/>
- &nbsp;indirect[]= { table 1, table 2 }; // The indirect way<br/>
- &nbsp;table create( indirect[] );<br/>
- &nbsp;echo("Created two tables in both cases" );<br/>
+&nbsp;&nbsp;indirect[]=&nbsp;{&nbsp;table&nbsp;1,&nbsp;table&nbsp;2&nbsp;};&nbsp;//&nbsp;The&nbsp;indirect&nbsp;way<br/>
+&nbsp;&nbsp;table&nbsp;create(&nbsp;indirect[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("Created&nbsp;two&nbsp;tables&nbsp;in&nbsp;both&nbsp;cases"&nbsp;);<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Created two tables in both cases<br/>
+<div class="output_background_color" ><code>Created&nbsp;two&nbsp;tables&nbsp;in&nbsp;both&nbsp;cases<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Indirect_parameter_passing.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

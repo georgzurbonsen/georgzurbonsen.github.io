@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -130,8 +131,8 @@ literal is of type <a class="bold_text" href="REF_Features_data_types_literals.h
 <td>table column</td>
 <td><b>Existing column</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Specify one header name or column number to indicate where to start searching and comparing frmo left to right.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Specify one header name or column number to indicate where to start searching and comparing frmo left to right.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>0 (1st column)
 </td></tr>
 </table>
@@ -142,22 +143,22 @@ Specific rules apply for this function:
 <td><b>Retrieved values</b><br/><p>Contains literals or numerals, depending on the function name used.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( table 1,<br/>
- &nbsp; &nbsp; &nbsp;{ { Last Name, 1st Name, Street, Town, Postal Code, "Spouse's Name", Zip Code },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Miller, &nbsp; &nbsp;Phil, &nbsp; &nbsp; Main St., Denver, 80208, Ann, 80123 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;1st&nbsp;Name,&nbsp;Street,&nbsp;Town,&nbsp;Postal&nbsp;Code,&nbsp;"Spouse's&nbsp;Name",&nbsp;Zip&nbsp;Code&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Miller,&nbsp;&nbsp;&nbsp;&nbsp;Phil,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main&nbsp;St.,&nbsp;Denver,&nbsp;80208,&nbsp;Ann,&nbsp;80123&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo( table selected columns( table 1, '*Code' ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;selected&nbsp;columns(&nbsp;table&nbsp;1,&nbsp;'*Code'&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;// If the comparison expression is not the last function parameter, then put it into<br/>
- &nbsp;// parentheses to avoidi including further parameters used in the comparison process.<br/>
+&nbsp;&nbsp;//&nbsp;If&nbsp;the&nbsp;comparison&nbsp;expression&nbsp;is&nbsp;not&nbsp;the&nbsp;last&nbsp;function&nbsp;parameter,&nbsp;then&nbsp;put&nbsp;it&nbsp;into<br/>
+&nbsp;&nbsp;//&nbsp;parentheses&nbsp;to&nbsp;avoidi&nbsp;including&nbsp;further&nbsp;parameters&nbsp;used&nbsp;in&nbsp;the&nbsp;comparison&nbsp;process.<br/>
 <br/>
- &nbsp;echo( table selected columns( table 1, (=80208), 1 ) );<br/>
- &nbsp;echo( table selected headers( table 1, ( '80*' ), 1 ) );<br/>
- &nbsp;echo( table selected column numbers( table 1, ( '80*' ), 1, 5 ) ); // Column 4 skipped</code></div>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;selected&nbsp;columns(&nbsp;table&nbsp;1,&nbsp;(=80208),&nbsp;1&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;selected&nbsp;headers(&nbsp;table&nbsp;1,&nbsp;(&nbsp;'80*'&nbsp;),&nbsp;1&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;selected&nbsp;column&nbsp;numbers(&nbsp;table&nbsp;1,&nbsp;(&nbsp;'80*'&nbsp;),&nbsp;1,&nbsp;5&nbsp;)&nbsp;);&nbsp;//&nbsp;Column&nbsp;4&nbsp;skipped</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>{'Postal Code','Zip Code'}<br/>
+<div class="output_background_color" ><code>{'Postal&nbsp;Code','Zip&nbsp;Code'}<br/>
 {80208}<br/>
-{'Postal Code','Zip Code'}<br/>
+{'Postal&nbsp;Code','Zip&nbsp;Code'}<br/>
 {6}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_selected_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

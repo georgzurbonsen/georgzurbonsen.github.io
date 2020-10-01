@@ -89,8 +89,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -119,44 +120,44 @@ All remaining columns will be deleted.
 <td>table columns</td>
 <td><b>Existing columns</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">Appliable to <b>table keep existing columns</b>: No exceptions are asserted if header names are missing or column numbers are out of range.</li>
-<li class="bullets">Repeating the same columns (e.g. with intention to duplicate them) is not allowed.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Appliable to <b>table keep existing columns</b>: No exceptions are asserted if header names are missing or column numbers are out of range.
+</li><li class="bullets">Repeating the same columns (e.g. with intention to duplicate them) is not allowed.
+</li></ul><p></p>
 </td></tr>
 </table>
 <h4> Exceptions</h4>
 <p>Table not found<br/>
 Header name not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table, { { First Name, "Middle Init.", &nbsp; &nbsp;Last Name, "Street", &nbsp; &nbsp; &nbsp;"Town" },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Jane, &nbsp; &nbsp; &nbsp; "E.", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Archer, &nbsp; &nbsp;"1. Main St.", "Miami", "Comments" } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;"Middle&nbsp;Init.",&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;Name,&nbsp;"Street",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Town"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jane,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"E.",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archer,&nbsp;&nbsp;&nbsp;&nbsp;"1.&nbsp;Main&nbsp;St.",&nbsp;"Miami",&nbsp;"Comments"&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table: ", table max width(table), " columns. __________________ ");<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(table),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table keep columns(t1, { 2, First Name, -1 }); // Last Name, First Name, Town<br/>
- &nbsp;echo("Names only: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;keep&nbsp;columns(t1,&nbsp;{&nbsp;2,&nbsp;First&nbsp;Name,&nbsp;-1&nbsp;});&nbsp;//&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Town<br/>
+&nbsp;&nbsp;echo("Names&nbsp;only:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;table copy table (table, t1 );<br/>
- &nbsp;table keep existing columns(t1, { Phone, 2, First Name, -1 }); // Same outcome: "Phone" is ignored.<br/>
- &nbsp;echo("Names only: ", table max width(t1), " columns. __________________ ");<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(table,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;keep&nbsp;existing&nbsp;columns(t1,&nbsp;{&nbsp;Phone,&nbsp;2,&nbsp;First&nbsp;Name,&nbsp;-1&nbsp;});&nbsp;//&nbsp;Same&nbsp;outcome:&nbsp;"Phone"&nbsp;is&nbsp;ignored.<br/>
+&nbsp;&nbsp;echo("Names&nbsp;only:&nbsp;",&nbsp;table&nbsp;max&nbsp;width(t1),&nbsp;"&nbsp;columns.&nbsp;__________________&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table: 6 columns. __________________ <br/>
- &nbsp; &nbsp;0 : First Name | Middle Init. | Last Name | Street &nbsp; &nbsp; &nbsp;| Town &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | E. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Archer &nbsp; &nbsp;| 1. Main St. | Miami | Comments<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:&nbsp;6&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Middle&nbsp;Init.&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Street&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Town&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;E.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.&nbsp;Main&nbsp;St.&nbsp;|&nbsp;Miami&nbsp;|&nbsp;Comments<br/>
 <br/>
-Names only: 3 columns. __________________ <br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Town <br/>
- &nbsp; &nbsp;1 : Archer &nbsp; &nbsp;| Jane &nbsp; &nbsp; &nbsp; | Miami<br/>
+Names&nbsp;only:&nbsp;3&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Town&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miami<br/>
 <br/>
-Names only: 3 columns. __________________ <br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Town <br/>
- &nbsp; &nbsp;1 : Archer &nbsp; &nbsp;| Jane &nbsp; &nbsp; &nbsp; | Miami<br/>
+Names&nbsp;only:&nbsp;3&nbsp;columns.&nbsp;__________________&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Town&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miami<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_keep_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

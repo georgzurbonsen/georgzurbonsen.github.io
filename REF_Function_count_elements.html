@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -121,21 +122,21 @@ If the value is an <a class="bold_text" href="REF_Features_data_types_literals.h
 <td><b>Number of elements identified</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;print ( count elements( { Amy, Amsel, Bea, Beat, Charles, Charly }, 'Am*' ),", " ); // 2<br/>
- &nbsp; &nbsp; &nbsp;print( count elements( { Amy, Amsel, Bea, Beat, Charles, Charly }, "Am*" ), ", " ); // 0<br/>
- &nbsp; &nbsp; &nbsp;echo ( count elements ignore case( { Amy, Amsel, Bea, Beat, Charles, Charly }, amsel ) ); // 1<br/>
- &nbsp; &nbsp; &nbsp;print ( count elements( { 1, true, false, true, 2 }, true ), ", " ); // 2<br/>
- &nbsp; &nbsp; &nbsp;print ( count elements( { 1, true, false, true, 2 }, "true" ), ", " ); // 2 (true = 'true') case<br/>
- &nbsp; &nbsp; &nbsp;echo( count elements( { 1, '1', 2, '2' }, 'true' ) ); // 0<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;Amy,&nbsp;Amsel,&nbsp;Bea,&nbsp;Beat,&nbsp;Charles,&nbsp;Charly&nbsp;},&nbsp;'Am*'&nbsp;),",&nbsp;"&nbsp;);&nbsp;//&nbsp;2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;Amy,&nbsp;Amsel,&nbsp;Bea,&nbsp;Beat,&nbsp;Charles,&nbsp;Charly&nbsp;},&nbsp;"Am*"&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(&nbsp;count&nbsp;elements&nbsp;ignore&nbsp;case(&nbsp;{&nbsp;Amy,&nbsp;Amsel,&nbsp;Bea,&nbsp;Beat,&nbsp;Charles,&nbsp;Charly&nbsp;},&nbsp;amsel&nbsp;)&nbsp;);&nbsp;//&nbsp;1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;1,&nbsp;true,&nbsp;false,&nbsp;true,&nbsp;2&nbsp;},&nbsp;true&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;1,&nbsp;true,&nbsp;false,&nbsp;true,&nbsp;2&nbsp;},&nbsp;"true"&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;2&nbsp;(true&nbsp;=&nbsp;'true')&nbsp;case<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;1,&nbsp;'1',&nbsp;2,&nbsp;'2'&nbsp;},&nbsp;'true'&nbsp;)&nbsp;);&nbsp;//&nbsp;0<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;// Subsets<br/>
- &nbsp; &nbsp; &nbsp;print( count elements( { a,b,c,{d,e} }, {d,e} ), ", " ); // 1<br/>
- &nbsp; &nbsp; &nbsp;echo( count elements( { a,b,c,{d,e} }, {e,d} ) ); // 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Subsets<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;a,b,c,{d,e}&nbsp;},&nbsp;{d,e}&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;count&nbsp;elements(&nbsp;{&nbsp;a,b,c,{d,e}&nbsp;},&nbsp;{e,d}&nbsp;)&nbsp;);&nbsp;//&nbsp;1<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2, 0, 1<br/>
-2, 2, 0<br/>
-1, 1<br/>
+<div class="output_background_color" ><code>2,&nbsp;0,&nbsp;1<br/>
+2,&nbsp;2,&nbsp;0<br/>
+1,&nbsp;1<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_count_elements.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_length_.html">length (parameter set function)</a><br/>

@@ -75,6 +75,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -82,8 +84,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -96,8 +99,8 @@ Some powerful formatting features are available for formatting <a class="bold_te
 
 <br><br>
 The formatting template applies to following functions:
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter
+</li></ul><p></p>
 <h4> Formatting Templates</h4>
 <p>
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:350px"><col style = "width:400px"><col style = "width:100px">
@@ -124,15 +127,15 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples</h4>
 <p>Following examples show use of date to literal conversion without formatting template</p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { en_us, de_de, fr_fr }, locale[] )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( literal(true, "Tt Yy # ", locale[])," &nbsp; " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( literal(false, "TT y # ", locale[]) );<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;{&nbsp;en_us,&nbsp;de_de,&nbsp;fr_fr&nbsp;},&nbsp;locale[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;literal(true,&nbsp;"Tt&nbsp;Yy&nbsp;#&nbsp;",&nbsp;locale[]),"&nbsp;&nbsp;&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(false,&nbsp;"TT&nbsp;y&nbsp;#&nbsp;",&nbsp;locale[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>True Yes 1 &nbsp; &nbsp;FALSE n 0 <br/>
-Wahr Ja 1 &nbsp; &nbsp;FALSCH n 0 <br/>
-Vrai Oui 1 &nbsp; &nbsp;FAUX n 0 <br/>
+<div class="output_background_color" ><code>True&nbsp;Yes&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;FALSE&nbsp;n&nbsp;0&nbsp;<br/>
+Wahr&nbsp;Ja&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;FALSCH&nbsp;n&nbsp;0&nbsp;<br/>
+Vrai&nbsp;Oui&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;FAUX&nbsp;n&nbsp;0&nbsp;<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_boolean_to_literal_conversion_and_formatting.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

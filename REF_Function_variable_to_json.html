@@ -73,8 +73,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -118,14 +119,14 @@ will be built up while loading / reading in is in progress.
 <td><b>JSON contents</b><br/><p>Contains JSON text of saved variable</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;a[] = Hello World;<br/>
- &nbsp;j[] = variable to json( a[] );<br/>
- &nbsp;echo("Simple variable in JSON: ", j[] );<br/>
- &nbsp;json to variable( b[], j[], JSON B4P );<br/>
- &nbsp;inspect(b[]);</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;Hello&nbsp;World;<br/>
+&nbsp;&nbsp;j[]&nbsp;=&nbsp;variable&nbsp;to&nbsp;json(&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("Simple&nbsp;variable&nbsp;in&nbsp;JSON:&nbsp;",&nbsp;j[]&nbsp;);<br/>
+&nbsp;&nbsp;json&nbsp;to&nbsp;variable(&nbsp;b[],&nbsp;j[],&nbsp;JSON&nbsp;B4P&nbsp;);<br/>
+&nbsp;&nbsp;inspect(b[]);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Simple variable in JSON: [ "Hello World"]<br/>
-"literal": "Hello World"<br/>
+<div class="output_background_color" ><code>Simple&nbsp;variable&nbsp;in&nbsp;JSON:&nbsp;[&nbsp;"Hello&nbsp;World"]<br/>
+Hello&nbsp;World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_variable_to_json.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

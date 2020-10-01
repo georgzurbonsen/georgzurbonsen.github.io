@@ -88,8 +88,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -121,32 +122,32 @@ Theses simple functions arrange multiple tables side-by-side, with or without sp
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t1, { { Left, Right }, { L1, R1 }, { L2, R2 }, { L3, R3 }, { L4 , R4 } } );<br/>
- &nbsp;table initialize( t2, { { Animal, Size, Leg count }, { ant, tiny, 6 }, { donkey, big, 4 }, { whale, huge, 0 } } );<br/>
- &nbsp;table initialize( t3, { City, Aberdeen, Boston, Charlotteville, Denver } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t1,&nbsp;{&nbsp;{&nbsp;Left,&nbsp;Right&nbsp;},&nbsp;{&nbsp;L1,&nbsp;R1&nbsp;},&nbsp;{&nbsp;L2,&nbsp;R2&nbsp;},&nbsp;{&nbsp;L3,&nbsp;R3&nbsp;},&nbsp;{&nbsp;L4&nbsp;,&nbsp;R4&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t2,&nbsp;{&nbsp;{&nbsp;Animal,&nbsp;Size,&nbsp;Leg&nbsp;count&nbsp;},&nbsp;{&nbsp;ant,&nbsp;tiny,&nbsp;6&nbsp;},&nbsp;{&nbsp;donkey,&nbsp;big,&nbsp;4&nbsp;},&nbsp;{&nbsp;whale,&nbsp;huge,&nbsp;0&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t3,&nbsp;{&nbsp;City,&nbsp;Aberdeen,&nbsp;Boston,&nbsp;Charlotteville,&nbsp;Denver&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table copy table( t1, t0 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;t1,&nbsp;t0&nbsp;);<br/>
 <br/>
- &nbsp;table arrange( t0, t2, t3 );<br/>
- &nbsp;table list( t0 );<br/>
+&nbsp;&nbsp;table&nbsp;arrange(&nbsp;t0,&nbsp;t2,&nbsp;t3&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t0&nbsp;);<br/>
 <br/>
- &nbsp;echo("This one is with spacing");<br/>
- &nbsp;table arrange with spacing( { t1 .. t3 } ); // Note: Indirect parameter passing demonstrated here<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("This&nbsp;one&nbsp;is&nbsp;with&nbsp;spacing");<br/>
+&nbsp;&nbsp;table&nbsp;arrange&nbsp;with&nbsp;spacing(&nbsp;{&nbsp;t1&nbsp;..&nbsp;t3&nbsp;}&nbsp;);&nbsp;//&nbsp;Note:&nbsp;Indirect&nbsp;parameter&nbsp;passing&nbsp;demonstrated&nbsp;here<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Left | Right | Animal | Size | Leg count | City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : L1 &nbsp; | R1 &nbsp; &nbsp;| ant &nbsp; &nbsp;| tiny | 6 &nbsp; &nbsp; &nbsp; &nbsp; | Aberdeen &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : L2 &nbsp; | R2 &nbsp; &nbsp;| donkey | big &nbsp;| 4 &nbsp; &nbsp; &nbsp; &nbsp; | Boston &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : L3 &nbsp; | R3 &nbsp; &nbsp;| whale &nbsp;| huge | 0 &nbsp; &nbsp; &nbsp; &nbsp; | Charlotteville<br/>
- &nbsp; &nbsp;4 : L4 &nbsp; | R4 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Left&nbsp;|&nbsp;Right&nbsp;|&nbsp;Animal&nbsp;|&nbsp;Size&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;L1&nbsp;&nbsp;&nbsp;|&nbsp;R1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ant&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tiny&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Aberdeen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;L2&nbsp;&nbsp;&nbsp;|&nbsp;R2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;donkey&nbsp;|&nbsp;big&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;L3&nbsp;&nbsp;&nbsp;|&nbsp;R3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;whale&nbsp;&nbsp;|&nbsp;huge&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Charlotteville<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;L4&nbsp;&nbsp;&nbsp;|&nbsp;R4&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-This one is with spacing<br/>
- &nbsp; &nbsp;0 : Left | Right | &nbsp;| Animal | Size | Leg count | &nbsp;| City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : L1 &nbsp; | R1 &nbsp; &nbsp;| &nbsp;| ant &nbsp; &nbsp;| tiny | 6 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Aberdeen &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : L2 &nbsp; | R2 &nbsp; &nbsp;| &nbsp;| donkey | big &nbsp;| 4 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Boston &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : L3 &nbsp; | R3 &nbsp; &nbsp;| &nbsp;| whale &nbsp;| huge | 0 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Charlotteville<br/>
- &nbsp; &nbsp;4 : L4 &nbsp; | R4 &nbsp; &nbsp;| &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Denver &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+This&nbsp;one&nbsp;is&nbsp;with&nbsp;spacing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Left&nbsp;|&nbsp;Right&nbsp;|&nbsp;&nbsp;|&nbsp;Animal&nbsp;|&nbsp;Size&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;L1&nbsp;&nbsp;&nbsp;|&nbsp;R1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;ant&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tiny&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Aberdeen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;L2&nbsp;&nbsp;&nbsp;|&nbsp;R2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;donkey&nbsp;|&nbsp;big&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;L3&nbsp;&nbsp;&nbsp;|&nbsp;R3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;whale&nbsp;&nbsp;|&nbsp;huge&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Charlotteville<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;L4&nbsp;&nbsp;&nbsp;|&nbsp;R4&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_arrange.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

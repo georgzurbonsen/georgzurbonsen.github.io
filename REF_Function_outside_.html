@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -158,46 +159,46 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <td><b>Extracted subset</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;set[] = { the, taste, of, the, 12, coffees, '!' };<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set[]&nbsp;=&nbsp;{&nbsp;the,&nbsp;taste,&nbsp;of,&nbsp;the,&nbsp;12,&nbsp;coffees,&nbsp;'!'&nbsp;};<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( outside( set[], 4, &nbsp;2 ), " / ", outside until( set[], 1, 5 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( set[], -3, 2 ), " / ", &nbsp;outside until( set[], -6, -2 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( set[], &nbsp;99, 3 ), " / ", &nbsp;outside until ( set[], &nbsp;99, 3 ) ); // empty sets<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( set[], -99, 3 ), " / ", &nbsp;outside until ( set[], -99, 3 ) ); // the taste of / ... the<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( set[], {taste}, 4 ), " / ", outside exclude( set[], {taste}, 4 ) ); // 4 elements in both cases<br/>
- &nbsp; &nbsp; &nbsp;echo( outside until( set[], {taste}, -2 ), " / ", outside until exclude( set[], {taste}, -2 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( outside ( set[], {taste}, {coffees} ), " / ", outside exclude( set[], {taste}, {coffees} ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;set[],&nbsp;4,&nbsp;&nbsp;2&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;until(&nbsp;set[],&nbsp;1,&nbsp;5&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;set[],&nbsp;-3,&nbsp;2&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until(&nbsp;set[],&nbsp;-6,&nbsp;-2&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;set[],&nbsp;&nbsp;99,&nbsp;3&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;set[],&nbsp;&nbsp;99,&nbsp;3&nbsp;)&nbsp;);&nbsp;//&nbsp;empty&nbsp;sets<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;set[],&nbsp;-99,&nbsp;3&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;set[],&nbsp;-99,&nbsp;3&nbsp;)&nbsp;);&nbsp;//&nbsp;the&nbsp;taste&nbsp;of&nbsp;/&nbsp;...&nbsp;the<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;set[],&nbsp;{taste},&nbsp;4&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;set[],&nbsp;{taste},&nbsp;4&nbsp;)&nbsp;);&nbsp;//&nbsp;4&nbsp;elements&nbsp;in&nbsp;both&nbsp;cases<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;until(&nbsp;set[],&nbsp;{taste},&nbsp;-2&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;until&nbsp;exclude(&nbsp;set[],&nbsp;{taste},&nbsp;-2&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;(&nbsp;set[],&nbsp;{taste},&nbsp;{coffees}&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;set[],&nbsp;{taste},&nbsp;{coffees}&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( outside ( set[], {}, {coffees} ), " / ", outside exclude( set[], {taste}, {} ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( outside ( {}, {}, {coffees} ), " / ", outside exclude( {}, {taste}, {} ) ); // empty sets<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( "Demonstrate the follower feature: ");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;(&nbsp;set[],&nbsp;{},&nbsp;{coffees}&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;set[],&nbsp;{taste},&nbsp;{}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;(&nbsp;{},&nbsp;{},&nbsp;{coffees}&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;{},&nbsp;{taste},&nbsp;{}&nbsp;)&nbsp;);&nbsp;//&nbsp;empty&nbsp;sets<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Demonstrate&nbsp;the&nbsp;follower&nbsp;feature:&nbsp;");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;set2[] = { A, fragrance, coming, from, 120, espressos, '!' };<br/>
- &nbsp; &nbsp; &nbsp;set3[] = { Der, Geschmack, kommt, von, 120, Tassen Kaffee, '!' };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set2[]&nbsp;=&nbsp;{&nbsp;A,&nbsp;fragrance,&nbsp;coming,&nbsp;from,&nbsp;120,&nbsp;espressos,&nbsp;'!'&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set3[]&nbsp;=&nbsp;{&nbsp;Der,&nbsp;Geschmack,&nbsp;kommt,&nbsp;von,&nbsp;120,&nbsp;Tassen&nbsp;Kaffee,&nbsp;'!'&nbsp;};<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 1: ", outside( set[], {of}, 3, set2[], set3[] ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 2: ", set2[] );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;1:&nbsp;",&nbsp;outside(&nbsp;set[],&nbsp;{of},&nbsp;3,&nbsp;set2[],&nbsp;set3[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;2:&nbsp;",&nbsp;set2[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;3:&nbsp;",&nbsp;set3[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>{'the','taste','of','the','!'} / {'the','!'}<br/>
-{'the','taste','of','the','!'} / {'the','!'}<br/>
+<div class="output_background_color" ><code>{'the','taste','of','the','!'}&nbsp;/&nbsp;{'the','!'}<br/>
+{'the','taste','of','the','!'}&nbsp;/&nbsp;{'the','!'}<br/>
 <br/>
-{'the','taste','of','the',12,'coffees','!'} / {'the','taste','of','the',12,'coffees','!'}<br/>
-{'the',12,'coffees','!'} / {12,'coffees','!'}<br/>
+{'the','taste','of','the',12,'coffees','!'}&nbsp;/&nbsp;{'the','taste','of','the',12,'coffees','!'}<br/>
+{'the',12,'coffees','!'}&nbsp;/&nbsp;{12,'coffees','!'}<br/>
 <br/>
-{'the','taste','!'} / {'the','coffees','!'}<br/>
-{'the','taste','!'} / {'the','!'}<br/>
-{'the','taste','coffees','!'} / {'the','!'}<br/>
-{'coffees','!'} / {'the','taste','of','the',12,'coffees','!'}<br/>
-{} / {}<br/>
+{'the','taste','!'}&nbsp;/&nbsp;{'the','coffees','!'}<br/>
+{'the','taste','!'}&nbsp;/&nbsp;{'the','!'}<br/>
+{'the','taste','coffees','!'}&nbsp;/&nbsp;{'the','!'}<br/>
+{'coffees','!'}&nbsp;/&nbsp;{'the','taste','of','the',12,'coffees','!'}<br/>
+{}&nbsp;/&nbsp;{}<br/>
 <br/>
-Demonstrate the follower feature: <br/>
-Extraction 1: {'the','taste','of','!'}<br/>
-Extraction 2: {'A','fragrance','coming','!'}<br/>
-Extraction 3: {'Der','Geschmack','kommt','!'}<br/>
+Demonstrate&nbsp;the&nbsp;follower&nbsp;feature:&nbsp;<br/>
+Extraction&nbsp;1:&nbsp;{'the','taste','of','!'}<br/>
+Extraction&nbsp;2:&nbsp;{'A','fragrance','coming','!'}<br/>
+Extraction&nbsp;3:&nbsp;{'Der','Geschmack','kommt','!'}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_outside_.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_left_.html">left (parameter set function)</a><br/>

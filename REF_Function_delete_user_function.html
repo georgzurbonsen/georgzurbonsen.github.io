@@ -78,8 +78,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -109,36 +110,36 @@ function implementation will not deleted. In case <a class="bold_text" href="REF
 <p>User function not found<br/>
 Specified function is not a user function</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define procedure (foo)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print("Function name = ", function name[]," &nbsp;" );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (function name[] = bar) echo("Message = ", message[] ); else: echo;<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure&nbsp;(foo)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Function&nbsp;name&nbsp;=&nbsp;",&nbsp;function&nbsp;name[],"&nbsp;&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(function&nbsp;name[]&nbsp;=&nbsp;bar)&nbsp;echo("Message&nbsp;=&nbsp;",&nbsp;message[]&nbsp;);&nbsp;else:&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;define additional procedure (bar, foo, { { message, literal } } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;additional&nbsp;procedure&nbsp;(bar,&nbsp;foo,&nbsp;{&nbsp;{&nbsp;message,&nbsp;literal&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;{ &nbsp; // Main part<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;foo;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bar(salad bar);<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delete user function( foo );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bar(desert bar);<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;define procedure(foo) { echo (new line, "Fooled."); };<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;foo;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bar(wine bar);<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delete user function (bar);<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;define procedure(bar) { echo (new line, "Bar closed."); };<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bar;<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;//&nbsp;Main&nbsp;part<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar(salad&nbsp;bar);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete&nbsp;user&nbsp;function(&nbsp;foo&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar(desert&nbsp;bar);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure(foo)&nbsp;{&nbsp;echo&nbsp;(new&nbsp;line,&nbsp;"Fooled.");&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar(wine&nbsp;bar);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete&nbsp;user&nbsp;function&nbsp;(bar);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure(bar)&nbsp;{&nbsp;echo&nbsp;(new&nbsp;line,&nbsp;"Bar&nbsp;closed.");&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Function name = foo &nbsp;<br/>
-Function name = bar &nbsp;Message = salad bar<br/>
-Function name = bar &nbsp;Message = desert bar<br/>
+<div class="output_background_color" ><code>Function&nbsp;name&nbsp;=&nbsp;foo&nbsp;&nbsp;<br/>
+Function&nbsp;name&nbsp;=&nbsp;bar&nbsp;&nbsp;Message&nbsp;=&nbsp;salad&nbsp;bar<br/>
+Function&nbsp;name&nbsp;=&nbsp;bar&nbsp;&nbsp;Message&nbsp;=&nbsp;desert&nbsp;bar<br/>
 <br/>
 Fooled.<br/>
-Function name = bar &nbsp;Message = wine bar<br/>
+Function&nbsp;name&nbsp;=&nbsp;bar&nbsp;&nbsp;Message&nbsp;=&nbsp;wine&nbsp;bar<br/>
 <br/>
-Bar closed.<br/>
+Bar&nbsp;closed.<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_delete_user_function.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_function_existing.html">user function existing</a></p>

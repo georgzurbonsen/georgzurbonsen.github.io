@@ -68,8 +68,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -115,34 +116,34 @@ The easiest way to describe a date or time value is using one of the following f
 
 Dates turn into plain dates with original text representation voided.</p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;d1[] = "14. July 2021";<br/>
- &nbsp;d2[] = "now";<br/>
- &nbsp;d3[] = "20:15:00";<br/>
- &nbsp;d4[] = ""; // Blank date<br/>
- &nbsp;<br/>
- &nbsp;echo("date &nbsp; &nbsp; (): ", date(d1[]), ", ", date(d2[]), ", ",date(d3[]), ", ",date(d4[]), ", ", type detailed(date(d1[])) );<br/>
- &nbsp;echo("time &nbsp; &nbsp; (): ", time(d1[]), ", ", time(d2[]), ", ",time(d3[]), ", ",time(d4[]), ", ", type detailed(time(d1[])) );<br/>
- &nbsp;echo("pure date(): ", pure date(d1[]), ", ", pure date(d2[]), ", ",pure date(d3[]), ", ",pure date(d4[]), ", ", <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type detailed(pure date(d1[])) );<br/>
- &nbsp;echo("date time(): ", date time(d1[]), ", ", date time(d2[]), ", ",date time(d3[]), ", ",date time(d4[]), ", ", <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;type detailed(date time(d1[])) );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;d1[]&nbsp;=&nbsp;"14.&nbsp;July&nbsp;2021";<br/>
+&nbsp;&nbsp;d2[]&nbsp;=&nbsp;"now";<br/>
+&nbsp;&nbsp;d3[]&nbsp;=&nbsp;"20:15:00";<br/>
+&nbsp;&nbsp;d4[]&nbsp;=&nbsp;"";&nbsp;//&nbsp;Blank&nbsp;date<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;():&nbsp;",&nbsp;date(d1[]),&nbsp;",&nbsp;",&nbsp;date(d2[]),&nbsp;",&nbsp;",date(d3[]),&nbsp;",&nbsp;",date(d4[]),&nbsp;",&nbsp;",&nbsp;type&nbsp;detailed(date(d1[]))&nbsp;);<br/>
+&nbsp;&nbsp;echo("time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;():&nbsp;",&nbsp;time(d1[]),&nbsp;",&nbsp;",&nbsp;time(d2[]),&nbsp;",&nbsp;",time(d3[]),&nbsp;",&nbsp;",time(d4[]),&nbsp;",&nbsp;",&nbsp;type&nbsp;detailed(time(d1[]))&nbsp;);<br/>
+&nbsp;&nbsp;echo("pure&nbsp;date():&nbsp;",&nbsp;pure&nbsp;date(d1[]),&nbsp;",&nbsp;",&nbsp;pure&nbsp;date(d2[]),&nbsp;",&nbsp;",pure&nbsp;date(d3[]),&nbsp;",&nbsp;",pure&nbsp;date(d4[]),&nbsp;",&nbsp;",&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;detailed(pure&nbsp;date(d1[]))&nbsp;);<br/>
+&nbsp;&nbsp;echo("date&nbsp;time():&nbsp;",&nbsp;date&nbsp;time(d1[]),&nbsp;",&nbsp;",&nbsp;date&nbsp;time(d2[]),&nbsp;",&nbsp;",date&nbsp;time(d3[]),&nbsp;",&nbsp;",date&nbsp;time(d4[]),&nbsp;",&nbsp;",&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;detailed(date&nbsp;time(d1[]))&nbsp;);<br/>
 <br/>
- &nbsp;echo;<br/>
- &nbsp;echo(date("31. March 2021"), " / ", type detailed(date("31. Dezember 2021")) );<br/>
- &nbsp;echo(date("2020 / 12 / 31 15:00")+1); &nbsp; &nbsp; // Date and time<br/>
- &nbsp;echo(date time("2020-12-31")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Add a time (default 00:00:00)<br/>
- &nbsp;echo(time("2020-12-31 15:00")); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Time<br/>
- &nbsp;echo(time("2020-12-31 15:00")+1/24); &nbsp; &nbsp; &nbsp;// Time, 1 hour later<br/>
- &nbsp;echo(pure date("31. Dezember 2021")+1); &nbsp; &nbsp; &nbsp; // Numeral</code></div>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(date("31.&nbsp;March&nbsp;2021"),&nbsp;"&nbsp;/&nbsp;",&nbsp;type&nbsp;detailed(date("31.&nbsp;Dezember&nbsp;2021"))&nbsp;);<br/>
+&nbsp;&nbsp;echo(date("2020&nbsp;/&nbsp;12&nbsp;/&nbsp;31&nbsp;15:00")+1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Date&nbsp;and&nbsp;time<br/>
+&nbsp;&nbsp;echo(date&nbsp;time("2020-12-31"));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Add&nbsp;a&nbsp;time&nbsp;(default&nbsp;00:00:00)<br/>
+&nbsp;&nbsp;echo(time("2020-12-31&nbsp;15:00"));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Time<br/>
+&nbsp;&nbsp;echo(time("2020-12-31&nbsp;15:00")+1/24);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Time,&nbsp;1&nbsp;hour&nbsp;later<br/>
+&nbsp;&nbsp;echo(pure&nbsp;date("31.&nbsp;Dezember&nbsp;2021")+1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Numeral</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>date &nbsp; &nbsp; (): 2021-07-14, 2020-09-27 18:26:39, 20:15:00, , plain date<br/>
-time &nbsp; &nbsp; (): , 18:26:39, 20:15:00, , plain date<br/>
-pure date(): 2021-07-14, 2020-09-27, , , plain date<br/>
-date time(): 2021-07-14 00:00:00, 2020-09-27 18:26:39, 20:15:00, 00:00:00, plain date<br/>
+<div class="output_background_color" ><code>date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;():&nbsp;2021-07-14,&nbsp;2020-10-01&nbsp;22:10:52,&nbsp;20:15:00,&nbsp;,&nbsp;plain&nbsp;date<br/>
+time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;():&nbsp;,&nbsp;22:10:52,&nbsp;20:15:00,&nbsp;,&nbsp;plain&nbsp;date<br/>
+pure&nbsp;date():&nbsp;2021-07-14,&nbsp;2020-10-01,&nbsp;,&nbsp;,&nbsp;plain&nbsp;date<br/>
+date&nbsp;time():&nbsp;2021-07-14&nbsp;00:00:00,&nbsp;2020-10-01&nbsp;22:10:52,&nbsp;20:15:00,&nbsp;00:00:00,&nbsp;plain&nbsp;date<br/>
 <br/>
-2021-03-31 / plain date<br/>
-2021-01-01 15:00:00<br/>
-2020-12-31 00:00:00<br/>
+2021-03-31&nbsp;/&nbsp;plain&nbsp;date<br/>
+2021-01-01&nbsp;15:00:00<br/>
+2020-12-31&nbsp;00:00:00<br/>
 15:00:00<br/>
 16:00:00<br/>
 2022-01-01<br/>

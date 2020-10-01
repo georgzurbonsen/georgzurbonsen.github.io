@@ -60,8 +60,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -70,40 +71,51 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-Functions and procedures are subroutines which can be called using their name.  For simplicity, all such subroutines will be referred to as
-<i>functions</i> throughout the B4P documentation, regardless if they are called up as procedures (without using the return value provided)
-or as functions (with return values being used).  B4P provides an extensive library of standard functions, with focus on processing
-sophisticated tables and data structures.  In addition, you can define your own <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user functions</a> or even create own libraries containing
-user functions.
+B4P provides an extensive library of standard functions with an emphasis on processing complex tables and data structures.  In addition, you can define your own <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user functions</a> or even create own libraries containing user functions.
+<br>
+<br>
+Functions and procedures are subroutines that can be called up using their name.  For simplicity, all such subroutines are referred to as <i>functions</i> throughout the B4P documentation, regardless of whether they provide a return value (as functions) or not (as procedures).
 
-<br><br>
+<br>
+<br>
+<b>FUNCTION NAMING FEATURES AND CONVENTIONS</b>
+<br>
+Unlike virtually any other programming language, <b>B4P function names may consist of multiple words with spaces and special characters inbetween</b>, allowing natural, intuitive, and readable naming of highly complex functions in plain, clear language. This allows specialized functions to be easily remembered, understood, and shared by members of a team for future use.
 
-Different from quasi all other programming languages, B4P function names may consist of multiple words with spaces inbetween.
-Function names are case sensitive and always specified as as unquoted literals, i.e. quotation marks are not allowed in order to refer
-to a fancy function name.  Because function names are unquoted literals, the number of spaces (or tabs) between the individual words is
-irrelevant, but must be at least one.  The first two function names listed below are equivalent, but the remaining ones are not.
+Function names are <b>case sensitive</b> and specified as as <b>unquoted literals</b>, i.e. quotation marks are not used when referring to a multi-word function name. The number of spaces (or tabs) between the individual words is irrelevant, but must be at least one.
 
-</p><ul class="bullets"><li class="bullets"><b>table process(...)</b></li>
-<li class="bullets"><b>table&nbsp;&nbsp;&nbsp;process&nbsp;&nbsp;(...);</b> // Same as 'table process'</li>
-<li class="bullets"><b>tableprocess(...)</b> // 'tableprocess' differs from 'table process'</li>
-<li class="bullets"><b>Table process(...)</b> // Upper case letter</li>
-<li class="bullets"><b>table_process(...)</b> // <i>Snake case</i>: Underscore and other symbols differ from spaces.</li>
-<li class="bullets"><b>Table-process(...)</b> // <i>Kebab case</i>: Likely wrong. Attempts to subtract return value of <b>process(...)</b> from the string 'Table'.</li>
-</ul><p>
-<br><br>
+<br>
+<br>
+<b>EXAMPLES</b>
+<br>
+The first two function names listed below are equivalent, but all the remaining ones are not.
 
-Functions may require no, a fixed number or a variable number of <a class="bold_text" href="REF_Features_Function_Parameters.html">function parameters</a> with different <a class="bold_text" href="REF_Features_Function_parameter_directions.html">function parameter directions</a>.
+</p><ul class="bullets"><li class="bullets"><b>table process(...)</b>
+</li><li class="bullets"><b>table&nbsp;&nbsp;&nbsp;process&nbsp;&nbsp;(...);</b>    // Multiple spaces is equivalent to a single space between the words 'table process'
+</li><li class="bullets"><b>Table process(...)</b>     // Upper case letter makes this distinct
+</li><li class="bullets"><b>table_process(...)</b>     // <i>Snake-case</i>: Underscore and other symbols differ from spaces.
+</li><li class="bullets"><b>table-process(...)</b>     // <i>Kebab-case: avoid dashes as separators </i>:  A dash will return value of <b>process(...)</b> substracted from the string 'table'.
+</li><li class="bullets"><b>tableprocess(...)</b>     // Single-word 'tableprocess' differs from double-word 'table process'
+</li><li class="bullets"><b>TableProcess(...)</b>     // <i>Camel case</i>: Capitalized letter for each word makes it a distinct function name from 'tableprocess'
+</li></ul><p>
+CAUTION: Avoid using the dash symbol ('-') as a word separator, as this will be interpreted as a subtraction sign and result in the mathematical operation being carried out.
+<br>
+<br>
 
-<br><br>
+<br>
+<b>FUNCTION PARAMETERS</b>
+<br>
 
-The difference between procedures and functions is that procedures do not provide return values but functions do.  Where allowed,
-functions can also be called as procedures.
+Functions may require either none, a fixed number,  or a variable number of <a class="bold_text" href="REF_Features_Function_Parameters.html">function parameters</a> with different <a class="bold_text" href="REF_Features_Function_parameter_directions.html">function parameter directions</a>.
+<br>
+<br>
+The difference between procedures and functions is that procedures do not provide return values but functions do.  Where allowed, functions can also be called as procedures.
 
 </p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
 <tr><th>Function Nature     </th><th> Description                   </th><th> Examples</th></tr>
-<tr><td>Function        </td><td> The function will always provide a return value and can only be called inside expressions where the return value is used further. </td><td> a[] = abs( 1.5 );<br>echo( sqrt( 81 ) );</td></tr>
-<tr><td>Procedure       </td><td> The function will not provide return values and must be called as procedures.  If no parameters are supplied, then the function name can be used alone with semicolon at the end. </td><td> echo;<br>echo();<br>echo(Hello);</td></tr>
-<tr><td>Procedure or function   </td><td> The function can be called as procedrues or functions. Use of return value is voluntary. </td><td> table rename headers(...);<br>a[] = table rename headers(...);</td></tr>
+<tr><td>Function        </td><td> * Always provides a return value <br) * Must be called inside expressions where the return value is used further. </td><td> a[] = abs( 1.5 );<br>echo( sqrt( 81 ) );</td></tr>
+<tr><td>Procedure       </td><td> * Does not provide return values  <br> * Must be called as procedures. <br> * If no parameters are supplied, then the function name can be used alone with semicolon at the end. </td><td> echo;<br>echo();<br>echo(Hello);</td></tr>
+<tr><td>Procedure or function   </td><td> * The function can be called as procedrues or functions. <br> * Use of return value is voluntary. </td><td> table rename headers(...);<br>a[] = table rename headers(...);</td></tr>
 <tr><td>Control flow functions  </td><td> <a class="bold_text" href="REF_Features_Control_Flow_Functions.html">Control flow functions</a> require a succeeding statement or code block which will be executed as specified by these functions.  The <a class="bold_text" href="REF_Function_if.html">if</a>() statement is one of them. </td><td> if (a[]=1) echo("is 1");</td></tr>
 </table><p>
 </p>

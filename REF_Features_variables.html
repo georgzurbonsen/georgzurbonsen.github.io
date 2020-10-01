@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -87,14 +88,14 @@ allows you to assign table header names, tale contents, and any literal values, 
 
 Following naming rules apply:
 
-</p><ul class="bullets"><li class="bullets">The naming rule applies to <a class="bold_text" href="REF_Features_variables.html">base variables</a> as well as member variables in <a class="bold_text" href="REF_Features_structures.html">structures</a>.</li>
-<li class="bullets">Variable names may consist of multiple words and any character is allowed.</li>
-<li class="bullets">Use quotation marks to preserve multiple blanks or accept special symbols inside variable names.  Valid example: <b>' (1.)'[]</b></li>
-<li class="bullets">Non-ANSI characters are allowed, e.g. <b>Caf&eacute;[]</b></li>
-<li class="bullets">Blank variable names are also allowed, e.g. <b>''[]</b>.  Attention: Inside <a class="bold_text" href="REF_Features_structures.html">structures</a>, blank member names will be referred as default member variables.</li>
-<li class="bullets">Any expression returning a literal is allowed, e.g. <b>("Hel" + "lo")[]</b> references the variable <b>Hello[]</b>.</li>
-<li class="bullets">Indirect variable referencing is allowed, e.g. <b>a[][]</b> access variable using the name as specified in variable <b>a[]</b>.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">The naming rule applies to <a class="bold_text" href="REF_Features_variables.html">base variables</a> as well as member variables in <a class="bold_text" href="REF_Features_structures.html">structures</a>.
+</li><li class="bullets">Variable names may consist of multiple words and any character is allowed.
+</li><li class="bullets">Use quotation marks to preserve multiple blanks or accept special symbols inside variable names.  Valid example: <b>' (1.)'[]</b>
+</li><li class="bullets">Non-ANSI characters are allowed, e.g. <b>Caf&eacute;[]</b>
+</li><li class="bullets">Blank variable names are also allowed, e.g. <b>''[]</b>.  Attention: Inside <a class="bold_text" href="REF_Features_structures.html">structures</a>, blank member names will be referred as default member variables.
+</li><li class="bullets">Any expression returning a literal is allowed, e.g. <b>("Hel" + "lo")[]</b> references the variable <b>Hello[]</b>.
+</li><li class="bullets">Indirect variable referencing is allowed, e.g. <b>a[][]</b> access variable using the name as specified in variable <b>a[]</b>.
+</li></ul><p></p>
 <h4> Scoping - Global and Local Variables</h4>
 <p>
 Beyond4P variables are created (also known as <i>declared</i>) at their first assignments.  For example, <b>a[] = 1;</b> creates the variable

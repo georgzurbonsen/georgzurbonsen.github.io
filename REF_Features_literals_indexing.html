@@ -72,8 +72,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -87,21 +88,21 @@ character.  The index value is specified in braces and shall not be confused wit
 
 <br><br>
 Following rules apply to the indexing literals:
-</p><ul class="bullets"><li class="bullets">The index must always be a numeric value.</li>
-<li class="bullets">Specifying just braces {} without an index will retrieve the length (character count) of the literal.  Alternatively, use <a class="bold_text" href="REF_Function_length.html">length [string function]</a>.</li>
-<li class="bullets">Indexing begins with 0 (zero).</li>
-<li class="bullets">The value will be rounded in case it does not contain an integer value.  Example: <b>a[]{2.99}</b> accesses the same member as <b>a[3]</b>.</li>
-<li class="bullets"><span class="red_text">Negative indexing</span> is supported. -1 refers to the last character in the literal. -2, -3, etc. refer to the previous ones, and so forth.</li>
-<li class="bullets">Empty sets are returned when accessing with index values which lie out of bounds.  Example: <b>{a,b,c}{5}</b> returnss <b>{}</b> (empty set).</li>
-<li class="bullets">Updating individual elements on the left hand side of assignments is not possible.  Wrong exmaple: <b>a[]{3} = 'E';</b>.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">The index must always be a numeric value.
+</li><li class="bullets">Specifying just braces {} without an index will retrieve the length (character count) of the literal.  Alternatively, use <a class="bold_text" href="REF_Function_length.html">length [string function]</a>.
+</li><li class="bullets">Indexing begins with 0 (zero).
+</li><li class="bullets">The value will be rounded in case it does not contain an integer value.  Example: <b>a[]{2.99}</b> accesses the same member as <b>a[3]</b>.
+</li><li class="bullets"><span class="red_text">Negative indexing</span> is supported. -1 refers to the last character in the literal. -2, -3, etc. refer to the previous ones, and so forth.
+</li><li class="bullets">Empty sets are returned when accessing with index values which lie out of bounds.  Example: <b>{a,b,c}{5}</b> returnss <b>{}</b> (empty set).
+</li><li class="bullets">Updating individual elements on the left hand side of assignments is not possible.  Wrong exmaple: <b>a[]{3} = 'E';</b>.
+</li></ul><p>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;echo( abcde {} ); &nbsp; &nbsp; // Returns 5 (character count)<br/>
- &nbsp;echo( abcde, {0} ); &nbsp; // Access the 1st element<br/>
- &nbsp;echo( abcde, {-2} ); &nbsp;// Access the 2nd last element<br/>
- &nbsp;echo( abcde, {10} ); &nbsp;// Attempts to access characters outside the string returns blank literals.<br/>
- &nbsp;echo( abcde, {-10} ); // Same case here.</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;abcde&nbsp;{}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;5&nbsp;(character&nbsp;count)<br/>
+&nbsp;&nbsp;echo(&nbsp;abcde,&nbsp;{0}&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Access&nbsp;the&nbsp;1st&nbsp;element<br/>
+&nbsp;&nbsp;echo(&nbsp;abcde,&nbsp;{-2}&nbsp;);&nbsp;&nbsp;//&nbsp;Access&nbsp;the&nbsp;2nd&nbsp;last&nbsp;element<br/>
+&nbsp;&nbsp;echo(&nbsp;abcde,&nbsp;{10}&nbsp;);&nbsp;&nbsp;//&nbsp;Attempts&nbsp;to&nbsp;access&nbsp;characters&nbsp;outside&nbsp;the&nbsp;string&nbsp;returns&nbsp;blank&nbsp;literals.<br/>
+&nbsp;&nbsp;echo(&nbsp;abcde,&nbsp;{-10}&nbsp;);&nbsp;//&nbsp;Same&nbsp;case&nbsp;here.</code></div>
 <h5> Output:</h5>
 <div class="output_background_color" ><code>5<br/>
 abcde{0}<br/>

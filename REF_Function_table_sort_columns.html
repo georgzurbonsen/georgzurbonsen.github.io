@@ -89,8 +89,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -119,16 +120,16 @@ All table rows are included in the sorting process.
 <td>table columns</td>
 <td><b>Column to mark begin of sorting range</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">One header name or column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">One header name or column numbers may be specified
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>All columns will be sorted
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>table columns</td>
 <td><b>Column to mark end of sorting range</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">One header name or column numbers may be specified</li>
-</ul><p>No sorting takes place if the ending column lies before or over the starting column.</p>
+</p><ul class="bullets"><li class="bullets">One header name or column numbers may be specified
+</li></ul><p>No sorting takes place if the ending column lies before or over the starting column.</p>
 <span class="black_text"><b> Default value: </b></span>All remainign columns will be sorted
 </td></tr>
 <tr><td>Opt. 4<br/>input</td>
@@ -146,41 +147,41 @@ Specific rules apply for this function:
 <p>Table not found<br/>
 Header name not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( t,<br/>
- &nbsp;{ { &nbsp;Name, Town, Street, Phone, Gender, Country, Province, Favorite Pet },<br/>
- &nbsp; &nbsp;{ &nbsp;Dan, &nbsp;La Spezia, &nbsp;Main St., None, M, Italy, Liguria, Toad },<br/>
- &nbsp; &nbsp;{ &nbsp;Jane, Miami, Hill St., None, F, USA, &nbsp;Florida, Alligator } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;t,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Name,&nbsp;Town,&nbsp;Street,&nbsp;Phone,&nbsp;Gender,&nbsp;Country,&nbsp;Province,&nbsp;Favorite&nbsp;Pet&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Dan,&nbsp;&nbsp;La&nbsp;Spezia,&nbsp;&nbsp;Main&nbsp;St.,&nbsp;None,&nbsp;M,&nbsp;Italy,&nbsp;Liguria,&nbsp;Toad&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Jane,&nbsp;Miami,&nbsp;Hill&nbsp;St.,&nbsp;None,&nbsp;F,&nbsp;USA,&nbsp;&nbsp;Florida,&nbsp;Alligator&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list( t );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;table copy table (t, t1 );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(t,&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Sort all columns by header name except 1st and last one:");<br/>
- &nbsp;table sort columns( t, Town, -2 );<br/>
- &nbsp;table list ( t );<br/>
+&nbsp;&nbsp;echo("Sort&nbsp;all&nbsp;columns&nbsp;by&nbsp;header&nbsp;name&nbsp;except&nbsp;1st&nbsp;and&nbsp;last&nbsp;one:");<br/>
+&nbsp;&nbsp;table&nbsp;sort&nbsp;columns(&nbsp;t,&nbsp;Town,&nbsp;-2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;echo("Sort all columns Z-A by Row 2:");<br/>
- &nbsp;table sort columns( t, Name, -1, alphabetic down, 2 );<br/>
- &nbsp;table list ( t );<br/>
+&nbsp;&nbsp;echo("Sort&nbsp;all&nbsp;columns&nbsp;Z-A&nbsp;by&nbsp;Row&nbsp;2:");<br/>
+&nbsp;&nbsp;table&nbsp;sort&nbsp;columns(&nbsp;t,&nbsp;Name,&nbsp;-1,&nbsp;alphabetic&nbsp;down,&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Name | Town &nbsp; &nbsp; &nbsp;| Street &nbsp; | Phone | Gender | Country | Province | Favorite Pet<br/>
- &nbsp; &nbsp;1 : Dan &nbsp;| La Spezia | Main St. | None &nbsp;| M &nbsp; &nbsp; &nbsp;| Italy &nbsp; | Liguria &nbsp;| Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Jane | Miami &nbsp; &nbsp; | Hill St. | None &nbsp;| F &nbsp; &nbsp; &nbsp;| USA &nbsp; &nbsp; | Florida &nbsp;| Alligator &nbsp; <br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Street&nbsp;&nbsp;&nbsp;|&nbsp;Phone&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Country&nbsp;|&nbsp;Province&nbsp;|&nbsp;Favorite&nbsp;Pet<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;La&nbsp;Spezia&nbsp;|&nbsp;Main&nbsp;St.&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Italy&nbsp;&nbsp;&nbsp;|&nbsp;Liguria&nbsp;&nbsp;|&nbsp;Toad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Jane&nbsp;|&nbsp;Miami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hill&nbsp;St.&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Florida&nbsp;&nbsp;|&nbsp;Alligator&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Sort all columns by header name except 1st and last one:<br/>
- &nbsp; &nbsp;0 : Name | Country | Gender | Phone | Province | Street &nbsp; | Town &nbsp; &nbsp; &nbsp;| Favorite Pet<br/>
- &nbsp; &nbsp;1 : Dan &nbsp;| Italy &nbsp; | M &nbsp; &nbsp; &nbsp;| None &nbsp;| Liguria &nbsp;| Main St. | La Spezia | Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Jane | USA &nbsp; &nbsp; | F &nbsp; &nbsp; &nbsp;| None &nbsp;| Florida &nbsp;| Hill St. | Miami &nbsp; &nbsp; | Alligator &nbsp; <br/>
+Sort&nbsp;all&nbsp;columns&nbsp;by&nbsp;header&nbsp;name&nbsp;except&nbsp;1st&nbsp;and&nbsp;last&nbsp;one:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Country&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Phone&nbsp;|&nbsp;Province&nbsp;|&nbsp;Street&nbsp;&nbsp;&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Favorite&nbsp;Pet<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;Italy&nbsp;&nbsp;&nbsp;|&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;Liguria&nbsp;&nbsp;|&nbsp;Main&nbsp;St.&nbsp;|&nbsp;La&nbsp;Spezia&nbsp;|&nbsp;Toad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Jane&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;Florida&nbsp;&nbsp;|&nbsp;Hill&nbsp;St.&nbsp;|&nbsp;Miami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alligator&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Sort all columns Z-A by Row 2:<br/>
- &nbsp; &nbsp;0 : Country | Phone | Town &nbsp; &nbsp; &nbsp;| Name | Street &nbsp; | Province | Gender | Favorite Pet<br/>
- &nbsp; &nbsp;1 : Italy &nbsp; | None &nbsp;| La Spezia | Dan &nbsp;| Main St. | Liguria &nbsp;| M &nbsp; &nbsp; &nbsp;| Toad &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : USA &nbsp; &nbsp; | None &nbsp;| Miami &nbsp; &nbsp; | Jane | Hill St. | Florida &nbsp;| F &nbsp; &nbsp; &nbsp;| Alligator &nbsp; <br/>
+Sort&nbsp;all&nbsp;columns&nbsp;Z-A&nbsp;by&nbsp;Row&nbsp;2:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Country&nbsp;|&nbsp;Phone&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Name&nbsp;|&nbsp;Street&nbsp;&nbsp;&nbsp;|&nbsp;Province&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Favorite&nbsp;Pet<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Italy&nbsp;&nbsp;&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;La&nbsp;Spezia&nbsp;|&nbsp;Dan&nbsp;&nbsp;|&nbsp;Main&nbsp;St.&nbsp;|&nbsp;Liguria&nbsp;&nbsp;|&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Toad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;None&nbsp;&nbsp;|&nbsp;Miami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jane&nbsp;|&nbsp;Hill&nbsp;St.&nbsp;|&nbsp;Florida&nbsp;&nbsp;|&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alligator&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_sort_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

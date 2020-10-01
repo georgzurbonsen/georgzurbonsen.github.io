@@ -74,8 +74,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -89,16 +90,16 @@ a colon symbol and following the paramter set element to repeat.  Multiple repet
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code><br/>
- &nbsp;echo({ 5:0 } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { 0,0,0,0,0 }<br/>
- &nbsp;echo({ 2:3,3:2 } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { 3,3,2,2,2 }<br/>
- &nbsp;echo({ 0.9:A } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { A } &nbsp;Rounded up<br/>
- &nbsp;echo({ 0.1:A } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { } &nbsp;Rounded down<br/>
- &nbsp;echo({ 2:Hello } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { Hello,Hello}<br/>
- &nbsp;echo({ 0:Hello } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { }<br/>
- &nbsp;echo({ -2:Hello } ); &nbsp; &nbsp; &nbsp; &nbsp; // Generates { }<br/>
- &nbsp;echo({ 3:{a,b} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {a,b},{a,b},{a,b} }<br/>
- &nbsp;echo({ 2:{3:1} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {1,1,1},{1,1,1} }<br/>
- &nbsp;echo({ 2:{1..4} } ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Generates { {1,2,3,4},{1,2,3,4} }</code></div>
+&nbsp;&nbsp;echo({&nbsp;5:0&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;0,0,0,0,0&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;2:3,3:2&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;3,3,2,2,2&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;0.9:A&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;A&nbsp;}&nbsp;&nbsp;Rounded&nbsp;up<br/>
+&nbsp;&nbsp;echo({&nbsp;0.1:A&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;}&nbsp;&nbsp;Rounded&nbsp;down<br/>
+&nbsp;&nbsp;echo({&nbsp;2:Hello&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;Hello,Hello}<br/>
+&nbsp;&nbsp;echo({&nbsp;0:Hello&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;-2:Hello&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;3:{a,b}&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;{a,b},{a,b},{a,b}&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;2:{3:1}&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;{1,1,1},{1,1,1}&nbsp;}<br/>
+&nbsp;&nbsp;echo({&nbsp;2:{1..4}&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Generates&nbsp;{&nbsp;{1,2,3,4},{1,2,3,4}&nbsp;}</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>{0,0,0,0,0}<br/>
 {3,3,2,2,2}<br/>

@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -115,13 +116,13 @@ If the new table is already existing, then it will be initialized.</p>
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Name, Age }, { Ann, 45 }, { Dan, 35 }} );<br/>
- &nbsp;table copy table ( t, u );<br/>
- &nbsp;table list ( u );</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{{&nbsp;Name,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Ann,&nbsp;45&nbsp;},&nbsp;{&nbsp;Dan,&nbsp;35&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;u&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 <br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| 35 <br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_copy_table.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

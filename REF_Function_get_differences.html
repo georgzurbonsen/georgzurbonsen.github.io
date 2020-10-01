@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -150,46 +151,46 @@ Options are available to include whole words or numbers in the comparison, so "M
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Good taste of coffee counts, Good taste of coffee counts, c[], d[] );<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // '', '', 0 (equal)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;c[],&nbsp;d[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;'',&nbsp;'',&nbsp;0&nbsp;(equal)<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Good taste of coffee counts, Good taste of caffè counts, c[], d[] );<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // offee, affè, 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;c[],&nbsp;d[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;offee,&nbsp;affè,&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Good taste of coffee counts, Good taste of caffè counts, c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // coffee, caffè, 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;coffee,&nbsp;caffè,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Good taste of coffee counts, Good taste counts, c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // coffee, '', 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;counts,&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;coffee,&nbsp;'',&nbsp;2<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Good tasting of coffee counts, Good taste of caffè counts, c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // tasting of coffee, taste of caffè, 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Good&nbsp;tasting&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;tasting&nbsp;of&nbsp;coffee,&nbsp;taste&nbsp;of&nbsp;caffè,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Year 2015 begins, Year 2016 begins, c[], d[], characters);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 5, 6, 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;c[],&nbsp;d[],&nbsp;characters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;5,&nbsp;6,&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Year 2015 begins, Year 2016 begins, c[], d[], words);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 5, 6, 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;c[],&nbsp;d[],&nbsp;words);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;5,&nbsp;6,&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences(Year 2015 begins, Year 2016 begins, c[], d[], numbers);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 2015, 2016, 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;c[],&nbsp;d[],&nbsp;numbers);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;2015,&nbsp;2016,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = get differences( "20-Mar-2015", "21-Mar-2015" , c[], d[], characters);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 0, 1, 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;get&nbsp;differences(&nbsp;"20-Mar-2015",&nbsp;"21-Mar-2015"&nbsp;,&nbsp;c[],&nbsp;d[],&nbsp;characters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;0,&nbsp;1,&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] &nbsp;= get differences( "20-Mar-2015", "21-Mar-2015" , c[], d[], spaces);<br/>
- &nbsp; &nbsp; &nbsp;echo("1st string: '", c[], "', &nbsp; &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] ); // 20-Mar-2015, 20-Mar-2016, 1</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;&nbsp;=&nbsp;get&nbsp;differences(&nbsp;"20-Mar-2015",&nbsp;"21-Mar-2015"&nbsp;,&nbsp;c[],&nbsp;d[],&nbsp;spaces);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("1st&nbsp;string:&nbsp;'",&nbsp;c[],&nbsp;"',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);&nbsp;//&nbsp;20-Mar-2015,&nbsp;20-Mar-2016,&nbsp;1</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>1st string: '', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 0<br/>
-1st string: 'offee', &nbsp; &nbsp;2nd string: 'affè' &nbsp; Result: 1<br/>
-1st string: 'coffee', &nbsp; &nbsp;2nd string: 'caffè' &nbsp; Result: 3<br/>
-1st string: 'of coffee ', &nbsp; &nbsp;2nd string: '' &nbsp; Result: 2<br/>
-1st string: 'tasting of coffee', &nbsp; &nbsp;2nd string: 'taste of caffè' &nbsp; Result: 3<br/>
-1st string: '5', &nbsp; &nbsp;2nd string: '6' &nbsp; Result: 1<br/>
-1st string: '5', &nbsp; &nbsp;2nd string: '6' &nbsp; Result: 1<br/>
-1st string: '2015', &nbsp; &nbsp;2nd string: '2016' &nbsp; Result: 3<br/>
-1st string: '0', &nbsp; &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
-1st string: '20-Mar-2015', &nbsp; &nbsp;2nd string: '21-Mar-2015' &nbsp; Result: 3<br/>
+<div class="output_background_color" ><code>1st&nbsp;string:&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;''&nbsp;&nbsp;&nbsp;Result:&nbsp;0<br/>
+1st&nbsp;string:&nbsp;'offee',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'affè'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+1st&nbsp;string:&nbsp;'coffee',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'caffè'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+1st&nbsp;string:&nbsp;'of&nbsp;coffee&nbsp;',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;''&nbsp;&nbsp;&nbsp;Result:&nbsp;2<br/>
+1st&nbsp;string:&nbsp;'tasting&nbsp;of&nbsp;coffee',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'taste&nbsp;of&nbsp;caffè'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+1st&nbsp;string:&nbsp;'5',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'6'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+1st&nbsp;string:&nbsp;'5',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'6'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+1st&nbsp;string:&nbsp;'2015',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'2016'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+1st&nbsp;string:&nbsp;'0',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'1'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+1st&nbsp;string:&nbsp;'20-Mar-2015',&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'21-Mar-2015'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_get_differences.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_locate_differences.html">locate differences</a></p>

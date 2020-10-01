@@ -89,8 +89,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -119,8 +120,8 @@ This function inserts one or more columns into the table with initial values.<br
 <td>table columns</td>
 <td><b>Header names columns to add</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names may be specified.  Column numbers are not allowed here.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names may be specified.  Column numbers are not allowed here.
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>parameter set or literal</td>
@@ -132,8 +133,8 @@ If the parameter is blank, or missing, then the columns will be initialized with
 <td>table column</td>
 <td><b>Destination column</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Specify only one header name and column number</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Specify only one header name and column number
+</li></ul><p>
 The new column will be inserted to the left. To insert them to the right, using <a class="bold_text" href="REF_Features_Table_columns.html">shifted Table Column Specifications</a> is a possible option, or
 use column numbers. Negative indexing is supported, where -1 adds the new column after (and not before) the last column.</p>
 </td></tr>
@@ -147,28 +148,28 @@ use column numbers. Negative indexing is supported, where -1 adds the new column
 <h4> Exceptions</h4>
 <p>Table not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t,<br/>
- &nbsp; &nbsp; &nbsp;{ { First Name, Last Name, Given Name, Birth Year },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Abel, &nbsp; &nbsp; &nbsp; Adams, &nbsp; &nbsp; A., &nbsp; &nbsp; &nbsp; &nbsp; 1990 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Betty, &nbsp; &nbsp; &nbsp;Beavers, &nbsp; B., &nbsp; &nbsp; &nbsp; &nbsp; 1995 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Charlie, &nbsp; &nbsp;Collins, &nbsp; C., &nbsp; &nbsp; &nbsp; &nbsp; 2000 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Daniela, &nbsp; &nbsp;Douglas, &nbsp; D., &nbsp; &nbsp; &nbsp; &nbsp; 2005 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Given&nbsp;Name,&nbsp;Birth&nbsp;Year&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Abel,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1990&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Betty,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beavers,&nbsp;&nbsp;&nbsp;B.,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1995&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Charlie,&nbsp;&nbsp;&nbsp;&nbsp;Collins,&nbsp;&nbsp;&nbsp;C.,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Daniela,&nbsp;&nbsp;&nbsp;&nbsp;Douglas,&nbsp;&nbsp;&nbsp;D.,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2005&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table insert columns( t, Gender, "M or F", First Name );<br/>
- &nbsp;table insert columns( t, Phone, {"1-202...", "1-212..."}, '&gt;First Name' );<br/>
- &nbsp;table insert columns( t, Birthplace, "-", -1 );<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;columns(&nbsp;t,&nbsp;Gender,&nbsp;"M&nbsp;or&nbsp;F",&nbsp;First&nbsp;Name&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;columns(&nbsp;t,&nbsp;Phone,&nbsp;{"1-202...",&nbsp;"1-212..."},&nbsp;'&gt;First&nbsp;Name'&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;columns(&nbsp;t,&nbsp;Birthplace,&nbsp;"-",&nbsp;-1&nbsp;);<br/>
 <br/>
- &nbsp;count[] = table insert missing columns( t, {Birthplace, Street} );<br/>
- &nbsp;echo(count[]); // Inserted 1 additional column.<br/>
+&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;insert&nbsp;missing&nbsp;columns(&nbsp;t,&nbsp;{Birthplace,&nbsp;Street}&nbsp;);<br/>
+&nbsp;&nbsp;echo(count[]);&nbsp;//&nbsp;Inserted&nbsp;1&nbsp;additional&nbsp;column.<br/>
 <br/>
- &nbsp;table list ( t );</code></div>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>1<br/>
- &nbsp; &nbsp;0 : Gender | First Name | Phone &nbsp; &nbsp;| Last Name | Given Name | Birth Year | Birthplace | Street<br/>
- &nbsp; &nbsp;1 : M or F | Abel &nbsp; &nbsp; &nbsp; | 1-202... | Adams &nbsp; &nbsp; | A. &nbsp; &nbsp; &nbsp; &nbsp; | 1990 &nbsp; &nbsp; &nbsp; | - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : M or F | Betty &nbsp; &nbsp; &nbsp;| 1-202... | Beavers &nbsp; | B. &nbsp; &nbsp; &nbsp; &nbsp; | 1995 &nbsp; &nbsp; &nbsp; | - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : M or F | Charlie &nbsp; &nbsp;| 1-202... | Collins &nbsp; | C. &nbsp; &nbsp; &nbsp; &nbsp; | 2000 &nbsp; &nbsp; &nbsp; | - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : M or F | Daniela &nbsp; &nbsp;| 1-202... | Douglas &nbsp; | D. &nbsp; &nbsp; &nbsp; &nbsp; | 2005 &nbsp; &nbsp; &nbsp; | - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Gender&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Given&nbsp;Name&nbsp;|&nbsp;Birth&nbsp;Year&nbsp;|&nbsp;Birthplace&nbsp;|&nbsp;Street<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;M&nbsp;or&nbsp;F&nbsp;|&nbsp;Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-202...&nbsp;|&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;A.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1990&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;M&nbsp;or&nbsp;F&nbsp;|&nbsp;Betty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-202...&nbsp;|&nbsp;Beavers&nbsp;&nbsp;&nbsp;|&nbsp;B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1995&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;M&nbsp;or&nbsp;F&nbsp;|&nbsp;Charlie&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-202...&nbsp;|&nbsp;Collins&nbsp;&nbsp;&nbsp;|&nbsp;C.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;M&nbsp;or&nbsp;F&nbsp;|&nbsp;Daniela&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-202...&nbsp;|&nbsp;Douglas&nbsp;&nbsp;&nbsp;|&nbsp;D.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_insert_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

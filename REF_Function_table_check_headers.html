@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -116,8 +117,8 @@ The function <b>table check headers silently</b> suppresses exceptions in case t
 <td>table columns</td>
 <td><b>Header names and/or column numbers</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>literal</td>
@@ -182,167 +183,167 @@ Specific rules apply for this function:
 <p>Table not found<br/>
 Various exceptions resulting from issues identified while checking headers</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table 1,<br/>
- &nbsp;{ { Name, Street, Town, Country }, { Miller, "..." } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Street,&nbsp;Town,&nbsp;Country&nbsp;},&nbsp;{&nbsp;Miller,&nbsp;"..."&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("1. Demonstrate 'must not exist':");<br/>
- &nbsp;echo( table check headers silently( table 1, {"State", "Province"}, must not exist ) ); // OK<br/>
- &nbsp;echo( table check headers silently( table 1, {"Town", "State"} , must not exist ) ); &nbsp; &nbsp;// Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, 10, &nbsp; &nbsp; &nbsp;must not exist ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, -1, &nbsp; &nbsp; &nbsp;must not exist ) ); &nbsp; // Not OK (last column exists)<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("1.&nbsp;Demonstrate&nbsp;'must&nbsp;not&nbsp;exist':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"State",&nbsp;"Province"},&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"Town",&nbsp;"State"}&nbsp;,&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;-1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK&nbsp;(last&nbsp;column&nbsp;exists)<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("2. Demonstrate 'may exist':");<br/>
- &nbsp;echo( table check headers silently( table 1, {"State", "Province"}, may exist ) ); &nbsp;// Empty and OK<br/>
- &nbsp;echo( table check headers silently( table 1, {"Town", "Province"}, may exist ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, {"Town", "State"} , may exist ) ); // OK<br/>
- &nbsp;echo( table check headers silently( table 1, 10, &nbsp; &nbsp; &nbsp;must not exist ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, -11, &nbsp; &nbsp; &nbsp;must not exist ) ); &nbsp;// Not OK (range error)<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("2.&nbsp;Demonstrate&nbsp;'may&nbsp;exist':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"State",&nbsp;"Province"},&nbsp;may&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;Empty&nbsp;and&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"Town",&nbsp;"Province"},&nbsp;may&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"Town",&nbsp;"State"}&nbsp;,&nbsp;may&nbsp;exist&nbsp;)&nbsp;);&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;-11,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;not&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;Not&nbsp;OK&nbsp;(range&nbsp;error)<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("3. Demonstrate 'create if missing':");<br/>
- &nbsp;table copy table ( table 1, table 2 );<br/>
- &nbsp;echo( table check headers silently( table 2, {"State", "City"}, create if missing ) ); &nbsp;// OK<br/>
- &nbsp;echo( "Header row: ", [table 2: .., 0 ] );<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("3.&nbsp;Demonstrate&nbsp;'create&nbsp;if&nbsp;missing':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;table&nbsp;1,&nbsp;table&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;2,&nbsp;{"State",&nbsp;"City"},&nbsp;create&nbsp;if&nbsp;missing&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;"Header&nbsp;row:&nbsp;",&nbsp;[table&nbsp;2:&nbsp;..,&nbsp;0&nbsp;]&nbsp;);<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("4. Demonstrate 'must exist':");<br/>
- &nbsp;echo( table check headers silently( table 1, {"Name", "Town"}, must exist ) ); &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, {"Name", "State"} , must exist ) ); &nbsp; &nbsp;// Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, 10, &nbsp; &nbsp; &nbsp;must exist ) ); &nbsp; // Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, -1, &nbsp; &nbsp; &nbsp;must exist ) ); // OK (last column exists)<br/>
- &nbsp;echo( table check headers silently( table 1, {}, &nbsp; &nbsp; &nbsp;must exist ) ); // Empty and oK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("4.&nbsp;Demonstrate&nbsp;'must&nbsp;exist':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"Name",&nbsp;"Town"},&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{"Name",&nbsp;"State"}&nbsp;,&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;-1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;//&nbsp;OK&nbsp;(last&nbsp;column&nbsp;exists)<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;//&nbsp;Empty&nbsp;and&nbsp;oK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("5. Demonstrate 'unique':");<br/>
- &nbsp;table initialize ( table 2,<br/>
- &nbsp;{ { Name, Street, Town, Country, Town }, { Miller, "..." } } );<br/>
- &nbsp;echo( table check headers silently( table 1, "Town", unique ) ); &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 2, "Town", unique ) ); &nbsp;// Not OK<br/>
- &nbsp;echo( table check headers silently( table 2, -1, unique ) ); &nbsp; &nbsp; &nbsp; &nbsp;// Not OK (Also "Town")<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("5.&nbsp;Demonstrate&nbsp;'unique':");<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;2,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Street,&nbsp;Town,&nbsp;Country,&nbsp;Town&nbsp;},&nbsp;{&nbsp;Miller,&nbsp;"..."&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;"Town",&nbsp;unique&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;2,&nbsp;"Town",&nbsp;unique&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;2,&nbsp;-1,&nbsp;unique&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK&nbsp;(Also&nbsp;"Town")<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("6. Demonstrate 'full match':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Country, Town, Street, Name }, full match ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 1,3,2,0 &nbsp;}, full match ) ); &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Country, Town, Street, Name, Name }, full match ) ); // Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("6.&nbsp;Demonstrate&nbsp;'full&nbsp;match':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Country,&nbsp;Town,&nbsp;Street,&nbsp;Name&nbsp;},&nbsp;full&nbsp;match&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;1,3,2,0&nbsp;&nbsp;},&nbsp;full&nbsp;match&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Country,&nbsp;Town,&nbsp;Street,&nbsp;Name,&nbsp;Name&nbsp;},&nbsp;full&nbsp;match&nbsp;)&nbsp;);&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("7. Demonstrate 'sequence':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Country }, sequence ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Country, Name }, sequence ) ); &nbsp; // Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 0,2,3 &nbsp;}, sequence ) ); &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 0,3,2 &nbsp;}, sequence ) ); &nbsp;// Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("7.&nbsp;Demonstrate&nbsp;'sequence':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Country&nbsp;},&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Country,&nbsp;Name&nbsp;},&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;0,2,3&nbsp;&nbsp;},&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;0,3,2&nbsp;&nbsp;},&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("8.Demonstrate 'strict sequence':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Country }, strict sequence ) ); &nbsp; &nbsp;// Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Town, Country }, strict sequence ) ); &nbsp; &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 0,1,2 &nbsp;}, strict sequence ) ); &nbsp; // OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 0,3,3 &nbsp;}, strict sequence ) ); &nbsp; // Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("8.Demonstrate&nbsp;'strict&nbsp;sequence':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Country&nbsp;},&nbsp;strict&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Town,&nbsp;Country&nbsp;},&nbsp;strict&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;0,1,2&nbsp;&nbsp;},&nbsp;strict&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;0,3,3&nbsp;&nbsp;},&nbsp;strict&nbsp;sequence&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("9. Demonstrate 'identical':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Street, Town, Country }, identical ) ); &nbsp; &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Street, Name, Town, Country }, identical ) ); &nbsp; &nbsp;// Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, { 0,1,2,3 &nbsp;}, identical) ); &nbsp; &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { -4,-3,-2,-1 &nbsp;}, identical ) ); &nbsp; // Also OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("9.&nbsp;Demonstrate&nbsp;'identical':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Street,&nbsp;Town,&nbsp;Country&nbsp;},&nbsp;identical&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Street,&nbsp;Name,&nbsp;Town,&nbsp;Country&nbsp;},&nbsp;identical&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;0,1,2,3&nbsp;&nbsp;},&nbsp;identical)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;-4,-3,-2,-1&nbsp;&nbsp;},&nbsp;identical&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Also&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("10. Demonstrate 'no repetition':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town, Town }, must exist ) ); &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town, Town }, must exist, no repetition ) ); &nbsp; // Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("10.&nbsp;Demonstrate&nbsp;'no&nbsp;repetition':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town,&nbsp;Town&nbsp;},&nbsp;must&nbsp;exist&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town,&nbsp;Town&nbsp;},&nbsp;must&nbsp;exist,&nbsp;no&nbsp;repetition&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("11. Demonstrate 'no numbers':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town }, must exist, no numbers ) ); &nbsp; &nbsp;// OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, 2 }, must exist, no numbers ) ); &nbsp; // Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("11.&nbsp;Demonstrate&nbsp;'no&nbsp;numbers':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town&nbsp;},&nbsp;must&nbsp;exist,&nbsp;no&nbsp;numbers&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;2&nbsp;},&nbsp;must&nbsp;exist,&nbsp;no&nbsp;numbers&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("12. Demonstrate 'no blanks':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town, "" }, must exist, no blanks ) ); &nbsp; // Not OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("12.&nbsp;Demonstrate&nbsp;'no&nbsp;blanks':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town,&nbsp;""&nbsp;},&nbsp;must&nbsp;exist,&nbsp;no&nbsp;blanks&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("13. Demonstrate 'ignore blanks':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town, "" }, must exist, ignore blanks ) ); &nbsp; // OK<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("13.&nbsp;Demonstrate&nbsp;'ignore&nbsp;blanks':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town,&nbsp;""&nbsp;},&nbsp;must&nbsp;exist,&nbsp;ignore&nbsp;blanks&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;OK<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;echo("14. Demonstrate 'max 1':");<br/>
- &nbsp;echo( table check headers silently( table 1, { Name, Town }, must exist, max 1 ) ); // Not OK<br/>
- &nbsp;echo( table check headers silently( table 1, { Name &nbsp;}, must exist, max 1 ) ); &nbsp;// &nbsp;OK<br/>
- &nbsp;echo( table check headers silently( table 1, { &nbsp;}, must exist, max 1 ) ); &nbsp; // &nbsp;OK<br/>
+&nbsp;&nbsp;echo("14.&nbsp;Demonstrate&nbsp;'max&nbsp;1':");<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name,&nbsp;Town&nbsp;},&nbsp;must&nbsp;exist,&nbsp;max&nbsp;1&nbsp;)&nbsp;);&nbsp;//&nbsp;Not&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;Name&nbsp;&nbsp;},&nbsp;must&nbsp;exist,&nbsp;max&nbsp;1&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;&nbsp;OK<br/>
+&nbsp;&nbsp;echo(&nbsp;table&nbsp;check&nbsp;headers&nbsp;silently(&nbsp;table&nbsp;1,&nbsp;{&nbsp;&nbsp;},&nbsp;must&nbsp;exist,&nbsp;max&nbsp;1&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;OK<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>1. Demonstrate 'must not exist':<br/>
+<div class="output_background_color" ><code>1.&nbsp;Demonstrate&nbsp;'must&nbsp;not&nbsp;exist':<br/>
 ok<br/>
-already existing<br/>
+already&nbsp;existing<br/>
 ok<br/>
-already existing<br/>
+already&nbsp;existing<br/>
 <br/>
-2. Demonstrate 'may exist':<br/>
-empty and ok<br/>
+2.&nbsp;Demonstrate&nbsp;'may&nbsp;exist':<br/>
+empty&nbsp;and&nbsp;ok<br/>
 ok<br/>
 ok<br/>
 ok<br/>
-range error<br/>
+range&nbsp;error<br/>
 <br/>
-3. Demonstrate 'create if missing':<br/>
+3.&nbsp;Demonstrate&nbsp;'create&nbsp;if&nbsp;missing':<br/>
 ok<br/>
-Header row: {'Name','Street','Town','Country','State','City'}<br/>
+Header&nbsp;row:&nbsp;{'Name','Street','Town','Country','State','City'}<br/>
 <br/>
-4. Demonstrate 'must exist':<br/>
+4.&nbsp;Demonstrate&nbsp;'must&nbsp;exist':<br/>
 ok<br/>
-not found<br/>
-range error<br/>
+not&nbsp;found<br/>
+range&nbsp;error<br/>
 ok<br/>
-empty and ok<br/>
+empty&nbsp;and&nbsp;ok<br/>
 <br/>
-5. Demonstrate 'unique':<br/>
+5.&nbsp;Demonstrate&nbsp;'unique':<br/>
 ok<br/>
 duplicate<br/>
 duplicate<br/>
 <br/>
-6. Demonstrate 'full match':<br/>
+6.&nbsp;Demonstrate&nbsp;'full&nbsp;match':<br/>
 ok<br/>
 ok<br/>
-no full match<br/>
+no&nbsp;full&nbsp;match<br/>
 <br/>
-7. Demonstrate 'sequence':<br/>
+7.&nbsp;Demonstrate&nbsp;'sequence':<br/>
 ok<br/>
-incorrect sequence<br/>
+incorrect&nbsp;sequence<br/>
 ok<br/>
-incorrect sequence<br/>
+incorrect&nbsp;sequence<br/>
 <br/>
-8.Demonstrate 'strict sequence':<br/>
-incorrect sequence<br/>
+8.Demonstrate&nbsp;'strict&nbsp;sequence':<br/>
+incorrect&nbsp;sequence<br/>
 ok<br/>
 ok<br/>
-incorrect sequence<br/>
+incorrect&nbsp;sequence<br/>
 <br/>
-9. Demonstrate 'identical':<br/>
+9.&nbsp;Demonstrate&nbsp;'identical':<br/>
 ok<br/>
-incorrect sequence<br/>
+incorrect&nbsp;sequence<br/>
 ok<br/>
 ok<br/>
 <br/>
-10. Demonstrate 'no repetition':<br/>
+10.&nbsp;Demonstrate&nbsp;'no&nbsp;repetition':<br/>
 ok<br/>
 repeated<br/>
 <br/>
-11. Demonstrate 'no numbers':<br/>
+11.&nbsp;Demonstrate&nbsp;'no&nbsp;numbers':<br/>
 ok<br/>
-forbidden number<br/>
+forbidden&nbsp;number<br/>
 <br/>
-12. Demonstrate 'no blanks':<br/>
-forbidden blank<br/>
+12.&nbsp;Demonstrate&nbsp;'no&nbsp;blanks':<br/>
+forbidden&nbsp;blank<br/>
 <br/>
-13. Demonstrate 'ignore blanks':<br/>
+13.&nbsp;Demonstrate&nbsp;'ignore&nbsp;blanks':<br/>
 ok<br/>
 <br/>
-14. Demonstrate 'max 1':<br/>
-wrong count<br/>
+14.&nbsp;Demonstrate&nbsp;'max&nbsp;1':<br/>
+wrong&nbsp;count<br/>
 ok<br/>
-empty and ok<br/>
+empty&nbsp;and&nbsp;ok<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_check_headers.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_check_header.html">table check header</a><br/>

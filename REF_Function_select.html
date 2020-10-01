@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -129,35 +130,35 @@ especially if the expressions contain heavy calculations or large contents (e.g.
 <h4> Exceptions</h4>
 <p>Value is out of bounds</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;a[] = 1; b[] = 2; c[] = 3; d[] = 4;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;1;&nbsp;b[]&nbsp;=&nbsp;2;&nbsp;c[]&nbsp;=&nbsp;3;&nbsp;d[]&nbsp;=&nbsp;4;<br/>
 <br/>
- &nbsp;echo("Function 'select':");<br/>
- &nbsp;for (i[] = 0, i[] &lt;= 3, i[]++ )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;print( select( i[], a[]++, b[]++, c[]++, d[]++ ), " &nbsp;" );<br/>
- &nbsp;}<br/>
- &nbsp;// Note: All 4 variables have been incremented 4 times.<br/>
- &nbsp;echo(new line, " a[]..d[] = ", a[], " ", b[], " ", c[], " ", d[], " " );<br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo("Function&nbsp;'select':");<br/>
+&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;0,&nbsp;i[]&nbsp;&lt;=&nbsp;3,&nbsp;i[]++&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;select(&nbsp;i[],&nbsp;a[]++,&nbsp;b[]++,&nbsp;c[]++,&nbsp;d[]++&nbsp;),&nbsp;"&nbsp;&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;//&nbsp;Note:&nbsp;All&nbsp;4&nbsp;variables&nbsp;have&nbsp;been&nbsp;incremented&nbsp;4&nbsp;times.<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"&nbsp;a[]..d[]&nbsp;=&nbsp;",&nbsp;a[],&nbsp;"&nbsp;",&nbsp;b[],&nbsp;"&nbsp;",&nbsp;c[],&nbsp;"&nbsp;",&nbsp;d[],&nbsp;"&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;a[] = 1; b[] = 2; c[] = 3; d[] = 4;<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;1;&nbsp;b[]&nbsp;=&nbsp;2;&nbsp;c[]&nbsp;=&nbsp;3;&nbsp;d[]&nbsp;=&nbsp;4;<br/>
 <br/>
- &nbsp;echo("Function 'pick':");<br/>
- &nbsp;for (i[] = 0, i[] &lt;= 3, i[]++ )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;print( pick( i[], a[]++, b[]++, c[]++, d[]++, e[]++ ), " &nbsp;" );<br/>
- &nbsp; &nbsp; &nbsp;// Note: e[] added, but will never be executed, so no error message occurs (variable not existing)<br/>
- &nbsp;}<br/>
- &nbsp;// Note: All 4 variables have been once only<br/>
- &nbsp;echo(new line, " a[]..d[] = ", a[], " ", b[], " ", c[], " ", d[], " " );</code></div>
+&nbsp;&nbsp;echo("Function&nbsp;'pick':");<br/>
+&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;0,&nbsp;i[]&nbsp;&lt;=&nbsp;3,&nbsp;i[]++&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;pick(&nbsp;i[],&nbsp;a[]++,&nbsp;b[]++,&nbsp;c[]++,&nbsp;d[]++,&nbsp;e[]++&nbsp;),&nbsp;"&nbsp;&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;e[]&nbsp;added,&nbsp;but&nbsp;will&nbsp;never&nbsp;be&nbsp;executed,&nbsp;so&nbsp;no&nbsp;error&nbsp;message&nbsp;occurs&nbsp;(variable&nbsp;not&nbsp;existing)<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;//&nbsp;Note:&nbsp;All&nbsp;4&nbsp;variables&nbsp;have&nbsp;been&nbsp;once&nbsp;only<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"&nbsp;a[]..d[]&nbsp;=&nbsp;",&nbsp;a[],&nbsp;"&nbsp;",&nbsp;b[],&nbsp;"&nbsp;",&nbsp;c[],&nbsp;"&nbsp;",&nbsp;d[],&nbsp;"&nbsp;"&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Function 'select':<br/>
-1 &nbsp;3 &nbsp;5 &nbsp;7 &nbsp;<br/>
- a[]..d[] = 5 6 7 8 <br/>
+<div class="output_background_color" ><code>Function&nbsp;'select':<br/>
+1&nbsp;&nbsp;3&nbsp;&nbsp;5&nbsp;&nbsp;7&nbsp;&nbsp;<br/>
+&nbsp;a[]..d[]&nbsp;=&nbsp;5&nbsp;6&nbsp;7&nbsp;8&nbsp;<br/>
 <br/>
-Function 'pick':<br/>
-1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;<br/>
- a[]..d[] = 2 3 4 5 <br/>
+Function&nbsp;'pick':<br/>
+1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;a[]..d[]&nbsp;=&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_select.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_select_if.html">select if</a><br/>

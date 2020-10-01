@@ -88,8 +88,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -147,43 +148,43 @@ The returned value will be converted to strings automatically after the function
 <td><b>Change remark</b><br/><p>          Return the value or text you want to see in the comparison report if the values are different (or equal).</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;define function( foo, {{ old value, literal }, {new value, literal}, {header name, literal}, {row number, numeral}} )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;if (numeral(new value[])&lt;&gt;0)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return( select if ( new value[] &gt; old value[], "Older", "Younger" ) );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;return( old value[] + " --&gt; " + new value[] );<br/>
- &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;function(&nbsp;foo,&nbsp;{{&nbsp;old&nbsp;value,&nbsp;literal&nbsp;},&nbsp;{new&nbsp;value,&nbsp;literal},&nbsp;{header&nbsp;name,&nbsp;literal},&nbsp;{row&nbsp;number,&nbsp;numeral}}&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(numeral(new&nbsp;value[])&lt;&gt;0)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;select&nbsp;if&nbsp;(&nbsp;new&nbsp;value[]&nbsp;&gt;&nbsp;old&nbsp;value[],&nbsp;"Older",&nbsp;"Younger"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;old&nbsp;value[]&nbsp;+&nbsp;"&nbsp;--&gt;&nbsp;"&nbsp;+&nbsp;new&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;table initialize( t1,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ { Name, Age, Town },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Ann, &nbsp;35, &nbsp;Boston }, &nbsp; &nbsp; &nbsp;{ Bea, &nbsp;45, &nbsp;Cambridge },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Beat, 46, &nbsp;Chicago }, &nbsp; &nbsp; { Chuck,55, &nbsp;New Heaven },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Emil, 21, &nbsp;Albany }} );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Age,&nbsp;Town&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;35,&nbsp;&nbsp;Boston&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bea,&nbsp;&nbsp;45,&nbsp;&nbsp;Cambridge&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat,&nbsp;46,&nbsp;&nbsp;Chicago&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Chuck,55,&nbsp;&nbsp;New&nbsp;Heaven&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Emil,&nbsp;21,&nbsp;&nbsp;Albany&nbsp;}}&nbsp;);<br/>
 <br/>
- &nbsp;table initialize( t2,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ { Name, Age, Town },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Ann, &nbsp;34, &nbsp;Boston }, &nbsp; &nbsp; &nbsp;{ Bea, &nbsp;46, &nbsp;Cambridge },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Beat, 46, &nbsp;Chicago }, &nbsp; &nbsp; { Chuck,55, &nbsp;New Haven },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Dale, 65, &nbsp;Newport }} );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Age,&nbsp;Town&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;34,&nbsp;&nbsp;Boston&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bea,&nbsp;&nbsp;46,&nbsp;&nbsp;Cambridge&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat,&nbsp;46,&nbsp;&nbsp;Chicago&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Chuck,55,&nbsp;&nbsp;New&nbsp;Haven&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dale,&nbsp;65,&nbsp;&nbsp;Newport&nbsp;}}&nbsp;);<br/>
 <br/>
- &nbsp;table compare ( t2, t1, report, Name, differences, foo, true );<br/>
+&nbsp;&nbsp;table&nbsp;compare&nbsp;(&nbsp;t2,&nbsp;t1,&nbsp;report,&nbsp;Name,&nbsp;differences,&nbsp;foo,&nbsp;true&nbsp;);<br/>
 <br/>
- &nbsp;table delete columns( report, {Statistics Parameters, Statistics Values} ); // Ignore for now<br/>
- &nbsp;table delete blank rows( report );<br/>
- &nbsp;echo("Comparison Report:");<br/>
- &nbsp;table list ( report );<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;columns(&nbsp;report,&nbsp;{Statistics&nbsp;Parameters,&nbsp;Statistics&nbsp;Values}&nbsp;);&nbsp;//&nbsp;Ignore&nbsp;for&nbsp;now<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;blank&nbsp;rows(&nbsp;report&nbsp;);<br/>
+&nbsp;&nbsp;echo("Comparison&nbsp;Report:");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;report&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Comparison Report:<br/>
- &nbsp; &nbsp;0 : Name &nbsp;| Age &nbsp; &nbsp; | Town &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Change Remarks<br/>
- &nbsp; &nbsp;1 : Ann &nbsp; | Younger | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Data modified <br/>
- &nbsp; &nbsp;2 : Bea &nbsp; | Older &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Data modified <br/>
- &nbsp; &nbsp;3 : Beat &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Data unchanged<br/>
- &nbsp; &nbsp;4 : Chuck | &nbsp; &nbsp; &nbsp; &nbsp; | New Heaven --&gt; New Haven | Data modified <br/>
- &nbsp; &nbsp;5 : Dale &nbsp;| Older &nbsp; | &nbsp;--&gt; Newport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Row added &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Emil &nbsp;| 21 --&gt; &nbsp;| Albany --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Row deleted &nbsp; <br/>
+<div class="output_background_color" ><code>Comparison&nbsp;Report:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;|&nbsp;Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Change&nbsp;Remarks<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;&nbsp;|&nbsp;Younger&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Data&nbsp;modified&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Bea&nbsp;&nbsp;&nbsp;|&nbsp;Older&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Data&nbsp;modified&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Beat&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Data&nbsp;unchanged<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Chuck&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;New&nbsp;Heaven&nbsp;--&gt;&nbsp;New&nbsp;Haven&nbsp;|&nbsp;Data&nbsp;modified&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Dale&nbsp;&nbsp;|&nbsp;Older&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;--&gt;&nbsp;Newport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Emil&nbsp;&nbsp;|&nbsp;21&nbsp;--&gt;&nbsp;&nbsp;|&nbsp;Albany&nbsp;--&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;deleted&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_(This_is_a_user-defined_function_you_need_to_create).b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

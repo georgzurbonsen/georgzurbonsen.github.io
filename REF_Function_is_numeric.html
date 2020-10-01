@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -121,29 +122,29 @@ decimal point, minus sign and scientific notation (exponents) are also considere
 <td><b>Result</b><br/><p>true if criteria is met.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;for all parameters( { 1, '1', 1.1, '1.1', '1.1E+03', '1.1234E+03', '', ' ', 'a' }, p[] )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print(p[],": is ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is numeric(p[])) print ("numeric, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is strictly numeric(p[])) print ("strictly numeric, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is integer(p[])) print ("integer, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is strictly integer(p[])) print ("strictly integer, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is numeric or blank(p[])) print ("numeric or blank, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is strictly numeric or blank(p[])) print ("strictly numeric or blank, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is integer or blank(p[])) print ("integer or blank, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (is strictly integer or blank(p[])) print ("strictly integer or blank, ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;{&nbsp;1,&nbsp;'1',&nbsp;1.1,&nbsp;'1.1',&nbsp;'1.1E+03',&nbsp;'1.1234E+03',&nbsp;'',&nbsp;'&nbsp;',&nbsp;'a'&nbsp;},&nbsp;p[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(p[],":&nbsp;is&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;numeric(p[]))&nbsp;print&nbsp;("numeric,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;strictly&nbsp;numeric(p[]))&nbsp;print&nbsp;("strictly&nbsp;numeric,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;integer(p[]))&nbsp;print&nbsp;("integer,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;strictly&nbsp;integer(p[]))&nbsp;print&nbsp;("strictly&nbsp;integer,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;numeric&nbsp;or&nbsp;blank(p[]))&nbsp;print&nbsp;("numeric&nbsp;or&nbsp;blank,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;strictly&nbsp;numeric&nbsp;or&nbsp;blank(p[]))&nbsp;print&nbsp;("strictly&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;integer&nbsp;or&nbsp;blank(p[]))&nbsp;print&nbsp;("integer&nbsp;or&nbsp;blank,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is&nbsp;strictly&nbsp;integer&nbsp;or&nbsp;blank(p[]))&nbsp;print&nbsp;("strictly&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>1: is numeric, strictly numeric, integer, strictly integer, numeric or blank, strictly numeric or blank, integer or blank, strictly integer or blank, <br/>
-1: is numeric, integer, numeric or blank, integer or blank, <br/>
-1.1: is numeric, strictly numeric, numeric or blank, strictly numeric or blank, <br/>
-1.1: is numeric, numeric or blank, <br/>
-1.1E+03: is numeric, integer, numeric or blank, integer or blank, <br/>
-1.1234E+03: is numeric, numeric or blank, <br/>
-: is numeric or blank, strictly numeric or blank, integer or blank, strictly integer or blank, <br/>
- : is <br/>
-a: is <br/>
+<div class="output_background_color" ><code>1:&nbsp;is&nbsp;numeric,&nbsp;strictly&nbsp;numeric,&nbsp;integer,&nbsp;strictly&nbsp;integer,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;strictly&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;strictly&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;<br/>
+1:&nbsp;is&nbsp;numeric,&nbsp;integer,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;<br/>
+1.1:&nbsp;is&nbsp;numeric,&nbsp;strictly&nbsp;numeric,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;strictly&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;<br/>
+1.1:&nbsp;is&nbsp;numeric,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;<br/>
+1.1E+03:&nbsp;is&nbsp;numeric,&nbsp;integer,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;<br/>
+1.1234E+03:&nbsp;is&nbsp;numeric,&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;<br/>
+:&nbsp;is&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;strictly&nbsp;numeric&nbsp;or&nbsp;blank,&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;strictly&nbsp;integer&nbsp;or&nbsp;blank,&nbsp;<br/>
+&nbsp;:&nbsp;is&nbsp;<br/>
+a:&nbsp;is&nbsp;<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_is_numeric.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

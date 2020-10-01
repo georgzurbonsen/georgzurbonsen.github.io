@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -99,10 +100,10 @@
 <h4> Description</h4>
 <p>
 This function applies configuration settings to all tables specified.  These configuration settings affect the following cases:
-</p><ul class="bullets"><li class="bullets">Behavior on <b>row not found</b>, e.g. when referencing tables  = [ table: Name, Mike, Phone Nr ] where "Mike" is not in the table</li>
-<li class="bullets">Behavior on <b>column not found</b>, e.g. when referencing header names</li>
-<li class="bullets">Behavior or reading values, i.e. enabling / disabling automatic conversion to numerals, booleans and dates.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Behavior on <b>row not found</b>, e.g. when referencing tables  = [ table: Name, Mike, Phone Nr ] where "Mike" is not in the table
+</li><li class="bullets">Behavior on <b>column not found</b>, e.g. when referencing header names
+</li><li class="bullets">Behavior or reading values, i.e. enabling / disabling automatic conversion to numerals, booleans and dates.
+</li></ul><p>
 <u>Attention</u>: The table configuration settings are retained even if the table is initialized or cleared, but not if new contents are loaded from a file or destination table for table transpose(…) and table copy table (…)..  In order restore default configuration, do them with this function call or delete and then re-initialize the table.
 
 
@@ -157,45 +158,45 @@ first name [ ] = [ table, last name, Bonaparte, first name ] returns a blank bec
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( a,<br/>
- &nbsp; &nbsp; &nbsp;{ { Name, Answer, Date, &nbsp; &nbsp; &nbsp; &nbsp; Time, &nbsp; &nbsp; &nbsp; Blank, Number, Scientific },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Nic, &nbsp;TRUE, &nbsp; '2020-01-03', '15:30:00', '', '123', '1.2E+3' } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;a,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Answer,&nbsp;Date,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blank,&nbsp;Number,&nbsp;Scientific&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Nic,&nbsp;&nbsp;TRUE,&nbsp;&nbsp;&nbsp;'2020-01-03',&nbsp;'15:30:00',&nbsp;'',&nbsp;'123',&nbsp;'1.2E+3'&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;for all table columns( a, 0, col[], x[] ) echo( [a:x[],1] , " &nbsp;(", type( [a:x[],1] ), ")" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;table&nbsp;columns(&nbsp;a,&nbsp;0,&nbsp;col[],&nbsp;x[]&nbsp;)&nbsp;echo(&nbsp;[a:x[],1]&nbsp;,&nbsp;"&nbsp;&nbsp;(",&nbsp;type(&nbsp;[a:x[],1]&nbsp;),&nbsp;")"&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table configure( a, read dates, yes, read booleans, yes, blank to zero, yes, scientific notation, yes );<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;for all table columns( a, 0, col[], x[] ) echo( [a:x[],1] , " &nbsp;(", type( [a:x[],1] ), ")" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;configure(&nbsp;a,&nbsp;read&nbsp;dates,&nbsp;yes,&nbsp;read&nbsp;booleans,&nbsp;yes,&nbsp;blank&nbsp;to&nbsp;zero,&nbsp;yes,&nbsp;scientific&nbsp;notation,&nbsp;yes&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;table&nbsp;columns(&nbsp;a,&nbsp;0,&nbsp;col[],&nbsp;x[]&nbsp;)&nbsp;echo(&nbsp;[a:x[],1]&nbsp;,&nbsp;"&nbsp;&nbsp;(",&nbsp;type(&nbsp;[a:x[],1]&nbsp;),&nbsp;")"&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table append ( a, &nbsp;{ Jim } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;append&nbsp;(&nbsp;a,&nbsp;&nbsp;{&nbsp;Jim&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( [a:Name,John] ); &nbsp; // Returns -1 as row number. &nbsp;When refering to other columsn; Exception<br/>
- &nbsp; &nbsp; &nbsp;table configure( a, row not found, header row );<br/>
- &nbsp; &nbsp; &nbsp;echo( [a:Name,John] ); // Header row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;[a:Name,John]&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;-1&nbsp;as&nbsp;row&nbsp;number.&nbsp;&nbsp;When&nbsp;refering&nbsp;to&nbsp;other&nbsp;columsn;&nbsp;Exception<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;configure(&nbsp;a,&nbsp;row&nbsp;not&nbsp;found,&nbsp;header&nbsp;row&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;[a:Name,John]&nbsp;);&nbsp;//&nbsp;Header&nbsp;row<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table configure( a, column not found, new column );<br/>
- &nbsp; &nbsp; &nbsp;[a:Color,1] = green; // Creates an additional header called "Color" instead of asserting an exception<br/>
- &nbsp; &nbsp; &nbsp;echo( "Header names: ", [a:..,0]);<br/>
- &nbsp; &nbsp; &nbsp;echo( [a:Color,1] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;configure(&nbsp;a,&nbsp;column&nbsp;not&nbsp;found,&nbsp;new&nbsp;column&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[a:Color,1]&nbsp;=&nbsp;green;&nbsp;//&nbsp;Creates&nbsp;an&nbsp;additional&nbsp;header&nbsp;called&nbsp;"Color"&nbsp;instead&nbsp;of&nbsp;asserting&nbsp;an&nbsp;exception<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Header&nbsp;names:&nbsp;",&nbsp;[a:..,0]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;[a:Color,1]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Nic &nbsp;(literal)<br/>
-TRUE &nbsp;(literal)<br/>
-2020-01-03 &nbsp;(literal)<br/>
-15:30:00 &nbsp;(literal)<br/>
- &nbsp;(literal)<br/>
-123 &nbsp;(numeral)<br/>
-1.2E+3 &nbsp;(literal)<br/>
+<div class="output_background_color" ><code>Nic&nbsp;&nbsp;(literal)<br/>
+TRUE&nbsp;&nbsp;(literal)<br/>
+2020-01-03&nbsp;&nbsp;(literal)<br/>
+15:30:00&nbsp;&nbsp;(literal)<br/>
+&nbsp;&nbsp;(literal)<br/>
+123&nbsp;&nbsp;(numeral)<br/>
+1.2E+3&nbsp;&nbsp;(literal)<br/>
 <br/>
-Nic &nbsp;(literal)<br/>
-true &nbsp;(boolean)<br/>
-2020-01-03 &nbsp;(date)<br/>
-15:30:00 &nbsp;(date)<br/>
-0 &nbsp;(numeral)<br/>
-123 &nbsp;(numeral)<br/>
-1.2E+3 &nbsp;(numeral)<br/>
+Nic&nbsp;&nbsp;(literal)<br/>
+true&nbsp;&nbsp;(boolean)<br/>
+2020-01-03&nbsp;&nbsp;(date)<br/>
+15:30:00&nbsp;&nbsp;(date)<br/>
+0&nbsp;&nbsp;(numeral)<br/>
+123&nbsp;&nbsp;(numeral)<br/>
+1.2E+3&nbsp;&nbsp;(numeral)<br/>
 -1<br/>
 0<br/>
-Header names: {'Name','Answer','Date','Time','Blank','Number','Scientific','Color'}<br/>
+Header&nbsp;names:&nbsp;{'Name','Answer','Date','Time','Blank','Number','Scientific','Color'}<br/>
 green<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_configure.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

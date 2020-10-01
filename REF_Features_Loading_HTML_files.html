@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -114,20 +115,20 @@ specify a text pattern.
 </table><p>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;echo(new line, "Look up some Roman emperors:" );<br/>
- &nbsp;file download overwrite( "en.wikipedia.org/wiki/List_of_Roman_emperors", Emperors.html );<br/>
- &nbsp;table load( emperors, Emperors.html, HTML, 'id="The_Principate"' );<br/>
- &nbsp;table keep columns ( emperors, Name ); // Otherwise the table is too wide<br/>
- &nbsp;table list( emperors );<br/>
- &nbsp;file delete silently( Emperors.html );</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Look&nbsp;up&nbsp;some&nbsp;Roman&nbsp;emperors:"&nbsp;);<br/>
+&nbsp;&nbsp;file&nbsp;download&nbsp;overwrite(&nbsp;"en.wikipedia.org/wiki/List_of_Roman_emperors",&nbsp;Emperors.html&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;load(&nbsp;emperors,&nbsp;Emperors.html,&nbsp;HTML,&nbsp;'id="The_Principate"'&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;keep&nbsp;columns&nbsp;(&nbsp;emperors,&nbsp;Name&nbsp;);&nbsp;//&nbsp;Otherwise&nbsp;the&nbsp;table&nbsp;is&nbsp;too&nbsp;wide<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;emperors&nbsp;);<br/>
+&nbsp;&nbsp;file&nbsp;delete&nbsp;silently(&nbsp;Emperors.html&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Look up some Roman emperors:<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Augustus Imperator Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Tiberius Tiberius Caesar Augustus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Caligula (formally Gaius) Gaius Caesar Augustus Germanicus<br/>
- &nbsp; &nbsp;4 : Claudius Tiberius Claudius Caesar Augustus Germanicus &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Nero Nero Claudius Caesar Augustus Germanicus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Look&nbsp;up&nbsp;some&nbsp;Roman&nbsp;emperors:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Augustus&nbsp;Imperator&nbsp;Caesar&nbsp;Augustus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Tiberius&nbsp;Tiberius&nbsp;Caesar&nbsp;Augustus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Caligula&nbsp;(formally&nbsp;Gaius)&nbsp;Gaius&nbsp;Caesar&nbsp;Augustus&nbsp;Germanicus<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Claudius&nbsp;Tiberius&nbsp;Claudius&nbsp;Caesar&nbsp;Augustus&nbsp;Germanicus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Nero&nbsp;Nero&nbsp;Claudius&nbsp;Caesar&nbsp;Augustus&nbsp;Germanicus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Loading_HTML_files.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

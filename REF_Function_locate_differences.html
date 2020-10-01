@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -154,53 +155,53 @@ Options are available to include whole words or numbers in the comparison, so "M
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
- &nbsp; &nbsp; &nbsp;define procedure( printout )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo("Deviation starting position: ", b[], " &nbsp;Deviation lengths - 1st string: '",<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c[], "', &nbsp;2nd string: '", d[], "' &nbsp; Result: ", r[] );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure(&nbsp;printout&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Deviation&nbsp;starting&nbsp;position:&nbsp;",&nbsp;b[],&nbsp;"&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[],&nbsp;"',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'",&nbsp;d[],&nbsp;"'&nbsp;&nbsp;&nbsp;Result:&nbsp;",&nbsp;r[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Good taste of coffee counts, Good taste of coffee counts, b[], c[], d[] ); // 0, 0,<br/>
- &nbsp; &nbsp; &nbsp;printout; // 0, 0, 0, 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;b[],&nbsp;c[],&nbsp;d[]&nbsp;);&nbsp;//&nbsp;0,&nbsp;0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Good taste of coffee counts, Good taste of caffè counts, b[], c[], d[] );<br/>
- &nbsp; &nbsp; &nbsp;printout; // 15, 5 (offee) , 4 (affè) , 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;b[],&nbsp;c[],&nbsp;d[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;15,&nbsp;5&nbsp;(offee)&nbsp;,&nbsp;4&nbsp;(affè)&nbsp;,&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Good taste of coffee counts, Good taste of caffè counts, b[], c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;printout; // 14, 6 (coffee), 5 (caffè), 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;14,&nbsp;6&nbsp;(coffee),&nbsp;5&nbsp;(caffè),&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Good taste of coffee counts, Good taste counts, b[], c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;printout; // 11, 10 ('of coffee '), 0, 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Good&nbsp;taste&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;counts,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;11,&nbsp;10&nbsp;('of&nbsp;coffee&nbsp;'),&nbsp;0,&nbsp;2<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Good tasting of coffee counts, Good taste of caffè counts, b[], c[], d[], words );<br/>
- &nbsp; &nbsp; &nbsp;printout; // 5, 17 (tasting of coffee), 14 (taste of caffè) , 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Good&nbsp;tasting&nbsp;of&nbsp;coffee&nbsp;counts,&nbsp;Good&nbsp;taste&nbsp;of&nbsp;caffè&nbsp;counts,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;words&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;5,&nbsp;17&nbsp;(tasting&nbsp;of&nbsp;coffee),&nbsp;14&nbsp;(taste&nbsp;of&nbsp;caffè)&nbsp;,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Year 2015 begins, Year 2016 begins, b[], c[], d[], characters);<br/>
- &nbsp; &nbsp; &nbsp;printout; // 8, 1 ('5'), 1 ('6') , 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;characters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;8,&nbsp;1&nbsp;('5'),&nbsp;1&nbsp;('6')&nbsp;,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Year 2015 begins, Year 2016 begins, b[], c[], d[], words);<br/>
- &nbsp; &nbsp; &nbsp;printout; // 8, 1 ('5'), 1 ('6') , 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;words);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;8,&nbsp;1&nbsp;('5'),&nbsp;1&nbsp;('6')&nbsp;,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences(Year 2015 begins, Year 2016 begins, b[], c[], d[], numbers);<br/>
- &nbsp; &nbsp; &nbsp;printout; // 5, 4 ('2015'), 4 ('2016') , 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(Year&nbsp;2015&nbsp;begins,&nbsp;Year&nbsp;2016&nbsp;begins,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;numbers);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;5,&nbsp;4&nbsp;('2015'),&nbsp;4&nbsp;('2016')&nbsp;,&nbsp;3<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] = locate differences( "20-Mar-2015", "21-Mar-2015" , b[], c[], d[], characters);<br/>
- &nbsp; &nbsp; &nbsp;printout; // 1, 1 ('0'), 1 ('1'), 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;locate&nbsp;differences(&nbsp;"20-Mar-2015",&nbsp;"21-Mar-2015"&nbsp;,&nbsp;b[],&nbsp;c[],&nbsp;d[],&nbsp;characters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;1,&nbsp;1&nbsp;('0'),&nbsp;1&nbsp;('1'),&nbsp;1<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;r[] &nbsp;= locate differences( "20-Mar-2015", "21-Mar-2015" ,b[], &nbsp;c[], d[], spaces);<br/>
- &nbsp; &nbsp; &nbsp;printout; // 0, 11 (20-Mar-2015), 11 (21-Mar-2015), 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;&nbsp;=&nbsp;locate&nbsp;differences(&nbsp;"20-Mar-2015",&nbsp;"21-Mar-2015"&nbsp;,b[],&nbsp;&nbsp;c[],&nbsp;d[],&nbsp;spaces);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printout;&nbsp;//&nbsp;0,&nbsp;11&nbsp;(20-Mar-2015),&nbsp;11&nbsp;(21-Mar-2015),&nbsp;3<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Deviation starting position: 0 &nbsp;Deviation lengths - 1st string: '0', &nbsp;2nd string: '0' &nbsp; Result: 0<br/>
-Deviation starting position: 15 &nbsp;Deviation lengths - 1st string: '5', &nbsp;2nd string: '4' &nbsp; Result: 1<br/>
-Deviation starting position: 14 &nbsp;Deviation lengths - 1st string: '6', &nbsp;2nd string: '5' &nbsp; Result: 3<br/>
-Deviation starting position: 11 &nbsp;Deviation lengths - 1st string: '10', &nbsp;2nd string: '0' &nbsp; Result: 2<br/>
-Deviation starting position: 5 &nbsp;Deviation lengths - 1st string: '17', &nbsp;2nd string: '14' &nbsp; Result: 3<br/>
-Deviation starting position: 8 &nbsp;Deviation lengths - 1st string: '1', &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
-Deviation starting position: 8 &nbsp;Deviation lengths - 1st string: '1', &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
-Deviation starting position: 5 &nbsp;Deviation lengths - 1st string: '4', &nbsp;2nd string: '4' &nbsp; Result: 3<br/>
-Deviation starting position: 1 &nbsp;Deviation lengths - 1st string: '1', &nbsp;2nd string: '1' &nbsp; Result: 1<br/>
-Deviation starting position: 0 &nbsp;Deviation lengths - 1st string: '11', &nbsp;2nd string: '11' &nbsp; Result: 3<br/>
+<div class="output_background_color" ><code>Deviation&nbsp;starting&nbsp;position:&nbsp;0&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'0',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'0'&nbsp;&nbsp;&nbsp;Result:&nbsp;0<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;15&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'5',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'4'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;14&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'6',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'5'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;11&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'10',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'0'&nbsp;&nbsp;&nbsp;Result:&nbsp;2<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;5&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'17',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'14'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;8&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'1',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'1'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;8&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'1',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'1'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;5&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'4',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'4'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;1&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'1',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'1'&nbsp;&nbsp;&nbsp;Result:&nbsp;1<br/>
+Deviation&nbsp;starting&nbsp;position:&nbsp;0&nbsp;&nbsp;Deviation&nbsp;lengths&nbsp;-&nbsp;1st&nbsp;string:&nbsp;'11',&nbsp;&nbsp;2nd&nbsp;string:&nbsp;'11'&nbsp;&nbsp;&nbsp;Result:&nbsp;3<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_locate_differences.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_get_differences.html">get differences</a></p>

@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -97,43 +98,43 @@ The following code example demonstrates this parameter type ruling using a user-
 values in form of parameter sets and prints the contents.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;define procedure( demonstrate, { { parameter 1, to parameters } }, 1, unlimited )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;for (i[] = 1, i[] &lt;= parameter count[], i[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;var name[] = 'parameter ' + literal(i[]);<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( var name[][], " &nbsp;(", var name[][]{}," items) " );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;procedure(&nbsp;demonstrate,&nbsp;{&nbsp;{&nbsp;parameter&nbsp;1,&nbsp;to&nbsp;parameters&nbsp;}&nbsp;},&nbsp;1,&nbsp;unlimited&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;1,&nbsp;i[]&nbsp;&lt;=&nbsp;parameter&nbsp;count[],&nbsp;i[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;name[]&nbsp;=&nbsp;'parameter&nbsp;'&nbsp;+&nbsp;literal(i[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;var&nbsp;name[][],&nbsp;"&nbsp;&nbsp;(",&nbsp;var&nbsp;name[][]{},"&nbsp;items)&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;demonstrate( A, B );<br/>
- &nbsp;demonstrate( Hello World, &nbsp;Hello &nbsp; World &nbsp;); // Both are same<br/>
- &nbsp;demonstrate( "A,B", " A, B " ); // Both are different<br/>
- &nbsp;demonstrate( 'A,B', ' A , B '); // Both are same<br/>
- &nbsp;demonstrate( "", '', ' &nbsp;' ); // Blank, empty, empty<br/>
- &nbsp;demonstrate( 'Hello World, &nbsp;Hello &nbsp; World &nbsp;," &nbsp; Hello &nbsp; World &nbsp; "');<br/>
- &nbsp;demonstrate( { Hello &nbsp; World, ' &nbsp;Hello &nbsp; World &nbsp;'," &nbsp; Hello &nbsp; World &nbsp; "}); // Note the differences<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;A,&nbsp;B&nbsp;);<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;Hello&nbsp;World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;);&nbsp;//&nbsp;Both&nbsp;are&nbsp;same<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;"A,B",&nbsp;"&nbsp;A,&nbsp;B&nbsp;"&nbsp;);&nbsp;//&nbsp;Both&nbsp;are&nbsp;different<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;'A,B',&nbsp;'&nbsp;A&nbsp;,&nbsp;B&nbsp;');&nbsp;//&nbsp;Both&nbsp;are&nbsp;same<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;"",&nbsp;'',&nbsp;'&nbsp;&nbsp;'&nbsp;);&nbsp;//&nbsp;Blank,&nbsp;empty,&nbsp;empty<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;'Hello&nbsp;World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;,"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"');<br/>
+&nbsp;&nbsp;demonstrate(&nbsp;{&nbsp;Hello&nbsp;&nbsp;&nbsp;World,&nbsp;'&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;',"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"});&nbsp;//&nbsp;Note&nbsp;the&nbsp;differences<br/>
 <br/>
- &nbsp;echo;<br/>
+&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp;define additional procedure( demonstrate 2, demonstrate, <br/>
- &nbsp; &nbsp; &nbsp;{ { parameter 1, to parameters members to literal } }, 1, unlimited );<br/>
- &nbsp;<br/>
- &nbsp;demonstrate &nbsp; ( { 1, 2, '3' } );<br/>
- &nbsp;demonstrate 2 ( { 1, 2, '3' } ); // Note: All numbers are converted to literals<br/>
+&nbsp;&nbsp;define&nbsp;additional&nbsp;procedure(&nbsp;demonstrate&nbsp;2,&nbsp;demonstrate,&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;parameter&nbsp;1,&nbsp;to&nbsp;parameters&nbsp;members&nbsp;to&nbsp;literal&nbsp;}&nbsp;},&nbsp;1,&nbsp;unlimited&nbsp;);<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;demonstrate&nbsp;&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;'3'&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;demonstrate&nbsp;2&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;'3'&nbsp;}&nbsp;);&nbsp;//&nbsp;Note:&nbsp;All&nbsp;numbers&nbsp;are&nbsp;converted&nbsp;to&nbsp;literals<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>{'A'} &nbsp;(1 items) {'B'} &nbsp;(1 items) <br/>
-{'Hello World'} &nbsp;(1 items) {'Hello World'} &nbsp;(1 items) <br/>
-{'A,B'} &nbsp;(1 items) {' A, B '} &nbsp;(1 items) <br/>
-{'A','B'} &nbsp;(2 items) {'A','B'} &nbsp;(2 items) <br/>
-{''} &nbsp;(1 items) {} &nbsp;(0 items) {} &nbsp;(0 items) <br/>
-{'Hello World','Hello World',' &nbsp; Hello &nbsp; World &nbsp; '} &nbsp;(3 items) <br/>
-{'Hello World'} &nbsp;(1 items) {'Hello World'} &nbsp;(1 items) {' &nbsp; Hello &nbsp; World &nbsp; '} &nbsp;(1 items) <br/>
+<div class="output_background_color" ><code>{'A'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'B'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
+{'Hello&nbsp;World'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'Hello&nbsp;World'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
+{'A,B'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'&nbsp;A,&nbsp;B&nbsp;'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
+{'A','B'}&nbsp;&nbsp;(2&nbsp;items)&nbsp;{'A','B'}&nbsp;&nbsp;(2&nbsp;items)&nbsp;<br/>
+{''}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{}&nbsp;&nbsp;(0&nbsp;items)&nbsp;{}&nbsp;&nbsp;(0&nbsp;items)&nbsp;<br/>
+{'Hello&nbsp;World','Hello&nbsp;World','&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;'}&nbsp;&nbsp;(3&nbsp;items)&nbsp;<br/>
+{'Hello&nbsp;World'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'Hello&nbsp;World'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
 <br/>
-{1} &nbsp;(1 items) {2} &nbsp;(1 items) {3} &nbsp;(1 items) <br/>
-{'1'} &nbsp;(1 items) {'2'} &nbsp;(1 items) {'3'} &nbsp;(1 items) <br/>
+{1}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{2}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{3}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
+{'1'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'2'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;{'3'}&nbsp;&nbsp;(1&nbsp;items)&nbsp;<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_parameter_set_or_literal.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

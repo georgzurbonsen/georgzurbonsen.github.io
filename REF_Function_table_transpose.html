@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -120,21 +121,21 @@ is actually a new table.
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t,<br/>
- &nbsp; &nbsp; &nbsp; { { Food, &nbsp; &nbsp; color, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;taste, &nbsp; &nbsp; best with },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; { Fries, &nbsp; &nbsp;golden yellow, &nbsp;salty, &nbsp; &nbsp; hamburger },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; { Pizza, &nbsp; &nbsp;colorful, &nbsp; &nbsp; &nbsp; tasteful },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; { Chianti, &nbsp;rubin red, &nbsp; &nbsp; &nbsp;bitter, &nbsp; &nbsp;pasta, worth enjoying },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; { Tirami sù,crème and brown,sweet } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Food,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;taste,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;best&nbsp;with&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Fries,&nbsp;&nbsp;&nbsp;&nbsp;golden&nbsp;yellow,&nbsp;&nbsp;salty,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hamburger&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Pizza,&nbsp;&nbsp;&nbsp;&nbsp;colorful,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tasteful&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Chianti,&nbsp;&nbsp;rubin&nbsp;red,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitter,&nbsp;&nbsp;&nbsp;&nbsp;pasta,&nbsp;worth&nbsp;enjoying&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tirami&nbsp;sù,crème&nbsp;and&nbsp;brown,sweet&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table transpose ( t );<br/>
- &nbsp;table list ( t );</code></div>
+&nbsp;&nbsp;table&nbsp;transpose&nbsp;(&nbsp;t&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Food &nbsp; &nbsp; &nbsp;| Fries &nbsp; &nbsp; &nbsp; &nbsp; | Pizza &nbsp; &nbsp;| Chianti &nbsp; &nbsp; &nbsp; &nbsp;| Tirami sù &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : color &nbsp; &nbsp; | golden yellow | colorful | rubin red &nbsp; &nbsp; &nbsp;| crème and brown<br/>
- &nbsp; &nbsp;2 : taste &nbsp; &nbsp; | salty &nbsp; &nbsp; &nbsp; &nbsp; | tasteful | bitter &nbsp; &nbsp; &nbsp; &nbsp; | sweet &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : best with | hamburger &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| pasta &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| worth enjoying | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Food&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Pizza&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tirami&nbsp;sù&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;golden&nbsp;yellow&nbsp;|&nbsp;colorful&nbsp;|&nbsp;rubin&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;crème&nbsp;and&nbsp;brown<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;taste&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;salty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tasteful&nbsp;|&nbsp;bitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sweet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;best&nbsp;with&nbsp;|&nbsp;hamburger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;pasta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;worth&nbsp;enjoying&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_transpose.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

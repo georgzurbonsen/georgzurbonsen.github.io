@@ -76,8 +76,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -92,11 +93,11 @@ These functions identify the minimum or maximum literal values using alphabetic 
 'A' has the smaller character code.  If cases are ignored two values of the same letter with different casesare compared, then the first of the two
 letters will be used for comparing with the remaining parameters, or returned. Note: "AA" is greater than "A", and "A " is greater than "A".
 
-</p><ul class="bullets"><li class="bullets">The suffix <b>min ... ignore blanks</b> ignores comparing values against blanks as blanks are the most minimum literal value and you may want to skip comparing these blank ones.<br><u>Attention:</u> Other functions with ending <b>... ignore blanks</b> ignore all white spaces in the parameters, but this is not the case in this function.</li>
-<li class="bullets">In the case above, if all values are blank, then blank will be returned.</li>
-<li class="bullets">Function names containing <b>literal</b> require the parameters to be <a class="bold_text" href="REF_Features_data_types_literals.html">literal</a>. Otherwise exceptions happen.</li>
-<li class="bullets">Function names containing <b>abc</b> will convert the parameters into literals before comparing them, e.g. Boolean <i>true</i> changes to literal 'true', and numbers change to literals ('12' is bigger than '111').</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">The suffix <b>min ... ignore blanks</b> ignores comparing values against blanks as blanks are the most minimum literal value and you may want to skip comparing these blank ones.<br><u>Attention:</u> Other functions with ending <b>... ignore blanks</b> ignore all white spaces in the parameters, but this is not the case in this function.
+</li><li class="bullets">In the case above, if all values are blank, then blank will be returned.
+</li><li class="bullets">Function names containing <b>literal</b> require the parameters to be <a class="bold_text" href="REF_Features_data_types_literals.html">literal</a>. Otherwise exceptions happen.
+</li><li class="bullets">Function names containing <b>abc</b> will convert the parameters into literals before comparing them, e.g. Boolean <i>true</i> changes to literal 'true', and numbers change to literals ('12' is bigger than '111').
+</li></ul><p>
 
 </p><table class="bold_column_1 bold_column_2" style = "width:1000px"><col style = "width:150px"><col style = "width:150px"><col style = "width:100px"><col style = "width:600px">
 <tr><th>Minimum Function Name       </th><th> Maximum Function Name     </th><th> Autom. Type conversion </th><th> Description</th></tr>
@@ -132,12 +133,12 @@ you to pre-select specific parameters to include in the calculation using one or
 <h4> Exceptions</h4>
 <p>Function names containing 'literal' assert exceptions if values provided are not of type iteral</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( min abc ( 13, 100 ) ); // It's 100<br/>
- &nbsp; &nbsp; &nbsp;echo( max abc ( AH, ah, aH, Ah ) ); // Picks ah<br/>
- &nbsp; &nbsp; &nbsp;echo( max abc ignore case ( AH, ah, aH, Ah ) ); // Picks 1st parameter<br/>
- &nbsp; &nbsp; &nbsp;echo( min abc ( Abel, '', '', Beat, '' ) ); // Unpleasant outcome<br/>
- &nbsp; &nbsp; &nbsp;echo( min literal ignore blanks ( Abel, '', '', Beat, '' ) ); // This one is better <br/>
- &nbsp; &nbsp; &nbsp;echo( min literal ignore both( Beat, Abel, ABEL, '' ) ); // Picks Abel (cases ignored)</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;min&nbsp;abc&nbsp;(&nbsp;13,&nbsp;100&nbsp;)&nbsp;);&nbsp;//&nbsp;It's&nbsp;100<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;max&nbsp;abc&nbsp;(&nbsp;AH,&nbsp;ah,&nbsp;aH,&nbsp;Ah&nbsp;)&nbsp;);&nbsp;//&nbsp;Picks&nbsp;ah<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;max&nbsp;abc&nbsp;ignore&nbsp;case&nbsp;(&nbsp;AH,&nbsp;ah,&nbsp;aH,&nbsp;Ah&nbsp;)&nbsp;);&nbsp;//&nbsp;Picks&nbsp;1st&nbsp;parameter<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;min&nbsp;abc&nbsp;(&nbsp;Abel,&nbsp;'',&nbsp;'',&nbsp;Beat,&nbsp;''&nbsp;)&nbsp;);&nbsp;//&nbsp;Unpleasant&nbsp;outcome<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;min&nbsp;literal&nbsp;ignore&nbsp;blanks&nbsp;(&nbsp;Abel,&nbsp;'',&nbsp;'',&nbsp;Beat,&nbsp;''&nbsp;)&nbsp;);&nbsp;//&nbsp;This&nbsp;one&nbsp;is&nbsp;better&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;min&nbsp;literal&nbsp;ignore&nbsp;both(&nbsp;Beat,&nbsp;Abel,&nbsp;ABEL,&nbsp;''&nbsp;)&nbsp;);&nbsp;//&nbsp;Picks&nbsp;Abel&nbsp;(cases&nbsp;ignored)</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>100<br/>
 ah<br/>

@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -109,47 +110,47 @@ continue... ;</code></div>
 <h4> Parameter count</h4>
 <p>0</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("Try 'break' and 'continue with next case':'");<br/>
- &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 4, a[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print ( " &nbsp;",a[], ": " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;switch( a [] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (1)<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print("= 1; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;continue with next case;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (2)<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print("= 2; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (4,1) &nbsp;print("= 1 or 4; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; print("else; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print("2nd else; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;echo("Break and continue loops");<br/>
- &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 4, a[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo(" &nbsp;Loop begin ", a[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[] = 2) continue;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (a[] = 3) break;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo(" &nbsp;Loop end ", a[] );<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Try&nbsp;'break'&nbsp;and&nbsp;'continue&nbsp;with&nbsp;next&nbsp;case':'");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(a[]&nbsp;=&nbsp;1,&nbsp;a[]&nbsp;&lt;=&nbsp;4,&nbsp;a[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;"&nbsp;&nbsp;",a[],&nbsp;":&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(&nbsp;a&nbsp;[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("=&nbsp;1;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue&nbsp;with&nbsp;next&nbsp;case;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("=&nbsp;2;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(4,1)&nbsp;&nbsp;print("=&nbsp;1&nbsp;or&nbsp;4;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;print("else;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("2nd&nbsp;else;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Break&nbsp;and&nbsp;continue&nbsp;loops");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(a[]&nbsp;=&nbsp;1,&nbsp;a[]&nbsp;&lt;=&nbsp;4,&nbsp;a[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;Loop&nbsp;begin&nbsp;",&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(a[]&nbsp;=&nbsp;2)&nbsp;continue;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(a[]&nbsp;=&nbsp;3)&nbsp;break;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;Loop&nbsp;end&nbsp;",&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Try 'break' and 'continue with next case':'<br/>
- &nbsp;1: = 1; &nbsp; = 2; &nbsp; <br/>
- &nbsp;2: = 2; &nbsp; <br/>
- &nbsp;3: else; &nbsp;2nd else; &nbsp;<br/>
- &nbsp;4: = 1 or 4; &nbsp; 2nd else; &nbsp;<br/>
-Break and continue loops<br/>
- &nbsp;Loop begin 1<br/>
- &nbsp;Loop end 1<br/>
- &nbsp;Loop begin 2<br/>
- &nbsp;Loop begin 3<br/>
+<div class="output_background_color" ><code>Try&nbsp;'break'&nbsp;and&nbsp;'continue&nbsp;with&nbsp;next&nbsp;case':'<br/>
+&nbsp;&nbsp;1:&nbsp;=&nbsp;1;&nbsp;&nbsp;&nbsp;=&nbsp;2;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;2:&nbsp;=&nbsp;2;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;3:&nbsp;else;&nbsp;&nbsp;2nd&nbsp;else;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;4:&nbsp;=&nbsp;1&nbsp;or&nbsp;4;&nbsp;&nbsp;&nbsp;2nd&nbsp;else;&nbsp;&nbsp;<br/>
+Break&nbsp;and&nbsp;continue&nbsp;loops<br/>
+&nbsp;&nbsp;Loop&nbsp;begin&nbsp;1<br/>
+&nbsp;&nbsp;Loop&nbsp;end&nbsp;1<br/>
+&nbsp;&nbsp;Loop&nbsp;begin&nbsp;2<br/>
+&nbsp;&nbsp;Loop&nbsp;begin&nbsp;3<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_break_case.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_switch.html">switch</a><br/>

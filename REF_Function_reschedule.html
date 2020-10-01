@@ -74,8 +74,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -191,15 +192,15 @@ Following rescheduling parameter pairs are supported to reschedule date and time
 <td><b>rescheduled date</b><br/><p>Rescheduled date.  Plain dates remain as plain dates regardless how they are rescheduled.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-12-24", -1, days )); // &nbsp;2011-12-23<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2012-01-31", 1, month )); // &nbsp;2012-02-29<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-12-06", end, month )); // 2011-12-31<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-03-04", next, week)); // &nbsp;2011-03-11<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-03-04", day, 5)); // &nbsp;2011-03-05<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2012-12-31", next, week, end, week)); // 2013-01-13<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( "2011-03-04", week, 25)); // &nbsp;2011-06-20<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ("", 1, day)); // &nbsp; &nbsp; &nbsp; &nbsp;Returns blank date<br/>
- &nbsp; &nbsp; &nbsp;echo( reschedule ( now, time, "15:30" )); // &nbsp; &nbsp;Changes time to 15:30. &nbsp; &nbsp;</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2011-12-24",&nbsp;-1,&nbsp;days&nbsp;));&nbsp;//&nbsp;&nbsp;2011-12-23<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2012-01-31",&nbsp;1,&nbsp;month&nbsp;));&nbsp;//&nbsp;&nbsp;2012-02-29<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2011-12-06",&nbsp;end,&nbsp;month&nbsp;));&nbsp;//&nbsp;2011-12-31<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2011-03-04",&nbsp;next,&nbsp;week));&nbsp;//&nbsp;&nbsp;2011-03-11<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2011-03-04",&nbsp;day,&nbsp;5));&nbsp;//&nbsp;&nbsp;2011-03-05<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2012-12-31",&nbsp;next,&nbsp;week,&nbsp;end,&nbsp;week));&nbsp;//&nbsp;2013-01-13<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;"2011-03-04",&nbsp;week,&nbsp;25));&nbsp;//&nbsp;&nbsp;2011-06-20<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;("",&nbsp;1,&nbsp;day));&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;blank&nbsp;date<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;reschedule&nbsp;(&nbsp;now,&nbsp;time,&nbsp;"15:30"&nbsp;));&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Changes&nbsp;time&nbsp;to&nbsp;15:30.&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>2011-12-23<br/>
 2012-02-29<br/>
@@ -209,7 +210,7 @@ Following rescheduling parameter pairs are supported to reschedule date and time
 2013-01-13<br/>
 2011-06-20<br/>
 <br/>
-2020-09-27 15:30:00<br/>
+2020-10-01&nbsp;15:30:00<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_reschedule.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -130,16 +131,16 @@ Specify the conditions or rules to select the rows.  See <a class="bold_text" hr
 <td>table column</td>
 <td><b>Starting column to repeat</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>0 (first column)
 </td></tr>
 <tr><td>Opt 3. / 4.<br/>input</td>
 <td>table column</td>
 <td><b>Ending column to repeat</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>(last column)
 </td></tr>
 <tr><td>Opt. 4. / 5.<br/>input</td>
@@ -160,46 +161,46 @@ Good examples: '"', '', "(see above)", "ditto", 'see above,look above',"*...*",'
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( a,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ { Last Name, &nbsp; &nbsp;Jan, &nbsp; &nbsp;Feb, &nbsp; &nbsp;Mar, &nbsp; &nbsp;Apr, &nbsp; &nbsp;May, &nbsp; &nbsp;June },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Miller, &nbsp; &nbsp; &nbsp; 5, &nbsp; &nbsp; &nbsp;'', &nbsp; &nbsp; 15, &nbsp; &nbsp; '', &nbsp; &nbsp; '', &nbsp; &nbsp; 25 &nbsp; },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Muller, &nbsp; &nbsp; &nbsp; '', &nbsp; &nbsp; '', &nbsp; &nbsp; &nbsp;6, &nbsp; &nbsp; '', &nbsp; &nbsp; 14, &nbsp; &nbsp; '' &nbsp; },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Tanner, &nbsp; &nbsp; &nbsp; 7, &nbsp; &nbsp; &nbsp;same, &nbsp; &nbsp;17, &nbsp; &nbsp;same, &nbsp; same, &nbsp; '' &nbsp; },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ Gerber, &nbsp; &nbsp; &nbsp; '', &nbsp; &nbsp; same, &nbsp; &nbsp;0, &nbsp; &nbsp; 10, &nbsp; &nbsp; 11, &nbsp; &nbsp; 12 &nbsp; } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;a,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;Jan,&nbsp;&nbsp;&nbsp;&nbsp;Feb,&nbsp;&nbsp;&nbsp;&nbsp;Mar,&nbsp;&nbsp;&nbsp;&nbsp;Apr,&nbsp;&nbsp;&nbsp;&nbsp;May,&nbsp;&nbsp;&nbsp;&nbsp;June&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Miller,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Muller,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;same,&nbsp;&nbsp;&nbsp;&nbsp;17,&nbsp;&nbsp;&nbsp;&nbsp;same,&nbsp;&nbsp;&nbsp;same,&nbsp;&nbsp;&nbsp;''&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Gerber,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;same,&nbsp;&nbsp;&nbsp;&nbsp;0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list(a);<br/>
- &nbsp;table copy table ( a, b );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(a);<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;a,&nbsp;b&nbsp;);<br/>
 <br/>
- &nbsp;echo("Fill from left to right");<br/>
- &nbsp;table fill horizontally ( b, Jan, -1, 'same,' &nbsp;);<br/>
- &nbsp;table list(b);<br/>
+&nbsp;&nbsp;echo("Fill&nbsp;from&nbsp;left&nbsp;to&nbsp;right");<br/>
+&nbsp;&nbsp;table&nbsp;fill&nbsp;horizontally&nbsp;(&nbsp;b,&nbsp;Jan,&nbsp;-1,&nbsp;'same,'&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(b);<br/>
 <br/>
- &nbsp;echo("Fill from right to left ");<br/>
- &nbsp;table fill horizontally ( a, Jan, -1, 'same,', left &nbsp;);<br/>
- &nbsp;table list(a);<br/>
+&nbsp;&nbsp;echo("Fill&nbsp;from&nbsp;right&nbsp;to&nbsp;left&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;fill&nbsp;horizontally&nbsp;(&nbsp;a,&nbsp;Jan,&nbsp;-1,&nbsp;'same,',&nbsp;left&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(a);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Last Name | Jan | Feb &nbsp;| Mar | Apr &nbsp;| May &nbsp;| June<br/>
- &nbsp; &nbsp;1 : Miller &nbsp; &nbsp;| 5 &nbsp; | &nbsp; &nbsp; &nbsp;| 15 &nbsp;| &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 25 &nbsp;<br/>
- &nbsp; &nbsp;2 : Muller &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| 6 &nbsp; | &nbsp; &nbsp; &nbsp;| 14 &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Tanner &nbsp; &nbsp;| 7 &nbsp; | same | 17 &nbsp;| same | same | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Gerber &nbsp; &nbsp;| &nbsp; &nbsp; | same | 0 &nbsp; | 10 &nbsp; | 11 &nbsp; | 12 &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Jan&nbsp;|&nbsp;Feb&nbsp;&nbsp;|&nbsp;Mar&nbsp;|&nbsp;Apr&nbsp;&nbsp;|&nbsp;May&nbsp;&nbsp;|&nbsp;June<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Muller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;|&nbsp;same&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;same&nbsp;|&nbsp;same&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Gerber&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;same&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;<br/>
 <br/>
-Fill from left to right<br/>
- &nbsp; &nbsp;0 : Last Name | Jan | Feb &nbsp;| Mar | Apr | May | June<br/>
- &nbsp; &nbsp;1 : Miller &nbsp; &nbsp;| 5 &nbsp; | 5 &nbsp; &nbsp;| 15 &nbsp;| 15 &nbsp;| 15 &nbsp;| 25 &nbsp;<br/>
- &nbsp; &nbsp;2 : Muller &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| 6 &nbsp; | 6 &nbsp; | 14 &nbsp;| 14 &nbsp;<br/>
- &nbsp; &nbsp;3 : Tanner &nbsp; &nbsp;| 7 &nbsp; | 7 &nbsp; &nbsp;| 17 &nbsp;| 17 &nbsp;| 17 &nbsp;| 17 &nbsp;<br/>
- &nbsp; &nbsp;4 : Gerber &nbsp; &nbsp;| &nbsp; &nbsp; | same | 0 &nbsp; | 10 &nbsp;| 11 &nbsp;| 12 &nbsp;<br/>
+Fill&nbsp;from&nbsp;left&nbsp;to&nbsp;right<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Jan&nbsp;|&nbsp;Feb&nbsp;&nbsp;|&nbsp;Mar&nbsp;|&nbsp;Apr&nbsp;|&nbsp;May&nbsp;|&nbsp;June<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Muller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Gerber&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;same&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;11&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;<br/>
 <br/>
-Fill from right to left <br/>
- &nbsp; &nbsp;0 : Last Name | Jan | Feb | Mar | Apr &nbsp;| May &nbsp;| June<br/>
- &nbsp; &nbsp;1 : Miller &nbsp; &nbsp;| 5 &nbsp; | 15 &nbsp;| 15 &nbsp;| 25 &nbsp; | 25 &nbsp; | 25 &nbsp;<br/>
- &nbsp; &nbsp;2 : Muller &nbsp; &nbsp;| 6 &nbsp; | 6 &nbsp; | 6 &nbsp; | 14 &nbsp; | 14 &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Tanner &nbsp; &nbsp;| 7 &nbsp; | 17 &nbsp;| 17 &nbsp;| same | same | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Gerber &nbsp; &nbsp;| 0 &nbsp; | 0 &nbsp; | 0 &nbsp; | 10 &nbsp; | 11 &nbsp; | 12 &nbsp;<br/>
+Fill&nbsp;from&nbsp;right&nbsp;to&nbsp;left&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Jan&nbsp;|&nbsp;Feb&nbsp;|&nbsp;Mar&nbsp;|&nbsp;Apr&nbsp;&nbsp;|&nbsp;May&nbsp;&nbsp;|&nbsp;June<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Muller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;|&nbsp;same&nbsp;|&nbsp;same&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Gerber&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_fill_horizontally.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

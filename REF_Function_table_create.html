@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -119,19 +120,19 @@
 <td><b>Number of tables created or initialized</b><br/><p>With the function <b>table create if not existing</b>, tables already existing will not be counted.  -1 is returned in case of memory allocation exceptions (very rare cases, if at all).</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;r1[] = table create( table 1, table 2 );<br/>
- &nbsp; &nbsp; &nbsp;r2[] = table create if not existing( { table 2, table 4 } ); // Indirect parameter passing<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1[]&nbsp;=&nbsp;table&nbsp;create(&nbsp;table&nbsp;1,&nbsp;table&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2[]&nbsp;=&nbsp;table&nbsp;create&nbsp;if&nbsp;not&nbsp;existing(&nbsp;{&nbsp;table&nbsp;2,&nbsp;table&nbsp;4&nbsp;}&nbsp;);&nbsp;//&nbsp;Indirect&nbsp;parameter&nbsp;passing<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("count 1: ", r1[], " &nbsp; count 2: ", r2[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("count&nbsp;1:&nbsp;",&nbsp;r1[],&nbsp;"&nbsp;&nbsp;&nbsp;count&nbsp;2:&nbsp;",&nbsp;r2[]&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;for all parameters( {table 0 .. table 5}, t[] )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( table existing( t[] ), ", " );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;echo; // new line</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;{table&nbsp;0&nbsp;..&nbsp;table&nbsp;5},&nbsp;t[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;table&nbsp;existing(&nbsp;t[]&nbsp;),&nbsp;",&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;&nbsp;//&nbsp;new&nbsp;line</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>count 1: 2 &nbsp; count 2: 2<br/>
-false, true, true, false, true, false, <br/>
+<div class="output_background_color" ><code>count&nbsp;1:&nbsp;2&nbsp;&nbsp;&nbsp;count&nbsp;2:&nbsp;2<br/>
+false,&nbsp;true,&nbsp;true,&nbsp;false,&nbsp;true,&nbsp;false,&nbsp;<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_create.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_clear.html">table clear</a><br/>

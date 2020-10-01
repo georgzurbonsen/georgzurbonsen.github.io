@@ -73,8 +73,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -113,22 +114,22 @@ intermediate arrays containing 2 elements.  Element 0 contains the value of the 
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;b[Green] = Grün;<br/>
- &nbsp;b[Blue] = Blau;<br/>
- &nbsp;b[Blue,light] = Hellblau;<br/>
- &nbsp;b[Blue,dark] = Dunkelblau;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;b[Green]&nbsp;=&nbsp;Grün;<br/>
+&nbsp;&nbsp;b[Blue]&nbsp;=&nbsp;Blau;<br/>
+&nbsp;&nbsp;b[Blue,light]&nbsp;=&nbsp;Hellblau;<br/>
+&nbsp;&nbsp;b[Blue,dark]&nbsp;=&nbsp;Dunkelblau;<br/>
 <br/>
- &nbsp;variable save( b[], "Outputs/colors.json");<br/>
+&nbsp;&nbsp;variable&nbsp;save(&nbsp;b[],&nbsp;"Outputs/colors.json");<br/>
 <br/>
- &nbsp;variable load( c[], "Outputs/colors.json", JSON B4P );<br/>
+&nbsp;&nbsp;variable&nbsp;load(&nbsp;c[],&nbsp;"Outputs/colors.json",&nbsp;JSON&nbsp;B4P&nbsp;);<br/>
 <br/>
- &nbsp;inspect( c[] );</code></div>
+&nbsp;&nbsp;inspect(&nbsp;c[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>void: No literal provided<br/>
-Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; "literal": "Blau"<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Dunkelblau"<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Hellblau"<br/>
-Green &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; "literal": "Grün"<br/>
+<div class="output_background_color" ><code>[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_variable_save.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

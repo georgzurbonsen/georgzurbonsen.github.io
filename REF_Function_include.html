@@ -74,8 +74,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -91,13 +92,13 @@
 Starts a separate B4P application script as a sub program and waits until the sub program has ended.
 In contrast to <a class="bold_text" href="REF_Function_start.html">start</a>(), this function provides specific features which are suitable to define B4P libraries containing procedures and functions:
 
-</p><ul class="bullets"><li class="bullets">Global variables defined (with <a class="bold_text" href="REF_Function_global.html">global</a>() function) will be preserved.</li>
-<li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="REF_Function_start.html">start</a>() since the internal compilation process is not repeated.</li>
-<li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create B4P libraries and use <b>include()</b> to include them.</li>
-<li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.</li>
-<li class="bullets">The <a class="bold_text" href="REF_Function_once.html">once</a>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.</li>
-<li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then B4P will look for the file in the standard libary directory.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Global variables defined (with <a class="bold_text" href="REF_Function_global.html">global</a>() function) will be preserved.
+</li><li class="bullets">The code will stay resident in memory after completion.  When called again, the already loaded code will be used.  Performance is better than with <a class="bold_text" href="REF_Function_start.html">start</a>() since the internal compilation process is not repeated.
+</li><li class="bullets">User procedures and functions defined in the called program will be preserved.  You can create B4P libraries and use <b>include()</b> to include them.
+</li><li class="bullets">Local variables created inside the program will be preserved and are available for later use.  Note: Local variables created inside <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> will be discareded when the procedure or function execution has completed.
+</li><li class="bullets">The <a class="bold_text" href="REF_Function_once.html">once</a>() calls will be memorized.  A second program execution will skip the once-declared code accordingly.
+</li><li class="bullets">If the specified program file name contains no file type (e.g. '.b4p', '.txt'), then B4P will look for the file in the standard libary directory.
+</li></ul><p></p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Parameter count</h4>
 <p>Min. 1</p>
@@ -123,11 +124,11 @@ If no path and no file type is specified, then B4P will look in the standard lib
 <h4> Exceptions</h4>
 <p>Program file not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;include ( Office Library ); // Looks for 'Office Library.b4p' in the standard B4P library folder.<br/>
- &nbsp; &nbsp; &nbsp;include ( My Library.b4p, English ); // Looks for "My Libary.b4p" in the current folder, and pass a parameter.<br/>
- &nbsp; &nbsp; &nbsp;//<br/>
- &nbsp; &nbsp; &nbsp;// command line argument[0]: start.txt &nbsp; (The file name of the program)<br/>
- &nbsp; &nbsp; &nbsp;// command line argument[1]: English (literal)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;(&nbsp;Office&nbsp;Library&nbsp;);&nbsp;//&nbsp;Looks&nbsp;for&nbsp;'Office&nbsp;Library.b4p'&nbsp;in&nbsp;the&nbsp;standard&nbsp;B4P&nbsp;library&nbsp;folder.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;(&nbsp;My&nbsp;Library.b4p,&nbsp;English&nbsp;);&nbsp;//&nbsp;Looks&nbsp;for&nbsp;"My&nbsp;Libary.b4p"&nbsp;in&nbsp;the&nbsp;current&nbsp;folder,&nbsp;and&nbsp;pass&nbsp;a&nbsp;parameter.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[0]:&nbsp;start.txt&nbsp;&nbsp;&nbsp;(The&nbsp;file&nbsp;name&nbsp;of&nbsp;the&nbsp;program)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[1]:&nbsp;English&nbsp;(literal)<br/>
 </code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_start.html">start</a></p>

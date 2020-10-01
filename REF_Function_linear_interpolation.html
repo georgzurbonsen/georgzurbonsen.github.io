@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -155,11 +156,11 @@ The spline interpolation does not have this problem.
 X-values not in ascending order<br/>
 Empty sets or sets of different lengths provided for X- and/or Y-coordinates</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;x[] = {-1 .. 12 };<br/>
- &nbsp; &nbsp; &nbsp;y[] = linear interpolation( x[], {0, 4, 8, 10}, {0, 8, 5, 0}, flat, continue );<br/>
- &nbsp; &nbsp; &nbsp;// Note: Extrapolation is done for for x[] = -1, 11 and 12.<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[]&nbsp;=&nbsp;{-1&nbsp;..&nbsp;12&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y[]&nbsp;=&nbsp;linear&nbsp;interpolation(&nbsp;x[],&nbsp;{0,&nbsp;4,&nbsp;8,&nbsp;10},&nbsp;{0,&nbsp;8,&nbsp;5,&nbsp;0},&nbsp;flat,&nbsp;continue&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;Extrapolation&nbsp;is&nbsp;done&nbsp;for&nbsp;for&nbsp;x[]&nbsp;=&nbsp;-1,&nbsp;11&nbsp;and&nbsp;12.<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo(y[]);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(y[]);</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>{0,0,2,4,6,8,7.25,6.5,5.75,5,2.5,0,-2.5,-5}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_linear_interpolation.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

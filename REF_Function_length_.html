@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -114,10 +115,10 @@ A simpler approach is to use {} behind the parameter set value, referred as <a c
 <td><b>Length</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( length( {a,b,1} ) ); &nbsp;// 3 elements<br/>
- &nbsp; &nbsp; &nbsp;echo( length( {a,{b,2,3}} ) ); &nbsp;// 2 elements (nested ones are not counted)<br/>
- &nbsp; &nbsp; &nbsp;echo( length( {} ) ); &nbsp; &nbsp; &nbsp; // 0 elements (empty set)<br/>
- &nbsp; &nbsp; &nbsp;echo( length( {{}} ) ); &nbsp; &nbsp; // 1 elements (contains 1 element which is a nested empty set)</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;length(&nbsp;{a,b,1}&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;3&nbsp;elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;length(&nbsp;{a,{b,2,3}}&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;2&nbsp;elements&nbsp;(nested&nbsp;ones&nbsp;are&nbsp;not&nbsp;counted)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;length(&nbsp;{}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;0&nbsp;elements&nbsp;(empty&nbsp;set)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;length(&nbsp;{{}}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;1&nbsp;elements&nbsp;(contains&nbsp;1&nbsp;element&nbsp;which&nbsp;is&nbsp;a&nbsp;nested&nbsp;empty&nbsp;set)</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>3<br/>
 2<br/>

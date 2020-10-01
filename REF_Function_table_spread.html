@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -129,7 +130,7 @@ to the minimum necessary.
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Exactly 1 header name and column numbers may be specified</li></p>
+</p><ul class="bullets"><li class="bullets">Exactly 1 header name and column numbers may be specified</li></ul><p></p>
 </td></tr>
 <tr><td>3.<br/>code</td>
 <td>expression<br/>:literal</td>
@@ -147,11 +148,11 @@ Simple example if spreading by one column, e.g. year: Specify <b>[year]</b>.<br>
 Multiple columns, e.g. quarter and year in separate columns: Specify <b>Q+[Quarter]+' '+literal([year])</b> for values like 'Q1 2022'.<br>
 To spread values by 1st letter, consider , which picks the 1st leter and capitalizes it (+ operator on strings).
 
-</p><ul class="bullets"><li class="bullets">For a simple distribution across years, quarters, countries, states, and the actual data is available one column, then specify the corresponding column name in brackets, e.g. <b>[Year]</b>.</li>
-<li class="bullets">For a distribution of values across years where the full data is available, something like <b>year([Delivery Dates])</b> is proposed.</li>
-<li class="bullets">For an alphabetical distribution, use something like <br>+[Name]{0}</br> which picks the 1st letter and capitalizes it (unary '+' operator at the beginning).</li>
-<li class="bullets">For a combination of multiple columns, e.g. category and sequence info, combine two columns, e.g. <b>[KPI]+'/'+literal([Year])</b> or <b>[Quarter]+"-"+literal([Yeaer])</b>.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">For a simple distribution across years, quarters, countries, states, and the actual data is available one column, then specify the corresponding column name in brackets, e.g. <b>[Year]</b>.
+</li><li class="bullets">For a distribution of values across years where the full data is available, something like <b>year([Delivery Dates])</b> is proposed.
+</li><li class="bullets">For an alphabetical distribution, use something like <br>+[Name]{0}</br> which picks the 1st letter and capitalizes it (unary '+' operator at the beginning).
+</li><li class="bullets">For a combination of multiple columns, e.g. category and sequence info, combine two columns, e.g. <b>[KPI]+'/'+literal([Year])</b> or <b>[Quarter]+"-"+literal([Yeaer])</b>.
+</li></ul><p>
 <u>Attention</u>: New columns will only be created if they are not yet existing.  This scheme allows running multiple calls of <b>table spread</b> and <b>table spread accumulating</b>
 with different data.  This function does not delete any existing values.  Values already existing will only be overwritten or added up.
 </p>
@@ -186,8 +187,8 @@ defined by the 4th and/or 5th function parameters.
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Max. 1 header name may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Max. 1 header name may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>(not applicable)
 </td></tr>
 <tr><td>Opt. 7.<br/>input</td>
@@ -199,8 +200,8 @@ Negative number are supported for indexing from right to left, however -1 refers
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>to the end of the table
 </td></tr>
 </table>
@@ -211,72 +212,72 @@ Specific rules apply for this function:
 <td><b>Column count</b><br/><p>          Number of new columns added.  The 'column for other values' specified in the 6th function parameter is not included in the counting.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;// Remember the motor vehicles serialized ...<br/>
- &nbsp;table initialize( bils, // Swedisch for 'cars', aka 'automo-bils'<br/>
- &nbsp; &nbsp; &nbsp;{ { Product, "2020-Q1".."2020-Q4" },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Sedans, &nbsp; 24, 34, 44, 14 }, &nbsp;{ Pickpus, &nbsp;11, 21, 31, 21 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ Cabrios, &nbsp;'', &nbsp;5, 10, '' }, &nbsp;{ SUVs, &nbsp; &nbsp; 35, 25, 45, 55 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;//&nbsp;Remember&nbsp;the&nbsp;motor&nbsp;vehicles&nbsp;serialized&nbsp;...<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;bils,&nbsp;//&nbsp;Swedisch&nbsp;for&nbsp;'cars',&nbsp;aka&nbsp;'automo-bils'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Product,&nbsp;"2020-Q1".."2020-Q4"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Sedans,&nbsp;&nbsp;&nbsp;24,&nbsp;34,&nbsp;44,&nbsp;14&nbsp;},&nbsp;&nbsp;{&nbsp;Pickpus,&nbsp;&nbsp;11,&nbsp;21,&nbsp;31,&nbsp;21&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Cabrios,&nbsp;&nbsp;'',&nbsp;&nbsp;5,&nbsp;10,&nbsp;''&nbsp;},&nbsp;&nbsp;{&nbsp;SUVs,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;35,&nbsp;25,&nbsp;45,&nbsp;55&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Car sales in sequential order (including blanks here):");<br/>
- &nbsp;table serialize all( bils, Product, Quarter, { "2020-Q1".."2020-Q4" }, Cars sold );<br/>
- &nbsp;table list ( bils );<br/>
+&nbsp;&nbsp;echo("Car&nbsp;sales&nbsp;in&nbsp;sequential&nbsp;order&nbsp;(including&nbsp;blanks&nbsp;here):");<br/>
+&nbsp;&nbsp;table&nbsp;serialize&nbsp;all(&nbsp;bils,&nbsp;Product,&nbsp;Quarter,&nbsp;{&nbsp;"2020-Q1".."2020-Q4"&nbsp;},&nbsp;Cars&nbsp;sold&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;bils&nbsp;);<br/>
 <br/>
- &nbsp;echo("Let's shift to reverse gear: Spread the data");<br/>
+&nbsp;&nbsp;echo("Let's&nbsp;shift&nbsp;to&nbsp;reverse&nbsp;gear:&nbsp;Spread&nbsp;the&nbsp;data");<br/>
 <br/>
- &nbsp;count[] = table spread( bils, Cars sold, [Quarter] );<br/>
- &nbsp;table list ( bils );<br/>
+&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;spread(&nbsp;bils,&nbsp;Cars&nbsp;sold,&nbsp;[Quarter]&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;bils&nbsp;);<br/>
 <br/>
- &nbsp;echo("Number of new columns created. ", count[]);<br/>
- &nbsp;echo("And do a final consolidation and you get the original list.");<br/>
- &nbsp;table consolidate( bils, Product, { Quarter, Cars sold, "2020-Q1".."2020-Q4" }, { 2:delete, overwrite if blank } &nbsp;);<br/>
- &nbsp;table list ( bils );<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;new&nbsp;columns&nbsp;created.&nbsp;",&nbsp;count[]);<br/>
+&nbsp;&nbsp;echo("And&nbsp;do&nbsp;a&nbsp;final&nbsp;consolidation&nbsp;and&nbsp;you&nbsp;get&nbsp;the&nbsp;original&nbsp;list.");<br/>
+&nbsp;&nbsp;table&nbsp;consolidate(&nbsp;bils,&nbsp;Product,&nbsp;{&nbsp;Quarter,&nbsp;Cars&nbsp;sold,&nbsp;"2020-Q1".."2020-Q4"&nbsp;},&nbsp;{&nbsp;2:delete,&nbsp;overwrite&nbsp;if&nbsp;blank&nbsp;}&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;bils&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Car sales in sequential order (including blanks here):<br/>
- &nbsp; &nbsp;0 : Product | Quarter | Cars sold<br/>
- &nbsp; &nbsp;1 : Sedans &nbsp;| 2020-Q1 | 24 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Sedans &nbsp;| 2020-Q2 | 34 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Sedans &nbsp;| 2020-Q3 | 44 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Sedans &nbsp;| 2020-Q4 | 14 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Pickpus | 2020-Q1 | 11 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Pickpus | 2020-Q2 | 21 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Pickpus | 2020-Q3 | 31 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : Pickpus | 2020-Q4 | 21 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Cabrios | 2020-Q1 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 : Cabrios | 2020-Q2 | 5 &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 11 : Cabrios | 2020-Q3 | 10 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 12 : Cabrios | 2020-Q4 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 13 : SUVs &nbsp; &nbsp;| 2020-Q1 | 35 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 14 : SUVs &nbsp; &nbsp;| 2020-Q2 | 25 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 15 : SUVs &nbsp; &nbsp;| 2020-Q3 | 45 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 16 : SUVs &nbsp; &nbsp;| 2020-Q4 | 55 &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Car&nbsp;sales&nbsp;in&nbsp;sequential&nbsp;order&nbsp;(including&nbsp;blanks&nbsp;here):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Product&nbsp;|&nbsp;Quarter&nbsp;|&nbsp;Cars&nbsp;sold<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;14&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;15&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;16&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Let's shift to reverse gear: Spread the data<br/>
- &nbsp; &nbsp;0 : Product | Quarter | Cars sold | 2020-Q1 | 2020-Q2 | 2020-Q3 | 2020-Q4<br/>
- &nbsp; &nbsp;1 : Sedans &nbsp;| 2020-Q1 | 24 &nbsp; &nbsp; &nbsp; &nbsp;| 24 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Sedans &nbsp;| 2020-Q2 | 34 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | 34 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Sedans &nbsp;| 2020-Q3 | 44 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 44 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Sedans &nbsp;| 2020-Q4 | 14 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 14 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Pickpus | 2020-Q1 | 11 &nbsp; &nbsp; &nbsp; &nbsp;| 11 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Pickpus | 2020-Q2 | 21 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | 21 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Pickpus | 2020-Q3 | 31 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 31 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : Pickpus | 2020-Q4 | 21 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 21 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Cabrios | 2020-Q1 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 : Cabrios | 2020-Q2 | 5 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 11 : Cabrios | 2020-Q3 | 10 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 10 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 12 : Cabrios | 2020-Q4 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 13 : SUVs &nbsp; &nbsp;| 2020-Q1 | 35 &nbsp; &nbsp; &nbsp; &nbsp;| 35 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 14 : SUVs &nbsp; &nbsp;| 2020-Q2 | 25 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | 25 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 15 : SUVs &nbsp; &nbsp;| 2020-Q3 | 45 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 45 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 16 : SUVs &nbsp; &nbsp;| 2020-Q4 | 55 &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | 55 &nbsp; &nbsp; <br/>
+Let's&nbsp;shift&nbsp;to&nbsp;reverse&nbsp;gear:&nbsp;Spread&nbsp;the&nbsp;data<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Product&nbsp;|&nbsp;Quarter&nbsp;|&nbsp;Cars&nbsp;sold&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;2020-Q4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;14&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;15&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;16&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-Q4&nbsp;|&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Number of new columns created. 4<br/>
-And do a final consolidation and you get the original list.<br/>
- &nbsp; &nbsp;0 : Product | 2020-Q1 | 2020-Q2 | 2020-Q3 | 2020-Q4<br/>
- &nbsp; &nbsp;1 : Sedans &nbsp;| 24 &nbsp; &nbsp; &nbsp;| 34 &nbsp; &nbsp; &nbsp;| 44 &nbsp; &nbsp; &nbsp;| 14 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Pickpus | 11 &nbsp; &nbsp; &nbsp;| 21 &nbsp; &nbsp; &nbsp;| 31 &nbsp; &nbsp; &nbsp;| 21 &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Cabrios | &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp; &nbsp; &nbsp; | 10 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : SUVs &nbsp; &nbsp;| 35 &nbsp; &nbsp; &nbsp;| 25 &nbsp; &nbsp; &nbsp;| 45 &nbsp; &nbsp; &nbsp;| 55 &nbsp; &nbsp; <br/>
+Number&nbsp;of&nbsp;new&nbsp;columns&nbsp;created.&nbsp;4<br/>
+And&nbsp;do&nbsp;a&nbsp;final&nbsp;consolidation&nbsp;and&nbsp;you&nbsp;get&nbsp;the&nbsp;original&nbsp;list.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Product&nbsp;|&nbsp;2020-Q1&nbsp;|&nbsp;2020-Q2&nbsp;|&nbsp;2020-Q3&nbsp;|&nbsp;2020-Q4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Sedans&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Pickpus&nbsp;|&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Cabrios&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;SUVs&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_spread.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

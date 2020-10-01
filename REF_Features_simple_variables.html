@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -83,34 +84,34 @@ Syntax for a simple variable:  <b>Variable Name [ ]  </b>
 <br/><br/>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;a[] = Hello;<br/>
- &nbsp;(a[])[] = Hi; // Parentheses required on left hand side, <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// otherwise seen as "right hand" expression and not "left hand" expression<br/>
- &nbsp;(a[] + ' World')[] = Ahoi;<br/>
- &nbsp;echo("a[] &nbsp; &nbsp; = ", a[] );<br/>
- &nbsp;echo("a[][] &nbsp; = ", a[][] ); // Here it's OK<br/>
- &nbsp;echo("Hello[] = ", Hello[] );<br/>
- &nbsp;echo("Hello World[] = ", Hello World[], new line );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;Hello;<br/>
+&nbsp;&nbsp;(a[])[]&nbsp;=&nbsp;Hi;&nbsp;//&nbsp;Parentheses&nbsp;required&nbsp;on&nbsp;left&nbsp;hand&nbsp;side,&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;otherwise&nbsp;seen&nbsp;as&nbsp;"right&nbsp;hand"&nbsp;expression&nbsp;and&nbsp;not&nbsp;"left&nbsp;hand"&nbsp;expression<br/>
+&nbsp;&nbsp;(a[]&nbsp;+&nbsp;'&nbsp;World')[]&nbsp;=&nbsp;Ahoi;<br/>
+&nbsp;&nbsp;echo("a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;",&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("a[][]&nbsp;&nbsp;&nbsp;=&nbsp;",&nbsp;a[][]&nbsp;);&nbsp;//&nbsp;Here&nbsp;it's&nbsp;OK<br/>
+&nbsp;&nbsp;echo("Hello[]&nbsp;=&nbsp;",&nbsp;Hello[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("Hello&nbsp;World[]&nbsp;=&nbsp;",&nbsp;Hello&nbsp;World[],&nbsp;new&nbsp;line&nbsp;);<br/>
 <br/>
- &nbsp;'1'[] = One; // Even these variable names are valid !<br/>
- &nbsp;' '[] = Space;<br/>
- &nbsp;''[] = Blank;<br/>
- &nbsp;'a[]'[] = aaaah;<br/>
- &nbsp;echo('1'[], " ", ' '[], " ", ''[], " ", 'a[]'[], new line );<br/>
+&nbsp;&nbsp;'1'[]&nbsp;=&nbsp;One;&nbsp;//&nbsp;Even&nbsp;these&nbsp;variable&nbsp;names&nbsp;are&nbsp;valid&nbsp;!<br/>
+&nbsp;&nbsp;'&nbsp;'[]&nbsp;=&nbsp;Space;<br/>
+&nbsp;&nbsp;''[]&nbsp;=&nbsp;Blank;<br/>
+&nbsp;&nbsp;'a[]'[]&nbsp;=&nbsp;aaaah;<br/>
+&nbsp;&nbsp;echo('1'[],&nbsp;"&nbsp;",&nbsp;'&nbsp;'[],&nbsp;"&nbsp;",&nbsp;''[],&nbsp;"&nbsp;",&nbsp;'a[]'[],&nbsp;new&nbsp;line&nbsp;);<br/>
 <br/>
- &nbsp;me too[] = Hmm;<br/>
- &nbsp;me &nbsp;too[] = Me; &nbsp; // Unquoted literal ignores redundant spaces, same as 'me too'<br/>
- &nbsp;'me &nbsp;too'[] = Mee too;<br/>
- &nbsp;echo( me too[], ", ", me &nbsp;too[], ", ", 'me &nbsp;too'[] );</code></div>
+&nbsp;&nbsp;me&nbsp;too[]&nbsp;=&nbsp;Hmm;<br/>
+&nbsp;&nbsp;me&nbsp;&nbsp;too[]&nbsp;=&nbsp;Me;&nbsp;&nbsp;&nbsp;//&nbsp;Unquoted&nbsp;literal&nbsp;ignores&nbsp;redundant&nbsp;spaces,&nbsp;same&nbsp;as&nbsp;'me&nbsp;too'<br/>
+&nbsp;&nbsp;'me&nbsp;&nbsp;too'[]&nbsp;=&nbsp;Mee&nbsp;too;<br/>
+&nbsp;&nbsp;echo(&nbsp;me&nbsp;too[],&nbsp;",&nbsp;",&nbsp;me&nbsp;&nbsp;too[],&nbsp;",&nbsp;",&nbsp;'me&nbsp;&nbsp;too'[]&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>a[] &nbsp; &nbsp; = Hello<br/>
-a[][] &nbsp; = Hi<br/>
-Hello[] = Hi<br/>
-Hello World[] = Ahoi<br/>
+<div class="output_background_color" ><code>a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Hello<br/>
+a[][]&nbsp;&nbsp;&nbsp;=&nbsp;Hi<br/>
+Hello[]&nbsp;=&nbsp;Hi<br/>
+Hello&nbsp;World[]&nbsp;=&nbsp;Ahoi<br/>
 <br/>
-One Space Blank aaaah<br/>
+One&nbsp;Space&nbsp;Blank&nbsp;aaaah<br/>
 <br/>
-Me, Me, Mee too<br/>
+Me,&nbsp;Me,&nbsp;Mee&nbsp;too<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_simple_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -133,41 +134,41 @@ Negative numbers are supported: -1 = last character, -2 = character before last 
 <td><b>Character position number</b><br/><p>Positive or zero: Found and position number returned.  -1: Not found.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;st[] = "We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;st[]&nbsp;=&nbsp;"We&nbsp;ate&nbsp;pizza,&nbsp;pasta&nbsp;and&nbsp;desert&nbsp;delights&nbsp;like&nbsp;gelati,&nbsp;and&nbsp;conclude&nbsp;with&nbsp;a&nbsp;caffè.";<br/>
 <br/>
- &nbsp;// 1st two finds point on 'pizza', the 3rd fine points to 'pasta'<br/>
- &nbsp;echo( "Testing '", st[], "':" );<br/>
+&nbsp;&nbsp;//&nbsp;1st&nbsp;two&nbsp;finds&nbsp;point&nbsp;on&nbsp;'pizza',&nbsp;the&nbsp;3rd&nbsp;fine&nbsp;points&nbsp;to&nbsp;'pasta'<br/>
+&nbsp;&nbsp;echo(&nbsp;"Testing&nbsp;'",&nbsp;st[],&nbsp;"':"&nbsp;);<br/>
 <br/>
- &nbsp;// Examples include quoted (1st 2 examples) and softquoted strings (last 2 examples)<br/>
- &nbsp;echo( find( st[], "pizza" ), " / ", find( st[], "p???a" ), " / ", find( st[], 'p???a' ), " / ", find( st[], 'p???a', 10 ) );<br/>
+&nbsp;&nbsp;//&nbsp;Examples&nbsp;include&nbsp;quoted&nbsp;(1st&nbsp;2&nbsp;examples)&nbsp;and&nbsp;softquoted&nbsp;strings&nbsp;(last&nbsp;2&nbsp;examples)<br/>
+&nbsp;&nbsp;echo(&nbsp;find(&nbsp;st[],&nbsp;"pizza"&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;find(&nbsp;st[],&nbsp;"p???a"&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;find(&nbsp;st[],&nbsp;'p???a'&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;find(&nbsp;st[],&nbsp;'p???a',&nbsp;10&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( "Looking for Desert: ", find ignore case( st[], "Desert" ) );<br/>
- &nbsp;echo( "Ignore spaces: ", find ignore both( st[], "pizza,PASTA" ) );<br/>
- &nbsp;echo( "No match case: ", find ( st[], "pizza,PASTA" ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;"Looking&nbsp;for&nbsp;Desert:&nbsp;",&nbsp;find&nbsp;ignore&nbsp;case(&nbsp;st[],&nbsp;"Desert"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"Ignore&nbsp;spaces:&nbsp;",&nbsp;find&nbsp;ignore&nbsp;both(&nbsp;st[],&nbsp;"pizza,PASTA"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"No&nbsp;match&nbsp;case:&nbsp;",&nbsp;find&nbsp;(&nbsp;st[],&nbsp;"pizza,PASTA"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;// Demonstrate use of non-string values:<br/>
- &nbsp;// In 1st case, it's a numeral with preserved literal, 2nd case it's a plain numeral after a calculation<br/>
- &nbsp;echo( "Locating a digit: ", find ( 00001234.56, 34, 0 ), " / ", find ( 0 + 00001234.56, 34, 0 ) );<br/>
+&nbsp;&nbsp;//&nbsp;Demonstrate&nbsp;use&nbsp;of&nbsp;non-string&nbsp;values:<br/>
+&nbsp;&nbsp;//&nbsp;In&nbsp;1st&nbsp;case,&nbsp;it's&nbsp;a&nbsp;numeral&nbsp;with&nbsp;preserved&nbsp;literal,&nbsp;2nd&nbsp;case&nbsp;it's&nbsp;a&nbsp;plain&nbsp;numeral&nbsp;after&nbsp;a&nbsp;calculation<br/>
+&nbsp;&nbsp;echo(&nbsp;"Locating&nbsp;a&nbsp;digit:&nbsp;",&nbsp;find&nbsp;(&nbsp;00001234.56,&nbsp;34,&nbsp;0&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;find&nbsp;(&nbsp;0&nbsp;+&nbsp;00001234.56,&nbsp;34,&nbsp;0&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;foods[] = { Gelati, Pizza, Pasta, Caffè };<br/>
- &nbsp;index[] = -1;<br/>
+&nbsp;&nbsp;foods[]&nbsp;=&nbsp;{&nbsp;Gelati,&nbsp;Pizza,&nbsp;Pasta,&nbsp;Caffè&nbsp;};<br/>
+&nbsp;&nbsp;index[]&nbsp;=&nbsp;-1;<br/>
 <br/>
- &nbsp;for ( i[] = 1, i[] &lt;= 4, i[] ++ )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;index[] = find ignore case( st[], { gelati, pasta, desert }, index[]+1, choice[] );<br/>
- &nbsp; &nbsp; &nbsp;echo &nbsp;( i[], ". order is ", foods[]{choice[]} );<br/>
- &nbsp;}</code></div>
+&nbsp;&nbsp;for&nbsp;(&nbsp;i[]&nbsp;=&nbsp;1,&nbsp;i[]&nbsp;&lt;=&nbsp;4,&nbsp;i[]&nbsp;++&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index[]&nbsp;=&nbsp;find&nbsp;ignore&nbsp;case(&nbsp;st[],&nbsp;{&nbsp;gelati,&nbsp;pasta,&nbsp;desert&nbsp;},&nbsp;index[]+1,&nbsp;choice[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&nbsp;(&nbsp;i[],&nbsp;".&nbsp;order&nbsp;is&nbsp;",&nbsp;foods[]{choice[]}&nbsp;);<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Testing 'We ate pizza, pasta and desert delights like gelati, and conclude with a caffè.':<br/>
-7 / -1 / 7 / 14<br/>
-Looking for Desert: 24<br/>
-Ignore spaces: 5<br/>
-No match case: -1<br/>
-Locating a digit: 6 / 2<br/>
-1. order is Pizza<br/>
-2. order is Pasta<br/>
-3. order is Gelati<br/>
-4. order is Caffè<br/>
+<div class="output_background_color" ><code>Testing&nbsp;'We&nbsp;ate&nbsp;pizza,&nbsp;pasta&nbsp;and&nbsp;desert&nbsp;delights&nbsp;like&nbsp;gelati,&nbsp;and&nbsp;conclude&nbsp;with&nbsp;a&nbsp;caffè.':<br/>
+7&nbsp;/&nbsp;-1&nbsp;/&nbsp;7&nbsp;/&nbsp;14<br/>
+Looking&nbsp;for&nbsp;Desert:&nbsp;24<br/>
+Ignore&nbsp;spaces:&nbsp;5<br/>
+No&nbsp;match&nbsp;case:&nbsp;-1<br/>
+Locating&nbsp;a&nbsp;digit:&nbsp;6&nbsp;/&nbsp;2<br/>
+1.&nbsp;order&nbsp;is&nbsp;Pizza<br/>
+2.&nbsp;order&nbsp;is&nbsp;Pasta<br/>
+3.&nbsp;order&nbsp;is&nbsp;Gelati<br/>
+4.&nbsp;order&nbsp;is&nbsp;Caffè<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_find.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_find_.html">find (parameter set function)</a></p>

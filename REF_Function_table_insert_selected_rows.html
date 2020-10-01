@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -134,18 +135,18 @@ to the 2nd function parameter.  <a class="bold_text" href="REF_Function_with_tab
 <td>table columns</td>
 <td><b>Existing columns to copy</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">The columns listed must be unique, i.e. not repeated.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">The columns listed must be unique, i.e. not repeated.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>(None)
 </td></tr>
 <tr><td>Opt. 5.<br/>input</td>
 <td>table column</td>
 <td><b>Index column</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Max 1 header names or column number may be specified</li>
-<li class="bullets">If the column is not existing, then it will created and added after the right-most existing column</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Max 1 header names or column number may be specified
+</li><li class="bullets">If the column is not existing, then it will created and added after the right-most existing column
+</li></ul><p>
 What will be written into the index column if <i>n</i> rows are inserted below or above:<br>
 With  <b>table insert selected rows<b>, 0 is assigned to the original row.  1...<i>n</i> are assigned to the new rows inserted.<br>
 With  <b>table insert above selected rows<b>, <i>n</i> is assigned to the original row.  0...<i>n</i>-1 are assigned to the rows above.</p>
@@ -158,47 +159,47 @@ With  <b>table insert above selected rows<b>, <i>n</i> is assigned to the origin
 <td><b>Number of rows identified</b><br/><p>Only the number of identified rows (and not the number of inserted rows) is returned. -1 is returned if table is empty.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table 1,<br/>
- &nbsp;{ { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Animal,&nbsp;leg&nbsp;count&nbsp;},&nbsp;{&nbsp;Worm,&nbsp;&nbsp;0},&nbsp;{&nbsp;Bird,&nbsp;2&nbsp;},&nbsp;{&nbsp;Dog,&nbsp;4&nbsp;},&nbsp;{&nbsp;Fly,&nbsp;6&nbsp;},&nbsp;{&nbsp;Tick,&nbsp;8&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table insert selected rows( table 1, ([Animal]=Bird,Dog), [leg count], Animal, Index );<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;selected&nbsp;rows(&nbsp;table&nbsp;1,&nbsp;([Animal]=Bird,Dog),&nbsp;[leg&nbsp;count],&nbsp;Animal,&nbsp;Index&nbsp;);<br/>
 <br/>
- &nbsp;table list( table 1 ); // Only Dog and Fly are left<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;1&nbsp;);&nbsp;//&nbsp;Only&nbsp;Dog&nbsp;and&nbsp;Fly&nbsp;are&nbsp;left<br/>
 <br/>
- &nbsp;echo(" and above: ");<br/>
- &nbsp;table initialize ( table 1,<br/>
- &nbsp; { { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
+&nbsp;&nbsp;echo("&nbsp;and&nbsp;above:&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Animal,&nbsp;leg&nbsp;count&nbsp;},&nbsp;{&nbsp;Worm,&nbsp;&nbsp;0},&nbsp;{&nbsp;Bird,&nbsp;2&nbsp;},&nbsp;{&nbsp;Dog,&nbsp;4&nbsp;},&nbsp;{&nbsp;Fly,&nbsp;6&nbsp;},&nbsp;{&nbsp;Tick,&nbsp;8&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table insert above selected rows( table 1, ([Animal]=Bird,Dog), [leg count], Animal, Index );<br/>
+&nbsp;&nbsp;table&nbsp;insert&nbsp;above&nbsp;selected&nbsp;rows(&nbsp;table&nbsp;1,&nbsp;([Animal]=Bird,Dog),&nbsp;[leg&nbsp;count],&nbsp;Animal,&nbsp;Index&nbsp;);<br/>
 <br/>
- &nbsp;table list( table 1 ); // Only Dog and Fly are left</code></div>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;1&nbsp;);&nbsp;//&nbsp;Only&nbsp;Dog&nbsp;and&nbsp;Fly&nbsp;are&nbsp;left</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Animal | leg count | Index<br/>
- &nbsp; &nbsp;1 : Worm &nbsp; | 0 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Bird &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Bird &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Bird &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Dog &nbsp; &nbsp;| 4 &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;9 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; &nbsp;<br/>
- &nbsp; 10 : Fly &nbsp; &nbsp;| 6 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 11 : Tick &nbsp; | 8 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Animal&nbsp;|&nbsp;leg&nbsp;count&nbsp;|&nbsp;Index<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Worm&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Fly&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;Tick&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
- and above: <br/>
- &nbsp; &nbsp;0 : Animal | leg count | Index<br/>
- &nbsp; &nbsp;1 : Worm &nbsp; | 0 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Bird &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Bird &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Bird &nbsp; | 2 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : Dog &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;9 : Dog &nbsp; &nbsp;| 4 &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; &nbsp;<br/>
- &nbsp; 10 : Fly &nbsp; &nbsp;| 6 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 11 : Tick &nbsp; | 8 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
+&nbsp;and&nbsp;above:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Animal&nbsp;|&nbsp;leg&nbsp;count&nbsp;|&nbsp;Index<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Worm&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Bird&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Fly&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;Tick&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_insert_selected_rows.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

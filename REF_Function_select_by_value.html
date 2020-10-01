@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -144,24 +145,24 @@ If only 2 function parameters are provided, then the last parameter will be retu
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
- &nbsp;a[] = Hund;<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;Hund;<br/>
 <br/>
- &nbsp;echo("Demonstrate 'select by value':");<br/>
- &nbsp;// Note: All parameters are executed, i.e. printed out<br/>
- &nbsp;x[] = select by value( a[], print(Katze), print(Cat), print(Hund), print(Dog), print(Maus), print(Mouse) );<br/>
- &nbsp;echo(new line, "Result is ", x[] );<br/>
+&nbsp;&nbsp;echo("Demonstrate&nbsp;'select&nbsp;by&nbsp;value':");<br/>
+&nbsp;&nbsp;//&nbsp;Note:&nbsp;All&nbsp;parameters&nbsp;are&nbsp;executed,&nbsp;i.e.&nbsp;printed&nbsp;out<br/>
+&nbsp;&nbsp;x[]&nbsp;=&nbsp;select&nbsp;by&nbsp;value(&nbsp;a[],&nbsp;print(Katze),&nbsp;print(Cat),&nbsp;print(Hund),&nbsp;print(Dog),&nbsp;print(Maus),&nbsp;print(Mouse)&nbsp;);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Result&nbsp;is&nbsp;",&nbsp;x[]&nbsp;);<br/>
 <br/>
- &nbsp;echo("Demonstrate 'pick by value':");<br/>
- &nbsp;// Note: The calculated expressions will be printed out: Katze, Hund and Dog. No need to execute the other ones<br/>
- &nbsp;x[] = pick by value( a[], print(Katze), print(Cat), print(Hund), print(Dog), print(Maus), print(Mouse) );<br/>
- &nbsp;echo(new line, "Result is ", x[] );</code></div>
+&nbsp;&nbsp;echo("Demonstrate&nbsp;'pick&nbsp;by&nbsp;value':");<br/>
+&nbsp;&nbsp;//&nbsp;Note:&nbsp;The&nbsp;calculated&nbsp;expressions&nbsp;will&nbsp;be&nbsp;printed&nbsp;out:&nbsp;Katze,&nbsp;Hund&nbsp;and&nbsp;Dog.&nbsp;No&nbsp;need&nbsp;to&nbsp;execute&nbsp;the&nbsp;other&nbsp;ones<br/>
+&nbsp;&nbsp;x[]&nbsp;=&nbsp;pick&nbsp;by&nbsp;value(&nbsp;a[],&nbsp;print(Katze),&nbsp;print(Cat),&nbsp;print(Hund),&nbsp;print(Dog),&nbsp;print(Maus),&nbsp;print(Mouse)&nbsp;);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Result&nbsp;is&nbsp;",&nbsp;x[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Demonstrate 'select by value':<br/>
+<div class="output_background_color" ><code>Demonstrate&nbsp;'select&nbsp;by&nbsp;value':<br/>
 KatzeCatHundDogMausMouse<br/>
-Result is Dog<br/>
-Demonstrate 'pick by value':<br/>
+Result&nbsp;is&nbsp;Dog<br/>
+Demonstrate&nbsp;'pick&nbsp;by&nbsp;value':<br/>
 KatzeHundDog<br/>
-Result is Dog<br/>
+Result&nbsp;is&nbsp;Dog<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_select_by_value.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_select_ifs.html">select ifs</a><br/>

@@ -81,8 +81,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -104,27 +105,27 @@ This function call is recommended for <span class="red_text">program debugging</
 <h4> Parameter count</h4>
 <p>0</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;define procedure( foo )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;a[] = 123;<br/>
- &nbsp; &nbsp; &nbsp;interactive;<br/>
- &nbsp; &nbsp; &nbsp;echo("Continuing");<br/>
- &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;procedure(&nbsp;foo&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;123;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interactive;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Continuing");<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;echo("Started.");<br/>
- &nbsp;foo;<br/>
- &nbsp;echo("Finished.");</code></div>
+&nbsp;&nbsp;echo("Started.");<br/>
+&nbsp;&nbsp;foo;<br/>
+&nbsp;&nbsp;echo("Finished.");</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Started.<br/>
-interactive (); called<br/>
+interactive&nbsp;();&nbsp;called<br/>
 <br/>
-Type 'help' for help, 'docs' for B4P docs, 'web docs' for online docs.<br/>
-&gt;&gt; =a[]<br/>
-123 [numeral]<br/>
-&gt;&gt; return<br/>
+Type&nbsp;'help'&nbsp;for&nbsp;help,&nbsp;'docs'&nbsp;for&nbsp;B4P&nbsp;docs,&nbsp;'web&nbsp;docs'&nbsp;for&nbsp;online&nbsp;docs.<br/>
+&gt;&gt;&nbsp;=a[]<br/>
+123&nbsp;[numeral]<br/>
+&gt;&gt;&nbsp;return<br/>
 Continung<br/>
 Finished.<br/>
-Done - Press ENTER key</code></div>
+Done&nbsp;-&nbsp;Press&nbsp;ENTER&nbsp;key</code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_stop.html">stop</a></p>
 	</div>

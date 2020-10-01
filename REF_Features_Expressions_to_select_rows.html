@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -94,31 +95,31 @@ The expressions may return values of following types:
 <u>Note:</u>The expression will be calculated only once and not for every row if it has returned a numeral or parameter set.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table,<br/>
- &nbsp;{ { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Animal,&nbsp;leg&nbsp;count&nbsp;},&nbsp;{&nbsp;Worm,&nbsp;&nbsp;0},&nbsp;{&nbsp;Bird,&nbsp;2&nbsp;},&nbsp;{&nbsp;Dog,&nbsp;4&nbsp;},&nbsp;{&nbsp;Fly,&nbsp;6&nbsp;},&nbsp;{&nbsp;Tick,&nbsp;8&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table process selected rows( <br/>
- &nbsp; &nbsp; &nbsp;table, ([Animal]=Tick,Bird), <br/>
- &nbsp; &nbsp; &nbsp;echo( "row nr.: ", row()," &nbsp;Animal: ", [Animal], " has ", [leg count], " legs" ) );<br/>
+&nbsp;&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows(&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table,&nbsp;([Animal]=Tick,Bird),&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"row&nbsp;nr.:&nbsp;",&nbsp;row(),"&nbsp;&nbsp;Animal:&nbsp;",&nbsp;[Animal],&nbsp;"&nbsp;has&nbsp;",&nbsp;[leg&nbsp;count],&nbsp;"&nbsp;legs"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo;<br/>
- &nbsp;table process selected rows( <br/>
- &nbsp; &nbsp; &nbsp;table, -1, // -1 -&gt; Row 5 (Negative indexing)<br/>
- &nbsp; &nbsp; &nbsp;echo( "row nr.: ", row()," &nbsp;Animal: ", [Animal], " has ", [leg count], " legs" ) );<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows(&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table,&nbsp;-1,&nbsp;//&nbsp;-1&nbsp;-&gt;&nbsp;Row&nbsp;5&nbsp;(Negative&nbsp;indexing)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"row&nbsp;nr.:&nbsp;",&nbsp;row(),"&nbsp;&nbsp;Animal:&nbsp;",&nbsp;[Animal],&nbsp;"&nbsp;has&nbsp;",&nbsp;[leg&nbsp;count],&nbsp;"&nbsp;legs"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo;<br/>
- &nbsp;table process selected rows( <br/>
- &nbsp; &nbsp; &nbsp;table, {1,3,-2}, &nbsp;// -2 -&gt; Row 4 (Negative indexing)<br/>
- &nbsp; &nbsp; &nbsp;echo( "row nr.: ", row()," &nbsp;Animal: ", [Animal], " has ", [leg count], " legs" ) );</code></div>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows(&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table,&nbsp;{1,3,-2},&nbsp;&nbsp;//&nbsp;-2&nbsp;-&gt;&nbsp;Row&nbsp;4&nbsp;(Negative&nbsp;indexing)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"row&nbsp;nr.:&nbsp;",&nbsp;row(),"&nbsp;&nbsp;Animal:&nbsp;",&nbsp;[Animal],&nbsp;"&nbsp;has&nbsp;",&nbsp;[leg&nbsp;count],&nbsp;"&nbsp;legs"&nbsp;)&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>row nr.: 2 &nbsp;Animal: Bird has 2 legs<br/>
-row nr.: 5 &nbsp;Animal: Tick has 8 legs<br/>
+<div class="output_background_color" ><code>row&nbsp;nr.:&nbsp;2&nbsp;&nbsp;Animal:&nbsp;Bird&nbsp;has&nbsp;2&nbsp;legs<br/>
+row&nbsp;nr.:&nbsp;5&nbsp;&nbsp;Animal:&nbsp;Tick&nbsp;has&nbsp;8&nbsp;legs<br/>
 <br/>
-row nr.: 5 &nbsp;Animal: Tick has 8 legs<br/>
+row&nbsp;nr.:&nbsp;5&nbsp;&nbsp;Animal:&nbsp;Tick&nbsp;has&nbsp;8&nbsp;legs<br/>
 <br/>
-row nr.: 1 &nbsp;Animal: Worm has 0 legs<br/>
-row nr.: 3 &nbsp;Animal: Dog has 4 legs<br/>
-row nr.: 4 &nbsp;Animal: Fly has 6 legs<br/>
+row&nbsp;nr.:&nbsp;1&nbsp;&nbsp;Animal:&nbsp;Worm&nbsp;has&nbsp;0&nbsp;legs<br/>
+row&nbsp;nr.:&nbsp;3&nbsp;&nbsp;Animal:&nbsp;Dog&nbsp;has&nbsp;4&nbsp;legs<br/>
+row&nbsp;nr.:&nbsp;4&nbsp;&nbsp;Animal:&nbsp;Fly&nbsp;has&nbsp;6&nbsp;legs<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Expressions_to_select_rows.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

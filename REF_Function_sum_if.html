@@ -69,8 +69,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -98,17 +99,17 @@ The 3rd (and odd numbered) function parameters contain a <span class="red_text">
 by an expression as expected in comparisons.  All values in the 2nd (and even numbered) function parameters will be compared with this expression.  For all comparisons turning out <i>true</i>, the corresponding value
 in the  1st parameter will be included in the calculation.
 
-</p><ul class="bullets"><li class="bullets">If the 2nd (and even numbered) function parameters contain more elements than the parameter set in the 1st function parameter, then the excessive elements will be ignored.</li>
-<li class="bullets">If the 2nd (and even numbered) function parameters contain fewer elements than the parameter set in the 1st function parameter, then <i>false</i> is assumed for the remaining parameters in the 1st function parameter and will not be considered for the calculations.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">If the 2nd (and even numbered) function parameters contain more elements than the parameter set in the 1st function parameter, then the excessive elements will be ignored.
+</li><li class="bullets">If the 2nd (and even numbered) function parameters contain fewer elements than the parameter set in the 1st function parameter, then <i>false</i> is assumed for the remaining parameters in the 1st function parameter and will not be considered for the calculations.
+</li></ul><p>
 Example: <b>sum if( {1,2,3,4}, {a,b,a,c}, (=a) )</b> sums the 1st and 3rd parameter element (values 1, 3) because the corresponding elements in the 2nd parameter sets meet the expression <i>equals to a</i>.
 
 <br><br>
 
 The differenntiation between <b>if</b> or <b>if any</b> at the end of the function names play a role if additional comparisons are specified using additional two function parameters.
-</p><ul class="bullets"><li class="bullets">The ending <b>if</b> includes those parameter set elements in the 1st function parameter for calculations if the corresponding elements in <i>all</i> even numbered parameters result in a positive comparison. <br>In shoret: <i>AND</i> combination of all comparisons.</li>
-<li class="bullets">The ending <b>if any</b> includes those parameter set elements in the 1st function parameter for calculations if the corresponding elements in <i>any of the</i> even numbered parameters result in a positive comparison. <br>In shoret: <i>OR</i> combination of all comparisons.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">The ending <b>if</b> includes those parameter set elements in the 1st function parameter for calculations if the corresponding elements in <i>all</i> even numbered parameters result in a positive comparison. <br>In shoret: <i>AND</i> combination of all comparisons.
+</li><li class="bullets">The ending <b>if any</b> includes those parameter set elements in the 1st function parameter for calculations if the corresponding elements in <i>any of the</i> even numbered parameters result in a positive comparison. <br>In shoret: <i>OR</i> combination of all comparisons.
+</li></ul><p>
 <u>Attention:</u> The function nnames beginning with "join " requires 1 additional parameter to provide the separation symbols
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
@@ -142,23 +143,23 @@ The differenntiation between <b>if</b> or <b>if any</b> at the end of the functi
 <h4> Exceptions</h4>
 <p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( sum if &nbsp;( { 1, 2, 3, 4, 5 }, { 10, 8, 6, 4, 2 }, &gt;4 ) ); // 6, because first 3 elements are added<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;10,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;4&nbsp;)&nbsp;);&nbsp;//&nbsp;6,&nbsp;because&nbsp;first&nbsp;3&nbsp;elements&nbsp;are&nbsp;added<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( sum if &nbsp;( { 1, 2, 3, 4, 5 }, { 2, 8, 6, 4, 2 }, &gt;=4, { a, b, c, d, e }, c..e ) );<br/>
- &nbsp; &nbsp; &nbsp;// Returns 7 because comparisons of the 2nd-4th elements in 2nd parameter and last 3 elements in the 4th<br/>
- &nbsp; &nbsp; &nbsp;// parameter givei true. &nbsp;Intersecting both, the 3rd and 4th elements will be summed.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;2,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;=4,&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;e&nbsp;},&nbsp;c..e&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;7&nbsp;because&nbsp;comparisons&nbsp;of&nbsp;the&nbsp;2nd-4th&nbsp;elements&nbsp;in&nbsp;2nd&nbsp;parameter&nbsp;and&nbsp;last&nbsp;3&nbsp;elements&nbsp;in&nbsp;the&nbsp;4th<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter&nbsp;givei&nbsp;true.&nbsp;&nbsp;Intersecting&nbsp;both,&nbsp;the&nbsp;3rd&nbsp;and&nbsp;4th&nbsp;elements&nbsp;will&nbsp;be&nbsp;summed.<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( sum if any &nbsp;( { 1, 2, 3, 4, 5 }, { 2, 8, 6, 4, 2 }, &gt;=4, { a, b, c, d, e }, c..e ) );<br/>
- &nbsp; &nbsp; &nbsp;// Returns 14 because comparisons of the 2nd-4th elements in 2nd parameter and last 3 elements in the 4th<br/>
- &nbsp; &nbsp; &nbsp;// parameter give true. &nbsp;Taking the union of both, the 2nd - 5th elements will be summed.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;any&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;2,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;=4,&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;e&nbsp;},&nbsp;c..e&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;14&nbsp;because&nbsp;comparisons&nbsp;of&nbsp;the&nbsp;2nd-4th&nbsp;elements&nbsp;in&nbsp;2nd&nbsp;parameter&nbsp;and&nbsp;last&nbsp;3&nbsp;elements&nbsp;in&nbsp;the&nbsp;4th<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter&nbsp;give&nbsp;true.&nbsp;&nbsp;Taking&nbsp;the&nbsp;union&nbsp;of&nbsp;both,&nbsp;the&nbsp;2nd&nbsp;-&nbsp;5th&nbsp;elements&nbsp;will&nbsp;be&nbsp;summed.<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( join if ( { Jim, Jane, John, Kate, Nic }, { 25, 18, 30, 17, 40 }, &gt;=20, {"(", ", ",")"} ) );<br/>
- &nbsp; &nbsp; &nbsp;// Returns (Jim, John, Nic) because their ages are 20 or higher.</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;join&nbsp;if&nbsp;(&nbsp;{&nbsp;Jim,&nbsp;Jane,&nbsp;John,&nbsp;Kate,&nbsp;Nic&nbsp;},&nbsp;{&nbsp;25,&nbsp;18,&nbsp;30,&nbsp;17,&nbsp;40&nbsp;},&nbsp;&gt;=20,&nbsp;{"(",&nbsp;",&nbsp;",")"}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;(Jim,&nbsp;John,&nbsp;Nic)&nbsp;because&nbsp;their&nbsp;ages&nbsp;are&nbsp;20&nbsp;or&nbsp;higher.</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>6<br/>
 7<br/>
 14<br/>
-(Jim, John, Nic)<br/>
+(Jim,&nbsp;John,&nbsp;Nic)<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_sum_if.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_average.html">sum</a><br/>

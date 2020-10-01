@@ -83,8 +83,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -129,24 +130,24 @@ then the value "# Array Member #" will be assigned.  This fourth parameter is no
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;structure( a[], { Animal, Plant, Alien }, { Ape, Tulip, Chewbacca } );<br/>
- &nbsp; &nbsp; &nbsp;for all variables( a[], value[], i[] , name[])<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( i[],": ", name[]," = ", value[] );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;array( a[], { Charles, Dave, Abel, Birgit, } );<br/>
- &nbsp; &nbsp; &nbsp;for all variables( a[], value[], i[] , name[])<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( i[],": ", name[]," = ", value[] );<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structure(&nbsp;a[],&nbsp;{&nbsp;Animal,&nbsp;Plant,&nbsp;Alien&nbsp;},&nbsp;{&nbsp;Ape,&nbsp;Tulip,&nbsp;Chewbacca&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;variables(&nbsp;a[],&nbsp;value[],&nbsp;i[]&nbsp;,&nbsp;name[])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],":&nbsp;",&nbsp;name[],"&nbsp;=&nbsp;",&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;a[],&nbsp;{&nbsp;Charles,&nbsp;Dave,&nbsp;Abel,&nbsp;Birgit,&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;variables(&nbsp;a[],&nbsp;value[],&nbsp;i[]&nbsp;,&nbsp;name[])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],":&nbsp;",&nbsp;name[],"&nbsp;=&nbsp;",&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>0: Alien = Chewbacca<br/>
-1: Animal = Ape<br/>
-2: Plant = Tulip<br/>
-0: # Array Member # = Charles<br/>
-1: # Array Member # = Dave<br/>
-2: # Array Member # = Abel<br/>
-3: # Array Member # = Birgit<br/>
+<div class="output_background_color" ><code>0:&nbsp;Alien&nbsp;=&nbsp;Chewbacca<br/>
+1:&nbsp;Animal&nbsp;=&nbsp;Ape<br/>
+2:&nbsp;Plant&nbsp;=&nbsp;Tulip<br/>
+0:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Charles<br/>
+1:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Dave<br/>
+2:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Abel<br/>
+3:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Birgit<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_for_all_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_for_all_parameters.html">for all parameters</a></p>

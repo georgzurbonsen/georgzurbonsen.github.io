@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -111,18 +112,18 @@
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( t1, { { Name, Street, Nr }, { Alex, Main St., 231 }} );<br/>
- &nbsp; &nbsp; &nbsp;echo("Initialized table:");<br/>
- &nbsp; &nbsp; &nbsp;table list( t1 );<br/>
- &nbsp; &nbsp; &nbsp;table clear( t1 );<br/>
- &nbsp; &nbsp; &nbsp;echo("Cleared table:");<br/>
- &nbsp; &nbsp; &nbsp;table list ( t1 ); // Nothing to list</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t1,&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Street,&nbsp;Nr&nbsp;},&nbsp;{&nbsp;Alex,&nbsp;Main&nbsp;St.,&nbsp;231&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Initialized&nbsp;table:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;clear(&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Cleared&nbsp;table:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t1&nbsp;);&nbsp;//&nbsp;Nothing&nbsp;to&nbsp;list</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Initialized table:<br/>
- &nbsp; &nbsp;0 : Name | Street &nbsp; | Nr <br/>
- &nbsp; &nbsp;1 : Alex | Main St. | 231<br/>
+<div class="output_background_color" ><code>Initialized&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Street&nbsp;&nbsp;&nbsp;|&nbsp;Nr&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Alex&nbsp;|&nbsp;Main&nbsp;St.&nbsp;|&nbsp;231<br/>
 <br/>
-Cleared table:<br/>
+Cleared&nbsp;table:<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_clear.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_create.html">table create</a><br/>

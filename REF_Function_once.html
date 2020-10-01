@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -104,23 +105,23 @@ e.g. blocks where variables are initialized and functions being defined.
 <h4> Parameter count</h4>
 <p>0</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;define procedure ( hi )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;once()<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo(Hey folks);<br/>
- &nbsp; &nbsp; &nbsp;else: <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo(Good bye);<br/>
- &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;procedure&nbsp;(&nbsp;hi&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;once()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(Hey&nbsp;folks);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(Good&nbsp;bye);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;// Main program part: Call 'hi' three times:<br/>
+&nbsp;&nbsp;//&nbsp;Main&nbsp;program&nbsp;part:&nbsp;Call&nbsp;'hi'&nbsp;three&nbsp;times:<br/>
 <br/>
- &nbsp;hi;<br/>
- &nbsp;hi;<br/>
- &nbsp;hi;</code></div>
+&nbsp;&nbsp;hi;<br/>
+&nbsp;&nbsp;hi;<br/>
+&nbsp;&nbsp;hi;</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Hey folks<br/>
-Good bye<br/>
-Good bye<br/>
+<div class="output_background_color" ><code>Hey&nbsp;folks<br/>
+Good&nbsp;bye<br/>
+Good&nbsp;bye<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_once.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

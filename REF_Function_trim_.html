@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -110,21 +111,21 @@ is unique.
 <td><b>trimmed parameter set</b><br/><p>Parameter set contains unique elements</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( trim( { a, b, c, d, c, b, a } ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( trim( { 'a', "a", A, "A" } ) ); &nbsp; // No difference made on quoted strings<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;trim(&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;c,&nbsp;b,&nbsp;a&nbsp;}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;trim(&nbsp;{&nbsp;'a',&nbsp;"a",&nbsp;A,&nbsp;"A"&nbsp;}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;difference&nbsp;made&nbsp;on&nbsp;quoted&nbsp;strings<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( trim( { 1, {}, {a,b}, 1, {}, {b,a}, {a,b}, {a,b} } ) ); &nbsp; // No difference made on quoted strings<br/>
- &nbsp; &nbsp; &nbsp;// Note: {a,b} is considered different to {b,a} and will not be trimmed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;trim(&nbsp;{&nbsp;1,&nbsp;{},&nbsp;{a,b},&nbsp;1,&nbsp;{},&nbsp;{b,a},&nbsp;{a,b},&nbsp;{a,b}&nbsp;}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;difference&nbsp;made&nbsp;on&nbsp;quoted&nbsp;strings<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;{a,b}&nbsp;is&nbsp;considered&nbsp;different&nbsp;to&nbsp;{b,a}&nbsp;and&nbsp;will&nbsp;not&nbsp;be&nbsp;trimmed<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( trim( { 1, '1', 2, '2' } ) ); &nbsp; // No trimming (numerals differ from literals)<br/>
- &nbsp; &nbsp; &nbsp;echo( trim( { } ), " / ", trim( { {},{},{} } ) ); // No element and 1 element<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;trim(&nbsp;{&nbsp;1,&nbsp;'1',&nbsp;2,&nbsp;'2'&nbsp;}&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;trimming&nbsp;(numerals&nbsp;differ&nbsp;from&nbsp;literals)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;trim(&nbsp;{&nbsp;}&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;trim(&nbsp;{&nbsp;{},{},{}&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;No&nbsp;element&nbsp;and&nbsp;1&nbsp;element<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>{'a','b','c','d'}<br/>
 {'a','A'}<br/>
 {1,{},{'a','b'},{'b','a'}}<br/>
 {1,'1',2,'2'}<br/>
-{} / {{}}<br/>
+{}&nbsp;/&nbsp;{{}}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_trim_.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_trim.html">trim (string function)</a></p>

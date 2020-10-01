@@ -82,8 +82,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -118,8 +119,8 @@ right choice is entered.  In addition, The user can stop the program with Escape
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>3<br/>input</td>
 <td>table column</td>
@@ -127,8 +128,8 @@ Specific rules apply for this function:
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>4<br/>input</td>
 <td>table column</td>
@@ -136,8 +137,8 @@ Specific rules apply for this function:
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Exactly 1 header names or column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 </table>
 <h4> Return value</h4>
@@ -147,26 +148,26 @@ Specific rules apply for this function:
 <td><b>Returned selecction</b><br/><p>The selection is the corresponding entry from the selection column in the table.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( menu,<br/>
- &nbsp; &nbsp; &nbsp;{ { Choice, Description, Selection, Wine },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ A, &nbsp; &nbsp; &nbsp;Smoked salmon with cherry tomatoes, &nbsp;Fish, &nbsp;Chablais },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ B, &nbsp; &nbsp; &nbsp;300g sirloin with baked potatoes, Beef, Cabernet Sauvignon },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ C, &nbsp; &nbsp; &nbsp;Chicken brest with red curry, Riesling },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ D, &nbsp; &nbsp; &nbsp;Tirami sù, Dessert, Vin Santo } });<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;menu,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Choice,&nbsp;Description,&nbsp;Selection,&nbsp;Wine&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;A,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smoked&nbsp;salmon&nbsp;with&nbsp;cherry&nbsp;tomatoes,&nbsp;&nbsp;Fish,&nbsp;&nbsp;Chablais&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;B,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;300g&nbsp;sirloin&nbsp;with&nbsp;baked&nbsp;potatoes,&nbsp;Beef,&nbsp;Cabernet&nbsp;Sauvignon&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;C,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chicken&nbsp;brest&nbsp;with&nbsp;red&nbsp;curry,&nbsp;Riesling&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;D,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tirami&nbsp;sù,&nbsp;Dessert,&nbsp;Vin&nbsp;Santo&nbsp;}&nbsp;});<br/>
 <br/>
- &nbsp;chosen[] = table menu quick( menu, Choice, Description, Selection );<br/>
+&nbsp;&nbsp;chosen[]&nbsp;=&nbsp;table&nbsp;menu&nbsp;quick(&nbsp;menu,&nbsp;Choice,&nbsp;Description,&nbsp;Selection&nbsp;);<br/>
 <br/>
- &nbsp;echo("You have chosen ", chosen[] );<br/>
- &nbsp;echo("We recommend the following wine: ", [menu:Selection,chosen[],Wine] );<br/>
+&nbsp;&nbsp;echo("You&nbsp;have&nbsp;chosen&nbsp;",&nbsp;chosen[]&nbsp;);<br/>
+&nbsp;&nbsp;echo("We&nbsp;recommend&nbsp;the&nbsp;following&nbsp;wine:&nbsp;",&nbsp;[menu:Selection,chosen[],Wine]&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;A : &nbsp;Smoked salmon with cherry tomatoes<br/>
- &nbsp; &nbsp;B : &nbsp;300g sirloin with baked potatoes<br/>
- &nbsp; &nbsp;C : &nbsp;Chicken brest with red curry<br/>
- &nbsp; &nbsp;D : &nbsp;Tirami sù<br/>
-Please select: B<br/>
-You have chosen Beef<br/>
-We recommend the following wine: Cabernet Sauvignon</code></div><u>Try it yourself:</u> Open <b>REF_Function_table_menu.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:&nbsp;&nbsp;Smoked&nbsp;salmon&nbsp;with&nbsp;cherry&nbsp;tomatoes<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;:&nbsp;&nbsp;300g&nbsp;sirloin&nbsp;with&nbsp;baked&nbsp;potatoes<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;:&nbsp;&nbsp;Chicken&nbsp;brest&nbsp;with&nbsp;red&nbsp;curry<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;:&nbsp;&nbsp;Tirami&nbsp;sù<br/>
+Please&nbsp;select:&nbsp;B<br/>
+You&nbsp;have&nbsp;chosen&nbsp;Beef<br/>
+We&nbsp;recommend&nbsp;the&nbsp;following&nbsp;wine:&nbsp;Cabernet&nbsp;Sauvignon</code></div><u>Try it yourself:</u> Open <b>REF_Function_table_menu.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_input.html">input</a><br/>
 <a class = "bold_text" href="REF_Function_input_quick.html">input quick</a></p>

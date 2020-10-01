@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -103,32 +104,32 @@ The global variables are obviously retained if this function is called out from 
 <h4> Parameter count</h4>
 <p>0</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;d[] = 10; // Global variable defined outside the function<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;d[]&nbsp;=&nbsp;10;&nbsp;//&nbsp;Global&nbsp;variable&nbsp;defined&nbsp;outside&nbsp;the&nbsp;function<br/>
 <br/>
- &nbsp;define procedure ( foo )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;a[] = 1;<br/>
- &nbsp; &nbsp; &nbsp;global<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b[] = 2;<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a[c] = 3; // This one stays a local variable<br/>
+&nbsp;&nbsp;define&nbsp;procedure&nbsp;(&nbsp;foo&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[]&nbsp;=&nbsp;2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[c]&nbsp;=&nbsp;3;&nbsp;//&nbsp;This&nbsp;one&nbsp;stays&nbsp;a&nbsp;local&nbsp;variable<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delete( d[] ); // If not in the global block, then exception happens.<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;echo( "Scope of b[] : ", scope( b[] ) ); // globa<br/>
- &nbsp; &nbsp; &nbsp;echo( "Scope of a[] : ", scope( a[] ) ); // local<br/>
- &nbsp; &nbsp; &nbsp;echo( "Scope of a[c]: ", scope( a[c]) ); // local<br/>
- &nbsp; &nbsp; &nbsp;echo( "Scope of d[] : ", scope( d[] ) ); // Not found.<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete(&nbsp;d[]&nbsp;);&nbsp;//&nbsp;If&nbsp;not&nbsp;in&nbsp;the&nbsp;global&nbsp;block,&nbsp;then&nbsp;exception&nbsp;happens.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Scope&nbsp;of&nbsp;b[]&nbsp;:&nbsp;",&nbsp;scope(&nbsp;b[]&nbsp;)&nbsp;);&nbsp;//&nbsp;globa<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Scope&nbsp;of&nbsp;a[]&nbsp;:&nbsp;",&nbsp;scope(&nbsp;a[]&nbsp;)&nbsp;);&nbsp;//&nbsp;local<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Scope&nbsp;of&nbsp;a[c]:&nbsp;",&nbsp;scope(&nbsp;a[c])&nbsp;);&nbsp;//&nbsp;local<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Scope&nbsp;of&nbsp;d[]&nbsp;:&nbsp;",&nbsp;scope(&nbsp;d[]&nbsp;)&nbsp;);&nbsp;//&nbsp;Not&nbsp;found.<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;foo;<br/>
- &nbsp;echo( "Global variable b[] = ", b[] );</code></div>
+&nbsp;&nbsp;foo;<br/>
+&nbsp;&nbsp;echo(&nbsp;"Global&nbsp;variable&nbsp;b[]&nbsp;=&nbsp;",&nbsp;b[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Scope of b[] : global<br/>
-Scope of a[] : local<br/>
-Scope of a[c]: local<br/>
-Scope of d[] : not found<br/>
-Global variable b[] = 2<br/>
+<div class="output_background_color" ><code>Scope&nbsp;of&nbsp;b[]&nbsp;:&nbsp;global<br/>
+Scope&nbsp;of&nbsp;a[]&nbsp;:&nbsp;local<br/>
+Scope&nbsp;of&nbsp;a[c]:&nbsp;local<br/>
+Scope&nbsp;of&nbsp;d[]&nbsp;:&nbsp;not&nbsp;found<br/>
+Global&nbsp;variable&nbsp;b[]&nbsp;=&nbsp;2<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_global.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

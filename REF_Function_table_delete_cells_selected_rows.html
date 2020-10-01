@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -128,8 +129,8 @@ All blank or non-existing entries will be translated to blank literals.  Automat
 <td>table column</td>
 <td><b>Existing column</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Only 1 header name or column number may be specified.
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 4.<br/>input</td>
 <td>literal</td>
@@ -146,45 +147,45 @@ The position of the last column relates to the last column of the widest row in 
 <td><b>Number of rows processed</b><br/><p>Counts all rows selected where cells have been deleted.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( t,<br/>
- &nbsp; &nbsp;{ { Nr, &nbsp;A, &nbsp;B, &nbsp;C, &nbsp;D, &nbsp;E &nbsp;},<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;1, &nbsp;A1, B1, C1, D1, E1, F1, G1 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;2, &nbsp;A2, B2, C2, D2, E2, F2, G2 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;3, &nbsp;A3, B3, C3, D3, E3 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;4, &nbsp;A4, B4, C4, D4, E4, F4, G4 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;5, &nbsp;A5, B5, C5, D5, E5, F5, G5 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Nr,&nbsp;&nbsp;A,&nbsp;&nbsp;B,&nbsp;&nbsp;C,&nbsp;&nbsp;D,&nbsp;&nbsp;E&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;1,&nbsp;&nbsp;A1,&nbsp;B1,&nbsp;C1,&nbsp;D1,&nbsp;E1,&nbsp;F1,&nbsp;G1&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;2,&nbsp;&nbsp;A2,&nbsp;B2,&nbsp;C2,&nbsp;D2,&nbsp;E2,&nbsp;F2,&nbsp;G2&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;3,&nbsp;&nbsp;A3,&nbsp;B3,&nbsp;C3,&nbsp;D3,&nbsp;E3&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;4,&nbsp;&nbsp;A4,&nbsp;B4,&nbsp;C4,&nbsp;D4,&nbsp;E4,&nbsp;F4,&nbsp;G4&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;5,&nbsp;&nbsp;A5,&nbsp;B5,&nbsp;C5,&nbsp;D5,&nbsp;E5,&nbsp;F5,&nbsp;G5&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table copy table( t, u );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;t,&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;echo("2 cells removed in rows 2-4");<br/>
- &nbsp;a[] = table delete cells selected rows( t, ([Nr]=2..4), C, 2 );<br/>
- &nbsp;table list ( t );<br/>
- &nbsp;echo("Number of rows affected: ", a[]);<br/>
+&nbsp;&nbsp;echo("2&nbsp;cells&nbsp;removed&nbsp;in&nbsp;rows&nbsp;2-4");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;table&nbsp;delete&nbsp;cells&nbsp;selected&nbsp;rows(&nbsp;t,&nbsp;([Nr]=2..4),&nbsp;C,&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;rows&nbsp;affected:&nbsp;",&nbsp;a[]);<br/>
 <br/>
- &nbsp;echo("All remaining cells removed");<br/>
- &nbsp;a[] = table delete cells selected rows( u, ([Nr]=2..4), C, -2 );<br/>
- &nbsp;table list ( u );<br/>
- &nbsp;echo("Number of rows affected: ", a[]);<br/>
+&nbsp;&nbsp;echo("All&nbsp;remaining&nbsp;cells&nbsp;removed");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;table&nbsp;delete&nbsp;cells&nbsp;selected&nbsp;rows(&nbsp;u,&nbsp;([Nr]=2..4),&nbsp;C,&nbsp;-2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;u&nbsp;);<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;rows&nbsp;affected:&nbsp;",&nbsp;a[]);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2 cells removed in rows 2-4<br/>
- &nbsp; &nbsp;0 : Nr | A &nbsp;| B &nbsp;| C &nbsp;| D &nbsp;| E &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;1 : 1 &nbsp;| A1 | B1 | C1 | D1 | E1 | F1 | G1<br/>
- &nbsp; &nbsp;2 : 2 &nbsp;| A2 | B2 | E2 | F2 | G2 | &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;3 : 3 &nbsp;| A3 | B3 | E3 | &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;4 : 4 &nbsp;| A4 | B4 | E4 | F4 | G4 | &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;5 : 5 &nbsp;| A5 | B5 | C5 | D5 | E5 | F5 | G5<br/>
+<div class="output_background_color" ><code>2&nbsp;cells&nbsp;removed&nbsp;in&nbsp;rows&nbsp;2-4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Nr&nbsp;|&nbsp;A&nbsp;&nbsp;|&nbsp;B&nbsp;&nbsp;|&nbsp;C&nbsp;&nbsp;|&nbsp;D&nbsp;&nbsp;|&nbsp;E&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;1&nbsp;&nbsp;|&nbsp;A1&nbsp;|&nbsp;B1&nbsp;|&nbsp;C1&nbsp;|&nbsp;D1&nbsp;|&nbsp;E1&nbsp;|&nbsp;F1&nbsp;|&nbsp;G1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;2&nbsp;&nbsp;|&nbsp;A2&nbsp;|&nbsp;B2&nbsp;|&nbsp;E2&nbsp;|&nbsp;F2&nbsp;|&nbsp;G2&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;3&nbsp;&nbsp;|&nbsp;A3&nbsp;|&nbsp;B3&nbsp;|&nbsp;E3&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;A4&nbsp;|&nbsp;B4&nbsp;|&nbsp;E4&nbsp;|&nbsp;F4&nbsp;|&nbsp;G4&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;5&nbsp;&nbsp;|&nbsp;A5&nbsp;|&nbsp;B5&nbsp;|&nbsp;C5&nbsp;|&nbsp;D5&nbsp;|&nbsp;E5&nbsp;|&nbsp;F5&nbsp;|&nbsp;G5<br/>
 <br/>
-Number of rows affected: 3<br/>
-All remaining cells removed<br/>
- &nbsp; &nbsp;0 : Nr | A &nbsp;| B &nbsp;| C &nbsp;| D &nbsp;| E &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;1 : 1 &nbsp;| A1 | B1 | C1 | D1 | E1 | F1 | G1<br/>
- &nbsp; &nbsp;2 : 2 &nbsp;| A2 | B2 | G2 | &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;3 : 3 &nbsp;| A3 | B3 | &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;4 : 4 &nbsp;| A4 | B4 | G4 | &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; &nbsp;| &nbsp; <br/>
- &nbsp; &nbsp;5 : 5 &nbsp;| A5 | B5 | C5 | D5 | E5 | F5 | G5<br/>
+Number&nbsp;of&nbsp;rows&nbsp;affected:&nbsp;3<br/>
+All&nbsp;remaining&nbsp;cells&nbsp;removed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Nr&nbsp;|&nbsp;A&nbsp;&nbsp;|&nbsp;B&nbsp;&nbsp;|&nbsp;C&nbsp;&nbsp;|&nbsp;D&nbsp;&nbsp;|&nbsp;E&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;1&nbsp;&nbsp;|&nbsp;A1&nbsp;|&nbsp;B1&nbsp;|&nbsp;C1&nbsp;|&nbsp;D1&nbsp;|&nbsp;E1&nbsp;|&nbsp;F1&nbsp;|&nbsp;G1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;2&nbsp;&nbsp;|&nbsp;A2&nbsp;|&nbsp;B2&nbsp;|&nbsp;G2&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;3&nbsp;&nbsp;|&nbsp;A3&nbsp;|&nbsp;B3&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;4&nbsp;&nbsp;|&nbsp;A4&nbsp;|&nbsp;B4&nbsp;|&nbsp;G4&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;5&nbsp;&nbsp;|&nbsp;A5&nbsp;|&nbsp;B5&nbsp;|&nbsp;C5&nbsp;|&nbsp;D5&nbsp;|&nbsp;E5&nbsp;|&nbsp;F5&nbsp;|&nbsp;G5<br/>
 <br/>
-Number of rows affected: 3<br/>
+Number&nbsp;of&nbsp;rows&nbsp;affected:&nbsp;3<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_delete_cells_selected_rows.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_delete_cells_selected_columns.html">table delete cells selected columns</a></p>

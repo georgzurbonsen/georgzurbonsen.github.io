@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -189,37 +190,37 @@ File locked<br/>
 Syntax errors in table formats, e.g in HTML, JSON, XML<br/>
 File locked. Close the file in the other application and retry</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, { { Object, Height in meters }, { dog, 0.5 }, { horse, 1.8 }, { elephant, 2.5 }} );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{&nbsp;{&nbsp;Object,&nbsp;Height&nbsp;in&nbsp;meters&nbsp;},&nbsp;{&nbsp;dog,&nbsp;0.5&nbsp;},&nbsp;{&nbsp;horse,&nbsp;1.8&nbsp;},&nbsp;{&nbsp;elephant,&nbsp;2.5&nbsp;}}&nbsp;);<br/>
 <br/>
- &nbsp;table list ( t ); echo;<br/>
- &nbsp;table save( t, animals.csv, CSV );<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);&nbsp;echo;<br/>
+&nbsp;&nbsp;table&nbsp;save(&nbsp;t,&nbsp;animals.csv,&nbsp;CSV&nbsp;);<br/>
 <br/>
- &nbsp;table load( t, animals.csv, ";" );<br/>
- &nbsp;table list ( t ); echo;<br/>
+&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;animals.csv,&nbsp;";"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);&nbsp;echo;<br/>
 <br/>
- &nbsp;table load( t, animals.csv, "," );<br/>
- &nbsp;echo("Table loaded with wrong separator symbol. &nbsp;Outcome looks like this:");<br/>
- &nbsp;table list ( t ); echo;<br/>
+&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;animals.csv,&nbsp;","&nbsp;);<br/>
+&nbsp;&nbsp;echo("Table&nbsp;loaded&nbsp;with&nbsp;wrong&nbsp;separator&nbsp;symbol.&nbsp;&nbsp;Outcome&nbsp;looks&nbsp;like&nbsp;this:");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);&nbsp;echo;<br/>
 <br/>
- &nbsp;file delete silently( animals.csv );</code></div>
+&nbsp;&nbsp;file&nbsp;delete&nbsp;silently(&nbsp;animals.csv&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Object &nbsp; | Height in meters<br/>
- &nbsp; &nbsp;1 : dog &nbsp; &nbsp; &nbsp;| 0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : horse &nbsp; &nbsp;| 1.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : elephant | 2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Object&nbsp;&nbsp;&nbsp;|&nbsp;Height&nbsp;in&nbsp;meters<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;horse&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;elephant&nbsp;|&nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 <br/>
- &nbsp; &nbsp;0 : Object &nbsp; | Height in meters<br/>
- &nbsp; &nbsp;1 : dog &nbsp; &nbsp; &nbsp;| 0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : horse &nbsp; &nbsp;| 1.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : elephant | 2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Object&nbsp;&nbsp;&nbsp;|&nbsp;Height&nbsp;in&nbsp;meters<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;horse&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;elephant&nbsp;|&nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 <br/>
-Table loaded with wrong separator symbol. &nbsp;Outcome looks like this:<br/>
- &nbsp; &nbsp;0 : Object;Height in meters<br/>
- &nbsp; &nbsp;1 : dog;0.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : horse;1.8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : elephant;2.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+Table&nbsp;loaded&nbsp;with&nbsp;wrong&nbsp;separator&nbsp;symbol.&nbsp;&nbsp;Outcome&nbsp;looks&nbsp;like&nbsp;this:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Object;Height&nbsp;in&nbsp;meters<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;dog;0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;horse;1.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;elephant;2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_save.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

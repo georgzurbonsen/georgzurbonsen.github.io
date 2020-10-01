@@ -73,8 +73,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -114,91 +115,91 @@ Following special rules apply
 nodes as well.  In these case, intermediate arrays containing 2 elements are introduced to describe the intermediate node followed by the
 remaining data up the data tree.  See the program example below:</p>
 <h5> JSON code without and with intermediate nodes</h5>
-<div class="code_background_color" ><code> &nbsp;b[Red] = Rot;<br/>
- &nbsp;b[Green,light] = Hellgrün;<br/>
- &nbsp;b[Green,dark] = Dunkelgrün;<br/>
- &nbsp;b[Blue,light] = Hellblau;<br/>
- &nbsp;b[Blue,dark] = Dunkelblau;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;b[Red]&nbsp;=&nbsp;Rot;<br/>
+&nbsp;&nbsp;b[Green,light]&nbsp;=&nbsp;Hellgrün;<br/>
+&nbsp;&nbsp;b[Green,dark]&nbsp;=&nbsp;Dunkelgrün;<br/>
+&nbsp;&nbsp;b[Blue,light]&nbsp;=&nbsp;Hellblau;<br/>
+&nbsp;&nbsp;b[Blue,dark]&nbsp;=&nbsp;Dunkelblau;<br/>
 <br/>
- &nbsp;inspect(b[]);<br/>
+&nbsp;&nbsp;inspect(b[]);<br/>
 <br/>
- &nbsp;j[] = variable to json( b[], JSON);<br/>
+&nbsp;&nbsp;j[]&nbsp;=&nbsp;variable&nbsp;to&nbsp;json(&nbsp;b[],&nbsp;JSON);<br/>
 <br/>
- &nbsp;echo("JSON code:", new line, j[], new line, "_______" );<br/>
+&nbsp;&nbsp;echo("JSON&nbsp;code:",&nbsp;new&nbsp;line,&nbsp;j[],&nbsp;new&nbsp;line,&nbsp;"_______"&nbsp;);<br/>
 <br/>
- &nbsp;json to variable( c[], j[], JSON B4P );<br/>
- &nbsp;inspect( c[] );<br/>
+&nbsp;&nbsp;json&nbsp;to&nbsp;variable(&nbsp;c[],&nbsp;j[],&nbsp;JSON&nbsp;B4P&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;c[]&nbsp;);<br/>
 <br/>
- &nbsp;echo(new line, "Add data to intermediate nodes");<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Add&nbsp;data&nbsp;to&nbsp;intermediate&nbsp;nodes");<br/>
 <br/>
- &nbsp;b[] = Colors;<br/>
- &nbsp;b[Green] = Shades of green;<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;Colors;<br/>
+&nbsp;&nbsp;b[Green]&nbsp;=&nbsp;Shades&nbsp;of&nbsp;green;<br/>
 <br/>
- &nbsp;j[] = variable to json( b[], JSON);<br/>
+&nbsp;&nbsp;j[]&nbsp;=&nbsp;variable&nbsp;to&nbsp;json(&nbsp;b[],&nbsp;JSON);<br/>
 <br/>
- &nbsp;echo("JSON code:", new line, j[], new line, "_______" );<br/>
+&nbsp;&nbsp;echo("JSON&nbsp;code:",&nbsp;new&nbsp;line,&nbsp;j[],&nbsp;new&nbsp;line,&nbsp;"_______"&nbsp;);<br/>
 <br/>
- &nbsp;json to variable( c[], j[], JSON B4P );<br/>
- &nbsp;inspect( c[] ); // Same as before.</code></div>
+&nbsp;&nbsp;json&nbsp;to&nbsp;variable(&nbsp;c[],&nbsp;j[],&nbsp;JSON&nbsp;B4P&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;c[]&nbsp;);&nbsp;//&nbsp;Same&nbsp;as&nbsp;before.</code></div>
 <h4> Output 02</h4>
-<div class="output_background_color" ><code>void: No literal provided<br/>
-Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Dunkelblau'<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Hellblau'<br/>
-Green &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Dunkelgrün'<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Hellgrün'<br/>
-Red &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Rot'<br/>
+<div class="output_background_color" ><code>[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+Red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 <br/>
-JSON code:<br/>
+JSON&nbsp;code:<br/>
 {<br/>
- &nbsp;"Blue" : {<br/>
- &nbsp; &nbsp;"dark" : "Dunkelblau",<br/>
- &nbsp; &nbsp;"light" : "Hellblau"<br/>
- &nbsp;},<br/>
- &nbsp;"Green" : {<br/>
- &nbsp; &nbsp;"dark" : "Dunkelgrün",<br/>
- &nbsp; &nbsp;"light" : "Hellgrün"<br/>
- &nbsp;},<br/>
- &nbsp;"Red" : "Rot"<br/>
+&nbsp;&nbsp;"Blue"&nbsp;:&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"dark"&nbsp;:&nbsp;"Dunkelblau",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"light"&nbsp;:&nbsp;"Hellblau"<br/>
+&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;"Green"&nbsp;:&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"dark"&nbsp;:&nbsp;"Dunkelgrün",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"light"&nbsp;:&nbsp;"Hellgrün"<br/>
+&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;"Red"&nbsp;:&nbsp;"Rot"<br/>
 }<br/>
 _______<br/>
-void: No literal provided<br/>
-Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Dunkelblau"<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Hellblau"<br/>
-Green &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Dunkelgrün"<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Hellgrün"<br/>
-Red &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; "literal": "Rot"<br/>
+[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 <br/>
 <br/>
-Add data to intermediate nodes<br/>
-JSON code:<br/>
+Add&nbsp;data&nbsp;to&nbsp;intermediate&nbsp;nodes<br/>
+JSON&nbsp;code:<br/>
 <br/>
-[ "Colors",{<br/>
- &nbsp; &nbsp;"Blue" : {<br/>
- &nbsp; &nbsp; &nbsp;"dark" : "Dunkelblau",<br/>
- &nbsp; &nbsp; &nbsp;"light" : "Hellblau"<br/>
- &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp;"Green" : <br/>
- &nbsp; &nbsp;[ "Shades of green",{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;"dark" : "Dunkelgrün",<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;"light" : "Hellgrün"<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;],<br/>
- &nbsp; &nbsp;"Red" : "Rot"<br/>
- &nbsp;}<br/>
- &nbsp;]<br/>
+[&nbsp;"Colors",{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Blue"&nbsp;:&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dark"&nbsp;:&nbsp;"Dunkelblau",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"light"&nbsp;:&nbsp;"Hellblau"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Green"&nbsp;:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;"Shades&nbsp;of&nbsp;green",{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dark"&nbsp;:&nbsp;"Dunkelgrün",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"light"&nbsp;:&nbsp;"Hellgrün"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Red"&nbsp;:&nbsp;"Rot"<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;]<br/>
 _______<br/>
-"literal": "Colors"<br/>
-Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Dunkelblau"<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Hellblau"<br/>
-Green &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; "literal": "Shades of green"<br/>
- &nbsp;dark &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Dunkelgrün"<br/>
- &nbsp;light &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; "literal": "Hellgrün"<br/>
-Red &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; "literal": "Rot"<br/>
+Colors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellblau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shades&nbsp;of&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dunkelgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+&nbsp;&nbsp;light&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hellgrün&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+Red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Loading_and_saving_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -135,10 +136,10 @@ with onyly 1 function parameter, then the consolidation process takes place with
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will consolidate all table rows to 1 single row.</li>
-<li class="bullets">Do not repeat the same column</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will consolidate all table rows to 1 single row.
+</li><li class="bullets">Do not repeat the same column
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns selected)
 </td></tr>
 <tr><td>Opt. 3. / 4.<br/>input</td>
@@ -150,12 +151,12 @@ action is assumed 'none'.  In this case, the contents in the first row will be p
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will exclude all columns from active consolidation.  Contents in top row will apply.</li>
-<li class="bullets">Do not specify any columns already referenced in the previous function parameter (identifier columns)</li>
-<li class="bullets">Do not repeat the same column</li>
-<li class="bullets">Softquoted literal '*' in single quotation marks: Consolidate all columns in the table except the identifier columns</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will exclude all columns from active consolidation.  Contents in top row will apply.
+</li><li class="bullets">Do not specify any columns already referenced in the previous function parameter (identifier columns)
+</li><li class="bullets">Do not repeat the same column
+</li><li class="bullets">Softquoted literal '*' in single quotation marks: Consolidate all columns in the table except the identifier columns
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns consolidated)
 </td></tr>
 <tr><td>Opt. 4. / 5.<br/>input</td>
@@ -166,13 +167,13 @@ For example, <b>add</b> adds the value from the lower row to the target row.
 
 The number of operation identifiers is less than the number of columns specified in the 3rd (output columns) and 6th parameter (destination columns),
 then the default value 'overwrite' is assumed for the remaining columns.  If this parameter contains more elements than columns retrieved, then the exess ones will be ignored.
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value</li>
-<li class="bullets">Use parameter set to specify multiple values</li>
-<li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas</li>
-<li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.  'none' is assumed for all consolidating columns here.</li>
-<li class="bullets">Ideally, the number of consolidation actions shall equal to the number of columns to consolidate (previous function parameter).</li>
-<li class="bullets">If fewer consolidation actions are listed than number of columns to consolidate, then the last action will apply to all remaining columns.</li>
-<li class="bullets">If more consolidation actions are listed, then the excessive numbr of actions will be ignored.</li></p>
+</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</li><li class="bullets">Use parameter set to specify multiple values
+</li><li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas
+</li><li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.  'none' is assumed for all consolidating columns here.
+</li><li class="bullets">Ideally, the number of consolidation actions shall equal to the number of columns to consolidate (previous function parameter).
+</li><li class="bullets">If fewer consolidation actions are listed than number of columns to consolidate, then the last action will apply to all remaining columns.
+</li><li class="bullets">If more consolidation actions are listed, then the excessive numbr of actions will be ignored.</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>'overwrite' if previous parameter is specified, otherwise 'none'
 </td></tr>
 <tr><td>Opt. 5. / 6.<br/>input</td>
@@ -190,45 +191,45 @@ in a more visible way, for example using a comma or new line.</p>
           -1 = Error identified.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t,<br/>
- &nbsp;{ { Highest Score, Name, &nbsp; &nbsp; &nbsp;Location, Game 1, Game 2, Remarks, Count },<br/>
- &nbsp; &nbsp;{ 210, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Taylor, &nbsp; &nbsp;Rome, &nbsp; &nbsp; 32, &nbsp; &nbsp; 20 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp;{ 190, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tailor, &nbsp; &nbsp;Prague, &nbsp; 41, &nbsp; &nbsp; 13, &nbsp; &nbsp; Exceptional win },<br/>
- &nbsp; &nbsp;{ 190, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Snyder, &nbsp; &nbsp;Berne, &nbsp; &nbsp;41, &nbsp; &nbsp; 12, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br/>
- &nbsp; &nbsp;{ 200, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tailor, &nbsp; &nbsp;Miami, &nbsp; &nbsp;51, &nbsp; &nbsp; 10, &nbsp; &nbsp; great job &nbsp; &nbsp; &nbsp; },<br/>
- &nbsp; &nbsp;{ 230, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Taylor, &nbsp; &nbsp;Jakarta, &nbsp;14, &nbsp; &nbsp; 21 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp;{ 230, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Taylor, &nbsp; &nbsp;Boston, &nbsp; 15, &nbsp; &nbsp; 22 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br/>
- &nbsp; &nbsp;{ 190, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tailor, &nbsp; &nbsp;Oslo, &nbsp; &nbsp; 41, &nbsp; &nbsp; 13 &nbsp; &nbsp; &nbsp;great job &nbsp; &nbsp; &nbsp; } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Highest&nbsp;Score,&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location,&nbsp;Game&nbsp;1,&nbsp;Game&nbsp;2,&nbsp;Remarks,&nbsp;Count&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;210,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taylor,&nbsp;&nbsp;&nbsp;&nbsp;Rome,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;190,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tailor,&nbsp;&nbsp;&nbsp;&nbsp;Prague,&nbsp;&nbsp;&nbsp;41,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exceptional&nbsp;win&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;190,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Snyder,&nbsp;&nbsp;&nbsp;&nbsp;Berne,&nbsp;&nbsp;&nbsp;&nbsp;41,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;200,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tailor,&nbsp;&nbsp;&nbsp;&nbsp;Miami,&nbsp;&nbsp;&nbsp;&nbsp;51,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;great&nbsp;job&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;230,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taylor,&nbsp;&nbsp;&nbsp;&nbsp;Jakarta,&nbsp;&nbsp;14,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;230,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taylor,&nbsp;&nbsp;&nbsp;&nbsp;Boston,&nbsp;&nbsp;&nbsp;15,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;190,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tailor,&nbsp;&nbsp;&nbsp;&nbsp;Oslo,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;41,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;great&nbsp;job&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;table copy table( t, u );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;t,&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;// '*' in 3rd function parameter selects all columns except 'Name'.<br/>
- &nbsp;// In this case, the 6 consolidation actions apply to the 6 columns from left to right.<br/>
+&nbsp;&nbsp;//&nbsp;'*'&nbsp;in&nbsp;3rd&nbsp;function&nbsp;parameter&nbsp;selects&nbsp;all&nbsp;columns&nbsp;except&nbsp;'Name'.<br/>
+&nbsp;&nbsp;//&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;6&nbsp;consolidation&nbsp;actions&nbsp;apply&nbsp;to&nbsp;the&nbsp;6&nbsp;columns&nbsp;from&nbsp;left&nbsp;to&nbsp;right.<br/>
 <br/>
- &nbsp;c[] = table consolidate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( t, Name,'*', {max, append, sum, average, append once, count}, ", " );<br/>
- &nbsp;echo("All rows consolidated (", c[], " rows removed):");<br/>
- &nbsp;table list ( t );<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;consolidate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;t,&nbsp;Name,'*',&nbsp;{max,&nbsp;append,&nbsp;sum,&nbsp;average,&nbsp;append&nbsp;once,&nbsp;count},&nbsp;",&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;echo("All&nbsp;rows&nbsp;consolidated&nbsp;(",&nbsp;c[],&nbsp;"&nbsp;rows&nbsp;removed):");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;c[] = table consolidate selected rows( u, [Name]==Taylor, Name,'*', {max, append, sum, average, append once, count}, ", " );<br/>
- &nbsp;echo("Only Taylor's rows consolidated (", c[], " rows removed):");<br/>
- &nbsp;table list ( u );<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;consolidate&nbsp;selected&nbsp;rows(&nbsp;u,&nbsp;[Name]==Taylor,&nbsp;Name,'*',&nbsp;{max,&nbsp;append,&nbsp;sum,&nbsp;average,&nbsp;append&nbsp;once,&nbsp;count},&nbsp;",&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;echo("Only&nbsp;Taylor's&nbsp;rows&nbsp;consolidated&nbsp;(",&nbsp;c[],&nbsp;"&nbsp;rows&nbsp;removed):");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;u&nbsp;);<br/>
 <br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>All rows consolidated (4 rows removed):<br/>
- &nbsp; &nbsp;0 : Highest Score | Name &nbsp; | Location &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Game 1 | Game 2 | Remarks &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Count<br/>
- &nbsp; &nbsp;1 : 230 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Taylor | Rome, Jakarta, Boston | 61 &nbsp; &nbsp; | 21 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : 200 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Tailor | Prague, Miami, Oslo &nbsp; | 133 &nbsp; &nbsp;| 12 &nbsp; &nbsp; | Exceptional win, great job | 3 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : 190 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Snyder | Berne &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 41 &nbsp; &nbsp; | 12 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>All&nbsp;rows&nbsp;consolidated&nbsp;(4&nbsp;rows&nbsp;removed):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Highest&nbsp;Score&nbsp;|&nbsp;Name&nbsp;&nbsp;&nbsp;|&nbsp;Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Game&nbsp;1&nbsp;|&nbsp;Game&nbsp;2&nbsp;|&nbsp;Remarks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Count<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;230&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Taylor&nbsp;|&nbsp;Rome,&nbsp;Jakarta,&nbsp;Boston&nbsp;|&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tailor&nbsp;|&nbsp;Prague,&nbsp;Miami,&nbsp;Oslo&nbsp;&nbsp;&nbsp;|&nbsp;133&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Exceptional&nbsp;win,&nbsp;great&nbsp;job&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;190&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Snyder&nbsp;|&nbsp;Berne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Only Taylor's rows consolidated (2 rows removed):<br/>
- &nbsp; &nbsp;0 : Highest Score | Name &nbsp; | Location &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Game 1 | Game 2 &nbsp; &nbsp; &nbsp; | Remarks &nbsp; &nbsp; &nbsp; &nbsp; | Count<br/>
- &nbsp; &nbsp;1 : 230 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Taylor | Rome, Jakarta, Boston | 61 &nbsp; &nbsp; | 21 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : 190 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Tailor | Prague &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 41 &nbsp; &nbsp; | 13 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Exceptional win | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : 190 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Snyder | Berne &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 41 &nbsp; &nbsp; | 12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : 200 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Tailor | Miami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 51 &nbsp; &nbsp; | 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | great job &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : 190 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Tailor | Oslo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 41 &nbsp; &nbsp; | 13 great job | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;<br/>
+Only&nbsp;Taylor's&nbsp;rows&nbsp;consolidated&nbsp;(2&nbsp;rows&nbsp;removed):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Highest&nbsp;Score&nbsp;|&nbsp;Name&nbsp;&nbsp;&nbsp;|&nbsp;Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Game&nbsp;1&nbsp;|&nbsp;Game&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Remarks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Count<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;230&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Taylor&nbsp;|&nbsp;Rome,&nbsp;Jakarta,&nbsp;Boston&nbsp;|&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;190&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tailor&nbsp;|&nbsp;Prague&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Exceptional&nbsp;win&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;190&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Snyder&nbsp;|&nbsp;Berne&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tailor&nbsp;|&nbsp;Miami&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;great&nbsp;job&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;190&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tailor&nbsp;|&nbsp;Oslo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;13&nbsp;great&nbsp;job&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_consolidate.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

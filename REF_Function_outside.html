@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -156,26 +157,26 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;st[] = "The taste of the coffee!";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[]&nbsp;=&nbsp;"The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!";<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( outside( st[], 13, 4 ), " / ", &nbsp;outside until ( st[], 4, -8 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( st[], 99, 1 ), " / ", &nbsp;outside until ( st[], &nbsp;99, 8 ) ); // full strings<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( st[], -99, 8 ), " / ", outside until ( st[], -99, 8 ) ); // Begins at 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;13,&nbsp;4&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;4,&nbsp;-8&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;99,&nbsp;1&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;&nbsp;99,&nbsp;8&nbsp;)&nbsp;);&nbsp;//&nbsp;full&nbsp;strings<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;)&nbsp;);&nbsp;//&nbsp;Begins&nbsp;at&nbsp;0<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( st[], ' taste', 7 ), " / ", outside exclude( st[], 'taste ', 7 ) ); // "of the coffee", "tast of the coffee"<br/>
- &nbsp; &nbsp; &nbsp;echo( outside( st[], ' taste', 0 ), " / ", outside exclude( st[], 'taste ', 0 ) ); // full string, and without taste<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( outside ( st[], 'taste', ' the' ), " / ", outside exclude( st[], 'taste ', 'the ' ) ); //</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;'&nbsp;taste',&nbsp;7&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;7&nbsp;)&nbsp;);&nbsp;//&nbsp;"of&nbsp;the&nbsp;coffee",&nbsp;"tast&nbsp;of&nbsp;the&nbsp;coffee"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;'&nbsp;taste',&nbsp;0&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;0&nbsp;)&nbsp;);&nbsp;//&nbsp;full&nbsp;string,&nbsp;and&nbsp;without&nbsp;taste<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;(&nbsp;st[],&nbsp;'taste',&nbsp;'&nbsp;the'&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;'the&nbsp;'&nbsp;)&nbsp;);&nbsp;//</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>The taste of coffee! / The coffee!<br/>
-The taste of the coffee! / The taste of the coffee!<br/>
-e of the coffee! / &nbsp;of the coffee!<br/>
+<div class="output_background_color" ><code>The&nbsp;taste&nbsp;of&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;coffee!<br/>
+The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!<br/>
+e&nbsp;of&nbsp;the&nbsp;coffee!&nbsp;/&nbsp;&nbsp;of&nbsp;the&nbsp;coffee!<br/>
 <br/>
-The taste coffee! / The coffee!<br/>
-The taste of the coffee! / The taste of the coffee!<br/>
+The&nbsp;taste&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;coffee!<br/>
+The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!<br/>
 <br/>
-The taste the coffee! / The coffee!<br/>
+The&nbsp;taste&nbsp;the&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;coffee!<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_outside.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_left.html">left (string function)</a><br/>

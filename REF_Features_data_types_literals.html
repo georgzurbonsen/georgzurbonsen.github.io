@@ -72,8 +72,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -106,24 +107,24 @@ are regarded as <a class="bold_text" href="REF_Features_data_types_numerals.html
 Literals may take any legitimate value, except for <a class="bold_text" href="REF_Features_reserved_keywords.html">reserved keywords</a> which are interpreted differently (e.g. true, false, else).
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;echo(Hello World);<br/>
- &nbsp;echo( &nbsp;Hello &nbsp; World &nbsp; ); // To include the blanks, use quotation marks.<br/>
- &nbsp;echo(Hello World, new line, Hello Folks, new line); // 'new line' is a reserved keyword.<br/>
- &nbsp;echo( 31.12.2021 ); &nbsp; &nbsp; &nbsp; // No automatic conversion to __date__ type. &nbsp;Use: echo(date( 31.12.2021 ))<br/>
- &nbsp;echo( 100 Flowers );<br/>
- &nbsp;echo( mike@example.com ); // No need include quotation marks because the @-sign is not a Beyond4P symbol<br/>
- &nbsp;echo( 1 2 3 ); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Is a literal because of spaces between teh digits<br/>
- &nbsp;echo( type( 1 2 3 ));</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(Hello&nbsp;World);<br/>
+&nbsp;&nbsp;echo(&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;);&nbsp;//&nbsp;To&nbsp;include&nbsp;the&nbsp;blanks,&nbsp;use&nbsp;quotation&nbsp;marks.<br/>
+&nbsp;&nbsp;echo(Hello&nbsp;World,&nbsp;new&nbsp;line,&nbsp;Hello&nbsp;Folks,&nbsp;new&nbsp;line);&nbsp;//&nbsp;'new&nbsp;line'&nbsp;is&nbsp;a&nbsp;reserved&nbsp;keyword.<br/>
+&nbsp;&nbsp;echo(&nbsp;31.12.2021&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;automatic&nbsp;conversion&nbsp;to&nbsp;__date__&nbsp;type.&nbsp;&nbsp;Use:&nbsp;echo(date(&nbsp;31.12.2021&nbsp;))<br/>
+&nbsp;&nbsp;echo(&nbsp;100&nbsp;Flowers&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;mike@example.com&nbsp;);&nbsp;//&nbsp;No&nbsp;need&nbsp;include&nbsp;quotation&nbsp;marks&nbsp;because&nbsp;the&nbsp;@-sign&nbsp;is&nbsp;not&nbsp;a&nbsp;Beyond4P&nbsp;symbol<br/>
+&nbsp;&nbsp;echo(&nbsp;1&nbsp;2&nbsp;3&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Is&nbsp;a&nbsp;literal&nbsp;because&nbsp;of&nbsp;spaces&nbsp;between&nbsp;teh&nbsp;digits<br/>
+&nbsp;&nbsp;echo(&nbsp;type(&nbsp;1&nbsp;2&nbsp;3&nbsp;));</code></div>
 <h5> This is the output</h5>
-<div class="output_background_color" ><code>Hello World<br/>
-Hello World<br/>
-Hello World<br/>
-Hello Folks<br/>
+<div class="output_background_color" ><code>Hello&nbsp;World<br/>
+Hello&nbsp;World<br/>
+Hello&nbsp;World<br/>
+Hello&nbsp;Folks<br/>
 <br/>
 31.12.2021<br/>
-100 Flowers<br/>
+100&nbsp;Flowers<br/>
 mike@example.com<br/>
-1 2 3<br/>
+1&nbsp;2&nbsp;3<br/>
 literal<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_data_types_literals.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Softquoted Literals</h4>
@@ -134,13 +135,13 @@ are part of softquoted literals, including leading and trailing blanks.  <a clas
 string comparisons.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;echo(' &nbsp;Hello &nbsp; World &nbsp; ', new line, 'new line'); <br/>
- &nbsp;echo(Hello World = 'Hell*'); // Example with wildcard symbol meaning 'true if beginning with Hell'<br/>
- &nbsp;echo('&amp;euro;');<br/>
- &nbsp;echo( length('&amp;euro;') );</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo('&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;',&nbsp;new&nbsp;line,&nbsp;'new&nbsp;line');&nbsp;<br/>
+&nbsp;&nbsp;echo(Hello&nbsp;World&nbsp;=&nbsp;'Hell*');&nbsp;//&nbsp;Example&nbsp;with&nbsp;wildcard&nbsp;symbol&nbsp;meaning&nbsp;'true&nbsp;if&nbsp;beginning&nbsp;with&nbsp;Hell'<br/>
+&nbsp;&nbsp;echo('&amp;euro;');<br/>
+&nbsp;&nbsp;echo(&nbsp;length('&amp;euro;')&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code> &nbsp;Hello &nbsp; World &nbsp; <br/>
-new line<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;<br/>
+new&nbsp;line<br/>
 true<br/>
 €<br/>
 1<br/>
@@ -152,12 +153,12 @@ are part of softquoted literals, including leading and trailing blanks.  Entitie
 function <span class="red_text">decode entitites</span>().  In comparison operations, the contents are interpreted as given, i.e. wildcard symbol interpretation will not happen.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;echo(" &nbsp;Hello &nbsp; World &nbsp; ", new line, 'new line'); <br/>
- &nbsp;echo("&amp;amp;");<br/>
- &nbsp;echo(Hello World = "Hell*"); // 'Hello World' is not the same as 'Hell*'</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;",&nbsp;new&nbsp;line,&nbsp;'new&nbsp;line');&nbsp;<br/>
+&nbsp;&nbsp;echo("&amp;amp;");<br/>
+&nbsp;&nbsp;echo(Hello&nbsp;World&nbsp;=&nbsp;"Hell*");&nbsp;//&nbsp;'Hello&nbsp;World'&nbsp;is&nbsp;not&nbsp;the&nbsp;same&nbsp;as&nbsp;'Hell*'</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code> &nbsp;Hello &nbsp; World &nbsp; <br/>
-new line<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;<br/>
+new&nbsp;line<br/>
 &amp;amp;<br/>
 false<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_data_types_literals_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

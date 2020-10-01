@@ -63,6 +63,7 @@
 <li class="navi"><a href="REF_Function_getch.html"><div class="navi">4.2.1.5 getch ... </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Console_special_effects.html"><div class="navi">+ 4.2.2 Console Special Effects </div></a></li>
+<li class="navi"><a href="REF_Features_Inspection_and_debugging.html"><div class="navi">+ 4.2.3 Inspection and Debugging </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 4.3 Type Conversion and Formatting Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
@@ -71,8 +72,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -110,30 +112,30 @@ In addition of outputting the composed string onto the screen, it is available a
 <td><b>Composed string</b><br/><p>Same contents as output to the console</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp;c[] = 3+5*2;<br/>
- &nbsp; &nbsp;a[] = echo( "Calculation: ", c[], " compared with 13 gives ", c[]==13, "." );<br/>
- &nbsp; &nbsp;echo("Return value: ", a[] );<br/>
- &nbsp; &nbsp;r[] = print("Note the line break ... " );<br/>
- &nbsp; &nbsp;print(r[]); // Repeat<br/>
- &nbsp; &nbsp;print ("in a[] at the end.");<br/>
- &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp;echo;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;c[]&nbsp;=&nbsp;3+5*2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;echo(&nbsp;"Calculation:&nbsp;",&nbsp;c[],&nbsp;"&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;",&nbsp;c[]==13,&nbsp;"."&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Return&nbsp;value:&nbsp;",&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r[]&nbsp;=&nbsp;print("Note&nbsp;the&nbsp;line&nbsp;break&nbsp;...&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;print(r[]);&nbsp;//&nbsp;Repeat<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;("in&nbsp;a[]&nbsp;at&nbsp;the&nbsp;end.");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 <br/>
- &nbsp; &nbsp;s[] = { "Calculation: ", c[], " compared with 13 gives ", c[]==13, "." };<br/>
- &nbsp; &nbsp;echo("Output parameter set with 'echo':");<br/>
- &nbsp; &nbsp;echo( s[] );<br/>
- &nbsp; &nbsp;echo("Output parameter set with 'print line':");<br/>
- &nbsp; &nbsp;print line( s[] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;s[]&nbsp;=&nbsp;{&nbsp;"Calculation:&nbsp;",&nbsp;c[],&nbsp;"&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;",&nbsp;c[]==13,&nbsp;"."&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Output&nbsp;parameter&nbsp;set&nbsp;with&nbsp;'echo':");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;s[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Output&nbsp;parameter&nbsp;set&nbsp;with&nbsp;'print&nbsp;line':");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;line(&nbsp;s[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Calculation: 13 compared with 13 gives true.<br/>
-Return value: Calculation: 13 compared with 13 gives true.<br/>
+<div class="output_background_color" ><code>Calculation:&nbsp;13&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;true.<br/>
+Return&nbsp;value:&nbsp;Calculation:&nbsp;13&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;true.<br/>
 <br/>
-Note the line break ... Note the line break ... in a[] at the end.<br/>
+Note&nbsp;the&nbsp;line&nbsp;break&nbsp;...&nbsp;Note&nbsp;the&nbsp;line&nbsp;break&nbsp;...&nbsp;in&nbsp;a[]&nbsp;at&nbsp;the&nbsp;end.<br/>
 <br/>
-Output parameter set with 'echo':<br/>
-{'Calculation: ',13,' compared with 13 gives ',true,'.'}<br/>
-Output parameter set with 'print line':<br/>
-Calculation: 13 compared with 13 gives true.<br/>
+Output&nbsp;parameter&nbsp;set&nbsp;with&nbsp;'echo':<br/>
+{'Calculation:&nbsp;',13,'&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;',true,'.'}<br/>
+Output&nbsp;parameter&nbsp;set&nbsp;with&nbsp;'print&nbsp;line':<br/>
+Calculation:&nbsp;13&nbsp;compared&nbsp;with&nbsp;13&nbsp;gives&nbsp;true.<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_echo.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_compose.html">compose</a><br/>

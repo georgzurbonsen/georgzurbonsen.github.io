@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>type, type detailed</h3>
-<a accesskey="p" href="REF_Function_join.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Mathematics_and_Statistics.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Function_join.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_hash_signature.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -66,6 +66,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi navi-selected">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -73,8 +75,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -86,18 +89,18 @@
 <h4> Description</h4>
 <p>
 The function <b>type</b> returns one of the following values:
-</p><ul class="bullets"><li class="bullets">numeral</li>
-<li class="bullets">literal</li>
-<li class="bullets">boolean</li>
-<li class="bullets">date</li>
-<li class="bullets">parameter set</li>
-<li class="bullets">void</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">numeral
+</li><li class="bullets">literal
+</li><li class="bullets">boolean
+</li><li class="bullets">date
+</li><li class="bullets">parameter set
+</li><li class="bullets">void
+</li></ul><p>
 The function <b>type detailed</b> also distinguishes between following values:
-</p><ul class="bullets"><li class="bullets">numeral / plain numeral (plain numeral contains no literal representation along with the value)</li>
-<li class="bullets">date / plain date  (plain date contains no literal representation along with the value)</li>
-<li class="bullets">literal / 'literal' / "literal"  (stands for literal, softquoted literal, quoted literal)</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">numeral / plain numeral (plain numeral contains no literal representation along with the value)
+</li><li class="bullets">date / plain date  (plain date contains no literal representation along with the value)
+</li><li class="bullets">literal / 'literal' / "literal"  (stands for literal, softquoted literal, quoted literal)
+</li></ul><p></p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -117,32 +120,32 @@ The function <b>type detailed</b> also distinguishes between following values:
 <td><b>Type of value</b><br/><p>See main function desription</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[num 1] = 1;<br/>
- &nbsp; &nbsp; &nbsp;a[num 2] = a[num 1] + 0;<br/>
- &nbsp; &nbsp; &nbsp;a[lit 1] = An unquoted literal;<br/>
- &nbsp; &nbsp; &nbsp;a[lit 2] = 'A softquoted literal';<br/>
- &nbsp; &nbsp; &nbsp;a[lit 3] = "A quoted literal";<br/>
- &nbsp; &nbsp; &nbsp;a[lit 4] = softquoted literal( a[lit 3] );<br/>
- &nbsp; &nbsp; &nbsp;a[date] = date(today);<br/>
- &nbsp; &nbsp; &nbsp;a[bool] = true;<br/>
- &nbsp; &nbsp; &nbsp;a[pset] = { 1,2,3 };<br/>
- &nbsp; &nbsp; &nbsp;a[void] = null;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[num&nbsp;1]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[num&nbsp;2]&nbsp;=&nbsp;a[num&nbsp;1]&nbsp;+&nbsp;0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit&nbsp;1]&nbsp;=&nbsp;An&nbsp;unquoted&nbsp;literal;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit&nbsp;2]&nbsp;=&nbsp;'A&nbsp;softquoted&nbsp;literal';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit&nbsp;3]&nbsp;=&nbsp;"A&nbsp;quoted&nbsp;literal";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit&nbsp;4]&nbsp;=&nbsp;softquoted&nbsp;literal(&nbsp;a[lit&nbsp;3]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[date]&nbsp;=&nbsp;date(today);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[bool]&nbsp;=&nbsp;true;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[pset]&nbsp;=&nbsp;{&nbsp;1,2,3&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[void]&nbsp;=&nbsp;null;<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;for all variables( a[], value[], counter[], name[] )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( name[], ": ", value[], " --&gt; ", type( value[] ), ", ", type detailed( value[] ) );<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;variables(&nbsp;a[],&nbsp;value[],&nbsp;counter[],&nbsp;name[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;name[],&nbsp;":&nbsp;",&nbsp;value[],&nbsp;"&nbsp;--&gt;&nbsp;",&nbsp;type(&nbsp;value[]&nbsp;),&nbsp;",&nbsp;",&nbsp;type&nbsp;detailed(&nbsp;value[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br/>
-date: 2020-09-27 --&gt; date, plain date<br/>
-lit 1: An unquoted literal --&gt; literal, literal<br/>
-lit 2: A softquoted literal --&gt; literal, 'literal'<br/>
-lit 3: A quoted literal --&gt; literal, "literal"<br/>
-lit 4: A quoted literal --&gt; literal, 'literal'<br/>
-num 1: 1 --&gt; numeral, numeral<br/>
-num 2: 1 --&gt; numeral, plain numeral<br/>
-pset: {1,2,3} --&gt; parameter set, parameter set<br/>
-void: null --&gt; literal, literal<br/>
+<div class="output_background_color" ><code>bool:&nbsp;true&nbsp;--&gt;&nbsp;boolean,&nbsp;boolean<br/>
+date:&nbsp;2020-10-01&nbsp;--&gt;&nbsp;date,&nbsp;plain&nbsp;date<br/>
+lit&nbsp;1:&nbsp;An&nbsp;unquoted&nbsp;literal&nbsp;--&gt;&nbsp;literal,&nbsp;literal<br/>
+lit&nbsp;2:&nbsp;A&nbsp;softquoted&nbsp;literal&nbsp;--&gt;&nbsp;literal,&nbsp;'literal'<br/>
+lit&nbsp;3:&nbsp;A&nbsp;quoted&nbsp;literal&nbsp;--&gt;&nbsp;literal,&nbsp;"literal"<br/>
+lit&nbsp;4:&nbsp;A&nbsp;quoted&nbsp;literal&nbsp;--&gt;&nbsp;literal,&nbsp;'literal'<br/>
+num&nbsp;1:&nbsp;1&nbsp;--&gt;&nbsp;numeral,&nbsp;numeral<br/>
+num&nbsp;2:&nbsp;1&nbsp;--&gt;&nbsp;numeral,&nbsp;plain&nbsp;numeral<br/>
+pset:&nbsp;{1,2,3}&nbsp;--&gt;&nbsp;parameter&nbsp;set,&nbsp;parameter&nbsp;set<br/>
+void:&nbsp;null&nbsp;--&gt;&nbsp;literal,&nbsp;literal<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_type.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

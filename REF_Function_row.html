@@ -84,8 +84,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -122,28 +123,28 @@ context for partial table specification is required</p>
 <td><b>Row number</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table 1,<br/>
- &nbsp;{ { Animal, leg count }, { Worm, &nbsp;0}, { Bird, 2 }, { Dog, 4 }, { Fly, 6 }, { Tick, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Animal,&nbsp;leg&nbsp;count&nbsp;},&nbsp;{&nbsp;Worm,&nbsp;&nbsp;0},&nbsp;{&nbsp;Bird,&nbsp;2&nbsp;},&nbsp;{&nbsp;Dog,&nbsp;4&nbsp;},&nbsp;{&nbsp;Fly,&nbsp;6&nbsp;},&nbsp;{&nbsp;Tick,&nbsp;8&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table initialize ( table 2, { Color, Red, Blue, Green } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table&nbsp;2,&nbsp;{&nbsp;Color,&nbsp;Red,&nbsp;Blue,&nbsp;Green&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table process( table 1, echo("Row number: ", row(), " ", [Animal], " has ", [leg count], " legs." ) );<br/>
+&nbsp;&nbsp;table&nbsp;process(&nbsp;table&nbsp;1,&nbsp;echo("Row&nbsp;number:&nbsp;",&nbsp;row(),&nbsp;"&nbsp;",&nbsp;[Animal],&nbsp;"&nbsp;has&nbsp;",&nbsp;[leg&nbsp;count],&nbsp;"&nbsp;legs."&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;with table( table 1, 2 )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;table process( table 2,<br/>
- &nbsp; &nbsp; &nbsp;echo ("Row # in table 1: ", row(1), " (", [^Animal], ") and table 2: ", row(0), " (", [Color], ")" ) );<br/>
- &nbsp; &nbsp; &nbsp;// Note the accent circumflex in [^Animal]: This symbol refers to next upper context, like row(1).<br/>
- &nbsp;}</code></div>
+&nbsp;&nbsp;with&nbsp;table(&nbsp;table&nbsp;1,&nbsp;2&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;process(&nbsp;table&nbsp;2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;("Row&nbsp;#&nbsp;in&nbsp;table&nbsp;1:&nbsp;",&nbsp;row(1),&nbsp;"&nbsp;(",&nbsp;[^Animal],&nbsp;")&nbsp;and&nbsp;table&nbsp;2:&nbsp;",&nbsp;row(0),&nbsp;"&nbsp;(",&nbsp;[Color],&nbsp;")"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note&nbsp;the&nbsp;accent&nbsp;circumflex&nbsp;in&nbsp;[^Animal]:&nbsp;This&nbsp;symbol&nbsp;refers&nbsp;to&nbsp;next&nbsp;upper&nbsp;context,&nbsp;like&nbsp;row(1).<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Row number: 1 Worm has 0 legs.<br/>
-Row number: 2 Bird has 2 legs.<br/>
-Row number: 3 Dog has 4 legs.<br/>
-Row number: 4 Fly has 6 legs.<br/>
-Row number: 5 Tick has 8 legs.<br/>
-Row # in table 1: 2 (Bird) and table 2: 1 (Red)<br/>
-Row # in table 1: 2 (Bird) and table 2: 2 (Blue)<br/>
-Row # in table 1: 2 (Bird) and table 2: 3 (Green)<br/>
+<div class="output_background_color" ><code>Row&nbsp;number:&nbsp;1&nbsp;Worm&nbsp;has&nbsp;0&nbsp;legs.<br/>
+Row&nbsp;number:&nbsp;2&nbsp;Bird&nbsp;has&nbsp;2&nbsp;legs.<br/>
+Row&nbsp;number:&nbsp;3&nbsp;Dog&nbsp;has&nbsp;4&nbsp;legs.<br/>
+Row&nbsp;number:&nbsp;4&nbsp;Fly&nbsp;has&nbsp;6&nbsp;legs.<br/>
+Row&nbsp;number:&nbsp;5&nbsp;Tick&nbsp;has&nbsp;8&nbsp;legs.<br/>
+Row&nbsp;#&nbsp;in&nbsp;table&nbsp;1:&nbsp;2&nbsp;(Bird)&nbsp;and&nbsp;table&nbsp;2:&nbsp;1&nbsp;(Red)<br/>
+Row&nbsp;#&nbsp;in&nbsp;table&nbsp;1:&nbsp;2&nbsp;(Bird)&nbsp;and&nbsp;table&nbsp;2:&nbsp;2&nbsp;(Blue)<br/>
+Row&nbsp;#&nbsp;in&nbsp;table&nbsp;1:&nbsp;2&nbsp;(Bird)&nbsp;and&nbsp;table&nbsp;2:&nbsp;3&nbsp;(Green)<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_row.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_with_table.html">with table</a><br/>

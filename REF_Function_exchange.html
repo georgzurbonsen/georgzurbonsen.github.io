@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -109,47 +110,47 @@ or between two table entries.
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;a[] = Abel; a[Age] = 30;<br/>
- &nbsp;b[] = Beata; b[Age] = 31;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;Abel;&nbsp;a[Age]&nbsp;=&nbsp;30;<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;Beata;&nbsp;b[Age]&nbsp;=&nbsp;31;<br/>
 <br/>
- &nbsp;exchange( a[], b[] );<br/>
+&nbsp;&nbsp;exchange(&nbsp;a[],&nbsp;b[]&nbsp;);<br/>
 <br/>
- &nbsp;echo( "Using exchange(...): Only base variables are exchanged.");<br/>
- &nbsp;echo( " &nbsp;a[]: ", a[], ", ", a[Age] );<br/>
- &nbsp;echo( " &nbsp;b[]: ", b[], ", ", b[Age] );<br/>
+&nbsp;&nbsp;echo(&nbsp;"Using&nbsp;exchange(...):&nbsp;Only&nbsp;base&nbsp;variables&nbsp;are&nbsp;exchanged.");<br/>
+&nbsp;&nbsp;echo(&nbsp;"&nbsp;&nbsp;a[]:&nbsp;",&nbsp;a[],&nbsp;",&nbsp;",&nbsp;a[Age]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"&nbsp;&nbsp;b[]:&nbsp;",&nbsp;b[],&nbsp;",&nbsp;",&nbsp;b[Age]&nbsp;);<br/>
 <br/>
- &nbsp;table initialize( t, { { Name, Age}, {Corinne, 32} } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Age},&nbsp;{Corinne,&nbsp;32}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;exchange( a[], &nbsp; &nbsp;[t:Name,1] );<br/>
- &nbsp;exchange( a[Age], [t:Age,1] );<br/>
+&nbsp;&nbsp;exchange(&nbsp;a[],&nbsp;&nbsp;&nbsp;&nbsp;[t:Name,1]&nbsp;);<br/>
+&nbsp;&nbsp;exchange(&nbsp;a[Age],&nbsp;[t:Age,1]&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Exchanged with table entry: ");<br/>
- &nbsp;echo( "table: ", [t:Name,1] );<br/>
- &nbsp;echo( " &nbsp;a[]: ", a[], ", ", a[Age] );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Exchanged&nbsp;with&nbsp;table&nbsp;entry:&nbsp;");<br/>
+&nbsp;&nbsp;echo(&nbsp;"table:&nbsp;",&nbsp;[t:Name,1]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"&nbsp;&nbsp;a[]:&nbsp;",&nbsp;a[],&nbsp;",&nbsp;",&nbsp;a[Age]&nbsp;);<br/>
 <br/>
- &nbsp;// In case you want to exchange base variables with their members, use transactions.<br/>
+&nbsp;&nbsp;//&nbsp;In&nbsp;case&nbsp;you&nbsp;want&nbsp;to&nbsp;exchange&nbsp;base&nbsp;variables&nbsp;with&nbsp;their&nbsp;members,&nbsp;use&nbsp;transactions.<br/>
 <br/>
- &nbsp;a[] = Abel; a[Age] = 30;<br/>
- &nbsp;b[] = Beata; b[Age] = 31;<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;Abel;&nbsp;a[Age]&nbsp;=&nbsp;30;<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;Beata;&nbsp;b[Age]&nbsp;=&nbsp;31;<br/>
 <br/>
- &nbsp;a[] &lt;=&gt; b[];<br/>
+&nbsp;&nbsp;a[]&nbsp;&lt;=&gt;&nbsp;b[];<br/>
 <br/>
- &nbsp;echo( new line, "Using transactions: Members are also exchanged");<br/>
- &nbsp;echo( " &nbsp;a[]: ", a[], ", ", a[Age] );<br/>
- &nbsp;echo( " &nbsp;b[]: ", b[], ", ", b[Age] );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Using&nbsp;transactions:&nbsp;Members&nbsp;are&nbsp;also&nbsp;exchanged");<br/>
+&nbsp;&nbsp;echo(&nbsp;"&nbsp;&nbsp;a[]:&nbsp;",&nbsp;a[],&nbsp;",&nbsp;",&nbsp;a[Age]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"&nbsp;&nbsp;b[]:&nbsp;",&nbsp;b[],&nbsp;",&nbsp;",&nbsp;b[Age]&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Using exchange(...): Only base variables are exchanged.<br/>
- &nbsp;a[]: Beata, 30<br/>
- &nbsp;b[]: Abel, 31<br/>
+<div class="output_background_color" ><code>Using&nbsp;exchange(...):&nbsp;Only&nbsp;base&nbsp;variables&nbsp;are&nbsp;exchanged.<br/>
+&nbsp;&nbsp;a[]:&nbsp;Beata,&nbsp;30<br/>
+&nbsp;&nbsp;b[]:&nbsp;Abel,&nbsp;31<br/>
 <br/>
-Exchanged with table entry: <br/>
-table: Beata<br/>
- &nbsp;a[]: Corinne, 32<br/>
+Exchanged&nbsp;with&nbsp;table&nbsp;entry:&nbsp;<br/>
+table:&nbsp;Beata<br/>
+&nbsp;&nbsp;a[]:&nbsp;Corinne,&nbsp;32<br/>
 <br/>
-Using transactions: Members are also exchanged<br/>
- &nbsp;a[]: Beata, 31<br/>
- &nbsp;b[]: Abel, 30<br/>
+Using&nbsp;transactions:&nbsp;Members&nbsp;are&nbsp;also&nbsp;exchanged<br/>
+&nbsp;&nbsp;a[]:&nbsp;Beata,&nbsp;31<br/>
+&nbsp;&nbsp;b[]:&nbsp;Abel,&nbsp;30<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_exchange.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><span class="red_text">Transactions</span><br/>

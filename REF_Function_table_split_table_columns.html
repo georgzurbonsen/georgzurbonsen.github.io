@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -118,52 +119,52 @@ If the new table is already existing, then it will be initialized.</p>
 <td>table columns</td>
 <td><b>Columns to spit</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">Every column specified must be unique, i.e. no multiple references to the same column</li></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Every column specified must be unique, i.e. no multiple references to the same column</li></ul><p></p>
 </td></tr>
 <tr><td>Opt 4.<br/>input</td>
 <td>table columns</td>
 <td><b>Columns to copy</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">Columns also mentioned in the 3rd function parameter will be considered to be split, i.e. splitting overrules copying.</li></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Columns also mentioned in the 3rd function parameter will be considered to be split, i.e. splitting overrules copying.</li></ul><p></p>
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Name, Age, Hobby, Favorite Color },<br/>
- &nbsp; &nbsp; &nbsp;{ Ann, 45, Skiing, Blue }, { Dan, 35, Skating, Orange },<br/>
- &nbsp; &nbsp; &nbsp;{ Eva, 40, Bee keeping, Yellow }, { Nic, 10, Reading, Green } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{{&nbsp;Name,&nbsp;Age,&nbsp;Hobby,&nbsp;Favorite&nbsp;Color&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;45,&nbsp;Skiing,&nbsp;Blue&nbsp;},&nbsp;{&nbsp;Dan,&nbsp;35,&nbsp;Skating,&nbsp;Orange&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Eva,&nbsp;40,&nbsp;Bee&nbsp;keeping,&nbsp;Yellow&nbsp;},&nbsp;{&nbsp;Nic,&nbsp;10,&nbsp;Reading,&nbsp;Green&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list( t );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;echo("Split out Hobby, copy Name and Favorite Color:");<br/>
- &nbsp;table split table columns ( t, u, {Hobby, Favorite Color}, {Name, Favorite Color} );<br/>
- &nbsp;table list( u );<br/>
+&nbsp;&nbsp;echo("Split&nbsp;out&nbsp;Hobby,&nbsp;copy&nbsp;Name&nbsp;and&nbsp;Favorite&nbsp;Color:");<br/>
+&nbsp;&nbsp;table&nbsp;split&nbsp;table&nbsp;columns&nbsp;(&nbsp;t,&nbsp;u,&nbsp;{Hobby,&nbsp;Favorite&nbsp;Color},&nbsp;{Name,&nbsp;Favorite&nbsp;Color}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table contains Name and Age.");<br/>
- &nbsp;table list( t );</code></div>
+&nbsp;&nbsp;echo("Original&nbsp;table&nbsp;contains&nbsp;Name&nbsp;and&nbsp;Age.");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Name | Age | Hobby &nbsp; &nbsp; &nbsp; | Favorite Color<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 &nbsp;| Skiing &nbsp; &nbsp; &nbsp;| Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| 35 &nbsp;| Skating &nbsp; &nbsp; | Orange &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Eva &nbsp;| 40 &nbsp;| Bee keeping | Yellow &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Nic &nbsp;| 10 &nbsp;| Reading &nbsp; &nbsp; | Green &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Favorite&nbsp;Color<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;&nbsp;|&nbsp;Skiing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;&nbsp;|&nbsp;Skating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Orange&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;|&nbsp;Bee&nbsp;keeping&nbsp;|&nbsp;Yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;Reading&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Split out Hobby, copy Name and Favorite Color:<br/>
- &nbsp; &nbsp;0 : Name | Favorite Color | Hobby &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Skiing &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| Orange &nbsp; &nbsp; &nbsp; &nbsp; | Skating &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Eva &nbsp;| Yellow &nbsp; &nbsp; &nbsp; &nbsp; | Bee keeping<br/>
- &nbsp; &nbsp;4 : Nic &nbsp;| Green &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Reading &nbsp; &nbsp;<br/>
+Split&nbsp;out&nbsp;Hobby,&nbsp;copy&nbsp;Name&nbsp;and&nbsp;Favorite&nbsp;Color:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Color&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Skiing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;Orange&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Skating&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;Yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bee&nbsp;keeping<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Reading&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Original table contains Name and Age.<br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 <br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| 35 <br/>
- &nbsp; &nbsp;3 : Eva &nbsp;| 40 <br/>
- &nbsp; &nbsp;4 : Nic &nbsp;| 10 <br/>
+Original&nbsp;table&nbsp;contains&nbsp;Name&nbsp;and&nbsp;Age.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_split_table_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

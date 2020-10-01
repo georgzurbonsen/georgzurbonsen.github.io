@@ -88,8 +88,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -131,9 +132,9 @@ The following functions use different approaches to combine the data columns:
 <br/><img src="Images/Function_table_merge.jpg" alt="Function 'table merge'"><br/><br/>
 
 Typical applications:
-</p><ul class="bullets"><li class="bullets">Gathering information collected from different sources</li>
-<li class="bullets">Merger and acquisitions</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Gathering information collected from different sources
+</li><li class="bullets">Merger and acquisitions
+</li></ul><p>
 
 <u>Note</u>: If the destination table does not yet exist, or if the table is entirely empty (i.e. no header inside), then the data in the source table will be copied into the destination table.
 
@@ -163,11 +164,11 @@ If no columns are specified, then no commonalities are assumed and no rows will 
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified.  This applies to both tables (i.e. they must have same header names)</li>
-<li class="bullets">Use column numbers only if the data in both tables are physically located in the same columns.</li>
-<li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will consolidate all table rows to 1 single row.</li>
-<li class="bullets">Do not repeat the same column</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified.  This applies to both tables (i.e. they must have same header names)
+</li><li class="bullets">Use column numbers only if the data in both tables are physically located in the same columns.
+</li><li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will consolidate all table rows to 1 single row.
+</li><li class="bullets">Do not repeat the same column
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns specified)
 </td></tr>
 <tr><td>4.<br/>input</td>
@@ -180,12 +181,12 @@ The remaining columns in the table will not be consolidated, i.e. the values in 
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified.  This applies to both tables (i.e. they must have same header names)</li>
-<li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will exclude all columns from active consolidation.  Contents in top row will apply.</li>
-<li class="bullets">Do not specify any columns already referenced in the previous function parameter (identifier columns)</li>
-<li class="bullets">Do not repeat the same column</li>
-<li class="bullets">Softquoted literal '*' in single quotation marks: Consolidate all columns in the table except the identifier columns</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified.  This applies to both tables (i.e. they must have same header names)
+</li><li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will exclude all columns from active consolidation.  Contents in top row will apply.
+</li><li class="bullets">Do not specify any columns already referenced in the previous function parameter (identifier columns)
+</li><li class="bullets">Do not repeat the same column
+</li><li class="bullets">Softquoted literal '*' in single quotation marks: Consolidate all columns in the table except the identifier columns
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns consolidated)
 </td></tr>
 <tr><td>Opt. 5.<br/>input</td>
@@ -198,14 +199,14 @@ For example, <b>add</b> adds the value from the lower row to the target row.<br>
 
 The number of operation identifiers is less than the number of columns specified in the 3rd (output columns) and 6th parameter (destination columns),
 then the default value 'overwrite' is assumed for the remaining columns.  If this parameter contains more elements than columns retrieved, then the exess ones will be ignored.
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value</li>
-<li class="bullets">Use parameter set to specify multiple values</li>
-<li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas</li>
-<li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.  'none' is assumed for all consolidating columns here.</li>
-<li class="bullets">Ideally, the number of consolidation actions shall equal to the number of columns to consolidate (previous function parameter).</li>
-<li class="bullets">If fewer consolidation actions are listed than number of columns to consolidate, then the last action will apply to all remaining columns.</li>
-<li class="bullets">If more consolidation actions are listed, then the excessive numbr of actions will be ignored.</li>
-<li class="bullets">If '*' (consolidate all columns) is specified in the 4th parameter, the the consolidation actions apply to the table columns from left to right, <u>skipping</u> the identifier columns and columns to be removed if using <b>table merge intersect columns</b>.</li></p>
+</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</li><li class="bullets">Use parameter set to specify multiple values
+</li><li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas
+</li><li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.  'none' is assumed for all consolidating columns here.
+</li><li class="bullets">Ideally, the number of consolidation actions shall equal to the number of columns to consolidate (previous function parameter).
+</li><li class="bullets">If fewer consolidation actions are listed than number of columns to consolidate, then the last action will apply to all remaining columns.
+</li><li class="bullets">If more consolidation actions are listed, then the excessive numbr of actions will be ignored.
+</li><li class="bullets">If '*' (consolidate all columns) is specified in the 4th parameter, the the consolidation actions apply to the table columns from left to right, <u>skipping</u> the identifier columns and columns to be removed if using <b>table merge intersect columns</b>.</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>'overwrite' if preious parameter is specified, otherwise 'none'
 </td></tr>
 <tr><td>Opt. 6.<br/>input</td>
@@ -226,159 +227,159 @@ in a more visible way, for example using a comma or new line.<br>
 <h4> Program Examples with 'table merge ...'</h4>
 <p></p>
 <h5> Merging tables into one without identifier columns specified</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("Loading farms in Hillboro and Hillville");<br/>
- &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Loading&nbsp;farms&nbsp;in&nbsp;Hillboro&nbsp;and&nbsp;Hillville");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Farms in Hillboro:");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Farms&nbsp;in&nbsp;Hillboro:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Farms in Hillville:");<br/>
- &nbsp; &nbsp; &nbsp;table list( hv );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Farms&nbsp;in&nbsp;Hillville:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hv&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge( hv, hb );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge(&nbsp;hv,&nbsp;hb&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: Zero rows consolidated</h5>
-<div class="output_background_color" ><code>Loading farms in Hillboro and Hillville<br/>
-Farms in Hillboro:<br/>
- &nbsp; &nbsp;0 : Organic | Place &nbsp; &nbsp;| Farmer &nbsp; &nbsp; | Wheat | Oat | Sheeps | Cows | Acres | Speciality<br/>
- &nbsp; &nbsp;1 : No &nbsp; &nbsp; &nbsp;| Hillboro | F. Fuller &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp; | Hogs &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Yes &nbsp; &nbsp; | Hillboro | R. Rudy &nbsp; &nbsp;| 19 &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp; | 24 &nbsp; | 21 &nbsp; &nbsp;| Restaurant<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro | D. Daniels | 2 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : No &nbsp; &nbsp; &nbsp;| Hillboro | M. Miller &nbsp;| 2 &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 5 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Yes &nbsp; &nbsp; | Hillboro | K. Klein &nbsp; | 10 &nbsp; &nbsp;| 10 &nbsp;| 40 &nbsp; &nbsp; | 30 &nbsp; | 28 &nbsp; &nbsp;| Vegetables<br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro | P. Pomme &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp; | 40 &nbsp; | 21 &nbsp; &nbsp;| Apples &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Loading&nbsp;farms&nbsp;in&nbsp;Hillboro&nbsp;and&nbsp;Hillville<br/>
+Farms&nbsp;in&nbsp;Hillboro:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Organic&nbsp;|&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Speciality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hogs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vegetables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;|&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Apples&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Farms in Hillville:<br/>
- &nbsp; &nbsp;0 : Place &nbsp; &nbsp; | Farmer &nbsp; &nbsp; | Acres | Wheat | Barley | Corn | Cows | Organic | Speciality<br/>
- &nbsp; &nbsp;1 : Hillville | M. Miller &nbsp;| 20 &nbsp; &nbsp;| 4 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 5 &nbsp; &nbsp;| 30 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | Hops &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Hillville | F. Fuller &nbsp;| 18 &nbsp; &nbsp;| 5 &nbsp; &nbsp; | 9 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 22 &nbsp; | Yes &nbsp; &nbsp; | Pigs &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Hillville | B. Beaver &nbsp;| 23 &nbsp; &nbsp;| 1 &nbsp; &nbsp; | 4 &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| Yes &nbsp; &nbsp; | Sugar Pea <br/>
- &nbsp; &nbsp;4 : Hillville | J. Jill &nbsp; &nbsp;| 14 &nbsp; &nbsp;| 8 &nbsp; &nbsp; | 1 &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp;| 10 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Hillville | D. Daniels | 21 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; | 18 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; | Lodging &nbsp; <br/>
+Farms&nbsp;in&nbsp;Hillville:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Barley&nbsp;|&nbsp;Corn&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Organic&nbsp;|&nbsp;Speciality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Hillville&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hops&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Hillville&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;|&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Pigs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Hillville&nbsp;|&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sugar&nbsp;Pea&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Hillville&nbsp;|&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Hillville&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lodging&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Hilltown is a merger of Hillboro and Hillville (0 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Organic | Place &nbsp; &nbsp; | Farmer &nbsp; &nbsp; | Wheat | Oat | Sheeps | Cows | Acres | Speciality<br/>
- &nbsp; &nbsp;1 : No &nbsp; &nbsp; &nbsp;| Hillboro &nbsp;| F. Fuller &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp; | Hogs &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Yes &nbsp; &nbsp; | Hillboro &nbsp;| R. Rudy &nbsp; &nbsp;| 19 &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp; | 24 &nbsp; | 21 &nbsp; &nbsp;| Restaurant<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp;| D. Daniels | 2 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : No &nbsp; &nbsp; &nbsp;| Hillboro &nbsp;| M. Miller &nbsp;| 2 &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 5 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Yes &nbsp; &nbsp; | Hillboro &nbsp;| K. Klein &nbsp; | 10 &nbsp; &nbsp;| 10 &nbsp;| 40 &nbsp; &nbsp; | 30 &nbsp; | 28 &nbsp; &nbsp;| Vegetables<br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp;| P. Pomme &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp; | 40 &nbsp; | 21 &nbsp; &nbsp;| Apples &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillville | M. Miller &nbsp;| 4 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 30 &nbsp; | 20 &nbsp; &nbsp;| Hops &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : Yes &nbsp; &nbsp; | Hillville | F. Fuller &nbsp;| 5 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 22 &nbsp; | 18 &nbsp; &nbsp;| Pigs &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;9 : Yes &nbsp; &nbsp; | Hillville | B. Beaver &nbsp;| 1 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 23 &nbsp; &nbsp;| Sugar Pea <br/>
- &nbsp; 10 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillville | J. Jill &nbsp; &nbsp;| 8 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 10 &nbsp; | 14 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 11 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillville | D. Daniels | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp;| 21 &nbsp; &nbsp;| Lodging &nbsp; <br/>
+Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(0&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Organic&nbsp;|&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Speciality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hogs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vegetables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Apples&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hops&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Pigs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sugar&nbsp;Pea&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lodging&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Declare 'Farmer' as unique identifier</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge( hv, hb, Farmer );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge(&nbsp;hv,&nbsp;hb,&nbsp;Farmer&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: 3 farmers with land in both towns have been consolidated.</h5>
-<div class="output_background_color" ><code>Hilltown is a merger of Hillboro and Hillville (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Organic | Place &nbsp; &nbsp; | Farmer &nbsp; &nbsp; | Wheat | Oat | Sheeps | Cows | Acres | Speciality<br/>
- &nbsp; &nbsp;1 : No &nbsp; &nbsp; &nbsp;| Hillboro &nbsp;| F. Fuller &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp; | Hogs &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Yes &nbsp; &nbsp; | Hillboro &nbsp;| R. Rudy &nbsp; &nbsp;| 19 &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp; | 24 &nbsp; | 21 &nbsp; &nbsp;| Restaurant<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp;| D. Daniels | 2 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 3 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : No &nbsp; &nbsp; &nbsp;| Hillboro &nbsp;| M. Miller &nbsp;| 2 &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 5 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Yes &nbsp; &nbsp; | Hillboro &nbsp;| K. Klein &nbsp; | 10 &nbsp; &nbsp;| 10 &nbsp;| 40 &nbsp; &nbsp; | 30 &nbsp; | 28 &nbsp; &nbsp;| Vegetables<br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp;| P. Pomme &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp; | 40 &nbsp; | 21 &nbsp; &nbsp;| Apples &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Yes &nbsp; &nbsp; | Hillville | B. Beaver &nbsp;| 1 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 23 &nbsp; &nbsp;| Sugar Pea <br/>
- &nbsp; &nbsp;8 : &nbsp; &nbsp; &nbsp; &nbsp; | Hillville | J. Jill &nbsp; &nbsp;| 8 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 10 &nbsp; | 14 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Organic&nbsp;|&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Speciality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hogs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vegetables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;|&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Apples&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sugar&nbsp;Pea&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;|&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Merge data in smart way and add 2 columns from source table:</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge extend columns( hv, hb, Farmer, '*', { must match, append, 5:sum, append }, ", " ); <br/>
- &nbsp; &nbsp; &nbsp;// '*' corresponds to {Organic, Place, Wheat, Oat, Sheeps, Cows, Acres, Speciality}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge&nbsp;extend&nbsp;columns(&nbsp;hv,&nbsp;hb,&nbsp;Farmer,&nbsp;'*',&nbsp;{&nbsp;must&nbsp;match,&nbsp;append,&nbsp;5:sum,&nbsp;append&nbsp;},&nbsp;",&nbsp;"&nbsp;);&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;'*'&nbsp;corresponds&nbsp;to&nbsp;{Organic,&nbsp;Place,&nbsp;Wheat,&nbsp;Oat,&nbsp;Sheeps,&nbsp;Cows,&nbsp;Acres,&nbsp;Speciality}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: 3 farmers with land in both towns have been consolidated.</h5>
-<div class="output_background_color" ><code>Hilltown is a merger of Hillboro and Hillville (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Organic &nbsp; &nbsp; &nbsp; &nbsp; | Place &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Farmer &nbsp; &nbsp; | Wheat | Oat | Sheeps | Cows | Acres | Speciality | Barley | Corn<br/>
- &nbsp; &nbsp;1 : (Inconsistent!) | Hillboro, Hillville | F. Fuller &nbsp;| 8 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 22 &nbsp; | 22 &nbsp; &nbsp;| Hogs, Pigs | 9 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| R. Rudy &nbsp; &nbsp;| 19 &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp; | 24 &nbsp; | 21 &nbsp; &nbsp;| Restaurant | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro, Hillville | D. Daniels | 2 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp;| 24 &nbsp; &nbsp;| Lodging &nbsp; &nbsp;| 18 &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : No &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Hillboro, Hillville | M. Miller &nbsp;| 6 &nbsp; &nbsp; | 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 30 &nbsp; | 25 &nbsp; &nbsp;| Hops &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 5 &nbsp; <br/>
- &nbsp; &nbsp;5 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| K. Klein &nbsp; | 10 &nbsp; &nbsp;| 10 &nbsp;| 40 &nbsp; &nbsp; | 30 &nbsp; | 28 &nbsp; &nbsp;| Vegetables | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| P. Pomme &nbsp; | &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp; | 40 &nbsp; | 21 &nbsp; &nbsp;| Apples &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillville &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | B. Beaver &nbsp;| 1 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;| 23 &nbsp; &nbsp;| Sugar Pea &nbsp;| 4 &nbsp; &nbsp; &nbsp;| 3 &nbsp; <br/>
- &nbsp; &nbsp;8 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillville &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | J. Jill &nbsp; &nbsp;| 8 &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 10 &nbsp; | 14 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp;| 3 &nbsp; <br/>
+<div class="output_background_color" ><code>Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Organic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Speciality&nbsp;|&nbsp;Barley&nbsp;|&nbsp;Corn<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;(Inconsistent!)&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hogs,&nbsp;Pigs&nbsp;|&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lodging&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hops&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vegetables&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Apples&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sugar&nbsp;Pea&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Merge data in smart way and keep intersected columns:</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge intersect columns( hv, hb, Farmer, '*', { must match, append, 3:sum, append }, ", " );<br/>
- &nbsp; &nbsp; &nbsp;// '*' corresponds to {Organic, Place, Wheat, Cows, Acres, Speciality}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge&nbsp;intersect&nbsp;columns(&nbsp;hv,&nbsp;hb,&nbsp;Farmer,&nbsp;'*',&nbsp;{&nbsp;must&nbsp;match,&nbsp;append,&nbsp;3:sum,&nbsp;append&nbsp;},&nbsp;",&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;'*'&nbsp;corresponds&nbsp;to&nbsp;{Organic,&nbsp;Place,&nbsp;Wheat,&nbsp;Cows,&nbsp;Acres,&nbsp;Speciality}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: 3 farmers with land in both towns have been consolidated.</h5>
-<div class="output_background_color" ><code>Hilltown is a merger of Hillboro and Hillville (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Organic &nbsp; &nbsp; &nbsp; &nbsp; | Place &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Farmer &nbsp; &nbsp; | Wheat | Cows | Acres | Speciality<br/>
- &nbsp; &nbsp;1 : (Inconsistent!) | Hillboro, Hillville | F. Fuller &nbsp;| 8 &nbsp; &nbsp; | 22 &nbsp; | 22 &nbsp; &nbsp;| Hogs, Pigs<br/>
- &nbsp; &nbsp;2 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| R. Rudy &nbsp; &nbsp;| 19 &nbsp; &nbsp;| 24 &nbsp; | 21 &nbsp; &nbsp;| Restaurant<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro, Hillville | D. Daniels | 2 &nbsp; &nbsp; | 0 &nbsp; &nbsp;| 24 &nbsp; &nbsp;| Lodging &nbsp; <br/>
- &nbsp; &nbsp;4 : No &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Hillboro, Hillville | M. Miller &nbsp;| 6 &nbsp; &nbsp; | 30 &nbsp; | 25 &nbsp; &nbsp;| Hops &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| K. Klein &nbsp; | 10 &nbsp; &nbsp;| 30 &nbsp; | 28 &nbsp; &nbsp;| Vegetables<br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillboro &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| P. Pomme &nbsp; | &nbsp; &nbsp; &nbsp; | 40 &nbsp; | 21 &nbsp; &nbsp;| Apples &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillville &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | B. Beaver &nbsp;| 1 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;| 23 &nbsp; &nbsp;| Sugar Pea <br/>
- &nbsp; &nbsp;8 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Hillville &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | J. Jill &nbsp; &nbsp;| 8 &nbsp; &nbsp; | 10 &nbsp; | 14 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Organic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Place&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wheat&nbsp;|&nbsp;Cows&nbsp;|&nbsp;Acres&nbsp;|&nbsp;Speciality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;(Inconsistent!)&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;|&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hogs,&nbsp;Pigs<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Restaurant<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lodging&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro,&nbsp;Hillville&nbsp;|&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hops&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;30&nbsp;&nbsp;&nbsp;|&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Vegetables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillboro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Apples&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sugar&nbsp;Pea&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hillville&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_03.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Merge data in smart way and subtract the columns:</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge subtract columns( hv, hb, Farmer );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge&nbsp;subtract&nbsp;columns(&nbsp;hv,&nbsp;hb,&nbsp;Farmer&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: 3 farmers with land in both towns have been consolidated.</h5>
-<div class="output_background_color" ><code>Hilltown is a merger of Hillboro and Hillville (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Farmer &nbsp; &nbsp; | Oat | Sheeps<br/>
- &nbsp; &nbsp;1 : F. Fuller &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : R. Rudy &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : D. Daniels | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : M. Miller &nbsp;| 1 &nbsp; | &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : K. Klein &nbsp; | 10 &nbsp;| 40 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : P. Pomme &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : B. Beaver &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : J. Jill &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_04.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Merge data in smart way and show all columns except comomon ones:</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( hb, "Examples/Table Merge Examples Hillboro.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( hv, "Examples/Table Merge Examples Hillville.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hb,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillboro.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;hv,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hillville.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge exclusive columns( hv, hb, Farmer );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge&nbsp;exclusive&nbsp;columns(&nbsp;hv,&nbsp;hb,&nbsp;Farmer&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hilltown is a merger of Hillboro and Hillville (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( hb );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;hb&nbsp;);</code></div>
 <h5> Output: 3 farmers with land in both towns have been consolidated.</h5>
-<div class="output_background_color" ><code>Hilltown is a merger of Hillboro and Hillville (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Farmer &nbsp; &nbsp; | Oat | Sheeps | Barley | Corn<br/>
- &nbsp; &nbsp;1 : F. Fuller &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 9 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : R. Rudy &nbsp; &nbsp;| &nbsp; &nbsp; | 20 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : D. Daniels | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 18 &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : M. Miller &nbsp;| 1 &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;| 5 &nbsp; <br/>
- &nbsp; &nbsp;5 : K. Klein &nbsp; | 10 &nbsp;| 40 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : P. Pomme &nbsp; | &nbsp; &nbsp; | 50 &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : B. Beaver &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 4 &nbsp; &nbsp; &nbsp;| 3 &nbsp; <br/>
- &nbsp; &nbsp;8 : J. Jill &nbsp; &nbsp;| &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp;| 3 &nbsp; <br/>
+<div class="output_background_color" ><code>Hilltown&nbsp;is&nbsp;a&nbsp;merger&nbsp;of&nbsp;Hillboro&nbsp;and&nbsp;Hillville&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Farmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Oat&nbsp;|&nbsp;Sheeps&nbsp;|&nbsp;Barley&nbsp;|&nbsp;Corn<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;F.&nbsp;Fuller&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;R.&nbsp;Rudy&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;D.&nbsp;Daniels&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;M.&nbsp;Miller&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;K.&nbsp;Klein&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;P.&nbsp;Pomme&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;B.&nbsp;Beaver&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;J.&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_05.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Tables with multiple non-unique identifiers being merged:</h4>
@@ -388,40 +389,40 @@ then the next ones below, and so forth.  As a result, every row is considered on
 Every row in the destination table will be consolidated only once.
 The following code example demonstrates this:</p>
 <h5> One Jill and tow Micheles will be consolidated:</h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table load( h1, "Examples/Table Merge Examples Hobbies 1.csv");<br/>
- &nbsp; &nbsp; &nbsp;table load( h2, "Examples/Table Merge Examples Hobbies 2.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;h1,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hobbies&nbsp;1.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;h2,&nbsp;"Examples/Table&nbsp;Merge&nbsp;Examples&nbsp;Hobbies&nbsp;2.csv");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Hoobies 1:"); &nbsp; &nbsp; &nbsp;table list( h1 );<br/>
- &nbsp; &nbsp; &nbsp;echo("Hoobies 2:"); &nbsp; &nbsp; &nbsp;table list( h2 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hoobies&nbsp;1:");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;h1&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Hoobies&nbsp;2:");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;h2&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;count[] = table merge( h2, h1, Name, '*', append, ', ' );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;merge(&nbsp;h2,&nbsp;h1,&nbsp;Name,&nbsp;'*',&nbsp;append,&nbsp;',&nbsp;'&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Combined list of hobbies (", count[], " rows consolidated):");<br/>
- &nbsp; &nbsp; &nbsp;table list( h1 );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Combined&nbsp;list&nbsp;of&nbsp;hobbies&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;rows&nbsp;consolidated):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;h1&nbsp;);</code></div>
 <h5> The outcome</h5>
-<div class="output_background_color" ><code>Hoobies 1:<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp;| Hobby &nbsp; | Sport &nbsp; &nbsp; | Color &nbsp; &nbsp;| Animal<br/>
- &nbsp; &nbsp;1 : Jill &nbsp; &nbsp;| Games &nbsp; | Snowboard | Gray &nbsp; &nbsp; | Dog &nbsp; <br/>
- &nbsp; &nbsp;2 : Michele | Games &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Pink &nbsp; &nbsp; | Cat &nbsp; <br/>
- &nbsp; &nbsp;3 : Michele | Reading | Riding &nbsp; &nbsp;| Red &nbsp; &nbsp; &nbsp;| Horse <br/>
- &nbsp; &nbsp;4 : Jill &nbsp; &nbsp;| Theatre | Sailing &nbsp; | Turquois | Whale <br/>
+<div class="output_background_color" ><code>Hoobies&nbsp;1:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;|&nbsp;Sport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Color&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Animal<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Games&nbsp;&nbsp;&nbsp;|&nbsp;Snowboard&nbsp;|&nbsp;Gray&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dog&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Games&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Pink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Cat&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Reading&nbsp;|&nbsp;Riding&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Horse&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Theatre&nbsp;|&nbsp;Sailing&nbsp;&nbsp;&nbsp;|&nbsp;Turquois&nbsp;|&nbsp;Whale&nbsp;<br/>
 <br/>
-Hoobies 2:<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp;| Hobby &nbsp; &nbsp; &nbsp; | Sport &nbsp; &nbsp;| Color &nbsp; | Animal<br/>
- &nbsp; &nbsp;1 : Michele | Playing &nbsp; &nbsp; | Golf &nbsp; &nbsp; | Brown &nbsp; | Tiger <br/>
- &nbsp; &nbsp;2 : Michele | Writing &nbsp; &nbsp; | Riding &nbsp; | Magenta | Pony &nbsp;<br/>
- &nbsp; &nbsp;3 : Michele | Photography | Soccer &nbsp; | Blue &nbsp; &nbsp;| Fish &nbsp;<br/>
- &nbsp; &nbsp;4 : Michele | Movies &nbsp; &nbsp; &nbsp;| Handball | Green &nbsp; | Crabs <br/>
- &nbsp; &nbsp;5 : Jill &nbsp; &nbsp;| Drama &nbsp; &nbsp; &nbsp; | Surfing &nbsp;| Skyblue | Trouts<br/>
+Hoobies&nbsp;2:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sport&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Color&nbsp;&nbsp;&nbsp;|&nbsp;Animal<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Playing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Golf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Brown&nbsp;&nbsp;&nbsp;|&nbsp;Tiger&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Writing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Riding&nbsp;&nbsp;&nbsp;|&nbsp;Magenta&nbsp;|&nbsp;Pony&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Photography&nbsp;|&nbsp;Soccer&nbsp;&nbsp;&nbsp;|&nbsp;Blue&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fish&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Movies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Handball&nbsp;|&nbsp;Green&nbsp;&nbsp;&nbsp;|&nbsp;Crabs&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Drama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Surfing&nbsp;&nbsp;|&nbsp;Skyblue&nbsp;|&nbsp;Trouts<br/>
 <br/>
-Combined list of hobbies (3 rows consolidated):<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp;| Hobby &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Sport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Color &nbsp; &nbsp; &nbsp; &nbsp; | Animal &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Jill &nbsp; &nbsp;| Games, Drama &nbsp; &nbsp; | Snowboard, Surfing | Gray, Skyblue | Dog, Trouts<br/>
- &nbsp; &nbsp;2 : Michele | Games, Playing &nbsp; | Golf &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Pink, Brown &nbsp; | Cat, Tiger <br/>
- &nbsp; &nbsp;3 : Michele | Reading, Writing | Riding, Riding &nbsp; &nbsp; | Red, Magenta &nbsp;| Horse, Pony<br/>
- &nbsp; &nbsp;4 : Jill &nbsp; &nbsp;| Theatre &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Sailing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Turquois &nbsp; &nbsp; &nbsp;| Whale &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Michele | Photography &nbsp; &nbsp; &nbsp;| Soccer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Blue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Fish &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Michele | Movies &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Handball &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Green &nbsp; &nbsp; &nbsp; &nbsp; | Crabs &nbsp; &nbsp; &nbsp;<br/>
+Combined&nbsp;list&nbsp;of&nbsp;hobbies&nbsp;(3&nbsp;rows&nbsp;consolidated):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Animal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Games,&nbsp;Drama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Snowboard,&nbsp;Surfing&nbsp;|&nbsp;Gray,&nbsp;Skyblue&nbsp;|&nbsp;Dog,&nbsp;Trouts<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Games,&nbsp;Playing&nbsp;&nbsp;&nbsp;|&nbsp;Golf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Pink,&nbsp;Brown&nbsp;&nbsp;&nbsp;|&nbsp;Cat,&nbsp;Tiger&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Reading,&nbsp;Writing&nbsp;|&nbsp;Riding,&nbsp;Riding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Red,&nbsp;Magenta&nbsp;&nbsp;|&nbsp;Horse,&nbsp;Pony<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Jill&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Theatre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sailing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Turquois&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Whale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Photography&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Soccer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Michele&nbsp;|&nbsp;Movies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Handball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Crabs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_merge_06.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

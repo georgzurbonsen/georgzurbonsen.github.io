@@ -60,8 +60,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -70,7 +71,9 @@
 	<div class="article">
 <h4> Introduction to B4P</h4>
 <p>
-<b> B4P a Low-Code Solution for data analysts to dramatically improve their performance in extracting insights from big data.</b>  B4P is a powerful data integration and analytics engine with built-in programming language, and is purpose-built for high speed processing and analysis of large, complex data sets (tens of millions of rows) from multiple diverse data sources to produce rapid insights in easily understood form in Excel or other standard visualization tools.
+<b> B4P a Low-Code Solution for data analysts to dramatically improve their performance in extracting insights from big data.</b>
+B4P is a powerful data integration and analytics engine with built-in programming language, and is purpose-built for high speed processing and analysis of large,
+complex data sets (tens of millions of rows) from multiple diverse data sources to produce rapid insights in easily understood form in Excel or other standard visualization tools.
 
 <br><br>
 
@@ -91,8 +94,8 @@
 <br><br>
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:240px"><col style = "width:760px">
-<tr><td>Interpreted </td><td> The <span class="red_text">run-time machine</span> is designed to <a class="bold_text" href="REF_Function_echo.html">echo</a>() interpret and process the code with very high performance. One performance aspects includes checking and tokenizing the code before starting to run.</td></tr>
-<tr><td>Fully portable across system platforms </td><td> B4P runs on WINDOWS, LINUX and MAC-OS.  You can develop your apps so they run on all platforms without changing the code. B4P provides harmonized functions for directory, file and system function calls, as well as system variables such as user names, key system directory names, etc.</td></tr>
+<tr><td>Interpreted   </td><td> The <span class="red_text">run-time machine</span> is designed to <a class="bold_text" href="REF_Function_echo.html">echo</a>() interpret and process the code with very high performance.               One performance aspects includes checking and tokenizing the code before starting to run.</td></tr>
+<tr><td>Fully portable across system platforms </td><td> B4P runs on WINDOWS, LINUX and MAC-OS.  You can develop your apps so they run on all  platforms without changing the code. B4P provides harmonized functions for directory, file and system function calls,            as well as system variables such as user names, key system directory names, etc.</td></tr>
 <tr><td>Names with spaces and special characters </td><td> You are allowed to use spaces and special characters in function names, variable names, table names, column header names, etc.  <b>max value[]</b> and <b>'1%'[]</b> are valid variable names. This allows you to use typical column headers, e.g. "Total Costs", without modifying them or putting quotations around. A valid function call could be " table create (customer table, supplier table, … ); " Function names like "table process selected rows" is easier to read than "TableProcessSelectedRows"</td></tr>
 <tr><td>Variables </td><td> All simple variables end with brackets <b>[]</b>  Example: <b>value[]</b>. If you forget them, then the name is just a text value.<br/>You can create child variables with any nesting, <br/>e.g. <b>animal[dog]=poodle; animal[cat]=tiger; animal[dog,leg count]=4;</b>.<br/>You can also define arrays, e.g. <b>matrix[2,3]</b></td></tr>
 <tr><td>Values </td><td> Numbers are values, text are values, too.  In the example <b>a[] = bull dog ;  b[] = ' bull   dog ';</b> a[] is assiged with <i>'bull dog'</i> containing one space between the two words, whare as b[] is assigned with <i>' bull   dog '</i> where all spaces are preserved.  Without quotation marks, outside spaces and repeated spaces betwen words are ignored.</td></tr>

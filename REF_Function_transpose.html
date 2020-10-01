@@ -71,8 +71,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -108,9 +109,9 @@ be transposed due missing values to include.
 <td><b>Transposed matrix</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c,d}, {5,6,7,8} } ) ); // Rectangular matrix<br/>
- &nbsp; &nbsp; &nbsp;echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6} } ) ); // Bottom rows with fewer elements<br/>
- &nbsp; &nbsp; &nbsp;// echo( transpose( { {1,2,3,4}, {a,b,c}, {5,6,7,8} } ) ); // Would cause an exception</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;transpose(&nbsp;{&nbsp;{1,2,3,4},&nbsp;{a,b,c,d},&nbsp;{5,6,7,8}&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;Rectangular&nbsp;matrix<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;transpose(&nbsp;{&nbsp;{1,2,3,4},&nbsp;{a,b,c},&nbsp;{5,6}&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;Bottom&nbsp;rows&nbsp;with&nbsp;fewer&nbsp;elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;echo(&nbsp;transpose(&nbsp;{&nbsp;{1,2,3,4},&nbsp;{a,b,c},&nbsp;{5,6,7,8}&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;Would&nbsp;cause&nbsp;an&nbsp;exception</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>{{1,'a',5},{2,'b',6},{3,'c',7},{4,'d',8}}<br/>
 {{1,'a',5},{2,'b',6},{3,'c'},{4}}<br/>

@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -124,8 +125,8 @@ These functions described here will first search for existence of specified head
 <td>table columns</td>
 <td><b>Existing columns</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>literal</td>
@@ -155,98 +156,98 @@ in the rows below until the criteria are met.
 <td><b>Row number where header row has been found</b><br/><p>-1 is returned if no header row has been found</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( 2 tables,<br/>
- &nbsp;{ { Created by, &nbsp;Nick, Miller, "", Last Update, "31.12.2019" },<br/>
- &nbsp; &nbsp;{ Tennis, Players, "", "", Squash, Players },<br/>
- &nbsp; &nbsp;{ &nbsp; &nbsp; Still a, "", "", "", Last Name, First Name, City },<br/>
- &nbsp; &nbsp;{ &nbsp; &nbsp; Draft, "", "", "", Weber, Abel, 'Wilkes-Barre' },<br/>
- &nbsp; &nbsp;{ First Name, Last Name, City, and, Tanner, Berta, San Monica },<br/>
- &nbsp; &nbsp;{ Jane, Dominique, The Bronx, "", Miller, Dominique, Trenton },<br/>
- &nbsp; &nbsp;{ Jasmine, Nelsson, Francfort, "", Quinn, Alex, Denver },<br/>
- &nbsp; &nbsp;{ Dominique, Miller, Trenton, "", Jansen, Patricia, Albany } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;2&nbsp;tables,<br/>
+&nbsp;&nbsp;{&nbsp;{&nbsp;Created&nbsp;by,&nbsp;&nbsp;Nick,&nbsp;Miller,&nbsp;"",&nbsp;Last&nbsp;Update,&nbsp;"31.12.2019"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tennis,&nbsp;Players,&nbsp;"",&nbsp;"",&nbsp;Squash,&nbsp;Players&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Still&nbsp;a,&nbsp;"",&nbsp;"",&nbsp;"",&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;City&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft,&nbsp;"",&nbsp;"",&nbsp;"",&nbsp;Weber,&nbsp;Abel,&nbsp;'Wilkes-Barre'&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;City,&nbsp;and,&nbsp;Tanner,&nbsp;Berta,&nbsp;San&nbsp;Monica&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jane,&nbsp;Dominique,&nbsp;The&nbsp;Bronx,&nbsp;"",&nbsp;Miller,&nbsp;Dominique,&nbsp;Trenton&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jasmine,&nbsp;Nelsson,&nbsp;Francfort,&nbsp;"",&nbsp;Quinn,&nbsp;Alex,&nbsp;Denver&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dominique,&nbsp;Miller,&nbsp;Trenton,&nbsp;"",&nbsp;Jansen,&nbsp;Patricia,&nbsp;Albany&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list( 2 tables );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;2&nbsp;tables&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;table copy table( 2 tables, table );<br/>
- &nbsp;echo("Show 'table lift headers(..., must exist)':" );<br/>
- &nbsp;echo("Note: It will recognize the headers in the right table.");<br/>
- &nbsp;echo("Note: Contents below headers are not moved up.");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;2&nbsp;tables,&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo("Show&nbsp;'table&nbsp;lift&nbsp;headers(...,&nbsp;must&nbsp;exist)':"&nbsp;);<br/>
+&nbsp;&nbsp;echo("Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;right&nbsp;table.");<br/>
+&nbsp;&nbsp;echo("Note:&nbsp;Contents&nbsp;below&nbsp;headers&nbsp;are&nbsp;not&nbsp;moved&nbsp;up.");<br/>
 <br/>
- &nbsp;table lift headers( table, {First Name, Last Name, City} ); // 'must exist' is default<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;lift&nbsp;headers(&nbsp;table,&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;City}&nbsp;);&nbsp;//&nbsp;'must&nbsp;exist'&nbsp;is&nbsp;default<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;table copy table( 2 tables, table );<br/>
- &nbsp;echo("Show 'table lift header row(..., must exist)':" );<br/>
- &nbsp;echo("Note: It will recognize the headers in the right table. Entire rows below move up.");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;2&nbsp;tables,&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo("Show&nbsp;'table&nbsp;lift&nbsp;header&nbsp;row(...,&nbsp;must&nbsp;exist)':"&nbsp;);<br/>
+&nbsp;&nbsp;echo("Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;right&nbsp;table.&nbsp;Entire&nbsp;rows&nbsp;below&nbsp;move&nbsp;up.");<br/>
 <br/>
- &nbsp;table lift header row( table, {First Name, Last Name, City} ); // 'must exist' is default<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;lift&nbsp;header&nbsp;row(&nbsp;table,&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;City}&nbsp;);&nbsp;//&nbsp;'must&nbsp;exist'&nbsp;is&nbsp;default<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
- &nbsp;table copy table( 2 tables, table );<br/>
- &nbsp;echo("Show 'table lift header row(..., sequence)':" );<br/>
- &nbsp;echo("Note: It will recognize the headers in the left table because they have same sequence.");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;2&nbsp;tables,&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo("Show&nbsp;'table&nbsp;lift&nbsp;header&nbsp;row(...,&nbsp;sequence)':"&nbsp;);<br/>
+&nbsp;&nbsp;echo("Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;left&nbsp;table&nbsp;because&nbsp;they&nbsp;have&nbsp;same&nbsp;sequence.");<br/>
 <br/>
- &nbsp;table lift header row( table, {First Name, Last Name, City}, sequence );<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;lift&nbsp;header&nbsp;row(&nbsp;table,&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;City},&nbsp;sequence&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
- &nbsp;table copy table( 2 tables, table );<br/>
- &nbsp;echo("Following code puts both tables with headers to 1st row" );<br/>
- &nbsp;table lift contents( table, {First Name, Last Name, City}, sequence );<br/>
- &nbsp;table lift contents( table, {Last Name, First Name, City}, sequence );<br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table(&nbsp;2&nbsp;tables,&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo("Following&nbsp;code&nbsp;puts&nbsp;both&nbsp;tables&nbsp;with&nbsp;headers&nbsp;to&nbsp;1st&nbsp;row"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;lift&nbsp;contents(&nbsp;table,&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;City},&nbsp;sequence&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;lift&nbsp;contents(&nbsp;table,&nbsp;{Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;City},&nbsp;sequence&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Created by | Nick &nbsp; &nbsp; &nbsp;| Miller &nbsp; &nbsp;| &nbsp; &nbsp; | Last Update | 31.12.2019 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;1 : Tennis &nbsp; &nbsp; | Players &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Squash &nbsp; &nbsp; &nbsp;| Players &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Last Name &nbsp; | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Draft &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Weber &nbsp; &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
- &nbsp; &nbsp;4 : First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner &nbsp; &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
- &nbsp; &nbsp;5 : Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Miller &nbsp; &nbsp; &nbsp;| Dominique &nbsp;| Trenton &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Created&nbsp;by&nbsp;|&nbsp;Nick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Update&nbsp;|&nbsp;31.12.2019&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Players&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Squash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Players&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Still&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;&nbsp;&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Draft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Weber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wilkes-Barre<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;and&nbsp;|&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Berta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;San&nbsp;Monica&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;The&nbsp;Bronx&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Jasmine&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nelsson&nbsp;&nbsp;&nbsp;|&nbsp;Francfort&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quinn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jansen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Patricia&nbsp;&nbsp;&nbsp;|&nbsp;Albany&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Show 'table lift headers(..., must exist)':<br/>
-Note: It will recognize the headers in the right table.<br/>
-Note: Contents below headers are not moved up.<br/>
- &nbsp; &nbsp;0 : Created by | Nick &nbsp; &nbsp; &nbsp;| Miller &nbsp; &nbsp;| &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Tennis &nbsp; &nbsp; | Players &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Squash &nbsp; &nbsp;| Players &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Draft &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Weber &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
- &nbsp; &nbsp;4 : First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
- &nbsp; &nbsp;5 : Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Miller &nbsp; &nbsp;| Dominique &nbsp;| Trenton &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
+Show&nbsp;'table&nbsp;lift&nbsp;headers(...,&nbsp;must&nbsp;exist)':<br/>
+Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;right&nbsp;table.<br/>
+Note:&nbsp;Contents&nbsp;below&nbsp;headers&nbsp;are&nbsp;not&nbsp;moved&nbsp;up.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Created&nbsp;by&nbsp;|&nbsp;Nick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Players&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Squash&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Players&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Still&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Draft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Weber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wilkes-Barre<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;and&nbsp;|&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Berta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;San&nbsp;Monica&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;The&nbsp;Bronx&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Jasmine&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nelsson&nbsp;&nbsp;&nbsp;|&nbsp;Francfort&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quinn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jansen&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Patricia&nbsp;&nbsp;&nbsp;|&nbsp;Albany&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Show 'table lift header row(..., must exist)':<br/>
-Note: It will recognize the headers in the right table. Entire rows below move up.<br/>
- &nbsp; &nbsp;0 : Still a &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Draft &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Weber &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
- &nbsp; &nbsp;2 : First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
- &nbsp; &nbsp;3 : Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Miller &nbsp; &nbsp;| Dominique &nbsp;| Trenton &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
+Show&nbsp;'table&nbsp;lift&nbsp;header&nbsp;row(...,&nbsp;must&nbsp;exist)':<br/>
+Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;right&nbsp;table.&nbsp;Entire&nbsp;rows&nbsp;below&nbsp;move&nbsp;up.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Still&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Draft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Weber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wilkes-Barre<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;and&nbsp;|&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Berta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;San&nbsp;Monica&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;The&nbsp;Bronx&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Jasmine&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nelsson&nbsp;&nbsp;&nbsp;|&nbsp;Francfort&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quinn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jansen&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Patricia&nbsp;&nbsp;&nbsp;|&nbsp;Albany&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Show 'table lift header row(..., sequence)':<br/>
-Note: It will recognize the headers in the left table because they have same sequence.<br/>
- &nbsp; &nbsp;0 : First Name | Last Name | City &nbsp; &nbsp; &nbsp;| and | Tanner | Berta &nbsp; &nbsp; | San Monica<br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Miller | Dominique | Trenton &nbsp; <br/>
- &nbsp; &nbsp;2 : Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Quinn &nbsp;| Alex &nbsp; &nbsp; &nbsp;| Denver &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Jansen | Patricia &nbsp;| Albany &nbsp; &nbsp;<br/>
+Show&nbsp;'table&nbsp;lift&nbsp;header&nbsp;row(...,&nbsp;sequence)':<br/>
+Note:&nbsp;It&nbsp;will&nbsp;recognize&nbsp;the&nbsp;headers&nbsp;in&nbsp;the&nbsp;left&nbsp;table&nbsp;because&nbsp;they&nbsp;have&nbsp;same&nbsp;sequence.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;and&nbsp;|&nbsp;Tanner&nbsp;|&nbsp;Berta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;San&nbsp;Monica<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;The&nbsp;Bronx&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Jasmine&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nelsson&nbsp;&nbsp;&nbsp;|&nbsp;Francfort&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quinn&nbsp;&nbsp;|&nbsp;Alex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jansen&nbsp;|&nbsp;Patricia&nbsp;&nbsp;|&nbsp;Albany&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Following code puts both tables with headers to 1st row<br/>
- &nbsp; &nbsp;0 : First Name | Last Name | City &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; | Last Name | First Name | City &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Jane &nbsp; &nbsp; &nbsp; | Dominique | The Bronx | &nbsp; &nbsp; | Weber &nbsp; &nbsp; | Abel &nbsp; &nbsp; &nbsp; | Wilkes-Barre<br/>
- &nbsp; &nbsp;2 : Jasmine &nbsp; &nbsp;| Nelsson &nbsp; | Francfort | &nbsp; &nbsp; | Tanner &nbsp; &nbsp;| Berta &nbsp; &nbsp; &nbsp;| San Monica &nbsp;<br/>
- &nbsp; &nbsp;3 : Dominique &nbsp;| Miller &nbsp; &nbsp;| Trenton &nbsp; | &nbsp; &nbsp; | Miller &nbsp; &nbsp;| Dominique &nbsp;| Trenton &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | and | Quinn &nbsp; &nbsp; | Alex &nbsp; &nbsp; &nbsp; | Denver &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | Jansen &nbsp; &nbsp;| Patricia &nbsp; | Albany &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+Following&nbsp;code&nbsp;puts&nbsp;both&nbsp;tables&nbsp;with&nbsp;headers&nbsp;to&nbsp;1st&nbsp;row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jane&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;|&nbsp;The&nbsp;Bronx&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Weber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wilkes-Barre<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Jasmine&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nelsson&nbsp;&nbsp;&nbsp;|&nbsp;Francfort&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Berta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;San&nbsp;Monica&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Miller&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;&nbsp;|&nbsp;Trenton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;and&nbsp;|&nbsp;Quinn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Alex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Denver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jansen&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Patricia&nbsp;&nbsp;&nbsp;|&nbsp;Albany&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_lift_header_row.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

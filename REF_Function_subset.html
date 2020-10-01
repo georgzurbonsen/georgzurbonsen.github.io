@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -120,19 +121,19 @@ If provided as a unquoted or softquoted literal: The comma-separated substrings 
 <td><b>2nd parameter set is a subset of 1st parameter set</b><br/><p>Number of elements (nested elements are not counted)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;a[] = { a, b, c, {d, e}, f, {} };<br/>
- &nbsp; &nbsp; &nbsp;echo ( subset( a[], {} ) ); // True (Empty set is always subset)<br/>
- &nbsp; &nbsp; &nbsp;print( subset ( a[], {A} ), ", " ); // False (A is not in the set)<br/>
- &nbsp; &nbsp; &nbsp;echo ( subset ignore case( a[], {B,A} ) ); // True (cases ignored)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;{d,&nbsp;e},&nbsp;f,&nbsp;{}&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(&nbsp;subset(&nbsp;a[],&nbsp;{}&nbsp;)&nbsp;);&nbsp;//&nbsp;True&nbsp;(Empty&nbsp;set&nbsp;is&nbsp;always&nbsp;subset)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;subset&nbsp;(&nbsp;a[],&nbsp;{A}&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;False&nbsp;(A&nbsp;is&nbsp;not&nbsp;in&nbsp;the&nbsp;set)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(&nbsp;subset&nbsp;ignore&nbsp;case(&nbsp;a[],&nbsp;{B,A}&nbsp;)&nbsp;);&nbsp;//&nbsp;True&nbsp;(cases&nbsp;ignored)<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;print( subset( a[], {c,{},f} ), ", " ); // True (Empty set is always subset)<br/>
- &nbsp; &nbsp; &nbsp;print( subset( a[], {f,{d,e}} ), ", " ); // True (Empty set is always subset)<br/>
- &nbsp; &nbsp; &nbsp;print( subset( a[], {f,{e,d}} ), ", " ); // False. {e,d} not equal to {d,e}<br/>
- &nbsp; &nbsp; &nbsp;echo ( subset recursive( a[], {{d,e}} ) ); // True. {e,d} not equal to {d,e}</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;subset(&nbsp;a[],&nbsp;{c,{},f}&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;True&nbsp;(Empty&nbsp;set&nbsp;is&nbsp;always&nbsp;subset)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;subset(&nbsp;a[],&nbsp;{f,{d,e}}&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;True&nbsp;(Empty&nbsp;set&nbsp;is&nbsp;always&nbsp;subset)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;subset(&nbsp;a[],&nbsp;{f,{e,d}}&nbsp;),&nbsp;",&nbsp;"&nbsp;);&nbsp;//&nbsp;False.&nbsp;{e,d}&nbsp;not&nbsp;equal&nbsp;to&nbsp;{d,e}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(&nbsp;subset&nbsp;recursive(&nbsp;a[],&nbsp;{{d,e}}&nbsp;)&nbsp;);&nbsp;//&nbsp;True.&nbsp;{e,d}&nbsp;not&nbsp;equal&nbsp;to&nbsp;{d,e}</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>true<br/>
-false, true<br/>
-true, true, false, true<br/>
+false,&nbsp;true<br/>
+true,&nbsp;true,&nbsp;false,&nbsp;true<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_subset.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

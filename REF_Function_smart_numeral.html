@@ -66,6 +66,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -73,8 +75,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -170,13 +173,13 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>smart if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( smart numeral( "5.0 MUSD" )); // 5,000,000<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( "EUR 1.2mn" )); // 1,200,000<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( "INR 0.5 lk" )); // 50,000<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( '50%' )); // 0.5<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( 'Alc. 0.5 &amp;permil;' )); // 0.0005<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( "1.23cr" )); &nbsp;// 12,300,000<br/>
- &nbsp; &nbsp; &nbsp;echo( smart numeral( 1.23m, ".", { m, M }, {0.000001, 1000000} ));</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"5.0&nbsp;MUSD"&nbsp;));&nbsp;//&nbsp;5,000,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"EUR&nbsp;1.2mn"&nbsp;));&nbsp;//&nbsp;1,200,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"INR&nbsp;0.5&nbsp;lk"&nbsp;));&nbsp;//&nbsp;50,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;'50%'&nbsp;));&nbsp;//&nbsp;0.5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;'Alc.&nbsp;0.5&nbsp;&amp;permil;'&nbsp;));&nbsp;//&nbsp;0.0005<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"1.23cr"&nbsp;));&nbsp;&nbsp;//&nbsp;12,300,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;1.23m,&nbsp;".",&nbsp;{&nbsp;m,&nbsp;M&nbsp;},&nbsp;{0.000001,&nbsp;1000000}&nbsp;));</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>5000000<br/>
 1200000<br/>

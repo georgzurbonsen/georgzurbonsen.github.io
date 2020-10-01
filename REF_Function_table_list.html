@@ -82,8 +82,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -101,7 +102,7 @@ fancy I/O features, listing tables can also be integerated in B4P programs runni
 in order to provide some more visibility.
 
 <br><br>
-<u>Hint</u>: This function is suitable for interactive use in order to inspect tables conveniently.
+<u>Hint</u>: This function is suitable for <a class="bold_text" href="REF_Features_interactive.html">interactive</a> and <span class="red_text">debugging</span> use in order to inspect tables conveniently.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
@@ -133,19 +134,19 @@ Under normal conditions, the 'Support Library' is loaded automatically, so no 'i
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table load ( t, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load&nbsp;(&nbsp;t,&nbsp;"Examples&#92;Cities.csv"&nbsp;);<br/>
 <br/>
- &nbsp;// Begin with row 2, skip last 3 columns, and for the rows to list, list only the first and last 3 of them.<br/>
- &nbsp;table list ( t, 1st row, 2, briefly, 3, last col, -3 );</code></div>
+&nbsp;&nbsp;//&nbsp;Begin&nbsp;with&nbsp;row&nbsp;2,&nbsp;skip&nbsp;last&nbsp;3&nbsp;columns,&nbsp;and&nbsp;for&nbsp;the&nbsp;rows&nbsp;to&nbsp;list,&nbsp;list&nbsp;only&nbsp;the&nbsp;first&nbsp;and&nbsp;last&nbsp;3&nbsp;of&nbsp;them.<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t,&nbsp;1st&nbsp;row,&nbsp;2,&nbsp;briefly,&nbsp;3,&nbsp;last&nbsp;col,&nbsp;-3&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : City &nbsp; &nbsp; &nbsp; &nbsp; | State / Province | Country | Inhabitants | Famous attraction | Alt. (m)<br/>
- &nbsp; &nbsp;2 : Washington &nbsp; | D.C. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | USA &nbsp; &nbsp; | 650000 &nbsp; &nbsp; &nbsp;| Lincoln Statue &nbsp; &nbsp;| 7 &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Philadelphia | Pennsylvania &nbsp; &nbsp; | USA &nbsp; &nbsp; | 1500000 &nbsp; &nbsp; | Independence hall | 12 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Boston &nbsp; &nbsp; &nbsp; | Massachusetts &nbsp; &nbsp;| USA &nbsp; &nbsp; | 620000 &nbsp; &nbsp; &nbsp;| Freedom trail &nbsp; &nbsp; | 43 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp;... :<br/>
- &nbsp; 12 : Zürich &nbsp; &nbsp; &nbsp; | Kt. Zürich &nbsp; &nbsp; &nbsp; | SWI &nbsp; &nbsp; | 404000 &nbsp; &nbsp; &nbsp;| Street Parade &nbsp; &nbsp; | 408 &nbsp; &nbsp; <br/>
- &nbsp; 13 : Paris &nbsp; &nbsp; &nbsp; &nbsp;| Île de France &nbsp; &nbsp;| FRA &nbsp; &nbsp; | 2240000 &nbsp; &nbsp; | Eiffel Tower &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 14 : Davos &nbsp; &nbsp; &nbsp; &nbsp;| Grishun &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| SWI &nbsp; &nbsp; | 11000 &nbsp; &nbsp; &nbsp; | Ice rink stadium &nbsp;| 1650 &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;State&nbsp;/&nbsp;Province&nbsp;|&nbsp;Country&nbsp;|&nbsp;Inhabitants&nbsp;|&nbsp;Famous&nbsp;attraction&nbsp;|&nbsp;Alt.&nbsp;(m)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Washington&nbsp;&nbsp;&nbsp;|&nbsp;D.C.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;650000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lincoln&nbsp;Statue&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Philadelphia&nbsp;|&nbsp;Pennsylvania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1500000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Independence&nbsp;hall&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Massachusetts&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;620000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Freedom&nbsp;trail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;...&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;Zürich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Kt.&nbsp;Zürich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;SWI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;404000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Street&nbsp;Parade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;408&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Île&nbsp;de&nbsp;France&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;FRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2240000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Eiffel&nbsp;Tower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;14&nbsp;:&nbsp;Davos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Grishun&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;SWI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;11000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Ice&nbsp;rink&nbsp;stadium&nbsp;&nbsp;|&nbsp;1650&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_list.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

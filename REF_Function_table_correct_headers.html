@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -124,10 +125,10 @@ No exceptions are asserted if a comparison of a matching pattern with the table 
 <tr><td>2<br/>input</td>
 <td>parameter set or literal</td>
 <td><b>Existing header name(s) or column number(s)</b><br/><p>Specify the comparison patterns.<br>
-</p><ul class="bullets"><li class="bullets">Unquoted or quoted literals as elements in parameter set: True comparison of contents without wildcards, e.g. { Name, "Street" }<br></li>
-<li class="bullets">Softquoted literals in parameter set: You can use <span class="red_text">wildcard symbols</span>, e.g. { '* Name', 'City,Town' }<br></li>
-<li class="bullets">One quoted literal specifies just one item to compare, e.g. "Last Name"<br></li>
-<li class="bullets">One softquoted literal converts the contents into a parameter set and treats contents as unquoted resp. quoted literals.</li></p>
+</p><ul class="bullets"><li class="bullets">Unquoted or quoted literals as elements in parameter set: True comparison of contents without wildcards, e.g. { Name, "Street" }<br>
+</li><li class="bullets">Softquoted literals in parameter set: You can use <span class="red_text">wildcard symbols</span>, e.g. { '* Name', 'City,Town' }<br>
+</li><li class="bullets">One quoted literal specifies just one item to compare, e.g. "Last Name"<br>
+</li><li class="bullets">One softquoted literal converts the contents into a parameter set and treats contents as unquoted resp. quoted literals.</li></ul><p></p>
 </td></tr>
 <tr><td>3<br/>input</td>
 <td>parameter set or literal</td>
@@ -145,20 +146,20 @@ Use literal to specify a single table, or a parameter set or softquoted literal 
 <p>Table not found<br/>
 number of comparison pattersn and new headers is inconsistent</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table, { { first &nbsp;name, Lastname, Phone No, Age }, { Jim, Archer, "1-212-555-1212", 28 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;first&nbsp;&nbsp;name,&nbsp;Lastname,&nbsp;Phone&nbsp;No,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Jim,&nbsp;Archer,&nbsp;"1-212-555-1212",&nbsp;28&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;count[] = table correct headers ignore case( table, {'Last*name', 'First*name', 'Family*' },<br/>
- &nbsp; &nbsp; &nbsp;{ Last Name, First Name, Last Name } );<br/>
+&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;correct&nbsp;headers&nbsp;ignore&nbsp;case(&nbsp;table,&nbsp;{'Last*name',&nbsp;'First*name',&nbsp;'Family*'&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table list ( table );<br/>
- &nbsp;echo;<br/>
- &nbsp;echo("Number of headers corrected: ", count[]);</code></div>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;headers&nbsp;corrected:&nbsp;",&nbsp;count[]);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : First Name | Last Name | Phone No &nbsp; &nbsp; &nbsp; | Age<br/>
- &nbsp; &nbsp;1 : Jim &nbsp; &nbsp; &nbsp; &nbsp;| Archer &nbsp; &nbsp;| 1-212-555-1212 | 28 <br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;First&nbsp;Name&nbsp;|&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-212-555-1212&nbsp;|&nbsp;28&nbsp;<br/>
 <br/>
 <br/>
-Number of headers corrected: 2<br/>
+Number&nbsp;of&nbsp;headers&nbsp;corrected:&nbsp;2<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_correct_headers.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_rename_headers.html">table rename existing headers</a></p>

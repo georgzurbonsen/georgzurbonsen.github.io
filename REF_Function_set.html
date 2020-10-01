@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -126,32 +127,32 @@ This applies to both <b>set</b> and <b>set names</b>.</p>
 <td><b>Extracted values or names</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;Hi[ German ] = Hallo; Hi[ German, in Switzerland ] = Grüezi;<br/>
- &nbsp;Hi[ German, in Bavaria ] = Grüss Gott;<br/>
- &nbsp;Hi[ French ] = Allô; Hi [ English ] = Hello;<br/>
- &nbsp;Hi[ Spanish, on the Phone ] = Diga;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;Hi[&nbsp;German&nbsp;]&nbsp;=&nbsp;Hallo;&nbsp;Hi[&nbsp;German,&nbsp;in&nbsp;Switzerland&nbsp;]&nbsp;=&nbsp;Grüezi;<br/>
+&nbsp;&nbsp;Hi[&nbsp;German,&nbsp;in&nbsp;Bavaria&nbsp;]&nbsp;=&nbsp;Grüss&nbsp;Gott;<br/>
+&nbsp;&nbsp;Hi[&nbsp;French&nbsp;]&nbsp;=&nbsp;Allô;&nbsp;Hi&nbsp;[&nbsp;English&nbsp;]&nbsp;=&nbsp;Hello;<br/>
+&nbsp;&nbsp;Hi[&nbsp;Spanish,&nbsp;on&nbsp;the&nbsp;Phone&nbsp;]&nbsp;=&nbsp;Diga;<br/>
 <br/>
- &nbsp;v[] = set( Hi[ ] ); n[] = set names( Hi[ ] );<br/>
- &nbsp;echo("Names: ", n[]);<br/>
- &nbsp;echo("Values: ", v[]);<br/>
+&nbsp;&nbsp;v[]&nbsp;=&nbsp;set(&nbsp;Hi[&nbsp;]&nbsp;);&nbsp;n[]&nbsp;=&nbsp;set&nbsp;names(&nbsp;Hi[&nbsp;]&nbsp;);<br/>
+&nbsp;&nbsp;echo("Names:&nbsp;",&nbsp;n[]);<br/>
+&nbsp;&nbsp;echo("Values:&nbsp;",&nbsp;v[]);<br/>
 <br/>
- &nbsp;// Include 'invalid value' in Hi[Spanish].<br/>
- &nbsp;v[] = set( Hi[ ], 0, all ); n[] = set names( Hi[ ], 0, all );<br/>
- &nbsp;echo("Names: ", n[]);<br/>
- &nbsp;echo("Values: ", v[]);<br/>
+&nbsp;&nbsp;//&nbsp;Include&nbsp;'invalid&nbsp;value'&nbsp;in&nbsp;Hi[Spanish].<br/>
+&nbsp;&nbsp;v[]&nbsp;=&nbsp;set(&nbsp;Hi[&nbsp;],&nbsp;0,&nbsp;all&nbsp;);&nbsp;n[]&nbsp;=&nbsp;set&nbsp;names(&nbsp;Hi[&nbsp;],&nbsp;0,&nbsp;all&nbsp;);<br/>
+&nbsp;&nbsp;echo("Names:&nbsp;",&nbsp;n[]);<br/>
+&nbsp;&nbsp;echo("Values:&nbsp;",&nbsp;v[]);<br/>
 <br/>
- &nbsp;// Only 2nd level (like in Bavria ...)<br/>
- &nbsp;v[] = set( Hi[ ], 2 ); n[] = set names( Hi[ ], 2 );<br/>
- &nbsp;echo("Names: ", n[]);<br/>
- &nbsp;echo("Values: ", v[]);<br/>
+&nbsp;&nbsp;//&nbsp;Only&nbsp;2nd&nbsp;level&nbsp;(like&nbsp;in&nbsp;Bavria&nbsp;...)<br/>
+&nbsp;&nbsp;v[]&nbsp;=&nbsp;set(&nbsp;Hi[&nbsp;],&nbsp;2&nbsp;);&nbsp;n[]&nbsp;=&nbsp;set&nbsp;names(&nbsp;Hi[&nbsp;],&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;echo("Names:&nbsp;",&nbsp;n[]);<br/>
+&nbsp;&nbsp;echo("Values:&nbsp;",&nbsp;v[]);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Names: {'English','French','German',{'in Bavaria','in Switzerland'},{'on the Phone'}}<br/>
-Values: {'Hello','Allô','Hallo',{'Grüss Gott','Grüezi'},{'Diga'}}<br/>
-Names: {'English','French','German',{'in Bavaria','in Switzerland'},'Spanish',{'on the Phone'}}<br/>
-Values: {'Hello','Allô','Hallo',{'Grüss Gott','Grüezi'},# Invalid Value #,{'Diga'}}<br/>
-Names: {{'in Bavaria','in Switzerland'},{'on the Phone'}}<br/>
-Values: {{'Grüss Gott','Grüezi'},{'Diga'}}<br/>
+<div class="output_background_color" ><code>Names:&nbsp;{'English','French','German',{'in&nbsp;Bavaria','in&nbsp;Switzerland'},{'on&nbsp;the&nbsp;Phone'}}<br/>
+Values:&nbsp;{'Hello','Allô','Hallo',{'Grüss&nbsp;Gott','Grüezi'},{'Diga'}}<br/>
+Names:&nbsp;{'English','French','German',{'in&nbsp;Bavaria','in&nbsp;Switzerland'},'Spanish',{'on&nbsp;the&nbsp;Phone'}}<br/>
+Values:&nbsp;{'Hello','Allô','Hallo',{'Grüss&nbsp;Gott','Grüezi'},#&nbsp;Invalid&nbsp;Value&nbsp;#,{'Diga'}}<br/>
+Names:&nbsp;{{'in&nbsp;Bavaria','in&nbsp;Switzerland'},{'on&nbsp;the&nbsp;Phone'}}<br/>
+Values:&nbsp;{{'Grüss&nbsp;Gott','Grüezi'},{'Diga'}}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_set.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_dim.html">dim</a><br/>

@@ -83,8 +83,9 @@
 </ul></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -145,39 +146,39 @@ A value of 2 or bigger tolerates blank rows inside the identified table</p>
           <b>y end</b>: Row number in main where the sub-table is ending<br></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table load( test, "Examples&#92;Table Explore Demo.csv" );<br/>
- &nbsp;table list ( test );<br/>
- &nbsp;coords[] = table explore ( test );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;test,&nbsp;"Examples&#92;Table&nbsp;Explore&nbsp;Demo.csv"&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;test&nbsp;);<br/>
+&nbsp;&nbsp;coords[]&nbsp;=&nbsp;table&nbsp;explore&nbsp;(&nbsp;test&nbsp;);<br/>
 <br/>
- &nbsp;echo("Identified ", coords[]{}," sub-tables:");<br/>
- &nbsp;for all parameters( coords[], c[], i[] )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;print(" &nbsp; &nbsp;Table ", i[], ": &nbsp;(", c[]{0}, ", ", c[]{1},") ... ( ", c[]{2}, ", ", c[]{3},") " );<br/>
- &nbsp; &nbsp; &nbsp;echo (" &nbsp; &nbsp;('", [test:c[]{0},c[]{1}],"', ...)" );<br/>
- &nbsp;}</code></div>
+&nbsp;&nbsp;echo("Identified&nbsp;",&nbsp;coords[]{},"&nbsp;sub-tables:");<br/>
+&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;coords[],&nbsp;c[],&nbsp;i[]&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;",&nbsp;i[],&nbsp;":&nbsp;&nbsp;(",&nbsp;c[]{0},&nbsp;",&nbsp;",&nbsp;c[]{1},")&nbsp;...&nbsp;(&nbsp;",&nbsp;c[]{2},&nbsp;",&nbsp;",&nbsp;c[]{3},")&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;("&nbsp;&nbsp;&nbsp;&nbsp;('",&nbsp;[test:c[]{0},c[]{1}],"',&nbsp;...)"&nbsp;);<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Last Name | First Name | Town &nbsp; &nbsp; &nbsp;| &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Family Name | First Name | Town &nbsp; &nbsp; &nbsp;| &nbsp;| Country<br/>
- &nbsp; &nbsp;1 : Andersson | Andy &nbsp; &nbsp; &nbsp; | Boston &nbsp; &nbsp;| &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Andersson &nbsp; | Andy &nbsp; &nbsp; &nbsp; | Boston &nbsp; &nbsp;| &nbsp;| USA &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Bethel &nbsp; &nbsp;| Betty &nbsp; &nbsp; &nbsp;| Cambridge | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Bethel &nbsp; &nbsp; &nbsp;| Betty &nbsp; &nbsp; &nbsp;| Cambridge | &nbsp;| U.S. &nbsp; <br/>
- &nbsp; &nbsp;3 : Charlsson | Charles &nbsp; &nbsp;| Baltimore | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Dickson &nbsp; | Dieter &nbsp; &nbsp; | W. DC &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Given Name &nbsp;| Profession | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Emmerich &nbsp;| Elana &nbsp; &nbsp; &nbsp;| Brussels &nbsp;| &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Girolamo &nbsp; &nbsp;| Acteur &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;7 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Cities &nbsp; &nbsp;| Dominique &nbsp; | Dompteur &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Prague &nbsp; &nbsp;| Dimitri &nbsp; &nbsp; | Clown &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;9 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Warsaw &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Bucharest | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 11 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Budapest &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 12 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Istanbul &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 13 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| Cairo &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Family&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Country<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andersson&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andersson&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Boston&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;USA&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Bethel&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Betty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Cambridge&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Bethel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Betty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Cambridge&nbsp;|&nbsp;&nbsp;|&nbsp;U.S.&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Charlsson&nbsp;|&nbsp;Charles&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baltimore&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Dickson&nbsp;&nbsp;&nbsp;|&nbsp;Dieter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;W.&nbsp;DC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Given&nbsp;Name&nbsp;&nbsp;|&nbsp;Profession&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Emmerich&nbsp;&nbsp;|&nbsp;Elana&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Brussels&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Girolamo&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Acteur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Cities&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dominique&nbsp;&nbsp;&nbsp;|&nbsp;Dompteur&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Prague&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dimitri&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Clown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Warsaw&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Bucharest&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Budapest&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Istanbul&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;Cairo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Identified 6 sub-tables:<br/>
- &nbsp; &nbsp;Table 0: &nbsp;(0, 0) ... ( 2, 4) &nbsp; &nbsp; ('Last Name', ...)<br/>
- &nbsp; &nbsp;Table 1: &nbsp;(5, 0) ... ( 7, 2) &nbsp; &nbsp; ('Family Name', ...)<br/>
- &nbsp; &nbsp;Table 2: &nbsp;(9, 0) ... ( 9, 2) &nbsp; &nbsp; ('Country', ...)<br/>
- &nbsp; &nbsp;Table 3: &nbsp;(5, 5) ... ( 6, 8) &nbsp; &nbsp; ('Given Name', ...)<br/>
- &nbsp; &nbsp;Table 4: &nbsp;(0, 6) ... ( 2, 6) &nbsp; &nbsp; ('Emmerich', ...)<br/>
- &nbsp; &nbsp;Table 5: &nbsp;(4, 7) ... ( 4, 13) &nbsp; &nbsp; ('Cities', ...)<br/>
+Identified&nbsp;6&nbsp;sub-tables:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;0:&nbsp;&nbsp;(0,&nbsp;0)&nbsp;...&nbsp;(&nbsp;2,&nbsp;4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Last&nbsp;Name',&nbsp;...)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;1:&nbsp;&nbsp;(5,&nbsp;0)&nbsp;...&nbsp;(&nbsp;7,&nbsp;2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Family&nbsp;Name',&nbsp;...)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;2:&nbsp;&nbsp;(9,&nbsp;0)&nbsp;...&nbsp;(&nbsp;9,&nbsp;2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Country',&nbsp;...)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;3:&nbsp;&nbsp;(5,&nbsp;5)&nbsp;...&nbsp;(&nbsp;6,&nbsp;8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Given&nbsp;Name',&nbsp;...)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;4:&nbsp;&nbsp;(0,&nbsp;6)&nbsp;...&nbsp;(&nbsp;2,&nbsp;6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Emmerich',&nbsp;...)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Table&nbsp;5:&nbsp;&nbsp;(4,&nbsp;7)&nbsp;...&nbsp;(&nbsp;4,&nbsp;13)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Cities',&nbsp;...)<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_explore.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_filter.html">table filter</a><br/>

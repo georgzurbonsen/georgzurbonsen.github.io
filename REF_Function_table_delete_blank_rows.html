@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -143,8 +144,8 @@ This function deletes all blank rows from all listed tables, or reduces the numb
 <td><b>Columns to check</b><br/><p>Specify the columns which shall be checked if they are blank and ignore the contents in the remaining columns.<br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>all columns
 </td></tr>
 </table>
@@ -155,82 +156,82 @@ Specific rules apply for this function:
 <td><b>Number of rows deleted</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t,<br/>
- &nbsp; &nbsp; &nbsp;{ { &nbsp;Last Name, &nbsp; &nbsp;First Name, &nbsp; &nbsp;Favorite Sports },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Adams, &nbsp; &nbsp; &nbsp; &nbsp;Andy, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;American Football },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;" &nbsp;", &nbsp; &nbsp; &nbsp; &nbsp; "", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Baseball },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;"" },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;" " },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Mayer, &nbsp; &nbsp; &nbsp; &nbsp;Mick, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tennis },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Tanner, &nbsp; &nbsp; &nbsp; Tina, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Wrestling } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Last&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;Favorite&nbsp;Sports&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andy,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;American&nbsp;Football&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;&nbsp;",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseball&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;""&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Mayer,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mick,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tennis&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tina,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wrestling&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
-echo ("Original table:");<br/>
-table list(t);<br/>
+echo&nbsp;("Original&nbsp;table:");<br/>
+table&nbsp;list(t);<br/>
 <br/>
-echo ("Demonstrate deleting all rows:");<br/>
-table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
-table delete blank rows ( u );<br/>
-table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
+echo&nbsp;("Demonstrate&nbsp;deleting&nbsp;all&nbsp;rows:");<br/>
+table&nbsp;copy&nbsp;table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
+table&nbsp;delete&nbsp;blank&nbsp;rows&nbsp;(&nbsp;u&nbsp;);<br/>
+table&nbsp;list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;u&nbsp;);<br/>
 <br/>
-echo (new line, "Demonstrate deleting all rows without names");<br/>
-table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
-table delete blank rows ( u, 0, blank fields, {First Name, Last Name} );<br/>
-table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
+echo&nbsp;(new&nbsp;line,&nbsp;"Demonstrate&nbsp;deleting&nbsp;all&nbsp;rows&nbsp;without&nbsp;names");<br/>
+table&nbsp;copy&nbsp;table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
+table&nbsp;delete&nbsp;blank&nbsp;rows&nbsp;(&nbsp;u,&nbsp;0,&nbsp;blank&nbsp;fields,&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name}&nbsp;);<br/>
+table&nbsp;list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;u&nbsp;);<br/>
 <br/>
-echo (new line, "Demonstrate deleting empty rows (0 columns) -&gt; only 1 row removed");<br/>
-table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
-table delete blank rows ( u, 0, entirely empty row );<br/>
-table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
+echo&nbsp;(new&nbsp;line,&nbsp;"Demonstrate&nbsp;deleting&nbsp;empty&nbsp;rows&nbsp;(0&nbsp;columns)&nbsp;-&gt;&nbsp;only&nbsp;1&nbsp;row&nbsp;removed");<br/>
+table&nbsp;copy&nbsp;table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
+table&nbsp;delete&nbsp;blank&nbsp;rows&nbsp;(&nbsp;u,&nbsp;0,&nbsp;entirely&nbsp;empty&nbsp;row&nbsp;);<br/>
+table&nbsp;list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;u&nbsp;);<br/>
 <br/>
-echo (new line, "Reduce # blank rows to 1:");<br/>
-table copy table &nbsp; &nbsp; &nbsp; &nbsp;( t, u );<br/>
-table delete blank rows ( u, 1 );<br/>
-table list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( u );<br/>
+echo&nbsp;(new&nbsp;line,&nbsp;"Reduce&nbsp;#&nbsp;blank&nbsp;rows&nbsp;to&nbsp;1:");<br/>
+table&nbsp;copy&nbsp;table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
+table&nbsp;delete&nbsp;blank&nbsp;rows&nbsp;(&nbsp;u,&nbsp;1&nbsp;);<br/>
+table&nbsp;list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;u&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Demonstrate deleting all rows:<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
-<br/>
-<br/>
-Demonstrate deleting all rows without names<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Demonstrate&nbsp;deleting&nbsp;all&nbsp;rows:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 <br/>
-Demonstrate deleting empty rows (0 columns) -&gt; only 1 row removed<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Demonstrate&nbsp;deleting&nbsp;all&nbsp;rows&nbsp;without&nbsp;names<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 <br/>
-Reduce # blank rows to 1:<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+Demonstrate&nbsp;deleting&nbsp;empty&nbsp;rows&nbsp;(0&nbsp;columns)&nbsp;-&gt;&nbsp;only&nbsp;1&nbsp;row&nbsp;removed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+<br/>
+Reduce&nbsp;#&nbsp;blank&nbsp;rows&nbsp;to&nbsp;1:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_delete_blank_rows.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

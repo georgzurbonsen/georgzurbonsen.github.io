@@ -86,8 +86,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -125,8 +126,8 @@ the naming more consistent.
 <td>table columns</td>
 <td><b>Existing header name(s) or column number(s)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>3<br/>input</td>
 <td>parameter set or literal</td>
@@ -145,31 +146,31 @@ Use literal to specify a single table, or a parameter set or softquoted literal 
 Header name not found<br/>
 number of existing and new headers is inconsistent</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( table, { { First Name, Last Name, Phone No, Age }, { Archer, Jim, "1-212-555-1212", 28 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Phone&nbsp;No,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Archer,&nbsp;Jim,&nbsp;"1-212-555-1212",&nbsp;28&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;count[] = table rename existing headers( table, ' Last Name, First Name, Family Name ', ' First Name, Last Name, Other Name ' );<br/>
- &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp;table rename existing headers( table, { Last Name, First Name, Family Name }, {First Name, Last Name, Other Name} );<br/>
- &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp;Both formulations are valid (see 2+3. parameter: Either softquoted literal with comma separated items or parameters)<br/>
+&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;rename&nbsp;existing&nbsp;headers(&nbsp;table,&nbsp;'&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Family&nbsp;Name&nbsp;',&nbsp;'&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Other&nbsp;Name&nbsp;'&nbsp;);<br/>
+&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;rename&nbsp;existing&nbsp;headers(&nbsp;table,&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Family&nbsp;Name&nbsp;},&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Other&nbsp;Name}&nbsp;);<br/>
+&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both&nbsp;formulations&nbsp;are&nbsp;valid&nbsp;(see&nbsp;2+3.&nbsp;parameter:&nbsp;Either&nbsp;softquoted&nbsp;literal&nbsp;with&nbsp;comma&nbsp;separated&nbsp;items&nbsp;or&nbsp;parameters)<br/>
 <br/>
- &nbsp;table list ( table );<br/>
- &nbsp;echo;<br/>
- &nbsp;echo("Number of headers renamed: ", count[]);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;headers&nbsp;renamed:&nbsp;",&nbsp;count[]);<br/>
 <br/>
- &nbsp;echo( new line, "This example demonstrates that each "First Name" column is touched only once.", new line );<br/>
- &nbsp;table initialize ( table, &nbsp; { { First Name, First Name, Phone No, Age }, { Tanner, Lisa, "1-212-555-1212", 28 } } );<br/>
- &nbsp;table rename headers( table, &nbsp;{ First Name, First Name }, { Last Name, Given Name } );<br/>
- &nbsp;table list ( table );</code></div>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"This&nbsp;example&nbsp;demonstrates&nbsp;that&nbsp;each&nbsp;"First&nbsp;Name"&nbsp;column&nbsp;is&nbsp;touched&nbsp;only&nbsp;once.",&nbsp;new&nbsp;line&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Phone&nbsp;No,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Tanner,&nbsp;Lisa,&nbsp;"1-212-555-1212",&nbsp;28&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;rename&nbsp;headers(&nbsp;table,&nbsp;&nbsp;{&nbsp;First&nbsp;Name,&nbsp;First&nbsp;Name&nbsp;},&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;Given&nbsp;Name&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;table&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Last Name | First Name | Phone No &nbsp; &nbsp; &nbsp; | Age<br/>
- &nbsp; &nbsp;1 : Archer &nbsp; &nbsp;| Jim &nbsp; &nbsp; &nbsp; &nbsp;| 1-212-555-1212 | 28 <br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-212-555-1212&nbsp;|&nbsp;28&nbsp;<br/>
 <br/>
 <br/>
-Number of headers renamed: 2<br/>
+Number&nbsp;of&nbsp;headers&nbsp;renamed:&nbsp;2<br/>
 <br/>
-This example demonstrates that each "First Name" column is touched only once.<br/>
+This&nbsp;example&nbsp;demonstrates&nbsp;that&nbsp;each&nbsp;"First&nbsp;Name"&nbsp;column&nbsp;is&nbsp;touched&nbsp;only&nbsp;once.<br/>
 <br/>
- &nbsp; &nbsp;0 : Last Name | Given Name | Phone No &nbsp; &nbsp; &nbsp; | Age<br/>
- &nbsp; &nbsp;1 : Tanner &nbsp; &nbsp;| Lisa &nbsp; &nbsp; &nbsp; | 1-212-555-1212 | 28 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;Given&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-212-555-1212&nbsp;|&nbsp;28&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_rename_headers.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

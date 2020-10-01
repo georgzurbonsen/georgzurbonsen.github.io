@@ -71,8 +71,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -85,16 +86,16 @@
 <p>
 This function encodes special characters into entities.
 Following characters are encoded:
-</p><ul class="bullets"><li class="bullets">&gt; - Greater Than -> &amp;gt;</li>
-<li class="bullets">&lt; - Less than -> &amp;lt;</li>
-<li class="bullets">&quot; - Double quotation marks -> &amp;quot;</li>
-<li class="bullets">&#39; - Single quotation marks -> &amp;#39;</li>
-<li class="bullets">&amp; - Ampersand symbol -> &amp;amp;</li>
-<li class="bullets">All control characters (e.g. new line, tab, backspace, escape) -> &#nnn;</li>
-<li class="bullets">Control character code 0 (NUL) will be ignored.</li>
-<li class="bullets">All non-ANSI characters (e.g. é) -> &#nnn;</li>
-<li class="bullets">2nd and further consecutive spaces are converted to &amp;#32;</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">&gt; - Greater Than -> &amp;gt;
+</li><li class="bullets">&lt; - Less than -> &amp;lt;
+</li><li class="bullets">&quot; - Double quotation marks -> &amp;quot;
+</li><li class="bullets">&#39; - Single quotation marks -> &amp;#39;
+</li><li class="bullets">&amp; - Ampersand symbol -> &amp;amp;
+</li><li class="bullets">All control characters (e.g. new line, tab, backspace, escape) -> &#nnn;
+</li><li class="bullets">Control character code 0 (NUL) will be ignored.
+</li><li class="bullets">All non-ANSI characters (e.g. é) -> &#nnn;
+</li><li class="bullets">2nd and further consecutive spaces are converted to &amp;#32;
+</li></ul><p></p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -121,13 +122,13 @@ Following characters are encoded:
 <h4> Exceptions</h4>
 <p>Invalid character code (outside 0 - 1114111 range)</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( encode entities( '4.50 € &nbsp;&lt;TABLE&gt; "..." &lt;/DIV&gt;' ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( encode entities( Line 1 + new line + Line 2, false ) ); // use &amp;#10;<br/>
- &nbsp; &nbsp; &nbsp;echo( encode entities( Line 1 + new line + Line 2, true ) ); // use &lt;BR/&gt;</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;encode&nbsp;entities(&nbsp;'4.50&nbsp;€&nbsp;&nbsp;&lt;TABLE&gt;&nbsp;"..."&nbsp;&lt;/DIV&gt;'&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;encode&nbsp;entities(&nbsp;Line&nbsp;1&nbsp;+&nbsp;new&nbsp;line&nbsp;+&nbsp;Line&nbsp;2,&nbsp;false&nbsp;)&nbsp;);&nbsp;//&nbsp;use&nbsp;&amp;#10;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;encode&nbsp;entities(&nbsp;Line&nbsp;1&nbsp;+&nbsp;new&nbsp;line&nbsp;+&nbsp;Line&nbsp;2,&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;use&nbsp;&lt;BR/&gt;</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>4.50 &amp;#8364; &amp;#32;&amp;lt;TABLE&amp;gt; &amp;quot;...&amp;quot; &amp;lt;/DIV&amp;gt;<br/>
-Line 1&amp;#10;Line 2<br/>
-Line 1&lt;BR/&gt;Line 2<br/>
+<div class="output_background_color" ><code>4.50&nbsp;&amp;#8364;&nbsp;&amp;#32;&amp;lt;TABLE&amp;gt;&nbsp;&amp;quot;...&amp;quot;&nbsp;&amp;lt;/DIV&amp;gt;<br/>
+Line&nbsp;1&amp;#10;Line&nbsp;2<br/>
+Line&nbsp;1&lt;BR/&gt;Line&nbsp;2<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_encode_entities.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_chr.html">chr</a><br/>

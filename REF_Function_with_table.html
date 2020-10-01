@@ -74,8 +74,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -109,17 +110,17 @@ through the procedure parameters.
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;colors,&nbsp;{&nbsp;{&nbsp;EN,&nbsp;FR&nbsp;},&nbsp;{&nbsp;red,&nbsp;rouge&nbsp;},&nbsp;{&nbsp;blue,&nbsp;blue&nbsp;},&nbsp;{&nbsp;green,&nbsp;vert&nbsp;},&nbsp;{&nbsp;yellow,&nbsp;jaune&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;with table ( colors, 2 )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( row(), ": ", [EN]," / ", [FR] );<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;// Without the context, the full table specification is requierd, see below<br/>
- &nbsp; &nbsp; &nbsp;echo( "2: ", [colors:EN,2]," / ", [colors:FR,2] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;table&nbsp;(&nbsp;colors,&nbsp;2&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;row(),&nbsp;":&nbsp;",&nbsp;[EN],"&nbsp;/&nbsp;",&nbsp;[FR]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Without&nbsp;the&nbsp;context,&nbsp;the&nbsp;full&nbsp;table&nbsp;specification&nbsp;is&nbsp;requierd,&nbsp;see&nbsp;below<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"2:&nbsp;",&nbsp;[colors:EN,2],"&nbsp;/&nbsp;",&nbsp;[colors:FR,2]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2: blue / blue<br/>
-2: blue / blue<br/>
+<div class="output_background_color" ><code>2:&nbsp;blue&nbsp;/&nbsp;blue<br/>
+2:&nbsp;blue&nbsp;/&nbsp;blue<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_with_table.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_row.html">row</a><br/>

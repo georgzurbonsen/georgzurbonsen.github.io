@@ -95,8 +95,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -117,33 +118,33 @@ This function combines the lookup strategy from <a class="bold_text" href="REF_F
 <h4> Parameter count</h4>
 <p>7 - 9 (For parameter description and return values: see <a class="bold_text" href="REF_Function_table_integrate.html">table integrate</a>() )</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( lookup,<br/>
- &nbsp;{ &nbsp;{ &nbsp;Names, Sports, &nbsp; &nbsp; &nbsp;Scores },<br/>
- &nbsp; &nbsp; { &nbsp;Abel, &nbsp;tennis, &nbsp; &nbsp; &nbsp;10 }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Bea, &nbsp; squash, 14 },<br/>
- &nbsp; &nbsp; { &nbsp;Chuck, racquetball, 13 }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Dan, &nbsp; tennis, 8 },<br/>
- &nbsp; &nbsp; { &nbsp;Eva, &nbsp; squash, &nbsp; &nbsp; &nbsp; 9 }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Finn, &nbsp;tennis, 12 },<br/>
- &nbsp; &nbsp; { &nbsp;Gini, &nbsp;racquetball, 12 }, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Hugo, &nbsp;squash, 11 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;lookup,<br/>
+&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;&nbsp;Names,&nbsp;Sports,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scores&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Abel,&nbsp;&nbsp;tennis,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Bea,&nbsp;&nbsp;&nbsp;squash,&nbsp;14&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Chuck,&nbsp;racquetball,&nbsp;13&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Dan,&nbsp;&nbsp;&nbsp;tennis,&nbsp;8&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Eva,&nbsp;&nbsp;&nbsp;squash,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Finn,&nbsp;&nbsp;tennis,&nbsp;12&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gini,&nbsp;&nbsp;racquetball,&nbsp;12&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Hugo,&nbsp;&nbsp;squash,&nbsp;11&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table initialize( target, {{ Sport, Name, Score 1, Score 2, Score 3, Score 4 },<br/>
- &nbsp; &nbsp; &nbsp;{ racquetball, "", 5, 100, 12 &nbsp;},<br/>
- &nbsp; &nbsp; &nbsp;{ squash, &nbsp; &nbsp; &nbsp;"", 5, 100, 12 &nbsp;}, &nbsp;// Lookup table: Squash entry is below racquetball<br/>
- &nbsp; &nbsp; &nbsp;{ racquetball, "", 5, 300, 10 &nbsp;}, &nbsp;// Looks up Gini's score<br/>
- &nbsp; &nbsp; &nbsp;{ racquetball, "", 5, 300, 10 &nbsp;}, &nbsp;// And again.<br/>
- &nbsp; &nbsp; &nbsp;{ tennis, &nbsp; &nbsp; &nbsp;"", 5, 100, 12 &nbsp;} } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{{&nbsp;Sport,&nbsp;Name,&nbsp;Score&nbsp;1,&nbsp;Score&nbsp;2,&nbsp;Score&nbsp;3,&nbsp;Score&nbsp;4&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball,&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;squash,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;},&nbsp;&nbsp;//&nbsp;Lookup&nbsp;table:&nbsp;Squash&nbsp;entry&nbsp;is&nbsp;below&nbsp;racquetball<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball,&nbsp;"",&nbsp;5,&nbsp;300,&nbsp;10&nbsp;&nbsp;},&nbsp;&nbsp;//&nbsp;Looks&nbsp;up&nbsp;Gini's&nbsp;score<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball,&nbsp;"",&nbsp;5,&nbsp;300,&nbsp;10&nbsp;&nbsp;},&nbsp;&nbsp;//&nbsp;And&nbsp;again.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;tennis,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;// Picks the 1st match and integrates the results<br/>
- &nbsp;table integrate fast( target, Sport, &nbsp;{ Name, &nbsp;Score 1 .. Score 4 },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lookup, Sports, { Names, 4:Scores }, { overwrite, add, sub, max, average } );<br/>
+&nbsp;&nbsp;//&nbsp;Picks&nbsp;the&nbsp;1st&nbsp;match&nbsp;and&nbsp;integrates&nbsp;the&nbsp;results<br/>
+&nbsp;&nbsp;table&nbsp;integrate&nbsp;fast(&nbsp;target,&nbsp;Sport,&nbsp;&nbsp;{&nbsp;Name,&nbsp;&nbsp;Score&nbsp;1&nbsp;..&nbsp;Score&nbsp;4&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookup,&nbsp;Sports,&nbsp;{&nbsp;Names,&nbsp;4:Scores&nbsp;},&nbsp;{&nbsp;overwrite,&nbsp;add,&nbsp;sub,&nbsp;max,&nbsp;average&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table list ( target );<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Sport &nbsp; &nbsp; &nbsp; | Name &nbsp;| Score 1 | Score 2 | Score 3 | Score 4<br/>
- &nbsp; &nbsp;1 : racquetball | Chuck | 18 &nbsp; &nbsp; &nbsp;| 87 &nbsp; &nbsp; &nbsp;| 13 &nbsp; &nbsp; &nbsp;| 6.5 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : squash &nbsp; &nbsp; &nbsp;| Eva &nbsp; | 14 &nbsp; &nbsp; &nbsp;| 91 &nbsp; &nbsp; &nbsp;| 12 &nbsp; &nbsp; &nbsp;| 4.5 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : racquetball | Gini &nbsp;| 17 &nbsp; &nbsp; &nbsp;| 288 &nbsp; &nbsp; | 12 &nbsp; &nbsp; &nbsp;| 6 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : racquetball | Gini &nbsp;| 17 &nbsp; &nbsp; &nbsp;| 288 &nbsp; &nbsp; | 12 &nbsp; &nbsp; &nbsp;| 6 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : tennis &nbsp; &nbsp; &nbsp;| Abel &nbsp;| 15 &nbsp; &nbsp; &nbsp;| 90 &nbsp; &nbsp; &nbsp;| 12 &nbsp; &nbsp; &nbsp;| 5 &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Sport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Name&nbsp;&nbsp;|&nbsp;Score&nbsp;1&nbsp;|&nbsp;Score&nbsp;2&nbsp;|&nbsp;Score&nbsp;3&nbsp;|&nbsp;Score&nbsp;4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;racquetball&nbsp;|&nbsp;Chuck&nbsp;|&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;87&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6.5&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;squash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Eva&nbsp;&nbsp;&nbsp;|&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4.5&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;racquetball&nbsp;|&nbsp;Gini&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;288&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;racquetball&nbsp;|&nbsp;Gini&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;288&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Abel&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;90&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_integrate_fast.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

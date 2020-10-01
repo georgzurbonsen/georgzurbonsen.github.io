@@ -78,8 +78,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -96,12 +97,12 @@ You want to define an additional function which is very similar to a custom func
 for the implementation is common and you do not want to repeat that code.  The idea is to share the code among multiple user-defined
 functions rather than duplicating the code or doing sophisticated things like creating nested functions.<br/><br/>
 You are free to
-</p><ul class="bullets"><li class="bullets">Use different number of parameters</li>
-<li class="bullets">Use different parameter names</li>
-<li class="bullets">Use different types for the parameters</li>
-<li class="bullets">The additional function may be a procedure, function or both, regardless how the original user-defined function has been declared.</li>
-<li class="bullets">The code distinguishes among the function names used with following automatically generated local variable: function name [].</li>
-</ul><p>This function defined here expects no subsequent code because the code is provided in the primary function definition.
+</p><ul class="bullets"><li class="bullets">Use different number of parameters
+</li><li class="bullets">Use different parameter names
+</li><li class="bullets">Use different types for the parameters
+</li><li class="bullets">The additional function may be a procedure, function or both, regardless how the original user-defined function has been declared.
+</li><li class="bullets">The code distinguishes among the function names used with following automatically generated local variable: function name [].
+</li></ul><p>This function defined here expects no subsequent code because the code is provided in the primary function definition.
 Deleting and redefining the first user-defined function will not have an impact on the additional functions defined.<br/><br/>
 The three procedure names (e.g. <b>define additional function</b> defined here are closely related to their counterparts
 <b>define function</b>, with following exception: The original procedure or function name must be provided in the 2nd parameter, and
@@ -146,45 +147,45 @@ No subsequent code is expected for these procedures</p>
 <p>Procedure or function name is already defined<br/>
 Original procedure or function not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;define function( private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "Name of function: ", function name[] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;main menu[] = select if( function name[] == bbq party, " (beef menu)", " (fish menu)" );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "First invited guest: ", guest name[], select if( vegetarian[], " (vegetarian menu)", main menu[] ) );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;function(&nbsp;private&nbsp;function,&nbsp;{&nbsp;{&nbsp;guest&nbsp;name,&nbsp;literal&nbsp;},&nbsp;{&nbsp;vegetarian,&nbsp;boolean&nbsp;}&nbsp;},&nbsp;2,&nbsp;-1,&nbsp;2&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Name&nbsp;of&nbsp;function:&nbsp;",&nbsp;function&nbsp;name[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main&nbsp;menu[]&nbsp;=&nbsp;select&nbsp;if(&nbsp;function&nbsp;name[]&nbsp;==&nbsp;bbq&nbsp;party,&nbsp;"&nbsp;(beef&nbsp;menu)",&nbsp;"&nbsp;(fish&nbsp;menu)"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"First&nbsp;invited&nbsp;guest:&nbsp;",&nbsp;guest&nbsp;name[],&nbsp;select&nbsp;if(&nbsp;vegetarian[],&nbsp;"&nbsp;(vegetarian&nbsp;menu)",&nbsp;main&nbsp;menu[]&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (i[] = 3, i[] &lt;= parameter count[], i[]+=2 ) // Additional guests<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;name[] = ("parameter " + literal(i[] &nbsp;))[];<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;vegi[] = ("parameter " + literal(i[]+1))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;3,&nbsp;i[]&nbsp;&lt;=&nbsp;parameter&nbsp;count[],&nbsp;i[]+=2&nbsp;)&nbsp;//&nbsp;Additional&nbsp;guests<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name[]&nbsp;=&nbsp;("parameter&nbsp;"&nbsp;+&nbsp;literal(i[]&nbsp;&nbsp;))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vegi[]&nbsp;=&nbsp;("parameter&nbsp;"&nbsp;+&nbsp;literal(i[]+1))[];<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( "And: ", name[], select if( vegi[], " (vegetarian menu)", main menu[] ) );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"And:&nbsp;",&nbsp;name[],&nbsp;select&nbsp;if(&nbsp;vegi[],&nbsp;"&nbsp;(vegetarian&nbsp;menu)",&nbsp;main&nbsp;menu[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return( parameter count[] / 2 ); // Number of guests<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;parameter&nbsp;count[]&nbsp;/&nbsp;2&nbsp;);&nbsp;//&nbsp;Number&nbsp;of&nbsp;guests<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;define additional function( bbq party, private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 );<br/>
- &nbsp; &nbsp; &nbsp;define additional function( fish for 2, private function, { { guest name, literal }, { vegetarian, boolean } }, 2, 2, 0 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;additional&nbsp;function(&nbsp;bbq&nbsp;party,&nbsp;private&nbsp;function,&nbsp;{&nbsp;{&nbsp;guest&nbsp;name,&nbsp;literal&nbsp;},&nbsp;{&nbsp;vegetarian,&nbsp;boolean&nbsp;}&nbsp;},&nbsp;2,&nbsp;-1,&nbsp;2&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;additional&nbsp;function(&nbsp;fish&nbsp;for&nbsp;2,&nbsp;private&nbsp;function,&nbsp;{&nbsp;{&nbsp;guest&nbsp;name,&nbsp;literal&nbsp;},&nbsp;{&nbsp;vegetarian,&nbsp;boolean&nbsp;}&nbsp;},&nbsp;2,&nbsp;2,&nbsp;0&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;guest count[] = fish for 2( Susanne Ellen, false );<br/>
- &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited: ", guest count[], new line);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;count[]&nbsp;=&nbsp;fish&nbsp;for&nbsp;2(&nbsp;Susanne&nbsp;Ellen,&nbsp;false&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Number&nbsp;of&nbsp;guests&nbsp;invited:&nbsp;",&nbsp;guest&nbsp;count[],&nbsp;new&nbsp;line);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;guest count[] = bbq party( Jim Bean, true, Tina Turner, false, Tom Cruise, false, Amsel Adams, true );<br/>
- &nbsp; &nbsp; &nbsp;echo(new line, "Number of guests invited bbq: ", guest count[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;count[]&nbsp;=&nbsp;bbq&nbsp;party(&nbsp;Jim&nbsp;Bean,&nbsp;true,&nbsp;Tina&nbsp;Turner,&nbsp;false,&nbsp;Tom&nbsp;Cruise,&nbsp;false,&nbsp;Amsel&nbsp;Adams,&nbsp;true&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Number&nbsp;of&nbsp;guests&nbsp;invited&nbsp;bbq:&nbsp;",&nbsp;guest&nbsp;count[]);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Name of function: fish for 2<br/>
-First invited guest: Susanne Ellen (fish menu)<br/>
+<div class="output_background_color" ><code>Name&nbsp;of&nbsp;function:&nbsp;fish&nbsp;for&nbsp;2<br/>
+First&nbsp;invited&nbsp;guest:&nbsp;Susanne&nbsp;Ellen&nbsp;(fish&nbsp;menu)<br/>
 <br/>
-Number of guests invited: 1<br/>
+Number&nbsp;of&nbsp;guests&nbsp;invited:&nbsp;1<br/>
 <br/>
-Name of function: bbq party<br/>
-First invited guest: Jim Bean (vegetarian menu)<br/>
-And: Tina Turner (beef menu)<br/>
-And: Tom Cruise (beef menu)<br/>
-And: Amsel Adams (vegetarian menu)<br/>
+Name&nbsp;of&nbsp;function:&nbsp;bbq&nbsp;party<br/>
+First&nbsp;invited&nbsp;guest:&nbsp;Jim&nbsp;Bean&nbsp;(vegetarian&nbsp;menu)<br/>
+And:&nbsp;Tina&nbsp;Turner&nbsp;(beef&nbsp;menu)<br/>
+And:&nbsp;Tom&nbsp;Cruise&nbsp;(beef&nbsp;menu)<br/>
+And:&nbsp;Amsel&nbsp;Adams&nbsp;(vegetarian&nbsp;menu)<br/>
 <br/>
-Number of guests invited bbq: 4<br/>
+Number&nbsp;of&nbsp;guests&nbsp;invited&nbsp;bbq:&nbsp;4<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_define_additional_procedure.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_define_procedure.html">define procedure</a><br/>

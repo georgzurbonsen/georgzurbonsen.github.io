@@ -71,8 +71,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -86,11 +87,11 @@
 The program will sleep until a specific target date (and time) has been reached. 00:00:00 is assumed if no time is specified.  This feature is useful
 to schedule tasks at fixed time intervals.  Example: Scheduling database downloads every morning at 07:30, and the data is avaiable when you are in the office.
 
-</p><ul class="bullets"><li class="bullets">If the target date is a blank date, then pausing does not place place.</li>
-<li class="bullets">If the target date lies in the past, then pausing does not take place, too.</li>
-<li class="bullets">If a time without date is specified, then pausing takes place until the target time has been reached.</li>
-<li class="bullets">If a time without date is specified and the time is earlier than the current time, then pausing takes place until the time is reached in the following day.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">If the target date is a blank date, then pausing does not place place.
+</li><li class="bullets">If the target date lies in the past, then pausing does not take place, too.
+</li><li class="bullets">If a time without date is specified, then pausing takes place until the target time has been reached.
+</li><li class="bullets">If a time without date is specified and the time is earlier than the current time, then pausing takes place until the time is reached in the following day.
+</li></ul><p>
 The <b>... countdown</b> suffix will output the remaining time in following manner:
 </p><table style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><th>Time to go          </th><th> Countdown output</th></tr>
@@ -115,9 +116,9 @@ The <b>... countdown</b> suffix will output the remaining time in following mann
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;sleep countdown (3, "Waiting ");</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep&nbsp;countdown&nbsp;(3,&nbsp;"Waiting&nbsp;");</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Software will display a down-counting number on the same row</code></div>
+<div class="output_background_color" ><code>Software&nbsp;will&nbsp;display&nbsp;a&nbsp;down-counting&nbsp;number&nbsp;on&nbsp;the&nbsp;same&nbsp;row</code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_wait_until.html">wait until</a><br/>
 <a class = "bold_text" href="REF_Function_wait_until.html">wait until countdown</a><br/>

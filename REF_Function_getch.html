@@ -63,6 +63,7 @@
 <li class="navi"><a href="REF_Function_getch.html"><div class="navi navi-selected">4.2.1.5 getch ... </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Console_special_effects.html"><div class="navi">+ 4.2.2 Console Special Effects </div></a></li>
+<li class="navi"><a href="REF_Features_Inspection_and_debugging.html"><div class="navi">+ 4.2.3 Inspection and Debugging </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 4.3 Type Conversion and Formatting Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
@@ -71,8 +72,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -104,13 +106,13 @@ the case in the functions <a class="bold_text" href="REF_Function_input_quick.ht
 <td><b>Entered character</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp;do<br/>
- &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;echo("Enter a character between 'a' and 'e'. 'x' = exit");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;ch[] = getch ignore case( abcdex );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;echo("Character entered: ", ch[] );<br/>
- &nbsp; &nbsp;} while (ch[] &lt;&gt; X);<br/>
- &nbsp; &nbsp;echo("Done.");</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;do<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Enter&nbsp;a&nbsp;character&nbsp;between&nbsp;'a'&nbsp;and&nbsp;'e'.&nbsp;'x'&nbsp;=&nbsp;exit");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ch[]&nbsp;=&nbsp;getch&nbsp;ignore&nbsp;case(&nbsp;abcdex&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Character&nbsp;entered:&nbsp;",&nbsp;ch[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;while&nbsp;(ch[]&nbsp;&lt;&gt;&nbsp;X);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Done.");</code></div>
 <h4> Output</h4>
 <u>Try it yourself:</u> Open <b>REF_Function_getch.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

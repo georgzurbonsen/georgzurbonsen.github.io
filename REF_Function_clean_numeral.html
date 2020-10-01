@@ -66,6 +66,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -73,8 +75,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -120,34 +123,34 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>clean if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( clean numeral ( "EUR 1'234.50" ), " and ", clean if numeral ( "EUR 1'234.50" ) ); // Both 1234.5<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "2,500 € " ), &nbsp; &nbsp; " and ", clean numeral ( "2,500 €", ",") ); // &nbsp;2500 and 2.5<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "2,500- € " ) ); // -2500<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "- &nbsp; 2,500" ), &nbsp; &nbsp;", ", &nbsp; &nbsp;clean numeral ( "(2,500)" ) ); // &nbsp;Both -2500<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "[2,500]" ), &nbsp; &nbsp; &nbsp;" and ", clean numeral ( "-[2,500]" ) ); // 2500 (brackets alone do not negate)<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "(EUR 1,000)" ), &nbsp;" and ", clean numeral ( "(EUR) 1,000") ); // Negation if number INSIDE parentheses<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "INR 30 40 500" ) ); // &nbsp;3040500<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( ".123" ), &nbsp; &nbsp; &nbsp; &nbsp; " and ", clean numeral ( ".123", "," )); // returns 0.123 and 123.<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "" ), &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " and '",clean if numeral( "" ), "'" ); // returns 0 and "";<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "abc" ), &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" and ", clean if numeral ( "abc" ) ); // &nbsp;returns 0 and abc<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"EUR&nbsp;1'234.50"&nbsp;),&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;if&nbsp;numeral&nbsp;(&nbsp;"EUR&nbsp;1'234.50"&nbsp;)&nbsp;);&nbsp;//&nbsp;Both&nbsp;1234.5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"2,500&nbsp;€&nbsp;"&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"2,500&nbsp;€",&nbsp;",")&nbsp;);&nbsp;//&nbsp;&nbsp;2500&nbsp;and&nbsp;2.5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"2,500-&nbsp;€&nbsp;"&nbsp;)&nbsp;);&nbsp;//&nbsp;-2500<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"-&nbsp;&nbsp;&nbsp;2,500"&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;",&nbsp;&nbsp;&nbsp;&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"(2,500)"&nbsp;)&nbsp;);&nbsp;//&nbsp;&nbsp;Both&nbsp;-2500<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"[2,500]"&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"-[2,500]"&nbsp;)&nbsp;);&nbsp;//&nbsp;2500&nbsp;(brackets&nbsp;alone&nbsp;do&nbsp;not&nbsp;negate)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"(EUR&nbsp;1,000)"&nbsp;),&nbsp;&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"(EUR)&nbsp;1,000")&nbsp;);&nbsp;//&nbsp;Negation&nbsp;if&nbsp;number&nbsp;INSIDE&nbsp;parentheses<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"INR&nbsp;30&nbsp;40&nbsp;500"&nbsp;)&nbsp;);&nbsp;//&nbsp;&nbsp;3040500<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;".123"&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;".123",&nbsp;","&nbsp;));&nbsp;//&nbsp;returns&nbsp;0.123&nbsp;and&nbsp;123.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;""&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;and&nbsp;'",clean&nbsp;if&nbsp;numeral(&nbsp;""&nbsp;),&nbsp;"'"&nbsp;);&nbsp;//&nbsp;returns&nbsp;0&nbsp;and&nbsp;"";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"abc"&nbsp;),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;and&nbsp;",&nbsp;clean&nbsp;if&nbsp;numeral&nbsp;(&nbsp;"abc"&nbsp;)&nbsp;);&nbsp;//&nbsp;&nbsp;returns&nbsp;0&nbsp;and&nbsp;abc<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( new line, "Scientific Notations:");<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( 1.2E3 ), " and &nbsp;", clean numeral ( '1.2E+03' ) ); // &nbsp;return 1200<br/>
- &nbsp; &nbsp; &nbsp;echo( clean numeral ( "1 2 E - 0 3" ) ); // returns 0.012</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Scientific&nbsp;Notations:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;1.2E3&nbsp;),&nbsp;"&nbsp;and&nbsp;&nbsp;",&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;'1.2E+03'&nbsp;)&nbsp;);&nbsp;//&nbsp;&nbsp;return&nbsp;1200<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;clean&nbsp;numeral&nbsp;(&nbsp;"1&nbsp;2&nbsp;E&nbsp;-&nbsp;0&nbsp;3"&nbsp;)&nbsp;);&nbsp;//&nbsp;returns&nbsp;0.012</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>1234.5 and 1234.5<br/>
-2500 and 2.5<br/>
+<div class="output_background_color" ><code>1234.5&nbsp;and&nbsp;1234.5<br/>
+2500&nbsp;and&nbsp;2.5<br/>
 -2500<br/>
--2500, -2500<br/>
-2500 and -2500<br/>
--1000 and 1000<br/>
+-2500,&nbsp;-2500<br/>
+2500&nbsp;and&nbsp;-2500<br/>
+-1000&nbsp;and&nbsp;1000<br/>
 3040500<br/>
-0.123 and 123<br/>
-0 and ''<br/>
-0 and abc<br/>
+0.123&nbsp;and&nbsp;123<br/>
+0&nbsp;and&nbsp;''<br/>
+0&nbsp;and&nbsp;abc<br/>
 <br/>
-Scientific Notations:<br/>
-1200 and &nbsp;1200<br/>
+Scientific&nbsp;Notations:<br/>
+1200&nbsp;and&nbsp;&nbsp;1200<br/>
 0.012<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_clean_numeral.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

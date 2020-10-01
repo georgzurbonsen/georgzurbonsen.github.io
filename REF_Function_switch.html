@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -110,52 +111,52 @@ Following the <b>else</b>, additional <b>case</b> statements are allowed to do a
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo("Try 'switch:'");<br/>
- &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 6, a[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print ( " &nbsp;",a[], ": " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;switch( a [] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&gt;1) &nbsp; print("Greater than 1; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&lt;&gt;3) &nbsp;print("Not equal to 3; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (4,6) &nbsp;print("Equals to 4 and 6; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print ("Not matching; &nbsp;"); &nbsp; &nbsp;// else will also enable another case round<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&gt;2) &nbsp; print ("Greater than 2; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print ("Else: at most 2; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: echo ("Done");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Try&nbsp;'switch:'");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(a[]&nbsp;=&nbsp;1,&nbsp;a[]&nbsp;&lt;=&nbsp;6,&nbsp;a[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;"&nbsp;&nbsp;",a[],&nbsp;":&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(&nbsp;a&nbsp;[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&gt;1)&nbsp;&nbsp;&nbsp;print("Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&lt;&gt;3)&nbsp;&nbsp;print("Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(4,6)&nbsp;&nbsp;print("Equals&nbsp;to&nbsp;4&nbsp;and&nbsp;6;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;("Not&nbsp;matching;&nbsp;&nbsp;");&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;else&nbsp;will&nbsp;also&nbsp;enable&nbsp;another&nbsp;case&nbsp;round<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&gt;2)&nbsp;&nbsp;&nbsp;print&nbsp;("Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;("Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;echo&nbsp;("Done");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Try 'check':");<br/>
- &nbsp; &nbsp; &nbsp;for (a[] = 1, a[] &lt;= 6, a[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print ( " &nbsp;",a[], ": " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;check( a [] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&gt;1) &nbsp; print("Greater than 1; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&lt;&gt;3) &nbsp;print("Not equal to 3; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (4,6) &nbsp;print("Equals to 4 and 6; &nbsp; ");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print ("Not matching; &nbsp;"); &nbsp; &nbsp;// else will also enable another case round<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case (&gt;2) &nbsp; print ("Greater than 2; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: &nbsp; &nbsp; &nbsp; print ("Else: at most 2; &nbsp;");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else: echo ("Done");<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Try&nbsp;'check':");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(a[]&nbsp;=&nbsp;1,&nbsp;a[]&nbsp;&lt;=&nbsp;6,&nbsp;a[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;(&nbsp;"&nbsp;&nbsp;",a[],&nbsp;":&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check(&nbsp;a&nbsp;[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&gt;1)&nbsp;&nbsp;&nbsp;print("Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&lt;&gt;3)&nbsp;&nbsp;print("Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(4,6)&nbsp;&nbsp;print("Equals&nbsp;to&nbsp;4&nbsp;and&nbsp;6;&nbsp;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;("Not&nbsp;matching;&nbsp;&nbsp;");&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;else&nbsp;will&nbsp;also&nbsp;enable&nbsp;another&nbsp;case&nbsp;round<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;(&gt;2)&nbsp;&nbsp;&nbsp;print&nbsp;("Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;("Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;echo&nbsp;("Done");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Try 'switch:'<br/>
- &nbsp;1: Not equal to 3; &nbsp; Else: at most 2; &nbsp;Done<br/>
- &nbsp;2: Greater than 1; &nbsp; Else: at most 2; &nbsp;Done<br/>
- &nbsp;3: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;4: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;5: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;6: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
-Try 'check':<br/>
- &nbsp;1: Not equal to 3; &nbsp; Else: at most 2; &nbsp;Done<br/>
- &nbsp;2: Greater than 1; &nbsp; Not equal to 3; &nbsp; Else: at most 2; &nbsp;Done<br/>
- &nbsp;3: Greater than 1; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;4: Greater than 1; &nbsp; Not equal to 3; &nbsp; Equals to 4 and 6; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;5: Greater than 1; &nbsp; Not equal to 3; &nbsp; Greater than 2; &nbsp;Done<br/>
- &nbsp;6: Greater than 1; &nbsp; Not equal to 3; &nbsp; Equals to 4 and 6; &nbsp; Greater than 2; &nbsp;Done<br/>
+<div class="output_background_color" ><code>Try&nbsp;'switch:'<br/>
+&nbsp;&nbsp;1:&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;2:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;3:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;4:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;5:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;6:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+Try&nbsp;'check':<br/>
+&nbsp;&nbsp;1:&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;2:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Else:&nbsp;at&nbsp;most&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;3:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;4:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Equals&nbsp;to&nbsp;4&nbsp;and&nbsp;6;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;5:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
+&nbsp;&nbsp;6:&nbsp;Greater&nbsp;than&nbsp;1;&nbsp;&nbsp;&nbsp;Not&nbsp;equal&nbsp;to&nbsp;3;&nbsp;&nbsp;&nbsp;Equals&nbsp;to&nbsp;4&nbsp;and&nbsp;6;&nbsp;&nbsp;&nbsp;Greater&nbsp;than&nbsp;2;&nbsp;&nbsp;Done<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_switch.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_case.html">case</a></p>

@@ -81,8 +81,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -110,26 +111,26 @@ to the operating system or calling process.
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;savecode<br/>
- &nbsp;if (member count(command line arguments[]) == 2)<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo( command line arguments[1] );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Returning 5" );<br/>
- &nbsp; &nbsp; &nbsp;exit(5);<br/>
- &nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;savecode<br/>
+&nbsp;&nbsp;if&nbsp;(member&nbsp;count(command&nbsp;line&nbsp;arguments[])&nbsp;==&nbsp;2)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;command&nbsp;line&nbsp;arguments[1]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Returning&nbsp;5"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(5);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;echo("Start this program recursively");<br/>
- &nbsp;rv[] = system( "b4p REF_Function_exit.b4p -wx Nesting" );<br/>
- &nbsp;echo("Exit code received = ", rv[] );</code></div>
+&nbsp;&nbsp;echo("Start&nbsp;this&nbsp;program&nbsp;recursively");<br/>
+&nbsp;&nbsp;rv[]&nbsp;=&nbsp;system(&nbsp;"b4p&nbsp;REF_Function_exit.b4p&nbsp;-wx&nbsp;Nesting"&nbsp;);<br/>
+&nbsp;&nbsp;echo("Exit&nbsp;code&nbsp;received&nbsp;=&nbsp;",&nbsp;rv[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Start this program recursively<br/>
+<div class="output_background_color" ><code>Start&nbsp;this&nbsp;program&nbsp;recursively<br/>
 Nesting<br/>
-Returning 5<br/>
-exit (); called<br/>
-Code execution will stop. &nbsp;Exiting program.<br/>
+Returning&nbsp;5<br/>
+exit&nbsp;();&nbsp;called<br/>
+Code&nbsp;execution&nbsp;will&nbsp;stop.&nbsp;&nbsp;Exiting&nbsp;program.<br/>
 ________________________________________________________________________<br/>
-Exit code received = 5<br/>
-Done - Press ENTER key</code></div>
+Exit&nbsp;code&nbsp;received&nbsp;=&nbsp;5<br/>
+Done&nbsp;-&nbsp;Press&nbsp;ENTER&nbsp;key</code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_end.html">end</a><br/>
 <a class = "bold_text" href="REF_Function_abort.html">abort</a></p>

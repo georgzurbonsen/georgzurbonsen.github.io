@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -130,8 +131,8 @@ Specify the conditions or rules to select the rows.  See <a class="bold_text" hr
 <td><b>Columns to repeat</b><br/><p>In these columns, blank rows will be overwritten by the exsiting contents above (or below if specified in the last function parameter.<br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3. / 4.<br/>input</td>
 <td>parameter set or literal</td>
@@ -152,38 +153,38 @@ Good examples: '"', '', "(see above)", "ditto", 'see above,look above',"*...*",'
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( t, { {Name, Date, Tennis Scores},<br/>
- &nbsp; &nbsp; &nbsp; { Jim, &nbsp; "2020-06-20", "6:5 6:2 6:3" },<br/>
- &nbsp; &nbsp; &nbsp; { "", &nbsp; &nbsp;"same day" &nbsp;, "7:6 6:4 5:6" },<br/>
- &nbsp; &nbsp; &nbsp; { "", &nbsp; &nbsp;"2020-06-21", "6:2 5:6 4:6" },<br/>
- &nbsp; &nbsp; &nbsp; { Jane, &nbsp;"same day", &nbsp; "5:4 6:5 7:6" },<br/>
- &nbsp; &nbsp; &nbsp; { "", &nbsp; &nbsp;"", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "3:6 7:6 6:5" } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;t,&nbsp;{&nbsp;{Name,&nbsp;Date,&nbsp;Tennis&nbsp;Scores},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jim,&nbsp;&nbsp;&nbsp;"2020-06-20",&nbsp;"6:5&nbsp;6:2&nbsp;6:3"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;"same&nbsp;day"&nbsp;&nbsp;,&nbsp;"7:6&nbsp;6:4&nbsp;5:6"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;"2020-06-21",&nbsp;"6:2&nbsp;5:6&nbsp;4:6"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Jane,&nbsp;&nbsp;"same&nbsp;day",&nbsp;&nbsp;&nbsp;"5:4&nbsp;6:5&nbsp;7:6"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"3:6&nbsp;7:6&nbsp;6:5"&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table copy table ( t, u );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;echo("Repeat blank entries");<br/>
- &nbsp;table fill vertically( t, { Name, Date }, { "", 'same day,' } );<br/>
- &nbsp;table list ( t );<br/>
+&nbsp;&nbsp;echo("Repeat&nbsp;blank&nbsp;entries");<br/>
+&nbsp;&nbsp;table&nbsp;fill&nbsp;vertically(&nbsp;t,&nbsp;{&nbsp;Name,&nbsp;Date&nbsp;},&nbsp;{&nbsp;"",&nbsp;'same&nbsp;day,'&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;echo("Here: Ignore entries with blankn names. Jane played at the same date as Jim did.");<br/>
- &nbsp;table fill vertically selected rows ( u, [Name]!="", { Name, Date }, { "", 'same day,' } );<br/>
- &nbsp;table list ( u );</code></div>
+&nbsp;&nbsp;echo("Here:&nbsp;Ignore&nbsp;entries&nbsp;with&nbsp;blankn&nbsp;names.&nbsp;Jane&nbsp;played&nbsp;at&nbsp;the&nbsp;same&nbsp;date&nbsp;as&nbsp;Jim&nbsp;did.");<br/>
+&nbsp;&nbsp;table&nbsp;fill&nbsp;vertically&nbsp;selected&nbsp;rows&nbsp;(&nbsp;u,&nbsp;[Name]!="",&nbsp;{&nbsp;Name,&nbsp;Date&nbsp;},&nbsp;{&nbsp;"",&nbsp;'same&nbsp;day,'&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;u&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Repeat blank entries<br/>
- &nbsp; &nbsp;0 : Name | Date &nbsp; &nbsp; &nbsp; | Tennis Scores<br/>
- &nbsp; &nbsp;1 : Jim &nbsp;| 2020-06-20 | 6:5 6:2 6:3 &nbsp;<br/>
- &nbsp; &nbsp;2 : Jim &nbsp;| 2020-06-20 | 7:6 6:4 5:6 &nbsp;<br/>
- &nbsp; &nbsp;3 : Jim &nbsp;| 2020-06-21 | 6:2 5:6 4:6 &nbsp;<br/>
- &nbsp; &nbsp;4 : Jane | 2020-06-21 | 5:4 6:5 7:6 &nbsp;<br/>
- &nbsp; &nbsp;5 : Jane | 2020-06-21 | 3:6 7:6 6:5 &nbsp;<br/>
+<div class="output_background_color" ><code>Repeat&nbsp;blank&nbsp;entries<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;Scores<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jim&nbsp;&nbsp;|&nbsp;2020-06-20&nbsp;|&nbsp;6:5&nbsp;6:2&nbsp;6:3&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Jim&nbsp;&nbsp;|&nbsp;2020-06-20&nbsp;|&nbsp;7:6&nbsp;6:4&nbsp;5:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Jim&nbsp;&nbsp;|&nbsp;2020-06-21&nbsp;|&nbsp;6:2&nbsp;5:6&nbsp;4:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Jane&nbsp;|&nbsp;2020-06-21&nbsp;|&nbsp;5:4&nbsp;6:5&nbsp;7:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Jane&nbsp;|&nbsp;2020-06-21&nbsp;|&nbsp;3:6&nbsp;7:6&nbsp;6:5&nbsp;&nbsp;<br/>
 <br/>
-Here: Ignore entries with blankn names. Jane played at the same date as Jim did.<br/>
- &nbsp; &nbsp;0 : Name | Date &nbsp; &nbsp; &nbsp; | Tennis Scores<br/>
- &nbsp; &nbsp;1 : Jim &nbsp;| 2020-06-20 | 6:5 6:2 6:3 &nbsp;<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp;| same day &nbsp; | 7:6 6:4 5:6 &nbsp;<br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp;| 2020-06-21 | 6:2 5:6 4:6 &nbsp;<br/>
- &nbsp; &nbsp;4 : Jane | 2020-06-20 | 5:4 6:5 7:6 &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 3:6 7:6 6:5 &nbsp;<br/>
+Here:&nbsp;Ignore&nbsp;entries&nbsp;with&nbsp;blankn&nbsp;names.&nbsp;Jane&nbsp;played&nbsp;at&nbsp;the&nbsp;same&nbsp;date&nbsp;as&nbsp;Jim&nbsp;did.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;Scores<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Jim&nbsp;&nbsp;|&nbsp;2020-06-20&nbsp;|&nbsp;6:5&nbsp;6:2&nbsp;6:3&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;same&nbsp;day&nbsp;&nbsp;&nbsp;|&nbsp;7:6&nbsp;6:4&nbsp;5:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2020-06-21&nbsp;|&nbsp;6:2&nbsp;5:6&nbsp;4:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Jane&nbsp;|&nbsp;2020-06-20&nbsp;|&nbsp;5:4&nbsp;6:5&nbsp;7:6&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3:6&nbsp;7:6&nbsp;6:5&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_fill_vertically.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

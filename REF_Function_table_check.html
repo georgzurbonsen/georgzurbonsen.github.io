@@ -87,8 +87,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -101,13 +102,13 @@
 <p>
 This function checks the target table against a rules table which contains values, rules (<a class="bold_text" href="REF_Features_Comparison_Expression_(func._params).html">comparison expressions</a>) and optionally more advanced verification
 expressions. This function can check for the following:
-</p><ul class="bullets"><li class="bullets">Contents in selected columns comply with rules specified (e.g. is equal to, contains , etc. )</li>
-<li class="bullets">Optionally, the number of rows in the target table is checked (for minimum required, maximum allowed, etc.)</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Contents in selected columns comply with rules specified (e.g. is equal to, contains , etc. )
+</li><li class="bullets">Optionally, the number of rows in the target table is checked (for minimum required, maximum allowed, etc.)
+</li></ul><p>
 This function requires at least 3 parameters:
-</p><ul class="bullets"><li class="bullets">The names of both tables (target and reference etables), and</li>
-<li class="bullets">The columns to be checked (target data in target table, checking comparison expressions in the reference table).</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">The names of both tables (target and reference etables), and
+</li><li class="bullets">The columns to be checked (target data in target table, checking comparison expressions in the reference table).
+</li></ul><p>
 In the target table, the following four columns will be added with header names as listed below if they are not yet existing.
 If they exist, contents will overwritten, and "Explanations" appended.
 
@@ -148,9 +149,9 @@ Grouped rows do not need to lie in blocks of adjacent rows and may be scattered 
 <td>table columns</td>
 <td><b>Columns with data to be checked (both target and reference tables)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-</ul><p>The columns in the target table containing values to be checked will be checked against the corresponding columns in the
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li></ul><p>The columns in the target table containing values to be checked will be checked against the corresponding columns in the
 reference table containing comparison expressions. The columns do not need to be in the same location or order if they
 are referenced by their header names.
 <br><br>
@@ -162,30 +163,30 @@ In the target table, the columns where the data needs to be checked must be sele
 <td>table columns</td>
 <td><b>Columns with Row Match Identifiers (both target and reference tables)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-<li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.</li>
-</ul><p>In the reference table, only the rows with the same row match header will be compared instead of the entire table.</p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li><li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.
+</li></ul><p>In the reference table, only the rows with the same row match header will be compared instead of the entire table.</p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns specified)
 </td></tr>
 <tr><td>Opt. 5.<br/>input</td>
 <td>table columns</td>
 <td><b>Columns with Group Identifiers (in the target table)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-<li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li><li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns specified)
 </td></tr>
 <tr><td>Opt. 6.<br/>input</td>
 <td>table columns</td>
 <td><b>Columns with Group Match Identifiers (target and reference table)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-<li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.</li>
-</ul><p>All rows with the same Group Identifiers are allocated to one group.
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li><li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.
+</li></ul><p>All rows with the same Group Identifiers are allocated to one group.
 This parameter actually selects the rows in the reference table to be used for comparison.
 </p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns specified)
@@ -194,10 +195,10 @@ This parameter actually selects the rows in the reference table to be used for c
 <td>table column</td>
 <td><b>Columns with Group Match Identifiers (in the reference table)</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">At most one header name or column number may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-<li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.</li>
-</ul><p>The contents below this header contains B4P <span class="red_text">expressions </span> which must reurn boolean results.
+</p><ul class="bullets"><li class="bullets">At most one header name or column number may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li><li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.
+</li></ul><p>The contents below this header contains B4P <span class="red_text">expressions </span> which must reurn boolean results.
 These expressions allow more advanced checking and may reference to all columns in the target table using
 <span class="red_text">partial table references</span>.
 </p>
@@ -207,10 +208,10 @@ These expressions allow more advanced checking and may reference to all columns 
 <td>table column</td>
 <td><b>Column with Comparison Directions (reference table) for checking of within a group</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">At most one header name or column number may be specified</li>
-<li class="bullets">The header names and column numbers are applicable to both target and reference table.</li>
-<li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">At most one header name or column number may be specified
+</li><li class="bullets">The header names and column numbers are applicable to both target and reference table.
+</li><li class="bullets">Specify '' (softquoted blank) or {} (empty set) to skip this parameter.
+</li></ul><p>
 In the reference table, the data below this header may contain the following values:
 
 </p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:100px"><col style = "width:700px">
@@ -236,51 +237,51 @@ In the reference table, the data below this header may contain the following val
 <td><b>Table is OK</b><br/><p>true if no mismatches identified.  Otherwise false.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( target, {{ Name, Gender}, { Philippe, male }, { Pascale, female }, { Michele, female }} );<br/>
- &nbsp; &nbsp; &nbsp;echo("Target table:"); table list ( target );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{{&nbsp;Name,&nbsp;Gender},&nbsp;{&nbsp;Philippe,&nbsp;male&nbsp;},&nbsp;{&nbsp;Pascale,&nbsp;female&nbsp;},&nbsp;{&nbsp;Michele,&nbsp;female&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table:");&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;table initialize( reference, { Gender, male, female } &nbsp;);<br/>
- &nbsp; &nbsp; &nbsp;echo("Reference table:"); table list ( reference );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;reference,&nbsp;{&nbsp;Gender,&nbsp;male,&nbsp;female&nbsp;}&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table:");&nbsp;table&nbsp;list&nbsp;(&nbsp;reference&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;res[] = table check( target, reference, Gender );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;=&nbsp;table&nbsp;check(&nbsp;target,&nbsp;reference,&nbsp;Gender&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Target table after checking (result = ", res[], "):");<br/>
- &nbsp; &nbsp; &nbsp;table list ( target );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;",&nbsp;res[],&nbsp;"):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Add a mistake.");<br/>
- &nbsp; &nbsp; &nbsp;[target:Name,Philippe,Gender] = "Male"; // Upper case deviates<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Add&nbsp;a&nbsp;mistake.");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[target:Name,Philippe,Gender]&nbsp;=&nbsp;"Male";&nbsp;//&nbsp;Upper&nbsp;case&nbsp;deviates<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;res[] = table check( target, reference, Gender );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;=&nbsp;table&nbsp;check(&nbsp;target,&nbsp;reference,&nbsp;Gender&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo("Target table after checking (result = ", res[], "):");<br/>
- &nbsp; &nbsp; &nbsp;table list ( target );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;",&nbsp;res[],&nbsp;"):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;// See following sub-sections for more sophisticated examples.</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;See&nbsp;following&nbsp;sub-sections&nbsp;for&nbsp;more&nbsp;sophisticated&nbsp;examples.</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Target table:<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender<br/>
- &nbsp; &nbsp;1 : Philippe | male &nbsp;<br/>
- &nbsp; &nbsp;2 : Pascale &nbsp;| female<br/>
- &nbsp; &nbsp;3 : Michele &nbsp;| female<br/>
+<div class="output_background_color" ><code>Target&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Gender<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Philippe&nbsp;|&nbsp;male&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Pascale&nbsp;&nbsp;|&nbsp;female<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;&nbsp;|&nbsp;female<br/>
 <br/>
-Reference table:<br/>
- &nbsp; &nbsp;0 : Gender<br/>
- &nbsp; &nbsp;1 : male &nbsp;<br/>
- &nbsp; &nbsp;2 : female<br/>
+Reference&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Gender<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;male&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;female<br/>
 <br/>
-Target table after checking (result = true):<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender | Row Result | Group Result | Explanations | Ref Row<br/>
- &nbsp; &nbsp;1 : Philippe | male &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Pascale &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Michele &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;true):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Row&nbsp;Result&nbsp;|&nbsp;Group&nbsp;Result&nbsp;|&nbsp;Explanations&nbsp;|&nbsp;Ref&nbsp;Row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Philippe&nbsp;|&nbsp;male&nbsp;&nbsp;&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Pascale&nbsp;&nbsp;|&nbsp;female&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;&nbsp;|&nbsp;female&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Add a mistake.<br/>
-Target table after checking (result = false):<br/>
- &nbsp; &nbsp;0 : Name &nbsp; &nbsp; | Gender | Row Result | Group Result | Explanations &nbsp; &nbsp; &nbsp; &nbsp; | Ref Row<br/>
- &nbsp; &nbsp;1 : Philippe | Male &nbsp; | Mismatch &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | [Gender] = 'male'? &nbsp; | 2 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| [Gender] = 'female'? |<br/>
- &nbsp; &nbsp;2 : Pascale &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Michele &nbsp;| female | OK &nbsp; &nbsp; &nbsp; &nbsp; | Not OK &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;<br/>
+Add&nbsp;a&nbsp;mistake.<br/>
+Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;false):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Row&nbsp;Result&nbsp;|&nbsp;Group&nbsp;Result&nbsp;|&nbsp;Explanations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Ref&nbsp;Row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Philippe&nbsp;|&nbsp;Male&nbsp;&nbsp;&nbsp;|&nbsp;Mismatch&nbsp;&nbsp;&nbsp;|&nbsp;Not&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;[Gender]&nbsp;=&nbsp;'male'?&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;[Gender]&nbsp;=&nbsp;'female'?&nbsp;|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Pascale&nbsp;&nbsp;|&nbsp;female&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Not&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Michele&nbsp;&nbsp;|&nbsp;female&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Not&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_check.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

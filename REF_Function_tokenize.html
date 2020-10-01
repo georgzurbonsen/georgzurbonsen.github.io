@@ -79,8 +79,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -108,11 +109,11 @@ settings provided in the 2nd function parameter.
 <tr><td>Opt. 2<br/>input</td>
 <td>parameter set or literal</td>
 <td><b>Options</b><br/><p>Specify one or more options.  Formulation rules (applicable to 2nd-7th function parameters):
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value</li>
-<li class="bullets">Use parameter set to specify multiple values</li>
-<li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas</li>
-<li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</li><li class="bullets">Use parameter set to specify multiple values
+</li><li class="bullets">Alternatively use a softquoted literal (using single quotation marks) to specify multiple values, separated by commas
+</li><li class="bullets">No values can be provided by using empty set {} or blank softquoted literal ''.
+</li></ul><p>
 Following options are supported
 </p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>include blanks              </td><td> Blank contents (between separators) are also recognized as contents and will not be ignored / skipped.</td></tr>
@@ -179,63 +180,63 @@ Contents commented out will not be tokenized.
 <td><b>Tokenized result</b><br/><p>Every token is represented as an element in the parameter set</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;echo( new line, "Basic use of tokenize. Separators are blank and new line" );<br/>
- &nbsp;echo( tokenize( "This &nbsp; is a" + new line + " test" ) );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Basic&nbsp;use&nbsp;of&nbsp;tokenize.&nbsp;Separators&nbsp;are&nbsp;blank&nbsp;and&nbsp;new&nbsp;line"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"This&nbsp;&nbsp;&nbsp;is&nbsp;a"&nbsp;+&nbsp;new&nbsp;line&nbsp;+&nbsp;"&nbsp;test"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Demonstrate 'include blanks' and 'trim token'" );<br/>
- &nbsp;echo( tokenize( ",Ha, He ,,Hi,", '', "," ) );<br/>
- &nbsp;echo( tokenize( ",Ha, He ,,Hi,", include blanks, "," ) );<br/>
- &nbsp;echo( tokenize( ";Ha; He ,,Hi,", trim token, {",",";"} ) );<br/>
- &nbsp;echo( tokenize( ",Ha, He ,,Hi,", {include blanks, trim token}, "," ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Demonstrate&nbsp;'include&nbsp;blanks'&nbsp;and&nbsp;'trim&nbsp;token'"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;",Ha,&nbsp;He&nbsp;,,Hi,",&nbsp;'',&nbsp;","&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;",Ha,&nbsp;He&nbsp;,,Hi,",&nbsp;include&nbsp;blanks,&nbsp;","&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;";Ha;&nbsp;He&nbsp;,,Hi,",&nbsp;trim&nbsp;token,&nbsp;{",",";"}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;",Ha,&nbsp;He&nbsp;,,Hi,",&nbsp;{include&nbsp;blanks,&nbsp;trim&nbsp;token},&nbsp;","&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "New line inside quotations allowed" );<br/>
- &nbsp;echo( tokenize( "'Me, and"+new line+"You','and us'" , allow new line inside quotations, ",", "'" ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"New&nbsp;line&nbsp;inside&nbsp;quotations&nbsp;allowed"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"'Me,&nbsp;and"+new&nbsp;line+"You','and&nbsp;us'"&nbsp;,&nbsp;allow&nbsp;new&nbsp;line&nbsp;inside&nbsp;quotations,&nbsp;",",&nbsp;"'"&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Demonstrate usage of quotations" );<br/>
- &nbsp;echo( tokenize( "&lt;text&gt;A gnu&lt;/text&gt;,&lt;text&gt;A gnat&lt;/text&gt;" , '', ",", { "&lt;text&gt;", "&lt;/text&gt;" } ) );<br/>
- &nbsp;echo( tokenize( "&lt;text&gt;A gnu&lt;/text&gt;,&lt;text&gt;A gnat&lt;/text&gt;" , include quotations as tokens, ",", { "&lt;text&gt;", "&lt;/text&gt;" } ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Demonstrate&nbsp;usage&nbsp;of&nbsp;quotations"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"&lt;text&gt;A&nbsp;gnu&lt;/text&gt;,&lt;text&gt;A&nbsp;gnat&lt;/text&gt;"&nbsp;,&nbsp;'',&nbsp;",",&nbsp;{&nbsp;"&lt;text&gt;",&nbsp;"&lt;/text&gt;"&nbsp;}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"&lt;text&gt;A&nbsp;gnu&lt;/text&gt;,&lt;text&gt;A&nbsp;gnat&lt;/text&gt;"&nbsp;,&nbsp;include&nbsp;quotations&nbsp;as&nbsp;tokens,&nbsp;",",&nbsp;{&nbsp;"&lt;text&gt;",&nbsp;"&lt;/text&gt;"&nbsp;}&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Read numerals, dates, booleans" );<br/>
- &nbsp;echo( tokenize( "1 true 1E+3 FALSE text 2020-05-07 15:30:00", { read numerals, scientific notation, read dates, read booleans } ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Read&nbsp;numerals,&nbsp;dates,&nbsp;booleans"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"1&nbsp;true&nbsp;1E+3&nbsp;FALSE&nbsp;text&nbsp;2020-05-07&nbsp;15:30:00",&nbsp;{&nbsp;read&nbsp;numerals,&nbsp;scientific&nbsp;notation,&nbsp;read&nbsp;dates,&nbsp;read&nbsp;booleans&nbsp;}&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Thousand and Decimal separators" );<br/>
- &nbsp;echo( tokenize( "1,234 1.234", { read numerals, thousand separator, ".", decimal separator, "," } ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Thousand&nbsp;and&nbsp;Decimal&nbsp;separators"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"1,234&nbsp;1.234",&nbsp;{&nbsp;read&nbsp;numerals,&nbsp;thousand&nbsp;separator,&nbsp;".",&nbsp;decimal&nbsp;separator,&nbsp;","&nbsp;}&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Additional tokens" );<br/>
- &nbsp;echo( tokenize( "for a=1to5 'do something'", {}, " ", "'", { "=", to, for } ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Additional&nbsp;tokens"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"for&nbsp;a=1to5&nbsp;'do&nbsp;something'",&nbsp;{},&nbsp;"&nbsp;",&nbsp;"'",&nbsp;{&nbsp;"=",&nbsp;to,&nbsp;for&nbsp;}&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo( new line, "Ignore comments" );<br/>
- &nbsp;echo( tokenize( "for a=1to5 /: for a = 3 to 4 :/ 'do something'", {}, " ", "'", { "=", to, for }, { "/:", ":/" } ) );<br/>
- &nbsp;echo(tokenize("for a=1to5 // 'do something'", {}, " ", "'", { "=", to, for }, { }, "//"));</code></div>
+&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Ignore&nbsp;comments"&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;tokenize(&nbsp;"for&nbsp;a=1to5&nbsp;/:&nbsp;for&nbsp;a&nbsp;=&nbsp;3&nbsp;to&nbsp;4&nbsp;:/&nbsp;'do&nbsp;something'",&nbsp;{},&nbsp;"&nbsp;",&nbsp;"'",&nbsp;{&nbsp;"=",&nbsp;to,&nbsp;for&nbsp;},&nbsp;{&nbsp;"/:",&nbsp;":/"&nbsp;}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(tokenize("for&nbsp;a=1to5&nbsp;//&nbsp;'do&nbsp;something'",&nbsp;{},&nbsp;"&nbsp;",&nbsp;"'",&nbsp;{&nbsp;"=",&nbsp;to,&nbsp;for&nbsp;},&nbsp;{&nbsp;},&nbsp;"//"));</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Basic use of tokenize. Separators are blank and new line<br/>
+<div class="output_background_color" ><code>Basic&nbsp;use&nbsp;of&nbsp;tokenize.&nbsp;Separators&nbsp;are&nbsp;blank&nbsp;and&nbsp;new&nbsp;line<br/>
 {'This','is','a','test'}<br/>
 <br/>
-Demonstrate 'include blanks' and 'trim token'<br/>
-{'Ha',' He ','Hi'}<br/>
-{'','Ha',' He ','','Hi',''}<br/>
+Demonstrate&nbsp;'include&nbsp;blanks'&nbsp;and&nbsp;'trim&nbsp;token'<br/>
+{'Ha','&nbsp;He&nbsp;','Hi'}<br/>
+{'','Ha','&nbsp;He&nbsp;','','Hi',''}<br/>
 {'Ha','He','Hi'}<br/>
 {'','Ha','He','','Hi',''}<br/>
 <br/>
-New line inside quotations allowed<br/>
-{'Me, and<br/>
-You','and us'}<br/>
+New&nbsp;line&nbsp;inside&nbsp;quotations&nbsp;allowed<br/>
+{'Me,&nbsp;and<br/>
+You','and&nbsp;us'}<br/>
 <br/>
-Demonstrate usage of quotations<br/>
-{'A gnu','A gnat'}<br/>
-{'&lt;text&gt;','A gnu','&lt;/text&gt;','&lt;text&gt;','A gnat','&lt;/text&gt;'}<br/>
+Demonstrate&nbsp;usage&nbsp;of&nbsp;quotations<br/>
+{'A&nbsp;gnu','A&nbsp;gnat'}<br/>
+{'&lt;text&gt;','A&nbsp;gnu','&lt;/text&gt;','&lt;text&gt;','A&nbsp;gnat','&lt;/text&gt;'}<br/>
 <br/>
-Read numerals, dates, booleans<br/>
+Read&nbsp;numerals,&nbsp;dates,&nbsp;booleans<br/>
 {1,true,1000,false,'text','2020-05-07','03:30:00'}<br/>
 <br/>
-Thousand and Decimal separators<br/>
+Thousand&nbsp;and&nbsp;Decimal&nbsp;separators<br/>
 {1.234,1234}<br/>
 <br/>
-Additional tokens<br/>
-{'for','a','=','1','to','5','do something'}<br/>
+Additional&nbsp;tokens<br/>
+{'for','a','=','1','to','5','do&nbsp;something'}<br/>
 <br/>
-Ignore comments<br/>
-{'for','a','=','1','to','5','do something'}<br/>
+Ignore&nbsp;comments<br/>
+{'for','a','=','1','to','5','do&nbsp;something'}<br/>
 {'for','a','=','1','to','5'}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_tokenize.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

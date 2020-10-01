@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -143,8 +144,8 @@ Note: The 'not blank...' criteria listed at the bottom use the 'blank fields' cr
 <td><b>Columns to check</b><br/><p>Specify the columns which shall be checked if they are blank and ignore the contents in the remaining columns.<br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>all columns
 </td></tr>
 </table>
@@ -155,58 +156,58 @@ Specific rules apply for this function:
 <td><b>Number of rows deleted</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t,<br/>
- &nbsp; &nbsp; &nbsp;{ { &nbsp;Last Name, &nbsp; &nbsp;First Name, &nbsp; &nbsp;Favorite Sports },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Adams, &nbsp; &nbsp; &nbsp; &nbsp;Andy, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;American Football },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;" &nbsp;", &nbsp; &nbsp; &nbsp; &nbsp; "", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Baseball },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;"" },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;"", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "" },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Mayer, &nbsp; &nbsp; &nbsp; &nbsp;Mick, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tennis },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;" " },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Gerber, &nbsp; &nbsp; &nbsp; Greg, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Canooing },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Unger, &nbsp; &nbsp; &nbsp; &nbsp;Uta, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rafting },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;Tanner, &nbsp; &nbsp; &nbsp; Tina, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Wrestling } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Last&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;Favorite&nbsp;Sports&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andy,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;American&nbsp;Football&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;&nbsp;",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseball&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;""&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Mayer,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mick,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tennis&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gerber,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greg,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canooing&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Unger,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uta,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rafting&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tina,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wrestling&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;table initialize( result, {Criteria, entirely empty row, empty row, empty fields, blank fields,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; not blank begin, not blank middle, not blank end, not blank lone, not blank } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;result,&nbsp;{Criteria,&nbsp;entirely&nbsp;empty&nbsp;row,&nbsp;empty&nbsp;row,&nbsp;empty&nbsp;fields,&nbsp;blank&nbsp;fields,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;blank&nbsp;begin,&nbsp;not&nbsp;blank&nbsp;middle,&nbsp;not&nbsp;blank&nbsp;end,&nbsp;not&nbsp;blank&nbsp;lone,&nbsp;not&nbsp;blank&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo ("Original table:");<br/>
- &nbsp;table list(t);<br/>
+&nbsp;&nbsp;echo&nbsp;("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(t);<br/>
 <br/>
- &nbsp;table process ( result,<br/>
- &nbsp; &nbsp; &nbsp;table process( t, [result:row(),0 &nbsp; &nbsp; ] = row();<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[result:row(),row(1)] = table check row( t, row(), [^Criteria] ) ) );<br/>
+&nbsp;&nbsp;table&nbsp;process&nbsp;(&nbsp;result,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;process(&nbsp;t,&nbsp;[result:row(),0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;=&nbsp;row();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[result:row(),row(1)]&nbsp;=&nbsp;table&nbsp;check&nbsp;row(&nbsp;t,&nbsp;row(),&nbsp;[^Criteria]&nbsp;)&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;echo("The columns in the table below relate to the row numbers of the table checked.");<br/>
- &nbsp;table list ( result );<br/>
+&nbsp;&nbsp;echo("The&nbsp;columns&nbsp;in&nbsp;the&nbsp;table&nbsp;below&nbsp;relate&nbsp;to&nbsp;the&nbsp;row&nbsp;numbers&nbsp;of&nbsp;the&nbsp;table&nbsp;checked.");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;result&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Last Name | First Name | Favorite Sports &nbsp;<br/>
- &nbsp; &nbsp;1 : Adams &nbsp; &nbsp; | Andy &nbsp; &nbsp; &nbsp; | American Football<br/>
- &nbsp; &nbsp;2 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Baseball &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;6 : Mayer &nbsp; &nbsp; | Mick &nbsp; &nbsp; &nbsp; | Tennis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;8 : Gerber &nbsp; &nbsp;| Greg &nbsp; &nbsp; &nbsp; | Canooing &nbsp; &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Unger &nbsp; &nbsp; | Uta &nbsp; &nbsp; &nbsp; &nbsp;| Rafting &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; 10 : Tanner &nbsp; &nbsp;| Tina &nbsp; &nbsp; &nbsp; | Wrestling &nbsp; &nbsp; &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Gerber&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Greg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Canooing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Unger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Uta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Rafting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-The columns in the table below relate to the row numbers of the table checked.<br/>
- &nbsp; &nbsp;0 : Criteria &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; &nbsp; | 2 &nbsp; &nbsp; | 3 &nbsp; &nbsp; | 4 &nbsp; &nbsp; | 5 &nbsp; &nbsp; | 6 &nbsp; &nbsp; | 7 &nbsp; &nbsp; | 8 &nbsp; &nbsp; | 9 &nbsp; &nbsp; | 10 &nbsp; <br/>
- &nbsp; &nbsp;1 : entirely empty row | false | false | true &nbsp;| false | false | false | false | false | false | false<br/>
- &nbsp; &nbsp;2 : empty row &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| false | false | true &nbsp;| true &nbsp;| false | false | false | false | false | false<br/>
- &nbsp; &nbsp;3 : empty fields &nbsp; &nbsp; &nbsp; | false | false | true &nbsp;| true &nbsp;| true &nbsp;| false | false | false | false | false<br/>
- &nbsp; &nbsp;4 : blank fields &nbsp; &nbsp; &nbsp; | false | false | true &nbsp;| true &nbsp;| true &nbsp;| false | true &nbsp;| false | false | false<br/>
- &nbsp; &nbsp;5 : not blank begin &nbsp; &nbsp;| false | false | false | false | false | false | false | true &nbsp;| false | false<br/>
- &nbsp; &nbsp;6 : not blank middle &nbsp; | true &nbsp;| false | false | false | false | false | false | false | true &nbsp;| false<br/>
- &nbsp; &nbsp;7 : not blank end &nbsp; &nbsp; &nbsp;| false | true &nbsp;| false | false | false | false | false | false | false | true <br/>
- &nbsp; &nbsp;8 : not blank lone &nbsp; &nbsp; | false | false | false | false | false | true &nbsp;| false | false | false | false<br/>
- &nbsp; &nbsp;9 : not blank &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| true &nbsp;| true &nbsp;| false | false | false | true &nbsp;| false | true &nbsp;| true &nbsp;| true <br/>
+The&nbsp;columns&nbsp;in&nbsp;the&nbsp;table&nbsp;below&nbsp;relate&nbsp;to&nbsp;the&nbsp;row&nbsp;numbers&nbsp;of&nbsp;the&nbsp;table&nbsp;checked.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Criteria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;entirely&nbsp;empty&nbsp;row&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;empty&nbsp;row&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;empty&nbsp;fields&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;blank&nbsp;fields&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;not&nbsp;blank&nbsp;begin&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;not&nbsp;blank&nbsp;middle&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;not&nbsp;blank&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;not&nbsp;blank&nbsp;lone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;not&nbsp;blank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_check_row.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

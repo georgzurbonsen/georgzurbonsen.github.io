@@ -94,8 +94,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -140,28 +141,28 @@ to a bigger value.
 <td>literal</td>
 <td><b>Processing option</b><br/><p>Use one of the following values:
 <b>continue</b>
-</p><ul class="bullets"><li class="bullets">Begin checking at the row as specified in the 3rd function parameter.</li>
-<li class="bullets">If expression does not yet match, then continue checking the following rows (until end of table has been reached).</li>
-<li class="bullets">If expression matches, then execute statements and increment row number (to be returned).  Then continue checking the expression in the next row.</li>
-<li class="bullets">If expression no longer matches, then stop checking.</li>
-<li class="bullets">3rd function parameter will either return next row after last row processed, or, if there was no match, the row number of last row + 1 (= table length value).</li>
-</ul><p><b>stop</b>
-</p><ul class="bullets"><li class="bullets">Begin checking at the row as specified in the 3rd function parameter.</li>
-<li class="bullets">If expression does not yet match, then stop immediately and leave the row number provided in the 3rd function parameter unchanged.</li>
-<li class="bullets">If expression matches, then execute statements and increment row number (to be returned).  Then continue checking the expression in the next row.</li>
-<li class="bullets">If expression no longer matches, then stop checking.</li>
-<li class="bullets">3rd function parameter will either return next row after last row processed.</li>
-</ul><p><b>repeat</b>
+</p><ul class="bullets"><li class="bullets">Begin checking at the row as specified in the 3rd function parameter.
+</li><li class="bullets">If expression does not yet match, then continue checking the following rows (until end of table has been reached).
+</li><li class="bullets">If expression matches, then execute statements and increment row number (to be returned).  Then continue checking the expression in the next row.
+</li><li class="bullets">If expression no longer matches, then stop checking.
+</li><li class="bullets">3rd function parameter will either return next row after last row processed, or, if there was no match, the row number of last row + 1 (= table length value).
+</li></ul><p><b>stop</b>
+</p><ul class="bullets"><li class="bullets">Begin checking at the row as specified in the 3rd function parameter.
+</li><li class="bullets">If expression does not yet match, then stop immediately and leave the row number provided in the 3rd function parameter unchanged.
+</li><li class="bullets">If expression matches, then execute statements and increment row number (to be returned).  Then continue checking the expression in the next row.
+</li><li class="bullets">If expression no longer matches, then stop checking.
+</li><li class="bullets">3rd function parameter will either return next row after last row processed.
+</li></ul><p><b>repeat</b>
 works similarly as <b>continue</b>, but following differences apply:
-</p><ul class="bullets"><li class="bullets">If a match has been found, then the 1st matching row number is returned in the 3rd function parameter.</li>
-<li class="bullets">If no match has been found, then the supplied row number will stay unchanged.</li>
-</ul><p><b>repeat remaining</b>
+</p><ul class="bullets"><li class="bullets">If a match has been found, then the 1st matching row number is returned in the 3rd function parameter.
+</li><li class="bullets">If no match has been found, then the supplied row number will stay unchanged.
+</li></ul><p><b>repeat remaining</b>
 works similarly as <b>repeat</b>, but following differences apply:
-</p><ul class="bullets"><li class="bullets">It will check all matches till the end of the table.</li>
-</ul><p><b>repeat revolving</b>
+</p><ul class="bullets"><li class="bullets">It will check all matches till the end of the table.
+</li></ul><p><b>repeat revolving</b>
 works similarly as <b>repeat</b>, but following differences apply:
-</p><ul class="bullets"><li class="bullets">If no matches are found from specified row number till end of table, then it will start at row 1 to check the rows located above.</li>
-</ul><p><u>Hint</u>: See also illustration in the next section, <a class="bold_text" href="REF_Features_Additional_info_on_fast_processing_of_rows.html">Additional info on fast processing of rows</a>.</p>
+</p><ul class="bullets"><li class="bullets">If no matches are found from specified row number till end of table, then it will start at row 1 to check the rows located above.
+</li></ul><p><u>Hint</u>: See also illustration in the next section, <a class="bold_text" href="REF_Features_Additional_info_on_fast_processing_of_rows.html">Additional info on fast processing of rows</a>.</p>
 </td></tr>
 <tr><td>5.<br/>code</td>
 <td>statements<br/>:literal</td>
@@ -179,152 +180,152 @@ works similarly as <b>repeat</b>, but following differences apply:
 <td><b>Number of rows processed</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( t, { { Name, Game Score, Done},<br/>
- &nbsp; &nbsp;{ Andy, 21 }, { Andy, 12 }, { Andy, 20 }, { Max, &nbsp;50 }, { Max, &nbsp;31 },<br/>
- &nbsp; &nbsp;{ Tina, 32 }, { Andy, 44 }, { Andy, 16 }, { Max, &nbsp;25 }, { Tina, 19 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;t,&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Game&nbsp;Score,&nbsp;Done},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Andy,&nbsp;21&nbsp;},&nbsp;{&nbsp;Andy,&nbsp;12&nbsp;},&nbsp;{&nbsp;Andy,&nbsp;20&nbsp;},&nbsp;{&nbsp;Max,&nbsp;&nbsp;50&nbsp;},&nbsp;{&nbsp;Max,&nbsp;&nbsp;31&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tina,&nbsp;32&nbsp;},&nbsp;{&nbsp;Andy,&nbsp;44&nbsp;},&nbsp;{&nbsp;Andy,&nbsp;16&nbsp;},&nbsp;{&nbsp;Max,&nbsp;&nbsp;25&nbsp;},&nbsp;{&nbsp;Tina,&nbsp;19&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;// table sort rows ( t, Name );<br/>
- &nbsp;echo("Original table, sorted by name: ");<br/>
- &nbsp;table list( t );<br/>
+&nbsp;&nbsp;//&nbsp;table&nbsp;sort&nbsp;rows&nbsp;(&nbsp;t,&nbsp;Name&nbsp;);<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table,&nbsp;sorted&nbsp;by&nbsp;name:&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;echo("Example 1: Demonstrate processing option 'continue':");<br/>
- &nbsp;table copy table ( t, t1 );<br/>
- &nbsp;row[] = 1; counter[] = 1;<br/>
- &nbsp;do<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;c[] = table process selected rows fast( t1, [Name]==Andy, row[], continue, [Done] = counter[]++ &nbsp;);<br/>
- &nbsp; &nbsp; &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;}<br/>
- &nbsp;while (c[] &gt; 0);<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("Example&nbsp;1:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'continue':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;1;&nbsp;counter[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;do<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Andy,&nbsp;row[],&nbsp;continue,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;while&nbsp;(c[]&nbsp;&gt;&nbsp;0);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Example 2: Demonstrate processing option 'stop':");<br/>
- &nbsp;table copy table ( t, t1 );<br/>
- &nbsp;row[] = 1; counter[] = 1;<br/>
- &nbsp;do<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;c[] = table process selected rows fast( t1, [Name]==Andy, row[], stop, [Done] = counter[]++ &nbsp;);<br/>
- &nbsp; &nbsp; &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;}<br/>
- &nbsp;while (c[] &gt; 0);<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("Example&nbsp;2:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'stop':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;1;&nbsp;counter[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;do<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Andy,&nbsp;row[],&nbsp;stop,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;while&nbsp;(c[]&nbsp;&gt;&nbsp;0);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Example 3: Demonstrate processing option 'repeat':");<br/>
- &nbsp;table copy table ( t, t1 );<br/>
- &nbsp;row[] = 1; counter[] = 1;<br/>
- &nbsp;c[] = table process selected rows fast( t1, [Name]==Max, row[], repeat, [Done] = counter[]++ &nbsp;); // Stops<br/>
- &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;row[] = 6;<br/>
- &nbsp;c[] = table process selected rows fast( t1, [Name]==Max, row[], repeat, [Done] = counter[]++ &nbsp;); // Processing<br/>
- &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;row[]++; // Next row<br/>
- &nbsp;c[] = table process selected rows fast( t1, [Name]==Max, row[], repeat, [Done] = counter[]++ &nbsp;); // Processing<br/>
- &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("Example&nbsp;3:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;1;&nbsp;counter[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Max,&nbsp;row[],&nbsp;repeat,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);&nbsp;//&nbsp;Stops<br/>
+&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;6;<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Max,&nbsp;row[],&nbsp;repeat,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);&nbsp;//&nbsp;Processing<br/>
+&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;row[]++;&nbsp;//&nbsp;Next&nbsp;row<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Max,&nbsp;row[],&nbsp;repeat,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);&nbsp;//&nbsp;Processing<br/>
+&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Example 4: Demonstrate processing option 'repeat remaining':");<br/>
- &nbsp;table copy table ( t, t1 );<br/>
- &nbsp;row[] = 3; counter[] = 1;<br/>
- &nbsp;c[] = table process selected rows fast( t1, [Name]==Andy, row[], repeat remaining, [Done] = counter[]++ &nbsp;); // Stops<br/>
- &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("Example&nbsp;4:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat&nbsp;remaining':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;3;&nbsp;counter[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Andy,&nbsp;row[],&nbsp;repeat&nbsp;remaining,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);&nbsp;//&nbsp;Stops<br/>
+&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 <br/>
- &nbsp;echo("Example 5: Demonstrate processing option 'repeat revolving':");<br/>
- &nbsp;table copy table ( t, t1 );<br/>
- &nbsp;row[] = 10; counter[] = 1; &nbsp;// Will find nothing below row 10, so continue from beginning<br/>
- &nbsp;c[] = table process selected rows fast( t1, [Name]==Andy, row[], repeat revolving, [Done] = counter[]++ &nbsp;); // Stops<br/>
- &nbsp;echo("Row number returned: ", row[], ", &nbsp;Items processed: ", c[] );<br/>
- &nbsp;table list( t1 );<br/>
+&nbsp;&nbsp;echo("Example&nbsp;5:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat&nbsp;revolving':");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;(&nbsp;t,&nbsp;t1&nbsp;);<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;10;&nbsp;counter[]&nbsp;=&nbsp;1;&nbsp;&nbsp;//&nbsp;Will&nbsp;find&nbsp;nothing&nbsp;below&nbsp;row&nbsp;10,&nbsp;so&nbsp;continue&nbsp;from&nbsp;beginning<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;table&nbsp;process&nbsp;selected&nbsp;rows&nbsp;fast(&nbsp;t1,&nbsp;[Name]==Andy,&nbsp;row[],&nbsp;repeat&nbsp;revolving,&nbsp;[Done]&nbsp;=&nbsp;counter[]++&nbsp;&nbsp;);&nbsp;//&nbsp;Stops<br/>
+&nbsp;&nbsp;echo("Row&nbsp;number&nbsp;returned:&nbsp;",&nbsp;row[],&nbsp;",&nbsp;&nbsp;Items&nbsp;processed:&nbsp;",&nbsp;c[]&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t1&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table, sorted by name: <br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+<div class="output_background_color" ><code>Original&nbsp;table,&nbsp;sorted&nbsp;by&nbsp;name:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Example 1: Demonstrate processing option 'continue':<br/>
-Row number returned: 4, &nbsp;Items processed: 3<br/>
-Row number returned: 9, &nbsp;Items processed: 2<br/>
-Row number returned: 11, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 4 &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 5 &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+Example&nbsp;1:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'continue':<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;4,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;3<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;9,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;2<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;11,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Example 2: Demonstrate processing option 'stop':<br/>
-Row number returned: 4, &nbsp;Items processed: 3<br/>
-Row number returned: 4, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+Example&nbsp;2:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'stop':<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;4,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;3<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;4,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Example 3: Demonstrate processing option 'repeat':<br/>
-Row number returned: 4, &nbsp;Items processed: 2<br/>
-Row number returned: 9, &nbsp;Items processed: 1<br/>
-Row number returned: 10, &nbsp;Items processed: 0<br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+Example&nbsp;3:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat':<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;4,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;2<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;9,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;1<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;10,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Example 4: Demonstrate processing option 'repeat remaining':<br/>
-Row number returned: 3, &nbsp;Items processed: 3<br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+Example&nbsp;4:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat&nbsp;remaining':<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;3,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Example 5: Demonstrate processing option 'repeat revolving':<br/>
-Row number returned: 1, &nbsp;Items processed: 3<br/>
- &nbsp; &nbsp;0 : Name | Game Score | Done<br/>
- &nbsp; &nbsp;1 : Andy | 21 &nbsp; &nbsp; &nbsp; &nbsp; | 1 &nbsp; <br/>
- &nbsp; &nbsp;2 : Andy | 12 &nbsp; &nbsp; &nbsp; &nbsp; | 2 &nbsp; <br/>
- &nbsp; &nbsp;3 : Andy | 20 &nbsp; &nbsp; &nbsp; &nbsp; | 3 &nbsp; <br/>
- &nbsp; &nbsp;4 : Max &nbsp;| 50 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;5 : Max &nbsp;| 31 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Tina | 32 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;7 : Andy | 44 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : Andy | 16 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;9 : Max &nbsp;| 25 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
- &nbsp; 10 : Tina | 19 &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; <br/>
+Example&nbsp;5:&nbsp;Demonstrate&nbsp;processing&nbsp;option&nbsp;'repeat&nbsp;revolving':<br/>
+Row&nbsp;number&nbsp;returned:&nbsp;1,&nbsp;&nbsp;Items&nbsp;processed:&nbsp;3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Game&nbsp;Score&nbsp;|&nbsp;Done<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Andy&nbsp;|&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Andy&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Andy&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Tina&nbsp;|&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Andy&nbsp;|&nbsp;44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Andy&nbsp;|&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Max&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tina&nbsp;|&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_process_selected_rows_fast.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

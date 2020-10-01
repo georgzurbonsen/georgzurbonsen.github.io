@@ -67,8 +67,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -86,27 +87,27 @@ Data transparency: The byte order marks will be recognized and then discarded, i
 <br><br>
 
 How BOM's are checked in files loaded or opened:
-</p><ul class="bullets"><li class="bullets">If the 2 byte sequence FE FF (hexadecimal) is found, then the text file is in UTF-16 big endian format.</li>
-<li class="bullets">If the 2 byte sequence FF FE (hexadecimal) is found, then the text file is in UTF-16 little endian format.</li>
-<li class="bullets">If the 3 byte sequence EF BB BF (hexadecimal) is found, then the text file is in UTF-8 format.</li>
-<li class="bullets">Some files contain multiple identical BOMs. They have been sighted in export files from relational databases.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">If the 2 byte sequence FE FF (hexadecimal) is found, then the text file is in UTF-16 big endian format.
+</li><li class="bullets">If the 2 byte sequence FF FE (hexadecimal) is found, then the text file is in UTF-16 little endian format.
+</li><li class="bullets">If the 3 byte sequence EF BB BF (hexadecimal) is found, then the text file is in UTF-8 format.
+</li><li class="bullets">Some files contain multiple identical BOMs. They have been sighted in export files from relational databases.
+</li></ul><p>
 In case no BOM is found, following checks will be applied throughout the first ca. 4000 – 8000 bytes in the file (and not the entire file for performance reasons):
-</p><ul class="bullets"><li class="bullets">NULL-characters / 00 (hexadecimal) in even numbered positions (first byte in file is position 0): File is UTF-16, big endian format.  <br>Example: 00 31   00 30   00 20   20 AC   00 0D   00 0A  (10 € followed by new line sequence CR+LF). <br>Even for <i>difficult</i> contents such as pure Chinese text, the UTF-16 will be identified from space symbols (00 20), numeric digits and CR+LF symbols.</li>
-<li class="bullets">NULL-characters / 00 (hexadecimal) in odd numbered positions: File is UTF-16, little endian format.  <br>Example: 31 00   30 00   20 00   AC 20   0D 00   0A 00  (10 € followed by new line sequence CR+LF)</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">NULL-characters / 00 (hexadecimal) in even numbered positions (first byte in file is position 0): File is UTF-16, big endian format.  <br>Example: 00 31   00 30   00 20   20 AC   00 0D   00 0A  (10 € followed by new line sequence CR+LF). <br>Even for <i>difficult</i> contents such as pure Chinese text, the UTF-16 will be identified from space symbols (00 20), numeric digits and CR+LF symbols.
+</li><li class="bullets">NULL-characters / 00 (hexadecimal) in odd numbered positions: File is UTF-16, little endian format.  <br>Example: 31 00   30 00   20 00   AC 20   0D 00   0A 00  (10 € followed by new line sequence CR+LF)
+</li></ul><p>
 If the criteria above do not apply, then the file will be checked for typical UTF-8 patterns in the first 4000-8000 bytes, provided the file contains non-ANSI characters.
 
-</p><ul class="bullets"><li class="bullets">Presence of non-ANSI symbols which make up typical UTF-8 byte patterns.  These are 2, 3 or 4 symbols with specific binary patterns.</li>
-<li class="bullets">Presence of non-ANSI symbols which do not match with UTF-8 byte patterns, e.g. simple 8-bit text in a ISO 8859-1 or WIN 1252 format with single non-ANSI characters</li>
-<li class="bullets">If the 1st criteria applies, but the 2nd does not, then the file is in UTF-8 format.</li>
-<li class="bullets">If the 2nd criteria applies, but the 1st does not, then the assumption will be non-UNICODE file format WIN 1252 which is the West European 8-bit character set.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Presence of non-ANSI symbols which make up typical UTF-8 byte patterns.  These are 2, 3 or 4 symbols with specific binary patterns.
+</li><li class="bullets">Presence of non-ANSI symbols which do not match with UTF-8 byte patterns, e.g. simple 8-bit text in a ISO 8859-1 or WIN 1252 format with single non-ANSI characters
+</li><li class="bullets">If the 1st criteria applies, but the 2nd does not, then the file is in UTF-8 format.
+</li><li class="bullets">If the 2nd criteria applies, but the 1st does not, then the assumption will be non-UNICODE file format WIN 1252 which is the West European 8-bit character set.
+</li></ul><p>
 If the input file is in HTML format, then the "charset=…" commands will be checked accordingly.  JSON files are assumed in UTF-8 format by default.
 Ambiguities may still apply in the following case:
-</p><ul class="bullets"><li class="bullets">1 line of UTF-16 text containing foreign characters only and new line sequence, e.g. one sentence in Greek, Cyrillic or Chinese (without digits, spaces, new lines).</li>
-<li class="bullets">8-bit text file without non-ANSI character in the first 4000-8000 bytes (lots of English text in a huge file, a foreign word such as Café follows in a concluding sentence at the end of the file.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">1 line of UTF-16 text containing foreign characters only and new line sequence, e.g. one sentence in Greek, Cyrillic or Chinese (without digits, spaces, new lines).
+</li><li class="bullets">8-bit text file without non-ANSI character in the first 4000-8000 bytes (lots of English text in a huge file, a foreign word such as Café follows in a concluding sentence at the end of the file.
+</li></ul><p>
 Ambiguities need to be resolved with the system variable <b>local settings [ input file character set ]</b>.
 As long no clear character format has been identified (e.g. UTF-16 or UTF-8), then the local settings will be referenced.  The initial default value is win1252 (American and West European character set).
 

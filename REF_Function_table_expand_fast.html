@@ -95,8 +95,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -122,56 +123,56 @@ function name refers to an optimized searching scheme suitable for pre-sorted ta
 <h4> Parameter count</h4>
 <p>7 - 9 (For parameter description and return values: see <a class="bold_text" href="REF_Function_table_integrate.html">table integrate</a>() )</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( nute facts, // Nutritional facts, source: ndb.nal.usda.gov<br/>
- &nbsp;{ &nbsp;{ &nbsp;Food, Ingredient, Portion &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;potato chips, &nbsp;fat, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0.34 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;potato chips, &nbsp;carbohydrates, &nbsp;0.50 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;potato chips, &nbsp;sodium, &nbsp; &nbsp; &nbsp; &nbsp; 0.08 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;potato chips, &nbsp;proteins, &nbsp; &nbsp; &nbsp; 0.07 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;potato chips, &nbsp;others, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '' &nbsp;}, // Remaining weight subtracted from above (--&gt; operation identifer 'mul')<br/>
- &nbsp; &nbsp; { &nbsp;broccoli, &nbsp; &nbsp; &nbsp;water, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0.90 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;broccoli, &nbsp; &nbsp; &nbsp;proteins, &nbsp; &nbsp; &nbsp; 0.03 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;broccoli, &nbsp; &nbsp; &nbsp;carbohydrates, &nbsp;0.06 &nbsp;},<br/>
- &nbsp; &nbsp; { &nbsp;broccoli, &nbsp; &nbsp; &nbsp;others, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '' &nbsp;}, // Remaining weight subtracted from above (--&gt; operation identifer 'mul')<br/>
- &nbsp; &nbsp; { &nbsp;spring water, &nbsp;water, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.00 &nbsp;} } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;nute&nbsp;facts,&nbsp;//&nbsp;Nutritional&nbsp;facts,&nbsp;source:&nbsp;ndb.nal.usda.gov<br/>
+&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;&nbsp;Food,&nbsp;Ingredient,&nbsp;Portion&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;potato&nbsp;chips,&nbsp;&nbsp;fat,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.34&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;potato&nbsp;chips,&nbsp;&nbsp;carbohydrates,&nbsp;&nbsp;0.50&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;potato&nbsp;chips,&nbsp;&nbsp;sodium,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.08&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;potato&nbsp;chips,&nbsp;&nbsp;proteins,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.07&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;potato&nbsp;chips,&nbsp;&nbsp;others,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''&nbsp;&nbsp;},&nbsp;//&nbsp;Remaining&nbsp;weight&nbsp;subtracted&nbsp;from&nbsp;above&nbsp;(--&gt;&nbsp;operation&nbsp;identifer&nbsp;'mul')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;broccoli,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;water,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.90&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;broccoli,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proteins,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;broccoli,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carbohydrates,&nbsp;&nbsp;0.06&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;broccoli,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;others,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''&nbsp;&nbsp;},&nbsp;//&nbsp;Remaining&nbsp;weight&nbsp;subtracted&nbsp;from&nbsp;above&nbsp;(--&gt;&nbsp;operation&nbsp;identifer&nbsp;'mul')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;spring&nbsp;water,&nbsp;&nbsp;water,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table initialize( target, { { Name, Favorite Food, Weight },<br/>
- &nbsp; &nbsp; { Rafael, Broccoli, &nbsp; &nbsp;200 }, { Steve, Parmesan cheese, 100 },<br/>
- &nbsp; &nbsp; { George, Potato chips, 50 }, { Fred, &nbsp;Spring water, &nbsp; 1000 } } );<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Favorite&nbsp;Food,&nbsp;Weight&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Rafael,&nbsp;Broccoli,&nbsp;&nbsp;&nbsp;&nbsp;200&nbsp;},&nbsp;{&nbsp;Steve,&nbsp;Parmesan&nbsp;cheese,&nbsp;100&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;George,&nbsp;Potato&nbsp;chips,&nbsp;50&nbsp;},&nbsp;{&nbsp;Fred,&nbsp;&nbsp;Spring&nbsp;water,&nbsp;&nbsp;&nbsp;1000&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
 <br/>
- &nbsp;echo("Target table before looking up with expanding contents:");<br/>
- &nbsp;table list ( target );<br/>
+&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;before&nbsp;looking&nbsp;up&nbsp;with&nbsp;expanding&nbsp;contents:");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 <br/>
- &nbsp;table expand fast ignore case( target, Favorite Food, { Ingredient, Weight }, nute facts, Food, { Ingredient, Portion }, { overwrite, mul} );<br/>
+&nbsp;&nbsp;table&nbsp;expand&nbsp;fast&nbsp;ignore&nbsp;case(&nbsp;target,&nbsp;Favorite&nbsp;Food,&nbsp;{&nbsp;Ingredient,&nbsp;Weight&nbsp;},&nbsp;nute&nbsp;facts,&nbsp;Food,&nbsp;{&nbsp;Ingredient,&nbsp;Portion&nbsp;},&nbsp;{&nbsp;overwrite,&nbsp;mul}&nbsp;);<br/>
 <br/>
- &nbsp;// Note that food portions are multiplied with the weight of the food.<br/>
- &nbsp;// Additional rows are put to the end of the table.<br/>
+&nbsp;&nbsp;//&nbsp;Note&nbsp;that&nbsp;food&nbsp;portions&nbsp;are&nbsp;multiplied&nbsp;with&nbsp;the&nbsp;weight&nbsp;of&nbsp;the&nbsp;food.<br/>
+&nbsp;&nbsp;//&nbsp;Additional&nbsp;rows&nbsp;are&nbsp;put&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;table.<br/>
 <br/>
- &nbsp;echo("After expanding (listing ingredients and calculating their weights):");<br/>
- &nbsp;table list ( target );<br/>
+&nbsp;&nbsp;echo("After&nbsp;expanding&nbsp;(listing&nbsp;ingredients&nbsp;and&nbsp;calculating&nbsp;their&nbsp;weights):");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Target table before looking up with expanding contents:<br/>
- &nbsp; &nbsp;0 : Name &nbsp; | Favorite Food &nbsp; | Weight<br/>
- &nbsp; &nbsp;1 : Rafael | Broccoli &nbsp; &nbsp; &nbsp; &nbsp;| 200 &nbsp; <br/>
- &nbsp; &nbsp;2 : Steve &nbsp;| Parmesan cheese | 100 &nbsp; <br/>
- &nbsp; &nbsp;3 : George | Potato chips &nbsp; &nbsp;| 50 &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Fred &nbsp; | Spring water &nbsp; &nbsp;| 1000 &nbsp;<br/>
+<div class="output_background_color" ><code>Target&nbsp;table&nbsp;before&nbsp;looking&nbsp;up&nbsp;with&nbsp;expanding&nbsp;contents:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;|&nbsp;Favorite&nbsp;Food&nbsp;&nbsp;&nbsp;|&nbsp;Weight<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Rafael&nbsp;|&nbsp;Broccoli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;200&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Steve&nbsp;&nbsp;|&nbsp;Parmesan&nbsp;cheese&nbsp;|&nbsp;100&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;50&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Fred&nbsp;&nbsp;&nbsp;|&nbsp;Spring&nbsp;water&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1000&nbsp;&nbsp;<br/>
 <br/>
-After expanding (listing ingredients and calculating their weights):<br/>
- &nbsp; &nbsp;0 : Name &nbsp; | Favorite Food &nbsp; | Weight | Ingredient &nbsp; <br/>
- &nbsp; &nbsp;1 : Rafael | Broccoli &nbsp; &nbsp; &nbsp; &nbsp;| 180 &nbsp; &nbsp;| water &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;2 : Steve &nbsp;| Parmesan cheese | 100 &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : George | Potato chips &nbsp; &nbsp;| 17 &nbsp; &nbsp; | fat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;4 : Fred &nbsp; | Spring water &nbsp; &nbsp;| 1000 &nbsp; | water &nbsp; &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;5 : Rafael | Broccoli &nbsp; &nbsp; &nbsp; &nbsp;| 6 &nbsp; &nbsp; &nbsp;| proteins &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;6 : Rafael | Broccoli &nbsp; &nbsp; &nbsp; &nbsp;| 12 &nbsp; &nbsp; | carbohydrates<br/>
- &nbsp; &nbsp;7 : Rafael | Broccoli &nbsp; &nbsp; &nbsp; &nbsp;| 2 &nbsp; &nbsp; &nbsp;| others &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;8 : George | Potato chips &nbsp; &nbsp;| 25 &nbsp; &nbsp; | carbohydrates<br/>
- &nbsp; &nbsp;9 : George | Potato chips &nbsp; &nbsp;| 4 &nbsp; &nbsp; &nbsp;| sodium &nbsp; &nbsp; &nbsp; <br/>
- &nbsp; 10 : George | Potato chips &nbsp; &nbsp;| 3.5 &nbsp; &nbsp;| proteins &nbsp; &nbsp; <br/>
- &nbsp; 11 : George | Potato chips &nbsp; &nbsp;| 0.5 &nbsp; &nbsp;| others &nbsp; &nbsp; &nbsp; <br/>
+After&nbsp;expanding&nbsp;(listing&nbsp;ingredients&nbsp;and&nbsp;calculating&nbsp;their&nbsp;weights):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;|&nbsp;Favorite&nbsp;Food&nbsp;&nbsp;&nbsp;|&nbsp;Weight&nbsp;|&nbsp;Ingredient&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Rafael&nbsp;|&nbsp;Broccoli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;180&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;water&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Steve&nbsp;&nbsp;|&nbsp;Parmesan&nbsp;cheese&nbsp;|&nbsp;100&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;fat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Fred&nbsp;&nbsp;&nbsp;|&nbsp;Spring&nbsp;water&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1000&nbsp;&nbsp;&nbsp;|&nbsp;water&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Rafael&nbsp;|&nbsp;Broccoli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;proteins&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Rafael&nbsp;|&nbsp;Broccoli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;carbohydrates<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Rafael&nbsp;|&nbsp;Broccoli&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;others&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;carbohydrates<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sodium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3.5&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;proteins&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;George&nbsp;|&nbsp;Potato&nbsp;chips&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;others&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_expand_fast.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

@@ -89,8 +89,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -123,10 +124,10 @@ columns further to the left will not shift.
 <td>table columns</td>
 <td><b>Existing columns</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-<li class="bullets">No exceptions are asserted if header names are missing or column numbers are out of range.</li>
-<li class="bullets">Repeatedly specified header names and column numbers will be ignored</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">No exceptions are asserted if header names are missing or column numbers are out of range.
+</li><li class="bullets">Repeatedly specified header names and column numbers will be ignored
+</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>numeral</td>
@@ -148,32 +149,32 @@ If a value greater than 1 is specified, then additional columns to the right wil
 <p>Table not found<br/>
 Header name not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;echo("Delete 3 column pairs");<br/>
- &nbsp;table initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Delete&nbsp;3&nbsp;column&nbsp;pairs");<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;'Col&nbsp;A'&nbsp;..&nbsp;'Col&nbsp;K'&nbsp;},&nbsp;{&nbsp;'Val&nbsp;A'&nbsp;..&nbsp;'Val&nbsp;K'&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;// Deletes 6 columns: H &amp; I, C &amp; D, and B &amp; E. Remaining; A, F, G, J and K<br/>
- &nbsp;echo( "# columns deleted: ", table delete columns ( table, {7, Col B, Col C}, 2 ) );<br/>
+&nbsp;&nbsp;//&nbsp;Deletes&nbsp;6&nbsp;columns:&nbsp;H&nbsp;&amp;&nbsp;I,&nbsp;C&nbsp;&amp;&nbsp;D,&nbsp;and&nbsp;B&nbsp;&amp;&nbsp;E.&nbsp;Remaining;&nbsp;A,&nbsp;F,&nbsp;G,&nbsp;J&nbsp;and&nbsp;K<br/>
+&nbsp;&nbsp;echo(&nbsp;"#&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;{7,&nbsp;Col&nbsp;B,&nbsp;Col&nbsp;C},&nbsp;2&nbsp;)&nbsp;);<br/>
 <br/>
- &nbsp;table delete columns ( table, Col A, 0 ); &nbsp;// Nothing happens here (0 columns deleted)<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;Col&nbsp;A,&nbsp;0&nbsp;);&nbsp;&nbsp;//&nbsp;Nothing&nbsp;happens&nbsp;here&nbsp;(0&nbsp;columns&nbsp;deleted)<br/>
 <br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 <br/>
- &nbsp;echo("Delete all columns between D and K");<br/>
- &nbsp;table initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
+&nbsp;&nbsp;echo("Delete&nbsp;all&nbsp;columns&nbsp;between&nbsp;D&nbsp;and&nbsp;K");<br/>
+&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;'Col&nbsp;A'&nbsp;..&nbsp;'Col&nbsp;K'&nbsp;},&nbsp;{&nbsp;'Val&nbsp;A'&nbsp;..&nbsp;'Val&nbsp;K'&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table delete columns ( table, Col F, -2 );<br/>
+&nbsp;&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;Col&nbsp;F,&nbsp;-2&nbsp;);<br/>
 <br/>
- &nbsp;table list( table );<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Delete 3 column pairs<br/>
-# columns deleted: 6<br/>
- &nbsp; &nbsp;0 : Col A | Col F | Col G | Col J | Col K<br/>
- &nbsp; &nbsp;1 : Val A | Val F | Val G | Val J | Val K<br/>
+<div class="output_background_color" ><code>Delete&nbsp;3&nbsp;column&nbsp;pairs<br/>
+#&nbsp;columns&nbsp;deleted:&nbsp;6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Col&nbsp;A&nbsp;|&nbsp;Col&nbsp;F&nbsp;|&nbsp;Col&nbsp;G&nbsp;|&nbsp;Col&nbsp;J&nbsp;|&nbsp;Col&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Val&nbsp;A&nbsp;|&nbsp;Val&nbsp;F&nbsp;|&nbsp;Val&nbsp;G&nbsp;|&nbsp;Val&nbsp;J&nbsp;|&nbsp;Val&nbsp;K<br/>
 <br/>
-Delete all columns between D and K<br/>
- &nbsp; &nbsp;0 : Col A | Col B | Col C | Col D | Col E | Col K<br/>
- &nbsp; &nbsp;1 : Val A | Val B | Val C | Val D | Val E | Val K<br/>
+Delete&nbsp;all&nbsp;columns&nbsp;between&nbsp;D&nbsp;and&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Col&nbsp;A&nbsp;|&nbsp;Col&nbsp;B&nbsp;|&nbsp;Col&nbsp;C&nbsp;|&nbsp;Col&nbsp;D&nbsp;|&nbsp;Col&nbsp;E&nbsp;|&nbsp;Col&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Val&nbsp;A&nbsp;|&nbsp;Val&nbsp;B&nbsp;|&nbsp;Val&nbsp;C&nbsp;|&nbsp;Val&nbsp;D&nbsp;|&nbsp;Val&nbsp;E&nbsp;|&nbsp;Val&nbsp;K<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_delete_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

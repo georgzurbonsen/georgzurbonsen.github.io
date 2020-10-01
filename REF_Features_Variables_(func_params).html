@@ -72,8 +72,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -89,15 +90,15 @@ are allowed).
 <a class="bold_text" href="REF_Function_dim.html">dim</a>(), <span class="red_text">structure</span>(), <a class="bold_text" href="REF_Function_array.html">array</a>() and <a class="bold_text" href="REF_Function_protect.html">protect</a>() are common functions which utilize this variant of code pieces.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;var 1[] = my array;<br/>
- &nbsp;var 2[] = 'my array[]';<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;var&nbsp;1[]&nbsp;=&nbsp;my&nbsp;array;<br/>
+&nbsp;&nbsp;var&nbsp;2[]&nbsp;=&nbsp;'my&nbsp;array[]';<br/>
 <br/>
- &nbsp; &nbsp; array( &nbsp;var 0[], &nbsp; {hog, bat, pig} );<br/>
- &nbsp;// array( &nbsp;var 1[][], {dog, cat, rat} ); &nbsp; // This one is wrong<br/>
- &nbsp; &nbsp; array( :var 2[], &nbsp; {dog, cat, rat} ); &nbsp; // This one is OK<br/>
- &nbsp;<br/>
- &nbsp;echo( var 0[1] ); // bat<br/>
- &nbsp;echo( my array[1] ); // cat</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;&nbsp;var&nbsp;0[],&nbsp;&nbsp;&nbsp;{hog,&nbsp;bat,&nbsp;pig}&nbsp;);<br/>
+&nbsp;&nbsp;//&nbsp;array(&nbsp;&nbsp;var&nbsp;1[][],&nbsp;{dog,&nbsp;cat,&nbsp;rat}&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;one&nbsp;is&nbsp;wrong<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;:var&nbsp;2[],&nbsp;&nbsp;&nbsp;{dog,&nbsp;cat,&nbsp;rat}&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;one&nbsp;is&nbsp;OK<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo(&nbsp;var&nbsp;0[1]&nbsp;);&nbsp;//&nbsp;bat<br/>
+&nbsp;&nbsp;echo(&nbsp;my&nbsp;array[1]&nbsp;);&nbsp;//&nbsp;cat</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>bat<br/>
 cat<br/>

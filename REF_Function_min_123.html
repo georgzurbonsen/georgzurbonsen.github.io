@@ -76,8 +76,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -90,10 +91,10 @@
 <p>
 These functions identify the minimum or maximum numeric values.  Following rules apply
 
-</p><ul class="bullets"><li class="bullets">The suffix <b>... ignore zero</b> ignores all 0 (zero) values in the comparison process.  If all parameters contain 0, then 0 is returned.</li>
-<li class="bullets">Function names containing <b>numeral</b> require the parameters to be of type <a class="bold_text" href="REF_Features_data_types_numerals.html">numeral</a>. Otherwise exceptions happen.</li>
-<li class="bullets">Function names containing <b>abc</b> will convert the parameters into numerals before comparing them, e.g. "0123" converts to "123".  Literals not containing numbers will be treated as zero which you may want to ignore.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">The suffix <b>... ignore zero</b> ignores all 0 (zero) values in the comparison process.  If all parameters contain 0, then 0 is returned.
+</li><li class="bullets">Function names containing <b>numeral</b> require the parameters to be of type <a class="bold_text" href="REF_Features_data_types_numerals.html">numeral</a>. Otherwise exceptions happen.
+</li><li class="bullets">Function names containing <b>abc</b> will convert the parameters into numerals before comparing them, e.g. "0123" converts to "123".  Literals not containing numbers will be treated as zero which you may want to ignore.
+</li></ul><p>
 
 </p><table class="bold_column_1 bold_column_2" style = "width:1000px"><col style = "width:150px"><col style = "width:150px"><col style = "width:100px"><col style = "width:600px">
 <tr><th>Minimum Function Name       </th><th> Maximum Function Name     </th><th> Autom. Type conversion </th><th> Description</th></tr>
@@ -125,9 +126,9 @@ you to pre-select specific parameters to include in the calculation using one or
 <h4> Exceptions</h4>
 <p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;echo( max 123( 1, 3, 5 ) ); // 5<br/>
- &nbsp; &nbsp; &nbsp;echo( min 123( "0002", "1", "3" ) ); // 1<br/>
- &nbsp; &nbsp; &nbsp;echo( max 123 ignore zero( -4, -2, 0, -1 ) ); // -1</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;max&nbsp;123(&nbsp;1,&nbsp;3,&nbsp;5&nbsp;)&nbsp;);&nbsp;//&nbsp;5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;min&nbsp;123(&nbsp;"0002",&nbsp;"1",&nbsp;"3"&nbsp;)&nbsp;);&nbsp;//&nbsp;1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;max&nbsp;123&nbsp;ignore&nbsp;zero(&nbsp;-4,&nbsp;-2,&nbsp;0,&nbsp;-1&nbsp;)&nbsp;);&nbsp;//&nbsp;-1</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>5<br/>
 1<br/>

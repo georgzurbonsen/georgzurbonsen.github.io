@@ -60,8 +60,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -88,10 +89,10 @@ and any form of right-hand expressions containing calculations and/or other func
 must be defined (i.e. values assigned) prior to calling the function.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;a[] = World;<br/>
- &nbsp;echo( "Hello ", a[], ' ', abs(-1)+2+3 );</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;World;<br/>
+&nbsp;&nbsp;echo(&nbsp;"Hello&nbsp;",&nbsp;a[],&nbsp;'&nbsp;',&nbsp;abs(-1)+2+3&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Hello World 6<br/>
+<div class="output_background_color" ><code>Hello&nbsp;World&nbsp;6<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Function_parameter_directions.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Output Parameters</h4>
 <p>
@@ -100,8 +101,8 @@ Constants and calculated expressions are not allowed.  Before the function is ca
 will be defined automatically. After the function call has been completed, the value will be written back to the variable or table.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;a[] = find( 'Say Hi!', { Ha, Hä, He, Hi, Ho }, 0, which[] );<br/>
- &nbsp;echo( which[] ); // 3, because Hi is in position 3 in the parameter set</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;find(&nbsp;'Say&nbsp;Hi!',&nbsp;{&nbsp;Ha,&nbsp;Hä,&nbsp;He,&nbsp;Hi,&nbsp;Ho&nbsp;},&nbsp;0,&nbsp;which[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;which[]&nbsp;);&nbsp;//&nbsp;3,&nbsp;because&nbsp;Hi&nbsp;is&nbsp;in&nbsp;position&nbsp;3&nbsp;in&nbsp;the&nbsp;parameter&nbsp;set</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>3<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Function_parameter_directions_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
@@ -113,34 +114,34 @@ Before the function is called, the value will be retrieved from the variable or 
 the value will be written back to the table.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Hi, He }} );<br/>
- &nbsp;a[] = Ho;<br/>
- &nbsp;exchange( [t:0,0], a[] );<br/>
- &nbsp;echo( [t:..,0], " and ", a[] );</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{{&nbsp;Hi,&nbsp;He&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;Ho;<br/>
+&nbsp;&nbsp;exchange(&nbsp;[t:0,0],&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;[t:..,0],&nbsp;"&nbsp;and&nbsp;",&nbsp;a[]&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>{'Ho','He'} and Hi<br/>
+<div class="output_background_color" ><code>{'Ho','He'}&nbsp;and&nbsp;Hi<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Function_parameter_directions_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> References</h4>
 <p>
 Some functions take over the reference to the variables provided in the function parameters.  References provide following benefits:
-</p><ul class="bullets"><li class="bullets">Higher performance (no payload data, e.g. big parameter sets, are copied in before the call and copied back after the call)</li>
-<li class="bullets">Direct access to the variable contents, especially in <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user functions</a></li>
-<li class="bullets">Access to member variables (<a class="bold_text" href="REF_Features_structures.html">structure</a> and <a class="bold_text" href="REF_Features_arrays.html">array</a> members and their sub-members if available)</li>
-<li class="bullets">Access to variable properties, e.g. <span class="red_text">variable protection</span> settings.</li>
-</ul><p>
+</p><ul class="bullets"><li class="bullets">Higher performance (no payload data, e.g. big parameter sets, are copied in before the call and copied back after the call)
+</li><li class="bullets">Direct access to the variable contents, especially in <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user functions</a>
+</li><li class="bullets">Access to member variables (<a class="bold_text" href="REF_Features_structures.html">structure</a> and <a class="bold_text" href="REF_Features_arrays.html">array</a> members and their sub-members if available)
+</li><li class="bullets">Access to variable properties, e.g. <span class="red_text">variable protection</span> settings.
+</li></ul><p>
 The following code example shows how the user-defined procedure <b>my funct</b> accesses a member variable and defines an additional
 member variable.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;define procedure( my func, { { a, all, reference } } )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo(a[one]);<br/>
- &nbsp; &nbsp; &nbsp;a[two] = TWO;<br/>
- &nbsp;}<br/>
- &nbsp;<br/>
- &nbsp;b[one] = ONE;<br/>
- &nbsp;my func( b[] );<br/>
- &nbsp;echo(b[two]);</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;procedure(&nbsp;my&nbsp;func,&nbsp;{&nbsp;{&nbsp;a,&nbsp;all,&nbsp;reference&nbsp;}&nbsp;}&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(a[one]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[two]&nbsp;=&nbsp;TWO;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;b[one]&nbsp;=&nbsp;ONE;<br/>
+&nbsp;&nbsp;my&nbsp;func(&nbsp;b[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(b[two]);</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>ONE<br/>
 TWO<br/>

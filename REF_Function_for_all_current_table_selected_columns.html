@@ -83,8 +83,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -137,22 +138,22 @@ if no operators, = or <> have been used.  Not an issue if <, >, == or != operato
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;table initialize( animals,<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ Name, Class, Number of Legs},<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; { Dog, Mammal, 4 }, { Snake, Reptile, 0 }, { Human, Mammal, 2 }} );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;Name,&nbsp;Class,&nbsp;Number&nbsp;of&nbsp;Legs},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog,&nbsp;Mammal,&nbsp;4&nbsp;},&nbsp;{&nbsp;Snake,&nbsp;Reptile,&nbsp;0&nbsp;},&nbsp;{&nbsp;Human,&nbsp;Mammal,&nbsp;2&nbsp;}}&nbsp;);<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;with table( animals, &nbsp;1)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Choose all columns with headers containing 'a'.<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for all current table selected columns( ('*a*'), column[], header[], i[] )<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo( i[],": Column ", column[], " (", header[], ") =", [column[]] );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
- &nbsp; &nbsp; &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;table(&nbsp;animals,&nbsp;&nbsp;1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Choose&nbsp;all&nbsp;columns&nbsp;with&nbsp;headers&nbsp;containing&nbsp;'a'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;current&nbsp;table&nbsp;selected&nbsp;columns(&nbsp;('*a*'),&nbsp;column[],&nbsp;header[],&nbsp;i[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],":&nbsp;Column&nbsp;",&nbsp;column[],&nbsp;"&nbsp;(",&nbsp;header[],&nbsp;")&nbsp;=",&nbsp;[column[]]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>0: Column 0 (Name) =Dog<br/>
-1: Column 1 (Class) =Mammal<br/>
+<div class="output_background_color" ><code>0:&nbsp;Column&nbsp;0&nbsp;(Name)&nbsp;=Dog<br/>
+1:&nbsp;Column&nbsp;1&nbsp;(Class)&nbsp;=Mammal<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_for_all_current_table_selected_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_for_all_table_columns.html">for all table columns</a><br/>

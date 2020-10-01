@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -133,43 +134,43 @@ Specify the conditions or rules to select the rows.  See <a class="bold_text" hr
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Name, Age }, { Ann, 45 }, { Dan, 35 }, { Eva, 40 }, { Nic, 10 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{{&nbsp;Name,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Ann,&nbsp;45&nbsp;},&nbsp;{&nbsp;Dan,&nbsp;35&nbsp;},&nbsp;{&nbsp;Eva,&nbsp;40&nbsp;},&nbsp;{&nbsp;Nic,&nbsp;10&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list( t );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;table copy table selected rows ( t, u, [Age]&gt;=40 );<br/>
- &nbsp;echo("Copied table:");<br/>
- &nbsp;table list ( u );<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;u,&nbsp;[Age]&gt;=40&nbsp;);<br/>
+&nbsp;&nbsp;echo("Copied&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;table split table selected rows( t, v, [Age]&gt;=40, [Name]=Eva );<br/>
- &nbsp;echo("Source table after splitting: ");<br/>
- &nbsp;table list (t );<br/>
- &nbsp;echo("Destnation table after splitting: ");<br/>
- &nbsp;table list (v );</code></div>
+&nbsp;&nbsp;table&nbsp;split&nbsp;table&nbsp;selected&nbsp;rows(&nbsp;t,&nbsp;v,&nbsp;[Age]&gt;=40,&nbsp;[Name]=Eva&nbsp;);<br/>
+&nbsp;&nbsp;echo("Source&nbsp;table&nbsp;after&nbsp;splitting:&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(t&nbsp;);<br/>
+&nbsp;&nbsp;echo("Destnation&nbsp;table&nbsp;after&nbsp;splitting:&nbsp;");<br/>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(v&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 <br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| 35 <br/>
- &nbsp; &nbsp;3 : Eva &nbsp;| 40 <br/>
- &nbsp; &nbsp;4 : Nic &nbsp;| 10 <br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;<br/>
 <br/>
-Copied table:<br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 <br/>
- &nbsp; &nbsp;2 : Eva &nbsp;| 40 <br/>
+Copied&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;<br/>
 <br/>
-Source table after splitting: <br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Dan &nbsp;| 35 <br/>
- &nbsp; &nbsp;2 : Eva &nbsp;| 40 <br/>
- &nbsp; &nbsp;3 : Nic &nbsp;| 10 <br/>
+Source&nbsp;table&nbsp;after&nbsp;splitting:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;<br/>
 <br/>
-Destnation table after splitting: <br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 <br/>
- &nbsp; &nbsp;2 : Eva &nbsp;| 40 <br/>
+Destnation&nbsp;table&nbsp;after&nbsp;splitting:&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_copy_table_selected_rows.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

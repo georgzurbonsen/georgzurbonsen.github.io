@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -100,34 +101,34 @@ Following approaches are avialable to create structures:
 <tr><td>Direct referencing </td><td> Assigning a simple variable with a member name will initialize it with a structure.  This will not be possible if the variable is already an array.</td></tr>
 </table><p></p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;<br/>
- &nbsp;echo("Initialize a structure directly");<br/>
- &nbsp;a[dog] = Hund;<br/>
- &nbsp;a[cat] = Katze;<br/>
- &nbsp;a[gnu] = Gnu;<br/>
- &nbsp;echo(a[cat]);<br/>
- &nbsp;inspect( a[] );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Initialize&nbsp;a&nbsp;structure&nbsp;directly");<br/>
+&nbsp;&nbsp;a[dog]&nbsp;=&nbsp;Hund;<br/>
+&nbsp;&nbsp;a[cat]&nbsp;=&nbsp;Katze;<br/>
+&nbsp;&nbsp;a[gnu]&nbsp;=&nbsp;Gnu;<br/>
+&nbsp;&nbsp;echo(a[cat]);<br/>
+&nbsp;&nbsp;inspect(&nbsp;a[]&nbsp;);<br/>
 <br/>
- &nbsp;echo(new line, "Initialize with the structure function");<br/>
- &nbsp;structure( leg count[], { snake, bird, dog, fly, tick }, { 0, 2, 4, 6, 8 } );<br/>
- &nbsp;inspect( leg count[] );<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Initialize&nbsp;with&nbsp;the&nbsp;structure&nbsp;function");<br/>
+&nbsp;&nbsp;structure(&nbsp;leg&nbsp;count[],&nbsp;{&nbsp;snake,&nbsp;bird,&nbsp;dog,&nbsp;fly,&nbsp;tick&nbsp;},&nbsp;{&nbsp;0,&nbsp;2,&nbsp;4,&nbsp;6,&nbsp;8&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;leg&nbsp;count[]&nbsp;);<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Initialize a structure directly<br/>
+<div class="output_background_color" ><code>Initialize&nbsp;a&nbsp;structure&nbsp;directly<br/>
 Katze<br/>
-void: No literal provided<br/>
-cat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Katze'<br/>
-dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Hund'<br/>
-gnu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; literal: 'Gnu'<br/>
+[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Katze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+gnu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gnu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 <br/>
 <br/>
-Initialize with the structure function<br/>
-void: No literal provided<br/>
-bird &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 2 &nbsp;and as literal: "2"<br/>
-dog &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
-fly &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 6 &nbsp;and as literal: "6"<br/>
-snake &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; numeral: 0 &nbsp;and as literal: "0"<br/>
-tick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 8 &nbsp;and as literal: "8"<br/>
+Initialize&nbsp;with&nbsp;the&nbsp;structure&nbsp;function<br/>
+[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;("6")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+snake&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;("0")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+tick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;("8")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_structures.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Nesting</h4>
@@ -141,29 +142,29 @@ Syntax for referencing nested arrays in structures:  <b>Variable Name [ Member N
 <br/><br/>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;<br/>
- &nbsp;echo("Initialize a nested structure containing structure and array");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Initialize&nbsp;a&nbsp;nested&nbsp;structure&nbsp;containing&nbsp;structure&nbsp;and&nbsp;array");<br/>
 <br/>
- &nbsp;city[] = Paris;<br/>
- &nbsp;array( city[district], {ignoe 0, Louvre, Bourse, Temple, Hotel de Ville, etc. } );<br/>
- &nbsp;city[district,2,area] = 99; // 99 hectars<br/>
- &nbsp;city[district,2,inhabitants] = 19500;<br/>
- &nbsp;echo("1st &nbsp;district = ", city[district,1], " &nbsp; last district = ", city[district,-1] );<br/>
+&nbsp;&nbsp;city[]&nbsp;=&nbsp;Paris;<br/>
+&nbsp;&nbsp;array(&nbsp;city[district],&nbsp;{ignoe&nbsp;0,&nbsp;Louvre,&nbsp;Bourse,&nbsp;Temple,&nbsp;Hotel&nbsp;de&nbsp;Ville,&nbsp;etc.&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;city[district,2,area]&nbsp;=&nbsp;99;&nbsp;//&nbsp;99&nbsp;hectars<br/>
+&nbsp;&nbsp;city[district,2,inhabitants]&nbsp;=&nbsp;19500;<br/>
+&nbsp;&nbsp;echo("1st&nbsp;&nbsp;district&nbsp;=&nbsp;",&nbsp;city[district,1],&nbsp;"&nbsp;&nbsp;&nbsp;last&nbsp;district&nbsp;=&nbsp;",&nbsp;city[district,-1]&nbsp;);<br/>
 <br/>
- &nbsp;inspect( city[] );</code></div>
+&nbsp;&nbsp;inspect(&nbsp;city[]&nbsp;);</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Initialize a nested structure containing structure and array<br/>
-1st &nbsp;district = Louvre &nbsp; last district = etc.<br/>
-literal: 'Paris'<br/>
-district &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; void: No literal provided<br/>
- &nbsp;Array [ &nbsp; 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'ignoe 0'<br/>
- &nbsp;Array [ &nbsp; 1] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Louvre'<br/>
- &nbsp;Array [ &nbsp; 2] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Bourse'<br/>
- &nbsp; &nbsp;area &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; numeral: 99 &nbsp;and as literal: "99"<br/>
- &nbsp; &nbsp;inhabitants &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(full access) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; numeral: 19500 &nbsp;and as literal: "19500"<br/>
- &nbsp;Array [ &nbsp; 3] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Temple'<br/>
- &nbsp;Array [ &nbsp; 4] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'Hotel de Ville'<br/>
- &nbsp;Array [ &nbsp; 5] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; &nbsp; literal: 'etc.'<br/>
+<div class="output_background_color" ><code>Initialize&nbsp;a&nbsp;nested&nbsp;structure&nbsp;containing&nbsp;structure&nbsp;and&nbsp;array<br/>
+1st&nbsp;&nbsp;district&nbsp;=&nbsp;Louvre&nbsp;&nbsp;&nbsp;last&nbsp;district&nbsp;=&nbsp;etc.<br/>
+Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+district&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ignoe&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Louvre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bourse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;area&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;("99")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;inhabitants&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19500&nbsp;&nbsp;("19500")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;4]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hotel&nbsp;de&nbsp;Ville&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;5]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;etc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_structures_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Default Members</h4>
@@ -172,17 +173,17 @@ Normally, attempting to access a structure with a non-existing element name will
 which will be returned in case of no matches.  Assign the default value using a blank literal ('') as member name and that's it.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;<br/>
- &nbsp;echo("Demonstrate default values");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Demonstrate&nbsp;default&nbsp;values");<br/>
 <br/>
- &nbsp;structure( a[], { cow, horse, pig, sheep, '' }, { Kuh, Pferd, Schwein, Schaf, No translation } );<br/>
- &nbsp;echo( "cow : ", a[horse] );<br/>
- &nbsp;echo( "goat: ", a[goat] );<br/>
+&nbsp;&nbsp;structure(&nbsp;a[],&nbsp;{&nbsp;cow,&nbsp;horse,&nbsp;pig,&nbsp;sheep,&nbsp;''&nbsp;},&nbsp;{&nbsp;Kuh,&nbsp;Pferd,&nbsp;Schwein,&nbsp;Schaf,&nbsp;No&nbsp;translation&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"cow&nbsp;:&nbsp;",&nbsp;a[horse]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;"goat:&nbsp;",&nbsp;a[goat]&nbsp;);<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Demonstrate default values<br/>
-cow : Pferd<br/>
-goat: No translation<br/>
+<div class="output_background_color" ><code>Demonstrate&nbsp;default&nbsp;values<br/>
+cow&nbsp;:&nbsp;Pferd<br/>
+goat:&nbsp;No&nbsp;translation<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_structures_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

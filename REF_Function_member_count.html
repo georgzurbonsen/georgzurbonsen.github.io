@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -108,17 +109,17 @@
 <td><b>Member count</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;dim( a[], 10, Hey ); &nbsp; &nbsp;// An array with 10 elements<br/>
- &nbsp;dim( a[3], 3, Hi ); // 3 sub-members in a[3]<br/>
- &nbsp;b[Name]= Jim; &nbsp; &nbsp; &nbsp; // A structure with 2 members<br/>
- &nbsp;b[Age] = 38;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;dim(&nbsp;a[],&nbsp;10,&nbsp;Hey&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;An&nbsp;array&nbsp;with&nbsp;10&nbsp;elements<br/>
+&nbsp;&nbsp;dim(&nbsp;a[3],&nbsp;3,&nbsp;Hi&nbsp;);&nbsp;//&nbsp;3&nbsp;sub-members&nbsp;in&nbsp;a[3]<br/>
+&nbsp;&nbsp;b[Name]=&nbsp;Jim;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;A&nbsp;structure&nbsp;with&nbsp;2&nbsp;members<br/>
+&nbsp;&nbsp;b[Age]&nbsp;=&nbsp;38;<br/>
 <br/>
- &nbsp;c[] = 1; &nbsp; &nbsp; &nbsp; &nbsp;// A simple variable, 0 members<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;A&nbsp;simple&nbsp;variable,&nbsp;0&nbsp;members<br/>
 <br/>
- &nbsp;echo( member count( a[] ), ", ", member count( a[3]), ", ",<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;member count( b[] ), ", ", member count( c[] ) );</code></div>
+&nbsp;&nbsp;echo(&nbsp;member&nbsp;count(&nbsp;a[]&nbsp;),&nbsp;",&nbsp;",&nbsp;member&nbsp;count(&nbsp;a[3]),&nbsp;",&nbsp;",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;member&nbsp;count(&nbsp;b[]&nbsp;),&nbsp;",&nbsp;",&nbsp;member&nbsp;count(&nbsp;c[]&nbsp;)&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>10, 3, 2, 0<br/>
+<div class="output_background_color" ><code>10,&nbsp;3,&nbsp;2,&nbsp;0<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_member_count.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_dim.html">dim</a><br/>

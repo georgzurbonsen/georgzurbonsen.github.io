@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -133,16 +134,16 @@ literal is of type <a class="bold_text" href="REF_Features_data_types_literals.h
 <td>table column</td>
 <td><b>Column representing left boundary for searching</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Specify exactly one header name or column number where to start searching and comparing from left to right</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Specify exactly one header name or column number where to start searching and comparing from left to right
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>0 (1st column)
 </td></tr>
 <tr><td>Opt. 6<br/>input</td>
 <td>table column</td>
 <td><b>Column representing right boundary for searching</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Specify exactly one header name or column number where to stop searching and comparing from left to right</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Specify exactly one header name or column number where to stop searching and comparing from left to right
+</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>0 (1st column)
 </td></tr>
 </table>
@@ -153,46 +154,46 @@ Specific rules apply for this function:
 <td><b>Match found</b><br/><p>true if match has been found, otherwise false.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( table 1,<br/>
- &nbsp; &nbsp; &nbsp;{ { A, &nbsp;B, &nbsp;C, &nbsp;D, &nbsp;E, &nbsp;A, &nbsp;G },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ E, &nbsp;C, &nbsp;D, &nbsp;B, &nbsp;A, &nbsp;H, &nbsp;X },<br/>
- &nbsp; &nbsp; &nbsp; &nbsp;{ T, &nbsp;E, &nbsp;B, &nbsp;C, &nbsp;A, &nbsp;E, &nbsp;A &nbsp;} } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;table&nbsp;1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;A,&nbsp;&nbsp;B,&nbsp;&nbsp;C,&nbsp;&nbsp;D,&nbsp;&nbsp;E,&nbsp;&nbsp;A,&nbsp;&nbsp;G&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;E,&nbsp;&nbsp;C,&nbsp;&nbsp;D,&nbsp;&nbsp;B,&nbsp;&nbsp;A,&nbsp;&nbsp;H,&nbsp;&nbsp;X&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;T,&nbsp;&nbsp;E,&nbsp;&nbsp;B,&nbsp;&nbsp;C,&nbsp;&nbsp;A,&nbsp;&nbsp;E,&nbsp;&nbsp;A&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;row[] = 0; col[] = 0;<br/>
- &nbsp;echo("Search entire table");<br/>
- &nbsp;while ( table search( table 1, (A), row[], col[] ) = true)<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo("Row: ", row[], " &nbsp;Col: ", col[]++ );<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;0;&nbsp;col[]&nbsp;=&nbsp;0;<br/>
+&nbsp;&nbsp;echo("Search&nbsp;entire&nbsp;table");<br/>
+&nbsp;&nbsp;while&nbsp;(&nbsp;table&nbsp;search(&nbsp;table&nbsp;1,&nbsp;(A),&nbsp;row[],&nbsp;col[]&nbsp;)&nbsp;=&nbsp;true)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Row:&nbsp;",&nbsp;row[],&nbsp;"&nbsp;&nbsp;Col:&nbsp;",&nbsp;col[]++&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;row[] = 0; col[] = 0;<br/>
- &nbsp;echo("Search entire table vertically (Attention: begins at row 1 at next column");<br/>
- &nbsp;while ( table search vertically( table 1, (A), row[], col[] ) = true)<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo("Row: ", row[]++, " &nbsp;Col: ", col[] );<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;0;&nbsp;col[]&nbsp;=&nbsp;0;<br/>
+&nbsp;&nbsp;echo("Search&nbsp;entire&nbsp;table&nbsp;vertically&nbsp;(Attention:&nbsp;begins&nbsp;at&nbsp;row&nbsp;1&nbsp;at&nbsp;next&nbsp;column");<br/>
+&nbsp;&nbsp;while&nbsp;(&nbsp;table&nbsp;search&nbsp;vertically(&nbsp;table&nbsp;1,&nbsp;(A),&nbsp;row[],&nbsp;col[]&nbsp;)&nbsp;=&nbsp;true)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Row:&nbsp;",&nbsp;row[]++,&nbsp;"&nbsp;&nbsp;Col:&nbsp;",&nbsp;col[]&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;row[] = 0; col[] = 0;<br/>
- &nbsp;echo("Limit search to column 1 - 4:");<br/>
- &nbsp;while ( table search( table 1, (A), row[], col[], B, E ) = true)<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;echo("Row: ", row[], " &nbsp;Col: ", col[]++ );<br/>
- &nbsp;}</code></div>
+&nbsp;&nbsp;row[]&nbsp;=&nbsp;0;&nbsp;col[]&nbsp;=&nbsp;0;<br/>
+&nbsp;&nbsp;echo("Limit&nbsp;search&nbsp;to&nbsp;column&nbsp;1&nbsp;-&nbsp;4:");<br/>
+&nbsp;&nbsp;while&nbsp;(&nbsp;table&nbsp;search(&nbsp;table&nbsp;1,&nbsp;(A),&nbsp;row[],&nbsp;col[],&nbsp;B,&nbsp;E&nbsp;)&nbsp;=&nbsp;true)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Row:&nbsp;",&nbsp;row[],&nbsp;"&nbsp;&nbsp;Col:&nbsp;",&nbsp;col[]++&nbsp;);<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Search entire table<br/>
-Row: 0 &nbsp;Col: 0<br/>
-Row: 0 &nbsp;Col: 5<br/>
-Row: 1 &nbsp;Col: 4<br/>
-Row: 2 &nbsp;Col: 4<br/>
-Row: 2 &nbsp;Col: 6<br/>
-Search entire table vertically (Attention: begins at row 1 at next column<br/>
-Row: 0 &nbsp;Col: 0<br/>
-Row: 1 &nbsp;Col: 4<br/>
-Row: 2 &nbsp;Col: 4<br/>
-Row: 2 &nbsp;Col: 6<br/>
-Limit search to column 1 - 4:<br/>
-Row: 1 &nbsp;Col: 4<br/>
-Row: 2 &nbsp;Col: 4<br/>
+<div class="output_background_color" ><code>Search&nbsp;entire&nbsp;table<br/>
+Row:&nbsp;0&nbsp;&nbsp;Col:&nbsp;0<br/>
+Row:&nbsp;0&nbsp;&nbsp;Col:&nbsp;5<br/>
+Row:&nbsp;1&nbsp;&nbsp;Col:&nbsp;4<br/>
+Row:&nbsp;2&nbsp;&nbsp;Col:&nbsp;4<br/>
+Row:&nbsp;2&nbsp;&nbsp;Col:&nbsp;6<br/>
+Search&nbsp;entire&nbsp;table&nbsp;vertically&nbsp;(Attention:&nbsp;begins&nbsp;at&nbsp;row&nbsp;1&nbsp;at&nbsp;next&nbsp;column<br/>
+Row:&nbsp;0&nbsp;&nbsp;Col:&nbsp;0<br/>
+Row:&nbsp;1&nbsp;&nbsp;Col:&nbsp;4<br/>
+Row:&nbsp;2&nbsp;&nbsp;Col:&nbsp;4<br/>
+Row:&nbsp;2&nbsp;&nbsp;Col:&nbsp;6<br/>
+Limit&nbsp;search&nbsp;to&nbsp;column&nbsp;1&nbsp;-&nbsp;4:<br/>
+Row:&nbsp;1&nbsp;&nbsp;Col:&nbsp;4<br/>
+Row:&nbsp;2&nbsp;&nbsp;Col:&nbsp;4<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_search.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_table_search_header_row.html">table search header row</a></p>

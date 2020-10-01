@@ -91,8 +91,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -122,8 +123,8 @@ remain unchanged.</p>
 
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
 </td></tr>
 <tr><td>3.<br/>input</td>
 <td>literal</td>
@@ -139,20 +140,20 @@ Specific rules apply for this function:
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize ( t, { { Product, Price per 100kg, Discount },<br/>
- &nbsp; &nbsp; &nbsp;{ Apples, &nbsp;45.5, 0.05 },<br/>
- &nbsp; &nbsp; &nbsp;{ Oranges, 90.5, 0.10 },<br/>
- &nbsp; &nbsp; &nbsp;{ Durian, &nbsp;1240, none } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;t,&nbsp;{&nbsp;{&nbsp;Product,&nbsp;Price&nbsp;per&nbsp;100kg,&nbsp;Discount&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Apples,&nbsp;&nbsp;45.5,&nbsp;0.05&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Oranges,&nbsp;90.5,&nbsp;0.10&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Durian,&nbsp;&nbsp;1240,&nbsp;none&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;table format numbers( t, Price per 100kg, "'EUR '?,??0.00", de_DE, '*' &nbsp;);<br/>
- &nbsp;table format numbers( t, Discount, "?0.00 %" );<br/>
+&nbsp;&nbsp;table&nbsp;format&nbsp;numbers(&nbsp;t,&nbsp;Price&nbsp;per&nbsp;100kg,&nbsp;"'EUR&nbsp;'?,??0.00",&nbsp;de_DE,&nbsp;'*'&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;format&nbsp;numbers(&nbsp;t,&nbsp;Discount,&nbsp;"?0.00&nbsp;%"&nbsp;);<br/>
 <br/>
- &nbsp;table list ( t );</code></div>
+&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;t&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code> &nbsp; &nbsp;0 : Product | Price per 100kg | Discount<br/>
- &nbsp; &nbsp;1 : Apples &nbsp;| EUR ***45,50 &nbsp; &nbsp;| &nbsp;5,00 % <br/>
- &nbsp; &nbsp;2 : Oranges | EUR ***90,50 &nbsp; &nbsp;| 10,00 % <br/>
- &nbsp; &nbsp;3 : Durian &nbsp;| EUR 1.240,00 &nbsp; &nbsp;| none &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Product&nbsp;|&nbsp;Price&nbsp;per&nbsp;100kg&nbsp;|&nbsp;Discount<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Apples&nbsp;&nbsp;|&nbsp;EUR&nbsp;***45,50&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;5,00&nbsp;%&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Oranges&nbsp;|&nbsp;EUR&nbsp;***90,50&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10,00&nbsp;%&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Durian&nbsp;&nbsp;|&nbsp;EUR&nbsp;1.240,00&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;none&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_format_numbers.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

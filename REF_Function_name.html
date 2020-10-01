@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -126,20 +127,20 @@
 <td><b>false if variable not found</b><br/><p>In this case, false is returned.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;a[] = &nbsp;Ah;<br/>
- &nbsp;b[2] = two;<br/>
- &nbsp;c[alex] = Alexander;<br/>
- &nbsp;c[tim] = Timothy;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;&nbsp;Ah;<br/>
+&nbsp;&nbsp;b[2]&nbsp;=&nbsp;two;<br/>
+&nbsp;&nbsp;c[alex]&nbsp;=&nbsp;Alexander;<br/>
+&nbsp;&nbsp;c[tim]&nbsp;=&nbsp;Timothy;<br/>
 <br/>
- &nbsp;d[] = ^c[alex]; // Reference<br/>
+&nbsp;&nbsp;d[]&nbsp;=&nbsp;^c[alex];&nbsp;//&nbsp;Reference<br/>
 <br/>
- &nbsp;echo( name( a[] &nbsp;) );<br/>
- &nbsp;echo( name( c[tim] &nbsp;) );<br/>
- &nbsp;echo( name( c[tim], members named &nbsp;) );<br/>
- &nbsp;echo( name( b[2], &nbsp; members named &nbsp;) ); &nbsp; // Array members will always be numbered<br/>
- &nbsp;echo( name( c[tim], members numbered) ); &nbsp;// All members are numbered<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;a[]&nbsp;&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;c[tim]&nbsp;&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;c[tim],&nbsp;members&nbsp;named&nbsp;&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;b[2],&nbsp;&nbsp;&nbsp;members&nbsp;named&nbsp;&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;Array&nbsp;members&nbsp;will&nbsp;always&nbsp;be&nbsp;numbered<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;c[tim],&nbsp;members&nbsp;numbered)&nbsp;);&nbsp;&nbsp;//&nbsp;All&nbsp;members&nbsp;are&nbsp;numbered<br/>
 <br/>
- &nbsp;echo( name( d[] ) ); // References reveal their destination variables<br/>
+&nbsp;&nbsp;echo(&nbsp;name(&nbsp;d[]&nbsp;)&nbsp;);&nbsp;//&nbsp;References&nbsp;reveal&nbsp;their&nbsp;destination&nbsp;variables<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>a[]<br/>

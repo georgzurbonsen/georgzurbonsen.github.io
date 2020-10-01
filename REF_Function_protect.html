@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -137,52 +138,52 @@ The "protect recursive" call will apply the protection setting to all member var
 <td><b>Polled protection setting</b><br/><p>The protection setting of the 1st variable is returned.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;b[] = 2;<br/>
- &nbsp;b[Hi] = 3;<br/>
- &nbsp;b[Ho] = 4;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;b[]&nbsp;=&nbsp;2;<br/>
+&nbsp;&nbsp;b[Hi]&nbsp;=&nbsp;3;<br/>
+&nbsp;&nbsp;b[Ho]&nbsp;=&nbsp;4;<br/>
 <br/>
- &nbsp;protect( read only, b[] ) ;<br/>
+&nbsp;&nbsp;protect(&nbsp;read&nbsp;only,&nbsp;b[]&nbsp;)&nbsp;;<br/>
 <br/>
- &nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
- &nbsp;inspect( b[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;"Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;",&nbsp;protect(&nbsp;check,&nbsp;b[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;b[]&nbsp;);<br/>
 <br/>
- &nbsp;protect recursive( prevent deleting, b[] ) ;<br/>
+&nbsp;&nbsp;protect&nbsp;recursive(&nbsp;prevent&nbsp;deleting,&nbsp;b[]&nbsp;)&nbsp;;<br/>
 <br/>
- &nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
- &nbsp;inspect( b[] );<br/>
- &nbsp;b[] = 2;<br/>
- &nbsp;b[Hi] = 3;<br/>
- &nbsp;b[Ho] = 4;<br/>
+&nbsp;&nbsp;echo(&nbsp;"Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;",&nbsp;protect(&nbsp;check,&nbsp;b[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;b[]&nbsp;);<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;2;<br/>
+&nbsp;&nbsp;b[Hi]&nbsp;=&nbsp;3;<br/>
+&nbsp;&nbsp;b[Ho]&nbsp;=&nbsp;4;<br/>
 <br/>
- &nbsp;protect( read only, b[] ) ;<br/>
+&nbsp;&nbsp;protect(&nbsp;read&nbsp;only,&nbsp;b[]&nbsp;)&nbsp;;<br/>
 <br/>
- &nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
- &nbsp;inspect( b[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;"Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;",&nbsp;protect(&nbsp;check,&nbsp;b[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;b[]&nbsp;);<br/>
 <br/>
- &nbsp;protect recursive( prevent deleting, b[] ) ;<br/>
+&nbsp;&nbsp;protect&nbsp;recursive(&nbsp;prevent&nbsp;deleting,&nbsp;b[]&nbsp;)&nbsp;;<br/>
 <br/>
- &nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
- &nbsp;inspect( b[] );</code></div>
+&nbsp;&nbsp;echo(&nbsp;"Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;",&nbsp;protect(&nbsp;check,&nbsp;b[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;b[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Base variable protection setting: read only<br/>
-numeral: 2 &nbsp;and as literal: "2"<br/>
-Hi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 3 &nbsp;and as literal: "3"<br/>
-Ho &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (full access) &nbsp; &nbsp; &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
+<div class="output_background_color" ><code>Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;read&nbsp;only<br/>
+2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,read&nbsp;only)<br/>
+Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
+Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 <br/>
-Base variable protection setting: prevent deleting<br/>
-numeral: 2 &nbsp;and as literal: "2"<br/>
-Hi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 3 &nbsp;and as literal: "3"<br/>
-Ho &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
+Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;prevent&nbsp;deleting<br/>
+2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
+Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
+Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
 <br/>
-Base variable protection setting: read only<br/>
-numeral: 2 &nbsp;and as literal: "2"<br/>
-Hi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 3 &nbsp;and as literal: "3"<br/>
-Ho &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
+Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;read&nbsp;only<br/>
+2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,read&nbsp;only)<br/>
+Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
+Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
 <br/>
-Base variable protection setting: prevent deleting<br/>
-numeral: 2 &nbsp;and as literal: "2"<br/>
-Hi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 3 &nbsp;and as literal: "3"<br/>
-Ho &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (prevent deleting) &nbsp; numeral: 4 &nbsp;and as literal: "4"<br/>
+Base&nbsp;variable&nbsp;protection&nbsp;setting:&nbsp;prevent&nbsp;deleting<br/>
+2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
+Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
+Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent&nbsp;deleting)<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_protect.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

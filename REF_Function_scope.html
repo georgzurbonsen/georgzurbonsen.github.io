@@ -77,8 +77,9 @@
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 4.9.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 4.9.5 Resident Attributes Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -115,32 +116,32 @@
 </table><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;// In the main program area, variables created are global.<br/>
- &nbsp;g[] = world;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;//&nbsp;In&nbsp;the&nbsp;main&nbsp;program&nbsp;area,&nbsp;variables&nbsp;created&nbsp;are&nbsp;global.<br/>
+&nbsp;&nbsp;g[]&nbsp;=&nbsp;world;<br/>
 <br/>
- &nbsp;define procedure ( foo )<br/>
- &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp;// Inside procedure, functions and B4P programs called with start(...),<br/>
- &nbsp; &nbsp; &nbsp;// the variables declared are local unless the 'global' function is used.<br/>
+&nbsp;&nbsp;define&nbsp;procedure&nbsp;(&nbsp;foo&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Inside&nbsp;procedure,&nbsp;functions&nbsp;and&nbsp;B4P&nbsp;programs&nbsp;called&nbsp;with&nbsp;start(...),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;variables&nbsp;declared&nbsp;are&nbsp;local&nbsp;unless&nbsp;the&nbsp;'global'&nbsp;function&nbsp;is&nbsp;used.<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;a[] = 1;<br/>
- &nbsp; &nbsp; &nbsp;global { h[] = 1; }<br/>
- &nbsp; &nbsp; &nbsp;g[me] = you;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;{&nbsp;h[]&nbsp;=&nbsp;1;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g[me]&nbsp;=&nbsp;you;<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( "Variable a[]: ", scope( a[] ) ); &nbsp; &nbsp; // global<br/>
- &nbsp; &nbsp; &nbsp;echo( "Variable g[]: ", scope( g[] ) ); &nbsp; &nbsp; // local<br/>
- &nbsp; &nbsp; &nbsp;echo( "Variable g[me]: ", scope( g[me] ) ); &nbsp; // global<br/>
- &nbsp; &nbsp; &nbsp;echo( "Variable h[]: ", scope( h[] ) ); &nbsp; &nbsp; // global<br/>
- &nbsp; &nbsp; &nbsp;echo( "Verbose settings: ", scope( runtime settings[verbose] ) ); &nbsp; &nbsp; // system<br/>
- &nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;a[]:&nbsp;",&nbsp;scope(&nbsp;a[]&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;global<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;g[]:&nbsp;",&nbsp;scope(&nbsp;g[]&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;local<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;g[me]:&nbsp;",&nbsp;scope(&nbsp;g[me]&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;global<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;h[]:&nbsp;",&nbsp;scope(&nbsp;h[]&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;global<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Verbose&nbsp;settings:&nbsp;",&nbsp;scope(&nbsp;runtime&nbsp;settings[verbose]&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;system<br/>
+&nbsp;&nbsp;}<br/>
 <br/>
- &nbsp;foo; // Call the function</code></div>
+&nbsp;&nbsp;foo;&nbsp;//&nbsp;Call&nbsp;the&nbsp;function</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Variable a[]: local<br/>
-Variable g[]: global<br/>
-Variable g[me]: global<br/>
-Variable h[]: global<br/>
-Verbose settings: system<br/>
+<div class="output_background_color" ><code>Variable&nbsp;a[]:&nbsp;local<br/>
+Variable&nbsp;g[]:&nbsp;global<br/>
+Variable&nbsp;g[me]:&nbsp;global<br/>
+Variable&nbsp;h[]:&nbsp;global<br/>
+Verbose&nbsp;settings:&nbsp;system<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_scope.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

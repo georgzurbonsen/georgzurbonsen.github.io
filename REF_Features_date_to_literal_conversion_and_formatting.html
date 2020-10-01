@@ -75,6 +75,8 @@
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">4.3.9 parameter set </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">4.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">4.3.11 type, type detailed </div></a></li>
+<li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">4.3.12 hash signature </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">4.3.13 excel column number </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 4.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 4.5 String Functions </div></a></li>
@@ -82,8 +84,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -97,9 +100,9 @@ in any combinations.
 
 
 The formatting template applies to following functions:
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter</li>
-<li class="bullets"><a class="bold_text" href="REF_Function_table_distribute.html">table distribute</a>() function family, 10th parameter on header date format</li>
-</ul><p></p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Function_literal.html">literal</a>(), 2nd parameter
+</li><li class="bullets"><a class="bold_text" href="REF_Function_table_distribute.html">table distribute</a>() function family, 10th parameter on header date format
+</li></ul><p></p>
 <h4> Formatting Templates</h4>
 <p>
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:350px"><col style = "width:400px"><col style = "width:100px">
@@ -174,25 +177,25 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples without formatting templates</h4>
 <p>Following examples show use of date to literal conversion without formatting template</p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
- &nbsp; &nbsp; &nbsp;date 2[] = date("2020-10-03");<br/>
- &nbsp; &nbsp; &nbsp;date 3[] = date("2020-07-14");<br/>
- &nbsp; &nbsp; &nbsp;date 4[] = date("2020-08-01 22:30:00");<br/>
- &nbsp; &nbsp; &nbsp;date 5[] = date("22:30:00");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;1[]&nbsp;=&nbsp;date("2020-07-04");&nbsp;//&nbsp;Some&nbsp;national&nbsp;holidays<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;2[]&nbsp;=&nbsp;date("2020-10-03");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;3[]&nbsp;=&nbsp;date("2020-07-14");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;4[]&nbsp;=&nbsp;date("2020-08-01&nbsp;22:30:00");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;5[]&nbsp;=&nbsp;date("22:30:00");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], " &nbsp; &nbsp;*", EN_us ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", EN_de ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 3[], "*", France ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 4[], "*", de_CH ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 3[], "*", none ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "*", local ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 1[] )); // assumes '*' and none<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 5[], "*", EN_us )); // Always 0-23h if not specified otherwise</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;1[],&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;*",&nbsp;EN_us&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;2[],&nbsp;"*",&nbsp;EN_de&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;3[],&nbsp;"*",&nbsp;France&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;4[],&nbsp;"*",&nbsp;de_CH&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;3[],&nbsp;"*",&nbsp;none&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;2[],&nbsp;"*",&nbsp;local&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;1[]&nbsp;));&nbsp;//&nbsp;assumes&nbsp;'*'&nbsp;and&nbsp;none<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;5[],&nbsp;"*",&nbsp;EN_us&nbsp;));&nbsp;//&nbsp;Always&nbsp;0-23h&nbsp;if&nbsp;not&nbsp;specified&nbsp;otherwise</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code> &nbsp; &nbsp;*<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;*<br/>
 03/10/2020<br/>
 14/07/2020<br/>
-01.08.2020 22:30:00<br/>
+01.08.2020&nbsp;22:30:00<br/>
 2020-07-14<br/>
 03.10.2020<br/>
 2020-07-04<br/>
@@ -201,30 +204,30 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples with formatting templates</h4>
 <p>Following examples show use of date to literal conversion with formatting template</p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;date 1[] = date("2020-07-04"); // Some national holidays<br/>
- &nbsp; &nbsp; &nbsp;date 2[] = date("2020-08-01 22:30:00");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;1[]&nbsp;=&nbsp;date("2020-07-04");&nbsp;//&nbsp;Some&nbsp;national&nbsp;holidays<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;2[]&nbsp;=&nbsp;date("2020-08-01&nbsp;22:30:00");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], "Tttt DD.Mmmm.YY", EN_us ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt DD.mm.YYYY ' Zeit: ' HH:ii:ss", DE_de ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt DD.mm.YYYY ' Zeit: ' HH:ii:ss", DE_de ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 2[], "Ttt MM/DD/YY ' Time: ' hh:ii:ss aaa", en_US ));<br/>
- &nbsp; &nbsp; &nbsp;echo( literal ( date 1[], "Tttt DD.Mmmm.YY", Hindi ));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;1[],&nbsp;"Tttt&nbsp;DD.Mmmm.YY",&nbsp;EN_us&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;2[],&nbsp;"Ttt&nbsp;DD.mm.YYYY&nbsp;'&nbsp;Zeit:&nbsp;'&nbsp;HH:ii:ss",&nbsp;DE_de&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;2[],&nbsp;"Ttt&nbsp;DD.mm.YYYY&nbsp;'&nbsp;Zeit:&nbsp;'&nbsp;HH:ii:ss",&nbsp;DE_de&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;2[],&nbsp;"Ttt&nbsp;MM/DD/YY&nbsp;'&nbsp;Time:&nbsp;'&nbsp;hh:ii:ss&nbsp;aaa",&nbsp;en_US&nbsp;));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal&nbsp;(&nbsp;date&nbsp;1[],&nbsp;"Tttt&nbsp;DD.Mmmm.YY",&nbsp;Hindi&nbsp;));<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( new line, "Show difference between ISO and adjusted week and year numbers: ");<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( date( "2019-12-31"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( date( "2020-06-30"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Same<br/>
- &nbsp; &nbsp; &nbsp;echo( literal( date( "2021-01-01"), "'Week: 'ZZZZ-WW 'and' YYYY-XX") ); // Different</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Show&nbsp;difference&nbsp;between&nbsp;ISO&nbsp;and&nbsp;adjusted&nbsp;week&nbsp;and&nbsp;year&nbsp;numbers:&nbsp;");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;date(&nbsp;"2019-12-31"),&nbsp;"'Week:&nbsp;'ZZZZ-WW&nbsp;'and'&nbsp;YYYY-XX")&nbsp;);&nbsp;//&nbsp;Different<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;date(&nbsp;"2020-06-30"),&nbsp;"'Week:&nbsp;'ZZZZ-WW&nbsp;'and'&nbsp;YYYY-XX")&nbsp;);&nbsp;//&nbsp;Same<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;date(&nbsp;"2021-01-01"),&nbsp;"'Week:&nbsp;'ZZZZ-WW&nbsp;'and'&nbsp;YYYY-XX")&nbsp;);&nbsp;//&nbsp;Different</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Saturday 04.July.20<br/>
-Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
-Sam 01.08.2020 &nbsp;Zeit: &nbsp;22:30:00<br/>
-Sat 08/01/20 &nbsp;Time: &nbsp;10:30:00 p.m.<br/>
-शनिवार 04.जुलाई.20<br/>
+<div class="output_background_color" ><code>Saturday&nbsp;04.July.20<br/>
+Sam&nbsp;01.08.2020&nbsp;&nbsp;Zeit:&nbsp;&nbsp;22:30:00<br/>
+Sam&nbsp;01.08.2020&nbsp;&nbsp;Zeit:&nbsp;&nbsp;22:30:00<br/>
+Sat&nbsp;08/01/20&nbsp;&nbsp;Time:&nbsp;&nbsp;10:30:00&nbsp;p.m.<br/>
+शनिवार&nbsp;04.जुलाई.20<br/>
 <br/>
-Show difference between ISO and adjusted week and year numbers: <br/>
-Week: 2020-01 and 2019-53<br/>
-Week: 2020-27 and 2020-27<br/>
-Week: 2020-53 and 2021-00<br/>
+Show&nbsp;difference&nbsp;between&nbsp;ISO&nbsp;and&nbsp;adjusted&nbsp;week&nbsp;and&nbsp;year&nbsp;numbers:&nbsp;<br/>
+Week:&nbsp;2020-01&nbsp;and&nbsp;2019-53<br/>
+Week:&nbsp;2020-27&nbsp;and&nbsp;2020-27<br/>
+Week:&nbsp;2020-53&nbsp;and&nbsp;2021-00<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_date_to_literal_conversion_and_formatting_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

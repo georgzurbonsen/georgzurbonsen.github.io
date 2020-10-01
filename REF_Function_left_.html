@@ -76,8 +76,9 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -136,35 +137,35 @@ Add any number of additional parameter set variables.  They will be manipulated 
 <td><b>Extracted subset</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;set[] = { the, taste, of, the, 12, coffees, '!' };<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set[]&nbsp;=&nbsp;{&nbsp;the,&nbsp;taste,&nbsp;of,&nbsp;the,&nbsp;12,&nbsp;coffees,&nbsp;'!'&nbsp;};<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( left( set[], 0 ), ", ", left( set[], 1 ), ", ", left( set[], -2 ), ", ", left( set[], -1 ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( left( set[],99 ), ", ", left( set[], -99) );<br/>
- &nbsp; &nbsp; &nbsp;echo;<br/>
- &nbsp; &nbsp; &nbsp;echo( left( set[], { 12, of } ), " / ", left include( set[], { 12, of } ) ); // Recognized 'of' as 1st match<br/>
- &nbsp; &nbsp; &nbsp;echo( left last match ( set[], {the} ), ", ", left last match include( set[], {the} ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( left( set[], {tea } ) ); // Returns full set because element not found<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;left(&nbsp;set[],&nbsp;0&nbsp;),&nbsp;",&nbsp;",&nbsp;left(&nbsp;set[],&nbsp;1&nbsp;),&nbsp;",&nbsp;",&nbsp;left(&nbsp;set[],&nbsp;-2&nbsp;),&nbsp;",&nbsp;",&nbsp;left(&nbsp;set[],&nbsp;-1&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;left(&nbsp;set[],99&nbsp;),&nbsp;",&nbsp;",&nbsp;left(&nbsp;set[],&nbsp;-99)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;left(&nbsp;set[],&nbsp;{&nbsp;12,&nbsp;of&nbsp;}&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;left&nbsp;include(&nbsp;set[],&nbsp;{&nbsp;12,&nbsp;of&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;Recognized&nbsp;'of'&nbsp;as&nbsp;1st&nbsp;match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;left&nbsp;last&nbsp;match&nbsp;(&nbsp;set[],&nbsp;{the}&nbsp;),&nbsp;",&nbsp;",&nbsp;left&nbsp;last&nbsp;match&nbsp;include(&nbsp;set[],&nbsp;{the}&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;left(&nbsp;set[],&nbsp;{tea&nbsp;}&nbsp;)&nbsp;);&nbsp;//&nbsp;Returns&nbsp;full&nbsp;set&nbsp;because&nbsp;element&nbsp;not&nbsp;found<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( new line, "Demonstrate the follower feature: ");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"Demonstrate&nbsp;the&nbsp;follower&nbsp;feature:&nbsp;");<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;set2[] = { A, fragrance, coming, from, 120, espressos, '!' };<br/>
- &nbsp; &nbsp; &nbsp;set3[] = { Der, Geschmack, kommt, von, 120, Tassen Kaffee, '!' };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set2[]&nbsp;=&nbsp;{&nbsp;A,&nbsp;fragrance,&nbsp;coming,&nbsp;from,&nbsp;120,&nbsp;espressos,&nbsp;'!'&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set3[]&nbsp;=&nbsp;{&nbsp;Der,&nbsp;Geschmack,&nbsp;kommt,&nbsp;von,&nbsp;120,&nbsp;Tassen&nbsp;Kaffee,&nbsp;'!'&nbsp;};<br/>
 <br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 1: ", left( set[], {of}, set2[], set3[] ) );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 2: ", set2[] );<br/>
- &nbsp; &nbsp; &nbsp;echo( "Extraction 3: ", set3[] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;1:&nbsp;",&nbsp;left(&nbsp;set[],&nbsp;{of},&nbsp;set2[],&nbsp;set3[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;2:&nbsp;",&nbsp;set2[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Extraction&nbsp;3:&nbsp;",&nbsp;set3[]&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>{}, {'the'}, {'the','taste','of','the',12}, {'the','taste','of','the',12,'coffees'}<br/>
-{'the','taste','of','the',12,'coffees','!'}, {}<br/>
+<div class="output_background_color" ><code>{},&nbsp;{'the'},&nbsp;{'the','taste','of','the',12},&nbsp;{'the','taste','of','the',12,'coffees'}<br/>
+{'the','taste','of','the',12,'coffees','!'},&nbsp;{}<br/>
 <br/>
-{'the','taste'} / {'the','taste','of'}<br/>
-{'the','taste','of'}, {'the','taste','of','the'}<br/>
+{'the','taste'}&nbsp;/&nbsp;{'the','taste','of'}<br/>
+{'the','taste','of'},&nbsp;{'the','taste','of','the'}<br/>
 {'the','taste','of','the',12,'coffees','!'}<br/>
 <br/>
-Demonstrate the follower feature: <br/>
-Extraction 1: {'the','taste'}<br/>
-Extraction 2: {'A','fragrance'}<br/>
-Extraction 3: {'Der','Geschmack'}<br/>
+Demonstrate&nbsp;the&nbsp;follower&nbsp;feature:&nbsp;<br/>
+Extraction&nbsp;1:&nbsp;{'the','taste'}<br/>
+Extraction&nbsp;2:&nbsp;{'A','fragrance'}<br/>
+Extraction&nbsp;3:&nbsp;{'Der','Geschmack'}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_left_.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_right_.html">right (parameter set function)</a><br/>

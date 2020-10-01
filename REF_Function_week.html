@@ -74,8 +74,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -115,19 +116,19 @@ Other values: -1 is returned</p>
 <td><b>week number</b><br/><p>-1 is returned if no recognizable date is provided or wrong option value is used.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp; &nbsp; &nbsp;d[1] = { 31.12.2020, 31.12.2021, 31.12.2022 }; // still a literal. week() converts to date<br/>
- &nbsp; &nbsp; &nbsp;d[2] = { 01.01.2020, 01.01.2021, 01.01.2022 };<br/>
- &nbsp; &nbsp; &nbsp;for (option[] = 0, option[] &lt;= 4, option[]++)<br/>
- &nbsp; &nbsp; &nbsp;{<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;print( week( d[1]{0}, option[] ), " ", week( d[1]{1}, option[] ), " ", week( d[1]{2}, option[] ), " &nbsp; " );<br/>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo ( week( d[2]{0}, option[] ), " ", week( d[2]{1}, option[] ), " ", week( d[2]{2}, option[] ) );<br/>
- &nbsp; &nbsp; &nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[1]&nbsp;=&nbsp;{&nbsp;31.12.2020,&nbsp;31.12.2021,&nbsp;31.12.2022&nbsp;};&nbsp;//&nbsp;still&nbsp;a&nbsp;literal.&nbsp;week()&nbsp;converts&nbsp;to&nbsp;date<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[2]&nbsp;=&nbsp;{&nbsp;01.01.2020,&nbsp;01.01.2021,&nbsp;01.01.2022&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(option[]&nbsp;=&nbsp;0,&nbsp;option[]&nbsp;&lt;=&nbsp;4,&nbsp;option[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;week(&nbsp;d[1]{0},&nbsp;option[]&nbsp;),&nbsp;"&nbsp;",&nbsp;week(&nbsp;d[1]{1},&nbsp;option[]&nbsp;),&nbsp;"&nbsp;",&nbsp;week(&nbsp;d[1]{2},&nbsp;option[]&nbsp;),&nbsp;"&nbsp;&nbsp;&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(&nbsp;week(&nbsp;d[2]{0},&nbsp;option[]&nbsp;),&nbsp;"&nbsp;",&nbsp;week(&nbsp;d[2]{1},&nbsp;option[]&nbsp;),&nbsp;"&nbsp;",&nbsp;week(&nbsp;d[2]{2},&nbsp;option[]&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>53 52 52 &nbsp; 1 53 52<br/>
-53 52 52 &nbsp; 1 0 0<br/>
-20.53 21.52 22.52 &nbsp; 20.01 21 22<br/>
-2020.53 2021.52 2022.52 &nbsp; 2020.01 2021 2022<br/>
--1 -1 -1 &nbsp; -1 -1 -1<br/>
+<div class="output_background_color" ><code>53&nbsp;52&nbsp;52&nbsp;&nbsp;&nbsp;1&nbsp;53&nbsp;52<br/>
+53&nbsp;52&nbsp;52&nbsp;&nbsp;&nbsp;1&nbsp;0&nbsp;0<br/>
+20.53&nbsp;21.52&nbsp;22.52&nbsp;&nbsp;&nbsp;20.01&nbsp;21&nbsp;22<br/>
+2020.53&nbsp;2021.52&nbsp;2022.52&nbsp;&nbsp;&nbsp;2020.01&nbsp;2021&nbsp;2022<br/>
+-1&nbsp;-1&nbsp;-1&nbsp;&nbsp;&nbsp;-1&nbsp;-1&nbsp;-1<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_week.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

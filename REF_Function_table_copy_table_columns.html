@@ -85,8 +85,9 @@
 <li class="navi"><a href="REF_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 4.8.16 Exploring and Extracting Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -118,7 +119,7 @@ If the new table is already existing, then it will be initialized.</p>
 <td>table columns</td>
 <td><b>Header names and/or column numbers</b><br/><p>See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li></ul><p></p>
 </td></tr>
 <tr><td>4.<br/>code</td>
 <td>expression<br/>:literal</td>
@@ -130,38 +131,38 @@ Specify the conditions or rules to select the rows.  See <a class="bold_text" hr
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code> &nbsp;table initialize( t, {{ Name, Age, Hobby },<br/>
- &nbsp; &nbsp; &nbsp;{ Ann, 45, Skiing }, { Dan, 35, Skating }, { Eva, 40, Bee keeping }, { Nic, 10, Reading } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;{{&nbsp;Name,&nbsp;Age,&nbsp;Hobby&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;45,&nbsp;Skiing&nbsp;},&nbsp;{&nbsp;Dan,&nbsp;35,&nbsp;Skating&nbsp;},&nbsp;{&nbsp;Eva,&nbsp;40,&nbsp;Bee&nbsp;keeping&nbsp;},&nbsp;{&nbsp;Nic,&nbsp;10,&nbsp;Reading&nbsp;}&nbsp;}&nbsp;);<br/>
 <br/>
- &nbsp;echo("Original table:");<br/>
- &nbsp;table list( t );<br/>
+&nbsp;&nbsp;echo("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
 <br/>
- &nbsp;echo("Copy Hobby and Name:");<br/>
- &nbsp;table copy table columns ( t, u, {Hobby, Name} );<br/>
- &nbsp;table list( u );<br/>
+&nbsp;&nbsp;echo("Copy&nbsp;Hobby&nbsp;and&nbsp;Name:");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;columns&nbsp;(&nbsp;t,&nbsp;u,&nbsp;{Hobby,&nbsp;Name}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;u&nbsp;);<br/>
 <br/>
- &nbsp;echo("Copy Name and Age of young people:");<br/>
- &nbsp;table copy table columns selected rows ( t, v, {Name, Age}, [Age]&lt;40 );<br/>
- &nbsp;table list( v );</code></div>
+&nbsp;&nbsp;echo("Copy&nbsp;Name&nbsp;and&nbsp;Age&nbsp;of&nbsp;young&nbsp;people:");<br/>
+&nbsp;&nbsp;table&nbsp;copy&nbsp;table&nbsp;columns&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;v,&nbsp;{Name,&nbsp;Age},&nbsp;[Age]&lt;40&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;v&nbsp;);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Original table:<br/>
- &nbsp; &nbsp;0 : Name | Age | Hobby &nbsp; &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;1 : Ann &nbsp;| 45 &nbsp;| Skiing &nbsp; &nbsp; <br/>
- &nbsp; &nbsp;2 : Dan &nbsp;| 35 &nbsp;| Skating &nbsp; &nbsp;<br/>
- &nbsp; &nbsp;3 : Eva &nbsp;| 40 &nbsp;| Bee keeping<br/>
- &nbsp; &nbsp;4 : Nic &nbsp;| 10 &nbsp;| Reading &nbsp; &nbsp;<br/>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age&nbsp;|&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Ann&nbsp;&nbsp;|&nbsp;45&nbsp;&nbsp;|&nbsp;Skiing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;&nbsp;|&nbsp;Skating&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Eva&nbsp;&nbsp;|&nbsp;40&nbsp;&nbsp;|&nbsp;Bee&nbsp;keeping<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;|&nbsp;Reading&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-Copy Hobby and Name:<br/>
- &nbsp; &nbsp;0 : Hobby &nbsp; &nbsp; &nbsp; | Name<br/>
- &nbsp; &nbsp;1 : Skiing &nbsp; &nbsp; &nbsp;| Ann <br/>
- &nbsp; &nbsp;2 : Skating &nbsp; &nbsp; | Dan <br/>
- &nbsp; &nbsp;3 : Bee keeping | Eva <br/>
- &nbsp; &nbsp;4 : Reading &nbsp; &nbsp; | Nic <br/>
+Copy&nbsp;Hobby&nbsp;and&nbsp;Name:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Hobby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Skiing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Ann&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Skating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Dan&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Bee&nbsp;keeping&nbsp;|&nbsp;Eva&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Reading&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Nic&nbsp;<br/>
 <br/>
-Copy Name and Age of young people:<br/>
- &nbsp; &nbsp;0 : Name | Age<br/>
- &nbsp; &nbsp;1 : Dan &nbsp;| 35 <br/>
- &nbsp; &nbsp;2 : Nic &nbsp;| 10 <br/>
+Copy&nbsp;Name&nbsp;and&nbsp;Age&nbsp;of&nbsp;young&nbsp;people:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Dan&nbsp;&nbsp;|&nbsp;35&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Nic&nbsp;&nbsp;|&nbsp;10&nbsp;<br/>
 <br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_table_copy_table_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

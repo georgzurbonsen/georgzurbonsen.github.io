@@ -66,8 +66,9 @@
 <li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 4.7 Parameter Set Functions </div></a></li>
 <li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 4.8 Table Functions </div></a></li>
 <li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 4.9 Variables Functions </div></a></li>
-<li class="navi"><a href="REF_Features_directory_and_file_system.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.11 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 4.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
 </ul>
@@ -83,28 +84,28 @@ been deleted meanwhile.  In some application cases, e.g. loading variables from 
 between loading empty arrys and no arrays at all.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code> &nbsp;<br/>
- &nbsp;echo("Distinguish between simple and zero members variables");<br/>
- &nbsp;a[] = Hi;<br/>
- &nbsp;echo(identify(a[0])); // simple<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Distinguish&nbsp;between&nbsp;simple&nbsp;and&nbsp;zero&nbsp;members&nbsp;variables");<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;Hi;<br/>
+&nbsp;&nbsp;echo(identify(a[0]));&nbsp;//&nbsp;simple<br/>
 <br/>
- &nbsp;a[0] = Ho;<br/>
- &nbsp;echo(identify(a[0])); // array<br/>
+&nbsp;&nbsp;a[0]&nbsp;=&nbsp;Ho;<br/>
+&nbsp;&nbsp;echo(identify(a[0]));&nbsp;//&nbsp;array<br/>
 <br/>
- &nbsp;delete(a[0]);<br/>
- &nbsp;echo(identify(a[0])); // not found<br/>
- &nbsp;echo(identify(a[])); // zero members<br/>
+&nbsp;&nbsp;delete(a[0]);<br/>
+&nbsp;&nbsp;echo(identify(a[0]));&nbsp;//&nbsp;not&nbsp;found<br/>
+&nbsp;&nbsp;echo(identify(a[]));&nbsp;//&nbsp;zero&nbsp;members<br/>
 <br/>
- &nbsp;a[dog] = Hund;<br/>
- &nbsp;echo(identify(a[])); // structure<br/>
+&nbsp;&nbsp;a[dog]&nbsp;=&nbsp;Hund;<br/>
+&nbsp;&nbsp;echo(identify(a[]));&nbsp;//&nbsp;structure<br/>
 <br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Distinguish between simple and zero members variables<br/>
-not found<br/>
+<div class="output_background_color" ><code>Distinguish&nbsp;between&nbsp;simple&nbsp;and&nbsp;zero&nbsp;members&nbsp;variables<br/>
+not&nbsp;found<br/>
 simple<br/>
-not found<br/>
-zero members<br/>
+not&nbsp;found<br/>
+zero&nbsp;members<br/>
 structure<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_zero_members.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
