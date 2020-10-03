@@ -74,11 +74,14 @@
 </ul></li>
 <li class="navi"><a href="REF_Features_listing_directories_and_files.html"><div class="navi">+ 4.10.2 Listing and Searching Directories and Files </div></a></li>
 <li class="navi"><a href="REF_Features_manipulating_directories_and_files.html"><div class="navi">+ 4.10.3 Manipulating Directories and Files </div></a></li>
+<li class="navi"><a href="REF_Features_file_compression_decompression.html"><div class="navi">+ 4.10.4 File Compression and Decompression </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 4.11 System Functions </div></a></li>
-<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.12 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 4.12 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 4.13 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
+<li class="navi"><div> File compression and decompression </div></li>
 </ul>
 	</div>
 
@@ -109,11 +112,13 @@
 <h4> Exceptions</h4>
 <p>Invalid path name or nonexisting drive</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;disk&nbsp;space(&nbsp;"C:&#92;"&nbsp;),&nbsp;"#,000",&nbsp;local&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;disk&nbsp;space&nbsp;free(&nbsp;"C:&#92;"&nbsp;),&nbsp;"#,000",&nbsp;local&nbsp;)&nbsp;);</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path[]&nbsp;=&nbsp;select&nbsp;if(&nbsp;system&nbsp;info[operating&nbsp;system]&nbsp;==&nbsp;Windows,&nbsp;"C:&#92;",&nbsp;"/home"&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;disk&nbsp;space(&nbsp;path[]&nbsp;),&nbsp;"#,000",&nbsp;local&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;disk&nbsp;space&nbsp;free(&nbsp;path[]&nbsp;),&nbsp;"#,000",&nbsp;local&nbsp;)&nbsp;);</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>234'483'609'600<br/>
-85'151'789'056<br/>
+90'247'454'720<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_disk_space.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
