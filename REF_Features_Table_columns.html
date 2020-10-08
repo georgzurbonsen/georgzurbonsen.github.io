@@ -76,7 +76,6 @@
 <li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 5.13 Cross-Functional Info </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
-<li class="navi"><a href="REF_Features_matrix_table_access.html"><div class="navi"> Matrix Table Access </div></a></li>
 </ul>
 	</div>
 
@@ -108,42 +107,9 @@ Various functions specific rules may apply:
 </p>
 <h4> Shifted Table Column Specifications</h4>
 <p>
-In some cases, you want to refer to neighboring columns to the left or to the right of a column for which the header name is presently
-known. In this case, put the header name into <u>single</u> quotation marks so it will be regarded as a softquoted literal, and
-add one or multiple '&lt;' or '&gt' symbols before the name starts, but inside the single quotation marks.  Multiple consecutive
-symobls can be cascaded to refer to nearby columns which are not immediate neighbors.
-
-</p><ul class="bullets"><li class="bullets">&lt; = Refer to the next column to the left.  Example:  '&lt;First Name'
-</li><li class="bullets">&gt; = Refer to the next column to the right.  Example:  '&lt;State or Province'
-</li><li class="bullets">&lt;&lt; = Refer to 2 columns to the left left.  Example:  '&lt;&lt;First Name'
-</li><li class="bullets">&gt;&gt; = Refer to 2 columns to the left right..  Example:  '&lt;&lt;State or Province'
-</li><li class="bullets">&gt;&gt; = The two shift operations facing to opposite directions neutralize each other, regardless how they are arranged
-</li></ul><p>
-
-<u>Attention</u>: The &lt; and &gt; symbols must be the 1st characters after the quotation marks.  If spaces lie inbetween, then these symbols are considered as part of header names.<br>
-<u>Attention</u>: Shifting does not happen in quoted literals, e.g. "&gt;Last Name". It assumes the header name containing the &gt; symbol.<br>
-
-<br><br>
-Attempting to left-shift beyond the first column (column 0) will assert exceptions.  Attempting to right-shift beyond the last column is OK as long
-the function allows it.  Otherwise exceptions will be asserted, too.
-</p>
-<h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,&nbsp;&nbsp;{&nbsp;{&nbsp;Col&nbsp;A,&nbsp;Col&nbsp;B,&nbsp;Col&nbsp;C,&nbsp;Col&nbsp;D,&nbsp;Col&nbsp;E,&nbsp;Col&nbsp;F&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Val&nbsp;A,&nbsp;Val&nbsp;B,&nbsp;Val&nbsp;C,&nbsp;Val&nbsp;D,&nbsp;Val&nbsp;E,&nbsp;Val&nbsp;F,&nbsp;Val&nbsp;G&nbsp;}&nbsp;}&nbsp;);<br/>
-<br/>
-&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;Col&nbsp;B,&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;B<br/>
-&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;A<br/>
-&nbsp;&nbsp;//&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;&lt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;would&nbsp;assert&nbsp;exception<br/>
-&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&lt;&gt;Col&nbsp;B',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;B<br/>
-&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&gt;Col&nbsp;E',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;F<br/>
-&nbsp;&nbsp;echo(&nbsp;table&nbsp;read&nbsp;column&nbsp;selected&nbsp;rows&nbsp;(&nbsp;t,&nbsp;'&gt;&gt;Col&nbsp;E',&nbsp;true&nbsp;)&nbsp;);&nbsp;//&nbsp;Val&nbsp;G</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code>{'Val&nbsp;B'}<br/>
-{'Val&nbsp;A'}<br/>
-{'Val&nbsp;B'}<br/>
-{'Val&nbsp;F'}<br/>
-{'Val&nbsp;G'}<br/>
-</code></div><u>Try it yourself:</u> Open <b>REF_Features_Table_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+See the section on <a class="bold_text" href="REF_Features_shifted_table_column_specification.html">shifted table column specifications</a> for more details.  They can be applied both in table references as well as in column header
+names provided as function parameters.  In both cases, the literal must be of type <a class="bold_text" href="REF_Features_data_types_literals.html">softquoted literal</a>, e.g. contents put into single quotation marks.
+Otherwise, the contents are treated literally as they are.</p>
 	</div>
 </section>
 
