@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Transactions between Tables</h3>
+<a accesskey="p" href="REF_Features_Transactions_from_variables_to_tables.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Transactions_with_AND_assignment_operator.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">+ 2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">+ 2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.3 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.4 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.5 Locales </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.6 Comments </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">3 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_variable_scopes.html"><div class="navi">+ 3.1 Variable Scopes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_accessing_tables.html"><div class="navi">+ 4.1 Accessing Tables </div></a></li>
+<li class="navi"><a href="REF_Features_memory_effect.html"><div class="navi">4.2 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_formulas_and_operators.html"><div class="navi">5 Formulas and Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_unary_operators.html"><div class="navi">5.1 Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_binary_operators.html"><div class="navi">+ 5.2 Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_operators.html"><div class="navi">+ 5.3 Deep Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Assignment_operators.html"><div class="navi">5.4 Assignment operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_assignment_operators.html"><div class="navi">5.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_ad-hoc_operators.html"><div class="navi">+ 5.6 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">6 Transactions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">6.1 Without Transaction Assignment Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Transactions_between_variables.html"><div class="navi">6.1.1 Transactions between variables </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_from_tables_to_variables.html"><div class="navi">6.1.2 Transactions from tables to variables </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_from_variables_to_tables.html"><div class="navi">6.1.3 Transactions from variables to tables </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_between_tables.html"><div class="navi navi-selected">6.1.4 Transactions between Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
+<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
+<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">7.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">7.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">+ 7.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">7.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">8 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">+ 8.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_input_output_functions.html"><div class="navi">+ 8.2 Input / Output Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 8.3 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 8.4 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 8.5 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 8.6 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 8.7 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 8.8 Table Functions </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 8.9 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 8.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 8.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 8.12 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 8.13 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Transactions are possible between two table rows inside the same table or between two different tables.
+The <b>^</b> suffix behind the transaction operator is irrelvant because no base variables are involved.
+Transactions between two different tables, or two different rows in the same table are allowed.
+
+<br><br>
+Copying procedure: If specifc columns in the source table are selected, the those data items will only be copied if the same items (e.g. same header names)
+are selected in the destination table.  Nothing is copied if specified columns in both source and destination are common (i.e. overlapping), for example
+in the following statement: <b>[t: {City, Country}, 3] <== [t: {State, Street}, 4];</b>.
+
+<br><br>
+When coping data from one table to another table, additional headers will only be created if the column specification is open-ended.  Examples: [t:5..,1], [t:..,1], [t:, 1].
+
+</p><table class="bold_column_1 bold_column_2 bold_column_3" style = "width:1000px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:700px">
+<tr><th>Transaction </th><th> Symbol    </th><th> Explanation           </th><th> Description</th></tr>
+<tr><td>Copy      </td><td> &lt;==    </td><td> t[..,1] &lt;== a[];       </td><td> Step 1: Checks that exactly one table row and one or more or all columns are specified.<br> Step 2: Clears all contents in the specified table row<br> Step 3: Data transfer from variable to table as described above.<br>                                     Note: The base variable will not be copied.</td></tr>
+<tr><td>Move      </td><td> &lt;&lt;= </td><td> t[..,1] &lt;&lt;= b[];    </td><td> Steps 1-3: Like the copy-transaction<br>                                    Step 4: The specified row in the table will be deleted.  The rows below will shift upwards.</td></tr>
+<tr><td>Swap        </td><td> &lt;=&gt; </td><td> t[..,1] &lt;=&gt; b[];    </td><td> The contents in the member variable and the table row will be exchanged.</td></tr>
+</table><p>
+</p>
+<h5> Copy Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night&nbsp;vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive&nbsp;nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ape,&nbsp;&nbsp;&nbsp;2&nbsp;or&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively&nbsp;smart&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability,&nbsp;Weapon&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bee,&nbsp;&nbsp;&nbsp;6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Makes&nbsp;honey,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sting&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Gnu,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knows&nbsp;UNIX,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horns&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Cat,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empathy&nbsp;to&nbsp;humans,&nbsp;sharp&nbsp;claws&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Dog,&nbsp;Name..Special&nbsp;ability&nbsp;]&nbsp;&lt;==&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Cat,&nbsp;];&nbsp;//&nbsp;sharp&nbsp;claws&nbsp;will&nbsp;not&nbsp;be&nbsp;copied.<br/>
+&nbsp;&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Owl,&nbsp;..&nbsp;]&nbsp;&lt;==&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Bee,&nbsp;{&nbsp;Weapon,&nbsp;Name&nbsp;}&nbsp;];<br/>
+<br/>
+&nbsp;&nbsp;echo("Dog&nbsp;-&gt;&nbsp;Cat&nbsp;without&nbsp;claws");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals1&nbsp;);&nbsp;//&nbsp;No&nbsp;additional&nbsp;column&nbsp;created<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Unchanged");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals2&nbsp;);&nbsp;//&nbsp;Additional&nbsp;column&nbsp;created</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Dog&nbsp;-&gt;&nbsp;Cat&nbsp;without&nbsp;claws<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;&nbsp;&nbsp;|&nbsp;Weapon<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Bee&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sting&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Cat&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Empathy&nbsp;to&nbsp;humans&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Ape&nbsp;&nbsp;|&nbsp;2&nbsp;or&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Relatively&nbsp;smart&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+Unchanged<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;&nbsp;&nbsp;|&nbsp;Weapon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Bee&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Makes&nbsp;honey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Gnu&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Knows&nbsp;UNIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;horns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Cat&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Empathy&nbsp;to&nbsp;humans&nbsp;|&nbsp;sharp&nbsp;claws<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_Transactions_between_tables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Move Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night&nbsp;vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive&nbsp;nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ape,&nbsp;&nbsp;&nbsp;2&nbsp;or&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively&nbsp;smart&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability,&nbsp;Weapon&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bee,&nbsp;&nbsp;&nbsp;6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Makes&nbsp;honey,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sting&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Gnu,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knows&nbsp;UNIX,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horns&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Cat,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empathy&nbsp;to&nbsp;humans,&nbsp;sharp&nbsp;claws&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Gnu,&nbsp;..&nbsp;]&nbsp;&lt;&lt;=&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Dog,&nbsp;];&nbsp;&nbsp;//&nbsp;Dog&nbsp;overwrites&nbsp;Gnu,&nbsp;Dog&nbsp;erased&nbsp;from&nbsp;animals&nbsp;1<br/>
+&nbsp;&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Owl,&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&lt;&lt;=&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Bee,&nbsp;..&nbsp;];&nbsp;//&nbsp;Open&nbsp;ended&nbsp;items,&nbsp;also&nbsp;copy&nbsp;the&nbsp;weapon<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;echo("Contains&nbsp;the&nbsp;bee,&nbsp;owl&nbsp;and&nbsp;dog&nbsp;removed");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals1&nbsp;);&nbsp;//&nbsp;No&nbsp;additional&nbsp;column&nbsp;created<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Contains&nbsp;the&nbsp;dog,&nbsp;gnu&nbsp;and&nbsp;bee&nbsp;removed");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals2&nbsp;);&nbsp;//&nbsp;Additional&nbsp;column&nbsp;created</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Contains&nbsp;the&nbsp;bee,&nbsp;owl&nbsp;and&nbsp;dog&nbsp;removed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;&nbsp;|&nbsp;Weapon<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Bee&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Makes&nbsp;honey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sting&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Ape&nbsp;&nbsp;|&nbsp;2&nbsp;or&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Relatively&nbsp;smart&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+Contains&nbsp;the&nbsp;dog,&nbsp;gnu&nbsp;and&nbsp;bee&nbsp;removed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;&nbsp;&nbsp;|&nbsp;Weapon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Dog&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sensitive&nbsp;nose&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Cat&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Empathy&nbsp;to&nbsp;humans&nbsp;|&nbsp;sharp&nbsp;claws<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_Transactions_between_tables_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Swap Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Surface,&nbsp;&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Owl,&nbsp;&nbsp;&nbsp;Feathers,&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night&nbsp;vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog,&nbsp;&nbsp;&nbsp;Fur,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive&nbsp;nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ape,&nbsp;&nbsp;&nbsp;Hair,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;or&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively&nbsp;smart&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize(&nbsp;animals2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;&nbsp;Leg&nbsp;count,&nbsp;Special&nbsp;ability,&nbsp;Weapon&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bee,&nbsp;&nbsp;&nbsp;6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Makes&nbsp;honey,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sting&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Gnu,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knows&nbsp;UNIX,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horns&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Cat,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empathy&nbsp;to&nbsp;humans,&nbsp;sharp&nbsp;claws&nbsp;}&nbsp;}&nbsp;);<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Cat,&nbsp;..&nbsp;]&nbsp;&lt;=&gt;&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Dog,&nbsp;&nbsp;];<br/>
+&nbsp;&nbsp;[&nbsp;animals2:&nbsp;Name,&nbsp;Bee,&nbsp;Name..Special&nbsp;ability&nbsp;]&nbsp;&lt;=&gt;&nbsp;[&nbsp;animals1:&nbsp;Name,&nbsp;Owl,&nbsp;];&nbsp;//&nbsp;Excludes&nbsp;the&nbsp;weapon<br/>
+&nbsp;&nbsp;<br/>
+<br/>
+&nbsp;&nbsp;echo("Contains&nbsp;Bee,&nbsp;Cat&nbsp;and&nbsp;Ape");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals1&nbsp;);&nbsp;//&nbsp;No&nbsp;additional&nbsp;column&nbsp;created<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo("Contains&nbsp;Owl,&nbsp;Gnu&nbsp;and&nbsp;Dog");<br/>
+&nbsp;&nbsp;table&nbsp;list(&nbsp;animals2&nbsp;);&nbsp;//&nbsp;Additional&nbsp;column&nbsp;created</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Contains&nbsp;Bee,&nbsp;Cat&nbsp;and&nbsp;Ape<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Surface&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;&nbsp;&nbsp;|&nbsp;Weapon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Bee&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Makes&nbsp;honey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Cat&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Empathy&nbsp;to&nbsp;humans&nbsp;|&nbsp;sharp&nbsp;claws<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Ape&nbsp;&nbsp;|&nbsp;Hair&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;or&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Relatively&nbsp;smart&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+Contains&nbsp;Owl,&nbsp;Gnu&nbsp;and&nbsp;Dog<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;|&nbsp;Leg&nbsp;count&nbsp;|&nbsp;Special&nbsp;ability&nbsp;|&nbsp;Weapon&nbsp;|&nbsp;Surface<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Owl&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Gnu&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Knows&nbsp;UNIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;horns&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Dog&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sensitive&nbsp;nose&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fur&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_Transactions_between_tables_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+

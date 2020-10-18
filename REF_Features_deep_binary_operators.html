@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Deep Binary Operators</h3>
+<a accesskey="p" href="REF_Features_deep_unary_operators.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_matrix_operations_summary.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">+ 2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">+ 2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.3 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.4 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.5 Locales </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.6 Comments </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">3 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_variable_scopes.html"><div class="navi">+ 3.1 Variable Scopes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_accessing_tables.html"><div class="navi">+ 4.1 Accessing Tables </div></a></li>
+<li class="navi"><a href="REF_Features_memory_effect.html"><div class="navi">4.2 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_formulas_and_operators.html"><div class="navi">5 Formulas and Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_unary_operators.html"><div class="navi">5.1 Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_binary_operators.html"><div class="navi">+ 5.2 Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_operators.html"><div class="navi">5.3 Deep Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_deep_unary_operators.html"><div class="navi">5.3.1 Deep Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_binary_operators.html"><div class="navi navi-selected">5.3.2 Deep Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_matrix_operations_summary.html"><div class="navi">5.3.3 Matrix Operations Summary </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Assignment_operators.html"><div class="navi">5.4 Assignment operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_assignment_operators.html"><div class="navi">5.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_ad-hoc_operators.html"><div class="navi">+ 5.6 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">6 Transactions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
+<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
+<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">7.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">7.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">+ 7.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">7.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">8 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">+ 8.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_input_output_functions.html"><div class="navi">+ 8.2 Input / Output Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 8.3 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 8.4 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 8.5 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 8.6 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 8.7 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 8.8 Table Functions </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 8.9 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 8.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 8.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 8.12 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 8.13 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+All valid <a class="bold_text" href="REF_Features_binary_operators.html">binary operators</a> can be applied as deep operators in order to address the parameter set elements directly.
+The number of accent circumflex symbols behind the operator determines the depth to use.
+A mix of combining simple values (scalars) and parameter sets (vectors, matrics) is supported.  In this case, the scalar
+provided as one operand will be calculated with every element in the parameter set specified as the other operand.
+
+<br><br>
+If parameter sets are specified in both sides of the operator, and the number of elements differ, then the shorter parameter
+set will be stuffed with neutral values to match the length of the longer parameter set before doing the calculation.<br>
+Example: { 3, 4 } * { 2, 1, 3, 2 } extends to { 3, 4, 1, 1 } * { 2, 1, 3, 2 } where 1 is used as a neutral value for
+multiplication.
+
+<br><br>
+List of neutral values:
+</p><ul class="bullets"><li class="bullets">Literal:  Blank string
+</li><li class="bullets">Numeral:  0 for + and -; 1 for * and /
+</li><li class="bullets">Dates: 0
+</li><li class="bullets">Boolean: true (for AND: &amp;), 0 (for OR: &vert;)
+</li><li class="bullets">Parameter set: Empty set {}
+</li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Deep&nbsp;binary&nbsp;operators&nbsp;on&nbsp;simple&nbsp;parameter&nbsp;sets&nbsp;(vectors):");<br/>
+<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;};<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;{&nbsp;10,15,20,25,30&nbsp;};<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;{&nbsp;&nbsp;2,-2,'',-2,&nbsp;2&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;s[]&nbsp;=&nbsp;{&nbsp;Ha,&nbsp;He,&nbsp;Ho,&nbsp;Hu,&nbsp;Hi&nbsp;};<br/>
+&nbsp;&nbsp;t[]&nbsp;=&nbsp;{&nbsp;ngar,&nbsp;ring,&nbsp;ney,&nbsp;nger,&nbsp;ll&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+&nbsp;b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Conventional&nbsp;way:&nbsp;Concatenates&nbsp;vectors<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;*^&nbsp;b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Multiplies&nbsp;the&nbsp;elements&nbsp;together<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;s[]&nbsp;+^&nbsp;t[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Combines&nbsp;strings<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;{&nbsp;rein,&nbsp;1,&nbsp;date("2020-04-30")&nbsp;}&nbsp;+^&nbsp;{&nbsp;deer,&nbsp;2,&nbsp;1&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Mixed&nbsp;types&nbsp;are&nbsp;OK<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Vectors&nbsp;of&nbsp;different&nbsp;sizes");<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;*^&nbsp;{&nbsp;10,&nbsp;100,&nbsp;1000&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First&nbsp;3&nbsp;elements&nbsp;are&nbsp;multiplied<br/>
+&nbsp;&nbsp;echo(&nbsp;b[]&nbsp;-^&nbsp;{&nbsp;2,4,5}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First&nbsp;3&nbsp;elements&nbsp;are&nbsp;negated<br/>
+&nbsp;&nbsp;echo(&nbsp;{&nbsp;3,3,3,}&nbsp;-^&nbsp;a[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First&nbsp;3&nbsp;elements&nbsp;are&nbsp;calculated,&nbsp;remaining&nbsp;ones&nbsp;negated<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;/^&nbsp;{&nbsp;2,4,6&nbsp;}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First&nbsp;3&nbsp;elemnts&nbsp;are&nbsp;divided<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^&nbsp;c[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Like&nbsp;with&nbsp;normal&nbsp;arithmetic&nbsp;operators,&nbsp;blank&nbsp;literals<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;are&nbsp;interpreted&nbsp;as&nbsp;zero.<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Matrices");<br/>
+<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;1,&nbsp;&nbsp;2,&nbsp;3&nbsp;},&nbsp;{&nbsp;4,&nbsp;&nbsp;5,&nbsp;&nbsp;6&nbsp;}&nbsp;};<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;1,&nbsp;-1,&nbsp;0&nbsp;},&nbsp;{&nbsp;2,&nbsp;-2,&nbsp;10&nbsp;}&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+&nbsp;&nbsp;&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Simple&nbsp;concatenation<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^&nbsp;&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;elements&nbsp;containing&nbsp;3&nbsp;numbers&nbsp;are&nbsp;concatenated<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;What&nbsp;you&nbsp;want:&nbsp;Addition&nbsp;of&nbsp;the&nbsp;elements</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Deep&nbsp;binary&nbsp;operators&nbsp;on&nbsp;simple&nbsp;parameter&nbsp;sets&nbsp;(vectors):<br/>
+{1,2,3,4,5,10,15,20,25,30}<br/>
+{10,30,60,100,150}<br/>
+{'Hangar','Hering','Honey','Hunger','Hill'}<br/>
+{'reindeer',3,'2020-05-01'}<br/>
+<br/>
+Vectors&nbsp;of&nbsp;different&nbsp;sizes<br/>
+{10,200,3000,4,5}<br/>
+{8,11,15,25,30}<br/>
+{2,1,0,-4,-5}<br/>
+{0.5,0.5,0.5,4,5}<br/>
+{3,0,3,2,7}<br/>
+<br/>
+Matrices<br/>
+{{1,2,3},{4,5,6},{1,-1,0},{2,-2,10}}<br/>
+{{1,2,3,1,-1,0},{4,5,6,2,-2,10}}<br/>
+{{2,1,3},{6,3,16}}<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_deep_binary_operators.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Repetition Suffix</h4>
+<p>
+Particularly useful for operations wiht matrices of differen length is the repetition suffix which is a colon <b>:</b>.
+Add the colon after the last accent circumflex symbol to repeat the values in the shorter parameter set until all
+values in the longer parameter set have been calculated.
+</p>
+<h5> Adding the colon as repetition suffix</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;1,&nbsp;2,&nbsp;4,&nbsp;8,&nbsp;16&nbsp;};<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;{&nbsp;2,&nbsp;3&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^&nbsp;b[]&nbsp;);&nbsp;&nbsp;//&nbsp;3,&nbsp;5,&nbsp;4,&nbsp;&nbsp;8,&nbsp;16<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^:b[]&nbsp;);&nbsp;&nbsp;//&nbsp;3,&nbsp;5,&nbsp;6,&nbsp;11,&nbsp;18</code></div>
+<h5> Combining vectors and matrices with scalars</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Deep&nbsp;binary&nbsp;operators&nbsp;on&nbsp;simple&nbsp;parameter&nbsp;sets&nbsp;(vectors)&nbsp;and&nbsp;scalars:");<br/>
+<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;};<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;{&nbsp;10,15,20,25,30&nbsp;};<br/>
+&nbsp;&nbsp;c[]&nbsp;=&nbsp;{&nbsp;&nbsp;2,-2,'',-2,&nbsp;2&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;s[]&nbsp;=&nbsp;{&nbsp;Ha,&nbsp;He,&nbsp;Ho,&nbsp;Hu,&nbsp;Hi&nbsp;};<br/>
+&nbsp;&nbsp;t[]&nbsp;=&nbsp;{&nbsp;ngar,&nbsp;ring,&nbsp;ney,&nbsp;nger,&nbsp;ll&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^&nbsp;1&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Add&nbsp;1&nbsp;to&nbsp;all&nbsp;elements<br/>
+&nbsp;&nbsp;echo(&nbsp;120&nbsp;/^&nbsp;b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Divide&nbsp;120&nbsp;by&nbsp;all&nbsp;elements<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Matrices&nbsp;combined&nbsp;with&nbsp;vectors&nbsp;and&nbsp;scalars");<br/>
+<br/>
+&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;{1,2},{3,4}&nbsp;};&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;{&nbsp;{5,6},{7,8}&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+&nbsp;&nbsp;&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Catenation:&nbsp;{&nbsp;{1,2},{3,4},{5,6},{7,8}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^&nbsp;&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Catenating&nbsp;the&nbsp;1st&nbsp;level&nbsp;elements:&nbsp;{&nbsp;{1,2,5,6},{3,4,7,8}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;b[]&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Calculating&nbsp;elements:&nbsp;{&nbsp;{6,8},{10,12}&nbsp;}<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;10&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Adds&nbsp;10&nbsp;to&nbsp;all&nbsp;elements<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{10}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;{10}&nbsp;acts&nbsp;as&nbsp;scalar&nbsp;to&nbsp;{1,2}&nbsp;-&gt;&nbsp;{&nbsp;{11,12},{3,4}&nbsp;}&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^:{10}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Repetition&nbsp;suffix&nbsp;-&nbsp;Repeat&nbsp;the&nbsp;{10}:Like&nbsp;{&nbsp;{1,2},{3,4}&nbsp;}&nbsp;+^^&nbsp;{10,10}&nbsp;}&nbsp;-&gt;&nbsp;{&nbsp;{11,12},{13,14}&nbsp;}&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{10,10}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Like&nbsp;above<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{{10}}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Affects&nbsp;the&nbsp;1st&nbsp;nested&nbsp;element&nbsp;only:&nbsp;{&nbsp;{11,2},{3,4}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^:{{10}}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Repetition&nbsp;suffix&nbsp;-&nbsp;Repeat&nbsp;the&nbsp;{10}:&nbsp;All&nbsp;elements&nbsp;affected:&nbsp;{&nbsp;{11,12},{13,14}&nbsp;}&nbsp;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{10,20}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Calculates&nbsp;{&nbsp;{11,12},{23,24}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^:{10,20}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same&nbsp;result&nbsp;&nbsp;(Repetition&nbsp;suffix)<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{{10,20}}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Calculates&nbsp;{&nbsp;{11,22},{&nbsp;3,&nbsp;4}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^&nbsp;{{10},{20}}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Calculates&nbsp;{&nbsp;{11,&nbsp;2},{23,&nbsp;4}&nbsp;}<br/>
+&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;+^^:{{10},{20}}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Calculates&nbsp;{&nbsp;{11,12},{23,24}&nbsp;}&nbsp;&nbsp;(Repetition&nbsp;suffix)</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Deep&nbsp;binary&nbsp;operators&nbsp;on&nbsp;simple&nbsp;parameter&nbsp;sets&nbsp;(vectors)&nbsp;and&nbsp;scalars:<br/>
+{2,3,4,5,6}<br/>
+{12,8,6,4.8,4}<br/>
+<br/>
+Matrices&nbsp;combined&nbsp;with&nbsp;vectors&nbsp;and&nbsp;scalars<br/>
+{{1,2},{3,4},{5,6},{7,8}}<br/>
+{{1,2,5,6},{3,4,7,8}}<br/>
+{{6,8},{10,12}}<br/>
+<br/>
+{{11,12},{13,14}}<br/>
+{{11,12},{3,4}}<br/>
+{{11,12},{13,14}}<br/>
+{{11,12},{13,14}}<br/>
+<br/>
+{{11,2},{3,4}}<br/>
+{{11,12},{13,14}}<br/>
+{{11,12},{23,24}}<br/>
+{{11,12},{23,24}}<br/>
+<br/>
+{{11,22},{3,4}}<br/>
+{{11,2},{23,4}}<br/>
+{{11,12},{23,24}}<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_deep_binary_operators_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="REF_Features_deep_assignment_operators.html">Deep assignment operators</a><br/>
+<a class = "bold_text" href="REF_Features_matrix_operations_summary.html">Matrix Operations Summary</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+

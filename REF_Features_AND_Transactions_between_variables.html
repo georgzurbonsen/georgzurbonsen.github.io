@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="Beyond4P">
+</a>
+</div>
+
+<div class="header">
+<h3>&amp; Transactions between variables</h3>
+<a accesskey="p" href="REF_Features_Transactions_with_AND_assignment_operator.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Functions_and_Procedures.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_starting.html"><div class="navi">1 Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_interactive.html"><div class="navi">1.1 Interactive Mode </div></a></li>
+<li class="navi"><a href="REF_Features_licensing.html"><div class="navi">1.2 Licensing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_introduction.html"><div class="navi">2 Introduction </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_UNICODE_character_set.html"><div class="navi">+ 2.1 UNICODE Character Set </div></a></li>
+<li class="navi"><a href="REF_Features_data_types.html"><div class="navi">+ 2.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="REF_Features_reserved_keywords.html"><div class="navi">2.3 Reserved keywords </div></a></li>
+<li class="navi"><a href="REF_Features_path_names.html"><div class="navi">2.4 Path and File Names </div></a></li>
+<li class="navi"><a href="REF_Features_Locales.html"><div class="navi">2.5 Locales </div></a></li>
+<li class="navi"><a href="REF_Features_comments.html"><div class="navi">2.6 Comments </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_variables.html"><div class="navi">3 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_variable_scopes.html"><div class="navi">+ 3.1 Variable Scopes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
+<li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_accessing_tables.html"><div class="navi">+ 4.1 Accessing Tables </div></a></li>
+<li class="navi"><a href="REF_Features_memory_effect.html"><div class="navi">4.2 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_formulas_and_operators.html"><div class="navi">5 Formulas and Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_unary_operators.html"><div class="navi">5.1 Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_binary_operators.html"><div class="navi">+ 5.2 Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_operators.html"><div class="navi">+ 5.3 Deep Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Assignment_operators.html"><div class="navi">5.4 Assignment operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_assignment_operators.html"><div class="navi">5.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_ad-hoc_operators.html"><div class="navi">+ 5.6 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">6 Transactions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">6.2 &amp; Transaction Assignment Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_AND_Transactions_between_variables.html"><div class="navi navi-selected">6.2.1 &amp; Transactions between variables </div></a></li>
+<li class="navi"><div>6.2.2 &amp; Transactions from tables to variables </div></li>
+<li class="navi"><div>6.2.3 &amp; Transactions from variables to tables </div></li>
+<li class="navi"><div>6.2.4 &amp; Transactions between Tables </div></li>
+</ul></li>
+<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
+<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Function_Parameters.html"><div class="navi">7.1 Function Parameters </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">7.2 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">+ 7.3 Function Parameter Types </div></a></li>
+<li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">7.4 Indirect Parameter Passing </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">8 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">+ 8.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_input_output_functions.html"><div class="navi">+ 8.2 Input / Output Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 8.3 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 8.4 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 8.5 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 8.6 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 8.7 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 8.8 Table Functions </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 8.9 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 8.10 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 8.11 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 8.12 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 8.13 Cross-Functional Info </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_verbose.html"><div class="navi"> Verbose Levels </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>Different from transactions without assignment operators, the &amp; assignment operator in front of the transaction symbol will assume the
+following rules focussing on overlaying data from the source variable in the destination variable.:
+
+</p><ul class="bullets"><li class="bullets">If the destination variable does not yet exist, then it will be created
+</li><li class="bullets">The base variable will be overwritten as long no <b>^</b> suffix has been specified.
+</li><li class="bullets">The existing variable tree structure (arrays, structures, nested arrays and nested structures) will be preserved.
+<ul class="bullets"><li class="bullets">No further arrays and/or structures are added
+</li><li class="bullets">Neither arrays nor structures will be extended or reduced
+</li></ul></li><li class="bullets">Only the contents in the destination variables for which a source value exists in the same hierarchical position will be overwritten.
+</li></ul><p>
+
+<br><br>Following actions are applied on the destination variables using this assignment operator:
+
+== 100, 100, 800
+Destination     | Source            | Description
+Non-existing variable | Array or structure        | Step 1: The destination is initialized as specified. <br> Step 2: The base variable is copied if the assignment operator has no <b>^</b> suffix.<br>                                Step 3: The variable form of the destination becomes a <span class="red_text">zero member</span> type (only base variable and zero members)
+Simple or zero members  | Array or structure        | Same behavior as above
+Non-existing variable   | Simple or zero members    | Steps 1+2: See above. That's it.
+Simple or zero members  | Simple or zero members    | Steps 1+2: See above. That's it.
+Structure     | Structure         | Steps 1+2: See above.<br>                                   Step 3: Members with matching member names will be copied. All other members in the source will not be copied. All other members in the destination remain unaffected.
+Array         | Structure         | Steps 1+2: See above.<br> Step 3: The existing array members will be replaced by members from the source variable, sorted in alphabetic order by member name.<br> - If the destination ahs more members than teh source, then the excess destination members remain unaffected.<br>                                 - If the destination has fewer members than the source, then not all members will be copied.
+Structure       | Array             | Same behavior as for simple varialbes in the destination side because arrays are not compatible with structures
+Array         | Array             | Steps 1+2: See above.<br> Step 3: The existing array members will be replaced from the members in the source variable in unchanged sequential order.<br> - If the destination ahs more members than teh source, then the excess destination members remain unaffected.<br>                                  - If the destination has fewer members than the source, then not all members will be copied.
+Structure or array  | Simple or zero members     | Steps 1+2: See above. That's it.
+</p><table>
+<tr><th></th></tr></p>
+<h5> Copy Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;structure(&nbsp;animals1[],&nbsp;{&nbsp;mammal,&nbsp;bird,&nbsp;fish&nbsp;},&nbsp;{&nbsp;dog,&nbsp;owl,&nbsp;eel}&nbsp;);<br/>
+&nbsp;&nbsp;structure(&nbsp;animals1[mammal],&nbsp;{&nbsp;carnivore,&nbsp;herbivore&nbsp;},&nbsp;{&nbsp;bear,&nbsp;deer&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;structure(&nbsp;animals2[],&nbsp;{&nbsp;mammal,&nbsp;fish,&nbsp;reptile&nbsp;},&nbsp;{&nbsp;cat,&nbsp;trout,&nbsp;turtle&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;structure(&nbsp;animals2[mammal],&nbsp;{&nbsp;carnivore,&nbsp;omnivores&nbsp;},&nbsp;{&nbsp;lynx,&nbsp;skunk&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;animals2[]&nbsp;=&nbsp;Includes&nbsp;a&nbsp;reptile;<br/>
+&nbsp;&nbsp;animals1[]&nbsp;&amp;&lt;==&nbsp;animals2[];&nbsp;&nbsp;//&nbsp;mammal,&nbsp;carnivore&nbsp;and&nbsp;fish&nbsp;will&nbsp;be&nbsp;overwritten.<br/>
+<br/>
+&nbsp;&nbsp;animals3[]&nbsp;=&nbsp;No&nbsp;animal&nbsp;inside&nbsp;yet;&nbsp;//&nbsp;And&nbsp;nothing&nbsp;will&nbsp;be&nbsp;built&nbsp;up&nbsp;here.<br/>
+&nbsp;&nbsp;animals3[]&nbsp;&amp;&lt;==^&nbsp;animals2[];<br/>
+<br/>
+&nbsp;&nbsp;echo("Merged&nbsp;animals&nbsp;as&nbsp;",&nbsp;identify(&nbsp;animals1[]));<br/>
+&nbsp;&nbsp;inspect(&nbsp;animals1[]&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;echo("Initially&nbsp;no&nbsp;animals.&nbsp;Merged&nbsp;as&nbsp;",&nbsp;identify(&nbsp;animals3[]));<br/>
+&nbsp;&nbsp;inspect(&nbsp;animals3[]&nbsp;);</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Merged&nbsp;animals&nbsp;as&nbsp;structure<br/>
+Includes&nbsp;a&nbsp;reptile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+mammal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;carnivore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lynx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+&nbsp;&nbsp;herbivore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+<br/>
+Initially&nbsp;no&nbsp;animals.&nbsp;Merged&nbsp;as&nbsp;zero&nbsp;members<br/>
+No&nbsp;animal&nbsp;inside&nbsp;yet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_AND_Transactions_between_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Move Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("UNDER&nbsp;CONSTRUCTION");<br/>
+&nbsp;&nbsp;structure(&nbsp;animals1[],&nbsp;{&nbsp;mammal,&nbsp;bird,&nbsp;fish&nbsp;},&nbsp;{&nbsp;dog,&nbsp;owl,&nbsp;eel}&nbsp;);<br/>
+&nbsp;&nbsp;animals2[]&nbsp;&lt;==&nbsp;animals1[];&nbsp;//&nbsp;Make&nbsp;a&nbsp;copy<br/>
+<br/>
+&nbsp;&nbsp;animals1[]&nbsp;=&nbsp;Mikes&nbsp;collection;<br/>
+&nbsp;&nbsp;b[]&nbsp;=&nbsp;My&nbsp;pets;<br/>
+<br/>
+&nbsp;&nbsp;a[]&nbsp;&lt;&lt;=&nbsp;&nbsp;animals1[];<br/>
+&nbsp;&nbsp;b[]&nbsp;&lt;&lt;=^&nbsp;animals2[];<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;a[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;&nbsp;member&nbsp;names:&nbsp;",&nbsp;set&nbsp;names(&nbsp;a[]&nbsp;),&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;b[]&nbsp;));<br/>
+&nbsp;&nbsp;echo("&nbsp;&nbsp;animal1[]&nbsp;existing?&nbsp;",&nbsp;existing(animals1[])&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;b[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;&nbsp;member&nbsp;names:&nbsp;",&nbsp;set&nbsp;names(&nbsp;b[]&nbsp;),&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;b[]&nbsp;));<br/>
+&nbsp;&nbsp;echo("&nbsp;&nbsp;animal2[]&nbsp;existing?&nbsp;",&nbsp;existing(animals2[])&nbsp;);</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>UNDER&nbsp;CONSTRUCTION<br/>
+Mikes&nbsp;collection<br/>
+&nbsp;&nbsp;member&nbsp;names:&nbsp;{'bird','fish','mammal'}&nbsp;contents:&nbsp;{'owl','eel','dog'}<br/>
+&nbsp;&nbsp;animal1[]&nbsp;existing?&nbsp;false<br/>
+My&nbsp;pets<br/>
+&nbsp;&nbsp;member&nbsp;names:&nbsp;{'bird','fish','mammal'}&nbsp;contents:&nbsp;{'owl','eel','dog'}<br/>
+&nbsp;&nbsp;animal2[]&nbsp;existing?&nbsp;true<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_AND_Transactions_between_variables_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Swap Transaction Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("UNDER&nbsp;CONSTRUCTION");<br/>
+<br/>
+&nbsp;&nbsp;structure(&nbsp;animals1[],&nbsp;{&nbsp;mammal,&nbsp;bird,&nbsp;fish&nbsp;},&nbsp;{&nbsp;dog,&nbsp;owl,&nbsp;eel}&nbsp;);<br/>
+&nbsp;&nbsp;array&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;plants1[],&nbsp;&nbsp;{&nbsp;tulip,&nbsp;sunflower,&nbsp;fir&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;animals1[]&nbsp;=&nbsp;Pets&nbsp;and&nbsp;animals;<br/>
+&nbsp;&nbsp;plants1&nbsp;[]&nbsp;=&nbsp;Plants&nbsp;and&nbsp;flowers;<br/>
+<br/>
+&nbsp;&nbsp;animals2[]&nbsp;&lt;==&nbsp;animals1[];<br/>
+&nbsp;&nbsp;plants2&nbsp;[]&nbsp;&lt;==&nbsp;plants1[];<br/>
+<br/>
+&nbsp;&nbsp;animals1[]&nbsp;&lt;=&gt;&nbsp;plants1[];<br/>
+&nbsp;&nbsp;animals2[]&nbsp;&lt;=&gt;^&nbsp;plants2[];<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;animals1[]:&nbsp;",&nbsp;animals1[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;animals1[]&nbsp;));<br/>
+&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;animals2[]:&nbsp;",&nbsp;animals2[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;animals2[]&nbsp;));<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;plants1[]:&nbsp;",&nbsp;plants1[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;&nbsp;member&nbsp;names:&nbsp;",&nbsp;set&nbsp;names(&nbsp;plants1[]&nbsp;),&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;plants1[]&nbsp;));<br/>
+&nbsp;&nbsp;echo(&nbsp;"Variable&nbsp;plants2[]:&nbsp;",&nbsp;plants2[],&nbsp;new&nbsp;line,&nbsp;"&nbsp;&nbsp;member&nbsp;names:&nbsp;",&nbsp;set&nbsp;names(&nbsp;plants2[]&nbsp;),&nbsp;"&nbsp;contents:&nbsp;",&nbsp;set&nbsp;(&nbsp;plants2[]&nbsp;));</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>UNDER&nbsp;CONSTRUCTION<br/>
+Variable&nbsp;animals1[]:&nbsp;Plants&nbsp;and&nbsp;flowers<br/>
+&nbsp;contents:&nbsp;{'tulip','sunflower','fir'}<br/>
+Variable&nbsp;animals2[]:&nbsp;Pets&nbsp;and&nbsp;animals<br/>
+&nbsp;contents:&nbsp;{'tulip','sunflower','fir'}<br/>
+<br/>
+Variable&nbsp;plants1[]:&nbsp;Pets&nbsp;and&nbsp;animals<br/>
+&nbsp;&nbsp;member&nbsp;names:&nbsp;{'bird','fish','mammal'}&nbsp;contents:&nbsp;{'owl','eel','dog'}<br/>
+Variable&nbsp;plants2[]:&nbsp;Plants&nbsp;and&nbsp;flowers<br/>
+&nbsp;&nbsp;member&nbsp;names:&nbsp;{'bird','fish','mammal'}&nbsp;contents:&nbsp;{'owl','eel','dog'}<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_AND_Transactions_between_variables_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen
+</div>
+
+</div>
+
+</html>	
+
+
