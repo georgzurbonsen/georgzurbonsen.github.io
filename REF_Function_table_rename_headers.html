@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -174,20 +175,20 @@ Use literal to specify a single table, or a parameter set or softquoted literal 
 Header name not found<br/>
 number of existing and new headers is inconsistent</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Phone&nbsp;No,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Archer,&nbsp;Jim,&nbsp;"1-212-555-1212",&nbsp;28&nbsp;}&nbsp;}&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize ( table, { { First Name, Last Name, Phone No, Age }, { Archer, Jim, "1-212-555-1212", 28 } } );<br/>
 <br/>
-&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;rename&nbsp;existing&nbsp;headers(&nbsp;table,&nbsp;'&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Family&nbsp;Name&nbsp;',&nbsp;'&nbsp;First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Other&nbsp;Name&nbsp;'&nbsp;);<br/>
-&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;rename&nbsp;existing&nbsp;headers(&nbsp;table,&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Family&nbsp;Name&nbsp;},&nbsp;{First&nbsp;Name,&nbsp;Last&nbsp;Name,&nbsp;Other&nbsp;Name}&nbsp;);<br/>
-&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both&nbsp;formulations&nbsp;are&nbsp;valid&nbsp;(see&nbsp;2+3.&nbsp;parameter:&nbsp;Either&nbsp;softquoted&nbsp;literal&nbsp;with&nbsp;comma&nbsp;separated&nbsp;items&nbsp;or&nbsp;parameters)<br/>
+&nbsp;&nbsp;count[]&nbsp;= table rename existing headers( table, ' Last Name, First Name, Family Name ', ' First Name, Last Name, Other Name ' );<br/>
+&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;rename existing headers( table, { Last Name, First Name, Family Name }, {First Name, Last Name, Other Name} );<br/>
+&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both&nbsp;formulations are valid (see 2+3. parameter: Either softquoted literal with comma separated items or parameters)<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list ( table );<br/>
 &nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;echo("Number&nbsp;of&nbsp;headers&nbsp;renamed:&nbsp;",&nbsp;count[]);<br/>
+&nbsp;&nbsp;echo("Number&nbsp;of headers renamed: ", count[]);<br/>
 <br/>
-&nbsp;&nbsp;echo(&nbsp;new&nbsp;line,&nbsp;"This&nbsp;example&nbsp;demonstrates&nbsp;that&nbsp;each&nbsp;"First&nbsp;Name"&nbsp;column&nbsp;is&nbsp;touched&nbsp;only&nbsp;once.",&nbsp;new&nbsp;line&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;First&nbsp;Name,&nbsp;First&nbsp;Name,&nbsp;Phone&nbsp;No,&nbsp;Age&nbsp;},&nbsp;{&nbsp;Tanner,&nbsp;Lisa,&nbsp;"1-212-555-1212",&nbsp;28&nbsp;}&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;rename&nbsp;headers(&nbsp;table,&nbsp;&nbsp;{&nbsp;First&nbsp;Name,&nbsp;First&nbsp;Name&nbsp;},&nbsp;{&nbsp;Last&nbsp;Name,&nbsp;Given&nbsp;Name&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;table&nbsp;);</code></div>
+&nbsp;&nbsp;echo(&nbsp;new line, "This example demonstrates that each "First Name" column is touched only once.", new line );<br/>
+&nbsp;&nbsp;table&nbsp;initialize ( table,&nbsp;&nbsp;&nbsp;{ { First Name, First Name, Phone No, Age }, { Tanner, Lisa, "1-212-555-1212", 28 } } );<br/>
+&nbsp;&nbsp;table&nbsp;rename headers( table,&nbsp;&nbsp;{ First Name, First Name }, { Last Name, Given Name } );<br/>
+&nbsp;&nbsp;table&nbsp;list ( table );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Phone&nbsp;No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Age<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Archer&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1-212-555-1212&nbsp;|&nbsp;28&nbsp;<br/>

@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -184,32 +185,32 @@ Specific rules apply for this function:
 <td><b>Number of rows deleted</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Last&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;Favorite&nbsp;Sports&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andy,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;American&nbsp;Football&nbsp;},<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Last Name,&nbsp;&nbsp;&nbsp;&nbsp;First Name,&nbsp;&nbsp;&nbsp;&nbsp;Favorite Sports },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andy,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;American&nbsp;Football },<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;&nbsp;",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseball&nbsp;},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;""&nbsp;},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Mayer,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mick,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tennis&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;"&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;" },<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gerber,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greg,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canooing&nbsp;},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Unger,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uta,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rafting&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tina,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wrestling&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tina,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wrestling&nbsp;} } );<br/>
 <br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;result,&nbsp;{Criteria,&nbsp;entirely&nbsp;empty&nbsp;row,&nbsp;empty&nbsp;row,&nbsp;empty&nbsp;fields,&nbsp;blank&nbsp;fields,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;blank&nbsp;begin,&nbsp;not&nbsp;blank&nbsp;middle,&nbsp;not&nbsp;blank&nbsp;end,&nbsp;not&nbsp;blank&nbsp;lone,&nbsp;not&nbsp;blank&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize( result, {Criteria, entirely empty row, empty row, empty fields, blank fields,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;blank begin, not blank middle, not blank end, not blank lone, not blank } );<br/>
 <br/>
-&nbsp;&nbsp;echo&nbsp;("Original&nbsp;table:");<br/>
+&nbsp;&nbsp;echo&nbsp;("Original table:");<br/>
 &nbsp;&nbsp;table&nbsp;list(t);<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;process&nbsp;(&nbsp;result,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;process(&nbsp;t,&nbsp;[result:row(),0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;=&nbsp;row();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[result:row(),row(1)]&nbsp;=&nbsp;table&nbsp;check&nbsp;row(&nbsp;t,&nbsp;row(),&nbsp;[^Criteria]&nbsp;)&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;process ( result,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;process( t, [result:row(),0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] = row();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[result:row(),row(1)]&nbsp;= table check row( t, row(), [^Criteria] ) ) );<br/>
 <br/>
-&nbsp;&nbsp;echo("The&nbsp;columns&nbsp;in&nbsp;the&nbsp;table&nbsp;below&nbsp;relate&nbsp;to&nbsp;the&nbsp;row&nbsp;numbers&nbsp;of&nbsp;the&nbsp;table&nbsp;checked.");<br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;result&nbsp;);<br/>
+&nbsp;&nbsp;echo("The&nbsp;columns in the table below relate to the row numbers of the table checked.");<br/>
+&nbsp;&nbsp;table&nbsp;list ( result );<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Original&nbsp;table:<br/>

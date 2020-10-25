@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -185,17 +186,17 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[]&nbsp;=&nbsp;"The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st[]&nbsp;= "The taste of the coffee!";<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;13,&nbsp;4&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;4,&nbsp;-8&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;99,&nbsp;1&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;&nbsp;99,&nbsp;8&nbsp;)&nbsp;);&nbsp;//&nbsp;full&nbsp;strings<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;until&nbsp;(&nbsp;st[],&nbsp;-99,&nbsp;8&nbsp;)&nbsp;);&nbsp;//&nbsp;Begins&nbsp;at&nbsp;0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside( st[], 13, 4 ), " / ",&nbsp;&nbsp;outside until ( st[], 4, -8 ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside( st[], 99, 1 ), " / ",&nbsp;&nbsp;outside until ( st[],&nbsp;&nbsp;99, 8 ) ); // full strings<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside( st[], -99, 8 ), " / ", outside until ( st[], -99, 8 ) ); // Begins at 0<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;'&nbsp;taste',&nbsp;7&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;7&nbsp;)&nbsp;);&nbsp;//&nbsp;"of&nbsp;the&nbsp;coffee",&nbsp;"tast&nbsp;of&nbsp;the&nbsp;coffee"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside(&nbsp;st[],&nbsp;'&nbsp;taste',&nbsp;0&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;0&nbsp;)&nbsp;);&nbsp;//&nbsp;full&nbsp;string,&nbsp;and&nbsp;without&nbsp;taste<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside( st[], ' taste', 7 ), " / ", outside exclude( st[], 'taste ', 7 ) ); // "of the coffee", "tast of the coffee"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside( st[], ' taste', 0 ), " / ", outside exclude( st[], 'taste ', 0 ) ); // full string, and without taste<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside&nbsp;(&nbsp;st[],&nbsp;'taste',&nbsp;'&nbsp;the'&nbsp;),&nbsp;"&nbsp;/&nbsp;",&nbsp;outside&nbsp;exclude(&nbsp;st[],&nbsp;'taste&nbsp;',&nbsp;'the&nbsp;'&nbsp;)&nbsp;);&nbsp;//</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;outside ( st[], 'taste', ' the' ), " / ", outside exclude( st[], 'taste ', 'the ' ) ); //</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>The&nbsp;taste&nbsp;of&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;coffee!<br/>
 The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!&nbsp;/&nbsp;The&nbsp;taste&nbsp;of&nbsp;the&nbsp;coffee!<br/>

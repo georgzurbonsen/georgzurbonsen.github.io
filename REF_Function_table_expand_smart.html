@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -144,19 +145,19 @@ This function combines the lookup strategy from <span class="red_text">table loo
 <h4> Parameter count</h4>
 <p>7 - 9 (For parameter description and return values: see <a class="bold_text" href="REF_Function_table_expand.html">table expand</a>() )</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;lookup,&nbsp;"Examples/Table&nbsp;Lookup&nbsp;Example&nbsp;2.csv"&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;delete&nbsp;remaining&nbsp;rows&nbsp;(&nbsp;lookup,&nbsp;-2&nbsp;);&nbsp;//&nbsp;Remove&nbsp;last&nbsp;2&nbsp;rows&nbsp;(the&nbsp;mom's&nbsp;place&nbsp;and&nbsp;'not&nbsp;found'&nbsp;row)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( lookup, "Examples/Table Lookup Example 2.csv" );<br/>
+&nbsp;&nbsp;table&nbsp;delete remaining rows ( lookup, -2 ); // Remove last 2 rows (the mom's place and 'not found' row)<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{&nbsp;Seating,&nbsp;inside,&nbsp;balcony,&nbsp;outside,&nbsp;bar&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize( target, { Seating, inside, balcony, outside, bar } );<br/>
 <br/>
-&nbsp;&nbsp;count[]&nbsp;=&nbsp;table&nbsp;expand&nbsp;smart&nbsp;ignore&nbsp;case<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;target,&nbsp;&nbsp;&nbsp;Seating,&nbsp;{Place&nbsp;to&nbsp;go,&nbsp;Table&nbsp;size},&nbsp;lookup,&nbsp;Ambience,&nbsp;{Restaurant&nbsp;Name,&nbsp;Table&nbsp;size}&nbsp;);<br/>
+&nbsp;&nbsp;count[]&nbsp;= table expand smart ignore case<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;target,&nbsp;&nbsp;&nbsp;Seating, {Place to go, Table size}, lookup, Ambience, {Restaurant Name, Table size} );<br/>
 <br/>
 &nbsp;&nbsp;echo("Lookup&nbsp;table:");<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;lookup&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list( lookup );<br/>
 <br/>
-&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;lookup&nbsp;(",&nbsp;count[],&nbsp;"&nbsp;items&nbsp;found):");<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;target&nbsp;);<br/>
+&nbsp;&nbsp;echo("Target&nbsp;table after lookup (", count[], " items found):");<br/>
+&nbsp;&nbsp;table&nbsp;list( target );<br/>
 <br/>
 </code></div>
 <h4> Output</h4>

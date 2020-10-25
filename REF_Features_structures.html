@@ -54,6 +54,7 @@
 <li class="navi"><a href="REF_Features_specifying_members_with_parameter_sets.html"><div class="navi">3.3.5 Parameter Sets Specifying Members </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -73,8 +74,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -134,28 +135,28 @@ Following approaches are avialable to create structures:
 </table><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;echo("Initialize&nbsp;a&nbsp;structure&nbsp;directly");<br/>
-&nbsp;&nbsp;a[dog]&nbsp;=&nbsp;Hund;<br/>
-&nbsp;&nbsp;a[cat]&nbsp;=&nbsp;Katze;<br/>
-&nbsp;&nbsp;a[gnu]&nbsp;=&nbsp;Gnu;<br/>
+&nbsp;&nbsp;echo("Initialize&nbsp;a structure directly");<br/>
+&nbsp;&nbsp;a[dog]&nbsp;= Hund;<br/>
+&nbsp;&nbsp;a[cat]&nbsp;= Katze;<br/>
+&nbsp;&nbsp;a[gnu]&nbsp;= Gnu;<br/>
 &nbsp;&nbsp;echo(a[cat]);<br/>
-&nbsp;&nbsp;inspect(&nbsp;a[]&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;a[] );<br/>
 <br/>
-&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Initialize&nbsp;with&nbsp;the&nbsp;structure&nbsp;function");<br/>
-&nbsp;&nbsp;structure(&nbsp;leg&nbsp;count[],&nbsp;{&nbsp;snake,&nbsp;bird,&nbsp;dog,&nbsp;fly,&nbsp;tick&nbsp;},&nbsp;{&nbsp;0,&nbsp;2,&nbsp;4,&nbsp;6,&nbsp;8&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;inspect(&nbsp;leg&nbsp;count[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Initialize with the structure function");<br/>
+&nbsp;&nbsp;structure(&nbsp;leg count[], { snake, bird, dog, fly, tick }, { 0, 2, 4, 6, 8 } );<br/>
+&nbsp;&nbsp;inspect(&nbsp;leg count[] );<br/>
 </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Initialize&nbsp;a&nbsp;structure&nbsp;directly<br/>
 Katze<br/>
-[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
 cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Katze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 gnu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gnu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 <br/>
 <br/>
 Initialize&nbsp;with&nbsp;the&nbsp;structure&nbsp;function<br/>
-[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+leg&nbsp;count[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
 bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;("6")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
@@ -183,19 +184,19 @@ member variables of those containing sub-members are preserved.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;echo("Initialize&nbsp;a&nbsp;nested&nbsp;structure&nbsp;containing&nbsp;structure&nbsp;and&nbsp;array");<br/>
+&nbsp;&nbsp;echo("Initialize&nbsp;a nested structure containing structure and array");<br/>
 <br/>
-&nbsp;&nbsp;city[]&nbsp;=&nbsp;Paris;<br/>
-&nbsp;&nbsp;array(&nbsp;city[district],&nbsp;{ignoe&nbsp;0,&nbsp;Louvre,&nbsp;Bourse,&nbsp;Temple,&nbsp;Hotel&nbsp;de&nbsp;Ville,&nbsp;etc.&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;city[district,2,area]&nbsp;=&nbsp;99;&nbsp;//&nbsp;99&nbsp;hectars<br/>
-&nbsp;&nbsp;city[district,2,inhabitants]&nbsp;=&nbsp;19500;<br/>
-&nbsp;&nbsp;echo("1st&nbsp;&nbsp;district&nbsp;=&nbsp;",&nbsp;city[district,1],&nbsp;"&nbsp;&nbsp;&nbsp;last&nbsp;district&nbsp;=&nbsp;",&nbsp;city[district,-1]&nbsp;);<br/>
+&nbsp;&nbsp;city[]&nbsp;= Paris;<br/>
+&nbsp;&nbsp;array(&nbsp;city[district], {ignoe 0, Louvre, Bourse, Temple, Hotel de Ville, etc. } );<br/>
+&nbsp;&nbsp;city[district,2,area]&nbsp;= 99; // 99 hectars<br/>
+&nbsp;&nbsp;city[district,2,inhabitants]&nbsp;= 19500;<br/>
+&nbsp;&nbsp;echo("1st&nbsp;&nbsp;district&nbsp;= ", city[district,1], "&nbsp;&nbsp;&nbsp;last district = ", city[district,-1] );<br/>
 <br/>
-&nbsp;&nbsp;inspect(&nbsp;city[]&nbsp;);</code></div>
+&nbsp;&nbsp;inspect(&nbsp;city[] );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Initialize&nbsp;a&nbsp;nested&nbsp;structure&nbsp;containing&nbsp;structure&nbsp;and&nbsp;array<br/>
 1st&nbsp;&nbsp;district&nbsp;=&nbsp;Louvre&nbsp;&nbsp;&nbsp;last&nbsp;district&nbsp;=&nbsp;etc.<br/>
-Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
+city[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 district&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
 &nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ignoe&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Louvre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
@@ -214,11 +215,11 @@ which will be returned in case of no matches.  Assign the default value using a 
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;echo("Demonstrate&nbsp;default&nbsp;values");&nbsp;//&nbsp;a['']&nbsp;is&nbsp;defined&nbsp;below&nbsp;and&nbsp;is&nbsp;used&nbsp;as&nbsp;default&nbsp;variable.<br/>
+&nbsp;&nbsp;echo("Demonstrate&nbsp;default values"); // a[''] is defined below and is used as default variable.<br/>
 <br/>
-&nbsp;&nbsp;structure(&nbsp;a[],&nbsp;{&nbsp;cow,&nbsp;horse,&nbsp;pig,&nbsp;sheep,&nbsp;''&nbsp;},&nbsp;{&nbsp;Kuh,&nbsp;Pferd,&nbsp;Schwein,&nbsp;Schaf,&nbsp;No&nbsp;translation&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;"cow&nbsp;:&nbsp;",&nbsp;a[horse]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;"goat:&nbsp;",&nbsp;a[goat]&nbsp;);<br/>
+&nbsp;&nbsp;structure(&nbsp;a[], { cow, horse, pig, sheep, '' }, { Kuh, Pferd, Schwein, Schaf, No translation } );<br/>
+&nbsp;&nbsp;echo(&nbsp;"cow : ", a[horse] );<br/>
+&nbsp;&nbsp;echo(&nbsp;"goat: ", a[goat] );<br/>
 </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Demonstrate&nbsp;default&nbsp;values<br/>
@@ -229,22 +230,22 @@ goat:&nbsp;No&nbsp;translation<br/>
 <p>Similar to arrays, structure members can also be referenced with index numbers.
 The only difference is that the members will be rearranged in alphabetical order whenever a new member is added.</p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;names[Mozart]&nbsp;=&nbsp;Wolfgang&nbsp;Amadeus&nbsp;Mozart;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;names[Williams]&nbsp;=&nbsp;John&nbsp;Williams;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;names[Strauss]&nbsp;=&nbsp;Johan&nbsp;Strauss;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;names[Bach]&nbsp;=&nbsp;Johan&nbsp;Sebastian&nbsp;Bach;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;names[Beethoven]&nbsp;=&nbsp;Ludwig&nbsp;van&nbsp;Beethoven;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;names[Mozart]&nbsp;= Wolfgang Amadeus Mozart;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;names[Williams]&nbsp;= John Williams;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;names[Strauss]&nbsp;= Johan Strauss;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;names[Bach]&nbsp;= Johan Sebastian Bach;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;names[Beethoven]&nbsp;= Ludwig van Beethoven;<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i[]&nbsp;=&nbsp;0,&nbsp;i[]&nbsp;&lt;&nbsp;member&nbsp;count(names[]),&nbsp;i[]+=1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i[] = 0, i[] &lt; member count(names[]), i[]+=1)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(i[],&nbsp;":&nbsp;",&nbsp;names[i[]]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(i[],&nbsp;": ", names[i[]]);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("names[2]&nbsp;=&nbsp;",&nbsp;names[2]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;names[Bartok]&nbsp;=&nbsp;Bela&nbsp;Bartok;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("names[2]&nbsp;=&nbsp;",&nbsp;names[2]&nbsp;);&nbsp;//&nbsp;List&nbsp;of&nbsp;names&nbsp;has&nbsp;shifted&nbsp;down<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("names[2]&nbsp;= ", names[2] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;names[Bartok]&nbsp;= Bela Bartok;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("names[2]&nbsp;= ", names[2] ); // List of names has shifted down<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Last&nbsp;entry&nbsp;is&nbsp;",&nbsp;names[-1]&nbsp;);&nbsp;//&nbsp;Negative&nbsp;indexing&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Last&nbsp;entry is ", names[-1] ); // Negative indexing&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>0:&nbsp;Johan&nbsp;Sebastian&nbsp;Bach<br/>
 1:&nbsp;Ludwig&nbsp;van&nbsp;Beethoven<br/>

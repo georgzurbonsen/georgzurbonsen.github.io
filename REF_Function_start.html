@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -153,17 +154,17 @@ Starts a separate B4P application script as a sub program and waits until the su
 <h4> Exceptions</h4>
 <p>Program file not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start(&nbsp;"start.txt",&nbsp;123,&nbsp;abc,&nbsp;true,&nbsp;date(24.12.2015),{});<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;parameters&nbsp;will&nbsp;be&nbsp;passed&nbsp;in&nbsp;their&nbsp;given&nbsp;typs&nbsp;to&nbsp;'command&nbsp;line&nbsp;arguments.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[0]:&nbsp;start.txt&nbsp;&nbsp;&nbsp;(The&nbsp;file&nbsp;name&nbsp;of&nbsp;the&nbsp;program)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[1]:&nbsp;123&nbsp;(numeral)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[2]:&nbsp;abc&nbsp;(literal)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[3]:&nbsp;true&nbsp;(boolean)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[4]:&nbsp;2015-12-24&nbsp;(date)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command&nbsp;line&nbsp;argument[5]:&nbsp;{}&nbsp;(empty&nbsp;parameter&nbsp;set)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start(&nbsp;"start.txt", 123, abc, true, date(24.12.2015),{});<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The parameters will be passed in their given typs to 'command line arguments.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[0]: start.txt&nbsp;&nbsp;&nbsp;(The file name of the program)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[1]: 123 (numeral)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[2]: abc (literal)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[3]: true (boolean)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[4]: 2015-12-24 (date)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;command line argument[5]: {} (empty parameter set)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;How&nbsp;to&nbsp;start&nbsp;this&nbsp;program&nbsp;in&nbsp;interactive&nbsp;mode:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;start(&nbsp;"start.txt",&nbsp;123,&nbsp;abc,&nbsp;true,&nbsp;date(24.12.2015),{});&nbsp;}&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;How to start this program in interactive mode:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;start( "start.txt", 123, abc, true, date(24.12.2015),{}); } <br/>
 </code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_include.html">include</a></p>

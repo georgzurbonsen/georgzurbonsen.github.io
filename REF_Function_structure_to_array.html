@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -136,40 +137,40 @@ No actions are taken if the variable provided is a <a class="bold_text" href="RE
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;country[]&nbsp;=&nbsp;"Somewhere&nbsp;in&nbsp;Italy&nbsp;...";<br/>
-&nbsp;&nbsp;structure(&nbsp;country[],&nbsp;&nbsp;{&nbsp;Name,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Climate,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Winter,&nbsp;Summer&nbsp;},&nbsp;Language&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;San&nbsp;Marino,&nbsp;Mediterranean,&nbsp;{&nbsp;cool,&nbsp;&nbsp;&nbsp;hot&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;Italian&nbsp;&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;temperatures[]&nbsp;=&nbsp;"And&nbsp;the&nbsp;temperatures&nbsp;...";<br/>
-&nbsp;&nbsp;array(&nbsp;temperatures[],&nbsp;{&nbsp;10,&nbsp;30&nbsp;}&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;country[]&nbsp;= "Somewhere in Italy ...";<br/>
+&nbsp;&nbsp;structure(&nbsp;country[],&nbsp;&nbsp;{ Name,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Climate,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Winter, Summer }, Language },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;San Marino, Mediterranean, { cool,&nbsp;&nbsp;&nbsp;hot&nbsp;&nbsp;&nbsp;&nbsp;}, Italian&nbsp;&nbsp;} );<br/>
+&nbsp;&nbsp;temperatures[]&nbsp;= "And the temperatures ...";<br/>
+&nbsp;&nbsp;array(&nbsp;temperatures[], { 10, 30 } );<br/>
 <br/>
-&nbsp;&nbsp;copy[]&nbsp;&lt;==&nbsp;country[];&nbsp;//&nbsp;Transaction:&nbsp;Make&nbsp;copy&nbsp;of&nbsp;variable&nbsp;including&nbsp;members<br/>
+&nbsp;&nbsp;copy[]&nbsp;&lt;== country[]; // Transaction: Make copy of variable including members<br/>
 <br/>
-&nbsp;&nbsp;structure&nbsp;to&nbsp;array(&nbsp;copy[],&nbsp;temperatures[]&nbsp;);<br/>
+&nbsp;&nbsp;structure&nbsp;to array( copy[], temperatures[] );<br/>
 <br/>
-&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Calling&nbsp;'structure&nbsp;to&nbsp;array':");<br/>
-&nbsp;&nbsp;inspect(&nbsp;copy[]&nbsp;);<br/>
-&nbsp;&nbsp;inspect(&nbsp;temperatures[]&nbsp;);&nbsp;//&nbsp;Is&nbsp;already&nbsp;an&nbsp;array<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Calling 'structure to array':");<br/>
+&nbsp;&nbsp;inspect(&nbsp;copy[] );<br/>
+&nbsp;&nbsp;inspect(&nbsp;temperatures[] ); // Is already an array<br/>
 <br/>
-&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Calling&nbsp;'structure&nbsp;to&nbsp;array&nbsp;recursive':");<br/>
-&nbsp;&nbsp;structure&nbsp;to&nbsp;array&nbsp;recursive(&nbsp;country[]&nbsp;);<br/>
-&nbsp;&nbsp;inspect(&nbsp;country[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Calling 'structure to array recursive':");<br/>
+&nbsp;&nbsp;structure&nbsp;to array recursive( country[] );<br/>
+&nbsp;&nbsp;inspect(&nbsp;country[] );<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Calling&nbsp;'structure&nbsp;to&nbsp;array':<br/>
-Somewhere&nbsp;in&nbsp;Italy&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+copy[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere&nbsp;in&nbsp;Italy&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mediterranean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Summer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Winter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Italian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;San&nbsp;Marino&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 <br/>
-And&nbsp;the&nbsp;temperatures&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+temperatures[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And&nbsp;the&nbsp;temperatures&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;("10")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;("30")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full&nbsp;access)<br/>
 <br/>
 <br/>
 Calling&nbsp;'structure&nbsp;to&nbsp;array&nbsp;recursive':<br/>
-Somewhere&nbsp;in&nbsp;Italy&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+country[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere&nbsp;in&nbsp;Italy&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mediterranean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>

@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -169,29 +170,29 @@ Examples: <b>en_US, DE_at, France, German, local, none</b>
 <h4> Program Examples</h4>
 <p>A few loop show the combination of different values.</p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numbers&nbsp;[]&nbsp;=&nbsp;{&nbsp;-1234,&nbsp;-0.29,&nbsp;123456.78,&nbsp;0&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns[]&nbsp;=&nbsp;{&nbsp;'*',&nbsp;'EUR_-*',&nbsp;'0',&nbsp;'+&nbsp;0.0',&nbsp;'0000.0000',&nbsp;'?',&nbsp;'?.?',&nbsp;'#.#',&nbsp;'####.####',&nbsp;'0.####',&nbsp;'_(0.00)'&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;p[]&nbsp;=&nbsp;{&nbsp;"",&nbsp;india,&nbsp;german,&nbsp;en_us,&nbsp;french,&nbsp;de_ch&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;p[]&nbsp;=&nbsp;{&nbsp;"",&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+",&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numbers&nbsp;[] = { -1234, -0.29, 123456.78, 0 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patterns[]&nbsp;= { '*', 'EUR_-*', '0', '+ 0.0', '0000.0000', '?', '?.?', '#.#', '####.####', '0.####', '_(0.00)' };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;p[] = { "", india, german, en_us, french, de_ch };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;p[] = { "", "",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+",&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;numbers[],&nbsp;number[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all parameters( numbers[], number[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;patterns[],&nbsp;pattern[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all parameters( patterns[], pattern[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;3rd&nbsp;p[],&nbsp;para&nbsp;3[],&nbsp;index[]&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all parameters( 3rd p[], para 3[], index[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para&nbsp;4[]&nbsp;=&nbsp;4th&nbsp;p[]{index[]};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(para&nbsp;3[]&nbsp;&nbsp;&nbsp;=&nbsp;'')&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;if&nbsp;(para&nbsp;4[]&nbsp;=&nbsp;'')&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[],&nbsp;para&nbsp;3[]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l[]&nbsp;=&nbsp;literal(&nbsp;number[],&nbsp;pattern[],&nbsp;para&nbsp;3[],&nbsp;para&nbsp;4[]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;"'"&nbsp;+&nbsp;l[]&nbsp;+&nbsp;"',&nbsp;"&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para&nbsp;4[] = 4th p[]{index[]};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(para&nbsp;3[]&nbsp;&nbsp;&nbsp;= '')&nbsp;&nbsp;l[] = literal( number[], pattern[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;if (para 4[] = '')&nbsp;&nbsp;l[] = literal( number[], pattern[], para 3[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l[]&nbsp;= literal( number[], pattern[], para 3[], para 4[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;"'" + l[] + "', " );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Permille:&nbsp;",&nbsp;literal(&nbsp;0.1234,&nbsp;'0.0&nbsp;&amp;permil;')&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Directory&nbsp;assistance&nbsp;(USA):&nbsp;",&nbsp;literal(&nbsp;5551212,&nbsp;'"Dial&nbsp;1-"000"-"0000')&nbsp;);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Permille: ", literal( 0.1234, '0.0 &amp;permil;') );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Directory assistance (USA): ", literal( 5551212, '"Dial 1-"000"-"0000') );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>'-1234',&nbsp;'-1,234',&nbsp;'-1.234',&nbsp;'-1,234',&nbsp;'-1&nbsp;234',&nbsp;'-1'234',&nbsp;<br/>
 'EUR-1234',&nbsp;'EUR-1,234',&nbsp;'EUR-1.234',&nbsp;'EUR-1,234',&nbsp;'EUR-1&nbsp;234',&nbsp;'EUR-1'234',&nbsp;<br/>

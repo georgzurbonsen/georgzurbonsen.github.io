@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -120,19 +121,19 @@ brackets, but for structures and arrays, member names or array index numbers nee
 to use any variable name, even with special symbols, and you can reference variables indirectly by picking up variable names from other variables
 or expressions.  And the contents inside the bracket allows for additional freedoms other programming languages do not provide.</p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;123;<br/>
-&nbsp;&nbsp;a&nbsp;variable[]&nbsp;=&nbsp;456;<br/>
-&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;variable[]&nbsp;=&nbsp;789;&nbsp;&nbsp;&nbsp;//&nbsp;redundant&nbsp;spaces&nbsp;collapse&nbsp;to&nbsp;1&nbsp;space&nbsp;if&nbsp;not&nbsp;put&nbsp;in&nbsp;quotation&nbsp;marks<br/>
-&nbsp;&nbsp;"Total&nbsp;Value&nbsp;[€]"[]&nbsp;=&nbsp;98.95;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;= 123;<br/>
+&nbsp;&nbsp;a&nbsp;variable[] = 456;<br/>
+&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;variable[]&nbsp;= 789;&nbsp;&nbsp;&nbsp;// redundant spaces collapse to 1 space if not put in quotation marks<br/>
+&nbsp;&nbsp;"Total&nbsp;Value [€]"[] = 98.95;<br/>
 <br/>
-&nbsp;&nbsp;b[]&nbsp;=&nbsp;City;<br/>
-&nbsp;&nbsp;(b[])[]&nbsp;=&nbsp;Milano;&nbsp;//&nbsp;Write&nbsp;access:&nbsp;Don't&nbsp;forget&nbsp;the&nbsp;parentheses<br/>
+&nbsp;&nbsp;b[]&nbsp;= City;<br/>
+&nbsp;&nbsp;(b[])[]&nbsp;= Milano; // Write access: Don't forget the parentheses<br/>
 &nbsp;&nbsp;<br/>
-&nbsp;&nbsp;echo(&nbsp;a[]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;a&nbsp;&nbsp;variable[]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;"Total&nbsp;Value&nbsp;[€]"[]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;City[]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;b[][]&nbsp;);</code></div>
+&nbsp;&nbsp;echo(&nbsp;a[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;a&nbsp;&nbsp;variable[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;"Total Value [€]"[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;City[] );<br/>
+&nbsp;&nbsp;echo(&nbsp;b[][] );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>123<br/>
 789<br/>

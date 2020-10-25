@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -136,20 +137,20 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
 </li></ul><p>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;target,&nbsp;"Examples/Tennis&nbsp;and&nbsp;Golf&nbsp;Players.csv"&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;target&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( target, "Examples/Tennis and Golf Players.csv" );<br/>
+&nbsp;&nbsp;table&nbsp;list( target );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;keep&nbsp;columns(&nbsp;target,&nbsp;{Name,&nbsp;Sport,&nbsp;Hcp,&nbsp;NTRP}&nbsp;);&nbsp;//&nbsp;Look&nbsp;how&nbsp;skilled&nbsp;they&nbsp;are<br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;ref,<br/>
+&nbsp;&nbsp;table&nbsp;keep columns( target, {Name, Sport, Hcp, NTRP} ); // Look how skilled they are<br/>
+&nbsp;&nbsp;table&nbsp;initialize( ref,<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Hcp&nbsp;=&nbsp;Golf&nbsp;Handicap,&nbsp;NTRP&nbsp;=&nbsp;National&nbsp;Tennis&nbsp;Rating&nbsp;Program<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Hcp = Golf Handicap, NTRP = National Tennis Rating Program<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Sport,&nbsp;&nbsp;&nbsp;&nbsp;Hcp,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NTRP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tennis,&nbsp;&nbsp;&nbsp;'*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Lvl&nbsp;?.0,Lvl&nbsp;?.5'&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Golf,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0..54',&nbsp;''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tennis,&nbsp;&nbsp;&nbsp;'*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Lvl ?.0,Lvl ?.5'&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Golf,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0..54', ''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;}&nbsp;);<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;check(&nbsp;target,&nbsp;ref,&nbsp;{Hcp,&nbsp;NTRP}&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;target&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;check( target, ref, {Hcp, NTRP} );<br/>
+&nbsp;&nbsp;table&nbsp;list( target );<br/>
 </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;|&nbsp;Gender&nbsp;|&nbsp;Hcp&nbsp;|&nbsp;NTRP&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sport&nbsp;<br/>
@@ -198,20 +199,20 @@ the columns 'Hcp' and 'NTRP' (Golf handcap and tennis rating).  The table entrie
 </li></ul><p>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;target,&nbsp;"Examples/Tennis&nbsp;and&nbsp;Golf&nbsp;Players.csv"&nbsp;);<br/>
-&nbsp;&nbsp;//&nbsp;table&nbsp;list(&nbsp;target&nbsp;);&nbsp;//&nbsp;See&nbsp;previous&nbsp;section.&nbsp;It's&nbsp;the&nbsp;same&nbsp;table.<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( target, "Examples/Tennis and Golf Players.csv" );<br/>
+&nbsp;&nbsp;//&nbsp;table list( target ); // See previous section. It's the same table.<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;keep&nbsp;columns(&nbsp;target,&nbsp;{Name,&nbsp;Sport,&nbsp;Hcp,&nbsp;NTRP}&nbsp;);&nbsp;//&nbsp;Look&nbsp;how&nbsp;skilled&nbsp;they&nbsp;are<br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;ref,<br/>
+&nbsp;&nbsp;table&nbsp;keep columns( target, {Name, Sport, Hcp, NTRP} ); // Look how skilled they are<br/>
+&nbsp;&nbsp;table&nbsp;initialize( ref,<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Hcp&nbsp;=&nbsp;Golf&nbsp;Handicap,&nbsp;NTRP&nbsp;=&nbsp;National&nbsp;Tennis&nbsp;Rating&nbsp;Program<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Hcp = Golf Handicap, NTRP = National Tennis Rating Program<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Sport,&nbsp;&nbsp;&nbsp;&nbsp;Hcp,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NTRP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tennis,&nbsp;&nbsp;&nbsp;'*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Lvl&nbsp;?.0,Lvl&nbsp;?.5'&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Golf,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0..54',&nbsp;''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Tennis,&nbsp;&nbsp;&nbsp;'*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Lvl ?.0,Lvl ?.5'&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Golf,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'0..54', ''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;}&nbsp;);<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;check(&nbsp;target,&nbsp;ref,&nbsp;{Hcp,&nbsp;NTRP},&nbsp;Sport&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;target&nbsp;);</code></div>
+&nbsp;&nbsp;table&nbsp;check( target, ref, {Hcp, NTRP}, Sport );<br/>
+&nbsp;&nbsp;table&nbsp;list( target );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;|&nbsp;Sport&nbsp;&nbsp;|&nbsp;Hcp&nbsp;|&nbsp;NTRP&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Row&nbsp;Result&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Group&nbsp;Result&nbsp;|&nbsp;Explanations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Ref&nbsp;Row<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Mike&nbsp;&nbsp;|&nbsp;Golf&nbsp;&nbsp;&nbsp;|&nbsp;24&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Not&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
@@ -243,18 +244,18 @@ Because the output file contains more columns than they fit in this screen, clic
 <a href="Images/Table Check Reference Output 03.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;products,&nbsp;"Examples/Table&nbsp;Check&nbsp;Target&nbsp;In.csv"&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table&nbsp;Check&nbsp;Reference&nbsp;In.csv"&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( products, "Examples/Table Check Target In.csv" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table Check Reference In.csv" );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table:&nbsp;Locomotives&nbsp;with&nbsp;technical&nbsp;data");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;products&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table: Locomotives with technical data");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list( products );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check&nbsp;(&nbsp;products,&nbsp;ref,&nbsp;{Power,Speed,Qty},&nbsp;Equipment,&nbsp;Vehicle&nbsp;Name,&nbsp;Vehicle&nbsp;Type&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;ref&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list( ref );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save(&nbsp;products,&nbsp;"Images/Table&nbsp;Check&nbsp;Reference&nbsp;Output&nbsp;03.html",&nbsp;HTML&nbsp;);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save( products, "Images/Table Check Reference Output 03.html", HTML );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Target&nbsp;table:&nbsp;Locomotives&nbsp;with&nbsp;technical&nbsp;data<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Vehicle&nbsp;Name&nbsp;|&nbsp;Vehicle&nbsp;Type&nbsp;|&nbsp;Equipment&nbsp;|&nbsp;Power&nbsp;|&nbsp;Speed&nbsp;|&nbsp;Qty&nbsp;|&nbsp;Comments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
@@ -308,15 +309,15 @@ Because the output file contains more columns than they fit in this screen, clic
 <a href="Images/Table Check Reference Output 04.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;products,&nbsp;"Examples/Table&nbsp;Check&nbsp;Target&nbsp;In.csv"&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same&nbsp;tables&nbsp;as&nbsp;in&nbsp;previous&nbsp;example.&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table&nbsp;Check&nbsp;Reference&nbsp;In.csv"&nbsp;);&nbsp;&nbsp;//&nbsp;They&nbsp;will&nbsp;not&nbsp;be&nbsp;listed&nbsp;here&nbsp;again<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( products, "Examples/Table Check Target In.csv" );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same tables as in previous example.&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table Check Reference In.csv" );&nbsp;&nbsp;// They will not be listed here again<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check&nbsp;(&nbsp;products,&nbsp;ref,&nbsp;{Power,Speed,Qty},&nbsp;Equipment,&nbsp;Vehicle&nbsp;Name,&nbsp;Vehicle&nbsp;Type,&nbsp;Additional&nbsp;Check&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type, Additional Check );<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;ref&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list( ref );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save(&nbsp;products,&nbsp;"Images/Table&nbsp;Check&nbsp;Reference&nbsp;Output&nbsp;04.html",&nbsp;HTML&nbsp;);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save( products, "Images/Table Check Reference Output 04.html", HTML );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Reference&nbsp;table<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Vehicle&nbsp;Type&nbsp;|&nbsp;Equipment&nbsp;&nbsp;|&nbsp;Power&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Speed&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Qty&nbsp;&nbsp;|&nbsp;Additional&nbsp;Check&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quantity&nbsp;Check<br/>
@@ -345,15 +346,15 @@ Because the output file contains more columns than they fit in this screen, clic
 <a href="Images/Table Check Reference Output 05.html" target="_blank">Open output as HTML file in a separate tab</a>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;products,&nbsp;"Examples/Table&nbsp;Check&nbsp;Target&nbsp;In.csv"&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same&nbsp;tables&nbsp;as&nbsp;in&nbsp;previous&nbsp;example.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load(&nbsp;ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table&nbsp;Check&nbsp;Reference&nbsp;In.csv"&nbsp;);&nbsp;&nbsp;//&nbsp;They&nbsp;will&nbsp;not&nbsp;be&nbsp;listed&nbsp;here&nbsp;again<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( products, "Examples/Table Check Target In.csv" );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same tables as in previous example.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;load( ref,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Examples/Table Check Reference In.csv" );&nbsp;&nbsp;// They will not be listed here again<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check&nbsp;(&nbsp;products,&nbsp;ref,&nbsp;{Power,Speed,Qty},&nbsp;Equipment,&nbsp;Vehicle&nbsp;Name,&nbsp;Vehicle&nbsp;Type,&nbsp;Additional&nbsp;Check,&nbsp;Quantity&nbsp;Check);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;check ( products, ref, {Power,Speed,Qty}, Equipment, Vehicle Name, Vehicle Type, Additional Check, Quantity Check);<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list(&nbsp;ref&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list( ref );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save(&nbsp;products,&nbsp;"Images/Table&nbsp;Check&nbsp;Reference&nbsp;Output&nbsp;05.html",&nbsp;HTML&nbsp;);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;save( products, "Images/Table Check Reference Output 05.html", HTML );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Reference&nbsp;table<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Vehicle&nbsp;Type&nbsp;|&nbsp;Equipment&nbsp;&nbsp;|&nbsp;Power&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Speed&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Qty&nbsp;&nbsp;|&nbsp;Additional&nbsp;Check&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Quantity&nbsp;Check<br/>

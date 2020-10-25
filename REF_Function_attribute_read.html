@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -167,49 +168,49 @@ Except for <b>attribute listing</b>, at least one attribute name must be provide
 File locked</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
-&nbsp;&nbsp;my&nbsp;file[]&nbsp;=&nbsp;"My&nbsp;attributes.json";<br/>
-&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;First&nbsp;Name&nbsp;},&nbsp;Nic&nbsp;);&nbsp;&nbsp;//&nbsp;Use&nbsp;'write'&nbsp;in&nbsp;1st&nbsp;call&nbsp;so&nbsp;it&nbsp;creates&nbsp;the&nbsp;JSON&nbsp;file<br/>
-&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Middle&nbsp;Initial&nbsp;},&nbsp;M.&nbsp;);<br/>
-&nbsp;&nbsp;attribute&nbsp;modify(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Middle&nbsp;Initial&nbsp;},&nbsp;N.&nbsp;);<br/>
-&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Last&nbsp;Name&nbsp;},&nbsp;&nbsp;Nicholas&nbsp;);<br/>
-&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Graduated&nbsp;at&nbsp;MIT&nbsp;},&nbsp;true&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;attribute&nbsp;write&nbsp;(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{&nbsp;Name,&nbsp;Birth&nbsp;Date&nbsp;},&nbsp;&nbsp;date(&nbsp;"2000-02-03")&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;my&nbsp;file[] = "My attributes.json";<br/>
+&nbsp;&nbsp;attribute&nbsp;write ( "", my file[], { Name, First Name }, Nic );&nbsp;&nbsp;// Use 'write' in 1st call so it creates the JSON file<br/>
+&nbsp;&nbsp;attribute&nbsp;write ( "", my file[], { Name, Middle Initial }, M. );<br/>
+&nbsp;&nbsp;attribute&nbsp;modify( "", my file[], { Name, Middle Initial }, N. );<br/>
+&nbsp;&nbsp;attribute&nbsp;write ( "", my file[], { Name, Last Name },&nbsp;&nbsp;Nicholas );<br/>
+&nbsp;&nbsp;attribute&nbsp;write ( "", my file[], { Name, Graduated at MIT }, true&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;write ( "", my file[], { Name, Birth Date },&nbsp;&nbsp;date( "2000-02-03")&nbsp;&nbsp;);<br/>
 <br/>
-&nbsp;&nbsp;attribute&nbsp;listing(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;Name,&nbsp;listing[]&nbsp;);<br/>
-&nbsp;&nbsp;echo("List&nbsp;all&nbsp;attribute&nbsp;names&nbsp;behind&nbsp;'Name':&nbsp;",&nbsp;listing[]&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;listing( "", my file[], Name, listing[] );<br/>
+&nbsp;&nbsp;echo("List&nbsp;all attribute names behind 'Name': ", listing[] );<br/>
 <br/>
-&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;listing[],&nbsp;attribute&nbsp;name[]&nbsp;)<br/>
+&nbsp;&nbsp;for&nbsp;all parameters( listing[], attribute name[] )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;attribute&nbsp;name[]},&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute&nbsp;name[],&nbsp;":&nbsp;",&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read( "", my file[], {Name, attribute name[]}, attribute value[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute name[], ": ", attribute value[] );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;JSON&nbsp;file:"&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;my&nbsp;file[],&nbsp;TEXT&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(t);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Take a quick look at the JSON file:" );<br/>
+&nbsp;&nbsp;table&nbsp;load( t, my file[], TEXT );<br/>
+&nbsp;&nbsp;table&nbsp;list (t);<br/>
 <br/>
-&nbsp;&nbsp;echo("Try&nbsp;deleting&nbsp;some&nbsp;items");<br/>
+&nbsp;&nbsp;echo("Try&nbsp;deleting some items");<br/>
 <br/>
-&nbsp;&nbsp;res[1]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;Birth&nbsp;Date&nbsp;});<br/>
-&nbsp;&nbsp;res[2]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;Graduated&nbsp;at&nbsp;Harvard&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;res[3]&nbsp;=&nbsp;attribute&nbsp;delete(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;&nbsp;Name&nbsp;);<br/>
+&nbsp;&nbsp;res[1]&nbsp;= attribute delete( "", my file[], {Name, Birth Date });<br/>
+&nbsp;&nbsp;res[2]&nbsp;= attribute delete( "", my file[], {Name, Graduated at Harvard } );<br/>
+&nbsp;&nbsp;res[3]&nbsp;= attribute delete( "", my file[],&nbsp;&nbsp;Name );<br/>
 <br/>
-&nbsp;&nbsp;echo("Success:&nbsp;Delete&nbsp;birth&nbsp;date:&nbsp;",&nbsp;res[1],";&nbsp;&nbsp;Harvard&nbsp;U.:&nbsp;",&nbsp;res[2],&nbsp;";&nbsp;&nbsp;Name:&nbsp;",&nbsp;res[3]&nbsp;);<br/>
+&nbsp;&nbsp;echo("Success:&nbsp;Delete birth date: ", res[1],";&nbsp;&nbsp;Harvard U.: ", res[2], ";&nbsp;&nbsp;Name: ", res[3] );<br/>
 <br/>
-&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;listing[],&nbsp;attribute&nbsp;name[]&nbsp;)<br/>
+&nbsp;&nbsp;for&nbsp;all parameters( listing[], attribute name[] )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;{Name,&nbsp;attribute&nbsp;name[]},&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute&nbsp;name[],&nbsp;":&nbsp;",&nbsp;attribute&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;read( "", my file[], {Name, attribute name[]}, attribute value[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("&nbsp;&nbsp;&nbsp;&nbsp;",&nbsp;attribute name[], ": ", attribute value[] );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;echo("Try&nbsp;removing&nbsp;the&nbsp;Name");<br/>
+&nbsp;&nbsp;echo("Try&nbsp;removing the Name");<br/>
 <br/>
-&nbsp;&nbsp;attribute&nbsp;remove(&nbsp;"",&nbsp;my&nbsp;file[],&nbsp;Name&nbsp;);<br/>
+&nbsp;&nbsp;attribute&nbsp;remove( "", my file[], Name );<br/>
 <br/>
-&nbsp;&nbsp;echo(new&nbsp;line,&nbsp;"Take&nbsp;a&nbsp;quick&nbsp;look&nbsp;at&nbsp;the&nbsp;empty&nbsp;JSON&nbsp;file:"&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;my&nbsp;file[],&nbsp;TEXT&nbsp;);<br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(t);<br/>
-&nbsp;&nbsp;file&nbsp;delete(&nbsp;my&nbsp;file[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Take a quick look at the empty JSON file:" );<br/>
+&nbsp;&nbsp;table&nbsp;load( t, my file[], TEXT );<br/>
+&nbsp;&nbsp;table&nbsp;list (t);<br/>
+&nbsp;&nbsp;file&nbsp;delete( my file[] );<br/>
 <br/>
 </code></div>
 <h4> Output</h4>

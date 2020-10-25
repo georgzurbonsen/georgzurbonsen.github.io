@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -265,26 +266,26 @@ In the reference table, the data below this header may contain the following val
 <td><b>Table is OK</b><br/><p>true if no mismatches identified.  Otherwise false.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{{&nbsp;Name,&nbsp;Gender},&nbsp;{&nbsp;Philippe,&nbsp;male&nbsp;},&nbsp;{&nbsp;Pascale,&nbsp;female&nbsp;},&nbsp;{&nbsp;Michele,&nbsp;female&nbsp;}}&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table:");&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize( target, {{ Name, Gender}, { Philippe, male }, { Pascale, female }, { Michele, female }} );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table:"); table list ( target );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize(&nbsp;reference,&nbsp;{&nbsp;Gender,&nbsp;male,&nbsp;female&nbsp;}&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table:");&nbsp;table&nbsp;list&nbsp;(&nbsp;reference&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize( reference, { Gender, male, female }&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Reference&nbsp;table:"); table list ( reference );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;=&nbsp;table&nbsp;check(&nbsp;target,&nbsp;reference,&nbsp;Gender&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;= table check( target, reference, Gender );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;",&nbsp;res[],&nbsp;"):");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table after checking (result = ", res[], "):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list ( target );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Add&nbsp;a&nbsp;mistake.");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[target:Name,Philippe,Gender]&nbsp;=&nbsp;"Male";&nbsp;//&nbsp;Upper&nbsp;case&nbsp;deviates<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Add&nbsp;a mistake.");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[target:Name,Philippe,Gender]&nbsp;= "Male"; // Upper case deviates<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;=&nbsp;table&nbsp;check(&nbsp;target,&nbsp;reference,&nbsp;Gender&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[]&nbsp;= table check( target, reference, Gender );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table&nbsp;after&nbsp;checking&nbsp;(result&nbsp;=&nbsp;",&nbsp;res[],&nbsp;"):");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Target&nbsp;table after checking (result = ", res[], "):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;list ( target );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;See&nbsp;following&nbsp;sub-sections&nbsp;for&nbsp;more&nbsp;sophisticated&nbsp;examples.</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;See following sub-sections for more sophisticated examples.</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Target&nbsp;table:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Gender<br/>

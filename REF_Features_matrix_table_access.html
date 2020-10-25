@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -77,8 +78,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -118,39 +119,39 @@ parameter sets for the rows and wildcards for the columns, and so forth.</p>
 
 <br/><img src="Images/Description_Table_Matrix_Access_Full.jpg" alt="Matrix table access using different methods, full table specification"><br/></p>
 <h5> Programming examples</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load(&nbsp;table,&nbsp;"Examples&#92;Cities.csv");<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( table, "Examples&#92;Cities.csv");<br/>
 <br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table&nbsp;:&nbsp;{1,7,4},&nbsp;{12,&nbsp;4,&nbsp;8}]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table : {1,7,4}, {12, 4, 8}] );<br/>
 &nbsp;&nbsp;echo;<br/>
 <br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table&nbsp;:&nbsp;:'C*',&nbsp;:'*T*'&nbsp;]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table : :'C*', :'*T*' ] );<br/>
 &nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;//&nbsp;1st&nbsp;horizontal&nbsp;match&nbsp;is&nbsp;country,&nbsp;therefore&nbsp;it&nbsp;checks&nbsp;for&nbsp;all&nbsp;countries&nbsp;containing&nbsp;'T'<br/>
-&nbsp;&nbsp;//&nbsp;Country&nbsp;and&nbsp;City&nbsp;are&nbsp;retrieved<br/>
+&nbsp;&nbsp;//&nbsp;1st horizontal match is country, therefore it checks for all countries containing 'T'<br/>
+&nbsp;&nbsp;//&nbsp;Country and City are retrieved<br/>
 <br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;..'State/Province',&nbsp;12..]&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;1..Inhabitants,&nbsp;Boston..6]&nbsp;);<br/>
-&nbsp;&nbsp;a[]&nbsp;=&nbsp;[&nbsp;table:&nbsp;Inhabitants&nbsp;..&nbsp;'Alt.&nbsp;(m)',&nbsp;];&nbsp;//&nbsp;Read&nbsp;all&nbsp;rows&nbsp;incluuding&nbsp;the&nbsp;header<br/>
-&nbsp;&nbsp;for&nbsp;all&nbsp;parameters(&nbsp;a[],&nbsp;b[]&nbsp;)&nbsp;echo(&nbsp;b[]&nbsp;);<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: ..'State/Province', 12..] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: 1..Inhabitants, Boston..6] );<br/>
+&nbsp;&nbsp;a[]&nbsp;= [ table: Inhabitants .. 'Alt. (m)', ]; // Read all rows incluuding the header<br/>
+&nbsp;&nbsp;for&nbsp;all parameters( a[], b[] ) echo( b[] );<br/>
 <br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Reading&nbsp;no&nbsp;data<br/>
+&nbsp;&nbsp;//&nbsp;Reading no data<br/>
 <br/>
 &nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;:'xxx',&nbsp;:'yyy'&nbsp;]&nbsp;);&nbsp;&nbsp;//&nbsp;Returns&nbsp;0&nbsp;rews<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;:'C*',&nbsp;:'yyy'&nbsp;]&nbsp;);&nbsp;//&nbsp;Found&nbsp;2&nbsp;columns,&nbsp;but&nbsp;number&nbsp;of&nbsp;rows&nbsp;is&nbsp;0.<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;:'xxx',&nbsp;:'*'&nbsp;]&nbsp;);&nbsp;//&nbsp;All&nbsp;rows,&nbsp;no&nbsp;column<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;{2,3,4},&nbsp;{}&nbsp;]&nbsp;);&nbsp;//&nbsp;3&nbsp;columns,&nbsp;no&nbsp;row<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;{},&nbsp;{2,3,4}&nbsp;]&nbsp;);&nbsp;&nbsp;//&nbsp;No&nbsp;column,&nbsp;3&nbsp;rows<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;{},&nbsp;{}&nbsp;]&nbsp;);&nbsp;//&nbsp;Nothing<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: :'xxx', :'yyy' ] );&nbsp;&nbsp;// Returns 0 rews<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: :'C*', :'yyy' ] ); // Found 2 columns, but number of rows is 0.<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: :'xxx', :'*' ] ); // All rows, no column<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: {2,3,4}, {} ] ); // 3 columns, no row<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: {}, {2,3,4} ] );&nbsp;&nbsp;// No column, 3 rows<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: {}, {} ] ); // Nothing<br/>
 &nbsp;&nbsp;echo;<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Matrix&nbsp;access&nbsp;on&nbsp;one&nbsp;single&nbsp;row,&nbsp;column,&nbsp;cell.&nbsp;&nbsp;Note:&nbsp;Always&nbsp;nested&nbsp;parameter&nbsp;sets<br/>
-&nbsp;&nbsp;//&nbsp;First&nbsp;level:&nbsp;Rows,&nbsp;2nd&nbsp;level:&nbsp;COlumns<br/>
+&nbsp;&nbsp;//&nbsp;Matrix access on one single row, column, cell.&nbsp;&nbsp;Note: Always nested parameter sets<br/>
+&nbsp;&nbsp;//&nbsp;First level: Rows, 2nd level: COlumns<br/>
 <br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;{City},&nbsp;1..3&nbsp;]&nbsp;);&nbsp;//&nbsp;One&nbsp;column<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;City..Inhabitants,&nbsp;{Venice}&nbsp;]&nbsp;);&nbsp;//&nbsp;One&nbsp;row<br/>
-&nbsp;&nbsp;echo(&nbsp;[&nbsp;table:&nbsp;{Moving&nbsp;along},&nbsp;{3}&nbsp;]&nbsp;);&nbsp;//&nbsp;One&nbsp;cell</code></div>
+&nbsp;&nbsp;echo(&nbsp;[ table: {City}, 1..3 ] ); // One column<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City..Inhabitants, {Venice} ] ); // One row<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: {Moving along}, {3} ] ); // One cell</code></div>
 <h5> Output:</h5>
 <div class="output_background_color" ><code>{{'Zürich','Tram','Street&nbsp;Parade'},{'Boston','Walking','Freedom&nbsp;trail'},{'Venice','Gondola','Doge's&nbsp;Palace'}}<br/>
 <br/>
@@ -199,32 +200,32 @@ and/or ranges in wrong direction), then empty sets will be returned.
 and do the writing, e.g. <b>[ table: 3.., 4.. ]</b>.  Write access begins in row 4 and column 3.
 Alternatively, when writing a value (not parameter set) to a table, then the same value will be written into all cells as specified with the vertical table access.</p>
 <h5> Programming examples</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;table,&nbsp;{&nbsp;{&nbsp;A0&nbsp;..&nbsp;O0&nbsp;}&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;..,&nbsp;1..15&nbsp;]&nbsp;=&nbsp;'.';&nbsp;//&nbsp;Initialize&nbsp;with&nbsp;points<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( table, { { A0 .. O0 } } );<br/>
+&nbsp;&nbsp;[&nbsp;table: .., 1..15 ] = '.'; // Initialize with points<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Writing&nbsp;some&nbsp;data&nbsp;(actually&nbsp;on&nbsp;row&nbsp;3&nbsp;and&nbsp;5)<br/>
+&nbsp;&nbsp;//&nbsp;Writing some data (actually on row 3 and 5)<br/>
 <br/>
-&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;{&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6&nbsp;},&nbsp;{},&nbsp;{&nbsp;23,&nbsp;24,&nbsp;25&nbsp;}&nbsp;};<br/>
+&nbsp;&nbsp;a[]&nbsp;= { { 3, 4, 5, 6 }, {}, { 23, 24, 25 } };<br/>
 <br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;2..,&nbsp;3..&nbsp;]&nbsp;=&nbsp;a[];&nbsp;//&nbsp;Write&nbsp;all&nbsp;values&nbsp;(as&nbsp;long&nbsp;if&nbsp;inside&nbsp;the&nbsp;table<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;J0..K0,&nbsp;3..&nbsp;]&nbsp;=&nbsp;a[];&nbsp;&nbsp;//&nbsp;Note:&nbsp;Limited&nbsp;to&nbsp;2&nbsp;columns&nbsp;(5,6&nbsp;and&nbsp;25&nbsp;are&nbsp;not&nbsp;written)<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;N0..,&nbsp;10..&nbsp;]&nbsp;=&nbsp;a[];&nbsp;//&nbsp;Writes&nbsp;beyond&nbsp;the&nbsp;existing&nbsp;headers&nbsp;(note&nbsp;2&nbsp;unnamed&nbsp;columns&nbsp;added)<br/>
+&nbsp;&nbsp;[&nbsp;table: 2.., 3.. ] = a[]; // Write all values (as long if inside the table<br/>
+&nbsp;&nbsp;[&nbsp;table: J0..K0, 3.. ] = a[];&nbsp;&nbsp;// Note: Limited to 2 columns (5,6 and 25 are not written)<br/>
+&nbsp;&nbsp;[&nbsp;table: N0.., 10.. ] = a[]; // Writes beyond the existing headers (note 2 unnamed columns added)<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list( table );<br/>
 <br/>
-&nbsp;&nbsp;echo("Further&nbsp;write&nbsp;accesses:");<br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;table,&nbsp;{&nbsp;{&nbsp;A0&nbsp;..&nbsp;O0&nbsp;}&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;..,&nbsp;1..15&nbsp;]&nbsp;=&nbsp;'.';&nbsp;//&nbsp;Initialize&nbsp;again<br/>
+&nbsp;&nbsp;echo("Further&nbsp;write accesses:");<br/>
+&nbsp;&nbsp;table&nbsp;initialize( table, { { A0 .. O0 } } );<br/>
+&nbsp;&nbsp;[&nbsp;table: .., 1..15 ] = '.'; // Initialize again<br/>
 <br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;..1,&nbsp;..2]&nbsp;=&nbsp;{&nbsp;{&nbsp;aa,&nbsp;bb,&nbsp;cc&nbsp;},&nbsp;{&nbsp;dd,&nbsp;ee,&nbsp;ff&nbsp;},&nbsp;{&nbsp;gg,&nbsp;hh,&nbsp;ii&nbsp;}&nbsp;};&nbsp;//&nbsp;Only&nbsp;4&nbsp;elements&nbsp;written<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;2..,&nbsp;-3..&nbsp;]&nbsp;=&nbsp;{&nbsp;1,2,3,4,5&nbsp;};&nbsp;//&nbsp;Last&nbsp;3&nbsp;rows<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;10..,&nbsp;-3..&nbsp;]&nbsp;=&nbsp;{{&nbsp;1,2,3,4,5&nbsp;}};&nbsp;//&nbsp;Only&nbsp;1&nbsp;row<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;H0..,&nbsp;1..&nbsp;]&nbsp;=&nbsp;{&nbsp;{1},{2},{3},{4},{5}&nbsp;};&nbsp;//&nbsp;Only&nbsp;1&nbsp;column<br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;B0..D0,&nbsp;6..8&nbsp;]&nbsp;=&nbsp;X;&nbsp;//&nbsp;1&nbsp;value&nbsp;written&nbsp;everywhere<br/>
+&nbsp;&nbsp;[&nbsp;table: ..1, ..2] = { { aa, bb, cc }, { dd, ee, ff }, { gg, hh, ii } }; // Only 4 elements written<br/>
+&nbsp;&nbsp;[&nbsp;table: 2.., -3.. ] = { 1,2,3,4,5 }; // Last 3 rows<br/>
+&nbsp;&nbsp;[&nbsp;table: 10.., -3.. ] = {{ 1,2,3,4,5 }}; // Only 1 row<br/>
+&nbsp;&nbsp;[&nbsp;table: H0.., 1.. ] = { {1},{2},{3},{4},{5} }; // Only 1 column<br/>
+&nbsp;&nbsp;[&nbsp;table: B0..D0, 6..8 ] = X; // 1 value written everywhere<br/>
 <br/>
-&nbsp;&nbsp;[&nbsp;table:&nbsp;{&nbsp;N0,&nbsp;M0,&nbsp;K0&nbsp;},&nbsp;{3,2,1}&nbsp;&nbsp;]&nbsp;=&nbsp;a[];&nbsp;//&nbsp;Write&nbsp;in&nbsp;opposite&nbsp;directions<br/>
+&nbsp;&nbsp;[&nbsp;table: { N0, M0, K0 }, {3,2,1}&nbsp;&nbsp;] = a[]; // Write in opposite directions<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);</code></div>
+&nbsp;&nbsp;table&nbsp;list( table );</code></div>
 <h5> Output:</h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;A0&nbsp;|&nbsp;B0&nbsp;|&nbsp;C0&nbsp;|&nbsp;D0&nbsp;|&nbsp;E0&nbsp;|&nbsp;F0&nbsp;|&nbsp;G0&nbsp;|&nbsp;H0&nbsp;|&nbsp;I0&nbsp;|&nbsp;J0&nbsp;|&nbsp;K0&nbsp;|&nbsp;L0&nbsp;|&nbsp;M0&nbsp;|&nbsp;N0&nbsp;|&nbsp;O0&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;.&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;<br/>

@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -171,18 +172,18 @@ The differenntiation between <b>if</b> or <b>if any</b> at the end of the functi
 <h4> Exceptions</h4>
 <p>Function names containing 'numeral' assert exceptions if values provided are not of type numeral.</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;10,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;4&nbsp;)&nbsp;);&nbsp;//&nbsp;6,&nbsp;because&nbsp;first&nbsp;3&nbsp;elements&nbsp;are&nbsp;added<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum if&nbsp;&nbsp;( { 1, 2, 3, 4, 5 }, { 10, 8, 6, 4, 2 }, &gt;4 ) ); // 6, because first 3 elements are added<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;2,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;=4,&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;e&nbsp;},&nbsp;c..e&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;7&nbsp;because&nbsp;comparisons&nbsp;of&nbsp;the&nbsp;2nd-4th&nbsp;elements&nbsp;in&nbsp;2nd&nbsp;parameter&nbsp;and&nbsp;last&nbsp;3&nbsp;elements&nbsp;in&nbsp;the&nbsp;4th<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter&nbsp;givei&nbsp;true.&nbsp;&nbsp;Intersecting&nbsp;both,&nbsp;the&nbsp;3rd&nbsp;and&nbsp;4th&nbsp;elements&nbsp;will&nbsp;be&nbsp;summed.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum if&nbsp;&nbsp;( { 1, 2, 3, 4, 5 }, { 2, 8, 6, 4, 2 }, &gt;=4, { a, b, c, d, e }, c..e ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns 7 because comparisons of the 2nd-4th elements in 2nd parameter and last 3 elements in the 4th<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter givei true.&nbsp;&nbsp;Intersecting both, the 3rd and 4th elements will be summed.<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum&nbsp;if&nbsp;any&nbsp;&nbsp;(&nbsp;{&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5&nbsp;},&nbsp;{&nbsp;2,&nbsp;8,&nbsp;6,&nbsp;4,&nbsp;2&nbsp;},&nbsp;&gt;=4,&nbsp;{&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;d,&nbsp;e&nbsp;},&nbsp;c..e&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;14&nbsp;because&nbsp;comparisons&nbsp;of&nbsp;the&nbsp;2nd-4th&nbsp;elements&nbsp;in&nbsp;2nd&nbsp;parameter&nbsp;and&nbsp;last&nbsp;3&nbsp;elements&nbsp;in&nbsp;the&nbsp;4th<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter&nbsp;give&nbsp;true.&nbsp;&nbsp;Taking&nbsp;the&nbsp;union&nbsp;of&nbsp;both,&nbsp;the&nbsp;2nd&nbsp;-&nbsp;5th&nbsp;elements&nbsp;will&nbsp;be&nbsp;summed.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;sum if any&nbsp;&nbsp;( { 1, 2, 3, 4, 5 }, { 2, 8, 6, 4, 2 }, &gt;=4, { a, b, c, d, e }, c..e ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns 14 because comparisons of the 2nd-4th elements in 2nd parameter and last 3 elements in the 4th<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;parameter give true.&nbsp;&nbsp;Taking the union of both, the 2nd - 5th elements will be summed.<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;join&nbsp;if&nbsp;(&nbsp;{&nbsp;Jim,&nbsp;Jane,&nbsp;John,&nbsp;Kate,&nbsp;Nic&nbsp;},&nbsp;{&nbsp;25,&nbsp;18,&nbsp;30,&nbsp;17,&nbsp;40&nbsp;},&nbsp;&gt;=20,&nbsp;{"(",&nbsp;",&nbsp;",")"}&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns&nbsp;(Jim,&nbsp;John,&nbsp;Nic)&nbsp;because&nbsp;their&nbsp;ages&nbsp;are&nbsp;20&nbsp;or&nbsp;higher.</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;join if ( { Jim, Jane, John, Kate, Nic }, { 25, 18, 30, 17, 40 }, &gt;=20, {"(", ", ",")"} ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Returns (Jim, John, Nic) because their ages are 20 or higher.</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>6<br/>
 7<br/>

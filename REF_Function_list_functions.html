@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -125,16 +126,16 @@ These functions lists provide information about the available functions
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure(&nbsp;mode,&nbsp;{{&nbsp;meaningful&nbsp;text,&nbsp;literal&nbsp;}}&nbsp;)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;procedure( mode, {{ meaningful text, literal }} )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Test");<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;echo("Functions&nbsp;listed:");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;functions(&nbsp;"mo*"&nbsp;);&nbsp;//&nbsp;Lists&nbsp;3&nbsp;functions:&nbsp;mod,&nbsp;mode&nbsp;(defined&nbsp;here)&nbsp;and&nbsp;month.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;functions( "mo*" ); // Lists 3 functions: mod, mode (defined here) and month.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;echo("Functions&nbsp;explained:");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;explain&nbsp;functions(&nbsp;"mo*"&nbsp;);&nbsp;</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;explain&nbsp;functions( "mo*" ); </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Functions&nbsp;listed:<br/>
 mod<br/>

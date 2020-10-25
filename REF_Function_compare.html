@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -144,13 +145,13 @@ literal is of type <a class="bold_text" href="REF_Features_data_types_literals.h
 <td><b>Comparison result</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;3;&nbsp;b[]&nbsp;=&nbsp;5;&nbsp;c[]&nbsp;=&nbsp;7;<br/>
-&nbsp;&nbsp;ex[]&nbsp;=&nbsp;"&gt;6";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;= 3; b[] = 5; c[] = 7;<br/>
+&nbsp;&nbsp;ex[]&nbsp;= "&gt;6";<br/>
 <br/>
-&nbsp;&nbsp;echo("Greater&nbsp;than&nbsp;4:&nbsp;",&nbsp;compare(&nbsp;a[],&nbsp;&nbsp;&gt;4&nbsp;),&nbsp;"&nbsp;",&nbsp;compare(&nbsp;b[],&nbsp;&nbsp;&gt;4&nbsp;),&nbsp;"&nbsp;",&nbsp;compare(&nbsp;c[],&nbsp;&nbsp;&gt;4&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;echo("Greater&nbsp;than&nbsp;6:&nbsp;",&nbsp;compare(&nbsp;a[],:ex[]),&nbsp;"&nbsp;",&nbsp;compare(&nbsp;b[],:ex[]),&nbsp;"&nbsp;",&nbsp;compare(&nbsp;c[],:ex[])&nbsp;);<br/>
+&nbsp;&nbsp;echo("Greater&nbsp;than 4: ", compare( a[],&nbsp;&nbsp;&gt;4 ), " ", compare( b[],&nbsp;&nbsp;&gt;4 ), " ", compare( c[],&nbsp;&nbsp;&gt;4 ) );<br/>
+&nbsp;&nbsp;echo("Greater&nbsp;than 6: ", compare( a[],:ex[]), " ", compare( b[],:ex[]), " ", compare( c[],:ex[]) );<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Note&nbsp;the&nbsp;required&nbsp;colon.&nbsp;&nbsp;Otherwise&nbsp;ex[]&nbsp;is&nbsp;seen&nbsp;as&nbsp;variable&nbsp;to&nbsp;compare&nbsp;with.</code></div>
+&nbsp;&nbsp;//&nbsp;Note the required colon.&nbsp;&nbsp;Otherwise ex[] is seen as variable to compare with.</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Greater&nbsp;than&nbsp;4:&nbsp;false&nbsp;true&nbsp;true<br/>
 Greater&nbsp;than&nbsp;6:&nbsp;false&nbsp;false&nbsp;true<br/>

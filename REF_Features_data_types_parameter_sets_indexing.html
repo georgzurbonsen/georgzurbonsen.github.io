@@ -61,6 +61,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -80,8 +81,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -129,14 +130,14 @@ Following rules apply to the indexing parameter sets:
 </li></ul><p>
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;{&nbsp;a,b,c,d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;{0}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Access&nbsp;the&nbsp;1st&nbsp;element<br/>
-&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;a,b,c,&nbsp;{d,e,f},&nbsp;g&nbsp;};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Assign&nbsp;a&nbsp;parameter&nbsp;set&nbsp;to&nbsp;variable&nbsp;a[]<br/>
-&nbsp;&nbsp;echo(&nbsp;"Last&nbsp;element&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;a[]{-1}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Retrieve&nbsp;the&nbsp;last&nbsp;element<br/>
-&nbsp;&nbsp;echo(&nbsp;"Next&nbsp;element&nbsp;to&nbsp;the&nbsp;left:&nbsp;",&nbsp;a[]{-2}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Retrieve&nbsp;the&nbsp;2nd&nbsp;last&nbsp;element<br/>
-&nbsp;&nbsp;echo(&nbsp;"Cascaded&nbsp;indexing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;a[]{3}{2}&nbsp;);&nbsp;&nbsp;//&nbsp;retrieve&nbsp;3rd&nbsp;element,&nbsp;and&nbsp;inside&nbsp;the&nbsp;subset&nbsp;the&nbsp;2nd&nbsp;element&nbsp;(cascaded&nbsp;indexing)<br/>
-&nbsp;&nbsp;echo(&nbsp;"#&nbsp;elements&nbsp;in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;a[]{}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Number&nbsp;of&nbsp;elements<br/>
-&nbsp;&nbsp;echo(&nbsp;"#&nbsp;elements&nbsp;in&nbsp;nested&nbsp;set:&nbsp;",&nbsp;a[]{-2}{}&nbsp;);&nbsp;&nbsp;//&nbsp;Number&nbsp;of&nbsp;elements&nbsp;in&nbsp;subset&nbsp;(cascaded&nbsp;indexing)<br/>
-&nbsp;&nbsp;echo(&nbsp;"Out&nbsp;of&nbsp;bounds&nbsp;case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;a[]{99}&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Empty&nbsp;is&nbsp;returned&nbsp;if&nbsp;index&nbsp;lies&nbsp;out&nbsp;of&nbsp;bounds</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;{ a,b,c,d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} {0} );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Access the 1st element<br/>
+&nbsp;&nbsp;a[]&nbsp;= { a,b,c, {d,e,f}, g };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Assign a parameter set to variable a[]<br/>
+&nbsp;&nbsp;echo(&nbsp;"Last element&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", a[]{-1} );&nbsp;&nbsp;&nbsp;&nbsp;// Retrieve the last element<br/>
+&nbsp;&nbsp;echo(&nbsp;"Next element to the left: ", a[]{-2} );&nbsp;&nbsp;&nbsp;&nbsp;// Retrieve the 2nd last element<br/>
+&nbsp;&nbsp;echo(&nbsp;"Cascaded indexing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", a[]{3}{2} );&nbsp;&nbsp;// retrieve 3rd element, and inside the subset the 2nd element (cascaded indexing)<br/>
+&nbsp;&nbsp;echo(&nbsp;"# elements in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", a[]{} );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Number of elements<br/>
+&nbsp;&nbsp;echo(&nbsp;"# elements in nested set: ", a[]{-2}{} );&nbsp;&nbsp;// Number of elements in subset (cascaded indexing)<br/>
+&nbsp;&nbsp;echo(&nbsp;"Out of bounds case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", a[]{99} );&nbsp;&nbsp;&nbsp;&nbsp;// Empty is returned if index lies out of bounds</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>a<br/>
 Last&nbsp;element&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;g<br/>
@@ -153,10 +154,10 @@ are not allowed and will cause error messages.  Any data type may be assigned. F
 (a subset).  Using multiple indexes as allowed for read accesses is not possible (e.g. [a]{1,2} = {A,B};).
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;=&nbsp;{&nbsp;a,b,c,&nbsp;{d,e,f},&nbsp;g&nbsp;};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Assign&nbsp;a&nbsp;parameter&nbsp;set&nbsp;to&nbsp;variable&nbsp;a[]<br/>
-&nbsp;&nbsp;a[]{1}&nbsp;=&nbsp;B;<br/>
-&nbsp;&nbsp;a[]{-1}&nbsp;=&nbsp;{G,H,I};<br/>
-&nbsp;&nbsp;echo(&nbsp;"Modified&nbsp;value&nbsp;in&nbsp;a[]&nbsp;=&nbsp;",&nbsp;a[]&nbsp;);</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;= { a,b,c, {d,e,f}, g };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Assign a parameter set to variable a[]<br/>
+&nbsp;&nbsp;a[]{1}&nbsp;= B;<br/>
+&nbsp;&nbsp;a[]{-1}&nbsp;= {G,H,I};<br/>
+&nbsp;&nbsp;echo(&nbsp;"Modified value in a[] = ", a[] );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Modified&nbsp;value&nbsp;in&nbsp;a[]&nbsp;=&nbsp;{'a','B','c',{'d','e','f'},{'G','H','I'}}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_data_types_parameter_sets_indexing_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

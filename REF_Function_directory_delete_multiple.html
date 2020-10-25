@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -166,33 +167,33 @@ Directory not empty<br/>
 Directory not accessible<br/>
 Directory is a file</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;multiple(&nbsp;"D:&#92;A",&nbsp;"*");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes&nbsp;all&nbsp;subdirectories&nbsp;in&nbsp;directory&nbsp;A&nbsp;if&nbsp;they&nbsp;are&nbsp;empty.&nbsp;The&nbsp;directory&nbsp;A&nbsp;will&nbsp;not&nbsp;be&nbsp;deleted.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deleting&nbsp;will&nbsp;stop&nbsp;when&nbsp;encountering&nbsp;first&nbsp;issue,&nbsp;e.g.&nbsp;non-empty&nbsp;or&nbsp;blocked&nbsp;directory.<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete multiple( "D:&#92;A", "*");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes all subdirectories in directory A if they are empty. The directory A will not be deleted.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deleting will stop when encountering first issue, e.g. non-empty or blocked directory.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;multiple&nbsp;all&nbsp;(&nbsp;"D:&#92;A",&nbsp;"*");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same&nbsp;as&nbsp;above,&nbsp;but&nbsp;continues&nbsp;deleting&nbsp;the&nbsp;remaining&nbsp;directories&nbsp;in&nbsp;case&nbsp;of&nbsp;an&nbsp;issue<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete multiple all ( "D:&#92;A", "*");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same as above, but continues deleting the remaining directories in case of an issue<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;multiple(&nbsp;"",&nbsp;"A");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes&nbsp;subdirectory&nbsp;A&nbsp;if&nbsp;empty<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete multiple( "", "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes subdirectory A if empty<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive(&nbsp;"D:&#92;A",&nbsp;"*");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes&nbsp;all&nbsp;subdirectories&nbsp;including&nbsp;their&nbsp;files&nbsp;and&nbsp;nested&nbsp;sub-directories&nbsp;in&nbsp;directory&nbsp;A.&nbsp;The&nbsp;directory&nbsp;A&nbsp;will&nbsp;not&nbsp;be&nbsp;deleted.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deleting&nbsp;will&nbsp;stop&nbsp;when&nbsp;encountering&nbsp;first&nbsp;issue,&nbsp;e.g.&nbsp;non-empty&nbsp;or&nbsp;blocked&nbsp;directory.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "D:&#92;A", "*");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes all subdirectories including their files and nested sub-directories in directory A. The directory A will not be deleted.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deleting will stop when encountering first issue, e.g. non-empty or blocked directory.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive&nbsp;all&nbsp;(&nbsp;"D:&#92;A",&nbsp;"*");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same&nbsp;as&nbsp;above,&nbsp;but&nbsp;continues&nbsp;deleting&nbsp;the&nbsp;remaining&nbsp;directories&nbsp;in&nbsp;case&nbsp;of&nbsp;an&nbsp;issue<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive all ( "D:&#92;A", "*");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Same as above, but continues deleting the remaining directories in case of an issue<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive(&nbsp;"",&nbsp;"A");&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive&nbsp;("A"),&nbsp;directory&nbsp;delete&nbsp;recursive&nbsp;("./",&nbsp;"A"&nbsp;)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes&nbsp;subdirectory&nbsp;A&nbsp;including&nbsp;their&nbsp;files&nbsp;and&nbsp;nested&nbsp;sub-directories&nbsp;in&nbsp;directory&nbsp;A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "", "A");&nbsp;&nbsp;&nbsp;directory delete recursive ("A"), directory delete recursive ("./", "A" )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes subdirectory A including their files and nested sub-directories in directory A<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive&nbsp;if&nbsp;empty(&nbsp;"D:&#92;A",&nbsp;"*");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes&nbsp;all&nbsp;subdirectories&nbsp;including&nbsp;their&nbsp;nested&nbsp;sub-directories&nbsp;in&nbsp;directory&nbsp;A&nbsp;if&nbsp;empty<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;directory&nbsp;A&nbsp;will&nbsp;not&nbsp;be&nbsp;deleted.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;function&nbsp;implies&nbsp;'…&nbsp;all',&nbsp;meaning&nbsp;it&nbsp;tries&nbsp;to&nbsp;delete&nbsp;all&nbsp;existing&nbsp;subdirectories,&nbsp;even&nbsp;if&nbsp;an&nbsp;issue&nbsp;occurs.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive if empty( "D:&#92;A", "*");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Deletes all subdirectories including their nested sub-directories in directory A if empty<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The directory A will not be deleted.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;This function implies '… all', meaning it tries to delete all existing subdirectories, even if an issue occurs.<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete&nbsp;recursive&nbsp;if&nbsp;empty&nbsp;(&nbsp;"",&nbsp;"A");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Deletes&nbsp;subdirectory&nbsp;A&nbsp;including&nbsp;their&nbsp;nested&nbsp;sub-directories&nbsp;in&nbsp;directory&nbsp;A&nbsp;if&nbsp;empty<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive if empty ( "", "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;Deletes&nbsp;subdirectory A including their nested sub-directories in directory A if empty<br/>
 </code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_directory_delete.html">directory delete ... Functions</a><br/>

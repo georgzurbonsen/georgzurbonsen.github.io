@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -160,26 +161,26 @@ literal is of type <a class="bold_text" href="REF_Features_data_types_literals.h
 <td><b>Entered value</b><br/><p>The value entered is returned, using the appropriate type.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;both&nbsp;date&nbsp;and&nbsp;time:&nbsp;",&nbsp;date&nbsp;and&nbsp;time&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter both date and time: ", date and time&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;any&nbsp;value:&nbsp;");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter any value: ");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;any&nbsp;integer&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;3:&nbsp;",&nbsp;integer,&nbsp;&gt;=3);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter any integer greater than or equal to 3: ", integer, &gt;=3);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;one&nbsp;lower-case&nbsp;latin&nbsp;character:&nbsp;",&nbsp;character,&nbsp;'a'..'z');<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter one lower-case latin character: ", character, 'a'..'z');<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;a&nbsp;boolean&nbsp;value&nbsp;(true,&nbsp;false,&nbsp;y,&nbsp;n,&nbsp;...&nbsp;):&nbsp;",&nbsp;boolean);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter a boolean value (true, false, y, n, ... ): ", boolean);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;a&nbsp;date&nbsp;in&nbsp;2020:&nbsp;",&nbsp;date,&nbsp;date(01.01.2020)..date(31.12.2020)&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter a date in 2020: ", date, date(01.01.2020)..date(31.12.2020) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;=&nbsp;input("Enter&nbsp;a&nbsp;time&nbsp;before&nbsp;15:00&nbsp;",&nbsp;time,&nbsp;&lt;time("15:00")&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value&nbsp;is&nbsp;:&nbsp;",&nbsp;a[],"&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;is&nbsp;:&nbsp;",&nbsp;type&nbsp;(a[])&nbsp;);</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= input("Enter a time before 15:00 ", time, &lt;time("15:00") );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Entered&nbsp;value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );</code></div>
 <h4> Output</h4>
 <u>Try it yourself:</u> Open <b>REF_Function_input.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

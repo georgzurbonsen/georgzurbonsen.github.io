@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -152,15 +153,15 @@ Negative numbers are supported: -1 = last element, -2 = previous element, etc..<
 <td><b>Position: Index to parameter set element</b><br/><p>Positive or zero: Found and position returned.  -1: Not found.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;a,b,c,A,B,C},&nbsp;A&nbsp;)&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;returns&nbsp;3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find&nbsp;ignore&nbsp;case&nbsp;(&nbsp;{&nbsp;a,b,c,A,B,C},&nbsp;A&nbsp;)&nbsp;);&nbsp;//&nbsp;returns&nbsp;0<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find&nbsp;ignore&nbsp;case&nbsp;(&nbsp;{&nbsp;a,b,c,A,B,C},&nbsp;A,&nbsp;1&nbsp;)&nbsp;);&nbsp;//&nbsp;3&nbsp;(Skip&nbsp;first&nbsp;element&nbsp;in&nbsp;parameter&nbsp;set)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;{}&nbsp;)&nbsp;);&nbsp;//&nbsp;returns&nbsp;0&nbsp;(2&nbsp;empty&nbsp;sets&nbsp;compared)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;"&nbsp;"&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;returns&nbsp;1&nbsp;(blanks&nbsp;compared)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;"?"&nbsp;)&nbsp;);&nbsp;&nbsp;//&nbsp;returns&nbsp;-1&nbsp;(not&nbsp;found)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;1)&nbsp;);&nbsp;&nbsp;&nbsp;//&nbsp;returns&nbsp;2&nbsp;(Numeral&nbsp;1&nbsp;compared)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;'1')&nbsp;);&nbsp;//&nbsp;returns&nbsp;3&nbsp;(Literal&nbsp;1&nbsp;compared)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find(&nbsp;{&nbsp;{},&nbsp;"&nbsp;",&nbsp;1,&nbsp;'1',&nbsp;{1}&nbsp;},&nbsp;{1}&nbsp;)&nbsp;);//&nbsp;returns&nbsp;4&nbsp;(1&nbsp;in&nbsp;nested&nbsp;parameter&nbsp;set&nbsp;compared)</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { a,b,c,A,B,C}, A ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// returns 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find ignore case ( { a,b,c,A,B,C}, A ) ); // returns 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find ignore case ( { a,b,c,A,B,C}, A, 1 ) ); // 3 (Skip first element in parameter set)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, {} ) ); // returns 0 (2 empty sets compared)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, " " ) );&nbsp;&nbsp;// returns 1 (blanks compared)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, "?" ) );&nbsp;&nbsp;// returns -1 (not found)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, 1) );&nbsp;&nbsp;&nbsp;// returns 2 (Numeral 1 compared)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, '1') ); // returns 3 (Literal 1 compared)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;find( { {}, " ", 1, '1', {1} }, {1} ) );// returns 4 (1 in nested parameter set compared)</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>3<br/>
 0<br/>

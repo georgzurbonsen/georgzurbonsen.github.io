@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -219,16 +220,16 @@ conversion.
 <td><b>Result</b><br/><p>Converted and formatted string</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;literal(&nbsp;Abc&nbsp;),&nbsp;",&nbsp;",&nbsp;literal(&nbsp;123.45&nbsp;),&nbsp;",&nbsp;",&nbsp;literal(true)&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;literal(date('14.juillet.2020')),&nbsp;",&nbsp;",&nbsp;literal(&nbsp;date('1.&nbsp;Aug&nbsp;20&nbsp;22:30')),&nbsp;",&nbsp;",&nbsp;literal(&nbsp;time(&nbsp;'10:15'&nbsp;)&nbsp;)&nbsp;);<br/>
-&nbsp;&nbsp;echo(&nbsp;null()&nbsp;);&nbsp;//&nbsp;void<br/>
-&nbsp;&nbsp;echo(&nbsp;{a,1,date(today),false}&nbsp;);&nbsp;//&nbsp;void<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;literal( Abc ), ", ", literal( 123.45 ), ", ", literal(true) );<br/>
+&nbsp;&nbsp;echo(&nbsp;literal(date('14.juillet.2020')), ", ", literal( date('1. Aug 20 22:30')), ", ", literal( time( '10:15' ) ) );<br/>
+&nbsp;&nbsp;echo(&nbsp;null() ); // void<br/>
+&nbsp;&nbsp;echo(&nbsp;{a,1,date(today),false} ); // void<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Abc,&nbsp;123.45,&nbsp;true<br/>
 2020-07-14,&nbsp;2020-08-01&nbsp;22:30:00,&nbsp;10:15:00<br/>
 #&nbsp;Invalid&nbsp;Value&nbsp;#<br/>
-{'a',1,'2020-10-18',false}<br/>
+{'a',1,'2020-10-25',false}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_literal.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

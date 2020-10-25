@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -201,13 +202,13 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>smart if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"5.0&nbsp;MUSD"&nbsp;));&nbsp;//&nbsp;5,000,000<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"EUR&nbsp;1.2mn"&nbsp;));&nbsp;//&nbsp;1,200,000<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"INR&nbsp;0.5&nbsp;lk"&nbsp;));&nbsp;//&nbsp;50,000<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;'50%'&nbsp;));&nbsp;//&nbsp;0.5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;'Alc.&nbsp;0.5&nbsp;&amp;permil;'&nbsp;));&nbsp;//&nbsp;0.0005<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;"1.23cr"&nbsp;));&nbsp;&nbsp;//&nbsp;12,300,000<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart&nbsp;numeral(&nbsp;1.23m,&nbsp;".",&nbsp;{&nbsp;m,&nbsp;M&nbsp;},&nbsp;{0.000001,&nbsp;1000000}&nbsp;));</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( "5.0 MUSD" )); // 5,000,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( "EUR 1.2mn" )); // 1,200,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( "INR 0.5 lk" )); // 50,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( '50%' )); // 0.5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( 'Alc. 0.5 &amp;permil;' )); // 0.0005<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( "1.23cr" ));&nbsp;&nbsp;// 12,300,000<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;smart numeral( 1.23m, ".", { m, M }, {0.000001, 1000000} ));</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>5000000<br/>
 1200000<br/>

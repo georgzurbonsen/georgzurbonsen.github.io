@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -176,33 +177,33 @@ The returned value will be converted to strings automatically after the function
 <td><b>Change remark</b><br/><p>          Return the value or text you want to see in the comparison report if the values are different (or equal).</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;function(&nbsp;foo,&nbsp;{{&nbsp;old&nbsp;value,&nbsp;literal&nbsp;},&nbsp;{new&nbsp;value,&nbsp;literal},&nbsp;{header&nbsp;name,&nbsp;literal},&nbsp;{row&nbsp;number,&nbsp;numeral}}&nbsp;)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;function( foo, {{ old value, literal }, {new value, literal}, {header name, literal}, {row number, numeral}} )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(numeral(new&nbsp;value[])&lt;&gt;0)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(numeral(new value[])&lt;&gt;0)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;select&nbsp;if&nbsp;(&nbsp;new&nbsp;value[]&nbsp;&gt;&nbsp;old&nbsp;value[],&nbsp;"Older",&nbsp;"Younger"&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;select if ( new value[] &gt; old value[], "Older", "Younger" ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;old&nbsp;value[]&nbsp;+&nbsp;"&nbsp;--&gt;&nbsp;"&nbsp;+&nbsp;new&nbsp;value[]&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&nbsp;old value[] + " --&gt; " + new value[] );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t1,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Age,&nbsp;Town&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;35,&nbsp;&nbsp;Boston&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bea,&nbsp;&nbsp;45,&nbsp;&nbsp;Cambridge&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat,&nbsp;46,&nbsp;&nbsp;Chicago&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Chuck,55,&nbsp;&nbsp;New&nbsp;Heaven&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Emil,&nbsp;21,&nbsp;&nbsp;Albany&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize( t1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Name, Age, Town },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;35,&nbsp;&nbsp;Boston },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Bea,&nbsp;&nbsp;45,&nbsp;&nbsp;Cambridge },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat, 46,&nbsp;&nbsp;Chicago },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Chuck,55,&nbsp;&nbsp;New Heaven },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Emil, 21,&nbsp;&nbsp;Albany }} );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;t2,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;Name,&nbsp;Age,&nbsp;Town&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;34,&nbsp;&nbsp;Boston&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Bea,&nbsp;&nbsp;46,&nbsp;&nbsp;Cambridge&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat,&nbsp;46,&nbsp;&nbsp;Chicago&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Chuck,55,&nbsp;&nbsp;New&nbsp;Haven&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dale,&nbsp;65,&nbsp;&nbsp;Newport&nbsp;}}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize( t2,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Name, Age, Town },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Ann,&nbsp;&nbsp;34,&nbsp;&nbsp;Boston },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Bea,&nbsp;&nbsp;46,&nbsp;&nbsp;Cambridge },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Beat, 46,&nbsp;&nbsp;Chicago },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Chuck,55,&nbsp;&nbsp;New Haven },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dale, 65,&nbsp;&nbsp;Newport }} );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;compare&nbsp;(&nbsp;t2,&nbsp;t1,&nbsp;report,&nbsp;Name,&nbsp;differences,&nbsp;foo,&nbsp;true&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;compare ( t2, t1, report, Name, differences, foo, true );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;delete&nbsp;columns(&nbsp;report,&nbsp;{Statistics&nbsp;Parameters,&nbsp;Statistics&nbsp;Values}&nbsp;);&nbsp;//&nbsp;Ignore&nbsp;for&nbsp;now<br/>
-&nbsp;&nbsp;table&nbsp;delete&nbsp;blank&nbsp;rows(&nbsp;report&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete columns( report, {Statistics Parameters, Statistics Values} ); // Ignore for now<br/>
+&nbsp;&nbsp;table&nbsp;delete blank rows( report );<br/>
 &nbsp;&nbsp;echo("Comparison&nbsp;Report:");<br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;report&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list ( report );<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Comparison&nbsp;Report:<br/>

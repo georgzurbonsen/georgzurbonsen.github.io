@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -170,22 +171,22 @@ attempting to create sub-directories which exist as files<br/>
 subdirectories cannot be created</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;overwrite(&nbsp;{},&nbsp;"D:&#92;abc"&nbsp;);&nbsp;//&nbsp;Nothing&nbsp;copied.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;overwrite&nbsp;(&nbsp;"D:&#92;abc",&nbsp;{}&nbsp;);&nbsp;//&nbsp;Nothing&nbsp;copied.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;recursive(&nbsp;"D:&#92;abc",&nbsp;"D:&#92;def&#92;"&nbsp;);&nbsp;//&nbsp;Copy&nbsp;everything&nbsp;from&nbsp;abc&nbsp;to&nbsp;def&nbsp;including&nbsp;sudirectories&nbsp;(case&nbsp;a)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;multiple&nbsp;overwrite(&nbsp;"D:&#92;abc",&nbsp;"D:&#92;def&#92;",“*.txt,*jpg",&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies&nbsp;text&nbsp;files&nbsp;and&nbsp;photos&nbsp;from&nbsp;abc&nbsp;to&nbsp;def,&nbsp;and&nbsp;overwrites<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;existing&nbsp;files.&nbsp;Subdirectories&nbsp;are&nbsp;ignored.&nbsp;(case&nbsp;a)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;recursive(&nbsp;"D:&#92;abc",&nbsp;{"D:&#92;def","D:&#92;ghi"}&nbsp;);&nbsp;//&nbsp;Copy&nbsp;files&nbsp;incl.&nbsp;subdirectories&nbsp;from&nbsp;abc&nbsp;to&nbsp;def&nbsp;as&nbsp;well&nbsp;as&nbsp;ghi&nbsp;(case&nbsp;b).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;recursive&nbsp;all&nbsp;(&nbsp;{&nbsp;"D:&#92;abc",&nbsp;"D:&#92;def"&nbsp;},&nbsp;"D:&#92;ghi&#92;"&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies&nbsp;all&nbsp;files&nbsp;from&nbsp;directories&nbsp;abc&nbsp;as&nbsp;well&nbsp;as&nbsp;def&nbsp;into&nbsp;ghi.&nbsp;(case&nbsp;c).&nbsp;Don't&nbsp;stop&nbsp;if&nbsp;destination&nbsp;files&nbsp;exist&nbsp;or&nbsp;are&nbsp;locked.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;multiple({"D:&#92;abc","D:&#92;def"},{"D:&#92;ghi","D:&#92;jkl"});&nbsp;//&nbsp;(case&nbsp;d)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;multiple('D:&#92;abc,D:&#92;def','D:&#92;ghi","D:&#92;jkl"');&nbsp;//&nbsp;Same&nbsp;functionality&nbsp;(case&nbsp;d)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies&nbsp;all&nbsp;files&nbsp;from&nbsp;abc&nbsp;to&nbsp;ghi&nbsp;as&nbsp;well&nbsp;as&nbsp;from&nbsp;def&nbsp;to&nbsp;jkl.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;multiple('D:&#92;a,D:&#92;b,D:&#92;c,D:&#92;d,D:&#92;e',&nbsp;'D:&#92;m,D:&#92;n'&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies&nbsp;contents&nbsp;from&nbsp;a,&nbsp;c&nbsp;and&nbsp;e&nbsp;to&nbsp;m,&nbsp;and&nbsp;contents&nbsp;from&nbsp;b&nbsp;and&nbsp;d&nbsp;to&nbsp;n.&nbsp;(case&nbsp;e)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy&nbsp;recursive('D:&#92;a,D:&#92;b,D:&#92;c',&nbsp;'D:&#92;m,D:&#92;n,D:&#92;o,D:&#92;p,D:&#92;q'&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies&nbsp;contents&nbsp;incl.&nbsp;subidrectories&nbsp;from&nbsp;a&nbsp;to&nbsp;m&nbsp;and&nbsp;p,&nbsp;from&nbsp;b&nbsp;to&nbsp;n&nbsp;and&nbsp;q,&nbsp;and&nbsp;from&nbsp;c&nbsp;to&nbsp;o.&nbsp;(case&nbsp;f)</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy overwrite( {}, "D:&#92;abc" ); // Nothing copied.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy overwrite ( "D:&#92;abc", {} ); // Nothing copied.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy recursive( "D:&#92;abc", "D:&#92;def&#92;" ); // Copy everything from abc to def including sudirectories (case a)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy multiple overwrite( "D:&#92;abc", "D:&#92;def&#92;",“*.txt,*jpg",&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies text files and photos from abc to def, and overwrites<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;existing files. Subdirectories are ignored. (case a)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy recursive( "D:&#92;abc", {"D:&#92;def","D:&#92;ghi"} ); // Copy files incl. subdirectories from abc to def as well as ghi (case b).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy recursive all ( { "D:&#92;abc", "D:&#92;def" }, "D:&#92;ghi&#92;" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies all files from directories abc as well as def into ghi. (case c). Don't stop if destination files exist or are locked.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy multiple({"D:&#92;abc","D:&#92;def"},{"D:&#92;ghi","D:&#92;jkl"}); // (case d)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy multiple('D:&#92;abc,D:&#92;def','D:&#92;ghi","D:&#92;jkl"'); // Same functionality (case d)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies all files from abc to ghi as well as from def to jkl.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy multiple('D:&#92;a,D:&#92;b,D:&#92;c,D:&#92;d,D:&#92;e', 'D:&#92;m,D:&#92;n' );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies contents from a, c and e to m, and contents from b and d to n. (case e)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy recursive('D:&#92;a,D:&#92;b,D:&#92;c', 'D:&#92;m,D:&#92;n,D:&#92;o,D:&#92;p,D:&#92;q' );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Copies contents incl. subidrectories from a to m and p, from b to n and q, and from c to o. (case f)</code></div>
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_file_copy.html">file copy ... Functions</a></p>
 	</div>

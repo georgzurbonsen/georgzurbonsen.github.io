@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -135,11 +136,11 @@ command to use with the <a class="bold_text" href="REF_Function_system.html">sys
 <td><b>Preconditioned path or file name</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote&nbsp;path(&nbsp;"C:/program&nbsp;files/B4P/B4P.exe")&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Quotation&nbsp;marks&nbsp;added&nbsp;and&nbsp;separators&nbsp;aligned<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote&nbsp;path(&nbsp;"..&#92;Test&nbsp;Directory&#92;Test123/Subdir")&nbsp;);&nbsp;//&nbsp;"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote&nbsp;path(&nbsp;"Countries/*.xlsx")&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Directory&nbsp;separator&nbsp;will&nbsp;be&nbsp;aligned&nbsp;for&nbsp;Windows<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote&nbsp;path(&nbsp;"Username&#92;Nic&#92;Programs")&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;No&nbsp;changes&nbsp;made&nbsp;(if&nbsp;executed&nbsp;under&nbsp;Windows)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote&nbsp;path(&nbsp;"Username/Nic/Programs")&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Windows:&nbsp;Corrects&nbsp;sepearators.&nbsp;&nbsp;Linux:&nbsp;Puts&nbsp;into&nbsp;quotation&nbsp;marks</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote path( "C:/program files/B4P/B4P.exe") );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Quotation marks added and separators aligned<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote path( "..&#92;Test Directory&#92;Test123/Subdir") ); // "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote path( "Countries/*.xlsx") );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Directory separator will be aligned for Windows<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote path( "Username&#92;Nic&#92;Programs") );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// No changes made (if executed under Windows)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;quote path( "Username/Nic/Programs") );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Windows: Corrects sepearators.&nbsp;&nbsp;Linux: Puts into quotation marks</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>C:&#92;"program&nbsp;files"&#92;B4P&#92;B4P.exe<br/>
 ..&#92;"Test&nbsp;Directory"&#92;Test123&#92;Subdir<br/>

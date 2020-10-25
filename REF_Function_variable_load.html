@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -145,36 +146,36 @@ to include the data in intermediate nodes.</p>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code><br/>
-&nbsp;&nbsp;pets[]&nbsp;=&nbsp;"All&nbsp;my&nbsp;pets";<br/>
-&nbsp;&nbsp;structure(&nbsp;pets[],&nbsp;{&nbsp;Cat,&nbsp;Dog,&nbsp;{&nbsp;Shepard,&nbsp;Dachshund&nbsp;},&nbsp;Bird,&nbsp;&nbsp;{&nbsp;Parrot,&nbsp;&nbsp;Parakeet&nbsp;}&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Katze,&nbsp;Hund,&nbsp;{&nbsp;Schäfer,&nbsp;Dackel&nbsp;},&nbsp;Vogel,&nbsp;{&nbsp;Papagei,&nbsp;Sittich&nbsp;}&nbsp;}&nbsp;);<br/>
-&nbsp;&nbsp;array(&nbsp;pets[Cat],&nbsp;{&nbsp;Hauskatze,&nbsp;Puma,&nbsp;Tiger&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;pets[]&nbsp;= "All my pets";<br/>
+&nbsp;&nbsp;structure(&nbsp;pets[], { Cat, Dog, { Shepard, Dachshund }, Bird,&nbsp;&nbsp;{ Parrot,&nbsp;&nbsp;Parakeet } },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Katze, Hund, { Schäfer, Dackel }, Vogel, { Papagei, Sittich } } );<br/>
+&nbsp;&nbsp;array(&nbsp;pets[Cat], { Hauskatze, Puma, Tiger } );<br/>
 <br/>
-&nbsp;&nbsp;inspect(&nbsp;pets[]&nbsp;);<br/>
+&nbsp;&nbsp;inspect(&nbsp;pets[] );<br/>
 <br/>
-&nbsp;&nbsp;variable&nbsp;save(&nbsp;pets[],&nbsp;"Outputs&#92;pets.json"&nbsp;);<br/>
+&nbsp;&nbsp;variable&nbsp;save( pets[], "Outputs&#92;pets.json" );<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;With&nbsp;'All&nbsp;my&nbsp;pets'&nbsp;defined&nbsp;in&nbsp;the&nbsp;base&nbsp;variable,&nbsp;the&nbsp;JSON&nbsp;code&nbsp;will&nbsp;be&nbsp;a&nbsp;'plain&nbsp;array'<br/>
-&nbsp;&nbsp;//&nbsp;beginning&nbsp;with&nbsp;'['&nbsp;and&nbsp;not&nbsp;with&nbsp;'{^'.<br/>
+&nbsp;&nbsp;//&nbsp;With 'All my pets' defined in the base variable, the JSON code will be a 'plain array'<br/>
+&nbsp;&nbsp;//&nbsp;beginning with '[' and not with '{^'.<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;load(&nbsp;t,&nbsp;"Outputs&#92;pets.json",&nbsp;TEXT&nbsp;);&nbsp;//&nbsp;Show&nbsp;the&nbsp;JSON&nbsp;file<br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;t&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;load( t, "Outputs&#92;pets.json", TEXT ); // Show the JSON file<br/>
+&nbsp;&nbsp;table&nbsp;list( t );<br/>
 <br/>
-&nbsp;&nbsp;echo("Load&nbsp;the&nbsp;JSON&nbsp;file,&nbsp;assuming&nbsp;it&nbsp;originated&nbsp;from&nbsp;B4P&nbsp;output");<br/>
-&nbsp;&nbsp;variable&nbsp;load(&nbsp;animals[],&nbsp;"Outputs&#92;pets.json",&nbsp;JSON&nbsp;B4P&nbsp;);<br/>
+&nbsp;&nbsp;echo("Load&nbsp;the JSON file, assuming it originated from B4P output");<br/>
+&nbsp;&nbsp;variable&nbsp;load( animals[], "Outputs&#92;pets.json", JSON B4P );<br/>
 <br/>
-&nbsp;&nbsp;inspect(&nbsp;animals[]&nbsp;);&nbsp;//&nbsp;You&nbsp;will&nbsp;see&nbsp;that&nbsp;all&nbsp;contents&nbsp;are&nbsp;preserved.<br/>
+&nbsp;&nbsp;inspect(&nbsp;animals[] ); // You will see that all contents are preserved.<br/>
 <br/>
-&nbsp;&nbsp;echo("Now&nbsp;load&nbsp;the&nbsp;JSON&nbsp;file&nbsp;as&nbsp;if&nbsp;the&nbsp;file&nbsp;originated&nbsp;from&nbsp;somewhere&nbsp;else&nbsp;...");<br/>
+&nbsp;&nbsp;echo("Now&nbsp;load the JSON file as if the file originated from somewhere else ...");<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;B4P&nbsp;saves&nbsp;intermediate&nbsp;nodes&nbsp;in&nbsp;intermediate&nbsp;arrays&nbsp;containing&nbsp;2&nbsp;elements:<br/>
-&nbsp;&nbsp;//&nbsp;Element&nbsp;0:&nbsp;&nbsp;The&nbsp;base&nbsp;variable&nbsp;at&nbsp;that&nbsp;level<br/>
-&nbsp;&nbsp;//&nbsp;Element&nbsp;1:&nbsp;&nbsp;Further&nbsp;structured&nbsp;data<br/>
+&nbsp;&nbsp;//&nbsp;B4P saves intermediate nodes in intermediate arrays containing 2 elements:<br/>
+&nbsp;&nbsp;//&nbsp;Element 0:&nbsp;&nbsp;The base variable at that level<br/>
+&nbsp;&nbsp;//&nbsp;Element 1:&nbsp;&nbsp;Further structured data<br/>
 <br/>
-&nbsp;&nbsp;variable&nbsp;load(&nbsp;animals[],&nbsp;"Outputs&#92;pets.json",&nbsp;JSON&nbsp;);<br/>
-&nbsp;&nbsp;inspect(&nbsp;animals[]&nbsp;);</code></div>
+&nbsp;&nbsp;variable&nbsp;load( animals[], "Outputs&#92;pets.json", JSON );<br/>
+&nbsp;&nbsp;inspect(&nbsp;animals[] );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>All&nbsp;my&nbsp;pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+<div class="output_background_color" ><code>pets[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;my&nbsp;pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vogel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Parakeet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sittich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
 &nbsp;&nbsp;Parrot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Papagei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full&nbsp;access)<br/>
@@ -211,7 +212,7 @@ Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp;&nbsp;22&nbsp;:&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 Load&nbsp;the&nbsp;JSON&nbsp;file,&nbsp;assuming&nbsp;it&nbsp;originated&nbsp;from&nbsp;B4P&nbsp;output<br/>
-All&nbsp;my&nbsp;pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
+animals[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;my&nbsp;pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vogel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 &nbsp;&nbsp;Parakeet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sittich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 &nbsp;&nbsp;Parrot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Papagei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
@@ -224,7 +225,7 @@ Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp;Shepard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schäfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 <br/>
 Now&nbsp;load&nbsp;the&nbsp;JSON&nbsp;file&nbsp;as&nbsp;if&nbsp;the&nbsp;file&nbsp;originated&nbsp;from&nbsp;somewhere&nbsp;else&nbsp;...<br/>
-[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
+animals[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;my&nbsp;pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full&nbsp;access)<br/>
 Array&nbsp;[&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>
 &nbsp;&nbsp;Bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full&nbsp;access)<br/>

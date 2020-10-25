@@ -61,6 +61,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -80,8 +81,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -126,17 +127,17 @@ to describe the 2nd value.  It may be bigger (for counting up), smaller (for cou
 <br><br>
 A mixup of numerals and other types inside a range specification is invalid.</p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;print("Start&nbsp;with&nbsp;the&nbsp;classic&nbsp;way&nbsp;:&nbsp;");<br/>
-&nbsp;&nbsp;a[]&nbsp;=&nbsp;{};<br/>
-&nbsp;&nbsp;for&nbsp;(i[]=1,&nbsp;i[]&lt;=10,&nbsp;i[]++)&nbsp;a[]&nbsp;+=&nbsp;{i[]};<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;print("Start&nbsp;with the classic way : ");<br/>
+&nbsp;&nbsp;a[]&nbsp;= {};<br/>
+&nbsp;&nbsp;for&nbsp;(i[]=1, i[]&lt;=10, i[]++) a[] += {i[]};<br/>
 &nbsp;&nbsp;echo(a[]);<br/>
 <br/>
-&nbsp;&nbsp;echo("And&nbsp;the&nbsp;easy&nbsp;way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{1&nbsp;..&nbsp;10});<br/>
-&nbsp;&nbsp;echo("Steps&nbsp;of&nbsp;2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{1&nbsp;..&nbsp;3.5&nbsp;..&nbsp;10});<br/>
-&nbsp;&nbsp;echo("Steps&nbsp;of&nbsp;-1:&nbsp;Right&nbsp;way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{10&nbsp;..&nbsp;9&nbsp;..&nbsp;1});<br/>
-&nbsp;&nbsp;echo("Steps&nbsp;of&nbsp;-1:&nbsp;Wrong&nbsp;way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{10&nbsp;..&nbsp;1});&nbsp;//&nbsp;Returns&nbsp;empty&nbsp;set<br/>
-&nbsp;&nbsp;echo("Combination&nbsp;of&nbsp;2&nbsp;ranges&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{2..4..10,&nbsp;20..40..100}&nbsp;);<br/>
-&nbsp;&nbsp;echo("Build&nbsp;a&nbsp;3x3&nbsp;matrix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{{11..13},{21..23},{31..33}}&nbsp;);</code></div>
+&nbsp;&nbsp;echo("And&nbsp;the easy way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {1 .. 10});<br/>
+&nbsp;&nbsp;echo("Steps&nbsp;of 2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {1 .. 3.5 .. 10});<br/>
+&nbsp;&nbsp;echo("Steps&nbsp;of -1: Right way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {10 .. 9 .. 1});<br/>
+&nbsp;&nbsp;echo("Steps&nbsp;of -1: Wrong way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {10 .. 1}); // Returns empty set<br/>
+&nbsp;&nbsp;echo("Combination&nbsp;of 2 ranges&nbsp;&nbsp;&nbsp;&nbsp;: ", {2..4..10, 20..40..100} );<br/>
+&nbsp;&nbsp;echo("Build&nbsp;a 3x3 matrix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {{11..13},{21..23},{31..33}} );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Start&nbsp;with&nbsp;the&nbsp;classic&nbsp;way&nbsp;:&nbsp;{1,2,3,4,5,6,7,8,9,10}<br/>
 And&nbsp;the&nbsp;easy&nbsp;way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{1,2,3,4,5,6,7,8,9,10}<br/>
@@ -163,12 +164,12 @@ Following exampls are invalid:
 <br>Valid examples: See below
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Start&nbsp;simple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{a..z});<br/>
-&nbsp;&nbsp;echo("Every&nbsp;2nd&nbsp;letter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{a..c..z});<br/>
-&nbsp;&nbsp;echo("1&nbsp;letter&nbsp;in&nbsp;string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{'Article&nbsp;A:'&nbsp;..&nbsp;'Article&nbsp;F:'}&nbsp;);<br/>
-&nbsp;&nbsp;echo("Combination&nbsp;of&nbsp;2&nbsp;ranges&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{2..4..10,&nbsp;'Article&nbsp;A:'&nbsp;..&nbsp;'Article&nbsp;F:'}&nbsp;);<br/>
-&nbsp;&nbsp;echo("Numbers&nbsp;in&nbsp;literals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{'Chapter&nbsp;9:'&nbsp;..&nbsp;'Chapter&nbsp;12:'}&nbsp;);<br/>
-&nbsp;&nbsp;echo("Numbers&nbsp;in&nbsp;literals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{'Chapter&nbsp;09:'&nbsp;..&nbsp;'Chapter&nbsp;12:'}&nbsp;);</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Start&nbsp;simple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {a..z});<br/>
+&nbsp;&nbsp;echo("Every&nbsp;2nd letter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {a..c..z});<br/>
+&nbsp;&nbsp;echo("1&nbsp;letter in string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {'Article A:' .. 'Article F:'} );<br/>
+&nbsp;&nbsp;echo("Combination&nbsp;of 2 ranges&nbsp;&nbsp;&nbsp;&nbsp;: ", {2..4..10, 'Article A:' .. 'Article F:'} );<br/>
+&nbsp;&nbsp;echo("Numbers&nbsp;in literals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {'Chapter 9:' .. 'Chapter 12:'} );<br/>
+&nbsp;&nbsp;echo("Numbers&nbsp;in literals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", {'Chapter 09:' .. 'Chapter 12:'} );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Start&nbsp;simple&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}<br/>
 Every&nbsp;2nd&nbsp;letter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'a','c','e','g','i','k','m','o','q','s','u','w','y'}<br/>
@@ -190,27 +191,27 @@ across midnights to cover additional days.
 
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date(30.03.2016)&nbsp;..&nbsp;date(02.04.2016)&nbsp;});<br/>
-&nbsp;&nbsp;echo("Dates,&nbsp;3&nbsp;day&nbsp;intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date(01.04.2016)&nbsp;..&nbsp;date(04.04.2016)&nbsp;..&nbsp;date(10.04.2016)&nbsp;});<br/>
-&nbsp;&nbsp;echo("Today&nbsp;to&nbsp;yesterday&nbsp;-&nbsp;bad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date(today)&nbsp;..&nbsp;date(today)-1&nbsp;});<br/>
-&nbsp;&nbsp;echo("Today&nbsp;to&nbsp;yesterday&nbsp;-&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date(today)&nbsp;..&nbsp;date(today)-1&nbsp;..&nbsp;date(today)-1&nbsp;});<br/>
-&nbsp;&nbsp;echo("Times,&nbsp;1&nbsp;hour&nbsp;intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;time("12:15:00")..time("15:15:00")&nbsp;});<br/>
-&nbsp;&nbsp;echo("Times,&nbsp;5&nbsp;minute&nbsp;intervals&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;time("12:15:00")..time("12:20:00")..time("12:30:00")&nbsp;});<br/>
-&nbsp;&nbsp;echo("30&nbsp;seconds&nbsp;back&nbsp;-&nbsp;bad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;time(now)&nbsp;..&nbsp;time(now)-30/(24*60*60)&nbsp;});<br/>
-&nbsp;&nbsp;echo("30&nbsp;seconds&nbsp;back,&nbsp;10s&nbsp;interv.:&nbsp;",&nbsp;{&nbsp;time(now)&nbsp;..&nbsp;time(now)-10/(24*60*60)&nbsp;..&nbsp;time(now)-30/(24*60*60)&nbsp;});<br/>
-&nbsp;&nbsp;echo("Changing&nbsp;dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date("05.06.2016&nbsp;10:00:00")..date("08.06.2016&nbsp;10:00:00")&nbsp;});<br/>
-&nbsp;&nbsp;echo("Changing&nbsp;times,&nbsp;seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;",&nbsp;{&nbsp;date("05.06.2016&nbsp;10:00:00")..date("05.06.2016&nbsp;10:00:01")..date("05.06.2016&nbsp;10:00:03")&nbsp;});<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;", { date(30.03.2016) .. date(02.04.2016) });<br/>
+&nbsp;&nbsp;echo("Dates,&nbsp;3 day intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { date(01.04.2016) .. date(04.04.2016) .. date(10.04.2016) });<br/>
+&nbsp;&nbsp;echo("Today&nbsp;to yesterday - bad&nbsp;&nbsp;&nbsp;&nbsp;: ", { date(today) .. date(today)-1 });<br/>
+&nbsp;&nbsp;echo("Today&nbsp;to yesterday - OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { date(today) .. date(today)-1 .. date(today)-1 });<br/>
+&nbsp;&nbsp;echo("Times,&nbsp;1 hour intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { time("12:15:00")..time("15:15:00") });<br/>
+&nbsp;&nbsp;echo("Times,&nbsp;5 minute intervals&nbsp;&nbsp;&nbsp;: ", { time("12:15:00")..time("12:20:00")..time("12:30:00") });<br/>
+&nbsp;&nbsp;echo("30&nbsp;seconds back - bad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { time(now) .. time(now)-30/(24*60*60) });<br/>
+&nbsp;&nbsp;echo("30&nbsp;seconds back, 10s interv.: ", { time(now) .. time(now)-10/(24*60*60) .. time(now)-30/(24*60*60) });<br/>
+&nbsp;&nbsp;echo("Changing&nbsp;dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { date("05.06.2016 10:00:00")..date("08.06.2016 10:00:00") });<br/>
+&nbsp;&nbsp;echo("Changing&nbsp;times, seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ", { date("05.06.2016 10:00:00")..date("05.06.2016 10:00:01")..date("05.06.2016 10:00:03") });<br/>
 <br/>
 </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2016-03-30','2016-03-31','2016-04-01','2016-04-02'}<br/>
 Dates,&nbsp;3&nbsp;day&nbsp;intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2016-04-01','2016-04-04','2016-04-07','2016-04-10'}<br/>
 Today&nbsp;to&nbsp;yesterday&nbsp;-&nbsp;bad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{}<br/>
-Today&nbsp;to&nbsp;yesterday&nbsp;-&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2020-10-18','2020-10-17'}<br/>
+Today&nbsp;to&nbsp;yesterday&nbsp;-&nbsp;OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2020-10-25','2020-10-24'}<br/>
 Times,&nbsp;1&nbsp;hour&nbsp;intervals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'12:15:00','01:15:00','02:15:00','03:15:00'}<br/>
 Times,&nbsp;5&nbsp;minute&nbsp;intervals&nbsp;&nbsp;&nbsp;:&nbsp;{'12:15:00','12:20:00','12:25:00','12:30:00'}<br/>
 30&nbsp;seconds&nbsp;back&nbsp;-&nbsp;bad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{}<br/>
-30&nbsp;seconds&nbsp;back,&nbsp;10s&nbsp;interv.:&nbsp;{'10:52:50','10:52:40','10:52:30','10:52:20'}<br/>
+30&nbsp;seconds&nbsp;back,&nbsp;10s&nbsp;interv.:&nbsp;{'08:43:48','08:43:38','08:43:28','08:43:18'}<br/>
 Changing&nbsp;dates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2016-06-05&nbsp;10:00:00','2016-06-06&nbsp;10:00:00','2016-06-07&nbsp;10:00:00','2016-06-08&nbsp;10:00:00'}<br/>
 Changing&nbsp;times,&nbsp;seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{'2016-06-05&nbsp;10:00:00','2016-06-05&nbsp;10:00:01','2016-06-05&nbsp;10:00:02','2016-06-05&nbsp;10:00:03'}<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_data_types_parameter_sets_value_ranges_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

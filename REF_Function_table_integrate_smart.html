@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -144,24 +145,24 @@ This function combines the lookup strategy from <span class="red_text">table loo
 <h4> Parameter count</h4>
 <p>7 - 9 (For parameter description and return values: see <a class="bold_text" href="REF_Function_table_integrate.html">table integrate</a>() )</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize(&nbsp;lookup,<br/>
-&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;&nbsp;Names,&nbsp;Sports,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scores&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Abel,&nbsp;&nbsp;'t*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Bea,&nbsp;&nbsp;&nbsp;'s*',&nbsp;14&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Chuck,&nbsp;'r*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Dan,&nbsp;&nbsp;&nbsp;'t*',&nbsp;8&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Eva,&nbsp;&nbsp;&nbsp;'*sh',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Finn,&nbsp;&nbsp;'t*',&nbsp;12&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gini,&nbsp;&nbsp;'*ball',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Hugo,&nbsp;&nbsp;'s*',&nbsp;11&nbsp;},&nbsp;{&nbsp;All&nbsp;others,&nbsp;'*',&nbsp;0&nbsp;}&nbsp;}&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( lookup,<br/>
+&nbsp;&nbsp;{&nbsp;&nbsp;{&nbsp;&nbsp;Names,&nbsp;Sports,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scores },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Abel,&nbsp;&nbsp;'t*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Bea,&nbsp;&nbsp;&nbsp;'s*', 14 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Chuck,&nbsp;'r*',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Dan,&nbsp;&nbsp;&nbsp;'t*', 8 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Eva,&nbsp;&nbsp;&nbsp;'*sh',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Finn,&nbsp;&nbsp;'t*', 12 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gini,&nbsp;&nbsp;'*ball',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Hugo,&nbsp;&nbsp;'s*', 11 }, { All others, '*', 0 } } );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;initialize(&nbsp;target,&nbsp;{{&nbsp;Sport,&nbsp;Name,&nbsp;Score&nbsp;1,&nbsp;Score&nbsp;2,&nbsp;Score&nbsp;3,&nbsp;Score&nbsp;4&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball,&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;squash,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;},&nbsp;&nbsp;//&nbsp;Lookup&nbsp;table:&nbsp;Squash&nbsp;entry&nbsp;is&nbsp;below&nbsp;racquetball<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball,&nbsp;"",&nbsp;5,&nbsp;300,&nbsp;10&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;tennis,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;5,&nbsp;100,&nbsp;12&nbsp;&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;initialize( target, {{ Sport, Name, Score 1, Score 2, Score 3, Score 4 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball, "", 5, 100, 12&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;squash,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"", 5, 100, 12&nbsp;&nbsp;},&nbsp;&nbsp;// Lookup table: Squash entry is below racquetball<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;racquetball, "", 5, 300, 10&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;tennis,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"", 5, 100, 12&nbsp;&nbsp;} } );<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Picks&nbsp;the&nbsp;1st&nbsp;match&nbsp;and&nbsp;integrates&nbsp;the&nbsp;results<br/>
-&nbsp;&nbsp;table&nbsp;integrate&nbsp;smart&nbsp;(&nbsp;target,&nbsp;Sport,&nbsp;&nbsp;{&nbsp;Name,&nbsp;&nbsp;Score&nbsp;1&nbsp;..&nbsp;Score&nbsp;4&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookup,&nbsp;Sports,&nbsp;{&nbsp;Names,&nbsp;4:Scores&nbsp;},&nbsp;{&nbsp;overwrite,&nbsp;add,&nbsp;sub,&nbsp;max,&nbsp;average&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;//&nbsp;Picks the 1st match and integrates the results<br/>
+&nbsp;&nbsp;table&nbsp;integrate smart ( target, Sport,&nbsp;&nbsp;{ Name,&nbsp;&nbsp;Score 1 .. Score 4 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookup,&nbsp;Sports, { Names, 4:Scores }, { overwrite, add, sub, max, average } );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list&nbsp;(&nbsp;target&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list ( target );<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Sport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Name&nbsp;&nbsp;|&nbsp;Score&nbsp;1&nbsp;|&nbsp;Score&nbsp;2&nbsp;|&nbsp;Score&nbsp;3&nbsp;|&nbsp;Score&nbsp;4<br/>

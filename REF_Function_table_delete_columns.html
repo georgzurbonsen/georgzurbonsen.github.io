@@ -47,6 +47,7 @@
 <li class="navi"><a href="REF_Features_Variable_attributes.html"><div class="navi">3.2 Variable Attributes </div></a></li>
 <li class="navi"><a href="REF_Features_Variable_forms.html"><div class="navi">+ 3.3 Variable Forms and Trees </div></a></li>
 <li class="navi"><a href="REF_Features_references_to_variables.html"><div class="navi">+ 3.4 References to Variables </div></a></li>
+<li class="navi"><a href="REF_Features_protecting_variables.html"><div class="navi">3.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_tables.html"><div class="navi">4 Tables </div></a></li>
 <li class="navi"><ul>
@@ -66,8 +67,8 @@
 <li class="navi"><ul>
 <li class="navi"><a href="REF_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">+ 6.1 Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><a href="REF_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 6.2 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><div>6.3 &vert; Transaction Assignment Operators </div></li>
-<li class="navi"><div>6.4 &#43; Transaction Assignment Operators </div></li>
+<li class="navi"><a href="REF_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 6.3 &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 6.4 &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">7 Functions and Procedures </div></a></li>
 <li class="navi"><ul>
@@ -177,22 +178,22 @@ If a value greater than 1 is specified, then additional columns to the right wil
 <p>Table not found<br/>
 Header name not found</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Delete&nbsp;3&nbsp;column&nbsp;pairs");<br/>
-&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;'Col&nbsp;A'&nbsp;..&nbsp;'Col&nbsp;K'&nbsp;},&nbsp;{&nbsp;'Val&nbsp;A'&nbsp;..&nbsp;'Val&nbsp;K'&nbsp;}&nbsp;}&nbsp;);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Delete&nbsp;3 column pairs");<br/>
+&nbsp;&nbsp;table&nbsp;initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
 <br/>
-&nbsp;&nbsp;//&nbsp;Deletes&nbsp;6&nbsp;columns:&nbsp;H&nbsp;&amp;&nbsp;I,&nbsp;C&nbsp;&amp;&nbsp;D,&nbsp;and&nbsp;B&nbsp;&amp;&nbsp;E.&nbsp;Remaining;&nbsp;A,&nbsp;F,&nbsp;G,&nbsp;J&nbsp;and&nbsp;K<br/>
-&nbsp;&nbsp;echo(&nbsp;"#&nbsp;columns&nbsp;deleted:&nbsp;",&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;{7,&nbsp;Col&nbsp;B,&nbsp;Col&nbsp;C},&nbsp;2&nbsp;)&nbsp;);<br/>
+&nbsp;&nbsp;//&nbsp;Deletes 6 columns: H &amp; I, C &amp; D, and B &amp; E. Remaining; A, F, G, J and K<br/>
+&nbsp;&nbsp;echo(&nbsp;"# columns deleted: ", table delete columns ( table, {7, Col B, Col C}, 2 ) );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;Col&nbsp;A,&nbsp;0&nbsp;);&nbsp;&nbsp;//&nbsp;Nothing&nbsp;happens&nbsp;here&nbsp;(0&nbsp;columns&nbsp;deleted)<br/>
+&nbsp;&nbsp;table&nbsp;delete columns ( table, Col A, 0 );&nbsp;&nbsp;// Nothing happens here (0 columns deleted)<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list( table );<br/>
 <br/>
-&nbsp;&nbsp;echo("Delete&nbsp;all&nbsp;columns&nbsp;between&nbsp;D&nbsp;and&nbsp;K");<br/>
-&nbsp;&nbsp;table&nbsp;initialize&nbsp;(&nbsp;table,&nbsp;{&nbsp;{&nbsp;'Col&nbsp;A'&nbsp;..&nbsp;'Col&nbsp;K'&nbsp;},&nbsp;{&nbsp;'Val&nbsp;A'&nbsp;..&nbsp;'Val&nbsp;K'&nbsp;}&nbsp;}&nbsp;);<br/>
+&nbsp;&nbsp;echo("Delete&nbsp;all columns between D and K");<br/>
+&nbsp;&nbsp;table&nbsp;initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;delete&nbsp;columns&nbsp;(&nbsp;table,&nbsp;Col&nbsp;F,&nbsp;-2&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;delete columns ( table, Col F, -2 );<br/>
 <br/>
-&nbsp;&nbsp;table&nbsp;list(&nbsp;table&nbsp;);<br/>
+&nbsp;&nbsp;table&nbsp;list( table );<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Delete&nbsp;3&nbsp;column&nbsp;pairs<br/>
