@@ -18,12 +18,12 @@
 
 <div class="header">
 <h3>Loading and Saving Variables</h3>
-<a accesskey="p" href="REF_Function_set.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_variable_load.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Features_Arrays_and_Structures.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Variable_references_functions.html"><span>Next</span></a> 
 </div>
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual</div>
+<div class="booktitle_field">Reference Manual (intro only)</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -101,10 +101,10 @@
 <li class="navi"><a href="REF_Features_Arrays_and_Structures.html"><div class="navi">+ 8.12.2 Arrays and Structures </div></a></li>
 <li class="navi"><a href="REF_Features_Loading_and_saving_variables.html"><div class="navi navi-selected">8.12.3 Loading and Saving Variables </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="REF_Function_variable_load.html"><div class="navi">8.12.3.1 variable load ... </div></a></li>
-<li class="navi"><a href="REF_Function_json_to_variable.html"><div class="navi">8.12.3.2 json to variable ... </div></a></li>
-<li class="navi"><a href="REF_Function_variable_save.html"><div class="navi">8.12.3.3 variable save ... </div></a></li>
-<li class="navi"><a href="REF_Function_variable_to_json.html"><div class="navi">8.12.3.4 variable to json ... </div></a></li>
+<li class="navi"><div>8.12.3.1 variable load ... </div></li>
+<li class="navi"><div>8.12.3.2 json to variable ... </div></li>
+<li class="navi"><div>8.12.3.3 variable save ... </div></li>
+<li class="navi"><div>8.12.3.4 variable to json ... </div></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Variable_references_functions.html"><div class="navi">+ 8.12.4 Variable References Functions </div></a></li>
 <li class="navi"><a href="REF_Features_Resident_attributes_functions.html"><div class="navi">+ 8.12.5 Resident Attributes Functions </div></a></li>
@@ -143,7 +143,7 @@ Following special rules apply
 <tr><td>Booleans        </td><td> Will be written as <b>true</b> and <b>false</b>.  B4P will recognize boolean values and convert them to Boolean type</td></tr>
 <tr><td>Void values     </td><td> Are written as <b>null</b> in JSON output.</td></tr>
 <tr><td>Dates           </td><td> Dates (and times) are written as text in following formats: "YYYY-MM-DD", "hh:mm:ss", "YYYY-MM-DD hh:mm:ss", and "0000-00-00".  The last value refers to a blank date and will be recognized as such. When reading JSON data, dates and times must adhere strictly with the given formats, otherwise they will be loaded as text (e.g. "01 April 2020").</td></tr>
-<tr><td>Parameter Sets      </td><td> Parameter sets will be converted to string format (similarly implemented as in the <a class="bold_text" href="REF_Function_literal.html">literal</a>() function) and stored as text.  Literals are stored in single qutoation marks, aiming to avoid confusion wtih double quotation marks for JSON text contents.  Example: "{1,true,'Abc'}".  Nested parameter sets are supported.</td></tr>
+<tr><td>Parameter Sets      </td><td> Parameter sets will be converted to string format (similarly implemented as in the <span class="red_text">literal</span>() function) and stored as text.  Literals are stored in single qutoation marks, aiming to avoid confusion wtih double quotation marks for JSON text contents.  Example: "{1,true,'Abc'}".  Nested parameter sets are supported.</td></tr>
 <tr><td>Loading literals    </td><td> All loaded literals are declared as <b>quoted literals</b></td></tr>
 <tr><td>Special characters  </td><td> Specific characters will be converted to JSON-compliant escape sequences, e.g. new line, quotation marks inside literals, etc.</td></tr>
 </table><p></p>

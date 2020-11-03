@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual</div>
+<div class="booktitle_field">Reference Manual (intro only)</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -115,14 +115,14 @@
 <p>
 If the variable is created in the B4P program file started first, and this happens outside user-defined procedures and functions, then it will be
 a global variable.  Global variables are visible during the entire program execution, even while running user-defined functions or other B4P programs
-using the <a class="bold_text" href="REF_Function_start.html">start</a>() or <a class="bold_text" href="REF_Function_include.html">include</a>() function.
+using the <span class="red_text">start</span>() or <span class="red_text">include</span>() function.
 
 <br><br>
 Global variables can also be created inside <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a>, as well as in B4P programs which have been started from other
-B4P programs using <a class="bold_text" href="REF_Function_start.html">start</a>() or <a class="bold_text" href="REF_Function_include.html">include</a>() functions if they are put into a code block following the <a class="bold_text" href="REF_Function_global.html">global</a>() function.
+B4P programs using <span class="red_text">start</span>() or <span class="red_text">include</span>() functions if they are put into a code block following the <span class="red_text">global</span>() function.
 
 <br><br>
-Global varibles will exist until the B4P program has ended or the variable has been been deleted explicityl with the function <a class="bold_text" href="REF_Function_delete.html">delete</a>().
+Global varibles will exist until the B4P program has ended or the variable has been been deleted explicityl with the function <span class="red_text">delete</span>().
 </p>
 <h5> Defining global variables inside user functions:</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;g[]&nbsp;= 4;<br/>
