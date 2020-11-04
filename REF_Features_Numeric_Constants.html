@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -112,12 +112,12 @@ In B4P, numeric constants express numeric values.  Following rules apply to both
 B4P tables.
 
 </p><ul class="bullets"><li class="bullets">It must contain at least 1 digit (0..9)
-</li><li class="bullets">The number must not contain spaces and/or thousand separator symbols.  Use <span class="red_text">clean numeral</span>() to remove such symbols.
+</li><li class="bullets">The number must not contain spaces and/or thousand separator symbols.  Use <a class="bold_text" href="REF_Function_clean_numeral.html">clean numeral</a>() to remove such symbols.
 </li><li class="bullets">At most one decimal point may be used.  More points inside make the value look like an <a class="bold_text" href="REF_Features_Unquoted_Literals.html">unquoted literal</a>.
 </li><li class="bullets">Leading zeros in front and trailing zeros after the digits after the comma are OK
 </li><li class="bullets">At present, scientific notation is not allowed in the B4P code
-<ul class="bullets"><li class="bullets">Exceptions: Table entries may contain numbers in scientific notation, but use <span class="red_text">table configure</span>() to activate reading scientific notation.
-</li><li class="bullets">The function <span class="red_text">numeral</span>() supports scientific notation in literals provided.
+<ul class="bullets"><li class="bullets">Exceptions: Table entries may contain numbers in scientific notation, but use <a class="bold_text" href="REF_Function_table_configure.html">table configure</a>() to activate reading scientific notation.
+</li><li class="bullets">The function <a class="bold_text" href="REF_Function_numeral.html">numeral</a>() supports scientific notation in literals provided.
 </li><li class="bullets">Scientific notation is also supported in numers in JSON files.
 </li></ul></li><li class="bullets">In B4P, the text representation of literals will be memorized and used for later outputting
 <ul class="bullets"><li class="bullets">Useful for maintaining numeric values such as postal codes (e.g. 02111 for Boston Chinatown) or section numbers (e.g. 2.10).

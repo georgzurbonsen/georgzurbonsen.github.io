@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -123,16 +123,16 @@
 <tr><td>&nbsp;&nbsp;...[1, 2, ...]      </td><td> literal   </td><td> full access       </td><td> Additional command line arguments if available</td></tr>
 <tr><td></td><td>       </td><td>           </td><td></td></tr>
 <tr><td>local settings[]            </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to local settings</b></td></tr>
-<tr><td>&nbsp;&nbsp;...[locale]         </td><td> literal   </td><td> read only     </td><td> Configured locale as part of locale settings.  Use <span class="red_text">set locale</span>() to change.</td></tr>
-<tr><td>&nbsp;&nbsp;...[country name]       </td><td> literal   </td><td> read only     </td><td> Configured country as part of locale settings.  Use <span class="red_text">set locale</span>() to change.</td></tr>
-<tr><td>&nbsp;&nbsp;...[language]       </td><td> literal   </td><td> read only         </td><td> Configured language as part of locale settings.  Use <span class="red_text">set locale</span>() to change.</td></tr>
+<tr><td>&nbsp;&nbsp;...[locale]         </td><td> literal   </td><td> read only     </td><td> Configured locale as part of locale settings.  Use <a class="bold_text" href="REF_Function_set_locale.html">set locale</a>() to change.</td></tr>
+<tr><td>&nbsp;&nbsp;...[country name]       </td><td> literal   </td><td> read only     </td><td> Configured country as part of locale settings.  Use <a class="bold_text" href="REF_Function_set_locale.html">set locale</a>() to change.</td></tr>
+<tr><td>&nbsp;&nbsp;...[language]       </td><td> literal   </td><td> read only         </td><td> Configured language as part of locale settings.  Use <a class="bold_text" href="REF_Function_set_locale.html">set locale</a>() to change.</td></tr>
 <tr><td>&nbsp;&nbsp;...[currency symbol]    </td><td> literal   </td><td> limited access    </td><td> Currency symbol as configured in locale settings</td></tr>
 <tr><td>&nbsp;&nbsp;...[decimal separator]  </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. '.', ','</td></tr>
 <tr><td>&nbsp;&nbsp;...[thousand separator] </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ',', '.', ' ', "'"</td></tr>
-<tr><td>&nbsp;&nbsp;...[date format]        </td><td> literal   </td><td> limited access    </td><td> E.g. "DD.MM.YYYY", "MM/DD/YY", etc.  See <span class="red_text">date to literal formatting parameters</span>.</td></tr>
+<tr><td>&nbsp;&nbsp;...[date format]        </td><td> literal   </td><td> limited access    </td><td> E.g. "DD.MM.YYYY", "MM/DD/YY", etc.  See <a class="bold_text" href="REF_Features_date_to_literal_conversion_and_formatting.html">date to literal formatting parameters</a>.</td></tr>
 <tr><td>&nbsp;&nbsp;...[date format short]  </td><td> literal   </td><td> limited access    </td><td> E.g. "DMY" or "MDY", used for resolving ambiguities in extracting dates from strings</td></tr>
 <tr><td>&nbsp;&nbsp;...[date separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. '.', '/', '-'</td></tr>
-<tr><td>&nbsp;&nbsp;...[time format]        </td><td> literal   </td><td> limited access    </td><td> E.g. "HH:II:SS" Note the "I" for minute digits. See <span class="red_text">date to literal formatting parameters</span>.</td></tr>
+<tr><td>&nbsp;&nbsp;...[time format]        </td><td> literal   </td><td> limited access    </td><td> E.g. "HH:II:SS" Note the "I" for minute digits. See <a class="bold_text" href="REF_Features_date_to_literal_conversion_and_formatting.html">date to literal formatting parameters</a>.</td></tr>
 <tr><td>&nbsp;&nbsp;...[time separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ':'</td></tr>
 <tr><td>&nbsp;&nbsp;...[list separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ',', ';'. Used for CSV file format.  Excel uses different symbols around the world.</td></tr>
 <tr><td></td><td>       </td><td>           </td><td></td></tr>
@@ -144,7 +144,7 @@
 <tr><td>&nbsp;&nbsp;...[input file character set]</td><td> literal    </td><td> limited access    </td><td> Default character set assumed if text file are loaded, are not of UTF-16 type and have no byte order marks,  and too few special symbols were inside to recognize the files properly.  Presently, its <b>win-1252</b> for Windows and <b>utf-8</b> for Linux/MACOS systems.<br>                                             Following character sets are supported: <b>ansi, iso8859-1, win1252, utf-8, utf-16, utr-16 big endian</b>.</td></tr>
 <tr><td>&nbsp;&nbsp;...[output file character set]</td><td> literal </td><td> limited access    </td><td> Default character set assumed for saving files if no other format specified.  Presently it's <b>utf-8</b>.</td></tr>
 <tr><td>&nbsp;&nbsp;...[memorize table columns] </td><td> boolean   </td><td> limited access    </td><td> See <a class="bold_text" href="REF_Features_memory_effect.html">memory effect</a> regarding table header names begin memorized. Set to false to deactivate memorizing.</td></tr>
-<tr><td>&nbsp;&nbsp;...[prompt]         </td><td> literal   </td><td> limited access    </td><td> Current prompt as used in the <a class="bold_text" href="REF_Features_interactive.html">interactive mode</a>.  Change it using the <span class="red_text">prompt</span>() function.</td></tr>
+<tr><td>&nbsp;&nbsp;...[prompt]         </td><td> literal   </td><td> limited access    </td><td> Current prompt as used in the <a class="bold_text" href="REF_Features_interactive.html">interactive mode</a>.  Change it using the <a class="bold_text" href="REF_Function_prompt.html">prompt</a>() function.</td></tr>
 <tr><td>&nbsp;&nbsp;...[registry my space]  </td><td> literal   </td><td> limited access    </td><td> Obsolete.</td></tr>
 <tr><td>&nbsp;&nbsp;...[verbose]        </td><td> literal   </td><td> limited access    </td><td> Verbose levels.  See <a class="bold_text" href="REF_Features_verbose.html">verbose</a> for more details.</td></tr>
 <tr><td></td><td>       </td><td>           </td><td></td></tr>

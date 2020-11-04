@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -121,7 +121,7 @@ destination row will be cleared entirely before writing.
 Following rules apply:
 </p><ul class="bullets"><li class="bullets">Only simple and <a class="bold_text" href="REF_Features_horizontal_table_access.html">horizontal table accesses</a> are allowed. <a class="bold_text" href="REF_Features_vertical_table_access.html">Vertical table accesses</a> and <a class="bold_text" href="REF_Features_matrix_table_access.html">matrix table accesses</a> will be rejected and cause exceptions.
 </li><li class="bullets">Use '..' or keep blank to specify all column entries in the specified row, e.g. <b>[t:..,1]</b> or <b>[t:,1]</b>.  Otherwise only the specified columns will be written.
-</li><li class="bullets"><a class="bold_text" href="REF_Features_partial_table_specification.html">Partial table specifications</a> are allowed, provided the context information for the table and row number is available (e.g. inside the function parameters of the <span class="red_text">table process</span>() call)
+</li><li class="bullets"><a class="bold_text" href="REF_Features_partial_table_specification.html">Partial table specifications</a> are allowed, provided the context information for the table and row number is available (e.g. inside the function parameters of the <a class="bold_text" href="REF_Function_table_process.html">table process</a>() call)
 </li><li class="bullets">The transactions uses the header names and not physical column positions for orientation.  Make sure you are using unique header names.  Otherwise, the first matching column from the left will be used.
 </li><li class="bullets">Additional table columns with header names are only added if <a class="bold_text" href="REF_Features_Transactions_from_variables_to_tables.html">open-ended ranges</a> are specified for the table row.  Open-ended ranges apply in following cases:
 <ul class="bullets"><li class="bullets"><b>[t:..,1]</b> - All columns under existing headers selected.  Further columns may be added

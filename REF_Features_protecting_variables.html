@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -108,9 +108,9 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-The functions <span class="red_text">protect</span>(), <span class="red_text">dim protect</span>(), <span class="red_text">redim protect</span>(), <span class="red_text">array protect</span>(), and structure protect(__) are available apply
+The functions <a class="bold_text" href="REF_Function_protect.html">protect</a>(), <a class="bold_text" href="REF_Function_dim_protect.html">dim protect</a>(), <a class="bold_text" href="REF_Function_dim_protect.html">redim protect</a>(), <a class="bold_text" href="REF_Function_array.html">array protect</a>(), and structure protect(__) are available apply
 protection rules on the target variables.  It is always possible to change protection settings on local variable.  For global variables, this
-is only allwed in the global context (i.e. not in the code of user-defined procedures and functions and B4P programs started with <span class="red_text">start</span>() or <span class="red_text">include</span>()).
+is only allwed in the global context (i.e. not in the code of user-defined procedures and functions and B4P programs started with <a class="bold_text" href="REF_Function_start.html">start</a>() or <a class="bold_text" href="REF_Function_include.html">include</a>()).
 Protection settings of system variables cannot be altered. If not specified otherwise, all newly created variables bear the protection setting <i>full access</i>.
 
 The follwoing table provides an overview of the available protection settings and their functional impacts:
@@ -128,11 +128,11 @@ The follwoing table provides an overview of the available protection settings an
 <tr><td>Modify <a class="bold_text" href="REF_Features_Variable_forms.html">variable forms</a> <sup>3</sup>  </td><td> &#x2714;      </td><td> -         </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
 <tr><td>Create arrays               </td><td> &#x2714;      </td><td> &#x2714; <sup>4</sup> </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
 <tr><td>Do <a class="bold_text" href="REF_Features_Transactions.html">Transactions</a>         </td><td> &#x2714;      </td><td> -         </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
-<tr><td>Use <span class="red_text">protect</span>() to check settings </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;</td></tr>
+<tr><td>Use <a class="bold_text" href="REF_Function_protect.html">protect</a>() to check settings </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;</td></tr>
 </table><p>
 <sup>1</sup> Provided no additional protection seetings restrict usage of the member variables.<br>
 <sup>2</sup> E.g. forbidden to overwrite literal contents with numeric contents.  Additional restrictions may apply on system variables, e.g. only specific values may be written.<br>
-<sup>3</sup> E.g. converting structures to arrays and back using <span class="red_text">array to structure</span>() or <span class="red_text">structure to array</span>() functions.<br>
+<sup>3</sup> E.g. converting structures to arrays and back using <a class="bold_text" href="REF_Function_array_to_structure.html">array to structure</a>() or <a class="bold_text" href="REF_Function_structure_to_array.html">structure to array</a>() functions.<br>
 <sup>4</sup> Only possible if variable contains no other members so far.<br>
 </p>
 <h4> Variables temporarily locked with Blocking Notices</h4>

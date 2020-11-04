@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -113,20 +113,20 @@ a small number of building blocks:
 
 </p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
 <tr><th>Feature         </th><th> Description                                       </th><th> Example</th></tr>
-<tr><td>Statements        </td><td> Can be a procedure call, an <a class="bold_text" href="REF_Features_assignments.html">assignment</a>, an ad-hoc operation or a transaction.<br>                   Multiple statements are separated with semiclon <b>;</b>              </td><td></td></tr>
+<tr><td>Statements        </td><td> Can be a procedure call, an <a class="bold_text" href="REF_Features_assignments.html">assignment</a>, an ad-hoc operation or a transaction.<br>                   Multiple statements are separated with semiclons <b>;</b>             </td><td></td></tr>
 <tr><td>Procedure calls     </td><td> A B4P function is called as a procedure                       </td><td> echo( Hello World );</td></tr>
 <tr><td><a class="bold_text" href="REF_Features_assignments.html">Assignments</a>     </td><td> A value or calculated <a class="bold_text" href="REF_Features_assignments.html">expression</a> is assigned to a variable or table entry     </td><td> a[] = 3 * 3;</td></tr>
 <tr><td><a class="bold_text" href="REF_Features_ad-hoc_operators.html">Ad-hoc operations</a>   </td><td> Immediate operation applied on a target variable without doing assignment     </td><td> a[]++;</td></tr>
 <tr><td><a class="bold_text" href="REF_Features_Transactions.html">Transactions</a>    </td><td> Smart assignments among variables including their hierarchical member variables and table rows </td><td> b[] <== a[];</td></tr>
 <tr><td><a class="bold_text" href="REF_Features_assignments.html">Expressions</a>     </td><td> Values (constants), variables, table entries, functions, or calculated combination of them using operators and parentheses    </td><td> a[] + 2*abs(b[])</td></tr>
-<tr><td>Blocks          </td><td> One or more statements contained in braces <b>{ ... }</b> in order to execute them jointly, e.g. after <span class="red_text">if</span>() functions.    </td><td> { a[] = 1; b[] = 2; }</td></tr>
+<tr><td>Blocks          </td><td> One or more statements contained in braces <b>{ ... }</b> in order to execute them jointly, e.g. after <a class="bold_text" href="REF_Function_if.html">if</a>() functions.    </td><td> { a[] = 1; b[] = 2; }</td></tr>
 </table><p>
 <br><br>
 Like in other programming languages, long statements may take multiple lines of text becase the semicolon is delimiting the statements.
 </p>
 <h4> Control Flow Statements</h4>
 <p>
-In contrast to other programming languages, the control flow statements such as <span class="red_text">if</span>(), <span class="red_text">while</span>() and <span class="red_text">for</span>() loops and many more
+In contrast to other programming languages, the control flow statements such as <a class="bold_text" href="REF_Function_if.html">if</a>(), <a class="bold_text" href="REF_Function_while.html">while</a>() and <a class="bold_text" href="REF_Function_for.html">for</a>() loops and many more
 are indeed B4P <a class="bold_text" href="REF_Features_Functions_and_Procedures.html">functions</a> which are called as procedures and then decide whether to execute the following statements or block containing
 statements or not.  See also the section on <a class="bold_text" href="REF_Features_Control_Flow_Functions.html">Control Flow Functions</a>.</p>
 	</div>

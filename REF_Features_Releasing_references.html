@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -117,10 +117,10 @@
 <h4> Introduction</h4>
 <p>
 Following methods are available to release references:
-</p><ul class="bullets"><li class="bullets">Function call <span class="red_text">release</span>():  Specify references to variables directly.  Example: <b>release ( ref1[ ], ref2[ ], ref3[ ] );</b>
-</li><li class="bullets">Function call <span class="red_text">release all</span>(): All locally defined references to variables will be released.  When called from the main program (neither function nor other program called), then all globally defined references will be released.
-</li><li class="bullets">Function call <span class="red_text">release all</span>(): Specify references to variables directly, or variables which contain one or more members / sub-members which are references to variables.  All of them will be released.
-</li><li class="bullets">Exiting a user-defined procedure or function, or a B4P program called wiht <span class="red_text">start</span>() or <span class="red_text">include</span>(): All locally defined references to variables will be released.
+</p><ul class="bullets"><li class="bullets">Function call <a class="bold_text" href="REF_Function_release.html">release</a>():  Specify references to variables directly.  Example: <b>release ( ref1[ ], ref2[ ], ref3[ ] );</b>
+</li><li class="bullets">Function call <a class="bold_text" href="REF_Function_release_all.html">release all</a>(): All locally defined references to variables will be released.  When called from the main program (neither function nor other program called), then all globally defined references will be released.
+</li><li class="bullets">Function call <a class="bold_text" href="REF_Function_release_all.html">release all</a>(): Specify references to variables directly, or variables which contain one or more members / sub-members which are references to variables.  All of them will be released.
+</li><li class="bullets">Exiting a user-defined procedure or function, or a B4P program called wiht <a class="bold_text" href="REF_Function_start.html">start</a>() or <a class="bold_text" href="REF_Function_include.html">include</a>(): All locally defined references to variables will be released.
 </li><li class="bullets"><a class="bold_text" href="REF_Features_redirecting_references.html">Redirecting references</a>: The original reference will be leased and moved to a different variable.
 </li></ul><p>
 <br/><img src="Images/Description_Variables_Releasing_References.jpg" alt="Releasing References"><br/>

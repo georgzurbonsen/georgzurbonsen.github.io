@@ -23,7 +23,7 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field">Reference Manual (intro only)</div>
+<div class="booktitle_field">Reference Manual</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
@@ -118,7 +118,7 @@ Whenever a function expects a <a class="bold_text" href="REF_Features_Function_P
 
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:500px"><col style = "width:300px">
 <tr><th>Type            </th><th> Description               </th><th> Example</th></tr>
-<tr><td>Numeral         </td><td> Specifies a <span class="red_text">table column number</span>, beginning with 0.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
+<tr><td>Numeral         </td><td> Specifies a <a class="bold_text" href="REF_Function_table_column_number.html">table column number</a>, beginning with 0.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
 <tr><td>Quoted literals     </td><td> The content of the entire string is interpreted as one header name </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
 <tr><td>Quoted literals     </td><td> "" Empty string, will be treated as one blank header name </td><td> "" translates to {""}</td></tr>
 <tr><td>Softquoted literal  </td><td> Contents separated with commas are broken down into individual header names. Spaces around commas are ignored. </td><td> 'Last Name, First Name' results in 2 headers: 'Last Name' and 'First Name'.</td></tr>
