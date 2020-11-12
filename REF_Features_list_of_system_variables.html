@@ -50,8 +50,7 @@
 <li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">+ 6 Transactions </div></a></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">+ 7 Functions and Procedures </div></a></li>
 <li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">+ 8 Function Library </div></a></li>
-</ul></li>
-</ul></li>
+<li class="navi"><a href="REF_Features_User_initialization_program.html"><div class="navi"> User Initialization Program </div></a></li>
 </ul>
 	</div>
 
@@ -78,6 +77,8 @@
 <tr><td>&nbsp;&nbsp;...[time separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ':'</td></tr>
 <tr><td>&nbsp;&nbsp;...[list separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ',', ';'. Used for CSV file format.  Excel uses different symbols around the world.</td></tr>
 <tr><td></td><td>       </td><td>           </td><td></td></tr>
+<tr><td>libraries[]             </td><td> boolean   </td><td> prevent deleting  </td><td> This system variable is reserved for libraries to add structured info such as version and other important info.  It helps to unclutter the global variable space.</td></tr>
+<tr><td></td><td>       </td><td>           </td><td></td></tr>
 <tr><td>runtime settings[]          </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to run-time settings</b></td></tr>
 <tr><td>&nbsp;&nbsp;...[crlf]         </td><td> boolean   </td><td> limited access    </td><td> If true, then new-lines in files saved will be CR+LF, otherwise just line feed (LF).  For Linux and MACOS                                               releases, this variable is true, for Windows it is false.</td></tr>
 <tr><td>&nbsp;&nbsp;...[epsilon]        </td><td> numeral   </td><td> limited access    </td><td> <a class="bold_text" href="REF_Features_comparison_options.html">Epsilon</a> as numeric tolerance value used for comparisons.  E.g. values below epsilon may be interpreted as zero.  Inital value is 1E-09.</td></tr>
@@ -89,6 +90,7 @@
 <tr><td>&nbsp;&nbsp;...[prompt]         </td><td> literal   </td><td> limited access    </td><td> Current prompt as used in the <a class="bold_text" href="REF_Features_interactive_mode.html">interactive mode</a>.  Change it using the <a class="bold_text" href="REF_Function_prompt.html">prompt</a>() function.</td></tr>
 <tr><td>&nbsp;&nbsp;...[registry my space]  </td><td> literal   </td><td> limited access    </td><td> Obsolete.</td></tr>
 <tr><td>&nbsp;&nbsp;...[verbose]        </td><td> literal   </td><td> limited access    </td><td> Verbose levels.  See <a class="bold_text" href="REF_Features_verbose.html">verbose</a> for more details.</td></tr>
+<tr><td>&nbsp;&nbsp;...[found main]     </td><td> boolean   </td><td> read only     </td><td> true if B4P was started without a specified B4P program file, but has found 'main.b4p' in the current or starting directory.</td></tr>
 <tr><td></td><td>       </td><td>           </td><td></td></tr>
 <tr><td>system info[]               </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to operating-system specific characeristics</b></td></tr>
 <tr><td>&nbsp;&nbsp;...[app data directory] </td><td> literal   </td><td> read only     </td><td> Local machine application data directory<br>Windows: "C:\ProgramData\b4p"<br>Linux/MACOS: "/home/<i>user name</i>/.config"</td></tr>

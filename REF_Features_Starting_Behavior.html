@@ -41,8 +41,7 @@
 <li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">+ 6 Transactions </div></a></li>
 <li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">+ 7 Functions and Procedures </div></a></li>
 <li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">+ 8 Function Library </div></a></li>
-</ul></li>
-</ul></li>
+<li class="navi"><a href="REF_Features_User_initialization_program.html"><div class="navi"> User Initialization Program </div></a></li>
 </ul>
 	</div>
 
@@ -63,11 +62,15 @@ current directory and then in the memmorized starting directory.  On the right-a
 In all three cases, unless if the command line switch <b>-w</b> is applied, the <b>B4P Init.b4p</b> initialization program in the library directory will be called to
 carry out some initial preparations which include:
 
-</p><ul class="bullets"><li class="bullets">"Utilty Libaray": A collection of supplementary B4P functions
+</p><ul class="bullets"><li class="bullets">"Utility Library": A collection of supplementary B4P functions
 </li><li class="bullets">"Zip Library": File compression and decompression
-</li><li class="bullets">"Office Libary": Ability to access Microsoft office meta data and load Excel files
+</li><li class="bullets">"Office Library": Ability to access Microsoft office meta data and load Excel files
 </li><li class="bullets">"Support Library": Comprehensive help and support features
 </li></ul><p>
+The intialization prgraom <b>B4P Init.b4p</b> will also call <b>My B4P Init.b4p</b>, a user customizable initialization program twice (before and after including
+the library files), as long the file is available in the user application directory.  For more details, see the section on <a class="bold_text" href="REF_Features_User_initialization_program.html">user initialization program</a>
+
+
 Once this has happend, then the laoded B4P program will be started or interactive mode is activated, depending on the parameters provided.
 
 <br/><img src="Images/REF_Starting_Behavior.png" alt="B4P Starting Behavior"><br/>
