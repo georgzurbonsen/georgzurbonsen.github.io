@@ -66,7 +66,7 @@ but typically it's the 2nd menu entry after <b>Open</b>:
 <br><br>
 The Microsoft editor will open and show the source code:</p>
 <h5> </h5>
-<div class="code_background_color" ><code>#!/usr/local/bin/b4p<br/>
+<div class="code_background_color" ><code>#!/usr/local/bin/b4p&nbsp;-x<br/>
 <br/>
 //&nbsp;The statement in the 1st row applies to UNIX/Linux/MacOS only and is called a "Shebang".<br/>
 //&nbsp;It specifies the language interpreter to use when started as an executable file.<br/>
@@ -85,18 +85,32 @@ Close the editor.  You have two choices to run this program:
 
 <br><br>
 The program will start and you will see the following output:</p>
-<h5> </h5>
-<div class="output_background_color" ><code>4P&nbsp;- Beyond Former Performance<br/>
+<h5> In the very first run, B4P searches the 7-Zip utility and memorizes its whereabouts:</h5>
+<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-04)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
-Licensed&nbsp;(local machine) with standard privileges for (Your user name).<br/>
 <br/>
-Included:&nbsp;Support Library&nbsp;&nbsp;2.03<br/>
-Included:&nbsp;Utility Library&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Office Libarary&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Zip Library&nbsp;&nbsp;2.20&nbsp;&nbsp;&nbsp;&nbsp;Path to 7z.exe already memorized (OK): C:&#92;Program Files&#92;7-Zip&#92;7z.exe<br/>
+***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
+<br/>
+Look&nbsp;for the 7Z compression/decomopression utility<br/>
+<br/>
+Found&nbsp;following program file paths: {'C:&#92;Program Files','C:&#92;Program Files (x86)'}<br/>
+&nbsp;- 7z.exe Zip-utility found in {'C:&#92;Program Files&#92;7-Zip&#92;7z.exe'} (OK)<br/>
+Hello&nbsp;World<br/>
+Done&nbsp;- Press ENTER key</code></div>
+<h5> Outcome if this is not the very first run:</h5>
+<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
+Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+<br/>
+***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
+<br/>
 Hello&nbsp;World<br/>
 Done&nbsp;- Press ENTER key</code></div>
 <h4> </h4>
@@ -130,35 +144,23 @@ Start B4P using the start menu:
 Click on the yellow folder <b>B4P</b>, the folder opens up, and then on the blue icon <b>B4P</b> to start the run-time machine.
 The following output will occur:
 </p>
-<h5> (User interaction: Press 'S' to start the program, and type 'exit' to leave interactive mode)</h5>
+<h5> Wait 2 seconds and main.b4p starts, or hit any key to interrupt and enter interative mode</h5>
 <div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-08)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
 <br/>
 ***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
 <br/>
-Following&nbsp;B4P file has been found:<br/>
-main.b4p<br/>
+Starting&nbsp;'Main.b4p' in two seconds...&nbsp;&nbsp;Press any key to interrupt. Done.<br/>
+Main.b4p&nbsp;in C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programs&#92;B4P completed execution.<br/>
+Feel&nbsp;free to add or change the code in this file.<br/>
 <br/>
-Press&nbsp;'S' to start, or any other key to go into interactive mode: <br/>
-Included:&nbsp;Support Library&nbsp;&nbsp;2.03<br/>
-Included:&nbsp;Utility Library&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Office Libarary&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Zip Library&nbsp;&nbsp;2.20&nbsp;&nbsp;&nbsp;&nbsp;Path to zip program already memorized (OK): /bin/zip<br/>
-<br/>
-Started&nbsp;Main.b4p.<br/>
-This&nbsp;is the main program<br/>
-Feel&nbsp;free to add some code here ...<br/>
-interactive&nbsp;(); called<br/>
-<br/>
-Type&nbsp;'help' for help, 'docs' for B4P docs, 'web docs' for online docs.<br/>
+Type&nbsp;'help' for help, 'docs' or 'docs search' for online B4P documentation.<br/>
 &gt;&gt;&nbsp;exit<br/>
 exit&nbsp;(); called<br/>
-Code&nbsp;execution will stop.&nbsp;&nbsp;Exiting program.<br/>
-_______________________________________________________________________________<br/>
 Done&nbsp;- Press ENTER key</code></div>
 <h4> Starting B4P from the Windows Desk Top</h4>
 <p>The actual statement in this file is to output 'Test', similar as the 'Hello World.b4p' program is doing.
@@ -194,20 +196,17 @@ Mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 <br/>
 <br/>
 PS&nbsp;C:&#92;Users&#92;Your user name&#92;Documents&#92;Programs&#92;B4P&gt; b4p -x "Hello World.b4p"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-B4P&nbsp;- Beyond Former Performance<br/>
+BB4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-04)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
-Licensed&nbsp;(local machine) with standard privileges for Georg zur Bonsen.<br/>
 <br/>
-Included:&nbsp;Support Library&nbsp;&nbsp;2.03<br/>
-Included:&nbsp;Utility Library&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Office Libarary&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Zip Library&nbsp;&nbsp;2.20&nbsp;&nbsp;&nbsp;&nbsp;Path to 7z.exe already memorized (OK): C:&#92;Program Files&#92;7-Zip&#92;7z.exe<br/>
+***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
+<br/>
 Hello&nbsp;World<br/>
-PS&nbsp;C:&#92;Users&#92;Your user name&#92;Documents&#92;Programs&#92;B4P&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-</code></div>
+PS&nbsp;C:&#92;Users&#92;Your user name&#92;Documents&#92;Programs&#92;B4P&gt;</code></div>
 <h4> Accessing the Reference Manual</h4>
 <p>Congratulations.  You have been able to get your first B4P programs running.
 You also find the file "B4P Reference Manual.b4p". You have three possibilites to access the on-line documentation:

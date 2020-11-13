@@ -56,7 +56,7 @@ B4P under MacOS is operational immediately after installation.  No system reboot
 <br><br>
 
 As a first step, go to the directory <b>/home/username/b4p</b> (b4p is a sub-directory created in your personal
-home directory.  The path stated above may vary among MacOS distributions.)  In that directory, you will see
+home directory.  The path stated above may vary among MacOS variants and versions)  In that directory, you will see
 fllowing files:
 </p>
 <h5> </h5>
@@ -93,24 +93,34 @@ Close the editor. The following three commands do the same: Start b4p and run th
 </li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>username@domain:~/b4p$&nbsp;./hello*</code></div>
-<h5> </h5>
-<div class="output_background_color" ><code><br/>
-4P&nbsp;- Beyond Former Performance<br/>
+<h5> In the very first run, B4P searches the 7-Zip utility and memorizes its whereabouts:</h5>
+<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-08)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
 <br/>
 ***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
 <br/>
-Included:&nbsp;Support Library&nbsp;&nbsp;2.03<br/>
-Included:&nbsp;Utility Library&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Office Libarary&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Zip Library&nbsp;&nbsp;2.20&nbsp;&nbsp;&nbsp;&nbsp;Path to zip program already memorized (OK): /bin/zip<br/>
+Look&nbsp;for the 7Z compression/decomopression utility<br/>
+<br/>
+Found&nbsp;following program file paths: {'C:&#92;Program Files','C:&#92;Program Files (x86)'}<br/>
+&nbsp;- 7z.exe Zip-utility found in {'C:&#92;Program Files&#92;7-Zip&#92;7z.exe'} (OK)<br/>
+Hello&nbsp;World<br/>
+Done&nbsp;- Press ENTER key</code></div>
+<h5> Outcome if this is not the very first run:</h5>
+<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
+Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+<br/>
+***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
+<br/>
 Hello&nbsp;World<br/>
 Done&nbsp;- Press ENTER key<br/>
-<br/>
 username@domain:~/b4p$&nbsp;</code></div>
 <h4> Starting B4P Without a B4P Program Name</h4>
 <p>
@@ -135,31 +145,19 @@ In case no 'main.b4p' is available, then B4P enters into interactive mode direct
 <div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-08)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
 <br/>
 ***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
 <br/>
-Following&nbsp;B4P file has been found:<br/>
-main.b4p<br/>
+Starting&nbsp;'Main.b4p' in two seconds...&nbsp;&nbsp;Press any key to interrupt. Done.<br/>
+Main.b4p&nbsp;in C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programs&#92;B4P completed execution.<br/>
+Feel&nbsp;free to add or change the code in this file.<br/>
 <br/>
-Press&nbsp;'S' to start, or any other key to go into interactive mode: <br/>
-Included:&nbsp;Support Library&nbsp;&nbsp;2.03<br/>
-Included:&nbsp;Utility Library&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Office Libarary&nbsp;&nbsp;2.01<br/>
-Included:&nbsp;Zip Library&nbsp;&nbsp;2.20&nbsp;&nbsp;&nbsp;&nbsp;Path to zip program already memorized (OK): /bin/zip<br/>
-<br/>
-Started&nbsp;Main.b4p.<br/>
-This&nbsp;is the main program<br/>
-Feel&nbsp;free to add some code here ...<br/>
-interactive&nbsp;(); called<br/>
-<br/>
-Type&nbsp;'help' for help, 'docs' for B4P docs, 'web docs' for online docs.<br/>
+Type&nbsp;'help' for help, 'docs' or 'docs search' for online B4P documentation.<br/>
 &gt;&gt;&nbsp;exit<br/>
 exit&nbsp;(); called<br/>
-Code&nbsp;execution will stop.&nbsp;&nbsp;Exiting program.<br/>
-_______________________________________________________________________________<br/>
 Done&nbsp;- Press ENTER key</code></div>
 <h4> Accessing the Reference Manual</h4>
 <p>Congratulations.  You have been able to get your first B4P programs running.
@@ -168,7 +166,7 @@ to open the on-line manual
 </p><ul class="bullets"><li class="bullets"><b>"./B4P Reference Manual.b4p"</b> (Command fully spelled out)
 </li><li class="bullets"><b>./*Manual*</b> (More convenient if you use wildcard symbols)
 </li><li class="bullets">Inside B4P running in interactive mode, you can type <b>docs</b> to access the documentation, too.
-</li></ul><p>At the first time, you will be asked for the browser you wish (currently Safari, Brave, Firefox and Chrome are supported),
+</li></ul><p>At the first time, you will be asked for the browser you wish (currently Chrome and Firefox are supported),
 following this the on-line documentation opens up.
 </p>
 	</div>
