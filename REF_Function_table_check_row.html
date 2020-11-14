@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table check row</h3>
+<a accesskey="p" href="REF_Function_table_delete_blank_rows.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_table_rearrange_selected_rows.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="REF_Features_The_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="REF_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="REF_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="REF_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">9 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">+ 9.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_input_output_functions.html"><div class="navi">+ 9.2 Input / Output Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 9.3 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 9.4 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 9.5 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 9.6 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 9.7 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 9.8 Table Functions - Basics </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions_processing.html"><div class="navi">9.9 Table Functions - Processing </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Checking_headers.html"><div class="navi">+ 9.9.1 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="REF_Features_Searching_tables.html"><div class="navi">+ 9.9.2 Searching Tables </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_columns.html"><div class="navi">+ 9.9.3 Processing Table Columns </div></a></li>
+<li class="navi"><a href="REF_Features_Processing_table_rows.html"><div class="navi">9.9.4 Processing Table Rows </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_table_insert_rows.html"><div class="navi">9.9.4.1 table insert rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_insert_selected_rows.html"><div class="navi">9.9.4.2 table insert ... selected rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_delete_rows.html"><div class="navi">9.9.4.3 table delete rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_delete_remaining_rows.html"><div class="navi">9.9.4.4 table delete remaining rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_delete_selected_rows.html"><div class="navi">9.9.4.5 table delete selected rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_keep_selected_rows.html"><div class="navi">9.9.4.6 table keep selected rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_delete_blank_rows.html"><div class="navi">9.9.4.7 table delete blank rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_check_row.html"><div class="navi navi-selected">9.9.4.8 table check row </div></a></li>
+<li class="navi"><a href="REF_Function_table_rearrange_selected_rows.html"><div class="navi">9.9.4.9 table rearrange selected rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_sort_rows.html"><div class="navi">9.9.4.10 table sort (selected) rows </div></a></li>
+<li class="navi"><a href="REF_Function_table_rank_rows.html"><div class="navi">9.9.4.11 table rank (selected) rows </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Processing_table_contents.html"><div class="navi">+ 9.9.5 Processing Table Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Copying_and_spitting_tables.html"><div class="navi">+ 9.9.6 Renaming, Copying and Splitting Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_advanced_table_functions.html"><div class="navi">+ 9.10 Table Functions - Advanced </div></a></li>
+<li class="navi"><a href="REF_Features_Formatting_and_Styling_Tables.html"><div class="navi">+ 9.11 Table Functions - Formatting and Styling </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 9.12 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 9.13 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 9.14 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 9.15 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 9.16 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table check row</code></div>
+<h4> Description</h4>
+<p>
+This function checks if this row is blank.  Some value-added critieria can be applied in the parameters.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>2 - 4</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>literal</td>
+<td><b>Name of existing table</b><br/><p></p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>numeral</td>
+<td><b>Row number</b><br/><p>The specified row will be checked.</p>
+</td></tr>
+<tr><td>Opt. 3.<br/>input</td>
+<td>literal</td>
+<td><b>Blank criterion</b><br/><p>One of following:
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
+<tr><td>entirely empty row          </td><td> True if row contain 0 columns</td></tr>
+<tr><td>empty row                   </td><td> True if row contains 0 or 1 empty column</td></tr>
+<tr><td>empty fields                </td><td> True if row contains any number of empty fields (nothing inside, not even a white space)</td></tr>
+<tr><td>blank fields                </td><td> True if row contains any number of fields which are either empty or containing white spaces (no visible characters)</td></tr>
+<tr><td>not blank begin             </td><td> True if not blank, but row above meets blank fields criteria, but not the rows below</td></tr>
+<tr><td>not blank middle            </td><td> True if not blank, rows above and below are also not blank, too</td></tr>
+<tr><td>not blank end               </td><td> True if not blank, but row below meets blank fields criteria, but not the rows above</td></tr>
+<tr><td>not blank lone              </td><td> True if row is not blank, but row above and below meet blank fields criteria.</td></tr>
+<tr><td>not blank                   </td><td> True if row is not blank (contains visible characters), regardless if at top, middle or end of block of non-blank rows</td></tr>
+</table><p>
+Note: The 'not blank...' criteria listed at the bottom use the 'blank fields' criteria to distinguish whether the other rows are deemed blank or not.
+</p>
+<span class="black_text"><b> Default value: </b></span>blank fields
+</td></tr>
+<tr><td>Opt 4<br/>input</td>
+<td>table columns</td>
+<td><b>Columns to check</b><br/><p>Specify the columns which shall be checked if they are blank and ignore the contents in the remaining columns.<br><br>
+See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
+<span class="black_text"><b> Default value: </b></span>all columns
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Number of rows deleted</b><br/><p></p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{&nbsp;&nbsp;Last Name,&nbsp;&nbsp;&nbsp;&nbsp;First Name,&nbsp;&nbsp;&nbsp;&nbsp;Favorite Sports },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Adams,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andy,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;American&nbsp;Football },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;&nbsp;",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baseball&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;""&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Mayer,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mick,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tennis&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;"&nbsp;" },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Gerber,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greg,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canooing&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Unger,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uta,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rafting&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;Tanner,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tina,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wrestling&nbsp;} } );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize( result, {Criteria, entirely empty row, empty row, empty fields, blank fields,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;blank begin, not blank middle, not blank end, not blank lone, not blank } );<br/>
+<br/>
+&nbsp;&nbsp;echo&nbsp;("Original table:");<br/>
+&nbsp;&nbsp;table&nbsp;list(t);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;process ( result,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;process( t, [result:row(),0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] = row();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[result:row(),row(1)]&nbsp;= table check row( t, row(), [^Criteria] ) ) );<br/>
+<br/>
+&nbsp;&nbsp;echo("The&nbsp;columns in the table below relate to the row numbers of the table checked.");<br/>
+&nbsp;&nbsp;table&nbsp;list ( result );<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Original&nbsp;table:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Last&nbsp;Name&nbsp;|&nbsp;First&nbsp;Name&nbsp;|&nbsp;Favorite&nbsp;Sports&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;American&nbsp;Football<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Baseball&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Mayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tennis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Gerber&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Greg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Canooing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Unger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Uta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Rafting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Tanner&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Tina&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Wrestling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+The&nbsp;columns&nbsp;in&nbsp;the&nbsp;table&nbsp;below&nbsp;relate&nbsp;to&nbsp;the&nbsp;row&nbsp;numbers&nbsp;of&nbsp;the&nbsp;table&nbsp;checked.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Criteria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;entirely&nbsp;empty&nbsp;row&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;empty&nbsp;row&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;empty&nbsp;fields&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;blank&nbsp;fields&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;not&nbsp;blank&nbsp;begin&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;not&nbsp;blank&nbsp;middle&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;not&nbsp;blank&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;not&nbsp;blank&nbsp;lone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;not&nbsp;blank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Function_table_check_row.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="REF_Function_table_delete_blank_rows.html">table delete blank rows</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

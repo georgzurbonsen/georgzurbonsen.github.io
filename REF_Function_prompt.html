@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>prompt</h3>
+<a accesskey="p" href="REF_Features_Inspection_and_debugging.html"><span>Prev</span></a> <a accesskey="n" href="REF_Function_inspect.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="REF_Features_The_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="REF_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="REF_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="REF_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">9 Function Library </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_Control_Flow_Functions.html"><div class="navi">+ 9.1 Control Flow Functions </div></a></li>
+<li class="navi"><a href="REF_Features_input_output_functions.html"><div class="navi">9.2 Input / Output Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_text_input_output.html"><div class="navi">+ 9.2.1 Text Input / Output </div></a></li>
+<li class="navi"><a href="REF_Features_Console_special_effects.html"><div class="navi">+ 9.2.2 Console Special Effects </div></a></li>
+<li class="navi"><a href="REF_Features_Inspection_and_debugging.html"><div class="navi">9.2.3 Inspection and Debugging </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Function_prompt.html"><div class="navi navi-selected">9.2.3.1 prompt </div></a></li>
+<li class="navi"><a href="REF_Function_inspect.html"><div class="navi">9.2.3.2 inspect </div></a></li>
+<li class="navi"><a href="REF_Function_list_variables.html"><div class="navi">9.2.3.3 list variables ... </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Type_Conversion_Functions.html"><div class="navi">+ 9.3 Type Conversion and Formatting Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 9.4 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 9.5 String Functions </div></a></li>
+<li class="navi"><a href="REF_Features_date_and_time_functions.html"><div class="navi">+ 9.6 Date and Time Functions </div></a></li>
+<li class="navi"><a href="REF_Features_parameter_set_functions.html"><div class="navi">+ 9.7 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions.html"><div class="navi">+ 9.8 Table Functions - Basics </div></a></li>
+<li class="navi"><a href="REF_Features_table_functions_processing.html"><div class="navi">+ 9.9 Table Functions - Processing </div></a></li>
+<li class="navi"><a href="REF_Features_advanced_table_functions.html"><div class="navi">+ 9.10 Table Functions - Advanced </div></a></li>
+<li class="navi"><a href="REF_Features_Formatting_and_Styling_Tables.html"><div class="navi">+ 9.11 Table Functions - Formatting and Styling </div></a></li>
+<li class="navi"><a href="REF_Features_variables_functions.html"><div class="navi">+ 9.12 Variables Functions </div></a></li>
+<li class="navi"><a href="REF_Features_directory_and_file_system_functions.html"><div class="navi">+ 9.13 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_system_functions.html"><div class="navi">+ 9.14 System Functions </div></a></li>
+<li class="navi"><a href="REF_Features_help_and_support_functions.html"><div class="navi">+ 9.15 Help and Support Functions </div></a></li>
+<li class="navi"><a href="REF_Features_Cross-functional_info.html"><div class="navi">+ 9.16 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>prompt</code></div>
+<h4> Description</h4>
+<p>
+This function changes the prompt to be displayed in interactive mode and memorizes it so it will be used
+whenever B4P is started.  The prompt can be enriched with useful data such as current date and time,
+current working directory, etc.
+
+<u>Advice</u>: Use this function in <a class="bold_text" href="REF_Function_interactive.html">interactive</a> mode.  Not recommended to specify it inmidst a B4P program.</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>Opt. 1<br/>input</td>
+<td>literal</td>
+<td><b>B4P expression</b><br/><p>Specify a B4P expression (as a string, not code piece like in other functions) which will be saved and applied whenever interactive mode is invoked.<br>
+Providing a blank string ('') will restore factory settings, i.e. '>>'.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>literal</td>
+<td><b>Currently defined prompt</b><br/><p>The prompt as shown in interactive mode will be returned</p></td></tr>
+</table>
+<h4> Example using Interactive Mode</h4>
+<div class="code_background_color" ><code>&gt;&gt;&nbsp;prompt( "working directory()+ ' &gt;&gt;'" )<br/>
+C:&#92;Users&#92;Zur&nbsp;Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker &gt;&gt; echo (Hello)<br/>
+Hello<br/>
+C:&#92;Users&#92;Zur&nbsp;Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker &gt;&gt; prompt( "literal(date time( now )) + '&gt;'"&nbsp;&nbsp;)<br/>
+2020-10-01&nbsp;20:15:29&gt;<br/>
+2020-10-01&nbsp;20:15:31&gt; prompt( "right last match( working directory(), "&#92;") + ' &gt;&gt;'" )<br/>
+B4P_Docu_Maker&nbsp;&gt;&gt; $ cd ..<br/>
+B4P:&nbsp;Verify and resolve path '..' ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK.&nbsp;Current directory changed to 'C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;'<br/>
+<br/>
+Beyond4P&nbsp;&gt;&gt; $ cd *Maker<br/>
+B4P:&nbsp;Verify and resolve path '*Maker' ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OK.&nbsp;Current directory changed to 'C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;'<br/>
+<br/>
+B4P_Docu_Maker&nbsp;&gt;&gt; prompt ("")<br/>
+&gt;&gt;&nbsp;=prompt()<br/>
+&gt;&gt;&nbsp;["literal"]<br/>
+&gt;&gt;</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

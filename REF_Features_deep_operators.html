@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Deep Operators</h3>
+<a accesskey="p" href="REF_Features_logical_or.html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_deep_unary_operators.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Reference Manual</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="REF_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="REF_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="REF_Features_The_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="REF_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="REF_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="REF_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="REF_Features_assignments.html"><div class="navi">6 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_unary_operators.html"><div class="navi">6.1 Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_binary_operators.html"><div class="navi">+ 6.2 Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_operators.html"><div class="navi navi-selected">6.3 Deep Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="REF_Features_deep_unary_operators.html"><div class="navi">6.3.1 Deep Unary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_binary_operators.html"><div class="navi">6.3.2 Deep Binary Operators </div></a></li>
+<li class="navi"><a href="REF_Features_matrix_operations_summary.html"><div class="navi">6.3.3 Matrix Operations Summary </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Assignment_operators.html"><div class="navi">6.4 Assignment operators </div></a></li>
+<li class="navi"><a href="REF_Features_deep_assignment_operators.html"><div class="navi">6.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="REF_Features_ad-hoc_operators.html"><div class="navi">+ 6.6 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="REF_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="REF_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">+ 9 Function Library </div></a></li>
+</ul></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+
+Deep Operators are very unique features specifically designed for B4P.
+Deep operators are unary and binary operators followed by accent circumflex <b>^</b> symbols which
+indicate that the operator shall be applied on the elements inside parameter sets.
+This concept allows vector and matrix calculations without programming loops.
+
+<br><br>
+Applying deep operator in simple parameter sets (vectors) requiers adding one <b>^</b>-symbol after the
+operator.  For further nesting, e.g. matrices (e.g. <b>{ {1,2,3},{4,5,6} }</b>), 2 or more consecutive
+<b>^</b>-symbols are needed to specify the right <i>depth</i>.  Not using these symboles result in applying the operators on the
+parameter set directly, e.g. '+' for catenating two parameter sets together.
+
+<br><br>
+Following deep operators are described next:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="REF_Features_deep_unary_operators.html">Deep unary operators</a>, and
+</li><li class="bullets"><a class="bold_text" href="REF_Features_deep_binary_operators.html">Deep binary operators</a>.
+</li></ul><p></p>
+<h4> See also</h4>
+<p><a class = "bold_text" href="REF_Function_deep.html">deep</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
