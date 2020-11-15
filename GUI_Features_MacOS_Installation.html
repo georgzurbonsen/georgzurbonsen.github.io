@@ -38,7 +38,10 @@
 <li class="navi"><a href="GUI_Features_MacOS_Installation.html"><div class="navi navi-selected">2.3.2 MacOS - Installation </div></a></li>
 <li class="navi"><a href="GUI_Features_MacOS_Getting_Started.html"><div class="navi">2.3.3 MacOS - Getting Started </div></a></li>
 </ul></li>
-<li class="navi"><div>2.4 Post-Installation Optimization </div></li>
+<li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">2.4 Updates and Upgrades </div></a></li>
+<li class="navi"><a href="GUI_Features_De-installing_B4P.html"><div class="navi">2.5 De-installing B4P </div></a></li>
+<li class="navi"><a href="GUI_Features_Licensing.html"><div class="navi">2.6 Licensing </div></a></li>
+<li class="navi"><div>2.7 Post-Installation Optimization </div></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 4 Getting Help </div></a></li>
@@ -51,22 +54,26 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-To start the installation, type "sudo ./setup" click on "setup.exe" on a MacOS console window which is in the
-directory "b4p installation".  You may possibly be asked to enter the password in order to activate elevated
-access rights in order to run the B4P installation program as a <i>super user</i>.
+To start the installation, type "sudo ./setup" which is in the directory "b4p installation".
+You may possibly be asked to enter the password in order to activate elevated access rights in order to run the B4P installation program as a <i>super user</i>.
 
 
 The follwoing contents will appear:</p>
 <h5> </h5>
-<div class="code_background_color" ><code>username@domain:~/b4p_installation$&nbsp;sudo ./setup<br/>
+<div class="code_background_color" ><code><br/>
+<br/>
+[b4p_installation]$&nbsp;sudo ./setup<br/>
+Password:<br/>
 <br/>
 B4P&nbsp;- Installation Program<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-08)<br/>
+Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
 <br/>
-B4P&nbsp;installation program is starting (Linux and MacOS platforms) ... <br/>
+<br/>
+B4P&nbsp;installation program is starting (Linux and MacOS platforms) ...<br/>
 <br/>
 1&nbsp;&gt;&gt; Check the B4P privileges to run installation program ...<br/>
 <br/>
@@ -77,23 +84,92 @@ B4P&nbsp;installation program is starting (Linux and MacOS platforms) ... <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;:&nbsp;&nbsp;De-install B4P<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;:&nbsp;&nbsp;Do Identification for acquiring a license<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;:&nbsp;&nbsp;Exit installer without actions<br/>
-Please&nbsp;select: </code></div>
+Please&nbsp;select: M<br/>
+</code></div>
 <h4> </h4>
-<p>Choice 'M' makes the installation visible for all users and puts the executable file into a subdirectory of <b>C:\Program Files\B4P</b>.
+<p>Choice 'M' makes the installation visible for all users and puts the executable file
+into a subdirectory of <b> /usr/local/bin/b4p </b>.
 
 <br><br>
 The output shown below has been shortened in this documentation.  The installer will list all working steps and files processed.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>3&nbsp;&gt;&gt; Check that all required files are available for installation ...<br/>
-...<br/>
+<div class="code_background_color" ><code><br/>
+<br/>
+3&nbsp;&gt;&gt; Check that all required files are available for installation ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;lib<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;weblib<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;List of Locales.csv<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;setup<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;B4P Reference Manual.b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;b4p<br/>
+<br/>
 4&nbsp;&gt;&gt; Identify locations for the program files ...<br/>
-...<br/>
+<br/>
+Identified&nbsp;following directories:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;executable program:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/local/bin<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;program related files (e.g. libraries): /usr/local/etc/b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;user application data:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/Users/rafael/.config/b4p<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Found&nbsp;following settings files:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;settings&nbsp;:&nbsp;&nbsp;Yes: /Users/rafael/.config/b4p/B4P User Settings.json<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Locale&nbsp;settings :&nbsp;&nbsp;Yes: /Users/rafael/.config/b4p/B4P Locale Settings.json<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;License&nbsp;file&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;Yes: /Users/rafael/.config/b4p/B4P License File.json<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;My&nbsp;B4P init file:&nbsp;&nbsp;Yes: /Users/rafael/.config/b4p/My B4P Init.b4p<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;user settings file contains starting directory name.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;defined prompt, and other user specific data.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you want to keep the user settings from the previous installation ? N<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;locale settings file contains language and country specific<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;and date formats.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you want to keep the locale settings from the previous installation ? N<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;file 'My B4P Init File.b4p' contains your personalized B4P initialization program.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you want to keep the this file (if no: A new plain file will be provided) ? N<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;license file contains the authentication info to run B4P<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;given license rights.&nbsp;&nbsp;With few exceptions, the license file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;continues&nbsp;to be valid for the next release.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;License&nbsp;holder: Rafael Richards<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you want to keep the license file from the previous installation ? N<br/>
+<br/>
 5&nbsp;&gt;&gt; Deleting B4P program and application data subdirectories (if existing) ...<br/>
-...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Deleted&nbsp;/usr/local/etc/b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Deleted&nbsp;/Users/rafael/.config/b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Done.<br/>
+<br/>
 6&nbsp;&gt;&gt; Create new folders for B4P program ...<br/>
-...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;/usr/local/etc/b4p/lib.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Created&nbsp;/Users/rafael/.config/b4p.<br/>
+<br/>
 7&nbsp;&gt;&gt; Copy all files to destination directory '/usr/local/etc/b4p ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying&nbsp;file List of Locales.csv ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying&nbsp;directory lib ...<br/>
+chmod:&nbsp;-R: No such file or directory<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying&nbsp;directory weblib ...<br/>
+chmod:&nbsp;-R: No such file or directory<br/>
+&nbsp;&nbsp;&nbsp;Copying&nbsp;b4p to /usr/local/bin ...<br/>
+<br/>
+8&nbsp;&gt;&gt; Restore user and locale settings (if available) ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Info:&nbsp;User settings file not found. Skipped copying<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Info:&nbsp;No locale settings have been defined yet.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Loaded&nbsp;CSV/TSV file 'List of Locales.csv':<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;31&nbsp;rows, max 28 columns, 28 columns in 1st row, 868 fields, list separator: ;<br/>
+<br/>
+<br/>
+<br/>
 ...</code></div>
 <h4> Select Country and Language Settings</h4>
 <p>The B4P installaion program asks for both language and country.  This combination is a <i>locale</i> information which rules
@@ -102,12 +178,12 @@ things like number and date format, currency symbols, month and weekday names in
 <br><br>
 
 In order to avoid any trouble with your Microsoft Excel installation, I advise you to use the same country and language settings as
-configured for Excel so the CSV file format is compatible and not simply a choice you do personally favor.  Depending on the settings,
-the CSV files may either use commas or semicolons as separators (In excel, take a look at a formula containing a function with 2 or
-more parameters and check how the parameters are separated), and numbers may either make use of decimal points or commas.
+configured for Excel so the CSV file format is compatible and not simply a choice you do personally favor.  Depending on the settings, vthe CSV files may either use commas or semicolons as separators (In excel, take a look at a formula containing a function with 2 or vmore parameters and check how the parameters are separated), and numbers may either make use of decimal points or commas.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>8&nbsp;&gt;&gt; Restore user and locale settings (if available) ...<br/>
+<div class="code_background_color" ><code><br/>
+<br/>
+8&nbsp;&gt;&gt; Restore user and locale settings (if available) ...<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Info:&nbsp;User settings file not found. Skipped copying<br/>
 <br/>
@@ -126,16 +202,25 @@ more parameters and check how the parameters are separated), and numbers may eit
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;:&nbsp;&nbsp;Italian<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;:&nbsp;&nbsp;Spanish<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;:&nbsp;&nbsp;Swedish<br/>
-Please&nbsp;select: D<br/>
+Please&nbsp;select: B<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Step&nbsp;2 - Choose country:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:&nbsp;&nbsp;Germany<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;:&nbsp;&nbsp;Switzerland<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;:&nbsp;&nbsp;Austria<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;:&nbsp;&nbsp;Italy<br/>
-Please&nbsp;select: B<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Locale&nbsp;chosen: de_CH<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:&nbsp;&nbsp;USA<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;:&nbsp;&nbsp;Great Britain<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;:&nbsp;&nbsp;Great Britain<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;:&nbsp;&nbsp;Canada<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;:&nbsp;&nbsp;France<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;:&nbsp;&nbsp;India<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;:&nbsp;&nbsp;Germany<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;:&nbsp;&nbsp;Switzerland<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;:&nbsp;&nbsp;Austria<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J&nbsp;:&nbsp;&nbsp;Sweden<br/>
+Please&nbsp;select: A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Locale&nbsp;chosen: en_US<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Done&nbsp;setting locale.<br/>
+<br/>
+<br/>
+<br/>
 </code></div>
 <h4> Activating B4P with License File or in Demo Mode</h4>
 <p>If you do not have a license file and you plan to use B4P for demonstration, evaluation and/or educational purposes,
@@ -160,6 +245,7 @@ License&nbsp;activation ...<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Nothing&nbsp;entered.&nbsp;&nbsp;B4P will be activated in demo mode.<br/>
 <br/>
 &gt;&gt;&nbsp;&nbsp;Congratulations!&nbsp;Installation has been completed.<br/>
+<br/>
 </code></div>
 <h4> Option - Create a personal folder</h4>
 <p>This is a nice feature especially for beginners. Highly recommended.
@@ -174,8 +260,9 @@ and contains the following files:
 In case the folder is already existing, then only the missing files will be overwritten.  This is the case if you redo the installation.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you want to create a personal B4P program folder ?&nbsp;&nbsp;Y<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Creating&nbsp;directory: /home/georg/b4p<br/>
+<div class="code_background_color" ><code><br/>
+&nbsp;&nbsp;Do&nbsp;you want to create a personal B4P program folder ?&nbsp;&nbsp;Y<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Creating&nbsp;directory: /Users/rafael/b4p<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;directory or files already exist, then existing files<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;not be overwritten.<br/>
 <br/>
@@ -186,8 +273,7 @@ In case the folder is already existing, then only the missing files will be over
 &nbsp;&nbsp;&nbsp;&nbsp;Highly&nbsp;advisable to restart your machine so all configuration settings for this installation are in effect.<br/>
 <br/>
 <br/>
-Done&nbsp;- Press ENTER key<br/>
-</code></div>
+Done&nbsp;- Press ENTER key</code></div>
 <h4> Concluding the Installation</h4>
 <p>Press [Enter] to close the installer.  Now you are ready to start working with B4P.
 

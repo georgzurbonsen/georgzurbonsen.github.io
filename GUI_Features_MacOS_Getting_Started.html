@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>MacOS - Getting Started</h3>
-<a accesskey="p" href="GUI_Features_MacOS_Installation.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Getting_started.html"><span>Next</span></a> 
+<a accesskey="p" href="GUI_Features_MacOS_Installation.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Updates_and_Upgrades.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -38,7 +38,10 @@
 <li class="navi"><a href="GUI_Features_MacOS_Installation.html"><div class="navi">2.3.2 MacOS - Installation </div></a></li>
 <li class="navi"><a href="GUI_Features_MacOS_Getting_Started.html"><div class="navi navi-selected">2.3.3 MacOS - Getting Started </div></a></li>
 </ul></li>
-<li class="navi"><div>2.4 Post-Installation Optimization </div></li>
+<li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">2.4 Updates and Upgrades </div></a></li>
+<li class="navi"><a href="GUI_Features_De-installing_B4P.html"><div class="navi">2.5 De-installing B4P </div></a></li>
+<li class="navi"><a href="GUI_Features_Licensing.html"><div class="navi">2.6 Licensing </div></a></li>
+<li class="navi"><div>2.7 Post-Installation Optimization </div></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 4 Getting Help </div></a></li>
@@ -55,25 +58,18 @@ B4P under MacOS is operational immediately after installation.  No system reboot
 
 <br><br>
 
-As a first step, go to the directory <b>/home/username/b4p</b> (b4p is a sub-directory created in your personal
-home directory.  The path stated above may vary among MacOS variants and versions)  In that directory, you will see
-fllowing files:
+As a first step, go to the directory <b>/home/username/b4p</b> (b4p is a sub-directory created in your personal home directory.  The path stated above may vary among MacOS variants and versions)  In that directory, you will see the folowing files:
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>username@domain:~$&nbsp;cd b4p<br/>
-username@domain:~/b4p$&nbsp;ls<br/>
+<div class="code_background_color" ><code>[~]$&nbsp;cd b4p<br/>
+[b4p]$&nbsp;ls<br/>
 'B4P&nbsp;Reference Manual.b4p'&nbsp;&nbsp;&nbsp;interactive.b4p&nbsp;&nbsp;'start B4P here.b4p'<br/>
 'hello&nbsp;world.b4p'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.b4p<br/>
-username@domain:~/b4p$<br/>
-</code></div>
+[b4p]$</code></div>
 <h4> Try Hello World</h4>
-<p>
-As a first step, take a look at the B4P program 'hello world.b4p'. Use an editor of choice (I typically prefer the
-gnu editor called 'gedit') to open the file and take a look at the source code.
-
-</p>
-<h5> (You may wish to use wildcard symbols like * to specify a unique part of the file name only)</h5>
-<div class="code_background_color" ><code>username@domain:~/b4p$&nbsp;gedit hello*</code></div>
+<p>First, take a look at the B4P code in 'hello world.b4p' by opening this file in your code editor.</p>
+<h5>  Open B4P program 'hello world' using code editor Visual Studio Code</h5>
+<div class="code_background_color" ><code>[b4p]$&nbsp;code hello world.b4p</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>#!/usr/local/bin/b4p<br/>
 <br/>
@@ -86,48 +82,30 @@ gnu editor called 'gedit') to open the file and take a look at the source code.
 echo(Hello&nbsp;World);</code></div>
 <h4> </h4>
 <p>
-Close the editor. The following three commands do the same: Start b4p and run the B4P program "hello world.b4p".
-</p><ul class="bullets"><li class="bullets"><b>b4p "hello world.b4p"</b> to start B4P explicitly with the B4P program provided as command line parameter,
-</li><li class="bullets"><b>./"hello world.b4p"</b> to start the B4P file like an executable program,
-</li><li class="bullets"><b>./hello*</b>, using wildcard symboles allowing you to specify a part of the file name which is unique in the current directory.
+Close the code editor. The following three commands do the same: Start b4p and run the B4P program "hello world.b4p".
+</p><ul class="bullets"><li class="bullets"><b>b4p "hello world.b4p"</b> starts B4P explicitly with the B4P program provided as command line parameter,
+</li><li class="bullets"><b>./"hello world.b4p"</b> starts the B4P file like any other system executable program,
+</li><li class="bullets"><b>./hello*</b>, wildcard symboles allowing you to specify a part of the file name which is unique in the current directory.
 </li></ul><p></p>
 <h5> </h5>
-<div class="code_background_color" ><code>username@domain:~/b4p$&nbsp;./hello*</code></div>
-<h5> In the very first run, B4P searches the 7-Zip utility and memorizes its whereabouts:</h5>
-<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
+<div class="code_background_color" ><code>[b4p]$&nbsp;./hello*</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code><br/>
+B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
 Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
-<br/>
-***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
-<br/>
-Look&nbsp;for the 7Z compression/decomopression utility<br/>
-<br/>
-Found&nbsp;following program file paths: {'C:&#92;Program Files','C:&#92;Program Files (x86)'}<br/>
-&nbsp;- 7z.exe Zip-utility found in {'C:&#92;Program Files&#92;7-Zip&#92;7z.exe'} (OK)<br/>
-Hello&nbsp;World<br/>
-Done&nbsp;- Press ENTER key</code></div>
-<h5> Outcome if this is not the very first run:</h5>
-<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
-_______________________________________________________________________________<br/>
-<br/>
-Version&nbsp;8.00 Candidate (2020-11-12)<br/>
-Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
-<br/>
-***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
+Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
 <br/>
 Hello&nbsp;World<br/>
 Done&nbsp;- Press ENTER key<br/>
-username@domain:~/b4p$&nbsp;</code></div>
-<h4> Starting B4P Without a B4P Program Name</h4>
+<br/>
+[b4p]$</code></div>
+<h4> Starting B4P Without a Specified B4P Program</h4>
 <p>
-You can also start B4P without specifying a file name.  In this case, it will look for the
-B4P program called "main.b4p" in the currently configured starting directory.  After the
-installation with the personal folder created, the directory you are inside is presently
-the memorized starting directory.
+You can also start B4P without specifying a B4P program file name.  In this case, it will look for the
+B4P program called "main.b4p" in the personal B4P directory  home/username/b4p.
 
 <br><br>
 
@@ -140,25 +118,26 @@ will be asked whether to start that one or enter interactive mode instead.  Star
 In case no 'main.b4p' is available, then B4P enters into interactive mode directly.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>username@domain:~/b4p$&nbsp;b4p</code></div>
+<div class="code_background_color" ><code>[b4p]$&nbsp;b4p</code></div>
 <h5> (User interaction: Press 'S' to start the program, and type 'exit' to leave interactive mode)</h5>
-<div class="output_background_color" ><code>B4P&nbsp;- Beyond Former Performance<br/>
+<div class="output_background_color" ><code><br/>
+B4P&nbsp;- Beyond Former Performance<br/>
 _______________________________________________________________________________<br/>
 <br/>
 Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
 <br/>
-***&nbsp;No valid license found. For demos, education and evaluation only.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Some&nbsp;functional restrictions apply.<br/>
-<br/>
-Starting&nbsp;'Main.b4p' in two seconds...&nbsp;&nbsp;Press any key to interrupt. Done.<br/>
-Main.b4p&nbsp;in C:&#92;Users&#92;Zur Bonsen Georg&#92;Documents&#92;Programs&#92;B4P completed execution.<br/>
+Starting&nbsp;'Main.b4p' in 1 second...&nbsp;&nbsp;Press any key to interrupt. Done.<br/>
+Main.b4p&nbsp;in /Users/rafael/b4p completed execution.<br/>
 Feel&nbsp;free to add or change the code in this file.<br/>
 <br/>
 Type&nbsp;'help' for help, 'docs' or 'docs search' for online B4P documentation.<br/>
 &gt;&gt;&nbsp;exit<br/>
-exit&nbsp;(); called<br/>
-Done&nbsp;- Press ENTER key</code></div>
+Done&nbsp;- Press ENTER key<br/>
+<br/>
+[b4p]$<br/>
+</code></div>
 <h4> Accessing the Reference Manual</h4>
 <p>Congratulations.  You have been able to get your first B4P programs running.
 You also find the file "B4P Reference Manual.b4p". Type one of the following commands
