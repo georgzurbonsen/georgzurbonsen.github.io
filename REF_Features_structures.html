@@ -70,10 +70,10 @@ access a a member with a given member name in a structure containing more than 6
 <tr><td>as variable name      </td><td>   </td><td>   as variable member name     </td><td></td></tr>
 </table><p>
 <br>
-</p><ul class="bullets"><li class="bullets">Numeric indexing (like in arrays) is allowed to access <u>existing</u> members, e.g. 0..9 (and -1..-10 with <a class="bold_text" href="REF_Features_negative_indexing.html">negative indexing</a>).
+</p><ul class="bullets"><li class="bullets">Existing structures may be index like arrays where the indexing reflects the alphabetic order of the member names.
+</li><li class="bullets">Numeric indexing (like in arrays) is allowed to access <u>existing</u> members, e.g. 0..9 (and -1..-10 with <a class="bold_text" href="REF_Features_negative_indexing.html">negative indexing</a>).
 </li></ul><p>
 
-<br><br>
 Similar to arrays, existing structures may also be referenced with numeric <i>index</i> values.  This is useful when using loops to process
 through the structure rapidly.  Please note that the structure is always held in an alphabetic order.  Negative indexing is also supported, where
 -1 refers to the last element (last in alphabetical order), and -2, etc., to the next ones above.

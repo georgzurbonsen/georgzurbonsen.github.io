@@ -64,7 +64,9 @@
 <tr><td>command line arguments[]        </td><td> numeral   </td><td> read only     </td><td> Number of command line arguments, at least 1</td></tr>
 <tr><td>&nbsp;&nbsp;...[0]          </td><td> literal   </td><td> full access       </td><td> 1st command line argument (typically the name of the B4P program file)</td></tr>
 <tr><td>&nbsp;&nbsp;...[1, 2, ...]      </td><td> literal   </td><td> full access       </td><td> Additional command line arguments if available</td></tr>
-<tr><td></td><td>       </td><td>           </td><td></td></tr>
+</table><p>
+<br>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>local settings[]            </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to local settings</b></td></tr>
 <tr><td>&nbsp;&nbsp;...[locale]         </td><td> literal   </td><td> read only     </td><td> Configured locale as part of locale settings.  Use <a class="bold_text" href="REF_Function_set_locale.html">set locale</a>() to change.</td></tr>
 <tr><td>&nbsp;&nbsp;...[country name]       </td><td> literal   </td><td> read only     </td><td> Configured country as part of locale settings.  Use <a class="bold_text" href="REF_Function_set_locale.html">set locale</a>() to change.</td></tr>
@@ -78,9 +80,13 @@
 <tr><td>&nbsp;&nbsp;...[time format]        </td><td> literal   </td><td> limited access    </td><td> E.g. "HH:II:SS" Note the "I" for minute digits. See <a class="bold_text" href="REF_Features_date_to_literal_conversion_and_formatting.html">date to literal formatting parameters</a>.</td></tr>
 <tr><td>&nbsp;&nbsp;...[time separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ':'</td></tr>
 <tr><td>&nbsp;&nbsp;...[list separator]     </td><td> literal   </td><td> limited access    </td><td> Typically 1 chracter, e.g. ',', ';'. Used for CSV file format.  Excel uses different symbols around the world.</td></tr>
-<tr><td></td><td>       </td><td>           </td><td></td></tr>
+</table><p>
+<br>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>libraries[]             </td><td> boolean   </td><td> prevent deleting  </td><td> This system variable is reserved for libraries to add structured info such as version and other important info.  It helps to unclutter the global variable space.</td></tr>
-<tr><td></td><td>       </td><td>           </td><td></td></tr>
+</table><p>
+<br>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>runtime settings[]          </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to run-time settings</b></td></tr>
 <tr><td>&nbsp;&nbsp;...[crlf]         </td><td> boolean   </td><td> limited access    </td><td> If true, then new-lines in files saved will be CR+LF, otherwise just line feed (LF).  For Linux and MACOS                                               releases, this variable is true, for Windows it is false.</td></tr>
 <tr><td>&nbsp;&nbsp;...[epsilon]        </td><td> numeral   </td><td> limited access    </td><td> <a class="bold_text" href="REF_Features_comparison_options.html">Epsilon</a> as numeric tolerance value used for comparisons.  E.g. values below epsilon may be interpreted as zero.  Inital value is 1E-09.</td></tr>
@@ -93,7 +99,9 @@
 <tr><td>&nbsp;&nbsp;...[registry my space]  </td><td> literal   </td><td> limited access    </td><td> Obsolete.</td></tr>
 <tr><td>&nbsp;&nbsp;...[verbose]        </td><td> literal   </td><td> limited access    </td><td> Verbose levels.  See <a class="bold_text" href="REF_Features_verbose.html">verbose</a> for more details.</td></tr>
 <tr><td>&nbsp;&nbsp;...[found main]     </td><td> boolean   </td><td> read only     </td><td> true if B4P was started without a specified B4P program file, but has found 'main.b4p' in the current or starting directory.</td></tr>
-<tr><td></td><td>       </td><td>           </td><td></td></tr>
+</table><p>
+<br>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>system info[]               </td><td> void      </td><td> locked        </td><td> <b>Following variables refer to operating-system specific characeristics</b></td></tr>
 <tr><td>&nbsp;&nbsp;...[app data directory] </td><td> literal   </td><td> read only     </td><td> Local machine application data directory<br>Windows: "C:\ProgramData\b4p"<br>Linux/MACOS: "/home/<i>user name</i>/.config"</td></tr>
 <tr><td>&nbsp;&nbsp;...[app data directory b4p] </td><td> literal   </td><td> read only     </td><td> Local machine application data directory with B4P subdirectory<br>Windows: "C:\ProgramData\b4p"<br>Linux/MACOS: "/home/<i>user name</i>/.config/b4p"</td></tr>
@@ -112,7 +120,9 @@
 <tr><td>&nbsp;&nbsp;...[host name]      </td><td> literal   </td><td> read only     </td><td> Name of your system</td></tr>
 <tr><td>&nbsp;&nbsp;...[privileges]       </td><td> literal   </td><td> read only     </td><td> Your privilege level for the operating system: <br> <b>standard</b>: Standard user privileges <br> <b>elevated</b>: Enhanced privileges, entitled to install software <br>                                              <b>administrator</b>: Administrator privileges.  Applicable if program is started with administration rights (e.g. 'sudo' added in front in Linux/MACOS systems)</td></tr>
 <tr><td>&nbsp;&nbsp;...[operating system version] </td><td> literal </td><td> read only     </td><td> Version number of installed operating system</td></tr>
-<tr><td></td><td>       </td><td>           </td><td></td></tr>
+</table><p>
+<br>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>time stamp[]                </td><td> void      </td><td> read only     </td><td> Provides date and time at start-up. Example under Windows: "Sat Oct 10 10:17:34 2020"</td></tr>
 <tr><td>version info[]              </td><td> void      </td><td> read only     </td><td> Provides B4P version and release info</td></tr>
 </table><p>

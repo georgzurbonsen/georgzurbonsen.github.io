@@ -74,7 +74,7 @@ even wordse, multiple statements inside the three statements are separted by com
 <br><br>
 
 In B4P, <a class="bold_text" href="REF_Function_for.html">for</a>() is treated like a <a class="bold_text" href="REF_Features_Functions_and_Procedures.html">procedure call</a> where parameters are separated with commas and not with semicolons.  This function accepts
-<span class="red_text">code pices</span> as parameters.  Multiple statements inside a parameter are separated with semicolons. Right formulation: <b>for ( a[]=1, a[]<10, a[]++)</b>.
+<a class="bold_text" href="REF_Features_Code_Piece.html">code pieces</a> as parameters.  Multiple statements inside a parameter are separated with semicolons. Right formulation: <b>for ( a[]=1, a[]<10, a[]++)</b>.
 </p>
 <h4> Comparison Operators Hijack Parameters</h4>
 <p>
@@ -87,10 +87,20 @@ With b[] = 6, the expression <b>a[] = { 1, b[]=5, 6, 7, 8 }</b> is actually resu
 parameters in the parameter set.  Add parenthese to avoid this, e.g. <b>a[] = { 1, (b[]=5), 6, 7, 8 }</b> which returns <b>{1, false, 6, 7, 8}</b>.
 Note that the same hijacking
 </p>
-<h4> Memory Effect on table headers</h4>
+<h4> Memory Effect on Table Headers</h4>
 <p>
 Please see the details on the <a class="bold_text" href="REF_Features_memory_effect.html">Memory Effect</a> when referencing table heades with string values as they are normally
 checked once and the column number will be memorized for future use in order accelerate performance significantly.
+
+</p>
+<h4> Forgetting colon before 'else'</h4>
+<p>
+Since B4P's unique cababilties of supporting multi-word identifiers for variables, tables and function names, one drawback needs to be covercome:
+Whenever single <a class="bold_text" href="REF_Function_statements.html">statements</a> follows <a class="bold_text" href="REF_Features_else.html">else</a>, then a colon is needed to keep them separated.
+</p><ul class="bullets"><li class="bullets">Correct: <b>... else : a[] = 1;</b>
+</li><li class="bullets">Misleading: <b>... else a[] = 1;</b> Here, 1 is assigned to a variable called <b>else a</b>.
+</li><li class="bullets">No issues with <a class="bold_text" href="REF_Features_Basic_Language_Structure.html">blocks</a>: <b>... else { a[] = 1; } </b>
+</li></ul><p>
 </p>
 	</div>
 </section>
