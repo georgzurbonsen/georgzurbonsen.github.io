@@ -106,7 +106,7 @@ For CSV files, the following function names save the files differently:<br>
 <p>Indirect parameter passing is disabled<br/>
 context for partial table specification is required</p>
 <h4> Parameter count</h4>
-<p>2-5</p>
+<p>2-6</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
@@ -115,7 +115,7 @@ context for partial table specification is required</p>
 </td></tr>
 <tr><td>- / 2.<br/>input</td>
 <td>parameter set or literal</td>
-<td><b>Sheet name(s)</b><br/><p>Only applicable for <b>table save multiple</b>.  For each table provided in the 1st function parameter, a corresponding sheet name needs to be provided.
+<td><b>Sheet name(s)</b><br/><p>Only applicable for <b>table save multiple</b>:  For each table provided in the 1st function parameter, a corresponding sheet name needs to be provided.
 When saving in Excel format, these sheet names will appar as tab names at the bottom of the displayed worksheets.</p>
 </td></tr>
 <tr><td>2. / 3.<br/>input</td>
@@ -155,6 +155,15 @@ When saving in Excel format, these sheet names will appar as tab names at the bo
 <u>Attention: </u> Put the values into quotation marks if they contain a hyphen, otherwise the hyphen is interpreted as a minus sign.
 <u>Advice: </u>If the file has an exotic character set, consider using "win1252" for full 8-bit character space, and interprete the character codes on your own.</p>
 <span class="black_text"><b> Default value: </b></span>utf-8 (UNICODE)
+</td></tr>
+<tr><td>Opt. 5. / 6.<br/>input</td>
+<td>literal</td>
+<td><b>Option</b><br/><p>At present, one option is defined in addition to the default option:
+</p><table class="bold_column_1" style = "width:750px"><col style = "width:200px"><col style = "width:550px">
+<tr><th>default                 </th><th> No specific option applies.</th></tr>
+<tr><td>end without new line    </td><td> Applicable to simple formats (CSV, tab, TEXT, ...): Last row contains no concluding new line symbol.</td></tr>
+</table><p></p>
+<span class="black_text"><b> Default value: </b></span>default
 </td></tr>
 </table>
 <h4> Return value</h4>
