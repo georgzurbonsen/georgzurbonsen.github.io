@@ -112,6 +112,28 @@ through the procedure parameters.
 <div class="output_background_color" ><code>2:&nbsp;blue&nbsp;/&nbsp;blue<br/>
 2:&nbsp;blue&nbsp;/&nbsp;blue<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_with_table.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Specify the columns as well</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( cities, "Examples&#92;cities.csv" );<br/>
+<br/>
+&nbsp;&nbsp;for&nbsp;(a[]=1, a[]&lt;=4, a[]++)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;table( cities, 2, a[]&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Header&nbsp;&nbsp;:&nbsp;", [.,0], new line, "Contents: ", [.], new line );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
+<h4> Output 02</h4>
+<div class="output_background_color" ><code>Header&nbsp;&nbsp;:&nbsp;City<br/>
+Contents:&nbsp;Washington<br/>
+<br/>
+Header&nbsp;&nbsp;:&nbsp;State/Province<br/>
+Contents:&nbsp;D.C.<br/>
+<br/>
+Header&nbsp;&nbsp;:&nbsp;Inhabitants<br/>
+Contents:&nbsp;650000<br/>
+<br/>
+Header&nbsp;&nbsp;:&nbsp;Famous&nbsp;attraction<br/>
+Contents:&nbsp;Lincoln&nbsp;Statue<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Function_with_table_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_row.html">row</a><br/>
 <a class = "bold_text" href="REF_Function_for_all_table_rows.html">for all table rows</a><br/>

@@ -30,37 +30,44 @@
 <li class="navi"><a href="GUI_Features_overview.html"><div class="navi">+ 1 Overview </div></a></li>
 <li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">2 Installation and Setup </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="GUI_Features_Installation_on_Windows.html"><div class="navi">+ 2.1 Windows Installation and Setup </div></a></li>
-<li class="navi"><a href="GUI_Features_Installation_on_Linux.html"><div class="navi">+ 2.2 Linux Installation and Setup </div></a></li>
-<li class="navi"><a href="GUI_Features_Installation_and_Setup_on_MacOS.html"><div class="navi">2.3 MacOS Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_on_Windows.html"><div class="navi">+ 2.1 Windows </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_on_Linux.html"><div class="navi">+ 2.2 Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup_on_MacOS.html"><div class="navi">2.3 MacOS </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="GUI_Features_MacOS_Download.html"><div class="navi">2.3.1 MacOS - Download </div></a></li>
-<li class="navi"><a href="GUI_Features_MacOS_Installation.html"><div class="navi navi-selected">2.3.2 MacOS - Installation </div></a></li>
-<li class="navi"><a href="GUI_Features_MacOS_Getting_Started.html"><div class="navi">2.3.3 MacOS - Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Prerequisites.html"><div class="navi">2.3.1 MacOS - Prerequisites </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Download.html"><div class="navi">2.3.2 MacOS - Download </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Installation.html"><div class="navi navi-selected">2.3.3 MacOS - Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Getting_Started.html"><div class="navi">2.3.4 MacOS - Getting Started </div></a></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">2.4 Updates and Upgrades </div></a></li>
 <li class="navi"><a href="GUI_Features_De-installing_B4P.html"><div class="navi">2.5 De-installing B4P </div></a></li>
-<li class="navi"><a href="GUI_Features_Licensing.html"><div class="navi">2.6 Licensing </div></a></li>
-<li class="navi"><div>2.7 Post-Installation Optimization </div></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
-<li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 4 Getting Help </div></a></li>
-<li class="navi"><a href="GUI_Features_Tutorials.html"><div class="navi">+ 5 Tutorials </div></a></li>
-<li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">+ 6 Terms and Conditions </div></a></li>
-<li class="navi"><a href="GUI_Features_merging_two_football_clubs.html"><div class="navi"> Football team merger </div></a></li>
+<li class="navi"><a href="GUI_Features_Tutorials.html"><div class="navi">+ 4 Tutorials </div></a></li>
+<li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">+ 5 Terms and Conditions </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-To start the installation, type "sudo ./setup" which is in the directory "b4p installation".
-You may possibly be asked to enter the password in order to activate elevated access rights in order to run the B4P installation program as a <i>super user</i>.
+To begin the installation, first open the terminal emulator (iTerm) and then change directory ("cd" command) to the b4p_installation folder within the Downloads folder by typing "cd /Downloads/b4p_installation".
+<br>
+Then confirm that the all the installation files are present by listing the contents of the b4p_installation folder ("ls" command).
+<br>
+Finally, type "sudo ./setup".   You will then be asked to enter the administrator password to run the B4P installation program as a <i>super user</i>.
 
-
-The follwoing contents will appear:</p>
+<br>
+The follwoing shows these sequences of commands:
+<br>
+</p>
 <h5> </h5>
-<div class="code_background_color" ><code><br/>
+<div class="code_background_color" ><code>[~]$<br/>
+<br/>
+[~]$&nbsp;cd /Downloads/b4p_installation<br/>
+<br/>
+[b4p_installation]$&nbsp;ls<br/>
 <br/>
 [b4p_installation]$&nbsp;sudo ./setup<br/>
 Password:<br/>
@@ -72,11 +79,9 @@ Version&nbsp;8.00 Candidate (2020-11-12)<br/>
 Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
 Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
 <br/>
-<br/>
 B4P&nbsp;installation program is starting (Linux and MacOS platforms) ...<br/>
 <br/>
 1&nbsp;&gt;&gt; Check the B4P privileges to run installation program ...<br/>
-<br/>
 <br/>
 2&nbsp;&gt;&gt; Installation program - Main Menu ...<br/>
 <br/>
@@ -91,12 +96,11 @@ Please&nbsp;select: M<br/>
 into a subdirectory of <b> /usr/local/bin/b4p </b>.
 
 <br><br>
-The output shown below has been shortened in this documentation.  The installer will list all working steps and files processed.
+The installer will list all working steps and files processed.
+This is purely informational and may be safely ignored.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code><br/>
-<br/>
-3&nbsp;&gt;&gt; Check that all required files are available for installation ...<br/>
+<div class="code_background_color" ><code>3&nbsp;&gt;&gt; Check that all required files are available for installation ...<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;lib<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;weblib<br/>
@@ -170,18 +174,16 @@ chmod:&nbsp;-R: No such file or directory<br/>
 <br/>
 </code></div>
 <h4> Select Country and Language Settings</h4>
-<p>The B4P installaion program asks for both language and country.  This combination is a <i>locale</i> information which rules
-things like number and date format, currency symbols, month and weekday names in the specified language, etc.
+<p>The B4P installaion program asks for both language and country.  This combination is a <i>locale</i> information which governs things like number and date format, currency symbols, month and weekday names in the specified language, etc.
 
 <br><br>
 
-In order to avoid any trouble with your Microsoft Excel installation, I advise you to use the same country and language settings as
-configured for Excel so the CSV file format is compatible and not simply a choice you do personally favor.  Depending on the settings, vthe CSV files may either use commas or semicolons as separators (In excel, take a look at a formula containing a function with 2 or vmore parameters and check how the parameters are separated), and numbers may either make use of decimal points or commas.
-</p>
+In order to avoid any trouble with your Microsoft Excel installation, I advise you to use the same country and language settings as configured for Excel so the CSV file format is compatible and not simply a choice you do personally favor.
+
+Depending on the settings, vthe CSV files may either use commas or semicolons as separators (In excel, take a look at a formula containing a function with 2 or vmore parameters and check how the parameters are separated), and numbers may either make use of decimal points or commas.
+<br></p>
 <h5> </h5>
-<div class="code_background_color" ><code><br/>
-<br/>
-8&nbsp;&gt;&gt; Restore user and locale settings (if available) ...<br/>
+<div class="code_background_color" ><code>8&nbsp;&gt;&gt; Restore user and locale settings (if available) ...<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Info:&nbsp;User settings file not found. Skipped copying<br/>
 <br/>
@@ -189,7 +191,6 @@ configured for Excel so the CSV file format is compatible and not simply a choic
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Loaded&nbsp;CSV/TSV file 'List of Locales.csv':<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;31&nbsp;rows, max 28 columns, 28 columns in 1st row, 868 fields, list separator: ;<br/>
-<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Step&nbsp;1 - Choose language:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:&nbsp;&nbsp;none<br/>
@@ -216,23 +217,15 @@ Please&nbsp;select: B<br/>
 Please&nbsp;select: A<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Locale&nbsp;chosen: en_US<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Done&nbsp;setting locale.<br/>
-<br/>
-<br/>
-<br/>
 </code></div>
 <h4> Activating B4P with License File or in Demo Mode</h4>
-<p>If you do not have a license file and you plan to use B4P for demonstration, evaluation and/or educational purposes,
-then press [Enter] to continue.  Otherwise, specify the full path an file name of the license file you have
-received in order to deactivate all restrictions.
+<p>If you do not have a license file and you plan to use B4P for demonstration, evaluation and/or educational purposes, then press [Enter] to continue.  Otherwise, specify the full path an file name of the license file you have received in order to deactivate all restrictions.
 
 <br><br>
-<u>Hint</u>: Instead of typing the full path and file name: if you see the license file in an explorer file, copy the path
-from the address bar, paste it into the line, and then copy the file name (not the whole file) and paste it here, with a directory separator inbetween.
-B4P will verify if the file is available and the license code is valid.  If not, the query will be repeated.
+<u>Hint</u>: Instead of typing the full path and file name: if you see the license file in an explorer file, copy the path from the address bar, paste it into the line, and then copy the file name (not the whole file) and paste it here, with a directory separator inbetween. B4P will verify if the file is available and the license code is valid.  If not, the query will be repeated.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code><br/>
-9&nbsp;&gt;&gt; Program Licensing ...<br/>
+<div class="code_background_color" ><code>9&nbsp;&gt;&gt; Program Licensing ...<br/>
 <br/>
 License&nbsp;activation ...<br/>
 <br/>
@@ -242,9 +235,7 @@ License&nbsp;activation ...<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;--&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Nothing&nbsp;entered.&nbsp;&nbsp;B4P will be activated in demo mode.<br/>
 <br/>
-&gt;&gt;&nbsp;&nbsp;Congratulations!&nbsp;Installation has been completed.<br/>
-<br/>
-</code></div>
+&gt;&gt;&nbsp;&nbsp;Congratulations!&nbsp;Installation has been completed.</code></div>
 <h4> Option - Create a personal folder</h4>
 <p>This is a nice feature especially for beginners. Highly recommended.
 A directory called <b>C:\Users\<i>Your user name</i>\Documents\Programs\B4P</b> will be created
@@ -275,7 +266,9 @@ Done&nbsp;- Press ENTER key</code></div>
 <h4> Concluding the Installation</h4>
 <p>Press [Enter] to close the installer.  Now you are ready to start working with B4P.
 
-<br><br>Consider a <a class="bold_text" href="GUI_Features_MacOS_Getting_Started.html">MacOS Getting Started</a> first to see if your installation is fine.
+<br><br>
+
+Next go to <a class="bold_text" href="GUI_Features_MacOS_Getting_Started.html">MacOS Getting Started</a> to try out your first B4P application
 </p>
 	</div>
 </section>

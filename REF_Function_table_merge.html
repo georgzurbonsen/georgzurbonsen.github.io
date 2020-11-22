@@ -155,7 +155,7 @@ Specific rules apply for this function:
 <td><b>Columns to consolidate</b><br/><p>Specify the columns where the data from the source table shall be consolidated into the destination table.
 The remaining columns in the table will not be consolidated, i.e. the values in the destination table remain unchanged.
 <u>Note</u>: If all columns (except the identifier columns) need to be consolidated, then specify an asterisk in a softquoted literal using single quotation marks, e.g. '*'. ("*" looks for header name = "*").<br>
-<u>Note</u>: This parameter is not applicable for function names ending wiht <b>... subtract columns</b> and <b>... exclusive columns columns</b>.
+<u>Note</u>: This parameter is not applicable for function names ending with <b>... subtract columns</b> and <b>... exclusive columns columns</b>.
 
 <br><br>
 See <a class="bold_text" href="REF_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
@@ -173,7 +173,7 @@ Specific rules apply for this function:
 <td><b>Consolidation actions</b><br/><p>Specify one of the various <a class="bold_text" href="REF_Features_consolidation_actions.html">consolidation actions</a>.<br>
 The operation is applied with the data from the next lower applicable row and the destination data in the first applicable row (= target row).
 For example, <b>add</b> adds the value from the lower row to the target row.<br>
-<u>Note</u>: This parameter is not applicable for function names ending wiht <b>... subtract columns</b> and <b>... exclusive columns columns</b>.
+<u>Note</u>: This parameter is not applicable for function names ending with <b>... subtract columns</b> and <b>... exclusive columns columns</b>.
 
 
 The number of operation identifiers is less than the number of columns specified in the 3rd (output columns) and 6th parameter (destination columns),
@@ -192,7 +192,7 @@ then the default value 'overwrite' is assumed for the remaining columns.  If thi
 <td>parameter set or literal</td>
 <td><b>Separator string</b><br/><p>For some <a class="bold_text" href="REF_Features_consolidation_actions.html">consolidation actions</a> (e.g. <b>append, append once</b>), a separator string can be specified to separate the consolidated strings
 in a more visible way, for example using a comma or new line.<br>
-<u>Note</u>: This parameter is not applicable for function names ending wiht <b>... subtract columns</b> and <b>... exclusive columns columns</b>.</p>
+<u>Note</u>: This parameter is not applicable for function names ending with <b>... subtract columns</b> and <b>... exclusive columns columns</b>.</p>
 <span class="black_text"><b> Default value: </b></span>'' (empty string)
 </td></tr>
 </table>

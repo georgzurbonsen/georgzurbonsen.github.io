@@ -128,22 +128,37 @@ if no operators, = or <> have been used.  Not an issue if <, >, == or != operato
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table&nbsp;initialize( animals,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;Name, Class, Number of Legs},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog, Mammal, 4 }, { Snake, Reptile, 0 }, { Human, Mammal, 2 }} );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( animals,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;Name, Class, Number of Legs,Surface},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Dog, Mammal, 4, Hair }, { Snake, Reptile, 0, Skin }, { Parrot, Bird, 2, Feathers }} );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;table( animals,&nbsp;&nbsp;1)<br/>
+&nbsp;&nbsp;//&nbsp;Choose all columns with headers containing 's'. The list results for row 2.<br/>
+<br/>
+&nbsp;&nbsp;with&nbsp;table ( animals, 2 )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all current table selected columns( ('*s*'), column[], header[], i[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Choose all columns with headers containing 'a'.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all current table selected columns( ('*a*'), column[], header[], i[] )<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": Column ", column[], " (", header[], ") =", [column[]] );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;column[],": Column ", column[], " (", header[], ") = ", [column[]] );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-</code></div>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;//&nbsp;The simplified approach: [.] = current table, row and column. [.,0] = current table, column, and row 0<br/>
+<br/>
+&nbsp;&nbsp;with&nbsp;table ( animals, 2 )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all current table selected columns('*s*')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;col(), ": Column (", [.,0], ") = ", [.] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>0:&nbsp;Column&nbsp;0&nbsp;(Name)&nbsp;=Dog<br/>
-1:&nbsp;Column&nbsp;1&nbsp;(Class)&nbsp;=Mammal<br/>
+<div class="output_background_color" ><code>1:&nbsp;Column&nbsp;1&nbsp;(Class)&nbsp;=&nbsp;Reptile<br/>
+2:&nbsp;Column&nbsp;2&nbsp;(Number&nbsp;of&nbsp;Legs)&nbsp;=&nbsp;0<br/>
+<br/>
+1:&nbsp;Column&nbsp;(Class)&nbsp;=&nbsp;Reptile<br/>
+2:&nbsp;Column&nbsp;(Number&nbsp;of&nbsp;Legs)&nbsp;=&nbsp;0<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Function_for_all_current_table_selected_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="REF_Function_for_all_table_columns.html">for all table columns</a><br/>
