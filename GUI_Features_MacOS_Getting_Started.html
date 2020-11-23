@@ -43,7 +43,7 @@
 <li class="navi"><a href="GUI_Features_De-installing_B4P.html"><div class="navi">2.5 De-installing B4P </div></a></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
-<li class="navi"><a href="GUI_Features_Tutorials.html"><div class="navi">+ 4 Tutorials </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 4 Examples </div></a></li>
 <li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">+ 5 Terms and Conditions </div></a></li>
 </ul></li>
 </ul>
@@ -53,56 +53,50 @@
 <h4> Introduction</h4>
 <p>
 B4P under MacOS is operational immediately after installation.  No system reboot is necessary.
-
 <br><br>
-
 First, using the terminal application change directory from the home directory
 to the B4P directory at <b>/home/username/b4p</b>  using the 'cd' command.
-
 <br>
 Then, list all the files in the B4P directory using the 'ls' command</p>
 <h5> </h5>
-<div class="code_background_color" ><code>[~]$&nbsp;cd b4p<br/>
-[b4p]$&nbsp;ls<br/>
-'B4P&nbsp;Reference Manual.b4p'&nbsp;&nbsp;&nbsp;interactive.b4p&nbsp;&nbsp;'start B4P here.b4p'<br/>
-'hello&nbsp;world.b4p'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.b4p<br/>
-[b4p]$</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;[~]$&nbsp;cd b4p<br/>
+&nbsp;&nbsp;[b4p]$&nbsp;ls<br/>
+&nbsp;&nbsp;'B4P&nbsp;Reference Manual.b4p'&nbsp;&nbsp;&nbsp;interactive.b4p&nbsp;&nbsp;'start B4P here.b4p'<br/>
+&nbsp;&nbsp;'hello&nbsp;world.b4p'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.b4p<br/>
+&nbsp;&nbsp;[b4p]$</code></div>
 <h4> Try Hello World</h4>
 <p>First, take a look at the B4P code in 'hello world.b4p' by opening this file in your code editor.</p>
 <h5>  Open B4P program 'hello world' in your code editor (Visual Studio Code) using the 'code' command</h5>
-<div class="code_background_color" ><code>[b4p]$&nbsp;code hello world.b4p</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;[b4p]$&nbsp;code hello world.b4p</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>#!/usr/local/bin/b4p<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;#!/usr/local/bin/b4p<br/>
 <br/>
-//&nbsp;The statement in the 1st row applies to UNIX/Linux/MacOS only and is called a "Shebang".<br/>
-//&nbsp;It specifies the language interpreter to use when started as an executable file.<br/>
-//&nbsp;You can delete this line it if you plan to use B4P under Windows only.<br/>
+&nbsp;&nbsp;//&nbsp;The statement in the 1st row applies to UNIX/Linux/MacOS only and is called a "Shebang".<br/>
+&nbsp;&nbsp;//&nbsp;It specifies the language interpreter to use when started as an executable file.<br/>
+&nbsp;&nbsp;//&nbsp;You can delete this line it if you plan to use B4P under Windows only.<br/>
 <br/>
-//&nbsp;Shebangs are ignored in Microsoft Windows environments.<br/>
-<br/>
-echo(Hello&nbsp;World);</code></div>
+&nbsp;&nbsp;//&nbsp;Shebangs are ignored in Microsoft Windows environments.<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;echo(Hello&nbsp;World);</code></div>
 <h4> </h4>
-<p>
-Close the code editor. The following three commands do the same: Start b4p and run the B4P program "hello world.b4p".
+<p>Close the code editor. The following three commands do the same: Start b4p and run the B4P program "hello world.b4p".
 </p><ul class="bullets"><li class="bullets"><b>b4p "hello world.b4p"</b> starts B4P explicitly with the B4P program provided as command line parameter,
 </li><li class="bullets"><b>./"hello world.b4p"</b> starts the B4P file like any other system executable program,
-</li><li class="bullets"><b>./hello*</b>, wildcard symboles allowing you to specify a part of the file name which is unique in the current directory.
-</li></ul><p></p>
+</li><li class="bullets"><b>./hello*</b>, wildcard symboles allowing you to specify a part of the file name which is unique in the current directory.</li></ul><p></p>
 <h5> </h5>
-<div class="code_background_color" ><code>[b4p]$&nbsp;./hello*</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;[b4p]$&nbsp;./hello*</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code><br/>
-B4P&nbsp;- Beyond Former Performance<br/>
-_______________________________________________________________________________<br/>
+<div class="output_background_color" ><code>&nbsp;&nbsp;B4P&nbsp;- Beyond Former Performance<br/>
+&nbsp;&nbsp;_______________________________________________________________________________<br/>
 <br/>
-Version&nbsp;8.00 Candidate (2020-11-12)<br/>
-Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
-Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
+&nbsp;&nbsp;Version&nbsp;8.00 Candidate (2020-11-12)<br/>
+&nbsp;&nbsp;Copyright&nbsp;(C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
+&nbsp;&nbsp;Licensed&nbsp;(current user) with standard privileges for Rafael Richards.<br/>
 <br/>
-Hello&nbsp;World<br/>
-Done&nbsp;- Press ENTER key<br/>
+&nbsp;&nbsp;Hello&nbsp;World<br/>
+&nbsp;&nbsp;Done&nbsp;- Press ENTER key<br/>
 <br/>
-[b4p]$</code></div>
+&nbsp;&nbsp;[b4p]$</code></div>
 <h4> Starting B4P Without a Specified B4P Program</h4>
 <p>
 You can also start B4P without specifying a B4P program file name.  In this case, it will look for the
@@ -119,7 +113,7 @@ will be asked whether to start that one or enter interactive mode instead.  Star
 In case no 'main.b4p' is available, then B4P enters into interactive mode directly.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>[b4p]$&nbsp;b4p</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;[b4p]$&nbsp;b4p</code></div>
 <h5> (User interaction: Press 'S' to start the program, and type 'exit' to leave interactive mode)</h5>
 <div class="output_background_color" ><code><br/>
 B4P&nbsp;- Beyond Former Performance<br/>

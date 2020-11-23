@@ -414,8 +414,9 @@ OK;Body;4;B 9.9.4.9;table rearrange selected rows;REF_Function_table_rearrange_s
 OK;Body;4;B 9.9.4.10;table sort (selected) rows;REF_Function_table_sort_rows.html;table sort rows,table sort selected rows;table sort rows,table sort selected rows;
 OK;Body;4;B 9.9.4.11;table rank (selected) rows;REF_Function_table_rank_rows.html;table rank rows,table rank selected rows;table rank rows,table rank selected rows;
 OK;Body;3;B 9.9.5;Processing Table Contents;REF_Features_Processing_table_contents.html;Processing table contents;Processing table contents;
-OK;Body;4;B 9.9.5.1;table process (selected rows);REF_Function_table_process.html;table process,table process selected rows;table process,table process selected rows;
+OK;Body;4;B 9.9.5.1;table process (selected rows);REF_Function_table_process.html;table process,table process rows,table process selected rows;table process,table process rows,table process selected rows;
 OK;Body;4;B 9.9.5.2;table process selected rows fast;REF_Function_table_process_selected_rows_fast.html;table process selected rows fast;table process selected rows fast;
+Pending, (Assign right Category);;4;;table process (selected) columns;REF_Function_table_process_columns.html;table process columns,table process selected columns;table process columns,table process selected columns;
 OK;Body;4;B 9.9.5.3;table process cells (selected rows);REF_Function_table_process_cells.html;table process cells,table process cells selected rows;table process cells,table process cells selected rows;
 OK;Body;4;B 9.9.5.4;table process cells in columns (selected rows);REF_Function_table_process_cells_in_columns.html;table process cells in columns,table process cells in columns selected rows;table process cells in columns,table process cells in columns selected rows;
 OK;Body;5;B 9.9.5.4.1;Addt'l Info on fast rows processing;REF_Features_Additional_info_on_fast_processing_of_rows.html;Additional info on fast processing of rows;Additional info on fast processing of rows;
