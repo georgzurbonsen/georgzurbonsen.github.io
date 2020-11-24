@@ -85,7 +85,7 @@ one parameter which can be used to reference the next higher levels up.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;[Name], " in 'new scores' row ", row() );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;[^Name], " in 'master' row ", row(1) );<br/>
 &nbsp;&nbsp;}</code></div>
-<h5> Output:Output</h5>
+<h5> Output</h5>
 <div class="output_background_color" ><code>Master&nbsp;table:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Score<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Angela&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;10&nbsp;&nbsp;&nbsp;<br/>
@@ -114,6 +114,40 @@ Demonstrate&nbsp;row&nbsp;numbers:&nbsp;<br/>
 Dan&nbsp;in&nbsp;'new&nbsp;scores'&nbsp;row&nbsp;3<br/>
 Angela&nbsp;in&nbsp;'master'&nbsp;row&nbsp;1<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_nested_partial_table_specification.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Specifying Current Columns</h4>
+<p>
+At present, this symbol cannot be used to sepecify current columns in superior tables like '^.'.
+Please use the function <a class="bold_text" href="REF_Function_col.html">col</a>() with a non-zero parameter instead, e.g. <b>[^col(1)]</b>
+to get current row and current column of the superior table.  See the example below.</p>
+<h5> Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( t1, { { Name, Score }, { Angela, 10 }, { Bob, 12 } } );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize( t2, { { Name, Town }, { Bob,&nbsp;&nbsp;Denver }, { Angela, Chicago }, { Dan, Albany } } );<br/>
+<br/>
+&nbsp;&nbsp;with&nbsp;table( t1, 2, Name )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("From&nbsp;t1: ", [.] ); // Bob<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;table( t2, 3, Town )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Name&nbsp;in t2: ", [Name], " and t1: ", [^Name] ); // Dan, Bob<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("From&nbsp;t2: ", [.] ); // Albany<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("From&nbsp;t1: ", [^col(1)] ); // Bob&nbsp;&nbsp;(Note: [^.] would access t1, but use column number in t2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("t2:&nbsp;Row: ", row(),&nbsp;&nbsp;" Column: ", col()&nbsp;&nbsp;); // Row 3, column 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("t1:&nbsp;Row: ", row(1), " Column: ", col(1) ); // Row 2, column 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}</code></div>
+<h5> Output:Output</h5>
+<div class="output_background_color" ><code>From&nbsp;t1:&nbsp;Bob<br/>
+Name&nbsp;in&nbsp;t2:&nbsp;Dan&nbsp;and&nbsp;t1:&nbsp;Bob<br/>
+<br/>
+From&nbsp;t2:&nbsp;Albany<br/>
+From&nbsp;t1:&nbsp;Bob<br/>
+<br/>
+t2:&nbsp;Row:&nbsp;3&nbsp;Column:&nbsp;1<br/>
+t1:&nbsp;Row:&nbsp;2&nbsp;Column:&nbsp;0<br/>
+</code></div><u>Try it yourself:</u> Open <b>REF_Features_nested_partial_table_specification_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

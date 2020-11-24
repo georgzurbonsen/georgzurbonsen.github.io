@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Expressions to Select Rows</h3>
-<a accesskey="p" href="REF_Features_Statements_(func_params).html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Indirect_parameter_passing.html"><span>Next</span></a> 
+<a accesskey="p" href="REF_Features_Statements_(func_params).html"><span>Prev</span></a> <a accesskey="n" href="REF_Features_Expressions_to_select_columns.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -45,6 +45,7 @@
 <li class="navi"><a href="REF_Features_Table_columns.html"><div class="navi">8.4.2 Table Columns (Func. Param. Type) </div></a></li>
 <li class="navi"><a href="REF_Features_Code_Piece.html"><div class="navi">+ 8.4.3 Code Pieces (Func. Param. Type) </div></a></li>
 <li class="navi"><a href="REF_Features_Expressions_to_select_rows.html"><div class="navi navi-selected">8.4.4 Expressions to Select Rows </div></a></li>
+<li class="navi"><a href="REF_Features_Expressions_to_select_columns.html"><div class="navi">8.4.5 Expressions to Select Columns </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">8.5 Indirect Parameter Passing </div></a></li>
 </ul></li>
@@ -58,7 +59,7 @@
 <h4> Introduction</h4>
 <p>
 <i>Expressions to select rows</i> are a variant of code pieces containing expressions, but provide additional flexibility.  These expressions
-are typically used in funtions with names containing <b>... selected rows ... </b> where expressions are applied to chosses specifc rows to
+are typically used in functions with names containing <b>... selected rows ... </b> where expressions are applied to chosses specifc rows to
 include in the data processing.
 
 <br><br>
@@ -67,12 +68,10 @@ Like expressions specified as code pieces, these expressions can be coded direct
 <br><br>
 The expressions may return values of following types:
 </p><table class="noframe bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
-<tr><td>boolean     </td><td> Row will be included if the result is <b>true</b> for the corresponding row.</td></tr>
-<tr><td>numeral     </td><td> One specific row, addressed with the row number, will be addressed.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, e.g. -1 refers to the last row.</td></tr>
-<tr><td>parameter set   </td><td> The parameter set must contain numerals (row nubmers) or may be an empty set if no rows shall be selected.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 refers to the last row.</td></tr>
+<tr><td>boolean       </td><td> If it is an expression returning boolean values, then this expression will be calculated for every row, starting with row 1 (excluding the header row).                 Typically, processing will be done on the corresponding rows if the outcome is <b>true</b>.</td></tr>
+<tr><td>numeral     </td><td> If the expression returns a numeral, then one single row number is meant.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, e.g. -1 refers to the last row.</td></tr>
+<tr><td>parameter set </td><td> If the expression returns a parameter set, the the row numbers inside the parameter sets will be used.  Negative indexing is allowed.  The parameter set must contain numerals (row numbers) or may be an empty set if no rows shall be selected.  <a class="bold_text" href="REF_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 refers to the last row. <br>               <u>Note</u>: Even if row numbers are specified in different orders or multiple times, the table will be processed from top to bottom, and every matching row will processed only once.</td></tr>
 </table><p>
-
-<u>Note:</u>The expression will be calculated only once and not for every row if it has returned a numeral or parameter set.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize ( table,<br/>
