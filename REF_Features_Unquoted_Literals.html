@@ -75,25 +75,41 @@ Following rules apply:
 </li><li class="bullets">The literals must fit on the same line
 </li><li class="bullets">Leading and trailing spaces are ignored
 </li><li class="bullets">All characters are allowed, as long they do not interfere with the B4P programmin syntax. Example: The hyphen in <b>Baden-Baden</b> (a spa city in Germany) is interpreted        as a minus sign and does a text subtraction of <b>Baden</b> and the outcome is an empty string.  In this case, specify <b>'Baden-Baden'</b> or <b>"Baden-Baden"</b> instead.
+</li><li class="bullets">A lone point (<b>.</b>) specified without quotation marks is also interpreted as a string containg this one character as long it is not part of a numeral serving as decimal point.  In some cases, the lone point used as substitute header name will refer to the current table headers if <a class="bold_text" href="REF_Features_partial_table_specification.html">partial table specifications</a> are enabled.  Note that two consecutive     points is a B4P range symbol.  Use quotation marks around them to output two consecutive points.
 </li><li class="bullets">Reserved keywords are automatically treated as such, e.g. <b>true</b> as Boolean <i>true</i> and not as a string.
-</li></ul><p>
-
-</p>
+</li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo(&nbsp;Hello World );<br/>
-&nbsp;&nbsp;echo(&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;// Same as above<br/>
-&nbsp;&nbsp;echo(&nbsp;One + One );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// + sign is an operator, or specify 'One + One'<br/>
+&nbsp;&nbsp;echo(&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;//&nbsp;Same as above<br/>
+&nbsp;&nbsp;echo(&nbsp;One + One );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// + sign is an operator, result is 'OneOne'<br/>
+&nbsp;&nbsp;echo(&nbsp;'One + One' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This one is OK.<br/>
+&nbsp;&nbsp;echo(&nbsp;Baden-Baden );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Empty string.&nbsp;&nbsp;Hyphen is treated as minus sign (subtraction of literals)<br/>
+&nbsp;&nbsp;echo(&nbsp;'Baden-Baden' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This one is OK.<br/>
+&nbsp;&nbsp;echo(&nbsp;1. 23 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This is a literal because a space is inside.<br/>
+&nbsp;&nbsp;echo(&nbsp;1 200 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same here.&nbsp;&nbsp;Use function 'clean numeral' to extract 1200 as a number from here<br/>
 &nbsp;&nbsp;echo(&nbsp;Dial 555 1212 );<br/>
 &nbsp;&nbsp;echo(&nbsp;this is on, new line, the next line );&nbsp;&nbsp;// new line is a reserved keyword<br/>
-&nbsp;&nbsp;echo(&nbsp;Café in Zürich );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Foreign characters inside</code></div>
+&nbsp;&nbsp;echo(&nbsp;Café in Zürich );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Foreign characters inside<br/>
+&nbsp;&nbsp;echo(&nbsp;. );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Lone point<br/>
+&nbsp;&nbsp;echo(&nbsp;.&nbsp;&nbsp;&nbsp;. . );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// A string containing 3 lone points (. . .), also showing how spaces are collapsing<br/>
+&nbsp;&nbsp;//&nbsp;echo( .. );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Would cause an error because .. is a b4p language symbol.<br/>
+&nbsp;&nbsp;echo(&nbsp;'..' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This one is OK</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Hello&nbsp;World<br/>
 Hello&nbsp;World<br/>
 OneOne<br/>
+One&nbsp;+&nbsp;One<br/>
+<br/>
+Baden-Baden<br/>
+1.&nbsp;23<br/>
+1&nbsp;200<br/>
 Dial&nbsp;555&nbsp;1212<br/>
 this&nbsp;is&nbsp;on<br/>
 the&nbsp;next&nbsp;line<br/>
 Café&nbsp;in&nbsp;Zürich<br/>
+.<br/>
+.&nbsp;.&nbsp;.<br/>
+..<br/>
 </code></div><u>Try it yourself:</u> Open <b>REF_Features_Unquoted_Literals.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>

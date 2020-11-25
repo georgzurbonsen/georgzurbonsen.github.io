@@ -97,11 +97,11 @@ following parameter.
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>boolean</td>
-<td><b>Value to select</b><br/><p>Applicable to <b>compare select</b>: This is the default value to be returned if all comparisons resulted in false.</p>
+<td><b>Default Value</b><br/><p>Applicable to <b>compare select</b>: This is the default value to be returned if all comparisons specified in the following function parameters turned out false.</p>
 </td></tr>
 <tr><td>Alt. 2<br/>code</td>
 <td>expression<br/>:literal</td>
-<td><b>Expression to select</b><br/><p>Applicable to <b>compare pick</b>: This is the default expression to be calculated and the value returned if all comparisons resulted in false..</p>
+<td><b>Default Expression</b><br/><p>Applicable to <b>compare pick</b>: This is the default expression to be calculated if all comparisons in the following function parameters turned out false.</p>
 </td></tr>
 <tr><td>3, 5, ...<br/>code</td>
 <td>comparison expression<br/>:literal</td>
@@ -109,13 +109,13 @@ following parameter.
 function parameters.  Once a positive match (comparison returns true) has been found, then comparison will stop and the value from the next
 function aparameter will be returned.
 
-This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '<>'.  Single values,
+This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '&lt;&gt;'.  Single values,
 ranges (e.g. 3..5), multiple values separated by commas are supported.  For text comparison, <a class="bold_text" href="REF_Features_wildcards.html">wildcards</a> are supported if the
 literal is of type <a class="bold_text" href="REF_Features_Softquoted_Literals.html">softquoted literal</a>.
 
 <br><br>
 <u>Attention</u>: To avoid hijacking further function parameters as additional values to be compared, put the expression into parentheses
-if no operators, = or <> have been used.  Not an issue if <, >, == or != operators are used.</p>
+if no operators, = or &lt;&gt; have been used.  This hijacking issues does not apply if the following operators are used: <b>&lt;, &gt;, ==, !=</b> .</p>
 </td></tr>
 <tr><td>4, 6, ...<br/>input</td>
 <td>boolean</td>
