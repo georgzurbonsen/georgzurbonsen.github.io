@@ -126,9 +126,10 @@ context for partial table specification is required</p>
 <td>literal</td>
 <td><b>File format descriptor</b><br/><p></p><table class="bold_column_1" style = "width:750px"><col style = "width:150px"><col style = "width:600px">
 <tr><th>Value       </th><th> Description</th></tr>
-<tr><td>,           </td><td> CSV with comma as separator</td></tr>
-<tr><td>;           </td><td> CSV with semicolon as separator</td></tr>
-<tr><td>?           </td><td> CSV with automatic detection of either comma, semicolon or tab.  The first occurence of these symbols will be used as separators.</td></tr>
+<tr><td>,           </td><td> CSV with comma as separator. (Put it into quotation marks ',' when specifying it in the function parameter)</td></tr>
+<tr><td>;           </td><td> CSV with semicolon as separator. (Put it into quotation marks ';' when specifying it in the function parameter)</td></tr>
+<tr><td>?           </td><td> CSV with automatic detection of either comma, semicolon or tab.  The first occurence of these symbols will be used as separators. (Put it into quotation marks '?' when specifying it in the function parameter)</td></tr>
+<tr><td>tab         </td><td> TSV using tab as separator (Do not use quotation marks here because tab is a reserved B4P keyword representing a single tab character)</td></tr>
 <tr><td>CSV         </td><td> Same functionaliy as '?' with automatic dection of separator symbol</td></tr>
 <tr><td>1 character </td><td> CSV with any other single character, e.g. "/" as separator</td></tr>
 <tr><td>TEXT        </td><td> Text file.  The resulting table contains only one column where the column in every row contains the whole line of text.</td></tr>
