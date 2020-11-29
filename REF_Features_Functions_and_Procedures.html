@@ -41,6 +41,7 @@
 <li class="navi"><a href="REF_Features_Function_parameter_directions.html"><div class="navi">8.3 Function Parameter Directions </div></a></li>
 <li class="navi"><a href="REF_Features_Function_parameter_types.html"><div class="navi">+ 8.4 Function Parameter Types </div></a></li>
 <li class="navi"><a href="REF_Features_Indirect_parameter_passing.html"><div class="navi">8.5 Indirect Parameter Passing </div></a></li>
+<li class="navi"><a href="REF_Features_Introduction_to_user-defined_functions.html"><div class="navi">8.6 Introduction to User-defined functions </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Function_Library.html"><div class="navi">+ 9 Function Library </div></a></li>
 </ul></li>
@@ -52,7 +53,6 @@
 <h4> Introduction</h4>
 <p>
 B4P provides an extensive library of standard functions with an emphasis on processing complex tables and data structures.
-In addition, you can define your own <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user functions</a> or even create own libraries containing user functions.
 
 <br><br>
 
@@ -75,6 +75,12 @@ Functions may require either none, a fixed number, or a variable number of <a cl
 <tr><td>Procedure or function   </td><td> * The function can be called as procedrues or functions. <br> * Use of return value is voluntary. </td><td> table rename headers(...);<br>a[] = table rename headers(...);</td></tr>
 <tr><td>Control flow functions  </td><td> <a class="bold_text" href="REF_Features_Control_Flow_Functions.html">Control flow functions</a> require a succeeding statement or code block which will be executed as specified by these functions.  The <a class="bold_text" href="REF_Function_if.html">if</a>() statement is one of them. </td><td> if (a[]=1) echo("is 1");</td></tr>
 </table><p>
+</p>
+<h4> User-Defined Procedures and Functions</h4>
+<p>
+B4P provide a convenient method to create <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined procedures</a> and <a class="bold_text" href="REF_Features_User_Defined_Procedures_and_Functiions.html">user-defined functions</a> and call them up as if they would be part of the standard B4P function library.
+You can even create you own B4P library files containing your frequently used functions you have written so they are available at your discretion whenever
+you need them.  See <a class="bold_text" href="REF_Features_Introduction_to_user-defined_functions.html">Introduction to user-defined functions</a> for details.
 </p>
 	</div>
 </section>

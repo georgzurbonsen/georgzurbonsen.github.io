@@ -157,6 +157,7 @@ OK;Body;4;B 8.4.3.4;Statements (func. params);REF_Features_Statements_(func_para
 OK;Body;3;B 8.4.4;Expressions to Select Rows;REF_Features_Expressions_to_select_rows.html;Expressions to select rows;Expressions to select rows;
 OK;Body;3;B 8.4.5;Expressions to Select Columns;REF_Features_Expressions_to_select_columns.html;Expressions to select columns;Expressions to select columns;
 OK;Body;2;B 8.5;Indirect Parameter Passing;REF_Features_Indirect_parameter_passing.html;Indirect parameter passing;Indirect parameter passing;
+OK;Body;2;B 8.6;Introduction to User-defined functions;REF_Features_Introduction_to_user-defined_functions.html;Introduction to user-defined functions;Introduction to user-defined functions;
 OK;Body;1;B 9;Function Library;REF_Features_Function_Library.html;Function Library;Function Library;
 OK;Body;2;B 9.1;Control Flow Functions;REF_Features_Control_Flow_Functions.html;Control Flow Functions;Control Flow Functions;
 OK;Body;3;B 9.1.1;Branches;REF_Features_Branches.html;Branches;Branches;
@@ -250,6 +251,7 @@ OK;Body;3;B 9.3.10;join ...;REF_Function_join.html;join,join ignore blanks,join 
 OK;Body;3;B 9.3.11;type, type detailed;REF_Function_type.html;type,typd detailed;type,typd detailed,Identify variable types;
 OK;Body;3;B 9.3.12;hash signature;REF_Function_hash_signature.html;hash signature;hash signature;
 OK;Body;3;B 9.3.13;excel column number;REF_Function_excel_column_number.html;excel column number;excel column number;
+OK;Body;3;B 9.3.14;excel check sheet name;REF_Function_excel_check_sheet_name.html;excel check sheet name;excel check sheet name;
 OK;Body;2;B 9.4;Mathematics and Statistics;REF_Features_Mathematics_and_Statistics.html;Mathematics and Statistics;Mathematics and Statistics;
 OK;Body;3;B 9.4.1;Basic Math Functions;REF_Features_basic_math_functions.html;basic math functions;basic math functions;
 OK;Body;4;B 9.4.1.1;is numeric / integer - Functions;REF_Function_is_numeric.html;is numeric,is integer,is numeric or blank,is integer or blank,is strictly numeric,is strictly integer,is strictly numeric or blank,is strictly integer or blank;is numeric,is integer,is numeric or blank,is integer or blank,is strictly numeric,is strictly integer,is strictly numeric or blank,is strictly integer or blank,checking numbers;
