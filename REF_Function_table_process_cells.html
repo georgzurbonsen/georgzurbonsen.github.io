@@ -84,7 +84,7 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>table process cells, table process cells selected rows</code></div>
+<div class="white_background_color" ><code>table process cells, table process all cells, table process cells selected rows</code></div>
 <h4> Description</h4>
 <p>
 Slightly different from the the functions <a class="bold_text" href="REF_Function_table_process.html">table process</a>() and <a class="bold_text" href="REF_Function_table_process.html">table process selected rows</a>(), the specified
@@ -92,6 +92,9 @@ statements are applied on every existing table cell (from left to right) and not
 in every cell are provided as function parameters.  For this function, the enabled <a class="bold_text" href="REF_Features_partial_table_specification.html">partial table references</a> also
 includes referencing the current column number by simply specifying a '.' (point) and you can use the function <a class="bold_text" href="REF_Function_col.html">col</a>() to retrieve
 the current column number.
+
+<br><br>
+<b>table process all cells</b> will also process all elements in row 0 (header row), too, whereas the other funnctions skip the header row.
 
 <br><br>
 This feature allows simple formulation of instructions wihtout writinng a 2-dimensional loop.

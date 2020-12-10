@@ -50,11 +50,13 @@
 <li class="navi"><a href="REF_Features_Detects_dates_correctly_in_literals.html"><div class="navi">9.3.7 Date and Time Detection Rules </div></a></li>
 <li class="navi"><a href="REF_Function_boolean.html"><div class="navi">9.3.8 boolean </div></a></li>
 <li class="navi"><a href="REF_Function_parameter_set.html"><div class="navi">9.3.9 parameter set </div></a></li>
+<li class="navi"><a href="REF_Function_best_type.html"><div class="navi"> best type </div></a></li>
 <li class="navi"><a href="REF_Function_join.html"><div class="navi">9.3.10 join ... </div></a></li>
 <li class="navi"><a href="REF_Function_type.html"><div class="navi">9.3.11 type, type detailed </div></a></li>
 <li class="navi"><a href="REF_Function_hash_signature.html"><div class="navi">9.3.12 hash signature </div></a></li>
-<li class="navi"><a href="REF_Function_excel_column_number.html"><div class="navi">9.3.13 excel column number </div></a></li>
-<li class="navi"><a href="REF_Function_excel_check_sheet_name.html"><div class="navi">9.3.14 excel check sheet name </div></a></li>
+<li class="navi"><a href="REF_Function_excel_column.html"><div class="navi">9.3.13 excel column </div></a></li>
+<li class="navi"><a href="REF_Function_excel_coordinates.html"><div class="navi">9.3.14 excel coordinates </div></a></li>
+<li class="navi"><a href="REF_Function_excel_check_sheet_name.html"><div class="navi">9.3.15 excel check sheet name </div></a></li>
 </ul></li>
 <li class="navi"><a href="REF_Features_Mathematics_and_Statistics.html"><div class="navi">+ 9.4 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="REF_Features_string_functions.html"><div class="navi">+ 9.5 String Functions </div></a></li>
@@ -94,10 +96,11 @@ Blank or missig date information will convert to blank date values.
 Various appraoches are available to convert value to dates:
 
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:200px"><col style = "width:600px">
-<tr><th>Input Form              </th><th> # Parmeters required  </th><th> Description</th></tr>
+<tr><th>Input Form              </th><th> # Parameters required </th><th> Description</th></tr>
 <tr><td>Literal input           </td><td> 1 or 2                </td><td> Converts a literal to date.  Locale settings (referring to system variable 'local settings[date format short]' rule the year/month/day sequence if the date is ambiguous, e.g. "10.11.12".  Change that value prior to the call if dates are ambiguous and need to use a different format assumption. See <a class="bold_text" href="REF_Features_Detects_dates_correctly_in_literals.html">Date and Time Detection Rules</a> for details.</td></tr>
-<tr><td>today                   </td><td> 1                     </td><td> Uses today's date</td></tr>
-<tr><td>now                     </td><td> 1                     </td><td> Uses today's date and time</td></tr>
+<tr><td>today                   </td><td> 1                     </td><td> Uses today's date (local time zone)</td></tr>
+<tr><td>now                     </td><td> 1                     </td><td> Uses today's date and time (local time zone)</td></tr>
+<tr><td>utc                     </td><td> 1                     </td><td> Uses today's date and time (UTC)</td></tr>
 <tr><td>numeric date            </td><td> 1                     </td><td> Numeric date in YYYYMMDD format with range 19000101 ... 99993112.  Values behind decimal commas are ignored, i.e. not converted to time info</td></tr>
 <tr><td>serial date             </td><td> 1                     </td><td> Microsoft serial date and time, as used in Excel.  E.g. 44000.75 translates to 2020-06-18 18:00:00.</td></tr>
 <tr><td>numeric time            </td><td> 1                     </td><td> Values between 0 and 1/(24+60+60), i.e. below 1, convert to time-only information.  The function <b>pure date</b>() returns blank date.</td></tr>
@@ -159,18 +162,20 @@ Specific treatment applies to keywords 'today' and 'now' in english and other su
 <td><b>Date and/or time</b><br/><p>Contains date, time, date and time combined or blank date.  No literal context of the date is preserved or included.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( now ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date and time<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( now ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date and time (local time zone)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( today ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date only<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;pure date ( now ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date only<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( utc ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date and time (UTC)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;pure date ( now ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Date only (local time zone)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;= { 2020, 07, 14 };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( a[] ));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Quatorze Juillet<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;+= { 22, 33, 44 };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add time<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date ( a[] ));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 2020-07-04 22:33:44<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;date("03. Oktober 1990 21 Uhr") ); // 1990-10-03 21:00:00</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>2020-11-29&nbsp;21:46:04<br/>
-2020-11-29<br/>
-2020-11-29<br/>
+<div class="output_background_color" ><code>2020-12-10&nbsp;17:55:27<br/>
+2020-12-10<br/>
+2020-12-10&nbsp;16:55:27<br/>
+2020-12-10<br/>
 2020-07-14<br/>
 2020-07-14&nbsp;22:33:44<br/>
 1990-10-03&nbsp;21:00:00<br/>
