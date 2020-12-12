@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Horizontal Table Access w. Ranges</h3>
+<a accesskey="p" href="LAN_Features_Horizontal_table_access_using_wildcards.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_vertical_table_access.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">5 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi">5.1 Accessing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_table_access.html"><div class="navi">5.1.1 Simple Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_horizontal_table_access.html"><div class="navi">5.1.2 Horizontal Table Access </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Horizontal_table_access_using_parameter_sets.html"><div class="navi">5.1.2.1 Horizontal Table Access w. Param. Sets </div></a></li>
+<li class="navi"><a href="LAN_Features_Horizontal_table_access_using_wildcards.html"><div class="navi">5.1.2.2 Horizontal Table Access w. Wildcards </div></a></li>
+<li class="navi"><a href="LAN_Features_Horizontal_table_access_using_ranges.html"><div class="navi navi-selected">5.1.2.3 Horizontal Table Access w. Ranges </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_vertical_table_access.html"><div class="navi">+ 5.1.3 Vertical Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_matrix_table_access.html"><div class="navi">5.1.4 Matrix Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_partial_table_specification.html"><div class="navi">5.1.5 Partial Table Specification </div></a></li>
+<li class="navi"><a href="LAN_Features_nested_partial_table_specification.html"><div class="navi">5.1.6 Nested Partial Table Specification </div></a></li>
+<li class="navi"><a href="LAN_Features_shifted_table_column_specification.html"><div class="navi">5.1.7 Shifted Table Column Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_header_name_exception_handling.html"><div class="navi">5.1.8 Header Name Exception Handling </div></a></li>
+<li class="navi"><a href="LAN_Features_lookup_access_exception_handling.html"><div class="navi">5.1.9 Lookup Access Exception Handling </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi">5.2 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Ranges can be specified to select multiple adjacent table columns.  Ranges come in four flavors:
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><td>From .. To  </td><td> From starting header name or column number to ending header name or colum number</td></tr>
+<tr><td>.. To       </td><td> From 1st column (column 0) to ending header name or column number</td></tr>
+<tr><td>From ..     </td><td> From starting header name or column number to last column in table with header name</td></tr>
+<tr><td>..      </td><td> From 1st column (column 0) to last column in table with header name</td></tr>
+<tr><td>(blank)     </td><td> From 1st column (column 0) to last existing column in the current table row (ignoring the header row)</td></tr>
+</table><p>
+In all cases, the data read will be in parameter sets, even if no or only 1 cell has been accessed.
+</p>
+<h4> Syntax for Full Table Specification</h4>
+<p>
+
+The table must be referenced inside brackets using a combination of literals and/or numerals and/or parameter sets.  These may be constant strings and numbers
+or expressions providing literals and numerals or parameter sets.
+
+</p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[   </th><th> Table Name            </th><th> : </th><th> Range Column Specifier    </th><th> , </th><th> Simple Row Specifier          </th><th> ]</th></tr>
+<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Starting .. Ending column   </td><td>   </td><td> - Matching contents (literal), or     </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - .. Ending column        </td><td>   </td><td> - Positive row number, or     </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - Starting column ..      </td><td>   </td><td> - Negative row number         </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - .. or (blank)       </td><td>   </td><td>                   </td><td></td></tr>
+</table><p>
+
+<br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
+</p><table class="noframe table_syntax" style = "width:970px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier   </th><th> , </th><th> Simple Row Specifier          </th><th> , </th><th>  Range Column Specifier 2 </th><th> ]</th></tr>
+<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (literal), or     </td><td>   </td><td> - Starting .. Ending column   </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> - Positive row number, or     </td><td>   </td><td> - .. Ending column        </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - Negative column number  </td><td>   </td><td> - Negative row number         </td><td>   </td><td> - Starting column ..      </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td>               </td><td>   </td><td>                   </td><td>   </td><td> - .. or left blank        </td><td></td></tr>
+</table><p>
+Lookup access: If a parameter set is encountered in the Simple Column Specifier instead of a simple value (literal or numeral), then the 1st parameter element will be used
+identifying the row.  If it contains no elements, then no lookup can be made and an empty set will be returned.
+</p>
+<h4> Principle</h4>
+<p>
+<br/><img src="Images/Description_Table_Horizontal_Access_Range_Full.jpg" alt="Horizontal table access using ranges, full table specification"><br/>
+</p>
+<h5> Programming examples</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;load( table, "Examples&#92;Cities.csv");<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table:&nbsp;&nbsp;1..4,&nbsp;&nbsp;&nbsp;&nbsp;5 ] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table:&nbsp;&nbsp;1..-4,&nbsp;&nbsp;&nbsp;5 ] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City..Famous attraction, -10 ] );<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table:&nbsp;&nbsp;4..1,&nbsp;&nbsp;&nbsp;&nbsp;5 ] ); // Empty set returned (ending column is left of starting column)<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table:&nbsp;&nbsp;1..4, San Francisco ] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table:&nbsp;&nbsp;City..Famous attraction, San Francisco&nbsp;&nbsp;] );<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: ..4, 5 ] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// San Francisco<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City, San Francisco, ..4 ]); // <br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: 1.., Vienna] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Vienna<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City, Vienna, City..] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City.., Vienna] );<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: 1.., 10] );<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;[table:table&nbsp;row width(table, 0)..,5] = {"Sightseeing boat","RV"}; // Append 2 vehicles<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: .., 5 ] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// San Francisco<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: , 5 ] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// San Francisco&nbsp;&nbsp;inclduing the boat &amp; RV<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City, San Francisco, .. ] ); // Without the boat<br/>
+&nbsp;&nbsp;echo(&nbsp;[ table: City, San Francisco, ] );&nbsp;&nbsp;&nbsp;&nbsp;// With the boat &amp; RV</code></div>
+<h5> Output - Staying in San Francisco</h5>
+<div class="output_background_color" ><code>{'San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+{'San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+{'San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+{}<br/>
+<br/>
+{'San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+{'San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate'}<br/>
+<br/>
+{'Vienna','',1800000,'Prater','','Opera','Fiacre'}<br/>
+{'Vienna','',1800000,'Prater','','Opera','Fiacre'}<br/>
+{'Vienna','',1800000,'Prater','','Opera','Fiacre'}<br/>
+{'Vienna','',1800000,'Prater','','Opera','Fiacre'}<br/>
+<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate',16,'SFMOMA','Cable&nbsp;car'}<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate',16,'SFMOMA','Cable&nbsp;car','Sightseeing&nbsp;boat','RV'}<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate',16,'SFMOMA','Cable&nbsp;car'}<br/>
+{'USA','San&nbsp;Francisco','California',805000,'Golden&nbsp;Gate',16,'SFMOMA','Cable&nbsp;car','Sightseeing&nbsp;boat','RV'}<br/>
+</code></div><u>Try it yourself:</u> Open <b>LAN_Features_Horizontal_table_access_using_ranges.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>User Initialization Program</h3>
+<a accesskey="p" href="LAN_Features_Starting_Behavior.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_licensing.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Run-Time_Machine.html"><div class="navi">2 The Run-Time Machine </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Installting_and_starting_up.html"><div class="navi">2.1 Installing and Starting Up </div></a></li>
+<li class="navi"><a href="LAN_Features_Command_line_switches.html"><div class="navi">2.2 Command Line Switches </div></a></li>
+<li class="navi"><a href="LAN_Features_Starting_Behavior.html"><div class="navi">2.3 Starting Behavior </div></a></li>
+<li class="navi"><a href="LAN_Features_User_initialization_program.html"><div class="navi navi-selected">2.4 User Initialization Program </div></a></li>
+<li class="navi"><a href="LAN_Features_licensing.html"><div class="navi">2.5 Licensing </div></a></li>
+<li class="navi"><a href="LAN_Features_interactive_mode.html"><div class="navi">+ 2.6 Interactive Mode </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+If a file called <b>My B4P Init.b4p</b> is avaiable in the directory for user application data, then it will be loadeod executed:
+The directory name is specified in the system variable <b>system info[user app data directory b4p]</b> and is typically
+</p><ul class="bullets"><li class="bullets"><b>Windows:</b> C:\users\Your User Name\AppData\Local\b4p
+</li><li class="bullets"><b>Linux/MacOS:</b> /home/username/.profile/b4p/
+</li></ul><p>
+This file will be executed twice, namely before the library files are loaded, and after this.  For this reason, the template code prepared
+in this file makes use of the <a class="bold_text" href="LIB_Function_once.html">once</a>() {...} <a class="bold_text" href="LIB_Features_else.html">else</a> {...} clause where the first code block after <b>once</b> is executed at the first
+instance, and the code block after <b>else</b> is executed at the 2nd instance.
+
+<br><br/><img src="Images/REF_Starting_Behavior_2.png" alt="B4P Starting Behavior"><br/><br>
+
+The original file <b>My B4P Init.b4p</b> provided to you contains the following simple contents:  Silencing output messages while loading
+the libraries by setting <b>system info[verbose]</b> to <b>quiet</b>, and in the 2nd call back to <b>low</b> to allow minimum messages
+and progress information to occur. See <a class="bold_text" href="LAN_Features_verbose.html">verbose</a> for more information about this.
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>once&nbsp;// Following code is executed at the 1st call before loading library files begins<br/>
+{<br/>
+<br/>
+//&nbsp;&nbsp;&nbsp;&nbsp;echo("Starting&nbsp;to load the standard library files ...");<br/>
+&nbsp;&nbsp;runtime&nbsp;settings[verbose] = quiet;<br/>
+<br/>
+}<br/>
+else&nbsp;// Following code is executed at the 2nd call after all library files have been loaded<br/>
+{<br/>
+<br/>
+//&nbsp;&nbsp;&nbsp;&nbsp;echo("...&nbsp;Done.");<br/>
+&nbsp;&nbsp;runtime&nbsp;settings[verbose] = low;<br/>
+}</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

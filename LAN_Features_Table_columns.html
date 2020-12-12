@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Table Columns (Func. Param. Type)</h3>
+<a accesskey="p" href="LAN_Features_parameter_set_or_literal.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Code_Piece.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">8 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Function_Naming.html"><div class="navi">8.1 Function Naming </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_Parameters.html"><div class="navi">8.2 Function Parameters </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_directions.html"><div class="navi">8.3 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_types.html"><div class="navi">8.4 Function Parameter Types </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_parameter_set_or_literal.html"><div class="navi">8.4.1 Parameter Set or Literal (Func. Param. Type) </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_columns.html"><div class="navi navi-selected">8.4.2 Table Columns (Func. Param. Type) </div></a></li>
+<li class="navi"><a href="LAN_Features_Code_Piece.html"><div class="navi">+ 8.4.3 Code Pieces (Func. Param. Type) </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions_to_select_rows.html"><div class="navi">8.4.4 Expressions to Select Rows </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions_to_select_columns.html"><div class="navi">8.4.5 Expressions to Select Columns </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Indirect_parameter_passing.html"><div class="navi">8.5 Indirect Parameter Passing </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction_to_User-Defined_Functions.html"><div class="navi">8.6 Introduction to User-Defined Functions </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Whenever a function expects a <a class="bold_text" href="LAN_Features_Function_Parameters.html">function parameter</a> for table columns, the following types are supported:
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:500px"><col style = "width:300px">
+<tr><th>Type            </th><th> Description               </th><th> Example</th></tr>
+<tr><td>Numeral         </td><td> Specifies a <a class="bold_text" href="LIB_Function_table_column_number.html">table column number</a>, beginning with 0.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
+<tr><td>Quoted literals     </td><td> The content of the entire string is interpreted as one header name </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
+<tr><td>Quoted literals     </td><td> "" Empty string, will be treated as one blank header name </td><td> "" translates to {""}</td></tr>
+<tr><td>Softquoted literal  </td><td> Contents separated with commas are broken down into individual header names. Spaces around commas are ignored. </td><td> 'Last Name, First Name' results in 2 headers: 'Last Name' and 'First Name'.</td></tr>
+<tr><td>Softquoted literals </td><td> '' Empty string, will be treated as no header name </td><td> '' translates to { } (empty set)</td></tr>
+<tr><td>Unquoted literal    </td><td> Treated like quoted literals (containing no commas, but multiple consecutive spaces collapse to 1 space) </td><td> Last Name, Last&nbsp;&nbsp;&nbsp;Name (both are equialent)</td></tr>
+<tr><td>Parameter set       </td><td> Parameter sets contain a colection of header names and/or column numbers </td><td> { 1, Last Name, "Value [EUR]" }</td></tr>
+</table><p>
+
+Various functions specific rules may apply:
+</p><ul class="bullets"><li class="bullets">Header names must exist
+</li><li class="bullets">Header names may exist (missing ones may be created as additinal columns in the table)
+</li><li class="bullets">Header names must not exist (e.g. to check if specific header names are <i>not</i> used in a specific table
+</li><li class="bullets">Column numbers are allowed, or not allowed
+</li><li class="bullets">Column numbers may only refer to existing colums, or alternatively all columns even if not yet existing
+</li></ul><p>
+<br>
+<u>Note</u>: If Table headers contain numbers, the put the numbers into quotation marks.
+</p>
+<h4> Shifted Table Column Specifications</h4>
+<p>
+See the section on <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> for more details.  They can be applied both in table references as well as in column header
+names provided as function parameters.  In both cases, the literal must be of type <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literal</a>, e.g. contents put into single quotation marks.
+Otherwise, the contents are treated literally as they are.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

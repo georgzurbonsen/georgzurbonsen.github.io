@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Ad-hoc Operators Overview</h3>
+<a accesskey="p" href="LAN_Features_cascading_ad-hoc_operators.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Transactions.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Run-Time_Machine.html"><div class="navi">+ 2 The Run-Time Machine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">6 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_unary_operators.html"><div class="navi">6.1 Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_binary_operators.html"><div class="navi">+ 6.2 Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 6.3 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operators.html"><div class="navi">6.4 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">6.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">6.6 Ad-hoc Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_cascading_ad-hoc_operators.html"><div class="navi">6.6.1 Cascading ad-hoc Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators_overview.html"><div class="navi navi-selected">6.6.2 Ad-hoc Operators Overview </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The following table provides a summary of the ad-hoc rules.
+<br>
+<br>Ad-hoc operations on variables and table cells containing or assigned with numerals:
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Increment by 1        </td><td> --        </td><td> Decrement by 1        </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Increment by 2        </td><td> -- --     </td><td> Decrement by 2        </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (3)      </td><td> Add 3             </td><td> -- (3)    </td><td> Subtract 3            </td><td> **(3)     </td><td> Multiply by 3</td></tr>
+<tr><td>++ (-3)     </td><td> Subtract 3            </td><td> -- (-)    </td><td> Add 3             </td><td> **(1/3)   </td><td> Divide by 3</td></tr>
+</table><p>
+
+<br>Ad-hoc operations on variables and table cells containing or assigned with blank literals <b>''</b>  assumed zero:
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Sets to 1         </td><td> --        </td><td> Sets to -1            </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Sets to 2         </td><td> -- --     </td><td> Sets to -2            </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (3)      </td><td> Sets to 3         </td><td> -- (3)    </td><td> Sets to -3            </td><td> **(3)     </td><td> 0 Multiplied by 3 = 0</td></tr>
+<tr><td>++ (-3)     </td><td> Sets to -3            </td><td> -- (-)    </td><td> Sets to 3         </td><td> **(1/3)   </td><td> 0 Multiplied by 3 = 0</td></tr>
+</table><p>
+
+<br>Ad-hoc operations on variables and table cells containing or assigned with non-blank literals  have no impact, and cause no exceptions.
+
+<br><br>Ad-hoc operations on variables and table cells containing or assigned with blank dates <b>date('')</b> have no impact, and cause no exceptions.<br>
+<u>Note</u>: Table cells do only apply if configured to retrieve dates as dates.
+
+<br><br>Ad-hoc operations on variables and table cells containing or assigned with dates (e.g. <b>date("2020-01-01")</b> ) are supported.<br>
+<u>Note</u>: Table cells do only apply if configured to retrieve dates as dates.
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Tomorrow          </td><td> --        </td><td> Yesterday         </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Day after tomorrow        </td><td> -- --     </td><td> 2 days before         </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (0.25)   </td><td> Same day          </td><td> -- (0.25) </td><td> Same day          </td><td>       </td><td> Results in blank date</td></tr>
+<tr><td>++ (3)      </td><td> 3 days later          </td><td> -- (3)    </td><td> 3 days before         </td><td> **(0)     </td><td> Results in blank date</td></tr>
+<tr><td>++ (3.75)   </td><td> 3 days later (same)       </td><td> -- (3.75) </td><td> 3 days before (same)      </td><td> **(1)     </td><td> Unchanged date</td></tr>
+<tr><td>++ (-7)     </td><td> 1 week before         </td><td> -- (-7)   </td><td> 1 week later          </td><td> **(...)   </td><td> All other values: Exceptions (dates cannot be multiplied)</td></tr>
+</table><p>
+
+<br>Ad-hoc operations on variables and table cells containing or assigned with dates and times (e.g. <b>date("2020-01-01 12:45:00")</b>) are supported.<br>
+<u>Note</u>: Table cells do only apply if configured to retrieve dates as dates.
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Tomorrow          </td><td> --        </td><td> Yesterday         </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Day after tomorrow        </td><td> -- --     </td><td> 2 days before         </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (0.25)   </td><td> 6 hours later         </td><td> -- (0.25) </td><td> 6 hours earlier       </td><td>       </td><td> Results in blank date</td></tr>
+<tr><td>++ (3)      </td><td> 3 days later          </td><td> -- (3)    </td><td> 3 days before         </td><td> **(0)     </td><td> Results in blank date</td></tr>
+<tr><td>++ (3.75)   </td><td> 3 days + 18 hours later   </td><td> -- (3.75) </td><td> 3 days + 18 hours before  </td><td> **(1)     </td><td> Unchanged date and time</td></tr>
+<tr><td>++ (-7)     </td><td> 1 week before         </td><td> -- (-7)   </td><td> 1 week later          </td><td> **(...)   </td><td> All other values: Exceptions (dates cannot be multiplied)</td></tr>
+</table><p>
+
+<br>Ad-hoc operations on variables and table cells containing or assigned with and times (e.g. <b>time("12:45:00")</b>) are supported.<br>
+<u>Note</u>: Table cells do only apply if configured to retrieve dates as dates.
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Exception (not same day)  </td><td> --        </td><td> Exception (not same day)  </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Exception (not same day)  </td><td> -- --     </td><td> Exception (not same day)  </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (0.25)   </td><td> 6 hours later (if same day)   </td><td> -- (0.25) </td><td> 6 hours earlier (if same day) </td><td> **(0)     </td><td> Results in blank date</td></tr>
+<tr><td>++ (3)      </td><td> Exception (not same day)  </td><td> -- (3)    </td><td> Exception (not same day)  </td><td> **(1)     </td><td> Unchaned time</td></tr>
+</table><p>
+
+
+<br>Ad-hoc operations on variables and table cells containing or assigned with booleans:<br>
+<u>Note</u>: Table cells do only apply if configured to retrieve dates as dates.
+</p><table style = "width:999px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px"><col style = "width:100px"><col style = "width:233px">
+<tr><th>Operator    </th><th> Description           </th><th> Operator  </th><th> Description           </th><th> Operator  </th><th> Description</th></tr>
+<tr><td>++      </td><td> Sets to true          </td><td> --        </td><td> Sets to false         </td><td> **        </td><td> Syntax error (factor missing)</td></tr>
+<tr><td>++ ++       </td><td> Sets to true          </td><td> -- --     </td><td> Sets to false         </td><td> ** **     </td><td> "</td></tr>
+<tr><td>++ (3)      </td><td> Sets to true          </td><td> -- (3)    </td><td> Sets to false         </td><td> **(0)     </td><td> Sets to false</td></tr>
+<tr><td>++ (-1)     </td><td> Sets to false         </td><td> -- (-1)   </td><td> Sets to true          </td><td> **(1)     </td><td> Non-zero: Value unchanged</td></tr>
+<tr><td>++ (-3)     </td><td> Sets to false         </td><td> -- (-3)   </td><td> Sets to true          </td><td> **(-1)    </td><td> "</td></tr>
+</table><p>
+
+<br>Ad-hoc operations on variables containing parameter sets:<br>
+All elements will be affected by this operation, including elements in nested parameter sets.  This is a clear difference from all other arithmetic operations
+where you need to distinguish between regular operators (affects one individual value) and deep operators (affects elements in a parameter set at a specified depth).<br>
+<u>Note</u>: No impact on empty cells.
+
+<br><br>
+<u>Note</u>: Ad-hoc operations on void values will cause exceptions.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

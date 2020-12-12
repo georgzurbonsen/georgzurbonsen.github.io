@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>lighten colors</h3>
+<a accesskey="p" href="LIB_Function_add_color.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_darken_colors.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_input_output_functions.html"><div class="navi">+ 3 Input / Output Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions - Basics </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions_processing.html"><div class="navi">+ 10 Table Functions - Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_advanced_table_functions.html"><div class="navi">+ 11 Table Functions - Advanced </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_Styling_Tables.html"><div class="navi">12 Table Functions - Format and Style </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Defining_User_Specific_Colors.html"><div class="navi">12.1 Defining User Specific Colors </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Color_Palettes.html"><div class="navi">12.1.1 Color Palettes </div></a></li>
+<li class="navi"><a href="LIB_Function_add_color.html"><div class="navi">12.1.2 add color </div></a></li>
+<li class="navi"><a href="LIB_Function_lighten_colors.html"><div class="navi navi-selected">12.1.3 lighten colors </div></a></li>
+<li class="navi"><a href="LIB_Function_darken_colors.html"><div class="navi">12.1.4 darken colors </div></a></li>
+<li class="navi"><a href="LIB_Function_weaken_colors.html"><div class="navi">12.1.5 weaken colors </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Formatting_the_Tables.html"><div class="navi">+ 12.2 Styling Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Finishing_up_formatting.html"><div class="navi">+ 12.3 Finishing up formatting </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 13 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 14 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 15 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 16 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 17 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>lighten colors</code></div>
+<h4> Library</h4>
+<p>Style Library</p>
+<h4> Description</h4>
+<p>
+This function Derives lightened shades of selected colors in the <a class="bold_text" href="LIB_Features_Color_Palettes.html">color palette</a>.</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>Don't forget to include 'Style Library' at the top of your program</p>
+<h4> Parameter count</h4>
+<p>3</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>numeral<br/>parameter set</td>
+<td><b>Row numbers</b><br/><p>Specify one or multiple table row numbers in the table 'global color table'.  The colors specified in the corresponding row will be lightened.<br>
+<u>Hint</u>: Use <a class="bold_text" href="LIB_Function_table_selected_rows.html">table selected rows</a>() to select table rows by contents in the table..</p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>numeral or literal</td>
+<td><b>Suffix</b><br/><p>Specify a suffix to be added to the color names in order to distinguish them from their original colors.</p>
+</td></tr>
+<tr><td>3.<br/>input</td>
+<td>numeral</td>
+<td><b>Lightening up factor</b><br/><p>e.g. factor 2 is the color precisely between white and specified color<br>
+Example: mandarin (255,128,0) translates to (255,192,128)<br>
+Use lower factors (e.g. 1.5) for less lighter shades, and bigger factors (e.g. 4) for significantly lighter shades.</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;include(&nbsp;Style Library );<br/>
+<br/>
+&nbsp;&nbsp;lighten&nbsp;colors( table selected rows( global color table, [Cat 2]==primary), X, 3 );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;copy table selected rows( global color table, t, [Cat 2]==primary );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list ( t );<br/>
+&nbsp;&nbsp;table&nbsp;process( t, table style rows( t, row(), table, fill color, [Color Name] ) );<br/>
+<br/>
+&nbsp;&nbsp;translate&nbsp;style attributes for html(t);<br/>
+&nbsp;&nbsp;table&nbsp;save( t, "Images/Style_Lightened_Colors.html", HTML );<br/>
+&nbsp;&nbsp;translate&nbsp;style attributes for excel(t);<br/>
+&nbsp;&nbsp;table&nbsp;save( t, "Images/Style_Lightened_Colors.xls", EXCEL );<br/>
+&nbsp;&nbsp;echo("Done.");<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Color&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Cat&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Cat&nbsp;2&nbsp;&nbsp;&nbsp;|&nbsp;Red&nbsp;|&nbsp;Green&nbsp;|&nbsp;Blue&nbsp;|&nbsp;HTML&nbsp;Color<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;#FF0000&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;#FFFF00&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;#00FF00&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;cyan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#00FFFF&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#0000FF&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;magenta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;standard&nbsp;&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#FF00FF&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;light&nbsp;red&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;171&nbsp;&nbsp;&nbsp;|&nbsp;171&nbsp;&nbsp;|&nbsp;#FFABAB&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;light&nbsp;yellow&nbsp;X&nbsp;&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;171&nbsp;&nbsp;|&nbsp;#FFFFAB&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;light&nbsp;green&nbsp;X&nbsp;&nbsp;&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;171&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;171&nbsp;&nbsp;|&nbsp;#ABFFAB&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;light&nbsp;cyan&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;171&nbsp;|&nbsp;255&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#ABFFFF&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;light&nbsp;blue&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;171&nbsp;|&nbsp;171&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#ABABFF&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;light&nbsp;magenta&nbsp;X&nbsp;|&nbsp;lightened&nbsp;|&nbsp;primary&nbsp;|&nbsp;255&nbsp;|&nbsp;171&nbsp;&nbsp;&nbsp;|&nbsp;255&nbsp;&nbsp;|&nbsp;#FFABFF&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+Done.<br/>
+</code></div><u>Try it yourself:</u> Open <b>LIB_Function_lighten_colors.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Viewing the Results:</h4>
+<p>Test Click on the file name view the result: <a href="Images/Style_Lightened_Colors.html" target="_blank">Style_Lightened_Colors.html</a>.<br>
+Test Click on the file name open the file with Excel: <a href="Images/Style_Lightened_Colors.xls" >Style_Lightened_Colors.xls</a> (Excel XML 2003 format - confirm the message box query).</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

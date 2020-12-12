@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table divide ...</h3>
+<a accesskey="p" href="LIB_Function_table_multiply.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_arrange.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_input_output_functions.html"><div class="navi">+ 3 Input / Output Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions - Basics </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions_processing.html"><div class="navi">+ 10 Table Functions - Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_advanced_table_functions.html"><div class="navi">11 Table Functions - Advanced </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Checking_and_comparing_tables.html"><div class="navi">+ 11.1 Checking and Comparing Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Looking_up_Other_Tables.html"><div class="navi">+ 11.2 Looking up Other Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Pivoting_and_consolidating_tables.html"><div class="navi">+ 11.3 Pivoting and Conosolidating Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Combining_Multiple_Tables.html"><div class="navi">11.4 Combining Multiple Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_merge.html"><div class="navi">11.4.1 table merge ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_overlay.html"><div class="navi">11.4.2 table overlay/subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_intersect.html"><div class="navi">11.4.3 table intersect ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_subtract.html"><div class="navi">11.4.4 table subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_exclude.html"><div class="navi">11.4.5 table exclude ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_multiply.html"><div class="navi">11.4.6 table multiply ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_divide.html"><div class="navi navi-selected">11.4.7 table divide ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_arrange.html"><div class="navi">11.4.8 table arrange ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 11.5 Exploring and Extracting Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_Styling_Tables.html"><div class="navi">+ 12 Table Functions - Format and Style </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 13 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 14 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 15 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 16 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 17 Cross-Functional Info </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table divide, table divide selected rows</code></div>
+<h4> Description</h4>
+<p>
+A relational division will be made from two tables referred as <i>dividend (numerator) </i> and <i>divisor (denominator)</i>.  A new table called <i>quotient</i> will be generated.
+
+<br><br>
+
+The dividend (numerator) table contains a set of headers <b>C = A + B</b> where<br>
+<b>A</b> refers to a set of headers which are not found in the divisor (denominator), and<br>
+<b>B</b> refers to a set of headers which are found in the divisor (<b>B'</b>).
+
+The divisor table does not contain header names which are not found in the dividend table, meaning that both sets <b>B</b> and <b>B'</b> must contain the same headers.
+Ordering does not matter.
+
+The resulting quotient table will contain columns with headers <b>A'</b> which are the same headers as in set A in the dividend table.
+Briefly said: From the dividend table, pick all entries with common headers <b>A</b>, which match with all rows in the divisor table.
+
+<br/><img src="Images/Function_table_divide.jpg" alt="Function 'table divide'"><br/><br/>
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>4-6</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>Opt. 1.<br/>code</td>
+<td>expression<br/>:literal</td>
+<td><b>Expression to select rows</b><br/><p>Applicable to function <b>table divide selected rows</b> only, affecting the numerator table.<br>
+Specify the conditions or rules to select the row.  See <a class="bold_text" href="LAN_Features_Expressions_to_select_rows.html">expressions to select rows</a>.<br>
+<a class="bold_text" href="LAN_Features_partial_table_specification.html">Partial table specification</a> is supported here to reference table columns easily.  Example: <b>[Score]>=5</b>.<br>
+<u>Attention</u>: If you are using comparison operators = and <> (instead of == and !=) which allow more than 1 operand on the righ hand side, then make sure you put the entire expression into parentheses.  Otherwise the operators will hijack subsequent function parameters as part of their operands.</p>
+<span class="black_text"><b> Default value: </b></span>true (all rows selected)
+</td></tr>
+<tr><td>1. / 2.<br/>input</td>
+<td>literal</td>
+<td><b>Name of existing numerand (dividend) table</b><br/><p>The table will not be modified by this function</p>
+</td></tr>
+<tr><td>2. / 3.<br/>input</td>
+<td>literal</td>
+<td><b>Name of existing denominator (divisor) table</b><br/><p>The table will not be modified by this function</p>
+</td></tr>
+<tr><td>3. / 4.<br/>input</td>
+<td>literal</td>
+<td><b>Name of quotient table</b><br/><p>This table will be created.</p>
+</td></tr>
+<tr><td>Opt 4. / 5.<br/>input</td>
+<td>table columns</td>
+<td><b>Numerator columns</b><br/><p>Select the columns in the dividend (numerator) table to be used for the actual division process.  This feature drops the need for extracting a dedicated dividend
+table with the chosen columns to be used for division process.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
+</td></tr>
+<tr><td>Opt 5. / 6.<br/>input</td>
+<td>table columns</td>
+<td><b>Categorization columns</b><br/><p>Specifing categorization columnns allows to do multiple division runs with different categories as specified as set of 1 or more headers this parameter.
+As an example if a country name is specified, then the division process will be repeated for all countries, and the quotient table contains an additional column
+at the left listing the country name in one of the examples shown below.<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p></p>
+</td></tr>
+</table>
+<h4> Simple example</h4>
+<p>The following example does actually scan the numerator table for common parents of both children called Maria and Sabine (note: Age must also match).
+Actually, <b>function divide</b> answers the question on: "Find all parents (father and mother) who have two children, one called Maria and 4 years old, and
+the other one called Sabine, 2 years old.  Two parents will be identified.</p>
+<h5> Code</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( numerator,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Father,&nbsp;&nbsp;&nbsp;&nbsp;Mother,&nbsp;&nbsp;&nbsp;Child,&nbsp;&nbsp;&nbsp;Age },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helga,&nbsp;&nbsp;&nbsp;&nbsp;Harald,&nbsp;&nbsp;&nbsp;&nbsp;5 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helga,&nbsp;&nbsp;&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // No match - different parents<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ursula,&nbsp;&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }, // "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Gertrud,&nbsp;&nbsp;&nbsp;7 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Peter,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robert,&nbsp;&nbsp;&nbsp;&nbsp;9 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Johann,&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Johann,&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }&nbsp;&nbsp;// Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize( denominator,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Child,&nbsp;&nbsp;&nbsp;Age },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 } } );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;divide( numerator, denominator, quotient );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list( quotient );</code></div>
+<h5>  Two parent couples have been identified</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Father&nbsp;|&nbsp;Mother&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Moritz&nbsp;|&nbsp;Melanie<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_divide.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Example with categorization by country</h4>
+<p>The following example shows the categorization feature:</p>
+<h5> Code</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table&nbsp;initialize( numerator,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Father,&nbsp;&nbsp;&nbsp;&nbsp;Mother,&nbsp;&nbsp;&nbsp;Child,&nbsp;&nbsp;&nbsp;Age },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helga,&nbsp;&nbsp;&nbsp;&nbsp;Harald,&nbsp;&nbsp;&nbsp;&nbsp;5 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helga,&nbsp;&nbsp;&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // No match - different parents<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Franz,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ursula,&nbsp;&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }, // "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Gertrud,&nbsp;&nbsp;&nbsp;7 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Moritz,&nbsp;&nbsp;&nbsp;&nbsp;Melanie,&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Peter,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robert,&nbsp;&nbsp;&nbsp;&nbsp;9 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Johann,&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 }, // Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Johann,&nbsp;&nbsp;&nbsp;&nbsp;Lisa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 }&nbsp;&nbsp;// Match<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize( 2 countries, { Country, Austria, Germany } ); // Add countries for each row<br/>
+&nbsp;&nbsp;table&nbsp;multiply( 2 countries, numerator, 0 );<br/>
+&nbsp;&nbsp;table&nbsp;sort rows ( numerator, Country );<br/>
+&nbsp;&nbsp;table&nbsp;list ( numerator );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;initialize( denominator,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;{ Child,&nbsp;&nbsp;&nbsp;Age },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Maria,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Sabine,&nbsp;&nbsp;&nbsp;&nbsp;2 } } );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;divide( numerator, denominator, quotient, { Father, Mother, Child, Age }, Country );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list( quotient );</code></div>
+<h5>  Two parent couples from each country have been identified</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Country&nbsp;|&nbsp;Father&nbsp;|&nbsp;Mother&nbsp;&nbsp;|&nbsp;Child&nbsp;&nbsp;&nbsp;|&nbsp;Age<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Helga&nbsp;&nbsp;&nbsp;|&nbsp;Harald&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Helga&nbsp;&nbsp;&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Ursula&nbsp;&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Gertrud&nbsp;|&nbsp;7&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Peter&nbsp;&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Robert&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;10&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;11&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Ursula&nbsp;&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;12&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;13&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Helga&nbsp;&nbsp;&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;14&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Peter&nbsp;&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Robert&nbsp;&nbsp;|&nbsp;9&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;15&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie&nbsp;|&nbsp;Gertrud&nbsp;|&nbsp;7&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;16&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Maria&nbsp;&nbsp;&nbsp;|&nbsp;4&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;17&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Franz&nbsp;&nbsp;|&nbsp;Helga&nbsp;&nbsp;&nbsp;|&nbsp;Harald&nbsp;&nbsp;|&nbsp;5&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;18&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Sabine&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Country&nbsp;|&nbsp;Father&nbsp;|&nbsp;Mother&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;Austria&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Moritz&nbsp;|&nbsp;Melanie<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Germany&nbsp;|&nbsp;Johann&nbsp;|&nbsp;Lisa&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_divide_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_multiply.html">table multiply</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
