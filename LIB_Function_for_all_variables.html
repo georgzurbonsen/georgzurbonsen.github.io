@@ -53,28 +53,25 @@
 <li class="navi"><a href="LIB_Features_Code_Execution_Functions.html"><div class="navi">+ 2.7 Code Execution Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Other_Control_Flow_Functions.html"><div class="navi">+ 2.8 Other Control Flow Functions </div></a></li>
 </ul></li>
-<li class="navi"><a href="LIB_Features_input_output_functions.html"><div class="navi">+ 3 Input / Output Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
-<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions - Basics </div></a></li>
-<li class="navi"><a href="LIB_Features_table_functions_processing.html"><div class="navi">+ 10 Table Functions - Processing </div></a></li>
-<li class="navi"><a href="LIB_Features_advanced_table_functions.html"><div class="navi">+ 11 Table Functions - Advanced </div></a></li>
-<li class="navi"><a href="LIB_Features_Formatting_and_Styling_Tables.html"><div class="navi">+ 12 Table Functions - Format and Style </div></a></li>
-<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 13 Variables Functions </div></a></li>
-<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 14 Directory and File System Functions </div></a></li>
-<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 15 System Functions </div></a></li>
-<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 16 Help and Support Functions </div></a></li>
-<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 17 Cross-Functional Info </div></a></li>
-<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">18 Index </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>for all variables, for all variables if existing</code></div>
+<div class="white_background_color" ><code>for all variables, for all variables if existing, for all variables if existing and valid</code></div>
 <h4> Synopsis</h4>
 <div class="white_background_color" ><code>for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) statement; <br/>
 for all variables ... ( base variable name, member variable value, iterator counter, member variable name  ) {statements; } </code></div>
@@ -83,7 +80,8 @@ for all variables ... ( base variable name, member variable value, iterator coun
 The base variable provided may either be an array or a structure.
 The loop will be skipped if the specified variable has no members.
 The loop will not step into nested variable sub-members.
-The function <b>for all variables if existing</b> will not assert an exception if the base variable has not been defined and will also skip the loop.
+The function <b>for all variables if existing</b> will not assert an exception if the base variable has not been defined and will also skip the loop.<br>
+The function <b>for all variables if existing and valid </b> works similar to the function above, but skips all variables containing <b>void</b> values.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
@@ -98,11 +96,11 @@ The function <b>for all variables if existing</b> will not assert an exception i
 </td></tr>
 <tr><td>2<br/>code</td>
 <td>variable<br/>:literal</td>
-<td><b>iterator value</b><br/><p>This variable is updated by this function in order to provide the value of the current variable.  It is a copied value.  Modifying this variable will not influence the loop</p>
+<td><b>member variable value</b><br/><p>This variable is updated by this function in order to provide the value of the current variable.  It is a copied value.  Modifying this variable will not influence the loop</p>
 </td></tr>
 <tr><td>Opt. 3<br/>code</td>
 <td>variable<br/>:literal</td>
-<td><b>iterator counter</b><br/><p>This variable is updated by this function and provdes the index. It always begins with 0 and continues with 1, 2, etc.</p>
+<td><b>counter</b><br/><p>This variable is updated by this function and provdes the index. It always begins with 0 and continues with 1, 2, etc.</p>
 </td></tr>
 <tr><td>Opt. 4<br/>code</td>
 <td>variable<br/>:literal</td>
@@ -111,24 +109,89 @@ then the value "# Array Member #" will be assigned.  This fourth parameter is no
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structure(&nbsp;a[], { Animal, Plant, Alien }, { Ape, Tulip, Chewbacca } );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all variables( a[], value[], i[] , name[])<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;a[], { Charles, Dave, Abel, Birgit, } );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;all variables( a[], value[], i[] , name[])<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
+<div class="code_background_color" ><code>&nbsp;&nbsp;structure(&nbsp;a[], { Animal, Plant, Alien, Nothing }, { Ape, Tulip, Chewbacca, null() } );<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Output all structure members: ");<br/>
+&nbsp;&nbsp;for&nbsp;all variables( a[], value[], i[] , name[])<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Output all valid structure members: ");<br/>
+&nbsp;&nbsp;for&nbsp;all variables if existing and valid( a[], value[], i[] , name[])<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;array(&nbsp;a[], { Charles, Dave, Abel, null(), Paul, Birgit, } ); // One void value inside<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Output all array members: ");<br/>
+&nbsp;&nbsp;for&nbsp;all variables( a[], value[], i[] , name[])<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Output all valid array members: ");<br/>
+&nbsp;&nbsp;for&nbsp;all variables if existing and valid( a[], value[], i[] , name[])<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Attempt to output a non-existing variable: ");<br/>
+&nbsp;&nbsp;for&nbsp;all variables if existing and valid( nonexising name[], value[], i[] , name[])<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;i[],": ", name[]," = ", value[] );&nbsp;&nbsp;// Nothing listed.<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;echo(new&nbsp;line, "Output array members with few of them defined: ");<br/>
+<br/>
+&nbsp;&nbsp;a[1]&nbsp;= 33;<br/>
+&nbsp;&nbsp;a[9]&nbsp;= Hello;<br/>
+&nbsp;&nbsp;a[20]&nbsp;= 1;<br/>
+&nbsp;&nbsp;a[40]&nbsp;= true;<br/>
+&nbsp;&nbsp;a[2]&nbsp;= null();<br/>
+<br/>
+&nbsp;&nbsp;for&nbsp;all variables if existing and valid( a[], val[], cnt[] )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;cnt[],": ", val[] );&nbsp;&nbsp;// Only valid values listed.<br/>
+&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>0:&nbsp;Alien&nbsp;=&nbsp;Chewbacca<br/>
+<div class="output_background_color" ><code>Output&nbsp;all&nbsp;structure&nbsp;members:&nbsp;<br/>
+0:&nbsp;Alien&nbsp;=&nbsp;Chewbacca<br/>
 1:&nbsp;Animal&nbsp;=&nbsp;Ape<br/>
-2:&nbsp;Plant&nbsp;=&nbsp;Tulip<br/>
+2:&nbsp;Nothing&nbsp;=&nbsp;#&nbsp;Invalid&nbsp;Value&nbsp;#<br/>
+3:&nbsp;Plant&nbsp;=&nbsp;Tulip<br/>
+<br/>
+Output&nbsp;all&nbsp;valid&nbsp;structure&nbsp;members:&nbsp;<br/>
+0:&nbsp;Alien&nbsp;=&nbsp;Chewbacca<br/>
+1:&nbsp;Animal&nbsp;=&nbsp;Ape<br/>
+3:&nbsp;Plant&nbsp;=&nbsp;Tulip<br/>
+<br/>
+Output&nbsp;all&nbsp;array&nbsp;members:&nbsp;<br/>
 0:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Charles<br/>
 1:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Dave<br/>
 2:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Abel<br/>
-3:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Birgit<br/>
+3:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;#&nbsp;Invalid&nbsp;Value&nbsp;#<br/>
+4:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Paul<br/>
+5:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Birgit<br/>
+<br/>
+Output&nbsp;all&nbsp;valid&nbsp;array&nbsp;members:&nbsp;<br/>
+0:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Charles<br/>
+1:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Dave<br/>
+2:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Abel<br/>
+4:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Paul<br/>
+5:&nbsp;#&nbsp;Array&nbsp;Member&nbsp;#&nbsp;=&nbsp;Birgit<br/>
+<br/>
+Attempt&nbsp;to&nbsp;output&nbsp;a&nbsp;non-existing&nbsp;variable:&nbsp;<br/>
+<br/>
+Output&nbsp;array&nbsp;members&nbsp;with&nbsp;few&nbsp;of&nbsp;them&nbsp;defined:&nbsp;<br/>
+0:&nbsp;Charles<br/>
+1:&nbsp;33<br/>
+4:&nbsp;Paul<br/>
+5:&nbsp;Birgit<br/>
+9:&nbsp;Hello<br/>
+20:&nbsp;1<br/>
+40:&nbsp;true<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_for_all_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_for_all_parameters.html">for all parameters</a></p>
