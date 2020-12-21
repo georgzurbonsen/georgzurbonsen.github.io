@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>table add / write row</h3>
-<a accesskey="p" href="LIB_Function_table_append_blank_rows.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_configure.html"><span>Next</span></a> 
+<a accesskey="p" href="LIB_Function_table_append_blank_rows.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_add_missing_row.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -47,13 +47,14 @@
 <li class="navi"><a href="LIB_Function_table_initialize.html"><div class="navi">9.1.2.2 table initialize/append ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_append_blank_rows.html"><div class="navi">9.1.2.3 table append blank rows </div></a></li>
 <li class="navi"><a href="LIB_Function_table_add_row.html"><div class="navi navi-selected">9.1.2.4 table add / write row </div></a></li>
-<li class="navi"><a href="LIB_Function_table_configure.html"><div class="navi">9.1.2.5 table configure </div></a></li>
-<li class="navi"><a href="LIB_Function_table_clear.html"><div class="navi">9.1.2.6 table clear ... </div></a></li>
-<li class="navi"><a href="LIB_Function_table_delete.html"><div class="navi">9.1.2.7 table delete ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_add_missing_row.html"><div class="navi">9.1.2.5 table (write or) add missing row </div></a></li>
+<li class="navi"><a href="LIB_Function_table_configure.html"><div class="navi">9.1.2.6 table configure </div></a></li>
+<li class="navi"><a href="LIB_Function_table_clear.html"><div class="navi">9.1.2.7 table clear ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete.html"><div class="navi">9.1.2.8 table delete ... </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_accessing_table_info.html"><div class="navi">+ 9.1.3 Accessing Table Information </div></a></li>
 <li class="navi"><a href="LIB_Features_Accessing_table_contents.html"><div class="navi">+ 9.1.4 Accessing Table Contents </div></a></li>
-<li class="navi"><a href="LIB_Features_Exploring_and_Extracting_Tables.html"><div class="navi">+ 9.1.5 Exploring and Extracting Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Filter_and_explore_and_extract_sub-tables.html"><div class="navi">+ 9.1.5 Filter, Explore, Extract Sub-Tables </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_with_Tables.html"><div class="navi">+ 9.1.6 Console I/O with Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_table_functions_processing.html"><div class="navi">+ 9.2 Search and Processing </div></a></li>
@@ -95,7 +96,8 @@ may be extended with additional parameters in order to write the rows below, too
 <td>table columns</td>
 <td><b>Header names and/or column numbers</b><br/><p>See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li></ul><p></p>
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">Nonexisting header names will be added to the table</li></ul><p></p>
 </td></tr>
 <tr><td>3.<br/>input</td>
 <td>numeral</td>
@@ -106,7 +108,7 @@ Negative indexing is supported.</p>
 </td></tr>
 <tr><td>3. / 4., etc.<br/>input</td>
 <td>parameter set</td>
-<td><b>Data</b><br/><p>All data written to the table must be put into parameter set and passed in this function parameter, even if only one
+<td><b>Data to add or write</b><br/><p>All data written to the table must be put into parameter set and passed in this function parameter, even if only one
 string value is provided.  The number of elements must not exceed the number of table columns specified but may be lower.
 If fewer data elements are specified, then the remaining fields will not be overwritten.
 
