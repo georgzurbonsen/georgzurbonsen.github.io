@@ -433,7 +433,7 @@ OK;Body;4;B 9.2.1.3;table find row;LIB_Function_table_find_row.html;table find r
 OK;Body;4;B 9.2.1.4;table selected rows;LIB_Function_table_selected_rows.html;table selected rows;table selected rows;
 OK;Body;4;B 9.2.1.5;table selected columns/headers ...;LIB_Function_table_selected_columns.html;table selected columns,table selected column numbers,table selected headers;table selected columns,table selected column numbers,table selected headers;
 OK;Body;4;B 9.2.1.6;table search header row;LIB_Function_table_search_header_row.html;table search header row;table search header row;
-OK;Body;3;B 9.2.2;Copying, Renaming and Splitting Tables;LIB_Features_Copying,_renaming_and_spitting_tables.html;Copying, renaming and spitting tables;Copying, renaming and spitting tables;
+OK;Body;3;B 9.2.2;Copying, Renaming and Splitting Tables;LIB_Features_Copying__renaming_and_spitting_tables.html;Copying, renaming and spitting tables;Copying, renaming and spitting tables;
 OK;Body;4;B 9.2.2.1;table rename;LIB_Function_table_rename.html;table rename;table rename;
 OK;Body;4;B 9.2.2.2;table copy table;LIB_Function_table_copy_table.html;table copy table;table copy table;
 OK;Body;4;B 9.2.2.3;table copy/split table selected rows;LIB_Function_table_copy_table_selected_rows.html;table copy table selected rows,table split table selected rows;table copy table selected rows,table split table selected rows;
