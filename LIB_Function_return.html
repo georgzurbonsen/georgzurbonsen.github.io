@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>return</h3>
+<a accesskey="p" href="LIB_Features_user_parameter_types.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_function_existing.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">2 Control Flow Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Branches.html"><div class="navi">+ 2.1 Branches </div></a></li>
+<li class="navi"><a href="LIB_Features_Loops.html"><div class="navi">+ 2.2 Loops </div></a></li>
+<li class="navi"><a href="LIB_Features_User-defined_procedures_and_functions.html"><div class="navi">2.3 User-Defined Procedures and Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_define_procedure.html"><div class="navi">2.3.1 define procedure / function </div></a></li>
+<li class="navi"><a href="LIB_Function_define_additional_procedure.html"><div class="navi">2.3.2 define additional procedure / function </div></a></li>
+<li class="navi"><a href="LIB_Features_user_parameter_types.html"><div class="navi">2.3.3 Parameter Types in User-Defined Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_return.html"><div class="navi navi-selected">2.3.4 return </div></a></li>
+<li class="navi"><a href="LIB_Function_function_existing.html"><div class="navi">2.3.5 function / user function existing </div></a></li>
+<li class="navi"><a href="LIB_Function_delete_user_function.html"><div class="navi">2.3.6 delete user function </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Launch_other_B4P_programs.html"><div class="navi">+ 2.4 Launch other B4P programs </div></a></li>
+<li class="navi"><a href="LIB_Features_Exception_functions.html"><div class="navi">+ 2.5 Exception Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Comparison_and_selection_functions.html"><div class="navi">+ 2.6 Comparison and Selection Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Code_Execution_Functions.html"><div class="navi">+ 2.7 Code Execution Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>return</code></div>
+<h4> Synopsis</h4>
+<div class="white_background_color" ><code>return;<br/>
+return ( return value );</code></div>
+<h4> Description</h4>
+<p>
+If used inside a user-defined procedure or function: Returns from that called procedure / function, along with a return value, if provided.<br>
+In other cases: Similar functionality like <a class="bold_text" href="LIB_Function_end.html">end</a>() procedure where control is either returned to the calling B4P program, or, if this is not the ase,
+program execution will end.
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>The return value will be ignored in defined procedures or if the code is called as a procedure without retrieving the returned value.</p>
+<h4> Parameter count</h4>
+<p>Max. 1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>all types</td>
+<td><b>Return Value</b><br/><p>Return value to be passed to the calling program</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;function ( current time ) { return( time(now) ); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"Now, it's ", current time() );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Now,&nbsp;it's&nbsp;13:38:44<br/>
+</code></div><u>Try it yourself:</u> Open <b>LIB_Function_return.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_define_procedure.html">define function</a><br/>
+<a class = "bold_text" href="LIB_Function_end.html">end</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

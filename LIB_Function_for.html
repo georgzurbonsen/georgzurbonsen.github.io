@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>for</h3>
+<a accesskey="p" href="LIB_Function_do.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_while.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">2 Control Flow Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Branches.html"><div class="navi">+ 2.1 Branches </div></a></li>
+<li class="navi"><a href="LIB_Features_Loops.html"><div class="navi">2.2 Loops </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_do.html"><div class="navi">2.2.1 do </div></a></li>
+<li class="navi"><a href="LIB_Function_for.html"><div class="navi navi-selected">2.2.2 for </div></a></li>
+<li class="navi"><a href="LIB_Function_while.html"><div class="navi">2.2.3 while, until </div></a></li>
+<li class="navi"><a href="LIB_Function_for_all_parameters.html"><div class="navi">2.2.4 for all parameters </div></a></li>
+<li class="navi"><a href="LIB_Function_for_all_variables.html"><div class="navi">2.2.5 for all variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_User-defined_procedures_and_functions.html"><div class="navi">+ 2.3 User-Defined Procedures and Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Launch_other_B4P_programs.html"><div class="navi">+ 2.4 Launch other B4P programs </div></a></li>
+<li class="navi"><a href="LIB_Features_Exception_functions.html"><div class="navi">+ 2.5 Exception Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Comparison_and_selection_functions.html"><div class="navi">+ 2.6 Comparison and Selection Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Code_Execution_Functions.html"><div class="navi">+ 2.7 Code Execution Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>for</code></div>
+<h4> Synopsis</h4>
+<div class="white_background_color" ><code>for ( init statement, condition expression, loop statement ) statements;<br/>
+for ( start statement, condition, next statement ) { statements; }</code></div>
+<h4> Description</h4>
+<p>Repeated execution of statements inside a for-loop.  First, the <i>init statement</i> is executed and the <i>condition expression</i> is checked.
+If this expression returns <i>true</i>, then the statements inside the loop will be executed.  The <i>loop statement</i> will be executed afterwards,
+following checking the </i>condition expression</i> again.  If the expression is <i>false</i>, then loop execution has finishe.
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>No indirect parameter passing</p>
+<h4> Parameter count</h4>
+<p>3</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>code</td>
+<td>statements<br/>:literal</td>
+<td><b>init statement</b><br/><p>Will be executed once when the loop begins.  Useful to initialize loop counters.</p>
+</td></tr>
+<tr><td>2<br/>code</td>
+<td>expression<br/>:literal</td>
+<td><b>condition expression</b><br/><p>Will be calculated before every loop round.  The statements in the loop will be executed if this value is <i>true</i>.</p>
+</td></tr>
+<tr><td>3<br/>code</td>
+<td>statements<br/>:literal</td>
+<td><b>loop statement</b><br/><p>Will be calculated after every loop round and before the <i>condition expression</i> is checked again.</p>
+</td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(a[] = 3, a[] &lt; 15, a[]+=2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(a[],'&nbsp;');<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(a[]==9) a[]++; // Increment to 10<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>3&nbsp;5&nbsp;7&nbsp;9&nbsp;12&nbsp;14&nbsp;</code></div><u>Try it yourself:</u> Open <b>LIB_Function_for.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_while.html">while</a><br/>
+<a class = "bold_text" href="LIB_Function_while.html">until</a><br/>
+<a class = "bold_text" href="LIB_Function_do.html">do</a></p>
+<h4> Notes</h4>
+<p>Do not confuse syntax with C/C++! The 3 parameters are separated with commas and not semicolons.
+You are allowed to add multiple statements into the 1st and 3rd parameter where these statements are separated with semicolons."</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

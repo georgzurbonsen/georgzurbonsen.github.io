@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table delete columns</h3>
+<a accesskey="p" href="LIB_Function_table_keep_columns.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_delete_remaining_columns.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">9 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+ 9.1 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+ 9.2 Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+ 9.3 Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+ 9.4 Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+ 9.5 Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+ 9.6 Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">9.7 Processing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Checking_headers.html"><div class="navi">+ 9.7.1 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_columns.html"><div class="navi">9.7.2 Processing Table Columns </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_insert_columns.html"><div class="navi">9.7.2.1 table insert (missing) columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_copy_columns.html"><div class="navi">9.7.2.2 table copy columns ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_duplicate_columns.html"><div class="navi">9.7.2.3 table duplicate columns ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_sort_columns.html"><div class="navi">9.7.2.4 table sort columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_rearrange_columns.html"><div class="navi">9.7.2.5 table rearrange ... columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_keep_columns.html"><div class="navi">9.7.2.6 table keep ... columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete_columns.html"><div class="navi navi-selected">9.7.2.7 table delete columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete_remaining_columns.html"><div class="navi">9.7.2.8 table delete remaining columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete_blank_columns.html"><div class="navi">9.7.2.9 table delete blank/empty/unnamed columns </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Processing_table_rows.html"><div class="navi">+ 9.7.3 Processing Table Rows </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_contents.html"><div class="navi">+ 9.7.4 Processing Table Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Pivoting_and_consolidating_tables.html"><div class="navi">+ 9.7.5 Pivoting and Conosolidating Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Copying__renaming_and_spitting_tables.html"><div class="navi">+ 9.7.6 Copying, Renaming and Splitting Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">+ 9.8 Multi-Table Integration </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+ 9.9 Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table delete columns</code></div>
+<h4> Description</h4>
+<p>
+This function deletes specified columns.
+
+<br><br>
+
+Deleting begins with the right-most column in the table, and not with the first (or last) column referenced.   With this approach, the positions of the remaining
+columns further to the left will not shift.
+</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>2-3</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>literal</td>
+<td><b>Name of existing table</b><br/><p></p>
+</td></tr>
+<tr><td>2<br/>input</td>
+<td>table columns</td>
+<td><b>Existing columns</b><br/><p>See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li><li class="bullets">No exceptions are asserted if header names are missing or column numbers are out of range.
+</li><li class="bullets">Repeatedly specified header names and column numbers will be ignored
+</li></ul><p></p>
+</td></tr>
+<tr><td>Opt. 3<br/>input</td>
+<td>numeral</td>
+<td><b>Number of columns to delete</b><br/><p>By default, the specified column will be deleted.<br>
+If 0 is specified, then nothing will be deleted.<br>
+If a value greater than 1 is specified, then additional columns to the right will be deleted, too.<br>
+-1 deletes all remaining columns to the end of the table (maximum table width)<br>
+-2 (-3, ...) deletes all remaining columns except the last (2nd last, ...) column.  Strongly recommended to use negative number only with one one header name or column number.</p>
+<span class="black_text"><b> Default value: </b></span>1
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Number of columns deleted</b><br/><p></p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Table not found<br/>
+Header name not found</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo("Delete&nbsp;3 column pairs");<br/>
+&nbsp;&nbsp;table&nbsp;initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
+<br/>
+&nbsp;&nbsp;//&nbsp;Deletes 6 columns: H &amp; I, C &amp; D, and B &amp; E. Remaining; A, F, G, J and K<br/>
+&nbsp;&nbsp;echo(&nbsp;"# columns deleted: ", table delete columns ( table, {7, Col B, Col C}, 2 ) );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;delete columns ( table, Col A, 0 );&nbsp;&nbsp;// Nothing happens here (0 columns deleted)<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list( table );<br/>
+<br/>
+&nbsp;&nbsp;echo("Delete&nbsp;all columns between D and K");<br/>
+&nbsp;&nbsp;table&nbsp;initialize ( table, { { 'Col A' .. 'Col K' }, { 'Val A' .. 'Val K' } } );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;delete columns ( table, Col F, -2 );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list( table );<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Delete&nbsp;3&nbsp;column&nbsp;pairs<br/>
+#&nbsp;columns&nbsp;deleted:&nbsp;6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Col&nbsp;A&nbsp;|&nbsp;Col&nbsp;F&nbsp;|&nbsp;Col&nbsp;G&nbsp;|&nbsp;Col&nbsp;J&nbsp;|&nbsp;Col&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Val&nbsp;A&nbsp;|&nbsp;Val&nbsp;F&nbsp;|&nbsp;Val&nbsp;G&nbsp;|&nbsp;Val&nbsp;J&nbsp;|&nbsp;Val&nbsp;K<br/>
+<br/>
+Delete&nbsp;all&nbsp;columns&nbsp;between&nbsp;D&nbsp;and&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Col&nbsp;A&nbsp;|&nbsp;Col&nbsp;B&nbsp;|&nbsp;Col&nbsp;C&nbsp;|&nbsp;Col&nbsp;D&nbsp;|&nbsp;Col&nbsp;E&nbsp;|&nbsp;Col&nbsp;K<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Val&nbsp;A&nbsp;|&nbsp;Val&nbsp;B&nbsp;|&nbsp;Val&nbsp;C&nbsp;|&nbsp;Val&nbsp;D&nbsp;|&nbsp;Val&nbsp;E&nbsp;|&nbsp;Val&nbsp;K<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_delete_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_delete_remaining_columns.html">table delete remaining columns</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

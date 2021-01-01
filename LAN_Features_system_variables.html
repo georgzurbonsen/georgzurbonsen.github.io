@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>System Variables</h3>
+<a accesskey="p" href="LAN_Features_local_variables.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_list_of_system_variables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">4 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_variable_scopes.html"><div class="navi">4.1 Variable Scopes </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_global_variables.html"><div class="navi">4.1.1 Global Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_local_variables.html"><div class="navi">4.1.2 Local Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_system_variables.html"><div class="navi navi-selected">4.1.3 System Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_list_of_system_variables.html"><div class="navi">4.1.3.1 List of System Variables </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">4.2 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+ 4.3 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 4.4 References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">4.5 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>System variables are predefined variables which contain system-related information (e.g. <b>system info[user name]</b>) or configuration settings. e.g.
+<b>runtime settings[verbose]</b>.  For most system variables, <a class="bold_text" href="LAN_Features_protecting_variables.html">variable protections</a> apply which may permit read-accesses, or impose restrictions
+on write accesses, e.g. limiting values to write to a selection of permitted values.  See the <a class="bold_text" href="LAN_Features_list_of_system_variables.html">list of system variables</a> for existing system variables.</p>
+<h5> Demonstrating system and local variables</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define&nbsp;procedure( foo, { { system info, numeral } } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Local variable system info[] is not accessible here because system<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;variables are treated preferentially over local and global variables.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;"This is a ", scope( system info[]), " variable." );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(&nbsp;system info[operating system] );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;foo(&nbsp;123 );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>This&nbsp;is&nbsp;a&nbsp;system&nbsp;variable.<br/>
+Windows<br/>
+</code></div><u>Try it yourself:</u> Open <b>LAN_Features_system_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Matrix Functions</h3>
+<a accesskey="p" href="LIB_Function_count.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_mmul.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">5 Mathematics and Statistics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_math_functions.html"><div class="navi">+ 5.1 Basic Math Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_transcendental_functions.html"><div class="navi">+ 5.2 Transcendental Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_series_functions.html"><div class="navi">+ 5.3 Series Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_matrix_functions.html"><div class="navi navi-selected">5.4 Matrix Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_mmul.html"><div class="navi">5.4.1 mmul, mmdiv - Multiplication and Division </div></a></li>
+<li class="navi"><a href="LIB_Function_minv.html"><div class="navi">5.4.2 minv - Matrix Inversion </div></a></li>
+<li class="navi"><a href="LIB_Function_mdet.html"><div class="navi">5.4.3 mdet - Matrix Determinant </div></a></li>
+<li class="navi"><a href="LIB_Function_linear.html"><div class="navi">5.4.4 linear - Solve Linear Equations </div></a></li>
+<li class="navi"><a href="LIB_Function_horizontal.html"><div class="navi">5.4.5 horizontal </div></a></li>
+<li class="navi"><a href="LIB_Function_vertical.html"><div class="navi">5.4.6 vertical </div></a></li>
+<li class="navi"><a href="LIB_Function_flat.html"><div class="navi">5.4.7 flat </div></a></li>
+<li class="navi"><a href="LIB_Function_diagonal.html"><div class="navi">5.4.8 diagonal </div></a></li>
+<li class="navi"><a href="LIB_Function_transpose.html"><div class="navi">5.4.9 transpose </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_statistics_functions.html"><div class="navi">+ 5.5 Statistics Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_sum_if.html"><div class="navi">5.6 Conditional Combination Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_finance_functions.html"><div class="navi">+ 5.7 Finance and Business Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P provides a library of powerful matrix functions.  While vectors are modeled as 1-dimensional <a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">parameter sets</a> containing <a class="bold_text" href="LAN_Features_data_types_numerals.html">numerals</a>,
+matrices are modeled as <a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">parameter sets</a> (rows) containing <a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">parameter sets</a> containing <a class="bold_text" href="LAN_Features_data_types_numerals.html">numerals</a> (columns).
+
+Example: <b>{{ 1, 2, 3 }, { 4, 5, 6 }}</b> is a matrix consisting of 2 rows and 3 columns:<br><br>
+
+| 1  2  3 |<br>
+| 4  5  6 |<br>
+
+<br>
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_mmul.html">mmul</a>: Matrix multiplication
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_minv.html">minv</a>: Matrix inversion
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_mmul.html">mdiv</a>: Matrix division
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_mdet.html">mdet</a>: Calculates determinant
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_linear.html">linear</a>: Solves a set of linear equations (Gaussian elimination)
+</li></ul><p>
+You may possibly be missing the functions like <b>madd</b> and <b>msub</b> for addition and subtraction.  These two operations can be
+implmented with direct <a class="bold_text" href="LAN_Features_matrix_operations_summary.html">matrix mathematics</a> using <a class="bold_text" href="LAN_Features_deep_operators.html">deep operators</a> as shown below:
+
+</p><ul class="bullets"><li class="bullets">Matrix addition: <b>a[] +^^ b[]</b>
+</li><li class="bullets">Matrix subtraction: <b>a[] -^^ b[]</b>
+</li><li class="bullets">Scalar multiplication: <b>a[] *^^ b[]</b>
+</li><li class="bullets">Scalar division: <b>a[] /^^ b[]</b>
+</li></ul><p>
+<br>
+
+Following functions, also described in this section, allow any types in their matrices because contents are only moved and not calculated:
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_horizontal.html">horizontal</a>:  Converts a flat or vertical matrix to a horizontal matrix (1 row, several column elements)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_vertical.html">vertical</a>: Converts a flat or horizontal matrix to a vertical matrix (1 column, several row elements)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_flat.html">flat</a>: Flattens the matrix to all values arranged in a simple parameter set
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_diagonal.html">diagonal</a>: Creates a matrix with values along the diagonal and zero in the remaining fields
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_transpose.html">transpose</a>: Transposes a matrix
+</li></ul><p></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

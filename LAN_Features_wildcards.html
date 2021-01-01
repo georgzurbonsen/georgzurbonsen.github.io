@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Wildcards</h3>
+<a accesskey="p" href="LAN_Features_comparison_options.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_logical_operators.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi">1 Introduction </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">6 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_unary_operators.html"><div class="navi">6.1 Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_binary_operators.html"><div class="navi">6.2 Binary Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_arithmetic_operators.html"><div class="navi">+ 6.2.1 Arithmetic Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_operators.html"><div class="navi">+ 6.2.2 Comparison Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_options.html"><div class="navi">6.2.3 Comparison Options </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_wildcards.html"><div class="navi navi-selected">6.2.3.1 Wildcards </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_logical_operators.html"><div class="navi">+ 6.2.4 Logical Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 6.3 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operators.html"><div class="navi">6.4 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">6.5 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+ 6.6 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P supports wildcards which enables for more effective search and comparison functions as they enable pattern matching with concepts such as
+</p><ul class="bullets"><li class="bullets">Begins with ...
+</li><li class="bullets">Ends with ...
+</li><li class="bullets">Contains ...
+</li><li class="bullets">Multiple patterns separated by cmmas ...
+</li></ul><p>
+
+Wildcards are used, amongst others, in following functionalities:
+</p><ul class="bullets"><li class="bullets">Comparison operators <a class="bold_text" href="LAN_Features_equal_to.html">equal to</a> <b>=</b> and <a class="bold_text" href="LAN_Features_not_equal_to.html">not equal to</a> <b>&lt;&gt;</b> where the operands on the right hand side may consist of literals containing wildcards
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Horizontal_table_access_using_wildcards.html">Horizontal table access using wildcards</a> and <a class="bold_text" href="LAN_Features_Vertical_table_access_using_wildcards.html">vertical table access using wildcards</a>
+</li><li class="bullets">Various B4P functions accepting parameters allowign wildcards for pattern matching
+</li><li class="bullets">Searching for files, e.g. <a class="bold_text" href="LIB_Function_directory_listing.html">directory listing</a>() and <a class="bold_text" href="LIB_Function_resolve_path_name.html">resolve path name</a>() function.
+</li></ul><p>
+Unless specified otherwise (like in searching files), wildcard symbols in strings will only work if specified as <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a>, for
+example using single (and not double) quotation marks.
+
+</p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:100px"><col style = "width:200px"><col style = "width:100px"><col style = "width:600px">
+<tr><th>Symbol  </th><th> Meaning                       </th><th> Example           </th><th> Explanation</th></tr>
+<tr><td></p><ul class="bullets"><li class="bullets"></td><td> Plaholder for any number of characters (incl. 0)  </td><td> A*<br>*s<br>*-*<br>A*E    </td><td> Begins with 'A' <br>Ends with 's'<br>Contains '-' <br>                                                      Begins with 'A' and ends with 'E'</td></tr>
+<tr><td></li></ul><p>~ </td><td> Placeholder for any number of letters (incl. 0)<br>         Foreign (non-ANSI) characters are accepted here, too. </td><td> ~ Street          </td><td> Expecting a name for the street (letters only)</td></tr>
+<tr><td>&amp;   </td><td> Placeholder for any number of numeric digits 0..9 </td><td> &amp; kg          </td><td> Expects a number of any size before ' kg'</td></tr>
+<tr><td>?   </td><td> Placeholder for exactly 1 character           </td><td> ???<br>A?         </td><td> Contains 3 characters of choice<br>A follwed by 1 character of choice</td></tr>
+<tr><td>#   </td><td> Placeholder for exactly 1 numeric digit 0..9      </td><td> ###-##-####           </td><td> Expect a social security number (U.S. number format)</td></tr>
+<tr><td>^ </td><td> Placeholder for exactly 1 alphanumeric character<br>        Foreign (non-ANSI) characters are accepted here, too. </td><td> ^^^               </td><td> Expect 3 letters</td></tr>
+<tr><td>,   </td><td> Defines additional pattern to compare         </td><td> A*,B*,C*          </td><td> May begin with A, B or C.</td></tr>
+</table><p>
+
+For searching files using directory and file functions, the wildcards are limited to * and ?.
+</p>
+<h5> Programming example</h5>
+<div class="code_background_color" ><code><br/>
+&nbsp;&nbsp;table&nbsp;initialize ( demo wildcards,<br/>
+&nbsp;&nbsp;{&nbsp;{ Target string, '*', '~', 'A*', '&amp;', 'Zip*#####', '??t', '*t', 'A*,B*,C*' },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1234,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12345,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Column headers contain wildcard symbols<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip&nbsp;12010,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1st column contain target strings to compare with these patterns<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cat,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The blank rows will be filled in with comparison results<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bat,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;'true' and 'false'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;halt&nbsp;} );<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;configure( demo wildcards, read numerals, no ); // Read numbers from tables as strings<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;process( demo wildcards,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(c[] = 1, c[] &lt; table row width( demo wildcards, 0 ), c[]++ )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c[]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;[0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= softquoted literal( [c[], 0 ] ); // Compare and write the result<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Current&nbsp;&nbsp;&nbsp;Column&nbsp;&nbsp;&nbsp;Compared with corresponding header name above<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;column&nbsp;&nbsp;&nbsp;&nbsp;zero<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;table&nbsp;list( demo wildcards );</code></div>
+<h4> Output 01</h4>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;:&nbsp;Target&nbsp;string&nbsp;|&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;A*&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Zip*#####&nbsp;|&nbsp;??t&nbsp;&nbsp;&nbsp;|&nbsp;*t&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;A*,B*,C*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;:&nbsp;Hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;:&nbsp;1234&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;:&nbsp;12345&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;:&nbsp;Zip&nbsp;12010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;:&nbsp;Cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;:&nbsp;Bat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;:&nbsp;halt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;true&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;false&nbsp;|&nbsp;true&nbsp;&nbsp;|&nbsp;false&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+</code></div><u>Try it yourself:</u> Open <b>LAN_Features_wildcards.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2020 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
