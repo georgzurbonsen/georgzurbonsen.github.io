@@ -51,7 +51,7 @@ OK;Body;3;B 2.6.6;Inspecting Variables Interactively;LAN_Features_Inspect_Variab
 OK;Body;3;B 2.6.7;Basic Commands;LAN_Features_Basic_Commands.html;Basic Commands;Basic Commands;
 OK;Body;3;B 2.6.8;Operating System Commands;LAN_Features_Operating_System_Commands.html;Operating System Commands;Operating System Commands,OS Commands;
 OK;Body;1;B 3;The Language;LAN_Features_The_Language.html;The Language;The Language;
-OK;Body;2;B 3.1;Basic Language Structure;LAN_Features_Basic_Language_Structure.html;Basic Language Structure;Basic Language Structure,Blocks,statement,B4P statements;
+OK;Body;2;B 3.1;Basic Language Structure;LAN_Features_Basic_Language_Structure.html;Basic Language Structure;Basic Language Structure,Blocks,Statement,Statements;
 OK;Body;2;B 3.2;Distinct Language Features;LAN_Features_Distinct_Language_Features.html;Distinct Language Features;Distinct Language Features;
 OK;Body;2;B 3.3;Comments;LAN_Features_comments.html;comments;comments,markdown,github markdown;
 OK;Body;2;B 3.4;Characters;LAN_Features_Characters.html;Characters;Characters;
@@ -125,7 +125,7 @@ OK;Body;3;B 5.1.7;Shifted Table Column Specifications;LAN_Features_shifted_table
 OK;Body;3;B 5.1.8;Header Name Exception Handling;LAN_Features_header_name_exception_handling.html;header name exception handling;header name exception handling;
 OK;Body;3;B 5.1.9;Lookup Access Exception Handling;LAN_Features_lookup_access_exception_handling.html;lookup access exception handling;lookup access exception handling;
 OK;Body;2;B 5.2;Header Names - Memory Effect;LAN_Features_memory_effect.html;memory effect;memory effect;
-OK;Body;1;B 6;Assignments and Expressions;LAN_Features_assignments.html;assignments;assignments,expressions,B4P expression,B4P expressions;
+OK;Body;1;B 6;Assignments and Expressions;LAN_Features_assignments.html;assignments;assignments,expression,expressions;
 OK;Body;2;B 6.1;Unary Operators;LAN_Features_unary_operators.html;unary operators;unary operators;
 OK;Body;2;B 6.2;Binary Operators;LAN_Features_binary_operators.html;binary operators;binary operators;
 OK;Body;3;B 6.2.1;Arithmetic Operators;LAN_Features_arithmetic_operators.html;arithmetic operators;arithmetic operators;
