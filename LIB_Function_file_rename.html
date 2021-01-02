@@ -28,7 +28,7 @@
 <li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
 <li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
@@ -114,8 +114,13 @@ Number of existing and new path and file names are not equal</p>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;create( My Folder 1, My Folder 2 );<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;copy( Example_Program.b4p, "My Folder 1/Test123.txt" );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;rename( My Folder 1&#92;test123.txt, My Folder 2&#92;test456.txt ); // Move and rename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /A-D /W "My Folder 2"' ); // Show directory listing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file&nbsp;rename( My Folder 1&#92;Test123.txt, My Folder 2&#92;Test456.txt ); // Move and rename<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(system info[operating system]=Windows)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /A-D /W "My Folder 2"' ); // Show directory listing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;"ls 'My Folder 2'" ); // Show directory listing<br/>
+<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "", "My Folder ?" ); // Delete "My Folder 1" and "... 2".</code></div>
 <h4> Output</h4>
@@ -124,9 +129,9 @@ Number of existing and new path and file names are not equal</p>
 <br/>
 &nbsp;Verzeichnis&nbsp;von&nbsp;C:&#92;Users&#92;Zur&nbsp;Bonsen&nbsp;Georg&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;My&nbsp;Folder&nbsp;2<br/>
 <br/>
-test456.txt&nbsp;&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;384&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;45’477’273’600&nbsp;Bytes&nbsp;frei<br/>
+Test456.txt&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;522&nbsp;Bytes<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;32’971’644’928&nbsp;Bytes&nbsp;frei<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_file_rename.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_directory_rename.html">directory rename ... Functions</a><br/>

@@ -28,7 +28,7 @@
 <li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
 <li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
@@ -107,8 +107,13 @@ to call this function for "dir1"; "dir1/dir2", "dir1/dir2/dir3" ... etc.</p>
 invalid path name</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;create( { My Folder 1 .. My Folder 5 } ); // Create 5 directories<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /W "My Folder*"' ); // Show directory listing<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "", "My Folder *" ); // Delete "My Folder 1" and "... 2".<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(system info[operating system]=Windows)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /W "My Folder*"' ); // Show directory listing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;"ls 'My Folder'* " ); // Show directory listing<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "", "My Folder *" ); // Delete "My Folder 1" and "... 2".<br/>
 </code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;Datenträger&nbsp;in&nbsp;Laufwerk&nbsp;C:&nbsp;ist&nbsp;Windows<br/>
@@ -118,7 +123,7 @@ invalid path name</p>
 <br/>
 [My&nbsp;Folder&nbsp;1]&nbsp;[My&nbsp;Folder&nbsp;2]&nbsp;[My&nbsp;Folder&nbsp;3]&nbsp;[My&nbsp;Folder&nbsp;4]&nbsp;[My&nbsp;Folder&nbsp;5]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;Verzeichnis(se),&nbsp;45’477’208’064&nbsp;Bytes&nbsp;frei<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;Verzeichnis(se),&nbsp;32’975’360’000&nbsp;Bytes&nbsp;frei<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_directory_create.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_directory_create_temp.html">directory create temp</a><br/>

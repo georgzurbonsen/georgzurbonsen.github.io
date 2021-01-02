@@ -28,7 +28,7 @@
 <li class="navi"><a href="GUI_Features_overview.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Introduction.html"><div class="navi"> &#8594; Language Guide </div></a></li>
 <li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LIB_Features_Function_library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
@@ -111,8 +111,13 @@ Directory is a file<br/>
 Number of existing and new path and directory names are not equal</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;create( My Folder 1, My Folder 2 );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;rename( My Folder 1, "My folder 2&#92;My Folder 3");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /W "My Folder 2"' ); // Show directory listing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;rename( My Folder 1, "My Folder 2&#92;My Folder 3");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(system info[operating system]=Windows)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;'dir /W "My Folder 2"' ); // Show directory listing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system(&nbsp;"ls 'My Folder 2' " ); // Show directory listing<br/>
+<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory&nbsp;delete recursive( "", "My Folder *" );</code></div>
 <h4> Output</h4>
@@ -123,7 +128,7 @@ Number of existing and new path and directory names are not equal</p>
 <br/>
 [.]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[..]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[My&nbsp;Folder&nbsp;3]&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;Verzeichnis(se),&nbsp;45’477’273’600&nbsp;Bytes&nbsp;frei<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;Verzeichnis(se),&nbsp;32’975’360’000&nbsp;Bytes&nbsp;frei<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_directory_rename.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_file_rename.html">file rename ... Functions</a></p>
