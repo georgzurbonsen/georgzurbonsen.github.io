@@ -66,13 +66,13 @@
 <div class="white_background_color" ><code>resolve path name, resolve directory name, resolve file name</code></div>
 <h4> Description</h4>
 <p>
-This function resolves specified directory path and file names (containing <span class="red_text">wildcard</span> symbols in various directory and/or file names) to existing path and file names where<br>
+This function resolves specified directory path and file names (containing <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> in various directory and/or file names) to existing path and file names where<br>
 1. The full path name will be checked.
 </p><ul class="bullets"><li class="bullets">For <b>resolve file name</b>, the last name must be a file name.
 </li><li class="bullets">For <b>resolve file name</b>, the last name must be a directory name.
 </li><li class="bullets">For <b>resolve path name</b>, the last name may either be a file or directory name.
 </li></ul><p>
-2. If path contains <span class="red_text">wildcard</span> symbols (<u>Attention: '*' and '?' only)</u>, then the matching name will be identified.  <br>
+2. If path contains <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> (<u>Attention: '*' and '?' only)</u>, then the matching name will be identified.  <br>
 If 2 or more matches are found, then an exception will be asserted because the path is ambiguous.<br>
 3. If the path begins with a lone tilde symbol ('~/...',  '~\...'), then the tilde will be replaced by the user home directory.<br>
 4. Wildcards along the full directory path are allowed, e.g. "C:\Prgram Files\*\*\Lib\Support Library*".  B4P will search through the different<br>
@@ -93,7 +93,7 @@ directores in the B4P process, too.  Reason: Operating System commands executed 
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>literal</td>
-<td><b>path name</b><br/><p>This path name may contain <span class="red_text">wildcard</span> symbols which will be resolved.</p>
+<td><b>path name</b><br/><p>This path name may contain <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> which will be resolved.</p>
 <span class="black_text"><b> Default value: </b></span>Current working directory
 </td></tr>
 </table>

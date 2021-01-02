@@ -581,7 +581,7 @@ OK;Body;3;B 10.4.1;release;LIB_Function_release.html;release;release;
 OK;Body;3;B 10.4.2;release all;LIB_Function_release_all.html;release all;release all;
 OK;Body;2;B 10.5;Resident Attributes Functions;LIB_Features_Resident_attributes_functions.html;Resident attributes functions;Resident attributes functions;
 OK;Body;3;B 10.5.1;attribute ...;LIB_Function_attribute_read.html;attribute read,attribute write,attribute modify,attribute delete,attribute remove,attribute listing;attribute read,attribute write,attribute modify,attribute delete,attribute remove,attribute listing;
-OK;Body;1;B 11;Directory and File System Functions;LIB_Features_directory_and_file_system_functions.html;directory and file system functions;directory and file system functions;
+OK;Body;1;B 11;Directory and File System Functions;LIB_Features_directory_and_file_system_functions.html;directory and file system functions,Short error messages on directories and files;directory and file system functions,Short error messages on directories and files;
 OK;Body;2;B 11.1;Basic Directory and File Functions;LIB_Features_basic_directory_and_file_functions.html;basic directory and file functions;basic directory and file functions;
 OK;Body;3;B 11.1.1;directory existing, file existing;LIB_Function_directory_existing.html;directory existing,file existing;directory existing,file existing;
 OK;Body;3;B 11.1.2;read access ..., write access ...;LIB_Function_read_access.html;read access,read access repeat if locked,write access,write access repeat if locked;read access,read access repeat if locked,write access,write access repeat if locked;

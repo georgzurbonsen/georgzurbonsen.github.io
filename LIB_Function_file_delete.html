@@ -73,7 +73,7 @@
 <p>
 These functions delete specified files and come in following flavors:<br>
 <b>file delete</b> will assert an exception if file cannot be deleted (e.g. file not found, locked, access restrictions, etc.)  Execution will stop immediately.<br>
-<b>file delete silently</b> will delete the files until a first failure is encountered.  In this case, the applicable one of the <span class="red_text">short error messages on directories and files</span>
+<b>file delete silently</b> will delete the files until a first failure is encountered.  In this case, the applicable one of the <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>
 will be returned.  If no errors have been encountered, "OK" will be returned.<br>
 <b>file delete all</b> tries to delete al files and skips the ones which cannot be created.  Here, the number of successfully deleted files will be returned.<br>
 
@@ -97,7 +97,7 @@ parameter set.  Example: <b>file delete</b>( { file1.txt, file.txt, .. } );</p>
 <tr>
 <td>numeral or literal</td>
 <td><b>Feedback</b><br/><p>              <b>file delete</b>: Always "OK", because all errors cause exceptions.<br>
-              <b>file delete silently</b>: "OK", or <span class="red_text">short error messages on directories and files</span>.<br>
+              <b>file delete silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>file delete all</b>: Number of successful operations (files deleted) is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>

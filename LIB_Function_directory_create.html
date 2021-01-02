@@ -74,7 +74,7 @@
 
 These functions create specified directories (including their files) and come in following flavors:<br>
 <b>directory create</b> will assert an exception if the directory cannot be created (e.g. directory already existing, access restrictions, etc.)  Execution will stop immediately.<br>
-<b>directory create silently</b> will create the directories until a first failure is encountered.  In this case, the applicable one of the <span class="red_text">short error messages on directories and files</span>
+<b>directory create silently</b> will create the directories until a first failure is encountered.  In this case, the applicable one of the <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>
 will be returned.  If no errors have been encountered, "OK" will be returned.
 <b>directory create all</b> tries to create all directories and skips the ones which cannot be created.  Here, the number of successfully created directories will be returned.<br>
 
@@ -99,7 +99,7 @@ to call this function for "dir1"; "dir1/dir2", "dir1/dir2/dir3" ... etc.</p>
 <tr>
 <td>numeral or literal</td>
 <td><b>Feedback</b><br/><p>              <b>directory create</b>: Always "OK", because all errors cause exceptions.<br>
-              <b>directory create silently</b>: "OK", or <span class="red_text">short error messages on directories and files</span>.<br>
+              <b>directory create silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>directory create all</b>: Number of successful operations (directories created) is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>
@@ -123,7 +123,7 @@ invalid path name</p>
 <br/>
 [My&nbsp;Folder&nbsp;1]&nbsp;[My&nbsp;Folder&nbsp;2]&nbsp;[My&nbsp;Folder&nbsp;3]&nbsp;[My&nbsp;Folder&nbsp;4]&nbsp;[My&nbsp;Folder&nbsp;5]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;Verzeichnis(se),&nbsp;32’975’360’000&nbsp;Bytes&nbsp;frei<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;Verzeichnis(se),&nbsp;37’295’665’152&nbsp;Bytes&nbsp;frei<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_directory_create.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_directory_create_temp.html">directory create temp</a><br/>

@@ -74,7 +74,7 @@
 
 These functions delete specified directories (including their files) and come in following flavors:<br>
 <b>directory delete</b> will assert an exception if the directory cannot be deleted (e.g. directory not found, directory not empty, access restrictions, etc.)  Execution will stop immediately.<br>
-<b>directory delete silently</b> will delete the directories until a first failure is encountered.  In this case, the applicable one of the <span class="red_text">short error messages on directories and files</span>
+<b>directory delete silently</b> will delete the directories until a first failure is encountered.  In this case, the applicable one of the <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>
 will be returned.  If no errors have been encountered, "OK" will be returned.
 <b>directory delete all</b> tries to delete all directories and skips the ones which cannot be created.  Here, the number of successfully deleted directories will be returned.<br>
 </p>
@@ -97,7 +97,7 @@ parameter set.  Example: <b>directory delete</b>( { directory1, directory2, .. }
 <tr>
 <td>numeral or literal</td>
 <td><b>Feedback</b><br/><p>              <b>directory delete</b>: Always "OK", because all errors cause exceptions.<br>
-              <b>directory delete silently</b>: "OK", or <span class="red_text">short error messages on directories and files</span>.<br>
+              <b>directory delete silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>directory delete all</b>: Number of successful operations (directories deleted) is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>

@@ -73,7 +73,7 @@
 <p>
 These functions make copies of files and come in following flavors:<br>
 <b>file copy</b> will assert an exception if the file cannot be renamed (e.g. file not found, file locked, access restrictions, etc.)  Execution will stop immediately.<br>
-<b>file copy silently</b> will copy the files until a first failure is encountered.  In this case, the applicable one of the <span class="red_text">short error messages on directories and files</span>
+<b>file copy silently</b> will copy the files until a first failure is encountered.  In this case, the applicable one of the <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>
 will be returned.  If no errors have been encountered, "OK" will be returned.
 <b>file copy all</b> tries to copy all files and skips the ones which cannot be renamed.  Here, the number of successfully copied files will be returned.<br>
 <b>... overwrite ...</b> in the function name will overwrite existing destination files.  Without this name ending, attempting to overwrite existing files assert exceptions.
@@ -99,7 +99,7 @@ will be returned.  If no errors have been encountered, "OK" will be returned.
 <tr>
 <td>numeral or literal</td>
 <td><b>Feedback</b><br/><p>              <b>file copy / file copy overwrite</b>: Always "OK", because all errors cause exceptions.<br>
-              <b>file copy ... silently</b>: "OK", or <span class="red_text">short error messages on directories and files</span>.<br>
+              <b>file copy ... silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>file copy ... all</b>: Number of successful operations (files copied) is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>
@@ -134,7 +134,7 @@ Number of existing and new path and file names are not equal</p>
 <br/>
 Test123.txt&nbsp;&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;654&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;32’975’360’000&nbsp;Bytes&nbsp;frei<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;37’295’648’768&nbsp;Bytes&nbsp;frei<br/>
 &nbsp;Datenträger&nbsp;in&nbsp;Laufwerk&nbsp;C:&nbsp;ist&nbsp;Windows<br/>
 &nbsp;Volumeseriennummer:&nbsp;3AE9-E853<br/>
 <br/>
@@ -142,7 +142,7 @@ Test123.txt&nbsp;&nbsp;&nbsp;<br/>
 <br/>
 Test&nbsp;456.txt&nbsp;&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;654&nbsp;Bytes<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;32’975’360’000&nbsp;Bytes&nbsp;frei<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;Verzeichnis(se),&nbsp;37’295’648’768&nbsp;Bytes&nbsp;frei<br/>
 </code></div><u>Try it yourself:</u> Open <b>LIB_Function_file_copy.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_file_rename.html">file rename ... Functions</a></p>
