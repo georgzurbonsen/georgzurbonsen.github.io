@@ -1,8 +1,8 @@
 ﻿Status;Category;Level;Section Nr;Section Name;HTML File Name;Feature Names;Keywords;Remarks
-Missing, (Assign right Category);Link;;;"&#8594; Language Guide";LAN_Features_Introduction.html;;;
+Missing, (Assign right Category);Link;;;"&#8594; Language Guide";LAN_Features_Language_Guide.html;;;
 Missing, (Assign right Category);Link;;;"&#8594; Function Library Guide";LIB_Features_Function_Library.html;;;
-OK, (Assign right Category);TOC;;;Table of Contents;GUI_Features_Table_of_Contents.html;Table of Contents;Table of Contents,User Guide;
-OK;Body;1;B 1;Overview;GUI_Features_overview.html;overview;overview;
+OK, (Assign right Category);TOC;;;Table of Contents;GUI_Features_Table_of_Contents.html;Table of Contents;Table of Contents;
+OK;Body;1;B 1;User Guide - Overview;GUI_Features_User_Guide.html;User Guide;User Guide;
 OK;Body;2;B 1.1;Key Benefits;GUI_Features_Key_Benefits.html;Key Benefits;Key Benefits;
 OK;Body;2;B 1.2;Key Features;GUI_Features_Key_Features.html;Key Features;Key Features;
 OK;Body;2;B 1.3;Use Cases;GUI_Features_use_cases.html;use cases;use cases;
@@ -31,10 +31,10 @@ OK;Body;2;B 4.1;Football team merger;GUI_Features_merging_two_football_clubs.htm
 OK;Body;1;B 5;Terms and Conditions;GUI_Features_Terms_and_Conditions.html;Terms and Conditions;Terms and Conditions;
 OK;Body;2;B 5.1;Licensing;GUI_Features_Licensing.html;Licensing;Licensing;
 OK;Body;1;B 6;Index;GUI_Features_Index.html;Index;Index;
-Missing, (Assign right Category);Link;;;"&#8594; User Guide";GUI_Features_overview.html;;;
+Missing, (Assign right Category);Link;;;"&#8594; User Guide";GUI_Features_User_Guide.html;;;
 Missing, (Assign right Category);Link;;;"&#8594; Function Library Guide";LIB_Features_Function_Library.html;;;
-OK, (Assign right Category);TOC;1;;Table of Contents;LAN_Features_Table_of_Contents.html;Table of Contents;Table of Contents,Reference Manual;
-OK;Body;1;B 1;Introduction;LAN_Features_Introduction.html;Introduction;Introduction;
+OK, (Assign right Category);TOC;1;;Table of Contents;LAN_Features_Table_of_Contents.html;Table of Contents;Table of Contents;
+OK;Body;1;B 1;Language Guide - Overview;LAN_Features_Language_Guide.html;Language Guide;Language Guide;
 OK;Body;1;B 2;Execution Engine;LAN_Features_Execution_Engine.html;Execution Engine;Execution Engine;
 OK;Body;2;B 2.1;Installing and Starting Up;LAN_Features_Installting_and_starting_up.html;Installting and starting up;Installting and starting up;
 OK;Body;2;B 2.2;Command Line Switches;LAN_Features_Command_line_switches.html;Command line switches;Command line switches,Command line options;
@@ -192,10 +192,10 @@ OK;Body;3;B 8.4.5;Expressions to Select Columns;LAN_Features_Expressions_to_sele
 OK;Body;2;B 8.5;Indirect Parameter Passing;LAN_Features_Indirect_parameter_passing.html;Indirect parameter passing;Indirect parameter passing;
 OK;Body;2;B 8.6;Introduction to User-Defined Functions;LAN_Features_Introduction_to_User-Defined_Functions.html;Introduction to User-Defined Functions;Introduction to User-Defined Functions;
 OK;Body;1;B 9;Index;LAN_Features_Index.html;Index;Index;
-Missing, (Assign right Category);Link;;;"&#8594; User Guide";GUI_Features_overview.html;;;
-Missing, (Assign right Category);Link;;;"&#8594; Language Guide";LAN_Features_Introduction.html;;;
-OK, (Assign right Category);TOC;1;;Table of Contents;LIB_Features_Table_of_Contents.html;Table of Contents;Table of Contents,Reference Manual;
-OK;Body;1;B 1;Function Library;LIB_Features_Function_Library.html;Function Library;Function Library;
+Missing, (Assign right Category);Link;;;"&#8594; User Guide";GUI_Features_User_Guide.html;;;
+Missing, (Assign right Category);Link;;;"&#8594; Language Guide";LAN_Features_Language_Guide.html;;;
+OK, (Assign right Category);TOC;1;;Table of Contents;LIB_Features_Table_of_Contents.html;Table of Contents;Table of Contents;
+OK;Body;1;B 1;Function Library;LIB_Features_Function_Library.html;Function Library,Function Library Guide;Function Library,Function Library Guide;
 OK;Body;1;B 2;Control Flow Functions;LIB_Features_Control_flow_functions.html;Control flow functions;Control flow functions;
 OK;Body;2;B 2.1;Branches;LIB_Features_Branches.html;Branches;Branches;
 OK;Body;3;B 2.1.1;if, unless;LIB_Function_if.html;if,unless;if,unless,conditional branches;
@@ -638,7 +638,9 @@ OK;Body;2;B 14.1;Sorting and Ranking Options;LIB_Features_Sorting_options.html;S
 OK;Body;2;B 14.2;Consolidation Actions;LIB_Features_consolidation_actions.html;consolidation actions;consolidation actions;
 OK;Body;1;B 15;Index;LIB_Features_Index.html;Index;Index;
 OK, (Assign right Category);Start;1;;Welcome;MAS_Features_Table_of_Contents.html;Table of Contents;Table of Contents;
-Missing, (Assign right Category);Link;1;;User Guide;GUI_Features_overview.html;;;
-Missing, (Assign right Category);Link;1;;Language Guide;LAN_Features_Introduction.html;;;
+Missing, (Assign right Category);Link;1;;Presentation;Images/B4P_V8.00_2021-01-05.pdf;;;
+Missing, (Assign right Category);Link;1;;User Guide;GUI_Features_User_Guide.html;;;
+Missing, (Assign right Category);Link;1;;Language Guide;LAN_Features_Language_Guide.html;;;
 Missing, (Assign right Category);Link;1;;Function Library Guide;LIB_Features_Function_Library.html;;;
-Missing;Body;1;B 1;Impressum;;;;
+OK;Body;1;B 1;Recent Releases;MAS_Features_Recent_Releases.html;Recent Releases;Recent Releases;
+OK;Body;2;B 1.1;Rel. 8.00;MAS_Features_Release_8.00.html;Release 8.00;Release 8.00;
