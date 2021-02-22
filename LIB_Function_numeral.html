@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>numeral</h3>
+<a accesskey="p" href="LIB_Features_smart_conversion_and_formatting.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_clean_numeral.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_literal.html"><div class="navi">+ 4.1 literal, quoted literal, softquoted literal </div></a></li>
+<li class="navi"><a href="LIB_Function_numeral.html"><div class="navi navi-selected">4.2 numeral </div></a></li>
+<li class="navi"><a href="LIB_Function_clean_numeral.html"><div class="navi">4.3 clean (if) numeral </div></a></li>
+<li class="navi"><a href="LIB_Function_smart_numeral.html"><div class="navi">4.4 smart (if) numeral </div></a></li>
+<li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
+<li class="navi"><a href="LIB_Function_time.html"><div class="navi">4.6 time, pure time </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_literals.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Function_boolean.html"><div class="navi">4.8 boolean </div></a></li>
+<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
+<li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
+<li class="navi"><a href="LIB_Function_type.html"><div class="navi">4.12 type, type detailed </div></a></li>
+<li class="navi"><a href="LIB_Function_hash_signature.html"><div class="navi">4.13 hash signature </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_column.html"><div class="navi">4.14 excel column </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_coordinates.html"><div class="navi">4.15 excel coordinates </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_validate_sheet_name.html"><div class="navi">4.16 excel validate sheet name </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+<li class="navi"><div> zebra </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>numeral</code></div>
+<h4> Description</h4>
+<p>
+This function converts a variable to a plain numeral.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>valid types</td>
+<td><b>Value</b><br/><p>Literals containing numbers (no text before numbers) are converted properly. Scientific notation is supported.<br>
+Numerals are passed through.  If existing, the literal context of the number will be discarded<br>
+Booleans are converted to 0 and 1<br>
+Parameter sets are not accepted<br>
+Dates are converted to a number in YYYYMMDD.  Time will be added as fraction of 1, e.g. 0.5 for 12:00 noon.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>number</b><br/><p>Contains resulting number.  No literal context of the number is preserved or included.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( numeral( '1.2E+03' ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( numeral( true ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( numeral( 0123 ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( numeral( date ( "05. Nov 2019 12:00" ) ) );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>1200<br>1<br>123<br>20191105.5<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_numeral.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_literal.html">literal conversion functions</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">date</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">pure date</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">date time</a><br/>
+<a class = "bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a><br/>
+<a class = "bold_text" href="LIB_Function_smart_numeral.html">smart numeral</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

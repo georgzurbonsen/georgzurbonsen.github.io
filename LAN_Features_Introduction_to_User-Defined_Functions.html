@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Introduction to User-Defined Functions</h3>
+<a accesskey="p" href="LAN_Features_Indirect_parameter_passing.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Index.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 Language Guide - Overview </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">8 Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Function_Naming.html"><div class="navi">8.1 Function Naming </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_Parameters.html"><div class="navi">8.2 Function Parameters </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_directions.html"><div class="navi">8.3 Function Parameter Directions </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_types.html"><div class="navi">+ 8.4 Function Parameter Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Indirect_parameter_passing.html"><div class="navi">8.5 Indirect Parameter Passing </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction_to_User-Defined_Functions.html"><div class="navi navi-selected">8.6 Introduction to User-Defined Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P provides means to define your own procedures and functions, assign plausible names for them and call them up like
+standard B4P functions.  Following <a class="bold_text" href="LIB_Features_Control_flow_functions.html">control flow functions</a> are available to define your own functions:
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_define_procedure.html">define procedure</a>(): The user-defined function can only be called as a procedure in statements.  Even if provided, return values are discarded.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_define_procedure.html">define function</a>(): The user-defined function can only be called inside expressions where the returned value is used.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_define_procedure.html">define procedure and function</a>(): The user-defined function can be called as both procedure in statements and functions inside expressions.
+</li></ul><p>
+All three functions expect a block (inside braces) containing the code.  Variables created inside are local variables.  Parameters are available
+as pure input parameters, output parameters, bi-directional I/O parameters, and references to variables so the whole sub-structure containing thee
+the members can be accessed.  Return values can be provided with the <a class="bold_text" href="LIB_Function_return.html">return</a>() function call.
+
+<br><br>
+Additional procedure and function names can be defined on the same implementation.  The local variable <b>function name[]</b> is visible inside the code block and
+can be used to provide distinguished functionality for every additional procedure and function name.  For more info, see
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional procedure</a>(): Assign an additional procedure name to an existing user-specific procedure or function.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional function</a>(): Assign an additional function name to an existing user-specific procedure or function.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional procedure and function</a>(): Assign an additional name, which can be used as as procedure and function calls, to an existing user-specific procedure or function.
+</li></ul><p>
+Fore more details, see the section on <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a>.</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define function( hypotenuse, { { x, numeral }, { y, numeral } } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return( sqrt( x[]*x[] + y[]*y[] ) );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;define procedure( say hello ) { echo("Hello !"); }<br/>
+<br/>
+&nbsp;&nbsp;say hello;<br/>
+&nbsp;&nbsp;echo( hypotenuse(3,4) );&nbsp;&nbsp;//&nbsp;&nbsp;5<br/>
+&nbsp;&nbsp;echo( hypotenuse(5,12) ); // 13<br/>
+&nbsp;&nbsp;echo( hypotenuse(8,15) ); // 17<br/>
+&nbsp;&nbsp;echo( hypotenuse(1,1) );&nbsp;&nbsp;//&nbsp;&nbsp;1.41...&nbsp;&nbsp;&nbsp;</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Hello !<br>5<br>13<br>17<br>1.4142135624<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Introduction_to_User-Defined_Functions.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
