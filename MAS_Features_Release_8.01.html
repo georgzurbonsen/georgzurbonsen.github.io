@@ -50,7 +50,8 @@
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() tolerated lower-case filetypes (.xlsx, .xlsm).  Now both lower- and upper-case letters are accepted.
 </li><li class="bullets">B4P refused saving additional Excel files if the 1st excel file was saved without stylings applied. Resolved.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>(): Sheet names containing '<', '>' or '&' have been rejected by Excel. Resolved.
-</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and tabe save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and table save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file
+</li><li class="bullets">Update 8.01b: [table name: column, ''] did not match rows with blank entries if the row width is shorter than column position.  Has been fixed.
 </li></ul><p></p>
 <h4> New Functions</h4>
 <p>
@@ -79,8 +80,8 @@ Excel files.<br>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() and <a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() are running significantly faster because time-critical codes have been implemented directly in the execution engine
 </li><li class="bullets">Some overall performance improvements in assigning values to variables
-</li></ul><p>
-</p>
+</li><li class="bullets">Update 8.01b: Batch-mode installation possible
+</li></ul><p></p>
 <h4> Depreciated and retired features</h4>
 <p>
 Please use <a class="bold_text" href="LIB_Function_exec.html">exec</a>() instead of <b>statements</b>(), as well as <a class="bold_text" href="LIB_Function_calc.html">calc</a>() instead of <b>expression</b>().  The implemented functionality has not changed.
