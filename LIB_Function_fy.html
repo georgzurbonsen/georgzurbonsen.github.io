@@ -69,7 +69,7 @@
 <p>
 This function identifies the financial (or fiscal) year of the date provided.  If 2 parameters (date and month year ending) are provided, then
 the financial year will be returned as a 4-digit numeral.  Example: <b>fy( "2021-04-01", 3 )</b> returns 2022.  If a formatting string is provided,
-then the returned value is a string which contains either one year or the combination of two years.  The formatting string will be checked for
+then the returned value is a string which contains either one year or the combination of two years.  The format pattern string will be checked for
 pound '#' characters.  Following rules apply:
 
 </p><ul class="bullets"><li class="bullets"> If one contiguous set of 2 '#' characters is identified, then these symbols will be replaced by the last two digits of the ending year
@@ -78,7 +78,9 @@ pound '#' characters.  Following rules apply:
 </li><li class="bullets"> Any other number of contiguous '#' characters, or a 3rd set of 2 or 4 '#' characters remain unchanged.
 </li><li class="bullets"> Any other character is treated as being part of the string to be returned, e.g. <b>"FY ####-##"</b> returns <b>"FY 2020-21"</b>.
 </li><li class="bullets"> In case the month specified equals twelve, then the starting and ending years are obviously the same.
-</li></ul><p></p>
+</li></ul><p>
+If a blank date is provided, then 0 is returned in case no format pattern string is provided, otherwise a blank string is returned.
+</p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -104,7 +106,7 @@ pound '#' characters.  Following rules apply:
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral<br/>literal</td>
-<td><b>Result</b><br/><p>Numeric 4-digit year if 2 parameters are provided, or string result if 3 parameters are provided.</p></td></tr>
+<td><b>Result</b><br/><p>Numeric 4-digit year if 2 parameters are provided, or string result if 3 parameters including the format pattern are provided.</p></td></tr>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;date[] = "2021-05-01";<br/>
