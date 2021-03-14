@@ -77,16 +77,29 @@ has been saved with Excel will be loaded.
 As of now, applied number formats will not be conveyed.  As an example, one Excel field contains 1.248 and the applied Excel number format
 for display is "0.0", the value "1.2" is shown on the Excel sheet using Excel.  However the original value will be loaded: 1.248.
 Beyond4P is able to distinguish properly between literals (strings), numerals, boolean values (true, false), dates, times and date-time combinations
-(YYYY-MM-DD  hh:mm:ss format) Other information such as formulas, cell formatting, etc. are ignored for the time being.
+(YYYY-MM-DD  hh:mm:ss format) Other information such as formulas, cell formatting, etc. are ignored in this main table.
 
 <br><br>
 <u>Note</u>: Only the plain data, but no no formatting information (e.g. text color), will be loaded.
-<u>Attention</u>: Encrypted, binary and proprietary legacy file types (e.g. .xlsb, .xls) cannot be processed.</p>
+<u>Attention</u>: Encrypted, binary and proprietary legacy file types (e.g. .xlsb, .xls) cannot be processed.
+
+<br><br>
+
+<b>Loading Excel formulas:</b><br>
+You can optionally load the underlying Excel formulas if two additional parameters are added: "formulas" followed
+by name of table which will be initialized and populated with formulas at the corresponding coordinates to the main
+Excel table.  For example, if row 5 / column 3 contains 10, the formula table may contain the formula "=5*2", always beginning with equal signs.<br>
+<u>Note:</u> The excel formulas are kept as they are.  No coordinates are modified, e.g. into B4P table coordinates.<br>
+<u>Note:</u> If formulas are entreed once in Excel and then copied and pasted horizontally or vertically across the table, the Excel
+has the lazy habit of writing the formula only 1-3 times, followed by a <i>shared</i> notification, probably attempting to save disk space.
+In these cases, the string value "(Shared)" will be written into the coresponding table location.
+
+</p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
 <h4> Parameter count</h4>
-<p>2-3</p>
+<p>2,3,5,7,9,...(odd numbers)</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
@@ -99,20 +112,46 @@ Beyond4P is able to distinguish properly between literals (strings), numerals, b
 <br><br>
 <u>Attention</u>: Binary (.xlsb), encrypted and legacy files (.xls) are not supported.</p>
 </td></tr>
-<tr><td>3<br/>input</td>
-<td>literal</td>
+<tr><td>Opt 3<br/>input</td>
+<td>literal<br/>numeral</td>
 <td><b>Excel sheet name</b><br/><p>A particular sheet will be loaded.  This function is very useful if the Excel workbook contains multiple
 sheets.  The function <a class="bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a>() is useful to identify all sheets, which is particularly useful
 if all sheets need to be loaded.  Every sheet needs to be loaded separately by repeatedly calling this function.
-<br><<br>
+<br><br>
+Alternatively, specify thes sheet number, starting with 1 from left to right in the Excel workbook.  Use 0 (zero)
+to select the currently active and visibile sheet as the Excel file is loaded.
+<br><br>
 <u>Attention</u>: Binary (.xlsb), encrypted and legacy files (.xls) are not supported.</p>
+<span class="black_text"><b> Default value: </b></span>0 (Open the currently active and visible sheet in the Excel workbook)
+</td></tr>
+<tr><td>Opt 4<br/>input</td>
+<td>literal</td>
+<td><b>Attribute name</b><br/><p>Following attribute names are supported:
+</p><ul class="bullets"><li class="bullets"><b>formulas</b>  Specify table name in <i>attribute value</i> parameter which shall be used to read all Excel formulas.
+</li></ul><p><u>Note</u>: Attribute value in the next function parameter is required.</p>
+</td></tr>
+<tr><td>Opt 5<br/>input</td>
+<td>literal</td>
+<td><b>Attribute value</b><br/><p>Specify the attribute value as defined by the previous function parameter <i>attribute name</i>.</p>
 </td></tr>
 </table>
-<h4> Examples</h4>
+<h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load excel file( football, "Examples&#92;Football Membership List.xlsx" );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( football );</code></div>
-<h4> Output</h4>
+<h5> </h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : First Name | Family Name | City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Level&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Amberstone&nbsp;&nbsp;| Amsterdam&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Beata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Berghill&nbsp;&nbsp;&nbsp;&nbsp;| Barcelona&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Corinne&nbsp;&nbsp;&nbsp;&nbsp;| Carlson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Copenhagen&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Dietmar&nbsp;&nbsp;&nbsp;&nbsp;| Davis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Dublin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Ellen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Evans&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Essen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Fred&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fisher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Frankfurt&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Gregory&nbsp;&nbsp;&nbsp;&nbsp;| Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Gaza City&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Henry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hansson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hamburg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Ida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ingelberg&nbsp;&nbsp;&nbsp;| Ingolstadt&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : John&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Janssen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Johannesburg | Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Karl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Karlsson&nbsp;&nbsp;&nbsp;&nbsp;| Kansas City&nbsp;&nbsp;| Experienced<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_load_excel_file.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Excel file with formulas</h5>
+<div class="code_background_color" ><code><br/>
+&nbsp;&nbsp;table load excel file( table, "Examples&#92;Formulas_Inside.xlsx", 0, formulas, formula table);<br/>
+<br/>
+&nbsp;&nbsp;echo("Values: ");<br/>
+&nbsp;&nbsp;table list( table );<br/>
+<br/>
+&nbsp;&nbsp;echo("Formulas: ");<br/>
+&nbsp;&nbsp;table list( formula table );<br/>
+</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Values: <br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Today:&nbsp;&nbsp;| 2021-03-13 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Numbers repeated&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Values&nbsp;&nbsp;| Double+1&nbsp;&nbsp;&nbsp;| Sq-Roots&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | (with matrix formula) <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2.2360679775&nbsp;&nbsp;| Text | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7.0710678119&nbsp;&nbsp;| Text | 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 201&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sum of products&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Totals: |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Intermediate vectors)<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : 181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 367&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 25.3071357894 | 0&nbsp;&nbsp;&nbsp;&nbsp;| 181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>Formulas: <br>&nbsp;&nbsp;&nbsp;&nbsp;0 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =TODAY()&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A3*2+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =SQRT(A3) | =D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A3:A7&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A4*2+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =SQRT(A4) | =D3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : =SUM(A3:A7) | =SUM(B3:B7) | (Shared)&nbsp;&nbsp;| (Shared) | (Shared)<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_load_excel_file_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a><br/>
 <a class = "bold_text" href="LIB_Function_table_load.html">table load</a></p>

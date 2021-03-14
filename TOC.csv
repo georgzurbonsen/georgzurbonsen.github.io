@@ -369,7 +369,9 @@ OK;Body;3;B 7.1.3;day of year;LIB_Function_day_of_year.html;day of year;day of y
 OK;Body;3;B 7.1.4;serial date;LIB_Function_serial_date.html;serial date;serial date,date info functions;
 OK;Body;3;B 7.1.5;weekday;LIB_Function_weekday.html;weekday;weekday,weekday from date;
 OK;Body;3;B 7.1.6;week;LIB_Function_week.html;week;week;
-OK;Body;3;B 7.1.7;reschedule;LIB_Function_reschedule.html;reschedule;reschedule;
+OK;Body;3;B 7.1.7;fq - Fiscal Quarter;LIB_Function_fq.html;fq;fq,financial quarter,fiscal quarter;
+OK;Body;3;B 7.1.8;fy - Fiscal Year;LIB_Function_fy.html;fy;fy,financial year,fiscal year;
+OK;Body;3;B 7.1.9;reschedule;LIB_Function_reschedule.html;reschedule;reschedule;
 OK;Body;2;B 7.2;Time and Stopwatch Functions;LIB_Features_time_and_stopwatch_functions.html;time and stopwatch functions;time and stopwatch functions,time functions;
 OK;Body;3;B 7.2.1;hour, minute, second;LIB_Function_hour.html;hour,minute,second;hour,minute,second,Time Info Functions;
 OK;Body;3;B 7.2.2;Stopwatch Functions;LIB_Function_watch_start.html;watch start,watch stop,watch continue,watch reset,watch read;watch start,watch stop,watch continue,watch reset,watch read;
