@@ -41,7 +41,8 @@
 <li class="navi"><a href="LAN_Features_Unquoted_Literals.html"><div class="navi">3.5.1 (Unquoted) Literals </div></a></li>
 <li class="navi"><a href="LAN_Features_Softquoted_Literals.html"><div class="navi navi-selected">3.5.2 Softquoted Literals </div></a></li>
 <li class="navi"><a href="LAN_Features_Quoted_Literals.html"><div class="navi">3.5.3 Quoted Literals </div></a></li>
-<li class="navi"><a href="LAN_Features_reserved_keywords.html"><div class="navi">3.5.4 Reserved Keywords </div></a></li>
+<li class="navi"><a href="LAN_Features_Multiline_literals.html"><div class="navi">3.5.4 Multiline Literals </div></a></li>
+<li class="navi"><a href="LAN_Features_reserved_keywords.html"><div class="navi">3.5.5 Reserved Keywords </div></a></li>
 </ul></li>
 <li class="navi"><a href="LAN_Features_Numeric_Constants.html"><div class="navi">3.6 Numeric Constants </div></a></li>
 <li class="navi"><a href="LAN_Features_basic_data_types.html"><div class="navi">+ 3.7 Basic Data Types </div></a></li>
@@ -69,6 +70,7 @@ Softquoted literals are used to name variables and tables, but not functions and
 </li><li class="bullets">The literal constant may contain leading or trailing spaces, as long they are inside the quotation marks
 </li><li class="bullets"><b>Character entities common in HTML</b> like &amp;euro; or &amp;#x20ac; for the EURO symbol &euro; are supported here
 </li><li class="bullets">In various functions, <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> in softquoted literals (e.g. *, ?, #, etc.) are used for flexible searching and comparison rules
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Multiline_literals.html">Multiline strings</a> can be specified using 3 consecutive single quotation mark symbols.
 </li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo( 'Hello World' );<br/>
@@ -80,6 +82,9 @@ Softquoted literals are used to name variables and tables, but not functions and
 &nbsp;&nbsp;echo( 'A cheap way to continue on&amp;#10;the next line' ); // Not recommended. Use '...', new line, '...' instead.</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Hello World<br>&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;<br>One + One<br>"In double quotation Marks"<br>Price tags: € 10.00, € 10.00, € 10.00<br>3 * 2 = 6<br>A cheap way to continue on<br>the next line<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Softquoted_Literals.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_Quoted_Literals.html">quoted literals</a><br/>
+<a class = "bold_text" href="LAN_Features_Multiline_literals.html">multiline strings</a></p>
 	</div>
 </section>
 

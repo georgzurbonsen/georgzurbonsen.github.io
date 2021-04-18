@@ -67,8 +67,12 @@
 <div class="white_background_color" ><code>date inside, time inside</code></div>
 <h4> Description</h4>
 <p>
-Checks if the variable contains a date or time information
-</p>
+Checks if the variable contains a date or time information.
+</p><ul class="bullets"><li class="bullets"><b>date inside</b>: At last an incomplete date must be recognized (e.g. "April 2021").
+</li><li class="bullets"><b>time inside</b>: At least hour and minute must be recognized
+</li><li class="bullets"><b>full date inside</b>: A full date must be recognized (e.g. 2021-04-01)
+</li><li class="bullets"><b>full time inside</b>: A full time (hour, minute, second) must be recognized.
+</li></ul><p></p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -91,7 +95,9 @@ Checks if the variable contains a date or time information
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dates[] = { "2020-01-01", today, "2020-01-01 13:00:00", now, "13:00:00", time(now), "", date("") };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( dates[], date[] ) echo( date inside(date[]), " / ", time inside(date[]) );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>true / false<br>true / false<br>true / true<br>true / true<br>false / true<br>false / true<br>false / false<br>false / false<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_date_inside.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>true / false<br>true / false<br>true / true<br>true / false<br>false / true<br>false / true<br>false / false<br>false / false<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_date_inside.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_describe.html">describe</a></p>
 	</div>
 </section>
 

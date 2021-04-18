@@ -17,8 +17,8 @@
 </div>
 
 <div class="header">
-<h3>regional</h3>
-<a accesskey="p" href="LIB_Function_local.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_Arrays_and_Structures.html"><span>Next</span></a> 
+<h3>copy</h3>
+<a accesskey="p" href="LIB_Function_existing.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_identify.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -42,7 +42,7 @@
 <li class="navi"><a href="LIB_Features_basic_variables_functions.html"><div class="navi">10.1 Basic Variables Functions </div></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="LIB_Function_existing.html"><div class="navi">10.1.1 existing (and valid) </div></a></li>
-<li class="navi"><a href="LIB_Function_copy.html"><div class="navi">10.1.2 copy </div></a></li>
+<li class="navi"><a href="LIB_Function_copy.html"><div class="navi navi-selected">10.1.2 copy </div></a></li>
 <li class="navi"><a href="LIB_Function_identify.html"><div class="navi">10.1.3 identify </div></a></li>
 <li class="navi"><a href="LIB_Function_scope.html"><div class="navi">10.1.4 scope </div></a></li>
 <li class="navi"><a href="LIB_Function_name.html"><div class="navi">10.1.5 name </div></a></li>
@@ -51,7 +51,7 @@
 <li class="navi"><a href="LIB_Function_delete.html"><div class="navi">10.1.8 delete ... </div></a></li>
 <li class="navi"><a href="LIB_Function_global.html"><div class="navi">10.1.9 global </div></a></li>
 <li class="navi"><a href="LIB_Function_local.html"><div class="navi">10.1.10 local </div></a></li>
-<li class="navi"><a href="LIB_Function_regional.html"><div class="navi navi-selected">10.1.11 regional </div></a></li>
+<li class="navi"><a href="LIB_Function_regional.html"><div class="navi">10.1.11 regional </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_Arrays_and_Structures.html"><div class="navi">+ 10.2 Arrays and Structures </div></a></li>
 <li class="navi"><a href="LIB_Features_Loading_and_saving_variables.html"><div class="navi">+ 10.3 Loading and Saving Variables </div></a></li>
@@ -68,64 +68,36 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>regional</code></div>
-<h4> Synopsis</h4>
-<div class="white_background_color" ><code>regional { statements; }<br/>
-regional () statement;<br/>
-regional () { statements; }</code></div>
+<div class="white_background_color" ><code>copy</code></div>
 <h4> Description</h4>
-<p>
-In the statement or code block following the <b>regional</b> function, all local (and regional) variables accessible here will also be visible in the
-code of <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a> called further from here.  This feature is useful for making a large number of variables accessible in the code of the
-user-defined function called, without using numerous function parameters or global variables.
-
-<br><br>
-
-Variables which are neither system variables, global variables, nor local variables, are defined as <a class="bold_text" href="LAN_Features_Regional_variables.html">regional variables</a> as they are defined
-by the calling code and made visible.
+<p>This function copies the value specified in the 1st parameter into the remaining parameters.  These parameters must either be
+variables or tables entries.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
-<p>No indirect parameter passing</p>
+<p>Indirect parameter passing is disabled</p>
 <h4> Parameter count</h4>
-<p>0</p>
+<p>Min 1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>all types</td>
+<td><b>Source value</b><br/><p>Only the value in this variable will be copied.  Member variables, if existing, will not be included.</p>
+</td></tr>
+<tr><td>2, etc.<br/>output</td>
+<td>all types</td>
+<td><b>Destination variable or table entry</b><br/><p>The value specified in the 1st parameter will be copied into this speified destination.</p>
+</td></tr>
+</table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;define procedure( zoo )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Zoo in ', city[], ' ', country[]);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city[] = Cambridge;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// city and country are regional variables<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country[] = United Kingdom;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "&nbsp;&nbsp;&nbsp;Scope of country[] in 'zoo': ", scope(country[]), " and city[]: ", scope( city[]) );<br/>
-&nbsp;&nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize( t, {"Header"} );<br/>
 <br/>
-&nbsp;&nbsp;define procedure( bar )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country[] = USA;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// country is a local variable, but city is not<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Bar in ', city[], ' ', country[]);<br/>
+&nbsp;&nbsp;copy( 15, a[], b[], b[x,y], [t:Header,1] );<br/>
+&nbsp;&nbsp;// Copies into two base variables, into a sub-member of b[], and into a table (row 1).<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regional&nbsp;&nbsp;// Alternative formulation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoo;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Bar in ', city[], ' ', country[]); // Cambridge, UK<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "&nbsp;&nbsp;&nbsp;Scope of country[] in 'bar': ", scope(country[]), " and city[]: ", scope( city[]) );<br/>
-<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;define procedure( foo )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city[] = Boston;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regional() bar;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Foo(d) in ', city[]); // Cambridge<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;// Main program<br/>
-&nbsp;&nbsp;foo;</code></div>
+&nbsp;&nbsp;echo( a[], ", ", b[], ", ", b[x,y], ", ", [t:Header,1] );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Bar in Boston USA<br>Zoo in Boston USA<br>&nbsp;&nbsp;&nbsp;Scope of country[] in 'zoo': regional and city[]: regional<br>Bar in Cambridge United Kingdom<br>&nbsp;&nbsp;&nbsp;Scope of country[] in 'bar': local and city[]: regional<br>Foo(d) in Cambridge<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_regional.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
-<h4> See also</h4>
-<p><a class = "bold_text" href="LIB_Function_local.html">local</a><br/>
-<a class = "bold_text" href="LIB_Function_global.html">global</a></p>
+<div class="output_background_color" ><code>15, 15, 15, 15<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_copy.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

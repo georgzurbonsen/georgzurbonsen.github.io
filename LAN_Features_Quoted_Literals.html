@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Quoted Literals</h3>
-<a accesskey="p" href="LAN_Features_Softquoted_Literals.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_reserved_keywords.html"><span>Next</span></a> 
+<a accesskey="p" href="LAN_Features_Softquoted_Literals.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Multiline_literals.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -41,7 +41,8 @@
 <li class="navi"><a href="LAN_Features_Unquoted_Literals.html"><div class="navi">3.5.1 (Unquoted) Literals </div></a></li>
 <li class="navi"><a href="LAN_Features_Softquoted_Literals.html"><div class="navi">3.5.2 Softquoted Literals </div></a></li>
 <li class="navi"><a href="LAN_Features_Quoted_Literals.html"><div class="navi navi-selected">3.5.3 Quoted Literals </div></a></li>
-<li class="navi"><a href="LAN_Features_reserved_keywords.html"><div class="navi">3.5.4 Reserved Keywords </div></a></li>
+<li class="navi"><a href="LAN_Features_Multiline_literals.html"><div class="navi">3.5.4 Multiline Literals </div></a></li>
+<li class="navi"><a href="LAN_Features_reserved_keywords.html"><div class="navi">3.5.5 Reserved Keywords </div></a></li>
 </ul></li>
 <li class="navi"><a href="LAN_Features_Numeric_Constants.html"><div class="navi">3.6 Numeric Constants </div></a></li>
 <li class="navi"><a href="LAN_Features_basic_data_types.html"><div class="navi">+ 3.7 Basic Data Types </div></a></li>
@@ -69,6 +70,7 @@ Quoted literals are used to name variables and tables, but not functions and <a 
 </li><li class="bullets">The literal constant may contain leading or trailing spaces, as long they are inside the quotation marks
 </li><li class="bullets">Character entities are treated as they are, i.e. they are not converted to the specified characters.
 </li><li class="bullets">Wildcard symbols are treated as they are, i.e. no wildcard features are applied for searching and comparing strings.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Multiline_literals.html">Multiline strings</a> can be specified using 3 consecutive double quotation mark symbols.
 </li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo( "Hello World" );<br/>
@@ -80,6 +82,9 @@ Quoted literals are used to name variables and tables, but not functions and <a 
 &nbsp;&nbsp;echo( "A cheap way to continue on&amp;#10;the next line" ); // No translation of entitites here</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Hello World<br>&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;<br>One + One<br>'single quotation Marks'<br>Price tags: &amp;euro; 10.00, &amp;#x20ac; 10.00, &amp;#8364; 10.00<br>3 * 2 = 6<br>A cheap way to continue on&amp;#10;the next line<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Quoted_Literals.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a><br/>
+<a class = "bold_text" href="LAN_Features_Multiline_literals.html">multiline strings</a></p>
 	</div>
 </section>
 

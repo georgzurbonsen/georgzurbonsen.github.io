@@ -65,7 +65,8 @@ OK;Body;2;B 3.5;Literal Constants;LAN_Features_Literal_Constants.html;Literal Co
 OK;Body;3;B 3.5.1;(Unquoted) Literals;LAN_Features_Unquoted_Literals.html;Unquoted Literals;Unquoted Literals;
 OK;Body;3;B 3.5.2;Softquoted Literals;LAN_Features_Softquoted_Literals.html;Softquoted Literals,Entities;Softquoted Literals,Entities;
 OK;Body;3;B 3.5.3;Quoted Literals;LAN_Features_Quoted_Literals.html;Quoted Literals;Quoted Literals;
-OK;Body;3;B 3.5.4;Reserved Keywords;LAN_Features_reserved_keywords.html;reserved keywords;reserved keywords;
+OK;Body;3;B 3.5.4;Multiline Literals;LAN_Features_Multiline_literals.html;Multiline literals;Multiline literals,Multiline strings;
+OK;Body;3;B 3.5.5;Reserved Keywords;LAN_Features_reserved_keywords.html;reserved keywords;reserved keywords;
 OK;Body;2;B 3.6;Numeric Constants;LAN_Features_Numeric_Constants.html;Numeric Constants;Numeric Constants;
 OK;Body;2;B 3.7;Basic Data Types;LAN_Features_basic_data_types.html;basic data types;basic data types;
 OK;Body;3;B 3.7.1;Literals;LAN_Features_data_types_literals.html;data types literals;data types literals;
@@ -360,7 +361,8 @@ OK;Body;3;B 6.2.3;decode entities;LIB_Function_decode_entities.html;decode entit
 OK;Body;3;B 6.2.4;encode entities;LIB_Function_encode_entities.html;encode entities;encode entities;
 OK;Body;2;B 6.3;Miscellaneous String Functions;LIB_Features_Other_string_functions.html;Other string functions;Other string functions;
 OK;Body;3;B 6.3.1;random string, random letters;LIB_Function_random_string.html;random string,random letters;random string,random letters;
-OK;Body;3;B 6.3.2;abbreviate name;LIB_Function_abbreviate_name.html;abbreviate name;abbreviate name;
+OK;Body;3;B 6.3.2;describe;LIB_Function_describe.html;describe;describe;
+OK;Body;3;B 6.3.3;abbreviate name;LIB_Function_abbreviate_name.html;abbreviate name;abbreviate name;
 OK;Body;1;B 7;Date and Time Functions;LIB_Features_date_and_time_functions.html;date and time functions;date and time functions;
 OK;Body;2;B 7.1;Date Functions;LIB_Features_date_functions.html;date functions;date functions;
 OK;Body;3;B 7.1.1;date inside, time inside;LIB_Function_date_inside.html;date inside,time inside;date inside,time inside;
@@ -490,7 +492,7 @@ OK;Body;4;B 9.7.4.3;table process (selected) columns;LIB_Function_table_process_
 OK;Body;4;B 9.7.4.4;table process cells (selected rows);LIB_Function_table_process_cells.html;table process cells,table process all cells,table process cells selected rows;table process cells,table process all cells,table process cells selected rows;
 OK;Body;4;B 9.7.4.5;table process cells in columns (selected rows);LIB_Function_table_process_cells_in_columns.html;table process cells in columns,table process cells in columns selected rows;table process cells in columns,table process cells in columns selected rows;
 OK;Body;5;B 9.7.4.5.1;Addt'l Info on fast rows processing;LIB_Features_Additional_info_on_fast_processing_of_rows.html;Additional info on fast processing of rows;Additional info on fast processing of rows;
-OK;Body;4;B 9.7.4.6;table manipulate;LIB_Function_table_manipulate.html;table manipulate;table manipulate;
+OK;Body;4;B 9.7.4.6;table manipulate (selected rows);LIB_Function_table_manipulate.html;table manipulate,table manipulate selected rows;table manipulate,table manipulate selected rows;
 OK;Body;4;B 9.7.4.7;table fill vertically ...;LIB_Function_table_fill_vertically.html;table fill vertically,table fill vertically selected rows;table fill vertically,table fill vertically selected rows;
 OK;Body;4;B 9.7.4.8;table fill horizontally ...;LIB_Function_table_fill_horizontally.html;table fill horizontally,table fill horizontally selected rows;table fill horizontally,table fill horizontally selected rows;
 OK;Body;4;B 9.7.4.9;table substitute vertically ...;LIB_Function_table_substitute_vertically.html;table substitute vertically,table substitute vertically selected rows;table substitute vertically,table substitute vertically selected rows;
@@ -538,6 +540,7 @@ OK;Body;4;B 9.8.2.12;table expand fast ...;LIB_Function_table_expand_fast.html;t
 OK;Body;4;B 9.8.2.13;table expand smart ...;LIB_Function_table_expand_smart.html;table expand smart,table expand smart ignore case;table expand smart,table expand smart ignore case;
 OK;Body;4;B 9.8.2.14;table expand fast smart ...;LIB_Function_table_expand_fast_smart.html;table expand fast smart,table expand fast smart ignore case;table expand fast smart,table expand fast smart ignore case;
 OK;Body;4;B 9.8.2.15;Table Integration Operation Identifiers;LIB_Features_Table_integration_operation_identifiers.html;Table integration operation identifiers;Table integration operation identifiers;
+OK;Body;4;B 9.8.2.16;table describe ...;LIB_Function_table_describe.html;table describe,table describe ignore case,table describe selected rows,table describe selected rows ignore case;table describe,table describe ignore case,table describe selected rows,table describe selected rows ignore case;
 OK;Body;3;B 9.8.3;Combining Multiple Tables;LIB_Features_Combining_multiple_tables.html;Combining multiple tables;Combining multiple tables;
 OK;Body;4;B 9.8.3.1;table merge ...;LIB_Function_table_merge.html;table merge,table merge extend columns,table merge intersect columns,table merge subtract columns,table merge exclusive columns;table merge,table merge extend columns,table merge intersect columns,table merge subtract columns,table merge exclusive columns;
 OK;Body;4;B 9.8.3.2;table overlay/subtract ...;LIB_Function_table_overlay.html;table overlay,table overlay extend columns,table overlay intersect columns,table overlay columns,table overlay exclusive columns;table overlay,table overlay extend columns,table overlay intersect columns,table overlay columns,table overlay exclusive columns;
@@ -573,15 +576,16 @@ OK;Body;4;B 9.9.3.2;table style reset;LIB_Function_table_style_reset.html;table 
 OK;Body;1;B 10;Variables Functions;LIB_Features_variables_functions.html;variables functions;variables functions;
 OK;Body;2;B 10.1;Basic Variables Functions;LIB_Features_basic_variables_functions.html;basic variables functions;basic variables functions;
 OK;Body;3;B 10.1.1;existing (and valid);LIB_Function_existing.html;existing,existing and valid;existing,existing and valid;
-OK;Body;3;B 10.1.2;identify;LIB_Function_identify.html;identify;identify;
-OK;Body;3;B 10.1.3;scope;LIB_Function_scope.html;scope;scope;
-OK;Body;3;B 10.1.4;name;LIB_Function_name.html;name;name;
-OK;Body;3;B 10.1.5;exchange;LIB_Function_exchange.html;exchange;exchange;
-OK;Body;3;B 10.1.6;protect ...;LIB_Function_protect.html;protect,protect recursive;protect,protect recursive;
-OK;Body;3;B 10.1.7;delete ...;LIB_Function_delete.html;delete,delete members;delete,delete members;
-OK;Body;3;B 10.1.8;global;LIB_Function_global.html;global;global;
-OK;Body;3;B 10.1.9;local;LIB_Function_local.html;local;local;
-OK;Body;3;B 10.1.10;regional;LIB_Function_regional.html;regional;regional;
+OK;Body;3;B 10.1.2;copy;LIB_Function_copy.html;copy;copy;
+OK;Body;3;B 10.1.3;identify;LIB_Function_identify.html;identify;identify;
+OK;Body;3;B 10.1.4;scope;LIB_Function_scope.html;scope;scope;
+OK;Body;3;B 10.1.5;name;LIB_Function_name.html;name;name;
+OK;Body;3;B 10.1.6;exchange;LIB_Function_exchange.html;exchange;exchange;
+OK;Body;3;B 10.1.7;protect ...;LIB_Function_protect.html;protect,protect recursive;protect,protect recursive;
+OK;Body;3;B 10.1.8;delete ...;LIB_Function_delete.html;delete,delete members;delete,delete members;
+OK;Body;3;B 10.1.9;global;LIB_Function_global.html;global;global;
+OK;Body;3;B 10.1.10;local;LIB_Function_local.html;local;local;
+OK;Body;3;B 10.1.11;regional;LIB_Function_regional.html;regional;regional;
 OK;Body;2;B 10.2;Arrays and Structures;LIB_Features_Arrays_and_Structures.html;Arrays and Structures;Arrays and Structures;
 OK;Body;3;B 10.2.1;dim / redim;LIB_Function_dim.html;dim,redim;dim,redim;
 OK;Body;3;B 10.2.2;dim / redim protect;LIB_Function_dim_protect.html;dim protect,redim protect;dim protect,redim protect;
@@ -665,3 +669,4 @@ OK, (Assign right Category), (Assign right Category), (Assign right Category), (
 OK;Body;1;B 1;Recent Releases;MAS_Features_Recent_Releases.html;Recent Releases;Recent Releases;
 OK;Body;2;B 1.1;Rel. 8.00;MAS_Features_Release_8.00.html;Release 8.00;Release 8.00;
 OK;Body;2;B 1.2;Rel. 8.01;MAS_Features_Release_8.01.html;Release 8.01;Release 8.01;
+OK;Body;2;B 1.3;Rel. 8.02;MAS_Features_Release_8.02.html;Release 8.02;Release 8.02;
