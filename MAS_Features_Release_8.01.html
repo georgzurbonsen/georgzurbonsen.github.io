@@ -48,10 +48,11 @@
 <h4> Bugfixes</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_exception.html">exception</a>() call with the function parameter <i>up in code hierarchy</i> greater than zero was showing the wrong context of local variables in <a class="bold_text" href="LAN_Features_interactive_mode.html">interactive mode</a> invoked       subsequently, instead of the local variables as indicated by that function parameter.
-</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() tolerated lower-case filetypes (.xlsx, .xlsm).  Now both lower- and upper-case letters are accepted.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() tolerated lower-case filetypes (.xlsx, .xlsm), but not upper-case (.XLSX, .XLSM).  Now both lower- and upper-case letters are accepted.
 </li><li class="bullets">B4P refused saving additional Excel files if the 1st excel file was saved without stylings applied. Resolved.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>(): Sheet names containing '<', '>' or '&' have been rejected by Excel. Resolved.
-</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and table save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and table save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file.  Resolved.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>(): Some excel files contain fields with multi-line contents where a sole carriage return character (without following line feed or just line feed)      marks the begin of the next line.  These variants of line breaks were ignored before and this has been resolved.
 </li></ul><p></p>
 <h4> New Functions</h4>
 <p>
