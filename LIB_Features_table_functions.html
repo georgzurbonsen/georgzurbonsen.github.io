@@ -67,7 +67,344 @@ The chapter on table functions covers following four sections
 </li><li class="bullets">Processing tables with powerful functions
 </li><li class="bullets">Multi-Table Integration (comparing, validating, lookups, merging, etc.)
 </li><li class="bullets">Formatting and Styling Tables (color, column widths, fonts, borders, setting autofilters, etc.)
-</li></ul><p></p>
+</li></ul><p>
+<br><h4>Procedures and Functions Described in the Following Subsections:</h4>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Loading_and_saving_tables.html">Loading and saving tables</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load.html">table load</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load.html">table load unchanged</a> <br>
+<br>Loading HTML files:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Loading_HTML_files.html">Loading HTML files</a> <br>
+<br>Loading XML files:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Loading_XML_files.html">Loading XML files</a> <br>
+<br>Loading JSON files:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Loading_JSON_files.html">Loading JSON files</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save multiple</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save with decimal comma</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save with local decimal separator</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Saving_JSON_files.html">Saving JSON files</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Console_I_O_with_tables.html">Console I/O with tables</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_list.html">table list</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_menu.html">table menu</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_menu.html">table menu quick</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Features_Create<span class="red_text">_read</span>_write<span class="red_text">_delete_tables.html">Create / read / write / delete tables</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Creating tables and building up tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table create<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table create if not existing<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table append<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table append on same field<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table append on same row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table initialize<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table append blank rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table configure<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>forget memorized table columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Functions for writing tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table add row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table write row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table add missing row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table write or add missing row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table write column selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Functions for reading tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table read row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table read column selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Clearing and deleting tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table clear<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete silently<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Accessing table information<span class="red_text"> <br>
+<br>Table directory:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>list tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table existing<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table length<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table row width<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table max width<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table min width<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>col<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Searching and exploring tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Search functions<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table search<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table search vertically<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table search row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table find row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table all selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table selected column numbers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table selected columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table selected headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table search header row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Explore and filter and extract sub-tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table explore<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table filter<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table filter ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table extract<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Control Flow Functions for Tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>with table<span class="red_text"> <br>
+<br>for-loop through table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all table rows<span class="red_text"> <br>
+<br>for-loop through selected table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all table selected rows<span class="red_text"> <br>
+<br>for-loop through table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all table columns<span class="red_text"> <br>
+<br>for-loop through table selected columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all table selected columns<span class="red_text"> <br>
+<br>for-loop through current table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all current table columns<span class="red_text"> <br>
+<br>for-loop through table selected columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>for all current table selected columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Processing tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Checking headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Processing headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check header<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table column number<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check headers silently<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rename column headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rename existing headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rename headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table correct headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table correct headers ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lift contents<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lift header row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lift headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Processing table columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table insert columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table insert missing columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy columns selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table duplicate columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table sort columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rearrange columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rearrange existing columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table keep columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table keep existing columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete remaining columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete all blank columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete all empty columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete all unnamed columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete blank columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete empty columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete unnamed columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Processing table rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table insert rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table move selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rearrange selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table sort rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table sort selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rank rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rank selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table insert above selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table insert selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete remaining rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table keep selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete blank rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check row<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table move rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Processing table contents<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process all rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process all selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table substitute horizontally<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table substitute horizontally selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete cells selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table delete cells selected columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table format numbers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table fit<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process selected rows fast<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process selected columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process all cells<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process cells<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process cells selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process cells in columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table process cells in columns selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Additional info on fast processing of rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table manipulate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table manipulate selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table fill vertically<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table fill vertically selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table fill horizontally<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table fill horizontally selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table substitute vertically<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table substitute vertically selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Pivoting and consolidating tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table transpose<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table serialize<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table serialize all<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table serialize ignore zero<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table spread<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table spread accumulating<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table spread given headers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table spread given headers accumulating<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table consolidate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table consolidate selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table distribute<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table distribute accumulate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table distribute advance<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table distribute advance accumulate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Copying and renaming and spitting tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table rename<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy table<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy table selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table split table selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy table columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table copy table columns selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table split table columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Multi-table integration<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Comparing and validating tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table compare<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table compare ignore blanks<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table compare ignore both<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table compare ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Table comparison strategy<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Table comparison reports<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>(This is a user-defined function you need to create)<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table validate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table validate - group results<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table validate - row results<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table validate - examples<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ignore blanks<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ignore blanks selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ignore case selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ingore both<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates ingore both selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table check duplicates selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Looking up other tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup top down<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup top down ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate fast<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate fast ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate smart<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate smart ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate smart once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate smart once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate with rules<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate with rules ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate with rules once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate with rules once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand smart<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand smart ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast smart<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast smart ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand with rules<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand with rules ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand with rules once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand with rules once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast with rules<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast with rules ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast with rules ignore case once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table expand fast with rules once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest smart<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest smart ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest with rules<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest with rules ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest with rules ignore case once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table digest with rules once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Table integration operation identifiers<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table describe<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table describe ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table describe selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table describe selected rows ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup fast<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup fast ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup smart<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup smart ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup smart once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup smart once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup with rules<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup with rules ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup with rules once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table lookup with rules once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate top down<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate top down ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate once<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table integrate once ignore case<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Combining multiple tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table merge<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table merge exclusive columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table merge extend columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table merge intersect columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table merge subtract columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table overlay<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table overlay columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table overlay exclusive columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table overlay extend columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table overlay intersect columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table intersect<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table intersect columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table intersect exclusive columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table intersect extend columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table intersect intersect columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table subtract<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table subtract columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table subtract exclusive columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table subtract extend columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table subtract subtract columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table exclude<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table exclude columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table exclude exclude columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table exclude exclusive columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table exclude extend columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table multiply<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table multiply selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table divide<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table divide selected rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table arrange<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table arrange with spacing<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Formatting and styling tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Styles<span class="red_text"> <br>
+<br>Color Specification:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Defining User Specific Colors<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>User-specific colors<span class="red_text"> <br>
+<br>Color Palette:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Color Palettes<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>add color<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>rgb<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>darken color<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>lighten color<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>weaken color<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>lighten colors<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>darken colors<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>weaken colors<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Formatting the Tables<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style table<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style rows<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style columns<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style cells<span class="red_text"> <br>
+<br>Generic Attribute Names, Generic Attribute Values:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Generic Formatting Attributes<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Formatting Coverages<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Formatting Precedences<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style auto width<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style themes<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>Finishing up formatting<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>translate style attributes for excel<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>translate style attributes for excel xml 2003<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>translate style attributes for html<span class="red_text"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span>table style reset__ <br>
+<br></p>
 	</div>
 </section>
 

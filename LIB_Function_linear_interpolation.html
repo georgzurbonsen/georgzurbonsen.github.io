@@ -112,7 +112,7 @@ The spline interpolation does not have this problem.
 </p><table class="noframe bold_column_1" style = "width:600px"><col style = "width:100px"><col style = "width:500px">
 <tr><td>reject        </td><td> Assert an error if the X value lies outside the interpolation range</td></tr>
 <tr><td>flat          </td><td> Continue with flat value (extended with a horizontal line)</td></tr>
-<tr><td>continue      </td><td> Continue with using same formula for extrapolation:<br>nearest (right) neighbor interpolation:  flat (horizontal line)<br>linear interpolation: continue with same slope<br>spline / polynomial interpolation: use same formula.<br>                        <u>Note</u>: spline and polynomial interpolation will result in over / under-shooting effects outside the interpolation points.  Use them carefully.</td></tr>
+<tr><td>continue      </td><td> Continue with using same formula for extrapolation:<br>nearest (right) neighbor interpolation:  flat (horizontal line)<br>linear interpolation: continue with same slope<br>spline / polynomial interpolation: use same formula.<br>                        <u>Note:</u> spline and polynomial interpolation will result in over / under-shooting effects outside the interpolation points.  Use them carefully.</td></tr>
 <tr><td>zero          </td><td> Zero returned</td></tr>
 <tr><td><i>numeral</i></td><td> Apply line with specific slope.  Using 0 has same effect as <b>flat</b> (and not <b>zero</b>).</td></tr>
 </table><p></p>

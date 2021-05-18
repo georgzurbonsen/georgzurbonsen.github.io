@@ -102,13 +102,13 @@ The following functions use different approaches to combine the data columns:
 <tr><td>table overlay                       </td><td> No further columns are added to the destination table</td></tr>
 <tr><td>table overlay extend columns        </td><td> Columns in the source table but not found in the destinationtable will be added to the target table (union set)</td></tr>
 <tr><td>table overlay intersect columns     </td><td> Removes columns from the destination table if they do not exist in the source table (intersection)</td></tr>
-<tr><td>table subtract columns              </td><td> removes columns from destination table if they are found in the source table, but keeps the identifier columns.<br><u>Note</u>: The function name does not contain the word <b>overlay</b> because it is meaningless here.</td></tr>
+<tr><td>table subtract columns              </td><td> removes columns from destination table if they are found in the source table, but keeps the identifier columns.<br><u>Note:</u> The function name does not contain the word <b>overlay</b> because it is meaningless here.</td></tr>
 <tr><td>table overlay exclusive columns     </td><td> Removes columns found in both source and destination table, but keeps the identifier columns (exclusive OR).</td></tr>
 </table><p>
 
 <br/><img src="Images/Function_table_overlay.jpg" alt="Function 'table overlay'"><br/><br/>
 
-<u>Note</u>: If the destination table does not yet exist, or if the table is entirely empty (i.e. no header inside), then the data in the source table will be copied into the destination table.
+<u>Note:</u> If the destination table does not yet exist, or if the table is entirely empty (i.e. no header inside), then the data in the source table will be copied into the destination table.
 
 Typical applications:
 </p><ul class="bullets"><li class="bullets">Enriching tables with additional information from other sources
