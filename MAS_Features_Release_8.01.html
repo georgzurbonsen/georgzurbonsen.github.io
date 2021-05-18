@@ -42,56 +42,56 @@
 
 	<div class="article">
 <h4> Overview</h4>
-<p><span class="red_text"></span>
-<span class="red_text">  <b>Release 8.01, issued 2021-02-21, "Plankalkül"</b><br></span>
-<span class="red_text">  <i>Plankalkül (translated: planned calculation) is the oldest known high level language, introduced by Konrad Zuse in the 1940's.</i></span>
-<span class="red_text"></span></p>
+<p>
+<b>Release 8.01, issued 2021-02-21, "Plankalkül"</b><br>
+<i>Plankalkül (translated: planned calculation) is the oldest known high level language, introduced by Konrad Zuse in the 1940's.</i>
+</p>
 <h4> Bugfixes</h4>
-<p><span class="red_text"></span>
-<span class="red_text">* <a class="bold_text" href="LIB_Function_exception.html">exception</a>() call with the function parameter <i>up in code hierarchy</i> greater than zero was showing the wrong context of local variables in <a class="bold_text" href="LAN_Features_interactive_mode.html">interactive mode</a> invoked       subsequently, instead of the local variables as indicated by that function parameter.</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() tolerated lower-case filetypes (.xlsx, .xlsm), but not upper-case (.XLSX, .XLSM).  Now both lower- and upper-case letters are accepted.</span>
-<span class="red_text">  * B4P refused saving additional Excel files if the 1st excel file was saved without stylings applied. Resolved.</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>(): Sheet names containing '<', '>' or '&' have been rejected by Excel. Resolved.</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and table save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file.  Resolved.</span>
-<span class="red_text">* <a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>(): Some excel files contain fields with multi-line contents where a sole carriage return character (without following line feed or just line feed)      marks the begin of the next line.  These variants of line breaks were ignored before and this has been resolved.</span>
-<span class="red_text"></span></p>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_exception.html">exception</a>() call with the function parameter <i>up in code hierarchy</i> greater than zero was showing the wrong context of local variables in <a class="bold_text" href="LAN_Features_interactive_mode.html">interactive mode</a> invoked       subsequently, instead of the local variables as indicated by that function parameter.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() tolerated lower-case filetypes (.xlsx, .xlsm), but not upper-case (.XLSX, .XLSM).  Now both lower- and upper-case letters are accepted.
+</li><li class="bullets">B4P refused saving additional Excel files if the 1st excel file was saved without stylings applied. Resolved.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>(): Sheet names containing '<', '>' or '&' have been rejected by Excel. Resolved.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() and table save(__): Error message will be raised if 2 equally-named sheets are saved in one workbook file.  Resolved.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>(): Some excel files contain fields with multi-line contents where a sole carriage return character (without following line feed or just line feed)      marks the begin of the next line.  These variants of line breaks were ignored before and this has been resolved.
+</li></ul><p></p>
 <h4> New Functions</h4>
-<p><span class="red_text"></span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_width.html">width</a>() identifies the width of a string, i.e. maximum number of characters between two <i>new line</i> symbols.</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_quantile.html">quantile</a>() calculates the quantile of a series of values</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_style_auto_width.html">table style auto width</a>() does automatic adjustment of column width before saving (applicable to HTML, Excel, but not CSV or text files)</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_style_themes.html">table style themes</a>() provides a convenient 1-function-call to apply nice formatting on a tabel before saving</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_local.html">local</a>() is a control flow function forcing to create variables locally even if equally named global variables are already existing.</span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_regional.html">regional</a>() is a control flow function which enables access of the code in the called function to the local variables defined here.  See <a class="bold_text" href="LAN_Features_Regional_variables.html">regional variables</a> for details.</span>
-<span class="red_text"></span></p>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_width.html">width</a>() identifies the width of a string, i.e. maximum number of characters between two <i>new line</i> symbols.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_quantile.html">quantile</a>() calculates the quantile of a series of values
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_auto_width.html">table style auto width</a>() does automatic adjustment of column width before saving (applicable to HTML, Excel, but not CSV or text files)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_themes.html">table style themes</a>() provides a convenient 1-function-call to apply nice formatting on a tabel before saving
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_local.html">local</a>() is a control flow function forcing to create variables locally even if equally named global variables are already existing.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_regional.html">regional</a>() is a control flow function which enables access of the code in the called function to the local variables defined here.  See <a class="bold_text" href="LAN_Features_Regional_variables.html">regional variables</a> for details.
+</li></ul><p></p>
 <h4> Improvements in Existing Functions</h4>
-<p><span class="red_text">  * <a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>(): Added option to the Excel formulas in an additional table</span>
-<span class="red_text"></span>
-<span class="red_text"></span></p>
+<p></p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>(): Added option to the Excel formulas in an additional table
+</li></ul><p>
+</p>
 <h4> New Language Features (e.g. syntax and semantics)</h4>
-<p><span class="red_text"></span>
-<span class="red_text">  Release 8.01 supports <a class="bold_text" href="LAN_Features_Regional_variables.html">regional variables</a> which are actually <a class="bold_text" href="LAN_Features_Local_variables.html">local variables</a> made visible in the code of user functions called.  It is an alternative to passing numerous</span>
-<span class="red_text">  function parameters and without desire to define global variables as they cause unnecessary side effects.</span>
-<span class="red_text"></span>
-<span class="red_text">  <br><br></span>
-<span class="red_text"></span>
-<span class="red_text">  Addition to <a class="bold_text" href="LIB_Features_Generic_Formatting_Attributes.html">generic formatting attributes</a>: <b>borders</b> will cover the borders on all for sides in one: top border, bottom border, left border and right border.</span>
-<span class="red_text"></span>
-<span class="red_text">  <br><br></span>
-<span class="red_text">  Explicitly calling the function <a class="bold_text" href="LIB_Function_translate_style_attributes_for_excel.html">translate style attributes for excel</a>() before saving the Excel file is no longer needed.  This function will be called automatically when saving </span>
-<span class="red_text">  Excel files.<br></span>
-<span class="red_text">  <u>Note:</u> For Excel XML 2003 and HTML formats, the corresponding translate-functions need to be called first in order to use the applied style info.</span>
-<span class="red_text"></span></p>
+<p>
+Release 8.01 supports <a class="bold_text" href="LAN_Features_Regional_variables.html">regional variables</a> which are actually <a class="bold_text" href="LAN_Features_Local_variables.html">local variables</a> made visible in the code of user functions called.  It is an alternative to passing numerous
+function parameters and without desire to define global variables as they cause unnecessary side effects.
+
+<br><br>
+
+Addition to <a class="bold_text" href="LIB_Features_Generic_Formatting_Attributes.html">generic formatting attributes</a>: <b>borders</b> will cover the borders on all for sides in one: top border, bottom border, left border and right border.
+
+<br><br>
+Explicitly calling the function <a class="bold_text" href="LIB_Function_translate_style_attributes_for_excel.html">translate style attributes for excel</a>() before saving the Excel file is no longer needed.  This function will be called automatically when saving
+Excel files.<br>
+<u>Note:</u> For Excel XML 2003 and HTML formats, the corresponding translate-functions need to be called first in order to use the applied style info.
+</p>
 <h4> Performance Improvements</h4>
-<p><span class="red_text"></span>
-<span class="red_text">  * <a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() and <a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() are running significantly faster because time-critical codes have been implemented directly in the execution engine</span>
-<span class="red_text">  * Some overall performance improvements in assigning values to variables</span>
-<span class="red_text"></span></p>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a>() and <a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a>() are running significantly faster because time-critical codes have been implemented directly in the execution engine
+</li><li class="bullets">Some overall performance improvements in assigning values to variables
+</li></ul><p></p>
 <h4> Depreciated and retired features</h4>
-<p><span class="red_text"></span>
-<span class="red_text">  Please use <a class="bold_text" href="LIB_Function_exec.html">exec</a>() instead of <b>statements</b>(), as well as <a class="bold_text" href="LIB_Function_calc.html">calc</a>() instead of <b>expression</b>().  The implemented functionality has not changed.</span>
-<span class="red_text"></span>
-<span class="red_text"></span></p>
+<p>
+Please use <a class="bold_text" href="LIB_Function_exec.html">exec</a>() instead of <b>statements</b>(), as well as <a class="bold_text" href="LIB_Function_calc.html">calc</a>() instead of <b>expression</b>().  The implemented functionality has not changed.
+
+</p>
 	</div>
 </section>
 
