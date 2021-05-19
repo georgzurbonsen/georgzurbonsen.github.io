@@ -81,6 +81,102 @@ In case you miss the <b>goto</b> statement, there is a good reason for this.  Th
 B4P interpreter would have faced risky challenge if that statement would have been impleemented.
 
 Further more, see the seeparate section on <a class="bold_text" href="LIB_Features_Control_Flow_Functions_for_Tables.html">control flow functions for tables</a> where the following functions, mostly loops, are defined:
+
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>conditional branches:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_if.html">if</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_if.html">unless</a> <br>
+<br>one-time execution:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_once.html">once</a> <br>
+<br>alternative execution of code blocks:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_switch.html">check</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_switch.html">switch</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_case.html">case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">break</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">break case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">break loop</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">continue</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">continue case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">continue loop</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_break_case.html">continue with next case</a> <br>
+<br>do-loop:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_do.html">do</a> <br>
+<br>for-loop:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for.html">for</a> <br>
+<br>Loops:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_while.html">until</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_while.html">while</a> <br>
+<br>for-loop through parameter elements, parameter set:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_parameters.html">for all parameters</a> <br>
+<br>for-loop through variables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_variables.html">for all variables</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_variables.html">for all variables if existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_variables.html">for all variables if existing and valid</a> <br>
+<br>defining user procedures and user functions, user-defined function:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_procedure.html">define function</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_procedure.html">define procedure</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_procedure.html">define procedure and function</a> <br>
+<br>additional function names:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional function</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional procedure</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_define_additional_procedure.html">define additional procedure and function</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_return.html">return</a> <br>
+<br>function existing:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_function_existing.html">function existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_function_existing.html">user function existing</a> <br>
+<br>delete user function:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_delete_user_function.html">delete user function</a> <br>
+<br>start B4P program:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_start.html">start</a> <br>
+<br>include B4P program, include library, include libraries:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_include.html">include</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_get_long_options.html">get long options</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_pause.html">pause</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_stop.html">stop</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_interactive.html">interactive</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_exit.html">exit</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_end.html">end</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_abort.html">abort</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_throw.html">throw</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_catch.html">catch</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_catch.html">catch if</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_exception.html">exception</a> <br>
+<br>Null function, Do nothing:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_null.html">null</a> <br>
+<br>Select parameter based on numeric value in 1st parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select.html">pick</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select.html">select</a> <br>
+<br>Select parameter based on boolean value in 1st parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if.html">pick if</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if.html">select if</a> <br>
+<br>Select parameter based on multiple boolean values:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_ifs.html">pick ifs</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_ifs.html">select ifs</a> <br>
+<br>Select value from variable if existing:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if_existing.html">pick if existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if_existing.html">pick if existing and valid</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if_existing.html">select if existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_if_existing.html">select if existing and valid</a> <br>
+<br>Select parameter based on matching corresponding values:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_by_value.html">pick by value</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_select_by_value.html">select by value</a> <br>
+<br>Selection based sequence of comparisons:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_compare_select.html">compare pick</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_compare_select.html">compare select</a> <br>
+<br>Call function or procedure by name provided:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_call.html">call</a> <br>
+<br>Call function for every parameter set element separately:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_deep.html">deep</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_deep.html">deepr</a> <br>
+<br>Execute B4P statements provided:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_exec.html">exec</a> <br>
+<br>Calculate an expression provided:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_calc.html">calc</a> <br>
+<br>compare [function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_compare.html">compare</a> <br>
+<br>assign [function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_assign.html">assign</a> <br>
+<br>
 </p>
 	</div>
 </section>
