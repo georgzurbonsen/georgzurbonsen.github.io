@@ -93,18 +93,25 @@ These functions described here will first search for existence of specified head
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
 <h4> Parameter count</h4>
-<p>2, 3</p>
+<p>1-3 (min 2 required for 'table lift headers' and 'table lift contents')</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
 <td>literal</td>
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
-<tr><td>2<br/>input</td>
+<tr><td>Opt. 2<br/>input</td>
 <td>table columns</td>
 <td><b>Existing columns</b><br/><p>See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
 </p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified
+</li></ul><p>
+
+<u>Note:</u>This 2nd function parameter is not required when using 'table lift header row' or 'table search header row'.
+In this case, following algorithm is applied to find the header row:
+</p><ul class="bullets"><li class="bullets">If a first row with all columns to full table width are not blank, than this is assumed a header row
+</li><li class="bullets">Otherwise, the number of non-blank contents in every row is checked.
+</li><li class="bullets">The first row with the largest number of non-blank contents is assumed as the heaer row.
 </li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>

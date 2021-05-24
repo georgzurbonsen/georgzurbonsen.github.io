@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>7. Format and Style</h3>
+<a accesskey="p" href="GUI_Features_Align_and_Process.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Save_and_Export.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">+ 1 User Guide - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">3 Getting Started </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Import_source_data.html"><div class="navi">3.1 1. Data Ingestion </div></a></li>
+<li class="navi"><a href="GUI_Features_Clean_Data.html"><div class="navi">3.2 2. Semantic Alignment </div></a></li>
+<li class="navi"><a href="GUI_Features_Validate_and_Explore.html"><div class="navi">3.3 3. Validate and Explore </div></a></li>
+<li class="navi"><a href="GUI_Features_Merge_and_Consolidate.html"><div class="navi">3.4 4. Merge and Consolidate </div></a></li>
+<li class="navi"><a href="GUI_Features_Enrichment.html"><div class="navi">3.5 5. Enrichment </div></a></li>
+<li class="navi"><a href="GUI_Features_Align_and_Process.html"><div class="navi">3.6 6. Align and Process </div></a></li>
+<li class="navi"><a href="GUI_Features_Format_the_results.html"><div class="navi navi-selected">3.7 7. Format and Style </div></a></li>
+<li class="navi"><a href="GUI_Features_Save_and_Export.html"><div class="navi">3.8 8. Save and Export </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_help.html"><div class="navi">3.9 Getting Help </div></a></li>
+<li class="navi"><a href="GUI_Features_Interactive_mode_workflow.html"><div class="navi">3.10 Interactive Mode Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Programming_mode_workflow.html"><div class="navi">3.11 Programming Mode Workflow </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 4 Examples </div></a></li>
+<li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">+ 5 Terms and Conditions </div></a></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi">6 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+As a first step, consider formatting some data, e.g. aligning them, etc, e.g. with <a class="bold_text" href="LIB_Function_table_format_numbers.html">table format numbers</a>().
+If you plan to save the output in Excel or HTML format, then consider to apply some style attributions.
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_auto_width.html">table style auto width</a>() will adapt the column widths based on the lengths of the contents.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_theme.html">table style theme</a>() applies a graphic theme on the table, e.g. highlighted header row and zebra pattern in the rows below for better readability
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_table.html">table style table</a>() to apply further formatting, e.g. setting an autofilter feature on the header row or freezing top rows or left columns
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_rows.html">table style rows</a>(), <a class="bold_text" href="LIB_Function_table_style_columns.html">table style columns</a>(), ad <a class="bold_text" href="LIB_Function_table_style_cells.html">table style cells</a>() to apply specific formats and colors on specified table locations.
+</li></ul><p>
+<br>
+<hr></p>
+<h4> Wikipedia Example (continued from step 6)</h4>
+<p>
+Do some validation on this table:
+
+</p><ul class="bullets"><li class="bullets">Apply a theme "Zebra"
+</li><li class="bullets">Autowidth, but at least 12 Excel width units wide
+</li><li class="bullets">Set autofilter on header row and freeze it
+</li></ul><p></p>
+<h5> Simple Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;include ( Style Library );<br/>
+<br/>
+&nbsp;&nbsp;table style theme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, Zebra, pattern, 2 );<br/>
+&nbsp;&nbsp;table style auto width&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, min, 12 );<br/>
+&nbsp;&nbsp;table style table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, sheet, freeze rows, 1, autofilter, 0 );<br/>
+&nbsp;&nbsp;echo("Formatting done.");</code></div>
+<h5> The table has been formatted.</h5>
+<div class="output_background_color" ><code>Formatting done.<br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Format_the_results.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

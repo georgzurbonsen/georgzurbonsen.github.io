@@ -46,16 +46,22 @@
 </p><ul class="bullets"><li class="bullets">Loading JSON files into B4P tables: Loading refused if JSON begins with array and not with object.  Has been fixed.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup.html">table lookup</a>() family: Stabilization (eliminated a potential bug)
 </li><li class="bullets">Release 8.02 induced an error in the function <a class="bold_text" href="LIB_Function_table_distribute.html">table distribute</a>() which prevented doing the work.  Has been fixed.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_list.html">table list</a>() generates wrong output in some cases when table fields contain mulitple lines of data.  Has been fixed.
+</li><li class="bullets">Loading HTML tables also loaded details on styles if &lt;STYLE&gt; tags including contents are inside table cells.  Has been fixed.
 </li></ul><p></p>
 <h4> New Functions</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_digest.html">table digest</a>() function family: New variant of lookup and integration functionality
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup_with_rules.html">table lookup with rules</a>() (also ... digest, ... expand, ... integrate) introduced.
 </li><li class="bullets">Additional help functions, e.g. <a class="bold_text" href="LIB_Function_help_welcome.html">help keywords</a>, <a class="bold_text" href="LIB_Function_help_welcome.html">help functions</a>, etc.  Recommended for interactive use
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_height.html">height</a>() returns number of rows a string contains
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_clean.html">clean</a>() cleans a string by substituting exotic UNICODE line breaks and spaces into ANSI new line spaces (codes 10 and 32).
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_clean.html">table clean</a>() caries cleanup work as described above and can also trim out unnecessary spaces and line breaks.
 </li></ul><p></p>
 <h4> Improvements in Existing Functions</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart</a>() (also ... digest, ... expand, ... integrate): Added option to specify B4P expression for more flexible comparisons
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_substitute.html">substitute</a>() and <a class="bold_text" href="LIB_Function_replace.html">replace</a>(): Single-character wildcard symbols are now supported if the matching string is not a hard quoted literal.
 </li></ul><p></p>
 <h4> New Language Features (e.g. syntax and semantics)</h4>
 <p>
@@ -68,8 +74,8 @@ None in this release.
 </p>
 <h4> Depreciated and retired features</h4>
 <p>
-None in this release.
-</p>
+</p><ul class="bullets"><li class="bullets">Converting strings to dates: Months in roman numbers are discontinued.  They are used very rarely, and create confusion with structured       section numbers like 1.v.20.
+</li></ul><p></p>
 	</div>
 </section>
 
