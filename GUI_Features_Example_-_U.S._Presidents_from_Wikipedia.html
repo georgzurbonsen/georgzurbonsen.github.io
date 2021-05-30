@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>U.S. Presidents from Wikipedia</h3>
+<a accesskey="p" href="GUI_Features_Example_-_Retrieve_stock_market_data.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Index.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">+ 1 User Guide - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">4 Examples </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html"><div class="navi">4.1 Football Club Merger - Interactive </div></a></li>
+<li class="navi"><a href="GUI_Features_Example__Merge_football_clubs.html"><div class="navi">4.2 Football Club Merger - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_Retrieve_stock_market_data.html"><div class="navi">4.3 Stock Markets - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_U.S._Presidents_from_Wikipedia.html"><div class="navi navi-selected">4.4 U.S. Presidents from Wikipedia </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi">5 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Obtain S&amp;P 500 and NASDAQ 100 listings</h4>
+<p>
+The following program example demonstrates retrieving an HTML table from Wikipedia, doing the necessary
+cleanups and generating a table listing one president per row.
+
+<br><br>
+<img src="Images/GUI_Example_Presidents.png" alt="Guide-Tutorial-Merging Football teams">
+<br><br>
+Information source: <a href="https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States" target="_blank"><b>Wikipedia List of Presidents of the United States</b></a></p>
+<h5> The Full Program</h5>
+<div class="code_background_color" ><code>include ( Style Library );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Include this library if you want to use the 'table style ...' functions.<br/>
+<br/>
+file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States", presidents.html );<br/>
+table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, presidents.html, HTML, 'id="Presidents"' );<br/>
+<br/>
+// Strip all footnote references and new lines in the fields, and the last table row with footnotes inside<br/>
+table delete rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, table length( presidents ) -1 );<br/>
+table process all cells&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, [.] = replace all( literal([.]), { '[?]', new line, '- '}, {'','','-' } ) );<br/>
+<br/>
+// Remove the blank column originally containing portraits and put president name into all rows<br/>
+<br/>
+<br/>
+table save( presidents, "as saved.csv" );<br/>
+<br/>
+table delete columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, {Portrait, Party } );<br/>
+table rename column headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, {"Presidency (1)", "Party (1)"}, {Period, Party} );<br/>
+table fill vertically&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, President );<br/>
+table consolidate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, President, { Election, Vice President }, append, ", " );<br/>
+<br/>
+table initialize ( party colors,&nbsp;&nbsp;// Define party colors<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{{ Party Name,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colors },&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Unaffiliated,&nbsp;&nbsp;&nbsp;gray 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Democratic,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;azur&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Republican,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imperial red }, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Federalist,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coral&nbsp;&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Whig,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "Democratic-Republican", excel light green }, { National Union, ocre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} } );<br/>
+<br/>
+<br/>
+// Add some colors and styles<br/>
+table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, table style cells( presidents, Party, row(), single, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill color, [ party colors : Party Name, [Party], Colors ] ) );<br/>
+table style columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, { "Period", "President", "Vice President" }, sheet, column width, 30 );<br/>
+table style columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, { Party, Election }, sheet, column width, 20, horizontal align, middle );<br/>
+table style rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, 0, table, boldface, true );<br/>
+table style table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, sheet, wrap text, true, autofilter, 0, freeze rows, 1 );<br/>
+table save excel file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, "All U.S. Pesidents", "Images&#92;Presidents.xlsx" );<br/>
+<br/>
+// Optionally, save in HTML format, too.<br/>
+<br/>
+translate style attributes for html (presidents);<br/>
+table save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, "Images&#92;Presidents.html", HTML );<br/>
+<br/>
+table list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( presidents, briefly, 5, 1st col, 1, last col, 4 ); // List first and last five presidents on the screen.<br/>
+</code></div>
+<h5> The Output</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images&#92;Presidents.xlsx' containing 1 sheets.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| President&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Party&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Election&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : April 30, 1789 – March 4, 1797&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| George Washington | Unaffiliated&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1788–89, 1792<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : March 4, 1797 – March 4, 1801&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| John Adams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Federalist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1796&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : March 4, 1801 – March 4, 1809&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Thomas Jefferson&nbsp;&nbsp;| Democratic-Republican | 1800, 1804&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : March 4, 1809 – March 4, 1817&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| James Madison&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Democratic-Republican | 1808, 1812&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : March 4, 1817 – March 4, 1825&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| James Monroe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Democratic-Republican | 1816, 1820&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;... :<br>&nbsp;&nbsp;&nbsp;41 : January 20, 1993 – January 20, 2001 | Bill Clinton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Democratic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1992, 1996&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;42 : January 20, 2001 – January 20, 2009 | George W. Bush&nbsp;&nbsp;&nbsp;&nbsp;| Republican&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2000, 2004&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;43 : January 20, 2009 – January 20, 2017 | Barack Obama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Democratic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2008, 2012&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;44 : January 20, 2017 – January 20, 2021 | Donald Trump&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Republican&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;45 : January 20, 2021 – Incumbent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Joe Biden&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Democratic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2020&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Example_-_U.S._Presidents_from_Wikipedia.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> View the generated HTML file with the formatting included:</h4>
+<p>
+Test Click on the file name open the file with Excel (.xlsx) :<br>
+<a href="Images/Presidents.xlsx" >Presidents.xlsx</a>, and <br>
+<a href="Images/Presidents.html" >Presidents.html</a>.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

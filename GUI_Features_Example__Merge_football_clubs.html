@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Football Club Merger - Program</h3>
+<a accesskey="p" href="GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Example_-_Retrieve_stock_market_data.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">+ 1 User Guide - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">4 Examples </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html"><div class="navi">4.1 Football Club Merger - Interactive </div></a></li>
+<li class="navi"><a href="GUI_Features_Example__Merge_football_clubs.html"><div class="navi navi-selected">4.2 Football Club Merger - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_Retrieve_stock_market_data.html"><div class="navi">4.3 Stock Markets - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_U.S._Presidents_from_Wikipedia.html"><div class="navi">4.4 U.S. Presidents from Wikipedia </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi">5 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Merging two footbal teams - Done in one step</h4>
+<p>
+The following code examples shows how the two soccer clubs are merged with a handful of statements.
+</p>
+<h5> The Full Program</h5>
+<div class="code_background_color" ><code>include ( Style Library );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Include this library if you want to use the 'table style ...' functions.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table load excel file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( football club, "Examples&#92;Football Membership List.xlsx" ); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club,&nbsp;&nbsp;&nbsp;"Examples&#92;Soccer Membership List.csv" ); // Beginners are Novices here<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table rename column headers ( football club, { Family Name, City }, { Last Name, Town } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table process selected rows ( soccer club,&nbsp;&nbsp;&nbsp;[Level]==Novice, [Level]=Beginner );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table merge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( football club, soccer club, { Last Name, First Name }, { Level, Town }, append, " or " );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table sort rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club,&nbsp;&nbsp;&nbsp;{ Level, Last Name,&nbsp;&nbsp;First Name });<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table rearrange columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club,&nbsp;&nbsp;&nbsp;{ Level, First Name, Last Name, Town } );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;// Done processing.&nbsp;&nbsp;Before saving to Excel fie, do some formatting.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style theme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club, Zebra );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style auto width&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table process selected rows ( soccer club, ([Level] = '*Questionable*'),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table style cells&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club, Level, row(), single, text color, red ) );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;// Save the work as HTML and Excel<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;translate style attributes for html (soccer club);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club, "Images&#92;New Soccer Club Membership List.html", HTML );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table save excel file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club, Soccer Club, "Images&#92;New Soccer Club Membership List.xlsx" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( soccer club );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo ("New soccer club has ", table length( soccer club ), " members. Enjoy playing.");<br/>
+</code></div>
+<h5> The Output</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images&#92;New Soccer Club Membership List.xlsx' containing 1 sheets.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Level&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| First Name | Last Name&nbsp;&nbsp;| Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Amberstone | Amsterdam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Corinne&nbsp;&nbsp;&nbsp;&nbsp;| Carlson&nbsp;&nbsp;&nbsp;&nbsp;| Copenhagen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Dietmar&nbsp;&nbsp;&nbsp;&nbsp;| Davis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Dublin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ellen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Evans&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Essen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ingelberg&nbsp;&nbsp;| Ingolstadt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| John&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Janssen&nbsp;&nbsp;&nbsp;&nbsp;| Johannesburg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Linda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| London&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Petra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Paulsson&nbsp;&nbsp;&nbsp;| Phoenix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Quincy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Quarles&nbsp;&nbsp;&nbsp;&nbsp;| Quebec City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : Beginner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Victor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Viking&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Venice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Beata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Berghill&nbsp;&nbsp;&nbsp;| Barcelona&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fred&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fisher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Frankfurt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Gregory&nbsp;&nbsp;&nbsp;&nbsp;| Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Gaza City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;14 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Henry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hansson&nbsp;&nbsp;&nbsp;&nbsp;| Hamburg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;15 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Mike&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Miller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Morristown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;16 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Nathali&nbsp;&nbsp;&nbsp;&nbsp;| Nguyen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| New York&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;17 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Oscar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Oliveiro&nbsp;&nbsp;&nbsp;| Oslo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;18 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Richard&nbsp;&nbsp;&nbsp;&nbsp;| Richardson | Riga&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;19 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sandra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Stewart&nbsp;&nbsp;&nbsp;&nbsp;| San Diego&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;20 : Experienced&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Tim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Turner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Tahoma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;21 : Questionable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Uwe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ufford&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ulm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;22 : Questionable or Experienced | Karl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Karlsson&nbsp;&nbsp;&nbsp;| Kyoto or Kansas City<br><br>New soccer club has 23 members. Enjoy playing.<br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Example__Merge_football_clubs.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> View the generated Excel and HTML files with the formatting included:</h4>
+<p>
+Test Click on the file name open the file with Excel (.xlsx) :<br>
+<a href="Images/New Soccer Club Membership List.xlsx" >New Soccer Club Membership List.xlsx</a>, and <br>
+<a href="Images/New Soccer Club Membership List.html" >New Soccer Club Membership List.html</a>.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
