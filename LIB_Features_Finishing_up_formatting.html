@@ -98,8 +98,7 @@ and sheet names in parameter sets and then save the file.
 If you want to apply different style and formatting on the same table, then use the function <a class="bold_text" href="LIB_Function_table_style_reset.html">table style reset</a>() and begin again with formatting.
 </p>
 <h5> The 'Cities' table in a nice and professional appearance</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
 <br/>
 &nbsp;&nbsp;// Freeze panes and apply an autofilter<br/>
 &nbsp;&nbsp;table style table( t, sheet, freeze rows, 1, freeze columns, 2, autofilter, 0 );&nbsp;&nbsp;&nbsp;&nbsp;<br/>
@@ -126,10 +125,7 @@ If you want to apply different style and formatting on the same table, then use 
 &nbsp;&nbsp;// Number format is supported in Excel only<br/>
 &nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;horizontal align, right, number format, "#,##0" );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_professionally.xls", EXCEL );<br/>
-<br/>
-&nbsp;&nbsp;translate style attributes for excel(t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Function_table_style_professionally.xlsx"&nbsp;&nbsp;);<br/>
 <br/>
 &nbsp;&nbsp;// How to apply number formats in HTML for browsers<br/>
@@ -138,7 +134,6 @@ If you want to apply different style and formatting on the same table, then use 
 &nbsp;&nbsp;table process selected rows( t, ['Alt. (m)'] != '',&nbsp;&nbsp;['Alt. (m)']&nbsp;&nbsp;= literal(['Alt. (m)'] , '#,##0', local) );<br/>
 &nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;type, literal );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_professionally.html", HTML );<br/>
 &nbsp;&nbsp;file copy overwrite( "Images/Style_Function_table_style_professionally.html", "Images/Style_Function_table_style_professionally_in_html.xls" );<br/>
 &nbsp;&nbsp;echo("Done.");</code></div>

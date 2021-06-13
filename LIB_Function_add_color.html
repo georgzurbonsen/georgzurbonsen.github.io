@@ -106,19 +106,15 @@ This function adds a further color to the <a class="bold_text" href="LIB_Feature
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;add color( crème, natural shades, {245, 238, 222} );<br/>
 <br/>
 &nbsp;&nbsp;table initialize( t, { { Item, Color }, { Jacket, crème }, { Trousers, gray 12 }, { scarf, teal } } );<br/>
 <br/>
 &nbsp;&nbsp;table process( t, table style cells( t, Color, row(), single, fill color, [Color] ) );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Custom_Colors.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Custom_Colors.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Custom_Colors.xlsx" );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Style_Custom_Colors.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_add_color.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

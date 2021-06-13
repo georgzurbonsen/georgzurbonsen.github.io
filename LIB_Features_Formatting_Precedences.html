@@ -83,8 +83,7 @@ The fnctions <a class="bold_text" href="LIB_Function_table_style_table.html">tab
 <tr><td>body        </td><td> Covers table body except header row.  Same precedence lvel as formating cells.  The last function call applies the last paint on the top.</td></tr>
 </table><p></p>
 <h5> Precedence example with the 'Cities' table</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;echo("Demonstrate precedences in formatting sheets / rows / columns / cells");<br/>
 <br/>
 &nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
@@ -103,11 +102,8 @@ The fnctions <a class="bold_text" href="LIB_Function_table_style_table.html">tab
 &nbsp;&nbsp;table style table( t, sheet, fill color, gray 15 );<br/>
 &nbsp;&nbsp;// Calling the same function with 'table' instead of 'sheet' would overpaint every cell<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Precedences.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Precedences.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Precedences.xlsx" );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Demonstrate precedences in formatting sheets / rows / columns / cells<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Style_Precedences.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Features_Formatting_Precedences.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

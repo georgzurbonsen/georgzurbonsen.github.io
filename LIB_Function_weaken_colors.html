@@ -105,8 +105,7 @@ Use lower factors (e.g. 1.5) for less weaker saturations, and bigger factors (e.
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;weaken colors( table selected rows( global color table, [Cat 2]==primary), X, 5 );<br/>
 <br/>
 &nbsp;&nbsp;table copy table selected rows( global color table, t, [Cat 2]==primary );<br/>
@@ -114,11 +113,8 @@ Use lower factors (e.g. 1.5) for less weaker saturations, and bigger factors (e.
 &nbsp;&nbsp;table list ( t );<br/>
 &nbsp;&nbsp;table process( t, table style rows( t, row(), table, fill color, [Color Name], text color, white ) );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Weakened_Colors.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Weakened_Colors.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Weakened_Colors.xlsx" );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Color Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cat 1&nbsp;&nbsp;&nbsp;&nbsp;| Cat 2&nbsp;&nbsp;&nbsp;| Red | Green | Blue | HTML Color<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 255 | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #FF0000&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 255 | 255&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #FFFF00&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 0&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #00FF00&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : cyan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 0&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #00FFFF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 0&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #0000FF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : magenta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard | primary | 255 | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #FF00FF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : weak red X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| weakened | primary | 112 | 61&nbsp;&nbsp;&nbsp;&nbsp;| 61&nbsp;&nbsp;&nbsp;| #703D3D&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : weak yellow X&nbsp;&nbsp;| weakened | primary | 232 | 232&nbsp;&nbsp;&nbsp;| 181&nbsp;&nbsp;| #E8E8B5&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : weak green X&nbsp;&nbsp;&nbsp;| weakened | primary | 120 | 171&nbsp;&nbsp;&nbsp;| 120&nbsp;&nbsp;| #78AB78&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : weak cyan X&nbsp;&nbsp;&nbsp;&nbsp;| weakened | primary | 144 | 195&nbsp;&nbsp;&nbsp;| 195&nbsp;&nbsp;| #90C3C3&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : weak blue X&nbsp;&nbsp;&nbsp;&nbsp;| weakened | primary | 24&nbsp;&nbsp;| 24&nbsp;&nbsp;&nbsp;&nbsp;| 75&nbsp;&nbsp;&nbsp;| #18184B&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : weak magenta X | weakened | primary | 136 | 85&nbsp;&nbsp;&nbsp;&nbsp;| 136&nbsp;&nbsp;| #885588&nbsp;&nbsp;&nbsp;<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Style_Weakened_Colors.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_weaken_colors.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

@@ -108,18 +108,14 @@ This function applies style and formatting to a whole table or sheet</p>
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
 <br/>
 &nbsp;&nbsp;table style table( t, sheet, column width, 24, wrap text, true );<br/>
 &nbsp;&nbsp;table style table( t, body, text color, navy );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_sheet.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_sheet.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Function_table_style_sheet.xlsx" );<br/>
 &nbsp;&nbsp;echo("Done.");<br/>
 </code></div>

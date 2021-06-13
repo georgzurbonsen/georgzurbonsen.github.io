@@ -105,8 +105,7 @@ Use lower factors (e.g. 1.5) for less lighter shades, and bigger factors (e.g. 4
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;lighten colors( table selected rows( global color table, [Cat 2]==primary), X, 3 );<br/>
 <br/>
 &nbsp;&nbsp;table copy table selected rows( global color table, t, [Cat 2]==primary );<br/>
@@ -114,11 +113,8 @@ Use lower factors (e.g. 1.5) for less lighter shades, and bigger factors (e.g. 4
 &nbsp;&nbsp;table list ( t );<br/>
 &nbsp;&nbsp;table process( t, table style rows( t, row(), table, fill color, [Color Name] ) );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Lightened_Colors.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Lightened_Colors.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Lightened_Colors.xlsx" );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Color Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cat 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cat 2&nbsp;&nbsp;&nbsp;| Red | Green | Blue | HTML Color<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 255 | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #FF0000&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 255 | 255&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #FFFF00&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 0&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;| #00FF00&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : cyan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 0&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #00FFFF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 0&nbsp;&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #0000FF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : magenta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| standard&nbsp;&nbsp;| primary | 255 | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #FF00FF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : light red X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| lightened | primary | 255 | 171&nbsp;&nbsp;&nbsp;| 171&nbsp;&nbsp;| #FFABAB&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : light yellow X&nbsp;&nbsp;| lightened | primary | 255 | 255&nbsp;&nbsp;&nbsp;| 171&nbsp;&nbsp;| #FFFFAB&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : light green X&nbsp;&nbsp;&nbsp;| lightened | primary | 171 | 255&nbsp;&nbsp;&nbsp;| 171&nbsp;&nbsp;| #ABFFAB&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : light cyan X&nbsp;&nbsp;&nbsp;&nbsp;| lightened | primary | 171 | 255&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #ABFFFF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : light blue X&nbsp;&nbsp;&nbsp;&nbsp;| lightened | primary | 171 | 171&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #ABABFF&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : light magenta X | lightened | primary | 255 | 171&nbsp;&nbsp;&nbsp;| 255&nbsp;&nbsp;| #FFABFF&nbsp;&nbsp;&nbsp;<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Style_Lightened_Colors.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_lighten_colors.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

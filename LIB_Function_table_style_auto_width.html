@@ -123,8 +123,7 @@ a higher scaling factor to allow for more space for bigger text or generally mor
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-&nbsp;&nbsp;table load( t1, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( t1, "Examples&#92;Cities.csv" );<br/>
 &nbsp;&nbsp;table copy table( t1, t2 );<br/>
 <br/>
 &nbsp;&nbsp;// Simple example<br/>
@@ -139,8 +138,6 @@ a higher scaling factor to allow for more space for bigger text or generally mor
 <br/>
 &nbsp;&nbsp;// Prepare and save the work<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for excel (t1);<br/>
-&nbsp;&nbsp;translate style attributes for excel (t2);<br/>
 &nbsp;&nbsp;table save excel file&nbsp;&nbsp;( { t1, t2 }, { Simple, Customized }, "Images/Style_Auto_Width.xlsx" );<br/>
 <br/>
 &nbsp;&nbsp;echo("Done.");</code></div>

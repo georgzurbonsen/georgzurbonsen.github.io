@@ -117,19 +117,15 @@ This function applies style and formatting to one or multiple cells inside the t
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
 <br/>
 &nbsp;&nbsp;table style cells( t, {City,City,Moving along},{1, 12, -2}, single, fill color, yellow );<br/>
 &nbsp;&nbsp;table style cells( t, {0,1}, {3,5}, single, fill color, lemon, font size, 20, font name, courier new );<br/>
 &nbsp;&nbsp;table style cells( t, {City,3,5}, {3,5,7,9}, matrix, fill color, green );<br/>
 &nbsp;&nbsp;table style cells( t, {Famous cultural place, Moving along}, {0,8}, field, fill color, cyan );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_cells.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_cells.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Function_table_style_cells.xlsx" );<br/>
 &nbsp;&nbsp;echo("Done.");<br/>
 </code></div>

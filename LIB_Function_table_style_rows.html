@@ -112,8 +112,7 @@ This function applies style and formatting to a row inside the table or the whol
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
 <br/>
 &nbsp;&nbsp;table style rows( t, 0, body, boldface, true, row height, 30 );<br/>
 <br/>
@@ -126,11 +125,8 @@ This function applies style and formatting to a row inside the table or the whol
 &nbsp;&nbsp;// Here: Sheet wide coverage when viewing files with Excel<br/>
 &nbsp;&nbsp;table style rows( t, table selected rows( t, [Country]==ITA), sheet, fill color, lemon, italic, true );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_rows.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_rows.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Function_table_style_rows.xlsx" );<br/>
 &nbsp;&nbsp;echo("Done.");<br/>
 </code></div>

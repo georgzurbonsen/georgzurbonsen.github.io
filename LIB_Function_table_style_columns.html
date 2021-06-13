@@ -112,8 +112,7 @@ This function applies style and formatting to a column inside the table or the w
 </td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( t, "Examples&#92;Cities.csv" );<br/>
 <br/>
 &nbsp;&nbsp;table style columns( t, {City,"State/Province"}, sheet, boldface, true, text color, burgundy, fill color, champagne );<br/>
 &nbsp;&nbsp;table style columns( t, Country,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table, italic,&nbsp;&nbsp;&nbsp;true, fill color, { 224, 229, 244 } );<br/>
@@ -122,10 +121,7 @@ This function applies style and formatting to a column inside the table or the w
 &nbsp;&nbsp;// Number format is supported in Excel only<br/>
 &nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;horizontal align, right, number format, "#,##0" );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_columns.xls", EXCEL );<br/>
-<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Function_table_style_columns.xlsx" );<br/>
 <br/>
 &nbsp;&nbsp;// How to apply number formats in HTML for browsers<br/>
@@ -134,7 +130,6 @@ This function applies style and formatting to a column inside the table or the w
 &nbsp;&nbsp;table process selected rows( t, ['Alt. (m)'] != '',&nbsp;&nbsp;['Alt. (m)']&nbsp;&nbsp;= literal(['Alt. (m)'] , '#,##0', local) );<br/>
 &nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;type, literal );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_columns.html", HTML );<br/>
 &nbsp;&nbsp;echo("Done.");</code></div>
 <h4> Output</h4>

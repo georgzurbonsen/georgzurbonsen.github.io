@@ -126,8 +126,7 @@ The following table summarizes some of the identified differences between HTML a
 <tr><td>Forcing data to literal format, including numbers </td><td> Use attribute name 'type' and value 'text'. e.g.<br><b>table style table( test, sheet, type, literal);</b> </td><td> The same rule applies</td></tr>
 </table><p></p>
 <h5> Different interpretation of numeric, date and boolean values</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;include( Style Library );<br/>
-<br/>
+<div class="code_background_color" ><code><br/>
 &nbsp;&nbsp;echo("Test various date, numeric and boolean representations");<br/>
 <br/>
 &nbsp;&nbsp;table initialize( t, <br/>
@@ -144,11 +143,8 @@ The following table summarizes some of the identified differences between HTML a
 &nbsp;&nbsp;table style rows&nbsp;&nbsp;&nbsp;( t, 3, sheet, type, literal );<br/>
 &nbsp;&nbsp;table style cells&nbsp;&nbsp;( t, Boolean Num, 4, single, type, boolean );<br/>
 <br/>
-&nbsp;&nbsp;translate style attributes for html(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Number_Formats.html", HTML );<br/>
-&nbsp;&nbsp;translate style attributes for excel xml 2003(t);<br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Number_Formats.xls", EXCEL );<br/>
-&nbsp;&nbsp;translate style attributes for excel (t);<br/>
 &nbsp;&nbsp;table save excel file( t, Contents, "Images/Style_Number_Formats.xlsx" );</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Test various date, numeric and boolean representations<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Style_Number_Formats.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Features_Generic_Formatting_Attributes.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
