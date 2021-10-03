@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>get long options</h3>
+<a accesskey="p" href="LIB_Function_include.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_Exception_functions.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
+   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
+       <div class="gcse-search","noframe"></div>
+   </div>
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">2 Control Flow Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Branches.html"><div class="navi">+ 2.1 Branches </div></a></li>
+<li class="navi"><a href="LIB_Features_Loops.html"><div class="navi">+ 2.2 Loops </div></a></li>
+<li class="navi"><a href="LIB_Features_User-defined_procedures_and_functions.html"><div class="navi">+ 2.3 User-Defined Procedures and Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Launch_other_B4P_programs.html"><div class="navi">2.4 Launch other B4P programs </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_start.html"><div class="navi">2.4.1 start </div></a></li>
+<li class="navi"><a href="LIB_Function_include.html"><div class="navi">2.4.2 include </div></a></li>
+<li class="navi"><a href="LIB_Function_get_long_options.html"><div class="navi navi-selected">2.4.3 get long options </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Exception_functions.html"><div class="navi">+ 2.5 Exception Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Comparison_and_selection_functions.html"><div class="navi">+ 2.6 Comparison and Selection Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Code_Execution_Functions.html"><div class="navi">+ 2.7 Code Execution Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>get long options</code></div>
+<h4> Library</h4>
+<p>Utility Library</p>
+<h4> Description</h4>
+<p>
+This function identifies all <i>long options</i> specified as command line parameters when starting a B4P program and assigns their names and values into a global
+variable called <b>long options[]</b>, provided at least one such long option has been identified.
+
+<br><br>
+
+Long options are defined as command line options which begin with two consecutive minus signs (--) followed by an option name.
+The option name may optionally be completed with an option value, using an equal sign followd by a literal or numeric value.
+By default, the values are literals, but may be converted to boolean (if "true" or "false"), dates (if "YYYY-MM-DD", "HH:MM:SS" or "YYYY-MM-DD HH:MM:SS"),
+or numerals (if number provided).  If you need to know the ordering of the options, then check the command line arguments directly.
+
+<br><br>
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:400px"><col style = "width:300px">
+<tr><th>Example         </th><th> Member Name                   </th><th> Member Value</th></tr>
+<tr><td>--test          </td><td> long options[test]                </td><td> void</td></tr>
+<tr><td>--row=1 col="2"       </td><td> long options[row]<br>long options[col]    </td><td> 1<br>2 (both numerals)</td></tr>
+<tr><td>--date="2020-12-31"   </td><td> long options[date]                </td><td> 2020-12-31 (date format)</td></tr>
+<tr><td>--ans1=true ans2="false"</td><td> long options[ans1]<br>long options[ans2]    </td><td> true<br>false (both Boolean types)</td></tr>
+<tr><td>--t1=Hi --t2="He He"  </td><td> long options[t1]<br>long options[t2]      </td><td> "Hi"<br>"He He" (both literals)</td></tr>
+</table><p>
+
+<br><br>
+
+Please note that <i>short options</i> (e.b. '-a') are entirely reserved for starting and execution options provided by the B4P execution engine and
+they will not be visible to the B4P programs.</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Under normal conditions, the 'Utility Library' is loaded automatically, so no 'include(...)' call is needed.</p>
+<h4> Parameter count</h4>
+<p>0</p>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Number of long options found</b><br/><p>          If no long options are provided, then 0 is returned, and the variable <b>long options[]</b> will not be created.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;program file[] = "Example_Program.b4p";&nbsp;&nbsp;&nbsp;// The own program will be called recursively. <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Rename this filename to name of this file<br/>
+<br/>
+&nbsp;&nbsp;count[] = get long options();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Identify long options with the best yield in the market<br/>
+<br/>
+&nbsp;&nbsp;if (count[] == 0) // Program starts here<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Test 1: Start B4P program using shell command with some long options", new line);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system("b4p -x " + program file[] + ' --facts --decision=false --value=25.1 --time="18:30:15" ' );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Test 2: Start B4P program using 'start()'");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start( program file[], '--myths', '--decision=true',&nbsp;&nbsp;'--value=30', '--name="Jim"', '--date=2021-02-21' );<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;else // This part is executed in teh recursive call.<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Number of long options found: ", count[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inspect( long options[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line);<br/>
+&nbsp;&nbsp;}</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Test 1: Start B4P program using shell command with some long options<br><br><br>B4P - Beyond Former Performance<br>_______________________________________________________________________________<br><br>Version 8.04a 'The Big Myth' (2021-08-30)<br>Copyright (C) 2012..2021 Georg zur Bonsen, all rights reserved.<br>Licensed (local machine) with standard privileges for Georg zur Bonsen.<br><br>Number of long options found: 4<br>long options[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full access)<br>decision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(boolean,full access)<br>facts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full access)<br>time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18:30:15&nbsp;&nbsp;("18:30:15")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(date,full access)<br>value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25.1&nbsp;&nbsp;("25.1")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br><br><br><br>Test 2: Start B4P program using 'start()'<br>Number of long options found: 5<br>long options[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full access)<br>date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021-02-21&nbsp;&nbsp;("2021-02-21")&nbsp;&nbsp;&nbsp;&nbsp;(date,full access)<br>decision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(boolean,full access)<br>myths&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Void]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(void,full access)<br>name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Jim"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("literal",full access)<br>value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;("30")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br><br><br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_get_long_options.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_start.html">start</a><br/>
+<a class = "bold_text" href="LIB_Function_system.html">system</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

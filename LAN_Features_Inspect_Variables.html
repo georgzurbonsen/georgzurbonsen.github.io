@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Inspecting Variables Interactively</h3>
+<a accesskey="p" href="LAN_Features_Inspect_Tables.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Basic_Commands.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
+   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
+       <div class="gcse-search","noframe"></div>
+   </div>
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 Language Guide - Overview </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">2 Execution Engine </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Installting_and_starting_up.html"><div class="navi">2.1 Installing and Starting Up </div></a></li>
+<li class="navi"><a href="LAN_Features_Command_line_switches.html"><div class="navi">2.2 Command Line Switches </div></a></li>
+<li class="navi"><a href="LAN_Features_Long_Options.html"><div class="navi">2.3 Long Options </div></a></li>
+<li class="navi"><a href="LAN_Features_Starting_Behavior.html"><div class="navi">2.4 Starting Behavior </div></a></li>
+<li class="navi"><a href="LAN_Features_User_initialization_program.html"><div class="navi">2.5 User Initialization Program </div></a></li>
+<li class="navi"><a href="LAN_Features_licensing.html"><div class="navi">2.6 Licensing </div></a></li>
+<li class="navi"><a href="LAN_Features_interactive_mode.html"><div class="navi">2.7 Interactive Mode </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_entering_interactive_mode.html"><div class="navi">2.7.1 Entering Interactive Mode </div></a></li>
+<li class="navi"><a href="LAN_Features_Interactive_help.html"><div class="navi">2.7.2 Interactive Help </div></a></li>
+<li class="navi"><a href="LAN_Features_Execute_B4P_statements_interactively.html"><div class="navi">2.7.3 Execute B4P Statements Interactively </div></a></li>
+<li class="navi"><a href="LAN_Features_Execute_B4P_expressions_interactively.html"><div class="navi">2.7.4 Execute B4P Expressions Interactively </div></a></li>
+<li class="navi"><a href="LAN_Features_Inspect_Tables.html"><div class="navi">2.7.5 Inspecting Tables Interactively </div></a></li>
+<li class="navi"><a href="LAN_Features_Inspect_Variables.html"><div class="navi navi-selected">2.7.6 Inspecting Variables Interactively </div></a></li>
+<li class="navi"><a href="LAN_Features_Basic_Commands.html"><div class="navi">2.7.7 Basic Commands </div></a></li>
+<li class="navi"><a href="LAN_Features_Operating_System_Commands.html"><div class="navi">2.7.8 Operating System Commands </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The B4P function fuamily <a class="bold_text" href="LIB_Function_list_variables.html">list variables</a>() and <a class="bold_text" href="LIB_Function_inspect.html">inspect</a>() aer suitable to inspect the contents of the variables
+and their members if these variables contain <a class="bold_text" href="LAN_Features_arrays.html">array</a> and/or <a class="bold_text" href="LAN_Features_structures.html">structure</a> members.
+
+<br><br>
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><th>Command             </th><th> Description</th></tr>
+<tr><td>list variables<br> list variables(a)<br> list variables('a*')     </td><td> All variables inclding their members and sub-members will be listed, including data types and applicable protections.<br> Limit the listing varialbes named 'a'<br>                     Limit the listing to all variables beginning with 'a' (made use of wildcard symbols).</td></tr>
+<tr><td>list system variables       </td><td> Same as above, but system variables only</td></tr>
+<tr><td>list global variables       </td><td> Same as above, but global variables only</td></tr>
+<tr><td>list local variables        </td><td> Same as above, but local variables only</td></tr>
+<tr><td>inspect( variable name[] )<br> inspect( a[] )<br> inspect( a[b] )         </td><td> Inspect the contents of the variable including all defined array and/or structure members if existing.<br>  Example for variable 'a[]'<br>                      Example for member variable 'a[b]'</td></tr>
+<tr><td>table list ( my table )       </td><td> List the table. See <a class="bold_text" href="LIB_Function_table_list.html">table list</a>() for details where you can specify additional parameterse to specify the  starting and ending rows and columns and also use the 'briefly' option to list the first and last <i>n</i> lines only.                        The table will be shown on the console without need of user interaction and is also useful as a program statement to print out table contents.</td></tr>
+<tr><td>view ( my table )     </td><td> This function provides visualzation with user interaction (e.g. navigation) using <br> - The console output <br> - Excel <br> - A web browser of choice <br> - A web browser of choice with data tables.<br></td></tr>
+<tr><td>If no further parameter is provided, then the last browser option chosen will be used.</td></tr>
+<tr><td>view ( my table, here )     </td><td> Visualization on the console, with some features to navigate</td></tr>
+<tr><td>view ( my table, excel )    </td><td> Opens the file with Excel</td></tr>
+<tr><td>view ( my table, chrome )   </td><td> Opens the file with a browser, for example Google Chrome (other browers available, see <a class="bold_text" href="LIB_Function_view.html">view</a>() for details</td></tr>
+<tr><td>view ( my table, chrome datatables ) </td><td> Opens the files with a browser and making use of <i>data tables</i>, a function provided by SpryMedia Ltd. under the MIT license.</td></tr>
+<tr><td>= a[]               </td><td> Use <a class="bold_text" href="LAN_Features_Execute_B4P_expressions_interactively.html">execute B4P expressions interactively</a> to access values in individual variables.</td></tr>
+</table><p></p>
+<h4> Examples</h4>
+<p>In the follwoing example, some variables are created and then inspected interactively.</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&gt;&gt; a[] = 3<br/>
+&gt;&gt; a[kid] = 4<br/>
+&gt;&gt; a[nic] = 5<br/>
+&gt;&gt; inspect(a[])<br/>
+a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+kid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+nic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;("5")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+<br/>
+&gt;&gt; inspect(a[kid])<br/>
+a[kid]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+<br/>
+&gt;&gt; =a[]<br/>
+3 [numeral]<br/>
+&gt;&gt; list variables( a )<br/>
+<br/>
+Variable List Level = 0&nbsp;&nbsp;Regional Level = 0&nbsp;&nbsp;&nbsp;&nbsp;System variables<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Variable List Level = 1&nbsp;&nbsp;Regional Level = 1&nbsp;&nbsp;&nbsp;&nbsp;Global variables<br/>
+_______________________________________________________________________________<br/>
+a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+&nbsp;&nbsp;kid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+&nbsp;&nbsp;nic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;("5")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br/>
+<br/>
+&gt;&gt;</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

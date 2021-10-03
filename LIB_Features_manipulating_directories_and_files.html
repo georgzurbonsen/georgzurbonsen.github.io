@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Manipulating Directories and Files</h3>
+<a accesskey="p" href="LIB_Function_office_document_properties.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_directory_create.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
+   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
+       <div class="gcse-search","noframe"></div>
+   </div>
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">11 Directory and File System Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_directory_and_file_functions.html"><div class="navi">+ 11.1 Basic Directory and File Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_listing_directories_and_files.html"><div class="navi">+ 11.2 Listing and Searching Directories and Files </div></a></li>
+<li class="navi"><a href="LIB_Features_manipulating_directories_and_files.html"><div class="navi navi-selected">11.3 Manipulating Directories and Files </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_directory_create.html"><div class="navi">11.3.1 directory create ... </div></a></li>
+<li class="navi"><a href="LIB_Function_directory_create_temp.html"><div class="navi">11.3.2 directory create temp </div></a></li>
+<li class="navi"><a href="LIB_Function_file_delete.html"><div class="navi">11.3.3 file delete ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_delete_multiple.html"><div class="navi">11.3.4 file delete multiple/recursive ... </div></a></li>
+<li class="navi"><a href="LIB_Function_directory_delete.html"><div class="navi">11.3.5 directory delete ... </div></a></li>
+<li class="navi"><a href="LIB_Function_directory_delete_multiple.html"><div class="navi">11.3.6 directory delete multiple/recursive ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_rename.html"><div class="navi">11.3.7 file rename ... </div></a></li>
+<li class="navi"><a href="LIB_Function_directory_rename.html"><div class="navi">11.3.8 directory rename ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_copy.html"><div class="navi">11.3.9 file copy ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_copy_multiple.html"><div class="navi">11.3.10 file copy mulitple/recursive ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_create_link.html"><div class="navi">11.3.11 file create link ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_download.html"><div class="navi">11.3.12 file download ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_file_compression_decompression.html"><div class="navi">+ 11.4 File Compression and Decompression </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+This subsection describes various functions to create, copy, rename and delete files and directories
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>directory create ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_create.html">directory create</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_create.html">directory create all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_create.html">directory create silently</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_create_temp.html">directory create temp</a> <br>
+<br>file delete ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete.html">file delete</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete.html">file delete all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete.html">file delete silently</a> <br>
+<br>file delete multiple/recursive ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete_multiple.html">file delete multiple</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete_multiple.html">file delete multiple all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete_multiple.html">file delete recursive</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_delete_multiple.html">file delete recursive all</a> <br>
+<br>directory delete ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete.html">directory delete</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete.html">directory delete all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete.html">directory delete silently</a> <br>
+<br>directory delete multiple/recursive ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete_multiple.html">directory delete multiple</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete_multiple.html">directory delete multiple all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete_multiple.html">directory delete recursive</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete_multiple.html">directory delete recursive all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_delete_multiple.html">directory delete recursive if empty</a> <br>
+<br>file rename ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_rename.html">file rename</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_rename.html">file rename all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_rename.html">file rename silently</a> <br>
+<br>directory rename ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_rename.html">directory rename</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_rename.html">directory rename all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_directory_rename.html">directory rename silently</a> <br>
+<br>file copy ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy overwrite</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy overwrite all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy overwrite silently</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy.html">file copy silently</a> <br>
+<br>file copy multiple/recursive ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy multiple</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy multiple all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy multiple overwrite</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy multiple overwrite all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy recursive</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy recursive all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy recursive overwrite</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_copy_multiple.html">file copy recursive overwrite all</a> <br>
+<br>file create link ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_create_link.html">file create link</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_create_link.html">file create link all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_create_link.html">file create link silently</a> <br>
+<br>file download ... Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download overwrite</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download overwrite all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download overwrite silently</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_file_download.html">file download silently</a> <br>
+<br>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

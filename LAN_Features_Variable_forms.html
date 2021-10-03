@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Variable Forms and Trees</h3>
+<a accesskey="p" href="LAN_Features_Variable_attributes.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_simple_variables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
+   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
+       <div class="gcse-search","noframe"></div>
+   </div>
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 Language Guide - Overview </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">4 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">+ 4.1 Variable Scopes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">4.2 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi navi-selected">4.3 Variable Forms and Trees </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_variables.html"><div class="navi">4.3.1 Simple Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_arrays.html"><div class="navi">4.3.2 Arrays </div></a></li>
+<li class="navi"><a href="LAN_Features_structures.html"><div class="navi">4.3.3 Structures </div></a></li>
+<li class="navi"><a href="LAN_Features_zero_members.html"><div class="navi">4.3.4 Zero Members Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_specifying_members_with_parameter_sets.html"><div class="navi">4.3.5 Parameter Sets Specifying Members </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 4.4 References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">4.5 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P lets you create variable trees which consist of <a class="bold_text" href="LAN_Features_structures.html">structures</a>, <a class="bold_text" href="LAN_Features_arrays.html">arrays</a> or free combinations of both and with quasi unlimited
+number of hierarchical levels.  Availabe memory space is the only limitation.  The illustartion below shows the impressive structures
+you can build up rapidly with a few write accesses:
+
+<br/><img src="Images/Description_Variable_Forms_and_Trees.jpg" alt="Illustration of a variable tree"><br/></p>
+<h4> Building Variable Trees with Arrays and Structures</h4>
+<p>
+With Beyond4P, you can create simple variables as well as arrays (containing numbered member variables) and structures (containing named member
+variables).  Full nesting flexibility is supported: Arrays and structures may contain further structures and/or arrays as you wish.
+In short, the variable storage model is a tree structure which can hold data in the root node (base variable), intermediate nodes (e.g. member
+variable also containing sub-members) and leaf nodes (final member variables without further members defined).
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
+<tr><th>Variable Form </th><th> Description </th><th> Example</th></tr>
+<tr><td><a class="bold_text" href="LAN_Features_simple_variables.html">Simple Variables</a> </td><td> Simple variables hold one base variable value of any data type (numeral, literal, date, boolean, void and paramter set) and contain no members. </td><td> last name[]</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_arrays.html">Arrays</a>           </td><td> In addition to the base variable, arrays a defined number of numerically indexed members </td><td> member [1], member[3]</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_structures.html">Structures</a>       </td><td> In addition to the base variable, structures contain one or more named member variables </td><td> animal[dog], animal[cat]</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_zero_members.html">Zero Members</a>     </td><td> Very similar to simple variables.  Contains base variable and zero members, but has previously had array or structure members which have been deleted meanwhiel.  The variable form changes to <a class="bold_text" href="LAN_Features_structures.html">structure</a> if a structure element is added, or to <a class="bold_text" href="LAN_Features_arrays.html">array</a> if an array member is added.</td></tr>
+</table><p></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
