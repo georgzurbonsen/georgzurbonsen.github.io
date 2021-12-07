@@ -63,6 +63,7 @@ OK;Body;3;B 2.07.05;Inspecting Tables Interactively;LAN_Features_Inspect_Tables.
 OK;Body;3;B 2.07.06;Inspecting Variables Interactively;LAN_Features_Inspect_Variables.html;Inspect Variables;Inspect Variables;
 OK;Body;3;B 2.07.07;Basic Commands;LAN_Features_Basic_Commands.html;Basic Commands;Basic Commands;
 OK;Body;3;B 2.07.08;Operating System Commands;LAN_Features_Operating_System_Commands.html;Operating System Commands;Operating System Commands,OS Commands;
+OK;Body;2;B 2.08;Interactive Input and Editing;LAN_Features_Interactive_input.html;Interactive input,Interactive editing;Interactive input,Interactive editing;
 OK;Body;1;B 3;The Language;LAN_Features_The_Language.html;The Language;The Language;
 OK;Body;2;B 3.01;Basic Language Structure;LAN_Features_Basic_Language_Structure.html;Basic Language Structure;Basic Language Structure,Blocks,Statement,Statements;
 OK;Body;2;B 3.02;Distinct Language Features;LAN_Features_Distinct_Language_Features.html;Distinct Language Features;Distinct Language Features;
@@ -70,8 +71,8 @@ OK;Body;2;B 3.03;Comments;LAN_Features_comments.html;comments;comments,markdown,
 OK;Body;2;B 3.04;Characters;LAN_Features_Characters.html;Characters;Characters;
 OK;Body;3;B 3.04.01;Case Sensitivity;LAN_Features_case_sensitivity.html;case sensitivity;case sensitivity;
 OK;Body;3;B 3.04.02;Console Input / Output;LAN_Features_console.html;console;console;
-OK;Body;3;B 3.04.03;Special Console Output Characters;LAN_Features_Special_output_characters.html;Special output characters;Special output characters,Console text and background colors;
-OK;Body;3;B 3.04.04;Special keyboard input characters;LAN_Features_Special_keyboard_characters.html;Special keyboard characters;Special keyboard characters;
+OK;Body;3;B 3.04.03;Special Console Output Characters;LAN_Features_Special_console_output_characters.html;Special console output characters;Special console output characters,Console text and background colors;
+OK;Body;3;B 3.04.04;Special Keyboard Input Characters;LAN_Features_Special_keyboard_input_characters.html;Special keyboard input characters;Special keyboard input characters;
 OK;Body;2;B 3.05;Literal Constants;LAN_Features_Literal_Constants.html;Literal Constants;Literal Constants;
 OK;Body;3;B 3.05.01;(Unquoted) Literals;LAN_Features_Unquoted_Literals.html;Unquoted Literals;Unquoted Literals;
 OK;Body;3;B 3.05.02;Softquoted Literals;LAN_Features_Softquoted_Literals.html;Softquoted Literals,Entities;Softquoted Literals,Entities;
