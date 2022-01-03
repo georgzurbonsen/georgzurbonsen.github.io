@@ -77,6 +77,22 @@ However, B4P functions like <a class="bold_text" href="LIB_Function_decode_entit
 will not work on other applications, for example web browsers.
 
 </p>
+<h4> Tab Features</h4>
+<p>
+The tab character( B4P: reserved keyword <a class="bold_text" href="LAN_Features_reserved_keywords.html">tab</a> ) provides fixed tab positions in steps of eight characters.  In addition to this, B4P provides
+a set of reserved characters and entitites to advance to a specific position.
+
+<br><br>
+This feature is also suitable for batch or redirected output because it converts these characters variable number of spaces.
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:400px"><col style = "width:200px"><col style = "width:400px">
+<tr><th>Functionality           </th><th> UNICODE (hex)     </th><th> Entity Name</th></tr>
+<tr><td>Tab position 1          </td><td> 103001        </td><td> &amp;tab1;</td></tr>
+<tr><td>Tab position 2          </td><td> 103002        </td><td> &amp;tab2;</td></tr>
+<tr><td>...             </td><td> ...           </td><td> ...</td></tr>
+<tr><td>Tab position 300        </td><td> 10312c        </td><td> &amp;tab300;</td></tr>
+</table><p>
+</p>
 <h4> Formatting Features</h4>
 <p>
 Some functions, especially blinking text, are not supported on all terminals.
@@ -95,6 +111,7 @@ Some functions, especially blinking text, are not supported on all terminals.
 Following text and background colors are supported on the console:
 Inside the entities, color names in lower-case letters refer to text color, and color names in upper-case letters refer to background color.
 The color names on the left hand column are also valid names for the functions <a class="bold_text" href="LIB_Function_text_color.html">text color</a>() and <a class="bold_text" href="LIB_Function_text_color.html">background color</a>().
+
 
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:200px"><col style = "width:400px"><col style = "width:200px">
 <tr><th>Color name          </th><th> UNICODE (hex)     </th><th> Entity Names                      </th><th> RBG Color Code</th></tr>
@@ -300,7 +317,7 @@ A limted number of navigation key characters can also be used as output characte
 <tr><td>Arrow left      </td><td> 108004    </td><td> &amp;arrow-left;  </td><td> Cursor left 1 row</td></tr>
 <tr><td>Arrow right     </td><td> 108006    </td><td> &amp;arrow-right; </td><td> Cursor right 1 row</td></tr>
 <tr><td>Home            </td><td> 108007    </td><td> &amp;home;        </td><td> Cursor to 1st column</td></tr>
-<tr><td>CTRL-Home       </td><td> 108107    </td><td> &amp;ctrl-home;   </td><td> Cursor to top left</td></tr>
+<tr><td>ctrl-Home       </td><td> 108107    </td><td> &amp;ctrl-home;   </td><td> Cursor to top left</td></tr>
 </table><p>
 </p>
 	</div>

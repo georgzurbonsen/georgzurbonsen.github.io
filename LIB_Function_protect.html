@@ -35,8 +35,6 @@
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
-<li class="navi"><a href="LIB_Function_clear.html"><div class="navi">+  clear </div></a></li>
-<li class="navi"><a href="LIB_Function_reset_console.html"><div class="navi">+  reset console </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
@@ -54,10 +52,12 @@
 <li class="navi"><a href="LIB_Function_name.html"><div class="navi">10.1.5 name </div></a></li>
 <li class="navi"><a href="LIB_Function_exchange.html"><div class="navi">10.1.6 exchange </div></a></li>
 <li class="navi"><a href="LIB_Function_protect.html"><div class="navi navi-selected">10.1.7 protect ... </div></a></li>
-<li class="navi"><a href="LIB_Function_delete.html"><div class="navi">10.1.8 delete ... </div></a></li>
-<li class="navi"><a href="LIB_Function_global.html"><div class="navi">10.1.9 global </div></a></li>
-<li class="navi"><a href="LIB_Function_local.html"><div class="navi">10.1.10 local </div></a></li>
-<li class="navi"><a href="LIB_Function_regional.html"><div class="navi">10.1.11 regional </div></a></li>
+<li class="navi"><a href="LIB_Function_delete.html"><div class="navi">10.1.8 delete </div></a></li>
+<li class="navi"><a href="LIB_Function_delete_members.html"><div class="navi">10.1.9 delete members </div></a></li>
+<li class="navi"><a href="LIB_Function_insert_members.html"><div class="navi">10.1.10 insert members (protect) </div></a></li>
+<li class="navi"><a href="LIB_Function_global.html"><div class="navi">10.1.11 global </div></a></li>
+<li class="navi"><a href="LIB_Function_local.html"><div class="navi">10.1.12 local </div></a></li>
+<li class="navi"><a href="LIB_Function_regional.html"><div class="navi">10.1.13 regional </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_Arrays_and_Structures.html"><div class="navi">+ 10.2 Arrays and Structures </div></a></li>
 <li class="navi"><a href="LIB_Features_Loading_and_saving_variables.html"><div class="navi">+ 10.3 Loading and Saving Variables </div></a></li>
@@ -132,12 +132,12 @@ The "protect recursive" call will apply the protection setting to all member var
 &nbsp;&nbsp;protect( read only, b[] ) ;<br/>
 <br/>
 &nbsp;&nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
-&nbsp;&nbsp;inspect( b[] );<br/>
+&nbsp;&nbsp;see( b[] );<br/>
 <br/>
 &nbsp;&nbsp;protect recursive( prevent deleting, b[] ) ;<br/>
 <br/>
 &nbsp;&nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
-&nbsp;&nbsp;inspect( b[] );<br/>
+&nbsp;&nbsp;see( b[] );<br/>
 &nbsp;&nbsp;b[] = 2;<br/>
 &nbsp;&nbsp;b[Hi] = 3;<br/>
 &nbsp;&nbsp;b[Ho] = 4;<br/>
@@ -145,12 +145,12 @@ The "protect recursive" call will apply the protection setting to all member var
 &nbsp;&nbsp;protect( read only, b[] ) ;<br/>
 <br/>
 &nbsp;&nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
-&nbsp;&nbsp;inspect( b[] );<br/>
+&nbsp;&nbsp;see( b[] );<br/>
 <br/>
 &nbsp;&nbsp;protect recursive( prevent deleting, b[] ) ;<br/>
 <br/>
 &nbsp;&nbsp;echo( "Base variable protection setting: ", protect( check, b[] ) );<br/>
-&nbsp;&nbsp;inspect( b[] );</code></div>
+&nbsp;&nbsp;see( b[] );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Base variable protection setting: read only<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,read only)<br>Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br><br>Base variable protection setting: prevent deleting<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br>Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br>Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br><br>Base variable protection setting: read only<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,read only)<br>Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br>Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br><br>Base variable protection setting: prevent deleting<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;("2")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br>Hi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;("3")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br>Ho&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;("4")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,prevent deleting)<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_protect.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

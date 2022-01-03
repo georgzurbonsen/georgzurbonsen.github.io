@@ -152,7 +152,7 @@ The following table applies to transactions from a table row (example: table nam
 <br/>
 &nbsp;&nbsp;table list ( animals );<br/>
 &nbsp;&nbsp;echo("animal1[] existing? ", existing(animal1[]) );<br/>
-&nbsp;&nbsp;inspect(animal2[]); </code></div>
+&nbsp;&nbsp;see(animal2[]); </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Name&nbsp;&nbsp;| Leg count | Special ability | Weapon<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Snake | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| poison<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Dog&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sensitive nose&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Tick&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>animal1[] existing? false<br>animal2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Transactions_from_variables_to_tables_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Swap Transaction Example</h5>
@@ -171,8 +171,8 @@ The following table applies to transactions from a table row (example: table nam
 &nbsp;&nbsp;[ animals: Name, Dog, .. ] &lt;=&gt; animal1[]; // Pick up entire row<br/>
 &nbsp;&nbsp;[ animals: Name, Owl, {Name,Special ability} ] &lt;=&gt;^ animal2[];&nbsp;&nbsp;// E.g. leg count not included<br/>
 <br/>
-&nbsp;&nbsp;inspect( animal1[] );<br/>
-&nbsp;&nbsp;inspect( animal2[] );<br/>
+&nbsp;&nbsp;see( animal1[] );<br/>
+&nbsp;&nbsp;see( animal2[] );<br/>
 &nbsp;&nbsp;table list( animals ); // Snake, Wolf, Ape.&nbsp;&nbsp;Additional column included (weapon)&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 </code></div>
 <h5> </h5>

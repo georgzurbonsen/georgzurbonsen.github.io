@@ -17,8 +17,8 @@
 </div>
 
 <div class="header">
-<h3>delete ...</h3>
-<a accesskey="p" href="LIB_Function_protect.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_global.html"><span>Next</span></a> 
+<h3>delete</h3>
+<a accesskey="p" href="LIB_Function_protect.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_delete_members.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -35,8 +35,6 @@
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
-<li class="navi"><a href="LIB_Function_clear.html"><div class="navi">+  clear </div></a></li>
-<li class="navi"><a href="LIB_Function_reset_console.html"><div class="navi">+  reset console </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
@@ -54,10 +52,12 @@
 <li class="navi"><a href="LIB_Function_name.html"><div class="navi">10.1.5 name </div></a></li>
 <li class="navi"><a href="LIB_Function_exchange.html"><div class="navi">10.1.6 exchange </div></a></li>
 <li class="navi"><a href="LIB_Function_protect.html"><div class="navi">10.1.7 protect ... </div></a></li>
-<li class="navi"><a href="LIB_Function_delete.html"><div class="navi navi-selected">10.1.8 delete ... </div></a></li>
-<li class="navi"><a href="LIB_Function_global.html"><div class="navi">10.1.9 global </div></a></li>
-<li class="navi"><a href="LIB_Function_local.html"><div class="navi">10.1.10 local </div></a></li>
-<li class="navi"><a href="LIB_Function_regional.html"><div class="navi">10.1.11 regional </div></a></li>
+<li class="navi"><a href="LIB_Function_delete.html"><div class="navi navi-selected">10.1.8 delete </div></a></li>
+<li class="navi"><a href="LIB_Function_delete_members.html"><div class="navi">10.1.9 delete members </div></a></li>
+<li class="navi"><a href="LIB_Function_insert_members.html"><div class="navi">10.1.10 insert members (protect) </div></a></li>
+<li class="navi"><a href="LIB_Function_global.html"><div class="navi">10.1.11 global </div></a></li>
+<li class="navi"><a href="LIB_Function_local.html"><div class="navi">10.1.12 local </div></a></li>
+<li class="navi"><a href="LIB_Function_regional.html"><div class="navi">10.1.13 regional </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_Arrays_and_Structures.html"><div class="navi">+ 10.2 Arrays and Structures </div></a></li>
 <li class="navi"><a href="LIB_Features_Loading_and_saving_variables.html"><div class="navi">+ 10.3 Loading and Saving Variables </div></a></li>
@@ -74,20 +74,17 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>delete, delete members</code></div>
+<div class="white_background_color" ><code>delete</code></div>
 <h4> Description</h4>
-<p>This function deletes the specified variable including all members if available.
+<p>This function deletes the specified variable including all members if existing.
 If an array member is deleted, (e.g. <b>delete( a[2] );</b>), then the remaining array members further down close up.  Obviously, members of structures
 can also be deleted.
 
 <br><br>
-The function <b>delete members</b> will remove all member variables, but leave the base variable untouched.
-
-<br><br>
-<u>Attention</u>: If the function call is executed in a local varaible contect (e.g inside a user-defined fuction or a B4P program called by another B4P
+<u>Attention</u>: If the function call is executed in a local varaible context (e.g inside a user-defined fuction or a B4P program called by another B4P
 program using <a class="bold_text" href="LIB_Function_start.html">start</a>() or <a class="bold_text" href="LIB_Function_include.html">include</a>(), then attempting to delete a non-local variable asserts an exception.
 You can circumvent this by deleting the global variable in a global context provided with the <a class="bold_text" href="LIB_Function_global.html">global</a>() function.<br>
-example: <b>global ( ) delete ( a global variable [ ] );</b><br>
+example: <b>global() delete ( a global variable [ ] );</b><br>
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
@@ -106,27 +103,39 @@ example: <b>global ( ) delete ( a global variable [ ] );</b><br>
 Attempting to delete global variable in local context<br/>
 Attempting to delete system variables</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;structure( pets[], { Cat, Dog, { Shepard, Dachshund }, Bird,&nbsp;&nbsp;{ Parrot,&nbsp;&nbsp;Parakeet } },<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Katze, Hund, { Schäfer, Dackel }, Vogel, { Papagei, Sittich } } );<br/>
-&nbsp;&nbsp;array( pets[Cat], { Hauskatze, Puma, Tiger } );<br/>
-&nbsp;&nbsp;pets[] = Favored Animals;<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;values[] = { 0, 11, 22, 33, 44, 55, 66, 77, 88, 99 };<br/>
+&nbsp;&nbsp;a[] = This is the base variable;<br/>
 <br/>
-&nbsp;&nbsp;echo("Variable created:");<br/>
-&nbsp;&nbsp;inspect(pets[]);<br/>
+&nbsp;&nbsp;array( a[], values[] );<br/>
+&nbsp;&nbsp;delete( a[4], a[2] ); // Deletes subscript 2 and 4.&nbsp;&nbsp;Good idea to work from bottom to top<br/>
 <br/>
-&nbsp;&nbsp;delete( pets[Bird] );<br/>
-&nbsp;&nbsp;delete members( pets[Cat] );<br/>
+&nbsp;&nbsp;for all variables( a[], v[] ) print( v[], " " ); echo ("Note: 22 and 44 are missing. OK.");<br/>
 <br/>
-&nbsp;&nbsp;echo("All birds removed, array in Cat removed");<br/>
-&nbsp;&nbsp;inspect(pets[]);<br/>
-&nbsp;&nbsp;echo( "pets[Cat] is identified as '", identify(pets[Cat]), "' variable" );<br/>
+&nbsp;&nbsp;echo("Attention when deleting lower subscripts before upper ones");<br/>
+&nbsp;&nbsp;array( a[], values[] );<br/>
+&nbsp;&nbsp;delete( a[2], a[4] ); // Deletes subscript 2 and 5 (not 4, becuase member variables have shifted up)<br/>
+&nbsp;&nbsp;for all variables( a[], v[] ) print( v[], " " ); echo ("Note: 22 and 55 are missing this time");<br/>
 <br/>
-&nbsp;&nbsp;echo("Delete all pets");<br/>
-&nbsp;&nbsp;delete( pets[] );<br/>
-&nbsp;&nbsp;echo( "pets[] is identified as '", identify(pets[]), "'." );<br/>
+&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;echo("And with structures:", new line);<br/>
+<br/>
+&nbsp;&nbsp;structure( a[], { Cat,&nbsp;&nbsp;&nbsp;Dog,&nbsp;&nbsp;Bird,&nbsp;&nbsp;{ Parrot, Parakeet&nbsp;&nbsp;}, Rat,&nbsp;&nbsp;Mouse, Elephant, Zebra },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Katze, Hund, Vogel, { Papagei, Sittich&nbsp;&nbsp;}, Ratte, Maus, Elefant,&nbsp;&nbsp;Zebra } );<br/>
+<br/>
+&nbsp;&nbsp;delete( a[Zebra]);<br/>
+&nbsp;&nbsp;delete( a[Bird], a[Elephant], a[Cat] );<br/>
+&nbsp;&nbsp;delete( a[Dinosaur] );<br/>
+<br/>
+&nbsp;&nbsp;// B4P issues no error message if attempting to delete nonexisting variables,<br/>
+&nbsp;&nbsp;// assuming they have already been deleted<br/>
+<br/>
+&nbsp;&nbsp;see(a[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Dog Rat Mouse<br/>
+<br/>
+&nbsp;&nbsp;delete(a[] );<br/>
+&nbsp;&nbsp;echo( "Variable a[] existing? ", existing(a[]) );<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Variable created:<br>pets[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Favored Animals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vogel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Parakeet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sittich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Parrot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Papagei&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Katze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Array [&nbsp;&nbsp;&nbsp;0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hauskatze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Array [&nbsp;&nbsp;&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Array [&nbsp;&nbsp;&nbsp;2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Dachshund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dackel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Shepard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schäfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br><br>All birds removed, array in Cat removed<br>pets[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Favored Animals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Katze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Dachshund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dackel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>&nbsp;&nbsp;Shepard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schäfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br><br>pets[Cat] is identified as 'simple' variable<br>Delete all pets<br>pets[] is identified as 'not found'.<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_delete.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>0 11 33 55 66 77 88 99 Note: 22 and 44 are missing. OK.<br>Attention when deleting lower subscripts before upper ones<br>0 11 33 44 66 77 88 99 Note: 22 and 55 are missing this time<br><br>And with structures:<br><br>a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the base variable&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hund&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Mouse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br>Rat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ratte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal,full access)<br><br>Variable a[] existing? false<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_delete.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_release.html">release</a></p>
 	</div>

@@ -42,7 +42,7 @@
 	<div class="article">
 <h4> Overview</h4>
 <p>
-<b>Release 8.05, updated 2021-12-xx, "Amerigo Vespucci"</b><br>
+<b>Release 8.05, updated 2022-01-xx, "Amerigo Vespucci"</b><br>
 <i>The Big Fact: Mountain in Central Switzerland (Grosser Mythen), elevation: 1,898 meters, 47 deg 01' 47" North, 8 deg 41' 19.7" East (695034/209499).</i>
 </p>
 <h4> Bugfixes</h4>
@@ -58,21 +58,31 @@
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_format.html">format</a>() and <a class="bold_text" href="LIB_Function_format.html">format print</a>() generated formatted text output for console use.  The latter function outputs the contents directly to the console.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_print_bar.html">print bar</a>() outputs a bar symbol or string across the full width of the visible console
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_distribute_amount.html">distribute amount</a>() distributes a numeric value across multiple values using specific rules, e.g. even, random, etc.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_weight.html">weight</a>() measures the weight, i.e. number of members and sub-members of the specified variable
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_weight.html">weight profile</a>() works similar to <a class="bold_text" href="LIB_Function_weight.html">weight</a>(), but the weights are recorded separately for every hierarchical level in order to get some tree profile info
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_depth.html">depth</a>() returns the depth of the specified variable, i.e. maximum nesting level of members and their sub-members
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_insert_rows.html">table insert rows if needed</a>(), <a class="bold_text" href="LIB_Function_table_delete_rows.html">table delete rows if needed</a>(), <a class="bold_text" href="LIB_Function_table_delete_remaining_rows.html">table delete remaining rows if needed</a>() suppress exceptions in if the specified row number lies below the table.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_inspect.html">inspect</a>() - New implementation for active visualization of variables
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_see.html">see</a>() - Old implementaiton of <b>inspect</b>().
 </li></ul><p></p>
 <h4> Improvements in Existing Functions</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_text_color.html">text color</a>() and <a class="bold_text" href="LIB_Function_text_color.html">background color</a>(): In the past, only 16 colors were supported.  Various additional color names have been added, and     it is possible to provide RGB-colors in hexadecimal format (#rrggbb), as <a class="bold_text" href="LAN_Features_Function_Parameters.html">function parameters</a> or three numbers in a <a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">parameter set</a>.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_getch.html">getch</a>() and <a class="bold_text" href="LIB_Function_input_quick.html">input quick</a>() now support arrow, function and other non-character navigation keys.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_delete_members.html">delete members</a>() allows to delete members of a selected range
 </li></ul><p></p>
 <h4> New Language Features (e.g. syntax and semantics)</h4>
-<p>Not for time being
-</p>
+<p>
+</p><ul class="bullets"><li class="bullets">Various new HTML like entities have been introduced for UNICODE characters in the PUA (Private Use Area) in order to do text formatting and       colors on the console, as well as recognizing special keyboard keys such as function and navigation keys.
+</li></ul><p></p>
 <h4> Other new Features</h4>
 <p>
 Interactive mode has been improved where better editing is supported, including accessing previous entered text and accessing the clipboard.
 As LINUX / MacOS have not advanced input features like in Windows, this improvement is particularly significant for those systems.
 
+<br><br>
 
+Error messages make use of text color for better clarity.
 </p>
 <h4> Performance Improvements</h4>
 <p>
@@ -80,6 +90,9 @@ As LINUX / MacOS have not advanced input features like in Windows, this improvem
 </p>
 <h4> Depreciated and retired features</h4>
 <p>
+</p><ul class="bullets"><li class="bullets"><b>docs search</b>() is now part of <a class="bold_text" href="LIB_Function_docs.html">docs</a>().
+</li><li class="bullets"><b>inspect</b>() as implemented in the past has changed to <a class="bold_text" href="LIB_Function_see.html">see</a>().
+</li></ul><p>
 None in this release.
 </p>
 	</div>

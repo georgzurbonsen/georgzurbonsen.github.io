@@ -35,8 +35,6 @@
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
-<li class="navi"><a href="LIB_Function_clear.html"><div class="navi">+  clear </div></a></li>
-<li class="navi"><a href="LIB_Function_reset_console.html"><div class="navi">+  reset console </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
@@ -73,7 +71,7 @@
 <div class="white_background_color" ><code>fq</code></div>
 <h4> Description</h4>
 <p>
-This function identifies the financial (or fiscal) quarter of the date provided.  Example: <b>fq( "2021-02-01", 3 )</b> returns 4
+This function identifies the financial (or fiscal) quarter of the date provided.  Example: <b>fq( "2022-02-01", 3 )</b> returns 4
 because February lies in the 4th quarter in the fiascal year ending in March.  If a blank date is provided, then 0 is returned.
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
@@ -99,13 +97,13 @@ because February lies in the 4th quarter in the fiascal year ending in March.  I
 <td><b>Result</b><br/><p>Quarter (1..4)</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;date[] = "2021-05-01";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;date[] = "2022-05-01";<br/>
 &nbsp;&nbsp;echo( "Date is ", date[] );<br/>
 <br/>
 &nbsp;&nbsp;for (month[]=1, month[]&lt;=12, month[]++ )<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", literal( date(2021,month[],1),"Mmmm" ), ": ", fq( date[], month[] ) );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", literal( date(2022,month[],1),"Mmmm" ), ": ", fq( date[], month[] ) );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Date is 2021-05-01<br>Year ending in January: 2<br>Year ending in February: 1<br>Year ending in March: 1<br>Year ending in April: 1<br>Year ending in May: 4<br>Year ending in June: 4<br>Year ending in July: 4<br>Year ending in August: 3<br>Year ending in September: 3<br>Year ending in October: 3<br>Year ending in November: 2<br>Year ending in December: 2<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_fq.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Date is 2022-05-01<br>Year ending in January: 2<br>Year ending in February: 1<br>Year ending in March: 1<br>Year ending in April: 1<br>Year ending in May: 4<br>Year ending in June: 4<br>Year ending in July: 4<br>Year ending in August: 3<br>Year ending in September: 3<br>Year ending in October: 3<br>Year ending in November: 2<br>Year ending in December: 2<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_fq.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_year.html">quarter</a><br/>
 <a class = "bold_text" href="LIB_Function_fy.html">fy</a></p>

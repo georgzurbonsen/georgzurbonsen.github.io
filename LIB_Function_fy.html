@@ -35,8 +35,6 @@
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
-<li class="navi"><a href="LIB_Function_clear.html"><div class="navi">+  clear </div></a></li>
-<li class="navi"><a href="LIB_Function_reset_console.html"><div class="navi">+  reset console </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
 <li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
@@ -74,7 +72,7 @@
 <h4> Description</h4>
 <p>
 This function identifies the financial (or fiscal) year of the date provided.  If 2 parameters (date and month year ending) are provided, then
-the financial year will be returned as a 4-digit numeral.  Example: <b>fy( "2021-04-01", 3 )</b> returns 2022.  If a formatting string is provided,
+the financial year will be returned as a 4-digit numeral.  Example: <b>fy( "2022-04-01", 3 )</b> returns 2022.  If a formatting string is provided,
 then the returned value is a string which contains either one year or the combination of two years.  The format pattern string will be checked for
 pound '#' characters.  Following rules apply:
 
@@ -115,13 +113,13 @@ If a blank date is provided, then 0 is returned in case no format pattern string
 <td><b>Result</b><br/><p>Numeric 4-digit year if 2 parameters are provided, or string result if 3 parameters including the format pattern are provided.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;date[] = "2021-05-01";<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;date[] = "2022-05-01";<br/>
 &nbsp;&nbsp;echo( "Date is ", date[] );<br/>
 &nbsp;&nbsp;patterns[] = { "FY ##", "####/##", "Q# FY ##-##" };<br/>
 <br/>
 &nbsp;&nbsp;for (month[]=1, month[]&lt;=12, month[]++ )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", literal( date(2021,month[],1),"Mmmm" ), ": " );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", literal( date(2022,month[],1),"Mmmm" ), ": " );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print( "&nbsp;&nbsp;&nbsp;&nbsp;FY: ", fy( date[], month[] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( patterns[], pattern[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
@@ -130,7 +128,7 @@ If a blank date is provided, then 0 is returned in case no format pattern string
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 &nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Date is 2021-05-01<br>Year ending in January: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 21-22<br>Year ending in February: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 21-22<br>Year ending in March: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 21-22<br>Year ending in April: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 21-22<br>Year ending in May: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 20-21<br>Year ending in June: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 20-21<br>Year ending in July: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 20-21<br>Year ending in August: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 20-21<br>Year ending in September: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 20-21<br>Year ending in October: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 20-21<br>Year ending in November: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2020/21&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 20-21<br>Year ending in December: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2021&nbsp;&nbsp;&nbsp;&nbsp;FY 21&nbsp;&nbsp;&nbsp;&nbsp;2021/21&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 21-21<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_fy.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Date is 2022-05-01<br>Year ending in January: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2023&nbsp;&nbsp;&nbsp;&nbsp;FY 23&nbsp;&nbsp;&nbsp;&nbsp;2022/23&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 22-23<br>Year ending in February: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2023&nbsp;&nbsp;&nbsp;&nbsp;FY 23&nbsp;&nbsp;&nbsp;&nbsp;2022/23&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 22-23<br>Year ending in March: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2023&nbsp;&nbsp;&nbsp;&nbsp;FY 23&nbsp;&nbsp;&nbsp;&nbsp;2022/23&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 22-23<br>Year ending in April: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2023&nbsp;&nbsp;&nbsp;&nbsp;FY 23&nbsp;&nbsp;&nbsp;&nbsp;2022/23&nbsp;&nbsp;&nbsp;&nbsp;Q1 FY 22-23<br>Year ending in May: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 21-22<br>Year ending in June: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 21-22<br>Year ending in July: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q4 FY 21-22<br>Year ending in August: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 21-22<br>Year ending in September: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 21-22<br>Year ending in October: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q3 FY 21-22<br>Year ending in November: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2021/22&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 21-22<br>Year ending in December: <br>&nbsp;&nbsp;&nbsp;&nbsp;FY: 2022&nbsp;&nbsp;&nbsp;&nbsp;FY 22&nbsp;&nbsp;&nbsp;&nbsp;2022/22&nbsp;&nbsp;&nbsp;&nbsp;Q2 FY 22-22<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_fy.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_year.html">year</a><br/>
 <a class = "bold_text" href="LIB_Function_fq.html">fq</a></p>
