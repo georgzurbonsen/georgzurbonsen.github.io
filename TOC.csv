@@ -707,7 +707,8 @@ OK;Body;2;B 13.07;variable view;LIB_Function_variable_view.html;variable view;va
 OK;Body;2;B 13.08;view;LIB_Function_view.html;view;view;
 OK;Body;2;B 13.09;view reset;LIB_Function_view_reset.html;view reset;view reset;
 OK;Body;2;B 13.10;list / explain functions;LIB_Function_list_functions.html;list functions,explain functions;list functions,explain functions;
-OK;Body;2;B 13.11;dump functions;LIB_Function_dump_functions.html;dump functions;dump functions;
+OK;Body;2;B 13.11;dump functions;LIB_Function_dump_functions.html;dump functions;dump functions,List of all functions;
+OK;Body;2;B 13.12;dump entities;LIB_Function_dump_entities.html;dump entities;dump entities,List of all entities;
 OK;Body;1;B 14;Cross-Functional Info;LIB_Features_Cross-functional_info.html;Cross-functional info;Cross-functional info;
 OK;Body;2;B 14.01;Sorting and Ranking Options;LIB_Features_Sorting_options.html;Sorting options,Ranking options;Sorting options,Ranking options;
 OK;Body;2;B 14.02;Consolidation Actions;LIB_Features_consolidation_actions.html;consolidation actions;consolidation actions;
