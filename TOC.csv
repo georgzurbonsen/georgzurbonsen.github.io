@@ -617,7 +617,7 @@ OK;Body;4;B 9.09.03.01;translate style attributes ...;LIB_Function_translate_sty
 OK;Body;4;B 9.09.03.02;table style reset;LIB_Function_table_style_reset.html;table style reset;table style reset,Remove all style attributes from the table;
 OK;Body;1;B 10;Variables Functions;LIB_Features_variables_functions.html;variables functions;variables functions;
 OK;Body;2;B 10.01;Basic Variables Functions;LIB_Features_basic_variables_functions.html;basic variables functions;basic variables functions;
-OK;Body;3;B 10.01.01;existing (and valid);LIB_Function_existing.html;existing,existing and valid;existing,existing and valid,Check if variable is existing;
+OK;Body;3;B 10.01.01;existing (here and valid);LIB_Function_existing.html;existing,existing and valid,existing here,existing here and valid;existing,existing and valid,existing here,existing here and valid,Check if variable is existing;
 OK;Body;3;B 10.01.02;copy;LIB_Function_copy.html;copy;copy,Copy values to multiple variables or table entries;
 OK;Body;3;B 10.01.03;identify;LIB_Function_identify.html;identify;identify;
 OK;Body;3;B 10.01.04;scope;LIB_Function_scope.html;scope;scope,Identify scope of variable;
@@ -663,11 +663,12 @@ OK;Body;3;B 11.01.07;disk space ...;LIB_Function_disk_space.html;disk space,disk
 OK;Body;2;B 11.02;Listing and Searching Directories and Files;LIB_Features_listing_directories_and_files.html;listing directories and files;listing directories and files;
 OK;Body;3;B 11.02.01;directory listing ...;LIB_Function_directory_listing.html;directory listing,directory listing recursive;directory listing,directory listing recursive,Listing directories;
 OK;Body;3;B 11.02.02;advanced directory listing ...;LIB_Function_advanced_directory_listing.html;advanced directory listing,advanced directory listing recursive;advanced directory listing,advanced directory listing recursive;
-OK;Body;3;B 11.02.03;search files ...;LIB_Function_search_files.html;search files,search files recursive;search files,search files recursive,Search and count files;
-OK;Body;3;B 11.02.04;choose recent file;LIB_Function_choose_recent_file.html;choose recent file;choose recent file;
-OK;Body;3;B 11.02.05;count files ...;LIB_Function_count_files.html;count files,count files recursive;count files,count files recursive;
-OK;Body;3;B 11.02.06;resolve path/directory/file name;LIB_Function_resolve_path_name.html;resolve path name,resolve directory name,resolve file name;resolve path name,resolve directory name,resolve file name,Resolve directory and file names;
-OK;Body;3;B 11.02.07;office document properties;LIB_Function_office_document_properties.html;office document properties;office document properties,Office functions;
+OK;Body;3;B 11.02.03;file browser;LIB_Function_file_browser.html;file browser;file browser;
+OK;Body;3;B 11.02.04;search files ...;LIB_Function_search_files.html;search files,search files recursive;search files,search files recursive,Search and count files;
+OK;Body;3;B 11.02.05;choose recent file;LIB_Function_choose_recent_file.html;choose recent file;choose recent file;
+OK;Body;3;B 11.02.06;count files ...;LIB_Function_count_files.html;count files,count files recursive;count files,count files recursive;
+OK;Body;3;B 11.02.07;resolve path/directory/file name;LIB_Function_resolve_path_name.html;resolve path name,resolve directory name,resolve file name;resolve path name,resolve directory name,resolve file name,Resolve directory and file names;
+OK;Body;3;B 11.02.08;office document properties;LIB_Function_office_document_properties.html;office document properties;office document properties,Office functions;
 OK;Body;2;B 11.03;Manipulating Directories and Files;LIB_Features_manipulating_directories_and_files.html;manipulating directories and files;manipulating directories and files;
 OK;Body;3;B 11.03.01;directory create ...;LIB_Function_directory_create.html;directory create,directory create all,directory create silently;directory create,directory create all,directory create silently,directory create ... Functions;
 OK;Body;3;B 11.03.02;directory create temp;LIB_Function_directory_create_temp.html;directory create temp;directory create temp;
@@ -724,4 +725,5 @@ OK;Body;2;B 1.02;Release 8.01;MAS_Features_Release_8.01.html;Release 8.01;Releas
 OK;Body;2;B 1.03;Release 8.02;MAS_Features_Release_8.02.html;Release 8.02;Release 8.02;
 OK;Body;2;B 1.04;Release 8.03;MAS_Features_Release_8.03.html;Release 8.03;Release 8.03;
 OK;Body;2;B 1.05;Release 8.04;MAS_Features_Release_8.04.html;Release 8.04;Release 8.04;
-New, (Assign right Category);;;;Release 8.05 tbd;MAS_Features_Release_8.05_tbd.html;Release 8.05 tbd;Release 8.05 tbd;
+OK;Body;2;B 1.06;Release 9.00;MAS_Features_Release_9.00.html;Release 9.00;Release 9.00;
+OK;Body;2;B 1.07;Release 9.01 tbd;MAS_Features_Release_9.01_Golden_Cut.html;Release 9.01 Golden Cut;Release 9.01 Golden Cut;

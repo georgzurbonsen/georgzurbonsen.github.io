@@ -98,7 +98,9 @@ other row numbers return blank contents.  In addition, the text can be padded wi
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>numeral</td>
-<td><b>width limit</b><br/><p>Limit the width of the string.  If the string is shorter, then it will be padded.</p>
+<td><b>width limit</b><br/><p>Limit the width of the string.  If the string is shorter, then it will be padded.  No actions if a negative value is provided.
+<u>Note:</u> Special formatting characters (UNICODE Privat use areas) such as colors or text attributes will be counted as zero width character.  Example: <b>&amp;red;</b>.</p>
+<span class="black_text"><b> Default value: </b></span>-1 (no actions)
 </td></tr>
 </table>
 <h4> Return value</h4>
