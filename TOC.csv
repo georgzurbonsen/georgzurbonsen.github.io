@@ -717,6 +717,8 @@ OK;Body;1;B 14;Cross-Functional Info;LIB_Features_Cross-functional_info.html;Cro
 OK;Body;2;B 14.01;Sorting and Ranking Options;LIB_Features_Sorting_options.html;Sorting options,Ranking options;Sorting options,Ranking options;
 OK;Body;2;B 14.02;Consolidation Actions;LIB_Features_consolidation_actions.html;consolidation actions;consolidation actions;
 OK;Body;1;B 15;Index;LIB_Features_Index.html;Index;Index;
+New, (Assign right Category);;;;input to complete;LIB_Function_input_to_complete.html;input to complete;input to complete,Console input;
+New, (Assign right Category);;;;open;LIB_Function_open.html;open;open;
 OK, (Assign right Category);Start;1;;Welcome;MAS_Features_Table_of_Contents.html;Table of Contents;Table of Contents;
 OK, (Assign right Category), (Assign right Category);Link;1;;Presentation;Images/B4P_Introduction.pdf;Table of Contents;Table of Contents;
 OK, (Assign right Category), (Assign right Category), (Assign right Category);Link;1;;User Guide;GUI_Features_User_Guide.html;Table of Contents;Table of Contents;

@@ -67,6 +67,8 @@
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+<li class="navi"><a href="LIB_Function_input_to_complete.html"><div class="navi"> input to complete </div></a></li>
+<li class="navi"><a href="LIB_Function_open.html"><div class="navi"> open </div></a></li>
 </ul>
 	</div>
 
@@ -79,7 +81,7 @@ for all table selected rows ( table name, reference column, iterator value, iter
 <h4> Description</h4>
 <p>This loop works through all selected rows (except the header row) in the table and executes the subsequent statements accordingly.<br/><br/>
 
-The selecction is done with the expression provided in the 2nd function parameter.  This expression is executed for every row in order
+The selection is done with the expression provided in the 2nd function parameter.  This expression is executed for every row in order
 to decide whether to run the following statements inside the loop or not.<br/><br/>.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
@@ -87,23 +89,23 @@ to decide whether to run the following statements inside the loop or not.<br/><b
 <p>No indirect parameter passing<br/>
 <a class="bold_text" href="LAN_Features_partial_table_specifications.html">Partial table specifications</a> referring to current table name and row number is enabled for the subsequent statement(s).</p>
 <h4> Parameter count</h4>
-<p>4-5</p>
+<p>2-5</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
 <td>literal</td>
 <td><b>Table Name</b><br/><p>Name of exsting table</p>
 </td></tr>
-<tr><td>2.<br/>input</td>
-<td>table columns</td>
-<td><b>Reference Column</b><br/><p>Specify 1 column header name or 1 column number.  This column will be used to count the rows in the table and return the iterator value from every row.
-If partial table references are used, the point (e.g. [.]) will refer to this specified column.</p>
-</td></tr>
-<tr><td>3.<br/>code</td>
+<tr><td>2.<br/>code</td>
 <td>expression<br/>:literal</td>
 <td><b>Expression to select rows</b><br/><p>Specify the conditions or rules to selecte the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
 <a class="bold_text" href="LAN_Features_partial_table_specifications.html">Partial table specification</a> is supported here to reference table columns easily.  Example: <b>[Score]>=5</b>.<br>
 <u>Attention</u>: If you are using comparison operators = and <> (instead of == and !=) which allow more than 1 operand on the righ hand side , then make sure you put the entire expression into parentheses.  Otherwise the operators will hijack subsequent function parameters as part of their operands.</p>
+</td></tr>
+<tr><td>Opt. 3.<br/>input</td>
+<td>table columns</td>
+<td><b>Reference Column</b><br/><p>Specify 1 column header name or 1 column number.  This column will be used to count the rows in the table and return the iterator value from every row.
+If partial table references are used, the point (e.g. [.]) will refer to this specified column.</p>
 </td></tr>
 <tr><td>Opt. 4<br/>code</td>
 <td>variable<br/>:literal</td>
@@ -117,7 +119,7 @@ The variable is always of type 'quoted literal', even if containing numbers or d
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( colors, { { EN, FR }, { red, rouge }, { blue, blue }, { green, vert }, { yellow, jaune } } );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all table selected rows( colors, EN, ([FR]='*e'), value[], index[] )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all table selected rows( colors, ([FR]='*e'), EN, value[], index[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( index, ": ", value[], " / ", [FR] ); // All French colors ending with 'e'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>

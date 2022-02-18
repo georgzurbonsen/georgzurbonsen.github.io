@@ -88,7 +88,7 @@ more than 1 operand.  For example, <b>a[] = 2,3,5,7,11 </b> is a legitimate expr
 
 With b[] = 6, the expression <b>a[] = { 1, b[]=5, 6, 7, 8 }</b> is actually resulting <b>{ 1, true }</b> because the comparison has hijacke the remaining
 parameters in the parameter set.  Add parenthese to avoid this, e.g. <b>a[] = { 1, (b[]=5), 6, 7, 8 }</b> which returns <b>{1, false, 6, 7, 8}</b>.
-Note that the same hijacking
+
 </p>
 <h4> Memory Effect on Table Headers</h4>
 <p>
@@ -103,7 +103,17 @@ Whenever single <a class="bold_text" href="LAN_Features_Basic_Language_Structure
 </p><ul class="bullets"><li class="bullets">Correct: <b>... else : a[] = 1;</b>
 </li><li class="bullets">Misleading: <b>... else a[] = 1;</b> Here, 1 is assigned to a variable called <b>else a</b>.
 </li><li class="bullets">No issues with <a class="bold_text" href="LAN_Features_Basic_Language_Structure.html">blocks</a>: <b>... else { a[] = 1; } </b>
-</li></ul><p>
+</li></ul><p></p>
+<h4> Error message refers to end of program unexpectedly</h4>
+<p>
+You may likely have forgotten a closing parenthesis after the function beginning with <b>table process ...</b> and other functions which expect
+a code piece in the last parameter.  With the missing closing parameter, B4P tries to include the entire remaining code into that function
+parameter.
+
+<br><br>
+Action: Go back to that function call and ensure that all closing parentheses are included. Example:<br><br>
+<b>table process selected rows(table, [sine] = sin( [angle] );   </b> // Attention: One parenthesis is missing!<br>
+<b>table process selected rows(table, [sine] = sin( [angle] ) ); </b> // This oe is OK
 </p>
 	</div>
 </section>
