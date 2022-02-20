@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Character Entities</h3>
+<a accesskey="p" href="LAN_Features_console.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Special_console_output_characters.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
+   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
+       <div class="gcse-search","noframe"></div>
+   </div>
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 Language Guide - Overview </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">3 The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_Language_Structure.html"><div class="navi">3.1 Basic Language Structure </div></a></li>
+<li class="navi"><a href="LAN_Features_Distinct_Language_Features.html"><div class="navi">3.2 Distinct Language Features </div></a></li>
+<li class="navi"><a href="LAN_Features_comments.html"><div class="navi">3.3 Comments </div></a></li>
+<li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">3.4 Characters </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_case_sensitivity.html"><div class="navi">3.4.1 Case Sensitivity </div></a></li>
+<li class="navi"><a href="LAN_Features_console.html"><div class="navi">3.4.2 Console Input / Output </div></a></li>
+<li class="navi"><a href="LAN_Features_Character_Entities.html"><div class="navi navi-selected">3.4.3 Character Entities </div></a></li>
+<li class="navi"><a href="LAN_Features_Special_console_output_characters.html"><div class="navi">3.4.4 Special Console Output Characters </div></a></li>
+<li class="navi"><a href="LAN_Features_Special_keyboard_input_characters.html"><div class="navi">3.4.5 Special Keyboard Input Characters </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Literal_Constants.html"><div class="navi">+ 3.5 Literal Constants </div></a></li>
+<li class="navi"><a href="LAN_Features_Numeric_Constants.html"><div class="navi">3.6 Numeric Constants </div></a></li>
+<li class="navi"><a href="LAN_Features_basic_data_types.html"><div class="navi">+ 3.7 Basic Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Directory_and_files.html"><div class="navi">+ 3.8 Directories and Files </div></a></li>
+<li class="navi"><a href="LAN_Features_Locales.html"><div class="navi">3.9 Locales </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+ 3.10 Miscellaneous Features </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">3.11 Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 5 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P supports a large number of character entities.  These are common approaches to define special characters with their
+names.  The key purposes in HTML is to avoid characters like &lt; as HTML tags and other relevant symbols, and also to
+specify these characters if they are not found on your keyboard.
+
+<br><br>
+
+Most character entities are the same ones as supported in HTML and by web browsers.  However, B4P cannot guarantee full coverage of all
+such entities.  The function <a class="bold_text" href="LIB_Function_dump_entities.html">dump entities</a>() will generate a table with all supported entities.
+
+<br><br>
+
+In addition, B4P provides <b>proprietary character entities</b> to define <a class="bold_text" href="LAN_Features_Special_console_output_characters.html">special console output characters</a> for the console (e.g. text and
+background color, text attributes like underlining), als well as <a class="bold_text" href="LAN_Features_Special_keyboard_input_characters.html">special keyboard input characters</a> like pressed cursor navigation keys in
+form of single characters.  Click on the links in this paragraph for more details.
+
+<br><br>
+
+Character entities are supported in string constants of type <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literal</a>, i.e. the string constant must be specified with
+<u>single quotation marks</u> (apostrophes) at the beginning and at the text.  They will be converted into characters before program execution
+begins, quasi at compile time.  Contents inside double quotation marks will not be converted.  The text contents are considered as given.
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo( 'Value is &amp;ge; 100 &amp;eur;' );&nbsp;&nbsp;// Softquoted literal used<br/>
+&nbsp;&nbsp;echo( "Value is &amp;ge; 100 &amp;eur;" );&nbsp;&nbsp;// Quoted literal used - will show plain text<br/>
+&nbsp;&nbsp;echo( decode entities( "Value is &amp;ge; 100 &amp;eur;" )); // Entities decoded at run-time<br/>
+<br/>
+&nbsp;&nbsp;echo( '&amp;#x20ac;'); // EURO Sign - UNICODE hexadecimal code<br/>
+&nbsp;&nbsp;echo( '&amp;#8364;' ); // EURO Sign - UNICODE decimal code</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Value is ≥ 100 &amp;eur;<br>Value is &amp;ge; 100 &amp;eur;<br>Value is ≥ 100 &amp;eur;<br>€<br>€<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Character_Entities.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_encode_entities.html">encode entities</a><br/>
+<a class = "bold_text" href="LIB_Function_decode_entities.html">decode entities</a><br/>
+<a class = "bold_text" href="LIB_Function_dump_entities.html">dump entities</a><br/>
+<a class = "bold_text" href="LAN_Features_Special_keyboard_input_characters.html">special keyboard input characters</a><br/>
+<a class = "bold_text" href="LAN_Features_Special_console_output_characters.html">special console output characters</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

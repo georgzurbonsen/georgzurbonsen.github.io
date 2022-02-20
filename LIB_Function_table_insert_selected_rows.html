@@ -81,8 +81,6 @@
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
-<li class="navi"><a href="LIB_Function_input_to_complete.html"><div class="navi"> input to complete </div></a></li>
-<li class="navi"><a href="LIB_Function_open.html"><div class="navi"> open </div></a></li>
 </ul>
 	</div>
 
@@ -96,7 +94,8 @@
 </p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
-<p>Indirect parameter passing is disabled</p>
+<p>Indirect parameter passing is disabled<br/>
+This function provides a <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> with table name and row number for selected function parameters</p>
 <h4> Parameter count</h4>
 <p>2 - 5</p>
 <h4> Parameters</h4>
@@ -108,13 +107,16 @@
 <tr><td>Opt. 2.<br/>code</td>
 <td>expression<br/>:literal</td>
 <td><b>Expression to select rows</b><br/><p>Specify the conditions or rules to select the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
-<a class="bold_text" href="LAN_Features_partial_table_specifications.html">Partial table specification</a> is supported here to reference table columns easily.  Example: <b>[Score]>=5</b>.<br>
-<u>Attention</u>: If you are using comparison operators = and <> (instead of == and !=) which allow more than 1 operand on the righ hand side , then make sure you put the entire expression into parentheses.  Otherwise the operators will hijack subsequent function parameters as part of their operands.</p>
+
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily.  Example: Example: <b>[Year]>=2022</b>.<br>
+<u>Attention</u>: Comparison operators = and &lt;&gt; (instead of == and !=) may <span class="red_text">hijack</span> the next function parameters for its own use as additional comparison operands,
+e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function parameter, then put parentheses around them, e.g. <b>... , (a[]=1,3,5), ...</b>.</p>
 </td></tr>
 <tr><td>Opt. 3.<br/>code</td>
 <td>expression<br/>:literal</td>
-<td><b>Expression to specify number of rows</b><br/><p>Specify a fixed value or an expression returning a number.  This expression will be calculated for all selected rows according
-to the 2nd function parameter.  <a class="bold_text" href="LAN_Features_partial_table_specifications.html">Partial table specification</a> is supported for this expression.
+<td><b>Expression to specify number of rows</b><br/><p>Specify a fixed value or an expression returning a number.  This expression will be calculated for all selected rows according to the 2nd function parameter.
+
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily.  Example: Example: <b>[Year]+1</b>.<br>
 </p>
 <span class="black_text"><b> Default value: </b></span>1
 </td></tr>
