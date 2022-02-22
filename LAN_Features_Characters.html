@@ -68,16 +68,15 @@
 <h4> Introduction</h4>
 <p>
 B4P supports the full UNICODE character set which includes
-</p><ul class="bullets"><li class="bullets">The Basic Multilingual Plane (codes 0 ... 65,535), as well as
-</li><li class="bullets">16 additional UNICODE planes (codes 65,536 ... 1,114,111).
+</p><ul class="bullets"><li class="bullets">The Basic Multilingual Plane (codes 0 ... 65,535 / U+0000 ... U+FFFF), as well as
 </li></ul><p>
-In contrast to various other programming languages, B4P considers every UNICODE character as one single
-character.  For example, 'Caf&eacute;' counts 4 characters.  The full character set is available to define
+
+B4P treats every UNICODE character as one single character.  For example, 'Caf&eacute;' counts 4 characters.  The full character set is available to define
 variable names, table names, table header names, user function names, path and file names, etc.
 Internally, in order to conserve memory needs for large data, all text data is stored and handled in UTF-8 format, but you don't need to worry about ths.
 
 <br><br>
-Note that Latin, Greek and Cyrillic characters share common letters, e.g. capital letter 'A'.  Attempting to compare them will indicate that
+Note that Latin, Greek and Cyrillic characters share symbols which look identical, e.g. the capital letter 'A'.  Attempting to compare them will indicate that
 they are different.  As another example, the Greek <i>mu</i> &mu; and the <i>micro</i> &micro; symbols are different, too.
 </p>
 <h5> </h5>
@@ -97,17 +96,17 @@ systems and carriage-return + line-feed (CR+LF) character pairs in Windows syste
 <br><br>
 The legacy Macintosh "carriage return only" (CR) serving as line separator is not supported.
 </p>
-<h4> Function, Arrow and Other Naviagation Keys</h4>
+<h4> Function, Arrow and Other Navigation Keys</h4>
 <p>
 B4P has the unique capability to translate characters received with the functions <a class="bold_text" href="LIB_Function_getch.html">getch</a>() or <a class="bold_text" href="LIB_Function_input_quick.html">input quick</a>() into dedicated UNICODE
-characters situated in the <i>Private Use Area</i> (PUA).  This area is freely available for own use and will not interfere with assignments
+characters situated in the <i>Private Use Area B</i>.  This area is freely available for own use and will not interfere with assignments
 of new characters in the future.  Every key pressed, e.g. a function or arrow key, will return a single character.
 <br><br>
 See <a class="bold_text" href="LAN_Features_Special_keyboard_input_characters.html">Special keyboard input characters</a>.
 
 <br><br>
 <u>Note:</u> You may have considered Escape sequences (which date back to Digital Equipment VT100 terminals in the late 1970's , e.g.
-<b>ESC [A</b> for a cursor key) but these symbols do typically contain multiple characters (up to seven of them) and B4P will not guarantee cross platform portability.
+s <b>ESC [A</b> for a cursor key) but these symbols do typically contain multiple characters (up to seven of them) and B4P will not guarantee cross platform portability.
 </p>
 <h4> Special Console Output Characters for Formatting</h4>
 <p>

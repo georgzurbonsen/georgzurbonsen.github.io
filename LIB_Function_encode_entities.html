@@ -66,18 +66,21 @@
 <div class="white_background_color" ><code>encode entities</code></div>
 <h4> Description</h4>
 <p>
-This function encodes special characters into entities.
-Amongst others, following characters are encoded:
-</p><ul class="bullets"><li class="bullets">&gt; - Greater Than -> &amp;gt;
-</li><li class="bullets">&lt; - Less than -> &amp;lt;
-</li><li class="bullets">&quot; - Double quotation marks -> &amp;quot;
-</li><li class="bullets">&#39; - Single quotation marks -> &amp;#39;
-</li><li class="bullets">&amp; - Ampersand symbol -> &amp;amp;
-</li><li class="bullets">All control characters (e.g. new line, tab, backspace, escape) -> &#nnn;
-</li><li class="bullets">Control character code 0 (NUL) will be ignored.
-</li><li class="bullets">All non-ANSI characters (e.g. é) -> &#nnn;
-</li><li class="bullets">2nd and further consecutive spaces are converted to &amp;#32;
-</li></ul><p>
+This function encodes the following special characters into <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a>:
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><th>Characters              </th><th> Character Entity Conversion</th></tr>
+<tr><td>&gt;                    </td><td> &amp;gt; (greater than)</td></tr>
+<tr><td>&lt;                    </td><td> &amp;lt; (less than)</td></tr>
+<tr><td>&quot;                  </td><td> &amp;quot; (double quotation marks)</td></tr>
+<tr><td>&#39;                   </td><td> &amp;#39; (apostrophe / single quotation marks)</td></tr>
+<tr><td>&amp;                   </td><td> &amp;amp; (ampersand symbol)</td></tr>
+<tr><td>All control characters  </td><td> &#nnn; (e.g. new line, tab, backspace, escape)</td></tr>
+<tr><td>ANSI 0 (NUL)            </td><td> Will be ignored</td></tr>
+<tr><td>All non-ANSI characters </td><td> &#nnn; (e.g. &eur; &ge; &eacute)</td></tr>
+<tr><td>Consecutive spaces      </td><td> &amp;#32; (every 2nd space is converted)</td></tr>
+</table><p>
+
 See <a class="bold_text" href="LIB_Function_dump_entities.html">dump entities</a>() to obtain a complete list of entities B4P is supporting.
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>

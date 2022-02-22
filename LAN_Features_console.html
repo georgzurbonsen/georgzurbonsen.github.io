@@ -67,9 +67,12 @@
 	<div class="article">
 <h4> Console Output</h4>
 <p>
-Even in Windows 7, 8 and 10, the good old console (started with "cmd" or "msdos" or "powershell") contains archaeological software artefacts dating back to 1981
-when the IBM PC has been launched.  Luckily, the recent Windows releases support UTF-8 output to the console.  However, the supported character sets
-are limted to the following:
+Good news: The consoles under Windows, LINUX and MacOS support full UNICODE.<br>
+Bad news: Most console and terminal programs do not display all available UNICODE characters properly
+
+<br><br>
+
+All consoles support the ANSI (formerly: ASCII) chracter set.  Most consoles support additional character sets such as
 
 </p><ul class="bullets"><li class="bullets">Basic Latin
 </li><li class="bullets">Latin-1 Supplement (To ensure Düsseldorf is not written as Dusseldorf - translated as "village of fools")
@@ -78,17 +81,13 @@ are limted to the following:
 </li><li class="bullets">Cyrillic (Russian)
 </li><li class="bullets">A set of additional symbols (also found in win1252 character set) including the Euro currency sign
 </li></ul><p>
-Unsupported symbols will automatically be shown as question mark or with a placeholder box.
+Unsupported symbols will automatically be shown using  question marks or placeholder boxes.
 </p>
 <h4> Console Input</h4>
 <p>
-Another relict from 1981: Unfortunately, Microsoft has not done its homework regarding UNICODE input from the keyboard and we need to accept the facts established
-in the year when Ronald Reagan was elected as the President, surely a better choice than since 2016, and foreign characters appeared more foreign at that time than today, too.
-Non-ANSI symbols (accents, umlauts, Euro currency symbol, etc.) are converted with an antiquated MS-DOS character set.  B4P resolves this issue by automatically
-converting entered characters into UNICODE.
+Consoles under Windows have only limited capabilities to input non-ANSI characters.  Under Windows, foreign characters are accepted, but the EURO-symbol is not.<br>
+<u>Hint:</u> Consider using <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> to specify special characters which you do cannot find on your keyboard.
 </p>
-<h4> UNIX, Linux and MacOS Platforms</h4>
-<p>These platforms are much better prepared for full UNICODE (UTF-8) support when interacting with keyboard input and console output.</p>
 	</div>
 </section>
 

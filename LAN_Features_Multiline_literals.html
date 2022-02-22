@@ -67,18 +67,21 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-Similar to Python and other modern programming languages, B4P supports multline strings, name both as <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a>
+Similar to Python and other modern programming languages, B4P supports multline strings, for both  <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a>
 and <a class="bold_text" href="LAN_Features_Quoted_Literals.html">quoted literals</a>.  Softquoted multiline strings begin with three single quotation marks <b>'''</b> with contents across
-multiple lines follinwg and deliminted with <b>'''</b>.  For quoted multiline strings, use <b>"""</b> delimiters instead.
-The three quotation mark symbols must be written without blanksin between.
-The string contents are treated similarly as regular string constants, for example <span class="red_text">character entity names</span> like <b>&amp;szlig;</b> being
-resolved to the sharp S in German: <b>&szlig;</b>.  The length of multi-line strings is presently limited to 200,000
-bytes, where (foreign) non-ANSI characters count 2..4 bytes depending on their code. Longer strings will be invalidated.
+multiple lines and concluding with <b>'''</b>.  For quoted multiline strings, use <b>"""</b> delimiters instead.
+The three quotation mark symbols must be written without blanks in-between.
+
+<br><br>
+The string contents are treated similarly as regular string constants, for example <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> like <b>&amp;szlig;</b> being
+resolved to the sharp S in German: <b>&szlig;</b> if inside 3 consecutive ''' symbols, but not inside """ symbols.
+The length of multi-line strings is presently limited to 200,000, where (foreign) non-ANSI characters count 2..4 bytes depending on their code (UTF8 symbols).
+Longer strings will be invalidated and result in error messages.
 
 <br><br>
 Inside the multi-line literals, 1 and 2 consecutive quotation markes are treated as regular text.  3 consecutive quotation marks
-are also treated as text if that one is not used as the opening delimiter.  B4P comments inside multi-line strings are also
-seen as part of the contents.
+are also treated as text if that specific one is not used as the opening delimiter.  B4P comments inside multi-line strings are also
+treated as part of the string contents and not as code comments, e.g. to exclude some contents.
 
 <br><br>
 Multiline string contents can start immediately after the three quotation symbols or on the next row.  Same applies for the

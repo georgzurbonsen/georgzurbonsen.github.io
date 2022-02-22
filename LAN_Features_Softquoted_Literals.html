@@ -67,16 +67,28 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-Softquoted literals are used to name variables and tables, but not functions and <a class="bold_text" href="LAN_Features_reserved_keywords.html">reserved keywords</a>. Softquoted literals are literals specified with single quotation marks.  Follwing rules apply:
-</p><ul class="bullets"><li class="bullets">Use single quotation marks <b>' ... '</b> to contain the literal constants
-</li><li class="bullets">Any character except line breaks and single quotation marks are allowed inside
-</li><li class="bullets">The literal constant may contain multiple consecutive spaces
-</li><li class="bullets">The literal constant may contain leading or trailing spaces, as long they are inside the quotation marks
-</li><li class="bullets"><span class="red_text">Character entity names</span> common in HTML</b> like &amp;euro; or &amp;#x20ac; for the EURO symbol &euro; are supported here
-</li><li class="bullets">In various functions, <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> in softquoted literals (e.g. *, ?, #, etc.) are used for flexible searching and comparison rules
-</li><li class="bullets"><a class="bold_text" href="LAN_Features_Multiline_literals.html">Multiline strings</a> can be specified using 3 consecutive single quotation mark symbols.
+Softquoted literals can be used for
+</p><ul class="bullets"><li class="bullets">String values
+</li><li class="bullets">Variable names
+</li><li class="bullets">Table names
 </li></ul><p></p>
-<h5> </h5>
+<h4> Rules</h4>
+<p>
+Following rules apply for softquoted literals:
+</p><ul class="bullets"><li class="bullets">Use single quotation marks <b>' ... '</b> to enclose the text
+</li><li class="bullets">The literals must fit on the same line (unless specified as <a class="bold_text" href="LAN_Features_Multiline_literals.html">multiline strings</a> using 3 consecutive quotation marks ''')
+</li><li class="bullets">They may consist of 1 or more words separated by white spaces (space bar, tab, etc.)
+</li><li class="bullets">The literal constant may contain multiple consecutive spaces and the number of spaces are relevant
+<ul class="bullets"><li class="bullets">Example: <b>'Hello&nbsp;&nbsp;&nbsp;World'</b> is not equal to <b>'Hello World'</b>
+</li></ul></li><li class="bullets">Leading and trailing spaces are supported.
+<ul class="bullets"><li class="bullets">Example: <b>'Hello World'</b> is not equal to <b>'  Hello World  '</b>
+</li></ul></li><li class="bullets">All characters are allowed, except the single quotation mark used to conclude the string constant
+</li><li class="bullets">A lone point (<b>'.'</b>) is also used to reference a current column in <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a>.
+</li><li class="bullets">Reserved keywords inside quotation marks are string constants and not reserved keywords, e.g. 'true' constitutes a string containing 'true'.
+</li><li class="bullets">Various functions and comparisons support <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> like <b>'A*'</b> for beginning with A, e.g. <b>ABC = 'A*'</b> returns true.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Character_Entities.html">Character entities</a> like &amp;euro; or &amp;#x20ac; for the EURO symbol &euro; are supported.  They are converted quasi at compile time to target characters.
+</li></ul><p></p>
+<h5> Examples</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo( 'Hello World' );<br/>
 &nbsp;&nbsp;echo( '&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;' );<br/>
 &nbsp;&nbsp;echo( 'One + One' );<br/>

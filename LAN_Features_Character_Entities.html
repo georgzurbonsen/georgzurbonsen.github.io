@@ -67,36 +67,37 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-B4P supports a large number of character entities.  These are common approaches to define special characters with their
-names.  The key purposes in HTML is to avoid characters like &lt; as HTML tags and other relevant symbols, and also to
-specify these characters if they are not found on your keyboard.
+Character entities are descriptive representations of characters which are not available on the keyboard.
+They begin with an ampersand (&amp;), followed by a descriptive string or character code and conclude with a semicolon (;).
+Character entities are commonly used in HTML for web pages in order to avoid ambiguities with reserved symbols (e.g. &lt for HTML tags)
+and to display special characters.  Character codes can be specified in both decimal and hexadecimal formats.
 
 <br><br>
 
-Most character entities are the same ones as supported in HTML and by web browsers.  However, B4P cannot guarantee full coverage of all
-such entities.  The function <a class="bold_text" href="LIB_Function_dump_entities.html">dump entities</a>() will generate a table with all supported entities.
+Similar to HTML, B4P supports a large number of character entities.
+See the description of <a class="bold_text" href="LIB_Function_dump_entities.html">dump entities</a>() for a complete list of currently supported character entities.
 
 <br><br>
 
-In addition, B4P provides <b>proprietary character entities</b> to define <a class="bold_text" href="LAN_Features_Special_console_output_characters.html">special console output characters</a> for the console (e.g. text and
-background color, text attributes like underlining), als well as <a class="bold_text" href="LAN_Features_Special_keyboard_input_characters.html">special keyboard input characters</a> like pressed cursor navigation keys in
-form of single characters.  Click on the links in this paragraph for more details.
+In addition, B4P provides <b>proprietary character entities</b> to define <a class="bold_text" href="LAN_Features_Special_console_output_characters.html">special console output characters</a> (e.g. text and
+background color and text attributes such as underscoring), as well as <a class="bold_text" href="LAN_Features_Special_keyboard_input_characters.html">special keyboard input characters</a> like cursor navigation keys in
+form of single characters.
 
 <br><br>
 
 Character entities are supported in string constants of type <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literal</a>, i.e. the string constant must be specified with
-<u>single quotation marks</u> (apostrophes) at the beginning and at the text.  They will be converted into characters before program execution
-begins, quasi at compile time.  Contents inside double quotation marks will not be converted.  The text contents are considered as given.
+<u>single quotation marks</u> (apostrophes).  These entities will be converted into characters before program execution
+begins, quasi at compile time.  Contents inside double quotation marks (<a class="bold_text" href="LAN_Features_Quoted_Literals.html">quoted literals</a>) will not be converted and the contents are considered as given.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;echo( 'Value is &amp;ge; 100 &amp;eur;' );&nbsp;&nbsp;// Softquoted literal used<br/>
-&nbsp;&nbsp;echo( "Value is &amp;ge; 100 &amp;eur;" );&nbsp;&nbsp;// Quoted literal used - will show plain text<br/>
-&nbsp;&nbsp;echo( decode entities( "Value is &amp;ge; 100 &amp;eur;" )); // Entities decoded at run-time<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo( 'Value is &amp;ge; 100 &amp;euro;' );&nbsp;&nbsp;// Softquoted literal used<br/>
+&nbsp;&nbsp;echo( "Value is &amp;ge; 100 &amp;euro;" );&nbsp;&nbsp;// Quoted literal used - will show plain text<br/>
+&nbsp;&nbsp;echo( decode entities( "Value is &amp;ge; 100 &amp;euro;" )); // Entities decoded at run-time<br/>
 <br/>
 &nbsp;&nbsp;echo( '&amp;#x20ac;'); // EURO Sign - UNICODE hexadecimal code<br/>
 &nbsp;&nbsp;echo( '&amp;#8364;' ); // EURO Sign - UNICODE decimal code</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Value is ≥ 100 &amp;eur;<br>Value is &amp;ge; 100 &amp;eur;<br>Value is ≥ 100 &amp;eur;<br>€<br>€<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Character_Entities.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Value is ≥ 100 €<br>Value is &amp;ge; 100 &amp;euro;<br>Value is ≥ 100 €<br>€<br>€<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Character_Entities.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_encode_entities.html">encode entities</a><br/>
 <a class = "bold_text" href="LIB_Function_decode_entities.html">decode entities</a><br/>

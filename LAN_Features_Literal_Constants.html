@@ -67,14 +67,13 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-B4P treats literal constants a bit differently than in other programming languages.  B4P distinguishes between three different literal constants
-which have different characteristics:
+B4P supports 3 different string constants with different characteristics:
 
 </p><ul class="bullets"><li class="bullets">(unquoted) literals
 </li><li class="bullets">softquoted literals
 </li><li class="bullets">quoted literals
 </li></ul><p>
-These literal constants can be used in thefollowing contexts:
+These literal constants can be used in the following contexts:
 
 </p><table style = "width:1000px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px">
 <tr><th>Usage of literal constants      </th><th> (Unquoted) literals               </th><th> Softquoted literals           </th><th> Quoted literals</th></tr>
@@ -84,7 +83,7 @@ These literal constants can be used in thefollowing contexts:
 <tr><td>Table names             </td><td> [example:...]                 </td><td> ['example':...]           </td><td> ["example":...]</td></tr>
 <tr><td>Function names, called as procedures    </td><td> example;<br>example(...);         </td><td> (Not supported)           </td><td> (Not supported)</td></tr>
 <tr><td>Function names, called as functions in expressions                        </td><td> = ... example();<br>= ... example(...);   </td><td> (Not supported)           </td><td> (Not supported)</td></tr>
-<tr><td>Reserved keywords           </td><td> true, false, else, ...            </td><td> (Not reserved if in quotation marks)  </td><td> (Not reserved if in quotation marks)</td></tr>
+<tr><td>Reserved keywords           </td><td> true, false, else, tab, escape, new line  </td><td> (Not reserved if in quotation marks)  </td><td> (Not reserved if in quotation marks)</td></tr>
 </table><p>
 
 <sup>1</sup> <u>Attention</u>: Different from other programming languages, <a class="bold_text" href="LAN_Features_Variable.html">variables</a> in B4P are always specified by literals followed by a <b>[]</b> or <b>[...]</b> sequence.

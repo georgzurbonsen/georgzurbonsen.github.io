@@ -66,11 +66,11 @@
 <div class="white_background_color" ><code>decode entities</code></div>
 <h4> Description</h4>
 <p>
-This functiond decodes entities (like &#8364; &#20ac; &euro;) into actual characters.  The common entity names used in
-HTML are supported.
+This function decodes <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> entities (like &amp;#8364; &amp;#20ac; &amp;euro;) into actual characters.
 
 <br><br>
-<u>Note:</u> Entities inside softquoted literals specified in the program code will be converted automatically.  See examples below.
+<u>Note:</u> Character entities specified as string constants inside single quotation marks (as <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a>) in the B4P code
+will be converted automatically, quasi at compile time, and do not reuqire this function to be called.
 
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
