@@ -18,15 +18,11 @@
 
 <div class="header">
 <h3>Multiline Literals</h3>
-<a accesskey="p" href="LAN_Features_Quoted_Literals.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_reserved_keywords.html"><span>Next</span></a> 
+<a accesskey="p" href="LAN_Features_Special_keyboard_input_characters.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_reserved_keywords.html"><span>Next</span></a> 
 </div>
 
 <section>
 	<div class="nav">
-   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
-   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
-       <div class="gcse-search","noframe"></div>
-   </div>
 <div class="booktitle_field">Language Guide</div>
 <ul>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
@@ -40,11 +36,11 @@
 <li class="navi"><a href="LAN_Features_Distinct_Language_Features.html"><div class="navi">3.2 Distinct Language Features </div></a></li>
 <li class="navi"><a href="LAN_Features_comments.html"><div class="navi">3.3 Comments </div></a></li>
 <li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">+ 3.4 Characters </div></a></li>
-<li class="navi"><a href="LAN_Features_Literal_Constants.html"><div class="navi">3.5 Literal Constants </div></a></li>
+<li class="navi"><div>3.5 Literal Constants </div></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Unquoted_Literals.html"><div class="navi">3.5.1 (Unquoted) Literals </div></a></li>
-<li class="navi"><a href="LAN_Features_Softquoted_Literals.html"><div class="navi">3.5.2 Softquoted Literals </div></a></li>
-<li class="navi"><a href="LAN_Features_Quoted_Literals.html"><div class="navi">3.5.3 Quoted Literals </div></a></li>
+<li class="navi"><div>3.5.1 (Unquoted) Literals </div></li>
+<li class="navi"><div>3.5.2 Softquoted Literals </div></li>
+<li class="navi"><div>3.5.3 Quoted Literals </div></li>
 <li class="navi"><a href="LAN_Features_Multiline_literals.html"><div class="navi navi-selected">3.5.4 Multiline Literals </div></a></li>
 <li class="navi"><a href="LAN_Features_reserved_keywords.html"><div class="navi">3.5.5 Reserved Keywords </div></a></li>
 </ul></li>
@@ -61,28 +57,29 @@
 <li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
 <li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+<li class="navi"><a href="LAN_Features_Text.html"><div class="navi"> Text </div></a></li>
+<li class="navi"><a href="LAN_Features_Plain_Text.html"><div class="navi"> Plain Text </div></a></li>
+<li class="navi"><div> Text in double quotation marks </div></li>
+<li class="navi"><div> Text in single quotation marks </div></li>
+<li class="navi"><a href="LAN_Features_Text_inside_double_quotation_marks.html"><div class="navi"> Text inside double quotation marks </div></a></li>
+<li class="navi"><a href="LAN_Features_Text_inside_single_quotation_marks.html"><div class="navi"> Text inside single quotation marks </div></a></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-Similar to Python and other modern programming languages, B4P supports multline strings, for both  <a class="bold_text" href="LAN_Features_Softquoted_Literals.html">softquoted literals</a>
-and <a class="bold_text" href="LAN_Features_Quoted_Literals.html">quoted literals</a>.  Softquoted multiline strings begin with three single quotation marks <b>'''</b> with contents across
+Similar to Python and other modern programming languages, B4P supports multline strings, for both  <span class="red_text">softquoted literals</span>
+and <span class="red_text">quoted literals</span>.  Softquoted multiline strings begin with three single quotation marks <b>'''</b> with contents across
 multiple lines and concluding with <b>'''</b>.  For quoted multiline strings, use <b>"""</b> delimiters instead.
 The three quotation mark symbols must be written without blanks in-between.
 
-<br><br>
-The string contents are treated similarly as regular string constants, for example <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> like <b>&amp;szlig;</b> being
-resolved to the sharp S in German: <b>&szlig;</b> if inside 3 consecutive ''' symbols, but not inside """ symbols.
-The length of multi-line strings is presently limited to 200,000, where (foreign) non-ANSI characters count 2..4 bytes depending on their code (UTF8 symbols).
-Longer strings will be invalidated and result in error messages.
-
-<br><br>
-Inside the multi-line literals, 1 and 2 consecutive quotation markes are treated as regular text.  3 consecutive quotation marks
-are also treated as text if that specific one is not used as the opening delimiter.  B4P comments inside multi-line strings are also
-treated as part of the string contents and not as code comments, e.g. to exclude some contents.
-
+</p><ul class="bullets"><li class="bullets">The string contents are treated similarly as defined for <span class="red_text">softquoted literals</span> and <span class="red_text">quoted literals</span>.
+</li><li class="bullets">Inside a literal quoted or softquoted, 1 or 2 cosnecutive ' or " symbols are treated as contents
+</li><li class="bullets">Inside a multi-line softquoted literal, 3 consecutive """ symbols are treated as contents, however a ''' delimites the string.
+</li><li class="bullets">Inside a multi-line quoted literal, 3 consecutive ''' symbols are treated as contents, however a """ delimites the string.
+</li><li class="bullets">In softquoted literals, <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> are converted into their actual characters.
+</li></ul><p>
 <br><br>
 Multiline string contents can start immediately after the three quotation symbols or on the next row.  Same applies for the
 end: The multi-line string can be ended on the same line with three quotation marks, or immediately on the following row.
@@ -149,8 +146,8 @@ for all variables( example[], ex[] )<br/>
 <h5> </h5>
 <div class="output_background_color" ><code>--------<br>This 1st<br>text fits on<br>3 rows<br>--------<br>This 2st<br>text fits on<br>3 rows<br>--------<br><br>This 3rd<br>text fits on<br>5 rows (blank rows above and below)<br><br>--------<br>Use Following quotation marks: "Hello" or 'Hello' or '''Hello'''.<br>--------<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Multiline_literals_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
-<p><a class = "bold_text" href="LAN_Features_Quoted_Literals.html">Quoted Literals</a><br/>
-<a class = "bold_text" href="LAN_Features_Softquoted_Literals.html">Softquoted Literals</a></p>
+<p><span class="red_text">Quoted Literals</span><br/>
+<span class="red_text">Softquoted Literals</span></p>
 	</div>
 </section>
 
