@@ -29,13 +29,13 @@ OK;Body;2;B 2.06;Terms and Conditions;GUI_Features_Terms_and_Conditions.html;Ter
 OK;Body;3;B 2.06.01;Licensing;GUI_Features_Licensing.html;Licensing;Licensing;
 OK;Body;1;B 3;Getting Started;GUI_Features_Getting_started.html;Getting started;Getting started;
 OK;Body;2;B 3.01;Import;;Getting started;Getting started;
-OK;Body;2;B 3.02;Clean;;Import source data;Import source data;
-OK;Body;2;B 3.03;Validate;;Clean Data;Clean Data;
-OK;Body;2;B 3.04;Merge;;Validate and Explore;Validate and Explore;
-OK;Body;2;B 3.05;Augment;;Merge and Consolidate;Merge and Consolidate;
-OK;Body;2;B 3.06;Analyze;;Enrichment;Enrichment;
-OK;Body;2;B 3.07;Format;;Align and Process;Align and Process;
-OK;Body;2;B 3.08;Export;;Format the results;Format the results;
+OK;Body;2;B 3.02;Clean;;Getting started;Getting started;
+OK;Body;2;B 3.03;Validate;;Getting started;Getting started;
+OK;Body;2;B 3.04;Merge;;Getting started;Getting started;
+OK;Body;2;B 3.05;Augment;;Import source data;Import source data;
+OK;Body;2;B 3.06;Analyze;;Clean Data;Clean Data;
+OK;Body;2;B 3.07;Format;;Validate and Explore;Validate and Explore;
+OK;Body;2;B 3.08;Export;;Merge and Consolidate;Merge and Consolidate;
 OK;Body;2;B 3.09;Getting Help;GUI_Features_Getting_help.html;Getting help;Getting help;
 OK;Body;1;B 4;Examples;GUI_Features_Examples.html;Examples;Examples;
 OK;Body;2;B 4.01;Football Club Merger - Interactive;GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html;Example: Merging football clubs - interactive approach;Example: Merging football clubs - interactive approach;
@@ -74,7 +74,7 @@ OK;Body;3;B 2.07.08;Operating System Commands;LAN_Features_Operating_System_Comm
 OK;Body;2;B 2.08;Interactive Input and Editing;LAN_Features_Interactive_input.html;Interactive input,Interactive editing;Interactive input,Interactive editing;
 OK;Body;1;B 3;The Language;LAN_Features_The_Language.html;The Language;The Language;
 OK;Body;2;B 3.01;Distinct Language Features;LAN_Features_Distinct_Language_Features.html;Distinct Language Features;Distinct Language Features;
-OK;Body;2;B 3.02;Overall Language Structure;LAN_Features_Overall_Language_Structure.html;Overall Language Structure;Overall Language Structure,Blocks,Statement,Statements;
+OK;Body;2;B 3.02;Overall Language Structure;LAN_Features_Overall_Language_Structure.html;Overall Language Structure;Overall Language Structure,Block,Blocks,Statement,Statements;
 OK;Body;3;B 3.02.01;Text;LAN_Features_Text.html;Text;Text;
 OK;Body;4;B 3.02.01.01;Plain Text;LAN_Features_Plain_Text.html;Plain Text;Plain Text;
 OK;Body;4;B 3.02.01.02;Text Inside Single Quotation Marks;LAN_Features_Text_inside_single_quotation_marks.html;Text inside single quotation marks;Text inside single quotation marks;
@@ -84,7 +84,7 @@ OK;Body;4;B 3.02.01.05;Multi-Line Text;LAN_Features_Multi-line_text.html;Multi-l
 OK;Body;3;B 3.02.02;Numbers;LAN_Features_Number.html;Number,Numbers;Number,Numbers;
 OK;Body;3;B 3.02.03;Symbols;LAN_Features_Symbols.html;Symbols;Symbols;
 OK;Body;3;B 3.02.04;Comments;LAN_Features_comments.html;comments;comments,markdown,github markdown;
-OK;Body;3;B 3.02.05;Characters;LAN_Features_Characters.html;Characters;Characters;
+OK;Body;3;B 3.02.05;Characters;LAN_Features_Characters.html;Characters,UNICODE;Characters,UNICODE;
 OK;Body;4;B 3.02.05.01;Case Sensitivity;LAN_Features_case_sensitivity.html;case sensitivity;case sensitivity;
 OK;Body;4;B 3.02.05.02;Console Input / Output;LAN_Features_console.html;console;console;
 OK;Body;4;B 3.02.05.03;Character Entities;LAN_Features_Character_Entities.html;Character Entities;Character Entities;
@@ -215,7 +215,7 @@ OK;Body;2;B 8.03;Function Parameter Directions;LAN_Features_Function_parameter_d
 OK;Body;2;B 8.04;Function Parameter Types;LAN_Features_Function_parameter_types.html;Function parameter types;Function parameter types;
 OK;Body;3;B 8.04.01;Parameter Set or Literal (Func. Param. Type);LAN_Features_parameter_set_or_literal.html;parameter set or literal;parameter set or literal;
 OK;Body;3;B 8.04.02;Table Columns (Func. Param. Type);LAN_Features_Table_columns.html;Table columns;Table columns,table columns as function parameters;
-OK;Body;3;B 8.04.03;Code Pieces (Func. Param. Type);LAN_Features_Code_Piece.html;Code Piece;Code Piece,code pieces;
+OK;Body;3;B 8.04.03;Code Pieces (Func. Param. Type);LAN_Features_Code_piece.html;Code piece;Code piece,Code pieces;
 OK;Body;4;B 8.04.03.01;Comparison Expressions (func. params);LAN_Features_Comparison_Expression_[func._params].html;Comparison Expression [func. params];Comparison Expression [func. params],Comparison Expressions;
 OK;Body;4;B 8.04.03.02;Expressions (func. params);LAN_Features_Expressions_[func_params].html;Expressions [func params];Expressions [func params];
 OK;Body;4;B 8.04.03.03;Variables (func. params);LAN_Features_Variables_[func_params].html;Variables [func params];Variables [func params];
@@ -325,7 +325,7 @@ OK;Body;2;B 4.08;boolean;LIB_Function_boolean.html;boolean;boolean,boolean conve
 OK;Body;2;B 4.09;parameter set;LIB_Function_parameter_set.html;parameter set;parameter set,parameter set conversion function;
 OK;Body;2;B 4.10;best type;LIB_Function_best_type.html;best type;best type,Identify optimum data type for value provided;
 OK;Body;2;B 4.11;join ...;LIB_Function_join.html;join,join ignore blanks,join unique,join unique ignore blanks;join,join ignore blanks,join unique,join unique ignore blanks,Join parameter set elements into a string;
-OK;Body;2;B 4.12;type, type detailed;LIB_Function_type.html;type,type detailed;type,type detailed,Identify variable types;
+OK;Body;2;B 4.12;type, subtype;LIB_Function_type.html;type,subtype;type,subtype,Identify variable types and subtypes;
 OK;Body;2;B 4.13;hash signature;LIB_Function_hash_signature.html;hash signature;hash signature,Create hash signatures for values provided;
 OK;Body;2;B 4.14;excel column;LIB_Function_excel_column.html;excel column;excel column,Excel sheet functions;
 OK;Body;2;B 4.15;excel coordinates;LIB_Function_excel_coordinates.html;excel coordinates;excel coordinates;

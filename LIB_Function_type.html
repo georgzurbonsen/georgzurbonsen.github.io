@@ -17,16 +17,12 @@
 </div>
 
 <div class="header">
-<h3>type, type detailed</h3>
+<h3>type, subtype</h3>
 <a accesskey="p" href="LIB_Function_join.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_hash_signature.html"><span>Next</span></a> 
 </div>
 
 <section>
 	<div class="nav">
-   <script async src="https://cse.google.com/cse.js?cx=f4e0235c99c277574"></script>
-   <div id="cse" style="width: 240px; margin: 0 auto text-align: left" >
-       <div class="gcse-search","noframe"></div>
-   </div>
 <div class="booktitle_field">Function Library Guide</div>
 <ul>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
@@ -48,7 +44,7 @@
 <li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
-<li class="navi"><a href="LIB_Function_type.html"><div class="navi navi-selected">4.12 type, type detailed </div></a></li>
+<li class="navi"><a href="LIB_Function_type.html"><div class="navi navi-selected">4.12 type, subtype </div></a></li>
 <li class="navi"><a href="LIB_Function_hash_signature.html"><div class="navi">4.13 hash signature </div></a></li>
 <li class="navi"><a href="LIB_Function_excel_column.html"><div class="navi">4.14 excel column </div></a></li>
 <li class="navi"><a href="LIB_Function_excel_coordinates.html"><div class="navi">4.15 excel coordinates </div></a></li>
@@ -70,10 +66,10 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>type, type detailed</code></div>
+<div class="white_background_color" ><code>type, subtype</code></div>
 <h4> Description</h4>
 <p>
-The function <b>type</b> returns one of the following values:
+The function <b>type</b> returns one of the following string values:
 </p><ul class="bullets"><li class="bullets">numeral
 </li><li class="bullets">literal
 </li><li class="bullets">boolean
@@ -81,11 +77,18 @@ The function <b>type</b> returns one of the following values:
 </li><li class="bullets">parameter set
 </li><li class="bullets">void
 </li></ul><p>
-The function <b>type detailed</b> also distinguishes between following values:
-</p><ul class="bullets"><li class="bullets">numeral / plain numeral (plain numeral contains no literal representation along with the value)
-</li><li class="bullets">date / plain date  (plain date contains no literal representation along with the value)
-</li><li class="bullets">literal / 'literal' / "literal"  (stands for literal, softquoted literal, quoted literal)
-</li></ul><p></p>
+The function <b>subtype</b> returns one of the following string values:
+</p><ul class="bullets"><li class="bullets">numeral (contains an original text representation)
+</li><li class="bullets">plain numeral (contains no text representation)
+</li><li class="bullets">softquoted literal, (softquoted literal)
+</li><li class="bullets">quoted literal (quoted literal)
+</li><li class="bullets">boolean
+</li><li class="bullets">date (contains an original text representation)
+</li><li class="bullets">plain date (contains no text representation)
+</li><li class="bullets">parameter set
+</li><li class="bullets">void
+</li></ul><p>
+</p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
@@ -114,14 +117,14 @@ The function <b>type detailed</b> also distinguishes between following values:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[date] = date(today);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[bool] = true;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[pset] = { 1,2,3 };<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[void] = null;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[void] = null();<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all variables( a[], value[], counter[], name[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( name[], ": ", value[], " --&gt; ", type( value[] ), ", ", type detailed( value[] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( name[], ": ", value[], " --&gt; ", type( value[] ), ", ", subtype( value[] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br>date: 2022-02-21 --&gt; date, plain date<br>lit 1: An unquoted literal --&gt; literal, literal<br>lit 2: A softquoted literal --&gt; literal, 'literal'<br>lit 3: A quoted literal --&gt; literal, "literal"<br>lit 4: A quoted literal --&gt; literal, 'literal'<br>num 1: 1 --&gt; numeral, numeral<br>num 2: 1 --&gt; numeral, plain numeral<br>pset: {1,2,3} --&gt; parameter set, parameter set<br>void: null --&gt; literal, literal<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_type.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br>date: 2022-02-26 --&gt; date, plain date<br>lit 1: An unquoted literal --&gt; literal, softquoted literal<br>lit 2: A softquoted literal --&gt; literal, softquoted literal<br>lit 3: A quoted literal --&gt; literal, quoted literal<br>lit 4: A quoted literal --&gt; literal, softquoted literal<br>num 1: 1 --&gt; numeral, numeral<br>num 2: 1 --&gt; numeral, plain numeral<br>pset: {1,2,3} --&gt; parameter set, parameter set<br>void: # Invalid Value # --&gt; void, void<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_type.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 
