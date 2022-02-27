@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>tokenize</h3>
+<a accesskey="p" href="LIB_Function_clean.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_get_differences.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">6 String Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_string_search_and_extraction.html"><div class="navi">6.1 String Search and Extraction Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_find.html"><div class="navi">6.1.1 find ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_replace.html"><div class="navi">6.1.2 replace, replace all </div></a></li>
+<li class="navi"><a href="LIB_Function_substitute.html"><div class="navi">6.1.3 substitute, substitute all </div></a></li>
+<li class="navi"><a href="LIB_Function_length.html"><div class="navi">6.1.4 length ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_width.html"><div class="navi">6.1.5 width </div></a></li>
+<li class="navi"><a href="LIB_Function_height.html"><div class="navi">6.1.6 height </div></a></li>
+<li class="navi"><a href="LIB_Function_text_row.html"><div class="navi">6.1.7 text row </div></a></li>
+<li class="navi"><a href="LIB_Function_left.html"><div class="navi">6.1.8 left ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_right.html"><div class="navi">6.1.9 right ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_middle.html"><div class="navi">6.1.10 middle ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_outside.html"><div class="navi">6.1.11 outside ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_trim.html"><div class="navi">6.1.12 trim ... (string function) </div></a></li>
+<li class="navi"><a href="LIB_Function_clean.html"><div class="navi">6.1.13 clean </div></a></li>
+<li class="navi"><a href="LIB_Function_tokenize.html"><div class="navi navi-selected">6.1.14 tokenize </div></a></li>
+<li class="navi"><a href="LIB_Function_get_differences.html"><div class="navi">6.1.15 get differences </div></a></li>
+<li class="navi"><a href="LIB_Function_locate_differences.html"><div class="navi">6.1.16 locate differences </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_character_coding.html"><div class="navi">+ 6.2 Character Encoding and Decoding </div></a></li>
+<li class="navi"><a href="LIB_Features_Other_string_functions.html"><div class="navi">+ 6.3 Miscellaneous String Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi">15 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>tokenize</code></div>
+<h4> Description</h4>
+<p>
+This function breaks a string into individual token (pieces), returning them as a parameter set of literals or other types, depending on the
+settings provided in the 2nd function parameter.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>1-2</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>literal</td>
+<td><b>input string</b><br/><p>This string will be tokenized</p>
+</td></tr>
+<tr><td>Opt. 2<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Options</b><br/><p>Specify one or more options.  Formulation rules (applicable to 2nd-7th function parameters):
+</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</li><li class="bullets">Use parameter set to specify multiple values
+</li><li class="bullets">No values can be provided by using an empty set {}
+</li></ul><p>
+Following options are supported
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
+<tr><td>include blanks              </td><td> Blank contents (between separators) are also recognized as contents and will not be ignored / skipped.</td></tr>
+<tr><td>trim token                  </td><td> Leading and trailing white spaces (UNICODE 0 - 32) such as spaces, new lines, tabs, etc. will be removed from the token contents.  Non-break blanks (UNICODE 160) are excluded from this rule.</td></tr>
+<tr><td>allow new line inside quotations </td><td> Normally, line breaks in texts inside specified quotation marks will generate exceptions with error messages.  This option will suppress exceptions and treat new lines like part of text.</td></tr>
+<tr><td>include quotations in text  </td><td> The text returned will also include the quotation symbol.  Quotations may consist of more than 1 character, e.g. &lt;&lt; ... &gt;&gt;.</td></tr>
+<tr><td>include quotations as tokens </td><td> The quotation symbols will be returned as dedicated tokens</td></tr>
+<tr><td>read numerals               </td><td> Tokenized contents looking like numbers will be included as tokens of numeral type</td></tr>
+<tr><td>scientific notation         </td><td> Tokenized contents looking like numbers with or without scientific notation will be included as tokens of numeral type</td></tr>
+<tr><td>read date                   </td><td> Tokenized contents looking like dates will be read as dates</td></tr>
+<tr><td>read boolean                </td><td> Tokenized contents looking like booleans (true, false) will be read as boolean values</td></tr>
+<tr><td>thousand separator          </td><td> (Next element must contain the character)  Assumptions for numbers in the input string. Default: -</td></tr>
+<tr><td>decimal separator           </td><td> (Next element must contain the character)  Assumptions for numbers in the input string. Default: .</td></tr>
+</table><p></p>
+</td></tr>
+<tr><td>Opt. 3<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Token separator strings</b><br/><p>Specify at least 1 separator string (e.g. blank, comma, tab, slash, etc).  The string may contain multiple characters.  In this case, the sequence of these multiple
+characters combined represent the separation, e.g. { "//", "..." } specified.
+
+<br><br>Formulation rules: See 2nd function parameter.</p>
+<span class="black_text"><b> Default value: </b></span>{' ', new line } (blank and new line)
+</td></tr>
+<tr><td>Opt. 4<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Quotation marks</b><br/><p>If one literal used: considered for opening and closing.  Example:  "Hello World"<br>
+If 2 literals used: Separate for opening and closing.  Example: &lt;&lt;Hello World&gt;&gt;<br>
+If number of quotation marks provided is odd, then the last quotation mark applies both as opening and closing quotation marks.
+Multi-character quotation marks, e.g. &lt;TEXT&gt;Hello World&lt;/TEXT&gt; are also allowed.
+
+<br><br>Formulation rules: See 2nd function parameter.</p>
+<span class="black_text"><b> Default value: </b></span>(quotation marks not assumed)
+</td></tr>
+<tr><td>Opt. 5<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Additional tokens</b><br/><p>Collection of token symbols to be parsed separately and suitable for categorization.
+This is specifically important if these tokens follow without separators (e.g. white spaces) in-between.
+You can also assign multi-character tokens, e.g. "&lt;=", "&lt;&gt;", "while", "for", etc.
+
+<br><br>Formulation rules: See 2nd function parameter.</p>
+<span class="black_text"><b> Default value: </b></span>(none specified)
+</td></tr>
+<tr><td>Opt. 6<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Block comment symbols</b><br/><p>Pairwise collection of opening and closing block comment symbols, e.g. { "/&#42;", "&#42;/", "&lt;--", "--&gt;" }.
+Contents commented out will not be tokenized.
+
+<br><br>Formulation rules: See 2nd function parameter.</p>
+<span class="black_text"><b> Default value: </b></span>(none specified)
+</td></tr>
+<tr><td>Opt. 7<br/>input</td>
+<td>parameter set or literal</td>
+<td><b>Line comment symbols</b><br/><p>Specify all comment symbols which declare the rest of the line as comment, e.g. { "//", "#!" }.
+Contents commented out will not be tokenized.
+
+<br><br>Formulation rules: See 2nd function parameter.</p>
+<span class="black_text"><b> Default value: </b></span>(none specified)
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>parameter set</td>
+<td><b>Tokenized result</b><br/><p>Every token is represented as an element in the parameter set</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo( new line, "Basic use of tokenize. Separators are blank and new line" );<br/>
+&nbsp;&nbsp;echo( tokenize( "This&nbsp;&nbsp;&nbsp;is a" + new line + " test" ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Demonstrate 'include blanks' and 'trim token'" );<br/>
+&nbsp;&nbsp;echo( tokenize( ",Ha, He ,,Hi,", {}, "," ) );<br/>
+&nbsp;&nbsp;echo( tokenize( ",Ha, He ,,Hi,", include blanks, "," ) );<br/>
+&nbsp;&nbsp;echo( tokenize( ";Ha; He ,,Hi,", trim token, {",",";"} ) );<br/>
+&nbsp;&nbsp;echo( tokenize( ",Ha, He ,,Hi,", {include blanks, trim token}, "," ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "New line inside quotations allowed" );<br/>
+&nbsp;&nbsp;echo( tokenize( "'Me, and"+new line+"You','and us'" , allow new line inside quotations, ",", "'" ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Demonstrate usage of quotations" );<br/>
+&nbsp;&nbsp;echo( tokenize( "&lt;text&gt;A gnu&lt;/text&gt;,&lt;text&gt;A gnat&lt;/text&gt;" , {}, ",", { "&lt;text&gt;", "&lt;/text&gt;" } ) );<br/>
+&nbsp;&nbsp;echo( tokenize( "&lt;text&gt;A gnu&lt;/text&gt;,&lt;text&gt;A gnat&lt;/text&gt;" , include quotations as tokens, ",", { "&lt;text&gt;", "&lt;/text&gt;" } ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Read numerals, dates, booleans" );<br/>
+&nbsp;&nbsp;echo( tokenize( "1 true 1E+3 FALSE text 2020-05-07 15:30:00", { read numerals, scientific notation, read dates, read booleans } ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Thousand and Decimal separators" );<br/>
+&nbsp;&nbsp;echo( tokenize( "1,234 1.234", { read numerals, thousand separator, ".", decimal separator, "," } ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Additional tokens" );<br/>
+&nbsp;&nbsp;echo( tokenize( "for a=1to5 'do something'", {}, " ", "'", { "=", to, for } ) );<br/>
+<br/>
+&nbsp;&nbsp;echo( new line, "Ignore comments" );<br/>
+&nbsp;&nbsp;echo( tokenize( "for a=1to5 /: for a = 3 to 4 :/ 'do something'", {}, " ", "'", { "=", to, for }, { "/:", ":/" } ) );<br/>
+&nbsp;&nbsp;echo(tokenize("for a=1to5 // 'do something'", {}, " ", "'", { "=", to, for }, { }, "//"));</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Basic use of tokenize. Separators are blank and new line<br>{'This','is','a','test'}<br><br>Demonstrate 'include blanks' and 'trim token'<br>{'Ha',' He ','Hi'}<br>{'','Ha',' He ','','Hi',''}<br>{'Ha','He','Hi'}<br>{'','Ha','He','','Hi',''}<br><br>New line inside quotations allowed<br>{'Me, and<br>You','and us'}<br><br>Demonstrate usage of quotations<br>{'A gnu','A gnat'}<br>{'&lt;text&gt;','A gnu','&lt;/text&gt;','&lt;text&gt;','A gnat','&lt;/text&gt;'}<br><br>Read numerals, dates, booleans<br>{1,true,1000,false,'text','2020-05-07','03:30:00'}<br><br>Thousand and Decimal separators<br>{1.234,1234}<br><br>Additional tokens<br>{'for','a','=','1','to','5','do something'}<br><br>Ignore comments<br>{'for','a','=','1','to','5','do something'}<br>{'for','a','=','1','to','5'}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_tokenize.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_for_all_parameters.html">parameter set</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

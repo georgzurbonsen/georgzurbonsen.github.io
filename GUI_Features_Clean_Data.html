@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>2. Clean</h3>
+<a accesskey="p" href="GUI_Features_Import_source_data.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Validate_and_Explore.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">+ 1 User Guide - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_started.html"><div class="navi">+ 3 Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 4 Examples </div></a></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi">5 Index </div></a></li>
+<li class="navi"><a href="GUI_Features_Import_source_data.html"><div class="navi"> 1. Import </div></a></li>
+<li class="navi"><a href="GUI_Features_Clean_Data.html"><div class="navi navi-selected"> 2. Clean </div></a></li>
+<li class="navi"><a href="GUI_Features_Validate_and_Explore.html"><div class="navi"> 3. Validate </div></a></li>
+<li class="navi"><a href="GUI_Features_Merge_and_Consolidate.html"><div class="navi"> 4. Merge </div></a></li>
+<li class="navi"><a href="GUI_Features_Enrichment.html"><div class="navi"> 5. Augment </div></a></li>
+<li class="navi"><a href="GUI_Features_Align_and_Process.html"><div class="navi"> 6. Analyze </div></a></li>
+<li class="navi"><a href="GUI_Features_Format_the_results.html"><div class="navi"> 7. Format </div></a></li>
+<li class="navi"><a href="GUI_Features_Save_and_Export.html"><div class="navi"> 8. Export </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+Data obtained from external sources may be named and structured differently, and the table may contain
+unnecessary contents which need to be cleaned up first, and/or semantic alignments to be made.  Some typical functions are listed below:
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_delete_blank_rows.html">table delete blank rows</a>(): Easy one. It removes all blank rows.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_lift_header_row.html">table lift header row</a>(): Specify one (or more) uniqe header names and the headers will shift to the 1st row.  The data rows below moves up.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_correct_headers.html">table correct headers</a>(): Data received from different organization may contain different headers or spelling mistakes.  Use this function to clean up.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_rename_headers.html">table rename headers</a>(): Rename headers to something easier to understand.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_clean.html">table clean</a>(): General replacement of exotic spaces and line breaks in the UNICODE space to the familar spaces and 'new line', and trimming options for         white spaces and line breaks.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a>(): Convert hard-to-digest values like "GBP 300,15-" to processable values like "-300.15".
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process.html">table process selected rows</a><b>( table name, [Answer]=+'yes,true,ja,oui,sì', [Answer]=yes );</b> to align some contents.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a><b>( [.] = <a class="bold_text" href="LIB_Function_trim.html">trim</a>([.]) );</b> to remove all dangling spaces in the fiels, e.g. ' Hello ' to 'Hello'.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_keep_selected_rows.html">table keep selected rows</a>() / <a class="bold_text" href="LIB_Function_table_delete_selected_rows.html">table delete selected rows</a>(): Pre-screen the table for rows you want to keep or discard.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_delete_blank_rows.html">table delete blank rows</a>(): A simple function call to remove all blank rows.
+</li></ul><p>
+<br>
+<hr></p>
+<h4> Wikipedia Example (continued from step 1)</h4>
+<p>
+The file downloaded from Wikipedia does indeed need some cleanup.
+
+</p><ul class="bullets"><li class="bullets">First, the table contain two header rows where the 2nd header is the row of interest containing column header names.
+</li><li class="bullets">The header names are sophisticated, e.g. "Internet ccTLD".
+</li><li class="bullets">In addition, lots of cross references like <b>[1]</b> are included and they distract.
+</li><li class="bullets">Various fields, particularly country names, contain leading spaces.
+</li></ul><p></p>
+<h5> Simple Example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;// The table contains an exotic 'hairline spatium' space symbol, various fields begin with spaces,<br/>
+&nbsp;&nbsp;// and references with 1 or 2 characters in brackets, e.g. [a], [aa].&nbsp;&nbsp;The following two statements do the cleanup.<br/>
+&nbsp;&nbsp;// Note: literal(...) is needed in roder to avoid error messages when numbers are read from the table.<br/>
+<br/>
+&nbsp;&nbsp;table process all cells&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, [.] = replace all( literal([.]), {'[?]', '[??]' }, '' ) );<br/>
+&nbsp;&nbsp;table clean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, trim spaces );<br/>
+<br/>
+&nbsp;&nbsp;table lift header row&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries ); // Find header row automatically<br/>
+&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, [Country name]= left([Country name], ' (') ); // Remove name additions<br/>
+<br/>
+&nbsp;&nbsp;table list( countries, briefly, 5, 1st col, 0, last col, 1 ); // List first and last 5 rows and 2 columns only<br/>
+</code></div>
+<h5> The table has been cleaned up.</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Country name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Official state name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Afghanistan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Islamic Republic of Afghanistan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Akrotiri and Dhekelia – See United Kingdom, The. | ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Åland Islands&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Åland&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Albania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Republic of Albania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Algeria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The People's Democratic Republic of Algeria&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;... :<br>&nbsp;&nbsp;276 : Wallis and Futuna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Territory of the Wallis and Futuna Islands<br>&nbsp;&nbsp;277 : Western Sahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Sahrawi Arab Democratic Republic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;278 : Yemen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Republic of Yemen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;279 : Zambia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Republic of Zambia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;280 : Zimbabwe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Republic of Zimbabwe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Clean_Data.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

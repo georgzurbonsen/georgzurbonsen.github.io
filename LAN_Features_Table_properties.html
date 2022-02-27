@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Table Properties</h3>
+<a accesskey="p" href="LAN_Features_Table_names.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Creating_tables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Language Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 Language Guide - Overview </div></a></li>
+<li class="navi"><a href="LAN_Features_Execution_Engine.html"><div class="navi">+ 2 Execution Engine </div></a></li>
+<li class="navi"><a href="LAN_Features_The_Language.html"><div class="navi">+ 3 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 4 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">5 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">5.1 Table Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi navi-selected">5.2 Table Properties </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">5.3 Creating Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi">+ 5.4 Accessing Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi">5.5 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 6 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 7 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 8 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi">9 Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Table Properties</h4>
+<p></p><ul class="bullets"><li class="bullets">All tables are global, i.e. accessible by called procedure and functions, no matter in which code file they are running, and retained if created      inside user-defined procedures and functions and then returned.
+</li><li class="bullets">The tables are fully stored and managed in working memory (dynamic RAM).  In case you work with very large tables and your system has not enough memory space,  the the operating system will move data to the <i>page file</i> in order to provide additional space.  With the very large memory space available     systems, this should not be an issue for most applications.  B4P uses full 64-bit performance, so you will not encounter the 4GB limit.
+</li><li class="bullets">Row counting starts with 0 (row 0 is typically referred as the header row), 1, 2, etc.
+</li><li class="bullets">Tables may contain any number of rows, including 0 (= no) row.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported for referencing row numbers.  -1 refers to the last row in the table, -2 to the next one above, etc.
+</li><li class="bullets">Blank rows are allowed <br>
+</li><li class="bullets">Column counting starts with 0, 1, 2, etc.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is also supported for referencing column numbers.  -1 refers to the rightmost column, -2 the next one to the left, etc.
+</li><li class="bullets">The width of every table row row (i.e. number of columns in every row) may vary.
+</li><li class="bullets">The number of entries in a table row may exceed the number of header entries, but in this case these entries cannot be identified by column header names.  They can only be accessed with column numbers.
+</li><li class="bullets">Blank columns are allowed
+</li><li class="bullets">Multiple identical column header names are allowed, but referencing them by names will always match with the first occurrence (from left to right).
+</li><li class="bullets">Tables loaded, e.g. from HTML, XML, Excel, contain no formatting attributes (e.g. font size, frame and cell background color, alignments, typefaces like bold, underline, etc.).      However, before saving the tables, you may want to append formatting attributes which will then be parts of the data contents. See the section on <a class="bold_text" href="LIB_Features_Formatting_and_styling_tables.html">styles</a>.
+</li><li class="bullets">Regarding tables loaded from Excel files: By default the calculated values will be loaded and not the underlying formulas.
+</li><li class="bullets">The function <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() is available to change table-specific properties.</li></ul><p></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
