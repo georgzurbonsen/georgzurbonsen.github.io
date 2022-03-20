@@ -83,10 +83,10 @@ In a typical investment case, at least one (the first) cash flow value is negati
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>parameter set</td>
-<td><b>cashflow values</b><br/><p>Set of numerals (blank literals are allowed and recognized as zero) to be discounted using the WACC value</p>
+<td><b>cashflow values</b><br/><p>Set of numerals (blank strings are allowed and recognized as zero) to be discounted using the WACC value</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>time base</b><br/><p>Accepts following three values: <b>years</b>, <b>semesters</b><b>quarters</b>, and <b>months</b> in order to identify wheter the values provided are on an annual, quarterly or monthly base.
 If quarter or month are chosen, then the compound avarage growth rate will be automatically adjusted to years.</p>
 <span class="black_text"><b> Default value: </b></span>years
@@ -99,7 +99,7 @@ If quarter or month are chosen, then the compound avarage growth rate will be au
 <td><b>Calculated IRR</b><br/><p>A positive value reflects good chances that the investment made is paying off.</p></td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>Input parameter set contains values of invalid type (e.g. literals)</p>
+<p>Input parameter set contains values of invalid type (e.g. strings)</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( irr( {-100, 5, 105} ) ); // Returns 0.05</code></div>
 <h4> Output</h4>

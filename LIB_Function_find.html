@@ -85,16 +85,16 @@ Searches the string for specified patterns and returns the character position nu
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>valid types</td>
-<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_find_.html">find [parameter set function]</a> instead.  Values of types other than literal will be converted to literals first.</p>
+<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_find_.html">find [parameter set function]</a> instead.  Values of types other than string will be converted to strings first.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>valid types</td>
-<td><b>matching pattern</b><br/><p>String to search for.  If the parameter of type parameter set, see description in nexdt box below.  Values of other types (e.g. numerals) are converted to literals.<br>
-In case an unquoted or softquoted literal is supplied, the wildcard symbol for single character placeholders (?, #, ^) will apply, but no commas (,) and asterisks (*) are supported here.</p>
+<td><b>matching pattern</b><br/><p>String to search for.  If the parameter of type parameter set, see description in nexdt box below.  Values of other types (e.g. numerals) are converted to strings.<br>
+In case an unquoted or softquoted string is supplied, the wildcard symbol for single character placeholders (?, #, ^) will apply, but no commas (,) and asterisks (*) are supported here.</p>
 </td></tr>
 <tr><td>Alt. 2<br/>input</td>
 <td>parameter set</td>
-<td><b>matching patterns</b><br/><p>List of multiple matching patterns.  Non-literal contents in the parameter set will be converted to literals.  With multiple matching patterns available, the first match will be identified and returned.
+<td><b>matching patterns</b><br/><p>List of multiple matching patterns.  Non-string contents in the parameter set will be converted to strings.  With multiple matching patterns available, the first match will be identified and returned.
 Here, <u>no wildcards are supported</u>.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
@@ -129,7 +129,7 @@ Negative numbers are supported: -1 = last character, -2 = character before last 
 &nbsp;&nbsp;echo( "No match case: ", find ( st[], "pizza,PASTA" ) );<br/>
 <br/>
 &nbsp;&nbsp;// Demonstrate use of non-string values:<br/>
-&nbsp;&nbsp;// In 1st case, it's a numeral with preserved literal, 2nd case it's a plain numeral after a calculation<br/>
+&nbsp;&nbsp;// In 1st case, it's a numeral with preserved string, 2nd case it's a plain numeral after a calculation<br/>
 &nbsp;&nbsp;echo( "Locating a digit: ", find ( 00001234.56, 34, 0 ), " / ", find ( 0 + 00001234.56, 34, 0 ) );<br/>
 <br/>
 &nbsp;&nbsp;foods[] = { Gelati, Pizza, Pasta, Caffè };<br/>

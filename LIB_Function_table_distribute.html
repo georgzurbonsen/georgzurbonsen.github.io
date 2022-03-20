@@ -81,7 +81,7 @@
 This function facilitates applying the <a class="bold_text" href="LIB_Function_distribute.html">distribute</a>() function on entire tables.  It integrates all necessary preparations such as inserting vacant columns
 for the results and does distribution work on every table row automatically, and all with one single function call.  The function names ending with the
 suffix <b>accumulate</b> will add up on values (rather than overwriting them) if the columns are already existing.  In this case, specify as unquoted or softquoted
-literal '#existing' (single quotation marks are OK, but not double) in the 11th function parameter.
+string '#existing' (single quotation marks are OK, but not double) in the 11th function parameter.
 
 <br><br>
 <u>Note:</u> Regarding dates, days are always considered as whole days, regardless if date functions come with a time of day information or not.<br>
@@ -95,7 +95,7 @@ If a batch size is given (e.g. 10 items produced at a time), then specify it.<br
 If the distribution should not be bound to deliveries, but to purchasing / receiving required material for these items, then use the function <b>distribute advance</b>.
 
 <br><br>
-Alternative to total value, '#days' (softquoted literal, use no or single quotation marks) can be specified instead of the total value in order to return the number of days instead.
+Alternative to total value, '#days' (softquoted string, use no or single quotation marks) can be specified instead of the total value in order to return the number of days instead.
 
 <br><br>
 Detailed overview with many examples: See <a href="images/function_distribute_examples.pdf">available PDF overview</a>
@@ -108,27 +108,27 @@ Detailed overview with many examples: See <a href="images/function_distribute_ex
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>numeral or literal</td>
-<td><b>Total values</b><br/><p>If <b>literal</b>: Existing header name in the table where the total values are located which need to be distributed.<br>
+<td>numeral or string</td>
+<td><b>Total values</b><br/><p>If <b>string</b>: Existing header name in the table where the total values are located which need to be distributed.<br>
 If <b>numeral</b>: This will be the generalized total value applicable for all table rows.</p>
 </td></tr>
 <tr><td>3<br/>input</td>
-<td>numeral or literal</td>
-<td><b>Batch sizes</b><br/><p>If <b>literal</b>: Existing header name in the table where the batch sizes are located which need to be distributed.<br>
+<td>numeral or string</td>
+<td><b>Batch sizes</b><br/><p>If <b>string</b>: Existing header name in the table where the batch sizes are located which need to be distributed.<br>
 If <b>numeral</b>: This will be the generalized batch size applicable for all table rows.</p>
 </td></tr>
 <tr><td>4<br/>input</td>
-<td>literal<br/>date</td>
-<td><b>Start Dates</b><br/><p>If <b>literal</b>: Existing header name in the table where the start dates are specified for every row.<br>
+<td>string<br/>date</td>
+<td><b>Start Dates</b><br/><p>If <b>string</b>: Existing header name in the table where the start dates are specified for every row.<br>
 If <b>date</b>: This will be the generalized start date applicable for all table rows.</p>
 </td></tr>
 <tr><td>5<br/>input</td>
-<td>literal<br/>date<br/>numeral</td>
-<td><b>End Dates or capacity per day</b><br/><p>If <b>literal</b>: Existing header name in the table where the end dates are specified for every row.<br>
+<td>string<br/>date<br/>numeral</td>
+<td><b>End Dates or capacity per day</b><br/><p>If <b>string</b>: Existing header name in the table where the end dates are specified for every row.<br>
 If <b>date</b>: This will be the generalized end date applicable for all table rows.<br>
 If <b>numeral</b>: Capacity (number of units) per day, applicable for all table rows.
 
@@ -139,7 +139,7 @@ dates not earlier than start dates or valid capacity per day values</u> will be 
 No exceptions (error messages) are asserted.  This feature may be useful to skip specific rows intentionally.</p>
 </td></tr>
 <tr><td>6<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Intervals</b><br/><p>This parameter determinse if you want to do a plan on daily, weekly, monthly or other basis.  Note that a daily planning is the most fine-grained
 option and produces the biggest and most detailed plans.
 <br>
@@ -147,28 +147,28 @@ Valid values are: days, weeks, whole weeks, months, whole months, quarters, whol
 Theese values are exaplined listed in the 5th parameter of the function <a class="bold_text" href="LIB_Function_distribute.html">distribute</a>().</p>
 </td></tr>
 <tr><td>7<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Usance</b><br/><p>Usance is a work and trade practice parameter which is used in association with the 5th function parameter <i>Intervals</i>.
 <br>
 Valid values are: calendar, mon_fri, mon_sat, 30_360.<br>
 Theese values are exaplined listed in the 6th parameter of the function <a class="bold_text" href="LIB_Function_distribute.html">distribute</a>().</p>
 </td></tr>
 <tr><td>8<br/>input</td>
-<td>date or literal converted to date</td>
+<td>date or string converted to date</td>
 <td><b>Output Start date</b><br/><p>This value specifies the starting date for the output to generate.  If 5th parameter is not 'days', then the date will be moved back to the begin of the chosen interval (weeks, months, quarters, years).
 E.g. if '31.05.2017' is specified for months, then the whole month of May will be considered.</p>
 </td></tr>
 <tr><td>9<br/>input</td>
-<td>date or literal converted to date</td>
+<td>date or string converted to date</td>
 <td><b>Output End date</b><br/><p>This value specifies the ending date for the output to generate.  If 5th parameter is not 'days', then the date will be moved forward to the end of the chosen interval (weeks, months, quarters, years).
 E.g. if '01.05.2017' is specified for months, then the whole month May will be considered.</p>
 </td></tr>
 <tr><td>Opt. 10<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Header date format</b><br/><p>Specify '' (single quotation marks) or {} (empty set) for standard date format YYYY-MM-DD<br>
-Specify 1 value (1 element in parameter set, or 1 literal) to specify the formatting template as specified in <a class="bold_text" href="LIB_Features_numeral_to_literal_conversion_and_formatting.html">numeral to literal conversion and formatting</a>.<br>
-Specify 2 values (parameter set or softquoted literal, values separated by comma) where the 2nd value is the locale value (formatting option), (exmaple: en_US).<br>
-Specify 3 values (like above) where the 3rd value is the placeholder symbol, also defined in <a class="bold_text" href="LIB_Features_numeral_to_literal_conversion_and_formatting.html">numeral to literal conversion and formatting</a>.</p>
+Specify 1 value (1 element in parameter set, or 1 string) to specify the formatting template as specified in <a class="bold_text" href="LIB_Features_numeral_to_string_conversion_and_formatting.html">numeral to string conversion and formatting</a>.<br>
+Specify 2 values (parameter set or softquoted string, values separated by comma) where the 2nd value is the locale value (formatting option), (exmaple: en_US).<br>
+Specify 3 values (like above) where the 3rd value is the placeholder symbol, also defined in <a class="bold_text" href="LIB_Features_numeral_to_string_conversion_and_formatting.html">numeral to string conversion and formatting</a>.</p>
 <span class="black_text"><b> Default value: </b></span>{} (not specified)
 </td></tr>
 <tr><td>Opt. 11<br/>input</td>
@@ -178,7 +178,7 @@ of the table.  <br>
 <u>Attention</u>: Column insertion takes place regardless if the column with same date line names do already exist or not.  All other columns further to the right will
 be shifted accordingly to avoid overwriting existing contents.
 
-<u>Exception to the rule</u>: If the unquoted or softquoted literal '#existing' (use no quotation or single quotation marks, but not double quotation marks) is specified,
+<u>Exception to the rule</u>: If the unquoted or softquoted string '#existing' (use no quotation or single quotation marks, but not double quotation marks) is specified,
 then B4P looks for the existing column names along the time line.  The existing columns must be in the same sequence as the new ones being created.  This allows you to
 call the function <b>table distribute</b> followed by <b>table distribute accumulate</b> on the same table where the distributed values are added up.
 
@@ -213,7 +213,7 @@ Specific rules apply for this function:
 <tr><td>Opt. 14<br/>input</td>
 <td>parameter set containing dates</td>
 <td><b>Bank Holidays</b><br/><p>A set of dates may be supplied to declare specific days as bank holidays so these days will not be counted.  This parameter is rejected if the Usance '30_360' is chosen.
-The dates may be provided as data type <a class="bold_text" href="LIB_Function_date.html">date</a> or <a class="bold_text" href="LIB_Function_literal.html">literal</a> containing legitimate dates.  Type conversion to dates takes place automatically.
+The dates may be provided as data type <a class="bold_text" href="LIB_Function_date.html">date</a> or <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> containing legitimate dates.  Type conversion to dates takes place automatically.
 
 <br><br>
 Use the year 1900 (lies well in the past and this is good so) in order to declare bank holidays as anually repeating bank holidays.
@@ -223,7 +223,7 @@ Example: "1900-07-14" declares French national holiday for every year.</p>
 <tr><td>Opt. 15<br/>input</td>
 <td>parameter set containing dates</td>
 <td><b>School Holidays</b><br/><p>A set of dates may be supplied to declare school holidays (vacation days).  This parameter is rejected if the Usance '30_360' is chosen.
-The dates may be provided as data type <a class="bold_text" href="LIB_Function_date.html">date</a> or <a class="bold_text" href="LIB_Function_literal.html">literal</a> containing legitimate dates.  Type conversion to dates takes place automatically.
+The dates may be provided as data type <a class="bold_text" href="LIB_Function_date.html">date</a> or <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> containing legitimate dates.  Type conversion to dates takes place automatically.
 <b>An even number of dates</b> must be specified as the first date describes the first vacation day and the next date describes the last vacation day.
 
 <br><br>

@@ -79,11 +79,11 @@ will be built up while loading / reading in is in progress.
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1, etc.<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>Source variable name</b><br/><p>The contents will be loaded into this variable.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>JSON Format</b><br/><p>Following values are supported:
 <b>JSON</b>: Save JSON in nice format with every item in a separate line and text indentation used<br>
 <b>JSON compact</b>: Save JSON in condensed format without indentation and line breaks in order reduce overall size but without loosing any data</p>
@@ -93,7 +93,7 @@ will be built up while loading / reading in is in progress.
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>JSON contents</b><br/><p>Contains JSON text of saved variable</p></td></tr>
 </table>
 <h4> Examples</h4>
@@ -103,7 +103,7 @@ will be built up while loading / reading in is in progress.
 &nbsp;&nbsp;json to variable( b[], j[], JSON B4P );<br/>
 &nbsp;&nbsp;see(b[]);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Simple variable in JSON: [ "Hello World"]<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted literal,full access)<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_variable_to_json.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Simple variable in JSON: [ "Hello World"]<br>b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello World&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_variable_to_json.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_variable_save.html">variable save</a><br/>
 <a class = "bold_text" href="LIB_Function_json_to_variable.html">json to variable</a></p>

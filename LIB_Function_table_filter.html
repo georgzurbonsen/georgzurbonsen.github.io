@@ -92,7 +92,7 @@ sub-tables can be adjusted in order to include or excluded selected contents.
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing table</b><br/><p>It is assumed that this table contains one or more sub-tables.</p>
 </td></tr>
 <tr><td>2.<br/>input</td>
@@ -102,14 +102,14 @@ marking top left and bottom right coordinates: <b>{ { x start, y start, x end, y
 Normally, provide the return value from <a class="bold_text" href="LIB_Function_table_explore.html">table explore</a>() in this parameter.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Header search pattern</b><br/><p>Specify the header names wich must exist in the sub-tables.  All sub-tables not containing these header names will be removed from the coordinates list.
 The ordering of the header names does not matter.
 If no value is provided, then no sub-tables will be disqualified here.  The function <b>table filter ignore case</b> will ignore cases in the comparison.
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</p><ul class="bullets"><li class="bullets">Use a string to specify one value
 </li><li class="bullets">Use parameter set to specify multiple values
 </li><li class="bullets">No values can be provided by using an empty set {}
-</li><li class="bullets"><a class="bold_text" href="LAN_Features_wildcards.html">Wildcard symbols</a> are supported when using single quotation marks (softquoted literals).  Example: { '* Name', 'City,Town' } accepts sub-tables with header "Last Name" or "First Name" and "City" or "Town".</li></ul><p></p>
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_wildcards.html">Wildcard symbols</a> are supported when using single quotation marks (softquoted strings).  Example: { '* Name', 'City,Town' } accepts sub-tables with header "Last Name" or "First Name" and "City" or "Town".</li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (nothing specified)
 </td></tr>
 <tr><td>Opt. 4<br/>input</td>
@@ -161,7 +161,7 @@ If the parameter set contains fewer elements, then the 0 are assumed for the fir
           <b>{ { x start, y start, x end, y end }, { x start, y start, x end, y end }, ... }</b>.  See return value of <a class="bold_text" href="LIB_Function_table_explore.html">table explore</a>() for more details.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;define procedure( print coordinates, { { coordinates, parameters }, { msg, literal } } )<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define procedure( print coordinates, { { coordinates, parameters }, { msg, string } } )<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( msg[] );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( coordinates[], c[], i[] )<br/>

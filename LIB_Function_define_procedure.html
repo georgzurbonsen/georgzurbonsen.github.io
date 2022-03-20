@@ -89,7 +89,7 @@ The subsequent code block assumes <i>local variable scope</i> related to this pr
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>New Name</b><br/><p>Give your procedure or function a new name.  Then name may consist of multpile words with spaces, e.g. <b>my sort function</b>.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
@@ -98,16 +98,16 @@ The subsequent code block assumes <i>local variable scope</i> related to this pr
 It must be a 2-level nested parameter set where each such parameter set declares one function parameter. The syntax is as follows:<br/>
 {  { parameter name 1, parameter type 1, parameter direction 1 }, { parameter name 2, ... }, ... }<br/>
 Zero parameters may also be specified as 2 nested empty sets. { { } }<br/><br/>.
-<i>parameter name</i> must be a literal which uses this name to it as a locally accessible variable.  Not recommended to add '[]' at the end of the name here
+<i>parameter name</i> must be a string which uses this name to it as a locally accessible variable.  Not recommended to add '[]' at the end of the name here
 because it would expect a pre-defined variable to be used as parameter name.<br/>
-<i>parameter type</i> must be a literal which declares the type(s) allowed.  Both single types (e.g. numeral) as well as combined types
+<i>parameter type</i> must be a string which declares the type(s) allowed.  Both single types (e.g. numeral) as well as combined types
 are supported.  See <a class="bold_text" href="LIB_Features_user_parameter_types.html">list of parameter types in user functions</a> for all valid types and ther functionality.<br/><br/>
 <i>parameter direction</i>: One of the following:<br/>
 </p><table style = "width:700px"><col style = "width:100px"><col style = "width:600px">
 <tr><th>Parameter direction  </th><th>   Explanation</th></tr>
 <tr><td>input                </td><td> Input parameter which may be any expression: Value, variable, table or a calculation.  Changing the value inside the user procedure / function code is allowed and has no impact outside the procedure / function.</td></tr>
-<tr><td>output               </td><td> Output parameter, must be a variable or table reference.  Nonexisting variables will be initialized automatically.  The final value assigned to the variable will be written back to the variable specified as parameter, or table entry.  In the latter case, the value will be converted to literal automatically.</td></tr>
-<tr><td>io                   </td><td> I/O parameter, must be a variable or table reference.  Variables specified must exist before the function call is made.  The final value assigned to the variable will be written back to the variable specified as parameter, or table entry.  In the latter case, the value will be converted to literal automatically.</td></tr>
+<tr><td>output               </td><td> Output parameter, must be a variable or table reference.  Nonexisting variables will be initialized automatically.  The final value assigned to the variable will be written back to the variable specified as parameter, or table entry.  In the latter case, the value will be converted to string automatically.</td></tr>
+<tr><td>io                   </td><td> I/O parameter, must be a variable or table reference.  Variables specified must exist before the function call is made.  The final value assigned to the variable will be written back to the variable specified as parameter, or table entry.  In the latter case, the value will be converted to string automatically.</td></tr>
 <tr><td>reference            </td><td> Reference to variable.  In this case, the code in the defined procedure or function gets the <a class="bold_text" href="LAN_Features_references_to_variables.html">reference</a> to the variable so the <a class="bold_text" href="LAN_Features_Variable_forms.html">base variable</a> and all <span class="red_text">member variables</span> are visible and can be modified.</td></tr>
 </table><p></p>
 </td></tr>
@@ -134,15 +134,15 @@ then the last two parameter types apply sequentially.  Similar rules apply to  l
 <h4> Exceptions</h4>
 <p>Procedure or function name is already defiend</p>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define function( my private function, { { guest name, literal }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define function( my private function, { { guest name, string }, { vegetarian, boolean } }, 2, -1, 2 )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Name of function: ", function name[] );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "First invited guest: ", guest name[], select if( vegetarian[], " (vegetarian menu)", " (fish menu)" ) );<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i[] = 3, i[] &lt;= parameter count[], i[]+=2 ) // Additional guests<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name[] = ("parameter " + literal(i[]&nbsp;&nbsp;))[];<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vegi[] = ("parameter " + literal(i[]+1))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name[] = ("parameter " + str(i[]&nbsp;&nbsp;))[];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vegi[] = ("parameter " + str(i[]+1))[];<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "And: ", name[], select if( vegi[], " (vegetarian menu)", " (fish menu)" ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>

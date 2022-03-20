@@ -68,7 +68,7 @@
 <h4> Description</h4>
 <p>
 Retrieves the weekday number from the date.  If you need the weekday name, the use following function instead:<br>
-<b>literal( date[], "Tttt" );</b>, possible with a 3rd parameter specifying the language.
+<b>str( date[], "Tttt" );</b>, possible with a 3rd parameter specifying the language.
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
@@ -78,7 +78,7 @@ Retrieves the weekday number from the date.  If you need the weekday name, the u
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>date or literal converted to date</td>
+<td>date or string converted to date</td>
 <td><b>Date</b><br/><p>Value to check.</p>
 </td></tr>
 <tr><td>1<br/>input</td>
@@ -99,11 +99,11 @@ All other values are treated as 2.</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( { date(today) .. date(today)+10, date("15:00:00") }, date[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( literal( date[], "Ttt, DD.Mmm.YYYY: " ), weekday(date[], 1), " ",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( str( date[], "Ttt, DD.Mmm.YYYY: " ), weekday(date[], 1), " ",<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weekday(date[], 2), " ", weekday(date[], 3) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Sun, 27.Feb.2022: 1 7 6<br>Mon, 28.Feb.2022: 2 1 0<br>Tue, 01.Mar.2022: 3 2 1<br>Wed, 02.Mar.2022: 4 3 2<br>Thu, 03.Mar.2022: 5 4 3<br>Fri, 04.Mar.2022: 6 5 4<br>Sat, 05.Mar.2022: 7 6 5<br>Sun, 06.Mar.2022: 1 7 6<br>Mon, 07.Mar.2022: 2 1 0<br>Tue, 08.Mar.2022: 3 2 1<br>Wed, 09.Mar.2022: 4 3 2<br>___, __.___.____: -1 -1 -1<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_weekday.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Sun, 20.Mar.2022: 1 7 6<br>Mon, 21.Mar.2022: 2 1 0<br>Tue, 22.Mar.2022: 3 2 1<br>Wed, 23.Mar.2022: 4 3 2<br>Thu, 24.Mar.2022: 5 4 3<br>Fri, 25.Mar.2022: 6 5 4<br>Sat, 26.Mar.2022: 7 6 5<br>Sun, 27.Mar.2022: 1 7 6<br>Mon, 28.Mar.2022: 2 1 0<br>Tue, 29.Mar.2022: 3 2 1<br>Wed, 30.Mar.2022: 4 3 2<br>___, __.___.____: -1 -1 -1<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_weekday.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

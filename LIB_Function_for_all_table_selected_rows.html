@@ -87,11 +87,11 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Table Name</b><br/><p>Name of exsting table</p>
 </td></tr>
 <tr><td>2.<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Expression to select rows</b><br/><p>Specify the conditions or rules to selecte the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
 
 The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
@@ -104,12 +104,12 @@ e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function
 If partial table references are used, the point (e.g. [.]) will refer to this specified column.</p>
 </td></tr>
 <tr><td>Opt. 4<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator value</b><br/><p>This variable is updated by this function in order to provide the current value taken from the specified table column and referenced row.
-The variable is always of type 'quoted literal', even if containing numbers or dates.  You need to convert the type by hand if needed.</p>
+The variable is always of type 'quoted string', even if containing numbers or dates.  You need to convert the type by hand if needed.</p>
 </td></tr>
 <tr><td>Opt. 5<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator counter</b><br/><p>Equivalent to current row number while working throuh the table.  This variable is updated by this function and provdes the index. It always begins with 0 and continues with 1, 2, etc.</p>
 </td></tr>
 </table>

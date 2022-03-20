@@ -60,7 +60,7 @@
 <h4> Introduction</h4>
 <p>
 Resident attributes are values which can be stored in dedicated files.  In contrast to loading and saving variables, attributes are tuples
-consisting of <i>attribute names</i> and <i>attribute values</i>.  Values can take any type, e.g. numeral, literal, date, Boolean and parameter set.
+consisting of <i>attribute names</i> and <i>attribute values</i>.  Values can take any type, e.g. numeral, string, date, Boolean and parameter set.
 Attribute names can be either flat (just one name) or hierarchical (parameter set containing multiple names representng a sort of path name).
 
 <br><br>
@@ -68,7 +68,7 @@ In contrast to Microsoft Windows registry, the B4P resident attributes is an ope
 or settings conveniently.  One file may contain one or more settings.  Thd data format used is JavaScript Object Notation (JSON).
 
 <br><br>
-If a nested sub-attribute is created, then the values associated to the attributes are blank literals "", and not void.
+If a nested sub-attribute is created, then the values associated to the attributes are blank strings "", and not void.
 Example:  attribute write ( path[ ], file[ ], {local machine, local settings, date format}, "YYYY-MM-DD" ) will automatically assign "" to attribute name local machine,
 and local settings if not yet existing.
 

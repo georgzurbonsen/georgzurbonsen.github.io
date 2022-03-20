@@ -123,11 +123,11 @@ Typical applications:
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing source table</b><br/><p></p>
 </td></tr>
 <tr><td>2.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of destionation table</b><br/><p></p>
 </td></tr>
 <tr><td>Opt. 3.<br/>input</td>
@@ -151,7 +151,7 @@ Specific rules apply for this function:
 <td>table columns</td>
 <td><b>Columns to consolidate</b><br/><p>Specify the columns where the data from the source table shall be consolidated into the destination table.
 The remaining columns in the table will not be consolidated, i.e. the values in the destination table remain unchanged.
-<u>Note:</u> If all columns (except the identifier columns) need to be consolidated, then specify an asterisk in a softquoted literal using single quotation marks, e.g. '*'. ("*" looks for header name = "*").<br>
+<u>Note:</u> If all columns (except the identifier columns) need to be consolidated, then specify an asterisk in a softquoted string using single quotation marks, e.g. '*'. ("*" looks for header name = "*").<br>
 <u>Note:</u> This parameter is not applicable for function names ending with <b>... subtract columns</b> and <b>... exclusive columns columns</b>.
 
 <br><br>
@@ -161,12 +161,12 @@ Specific rules apply for this function:
 </li><li class="bullets">Specifying no headers (i.e. softquoted empty string '' or empty set {}) will exclude all columns from active consolidation.  Contents in top row will apply.
 </li><li class="bullets">Do not specify any columns already referenced in the previous function parameter (identifier columns)
 </li><li class="bullets">Do not repeat the same column
-</li><li class="bullets">Softquoted literal '*' in single quotation marks: Consolidate all columns in the table except the identifier columns
+</li><li class="bullets">Softquoted string '*' in single quotation marks: Consolidate all columns in the table except the identifier columns
 </li></ul><p></p>
 <span class="black_text"><b> Default value: </b></span>{} (no columns consolidated)
 </td></tr>
 <tr><td>Opt. 5.<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Consolidation actions</b><br/><p>Specify one of the various <a class="bold_text" href="LIB_Features_consolidation_actions.html">consolidation actions</a>.<br>
 The operation is applied with the data from the next lower applicable row and the destination data in the first applicable row (= target row).
 For example, <b>add</b> adds the value from the lower row to the target row.<br>
@@ -175,7 +175,7 @@ For example, <b>add</b> adds the value from the lower row to the target row.<br>
 
 The number of operation identifiers is less than the number of columns specified in the 3rd (output columns) and 6th parameter (destination columns),
 then the default value 'overwrite' is assumed for the remaining columns.  If this parameter contains more elements than columns retrieved, then the exess ones will be ignored.
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</p><ul class="bullets"><li class="bullets">Use a string to specify one value
 </li><li class="bullets">Use parameter set to specify multiple values
 </li><li class="bullets">No values can be provided by using an empty set {}
 </li><li class="bullets">'none' is assumed for all consolidating columns here.
@@ -186,7 +186,7 @@ then the default value 'overwrite' is assumed for the remaining columns.  If thi
 <span class="black_text"><b> Default value: </b></span>'overwrite' if preious parameter is specified, otherwise 'none'
 </td></tr>
 <tr><td>Opt. 6.<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Separator string</b><br/><p>For some <a class="bold_text" href="LIB_Features_consolidation_actions.html">consolidation actions</a> (e.g. <b>append, append once</b>), a separator string can be specified to separate the consolidated strings
 in a more visible way, for example using a comma or new line.<br>
 <u>Note:</u> This parameter is not applicable for function names ending with <b>... subtract columns</b> and <b>... exclusive columns columns</b>.</p>

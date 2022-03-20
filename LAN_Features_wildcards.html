@@ -68,12 +68,12 @@ B4P supports wildcards which enables for more effective search and comparison fu
 </li></ul><p>
 
 Wildcards are used, amongst others, in following functionalities:
-</p><ul class="bullets"><li class="bullets">Comparison operators <a class="bold_text" href="LAN_Features_equal_to.html">equal to</a> <b>=</b> and <a class="bold_text" href="LAN_Features_not_equal_to.html">not equal to</a> <b>&lt;&gt;</b> where the operands on the right hand side may consist of literals containing wildcards
+</p><ul class="bullets"><li class="bullets">Comparison operators <a class="bold_text" href="LAN_Features_equal_to.html">equal to</a> <b>=</b> and <a class="bold_text" href="LAN_Features_not_equal_to.html">not equal to</a> <b>&lt;&gt;</b> where the operands on the right hand side may consist of strings containing wildcards
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_Horizontal_table_access_using_wildcards.html">Horizontal table access using wildcards</a> and <a class="bold_text" href="LAN_Features_Vertical_table_access_using_wildcards.html">vertical table access using wildcards</a>
 </li><li class="bullets">Various B4P functions accepting parameters allowign wildcards for pattern matching
 </li><li class="bullets">Searching for files, e.g. <a class="bold_text" href="LIB_Function_directory_listing.html">directory listing</a>() and <a class="bold_text" href="LIB_Function_resolve_path_name.html">resolve path name</a>() function.
 </li></ul><p>
-Unless specified otherwise (like in searching files), wildcard symbols in strings will only work if specified as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literals</a> (e.g. <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">text inside single quotation marks</a>).
+Unless specified otherwise (like in searching files), wildcard symbols in strings will only work if specified as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted strings</a> (e.g. <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">text inside single quotation marks</a>).
 
 </p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:100px"><col style = "width:200px"><col style = "width:100px"><col style = "width:600px">
 <tr><th>Symbol  </th><th> Meaning                       </th><th> Example           </th><th> Explanation</th></tr>
@@ -105,7 +105,7 @@ For searching files using directory and file functions, the wildcards are limite
 &nbsp;&nbsp;table process( demo wildcards,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (c[] = 1, c[] &lt; table row width( demo wildcards, 0 ), c[]++ )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c[]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= [0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= softquoted literal( [c[], 0 ] ); // Compare and write the result<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c[]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= [0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= soft( [c[], 0 ] ); // Compare and write the result<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Current&nbsp;&nbsp;&nbsp;Column&nbsp;&nbsp;&nbsp;Compared with corresponding header name above<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// column&nbsp;&nbsp;&nbsp;&nbsp;zero<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>

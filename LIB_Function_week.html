@@ -76,7 +76,7 @@
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>date or literal converted to date</td>
+<td>date or string converted to date</td>
 <td><b>Date</b><br/><p>Value to check.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
@@ -96,7 +96,7 @@ Other values: -1 is returned</p>
 <td><b>week number</b><br/><p>-1 is returned if no recognizable date is provided or wrong option value is used.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[1] = { 31.12.2020, 31.12.2021, 31.12.2022 }; // still a literal. week() converts to date<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[1] = { 31.12.2020, 31.12.2021, 31.12.2022 }; // still a string. week() converts to date<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[2] = { 01.01.2020, 01.01.2021, 01.01.2022 };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (option[] = 0, option[] &lt;= 4, option[]++)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>

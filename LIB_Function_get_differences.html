@@ -74,8 +74,8 @@
 <div class="white_background_color" ><code>get differences</code></div>
 <h4> Description</h4>
 <p>
-This function checks two literals for deviating contents and copies them in two substrings.
-In detail, the function scans the two literals character by character from left to right until a position with different characters have been identified.
+This function checks two strings for deviating contents and copies them in two substrings.
+In detail, the function scans the two strings character by character from left to right until a position with different characters have been identified.
 The same will be repeated with scanning from the end of both strings leftward until a first difference is encountered.
 The middle contents are deemed different, even if only the first and last character(s) are different, as in follwoing example:<br><br>
 
@@ -93,23 +93,23 @@ Options are available to include whole words or numbers in the comparison, so "M
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>1st string</b><br/><p>1st string to compare with 2nd string</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>2nd string</b><br/><p>2nd string to compare with 1st string</p>
 </td></tr>
 <tr><td>Opt. 3<br/>output</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Deviating part of 1st string</b><br/><p>Identified part of the 1st string which differs from the part of the 2nd string</p>
 </td></tr>
 <tr><td>Opt. 4<br/>output</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Deviating part of 2nd string</b><br/><p>Identified part of the 1st string which differs from the part of the 2nd string</p>
 </td></tr>
 <tr><td>Opt. 5<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Options</b><br/><p>Following options apply:
 </p><table class="noframe_1stcolbold" style = "width:500px"><col style = "width:100px"><col style = "width:400px">
 <tr><td>characters    </td><td> Compare character by character.</td></tr>

@@ -69,7 +69,7 @@
 <p>
 If called with one parameter passed, then the payload will be copied both as ANSI and UTF-8 text on the clipboard.
 If called without any parameters, then the contents from the clipboard will be <i>pasted</i> into the return value, which is always
-a literal, even if copied numbers are recalled.  The clipbaord works across the different applications in your system.
+a string, even if copied numbers are recalled.  The clipbaord works across the different applications in your system.
 You will be notified with a brief message if the clipboard is not accessible, which is the case if the utilities (in MacOS and LINUX)
 are not available.
 
@@ -89,13 +89,13 @@ In Windows systems, internal C/C++ operating system calls are used.</p>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>Opt. 1<br/>input</td>
 <td>valid types</td>
-<td><b>Text to copy</b><br/><p>The specified contents will be copied onto the clipboard.  All non-literal types, e.g. numerals, will be converted to literals.</p>
+<td><b>Text to copy</b><br/><p>The specified contents will be copied onto the clipboard.  All non-string types, e.g. numerals, will be converted to strings.</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>Clipboard contents</b><br/><p>The text contents on the clipboard will be returned.</p></td></tr>
 </table>
 <h4> Examples</h4>

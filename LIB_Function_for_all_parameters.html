@@ -80,18 +80,18 @@ If the parameter set is empty, then the loop will not be executed.  This loop wi
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>parameter set<br/>literal</td>
+<td>parameter set<br/>string</td>
 <td><b>parameters</b><br/><p>Elements in this parameter set will be provided.
-If a softquoted literal is provided, then the contents separated by commas are individual elements.
-If the literal is a quoted one, then it will be treated as one element.
-Empty parameter sets (and literal: '') make the loop skip.</p>
+If a softquoted string is provided, then the contents separated by commas are individual elements.
+If the string is a quoted one, then it will be treated as one element.
+Empty parameter sets (and string: '') make the loop skip.</p>
 </td></tr>
 <tr><td>2<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator value</b><br/><p>This variable is updated by this function in order to provide the value of the current parameter element.  It is a copied value.  Modifying this variable will not influence the loop</p>
 </td></tr>
 <tr><td>Opt. 3<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator counter</b><br/><p>This variable is updated by this function and provdes the index. It always begins with 0 and continues with 1, 2, etc.</p>
 </td></tr>
 </table>

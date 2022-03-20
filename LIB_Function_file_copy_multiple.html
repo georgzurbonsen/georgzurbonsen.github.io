@@ -79,7 +79,7 @@ These functions copy files as well as directories including their files.<br><br>
 Instead, these files will be skipped.<br>
 
 <br><br>
-The three function parameters may be literals or parameter sets.  If the 1st or 2nd parameter is empty, nothing will be copied.
+The three function parameters may be strings or parameter sets.  If the 1st or 2nd parameter is empty, nothing will be copied.
 If (illustration, case a.) the 1st and 2nd parameter contain one entry each, then contents from one specified directory are copied to one specified target directory.
 If one of the two parameters contain more elements (case b and c), then the copy procedure will be repeated as illustrated.
 Case d (multiple but identical number of entries) copies contents from the source directory to the corresponding destination directory.  Finally, case e depicts multiple but different number of entries.  The number of copy cycles corresponds to the higher number of entries.  In the parameter with fewer entries, the 1st element will be referenced again after the last one was referenced (similar to modulo functionality).
@@ -94,16 +94,16 @@ Case d (multiple but identical number of entries) copies contents from the sourc
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>name of existing path(s)</b><br/><p>Every parameter must refer to an existing directory.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>name of target path(s)</b><br/><p>If the destination path is not existing, then it will be created.</p>
 </td></tr>
 <tr><td>Opt. <br/>input</td>
-<td>parameter set or literal</td>
-<td><b>Names of file or pattern to copy</b><br/><p><a class="bold_text" href="LAN_Features_wildcards.html">Wildcard symbols</a> are allowed here.  Providing a blank literal will copy nothing because there are no files with blank file names.</p>
+<td>parameter set or string</td>
+<td><b>Names of file or pattern to copy</b><br/><p><a class="bold_text" href="LAN_Features_wildcards.html">Wildcard symbols</a> are allowed here.  Providing a blank string will copy nothing because there are no files with blank file names.</p>
 <span class="black_text"><b> Default value: </b></span>'*' (all files)
 </td></tr>
 </table>

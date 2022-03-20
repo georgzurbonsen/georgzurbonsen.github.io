@@ -82,10 +82,10 @@ Searches the parameter set for specified patterns and returns the character posi
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>valid types</td>
-<td><b>matching value</b><br/><p>The comparison looks into both value and type.  Providing a numeral 1 is not the same as a literal '1'.
+<td><b>matching value</b><br/><p>The comparison looks into both value and type.  Providing a numeral 1 is not the same as a string '1'.
 The parameter set will be compared with this value in order to count matches.
-The options 'ignore case', 'ignore blanks' and both combined will only apply if the values compared are literals.<br>
-If the value is an <span class="red_text">unquoted literal</span> or <a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a>, then <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> are supported.</p>
+The options 'ignore case', 'ignore blanks' and both combined will only apply if the values compared are strings.<br>
+If the value is an <span class="red_text">unquoted string</span> or <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>, then <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a> are supported.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>numeral</td>
@@ -108,7 +108,7 @@ Negative numbers are supported: -1 = last element, -2 = previous element, etc..<
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, " " ) );&nbsp;&nbsp;// returns 1 (blanks compared)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, "?" ) );&nbsp;&nbsp;// returns -1 (not found)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, 1) );&nbsp;&nbsp;&nbsp;// returns 2 (Numeral 1 compared)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, '1') ); // returns 3 (Literal 1 compared)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, '1') ); // returns 3 (String 1 compared)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( find( { {}, " ", 1, '1', {1} }, {1} ) );// returns 4 (1 in nested parameter set compared)</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>3<br>0<br>3<br>0<br>1<br>-1<br>2<br>2<br>4<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_find_.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

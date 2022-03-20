@@ -67,30 +67,30 @@
 <h4> Introduction</h4>
 <p>
 
-Alternatively to parameter sets, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> can be specified using <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literals</a> (i.e. with <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">Text inside single quotation marks</a>)
+Alternatively to parameter sets, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> can be specified using <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted strings</a> (i.e. with <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">Text inside single quotation marks</a>)
 to compare the entries in the specified column and pick up all row numbers with matching comparisons.  A leading colon (<b>:</b>) is required
 to instruct B4P to search the table for matching contents.
 </p>
 <h4> Syntax for Full Table Specification</h4>
 <p>
 The header name patterns must begin with a colon (2 consecutive colons are actually needed if the table name specified before), followed
-by the softquoted literal value.
+by the softquoted string value.
 
 </p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier       </th><th> , </th><th> : Contents Search Pattern     </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Matching contents (literal), or </td><td>   </td><td> - Must be a softquoted        </td><td></td></tr>
-<tr><td></td><td>               </td><td>   </td><td> - Positive row number, or     </td><td>   </td><td> literal, recommended to use       </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Matching contents (string), or  </td><td>   </td><td> - Must be a softquoted        </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - Positive row number, or     </td><td>   </td><td> string, recommended to use        </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Negative row number         </td><td>   </td><td> wildcard symbols          </td><td></td></tr>
 </table><p>
 
 <br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
 </p><table class="noframe table_syntax" style = "width:970px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier   </th><th> , </th><th> : Contents Search Pattern     </th><th> , </th><th> Simple Column Specifier       </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Must be a softquoted        </td><td>   </td><td> - Header name, or         </td><td></td></tr>
-<tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> literal, recommended to use       </td><td>   </td><td> - Positive column number, or      </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Must be a softquoted        </td><td>   </td><td> - Header name, or         </td><td></td></tr>
+<tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> string, recommended to use        </td><td>   </td><td> - Positive column number, or      </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Negative column number  </td><td>   </td><td> wildcard symbols          </td><td>   </td><td> - Negative column number      </td><td></td></tr>
 </table><p>
-Lookup access: If a parameter set or a header name pattern is encountered in the Simple Column Specifier instead of a simple value (literal or numeral),
+Lookup access: If a parameter set or a header name pattern is encountered in the Simple Column Specifier instead of a simple value (string or numeral),
 then the 1st column found will be used to identify the row. If it contains no elements, then no lookup can be made and an empty set will be returned.
 </p>
 <h4> Principle</h4>

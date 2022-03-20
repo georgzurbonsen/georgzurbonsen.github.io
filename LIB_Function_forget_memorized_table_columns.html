@@ -103,7 +103,7 @@ Implicitly memorizing column numbers can be suppressed with following options:
 &nbsp;&nbsp;table initialize ( table 2,<br/>
 &nbsp;&nbsp;{ { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, literal } } )<br/>
+&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( [Animal],": ", [leg count], " and ", [(leg count)] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Note the parentheses around (leg count)<br/>

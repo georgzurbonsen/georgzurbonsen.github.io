@@ -88,18 +88,18 @@ following parameter.
 <td><b>Default Value</b><br/><p>Applicable to <b>compare select</b>: This is the default value to be returned if all comparisons specified in the following function parameters turned out false.</p>
 </td></tr>
 <tr><td>Alt. 2<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Default Expression</b><br/><p>Applicable to <b>compare pick</b>: This is the default expression to be calculated if all comparisons in the following function parameters turned out false.</p>
 </td></tr>
 <tr><td>3, 5, ...<br/>code</td>
-<td>comparison expression<br/>:literal</td>
+<td>comparison expression<br/>:string</td>
 <td><b>Values to compare with</b><br/><p>The value provided in the 1st function parameter will be compared with the comparison expressions provided in these odd-numbered
 function parameters.  Once a positive match (comparison returns true) has been found, then comparison will stop and the value from the next
 function aparameter will be returned.
 
 This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '&lt;&gt;'.  Single values,
 ranges (e.g. 3..5), multiple values separated by commas are supported.  For text comparison, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> are supported if the
-literal is of type <a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a>.
+string is of type <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
 
 <br><br>
 <u>Attention</u>: To avoid hijacking further function parameters as additional values to be compared, put the expression into parentheses
@@ -110,7 +110,7 @@ if no operators, = or &lt;&gt; have been used.  This hijacking issues does not a
 <td><b>Value to select</b><br/><p>Applicable to <b>compare select</b>: This value will be returned if a match with the previous parameter applies.</p>
 </td></tr>
 <tr><td>Alt. 4, 6, ...<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Expression to select</b><br/><p>Applicable to <b>compare pick</b>: This expression will be calculated and the value returned if a match with the previous parameter applies.  Otherwise, the expression will not be calculated.</p>
 </td></tr>
 </table>

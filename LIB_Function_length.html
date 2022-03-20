@@ -74,13 +74,13 @@
 <div class="white_background_color" ><code>length</code></div>
 <h4> Description</h4>
 <p>
-This function returns the number of characters in the string.  New line symbols count as 1 character. If the value provided is not a literal, then it will be converted to a literal first.<br>
-<u>Attention</u>: For numerals and dates with available literal context, the literal will be used.
+This function returns the number of characters in the string.  New line symbols count as 1 character. If the value provided is not a string, then it will be converted to a string first.<br>
+<u>Attention</u>: For numerals and dates with available string context, the string will be used.
 
 <br><br>
 
-A simpler approach is to use {} behind the literal, referred as <span class="red_text">length of literals</span>.  This simplified appraoch runs faster, but assumes
-a literal value to be provided all times.
+A simpler approach is to use {} behind the string, referred as <span class="red_text">length of strings</span>.  This simplified appraoch runs faster, but assumes
+a string value to be provided all times.
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
 <h4> Restrictions</h4>
@@ -91,7 +91,7 @@ a literal value to be provided all times.
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>valid types</td>
-<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_length_.html">length [parameter set function]</a> instead.  Values of types other than literal will be converted to literals first.</p>
+<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_length_.html">length [parameter set function]</a> instead.  Values of types other than string will be converted to strings first.</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
@@ -101,7 +101,7 @@ a literal value to be provided all times.
 <td><b>Length</b><br/><p>Number of characters</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( length( 007.0 ) );&nbsp;&nbsp;&nbsp;&nbsp;// 5 characters (literal context preserved)<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( length( 007.0 ) );&nbsp;&nbsp;&nbsp;&nbsp;// 5 characters (string context preserved)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( length( 007.0 + 0 ) );&nbsp;&nbsp;&nbsp;&nbsp;// 1 character (7) after a calculation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( length( 1=1 ) );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 4 characters (true)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( length( Hello ) );&nbsp;&nbsp;&nbsp;&nbsp;// 5 chracters<br/>
@@ -111,7 +111,7 @@ a literal value to be provided all times.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_length_.html">length [parameter set function]</a><br/>
 <a class = "bold_text" href="LIB_Function_width.html">width</a><br/>
-<span class="red_text">length of literals</span></p>
+<span class="red_text">length of strings</span></p>
 	</div>
 </section>
 

@@ -50,7 +50,7 @@
 	<div class="article">
 <h4> Benefit - Increasing Performance</h4>
 <p>
-In order to increase overall performance, all header names which are explicitly mentioned with literal values,
+In order to increase overall performance, all header names which are explicitly mentioned with string values,
 for example <b>[Family Name]</b>, <b>['Family Name]</b> or <b>["Family Name]</b>, the physical column position of these
 headers will normally be identified only once by comparing all headers from left to right, and are then memorized.
 <b>behind</b> the header name.  This will improve the performance when processing through entire tables whiles referencing the same headers, e.g.
@@ -73,9 +73,9 @@ the the colum numbers.  See following example:
 <div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
 &nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, literal } } )<br/>
+&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( literal([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;legs( table 1 );<br/>
@@ -84,22 +84,22 @@ the the colum numbers.  See following example:
 <div class="output_background_color" ><code>Bird&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>Fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>Snake&nbsp;&nbsp;&nbsp;: poison<br>Tiger&nbsp;&nbsp;&nbsp;: teeth<br>Lobster : claws<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_memory_effect.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Solving the Drawback</h4>
 <p>The column numbers for 'Animal' and 'leg count' are memorized after their first reference, and becomes an issue when
-called with the 2nd table where the "leg count" lies further to the right and a column called "weapon" has taken is place there.
+called with the 2nd table where the "leg count" lies in a different column further to the right and a column called "weapon" has taken is place there.
 The 2nd function call lists the weapons.
 
 <br><br>
 Three different approches are available to solve this issue:
-</p><ul class="bullets"><li class="bullets">Instead of referencing the constant literal directly, do a simple <i>calculation</i> with it, e.g. putting parentheses around them: <b>[(Full Name)]</b>
-</li><li class="bullets">Force B4P to forget the column numbers in the current proogram
-</li><li class="bullets">Deactivate memorizing
+</p><ul class="bullets"><li class="bullets">Instead of referencing the text value directly, do a simple <i>calculation</i> with it, e.g. putting parentheses around them: <b>[(Full Name)]</b>
+</li><li class="bullets">Force B4P to forget the column numbers in the current program by calling <a class="bold_text" href="LIB_Function_forget_memorized_table_columns.html">forget memorized table columns</a>()
+</li><li class="bullets">Deactivate memorizing by changing runtime settings
 </li></ul><p></p>
 <h5> Using Parentheses:</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
 &nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, literal } } )<br/>
+&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( literal([Animal],"8#" ),": ", [(leg count)] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [(leg count)] ) );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;legs( table 1 );<br/>
@@ -122,10 +122,10 @@ having them forgotten.</p>
 <div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
 &nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, literal } } )<br/>
+&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forget memorized table columns; // All memorized columns in this B4P program file will be forgotten<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( literal([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;legs( table 1 );<br/>
@@ -141,9 +141,9 @@ This setting will apply until the B4P program has ended or the variable has been
 <div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
 &nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, literal } } )<br/>
+&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( literal([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;runtime settings[memorize table columns] = false;<br/>

@@ -68,45 +68,45 @@
 <p>
 List of supported parameter types <br/>
 X = Accepted type<br>
-C = This parameter type will be converted to targeted type (e.g. a literal containing a number to a numeral) <br>
+C = This parameter type will be converted to targeted type (e.g. a string containing a number to a numeral) <br>
 
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px">
-<tr><th>Mnemonic                            </th><th> Numeral       </th><th> Date          </th><th> Literal       </th><th> Boolean       </th><th> Parameter set     </th><th> Void          </th><th> Code</th></tr>
+<tr><th>Mnemonic                            </th><th> Numeral       </th><th> Date          </th><th> String        </th><th> Boolean       </th><th> Parameter set     </th><th> Void          </th><th> Code</th></tr>
 <tr><td>numeral                             </td><td> X             </td><td>               </td><td>               </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>to numeral (see 1)                  </td><td> X             </td><td> C             </td><td> C             </td><td> C             </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>date                                </td><td>               </td><td> X             </td><td>               </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>to date (see 2)                     </td><td> C             </td><td> X             </td><td> C             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>numeral or date                     </td><td> X             </td><td> X             </td><td>               </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>numeral or date or blank            </td><td> X             </td><td> X             </td><td> X if blank    </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
-<tr><td>literal                             </td><td>               </td><td>               </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
-<tr><td>to literal (see 3)                  </td><td> C             </td><td> C             </td><td> X             </td><td> C             </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>string                              </td><td>               </td><td>               </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>to string (see 3)                   </td><td> C             </td><td> C             </td><td> X             </td><td> C             </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>numeral or blank                    </td><td> X             </td><td>               </td><td> X if blank    </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>numeral or blank to zero            </td><td> X             </td><td>               </td><td> 0 if blank    </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
-<tr><td>numeral or literal                  </td><td> X             </td><td>               </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
-<tr><td>date or literal                     </td><td>               </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>numeral or string                   </td><td> X             </td><td>               </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>date or string                      </td><td>               </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>numerals                            </td><td> C (see 4)     </td><td>               </td><td>               </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
-<tr><td>numeral or literal or date          </td><td> X             </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
-<tr><td>numeral or literal or date literal  </td><td> X             </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>numeral or string or date           </td><td> X             </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
+<tr><td>numeral or string or date string    </td><td> X             </td><td> X             </td><td> X             </td><td>               </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>boolean                             </td><td>               </td><td>               </td><td>               </td><td> X             </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>columns                             </td><td> X             </td><td>               </td><td> X             </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
 <tr><td>numeral or boolean                  </td><td> X             </td><td>               </td><td>               </td><td> X             </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>scalars                             </td><td> X             </td><td> X             </td><td> X             </td><td> X             </td><td>                   </td><td>               </td><td></td></tr>
 <tr><td>parameters                          </td><td>               </td><td>               </td><td>               </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
 <tr><td>to parameters                       </td><td>               </td><td>               </td><td> C (see 5)     </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
-<tr><td>parameters members to literal       </td><td>               </td><td>               </td><td>               </td><td>               </td><td> X (see 6)         </td><td>               </td><td></td></tr>
-<tr><td>to parameters members to literal    </td><td>               </td><td>               </td><td> C (see 5)     </td><td>               </td><td> X (see 6)         </td><td>               </td><td></td></tr>
-<tr><td>literal or parameters               </td><td>               </td><td>               </td><td> X             </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
+<tr><td>parameters members to string        </td><td>               </td><td>               </td><td>               </td><td>               </td><td> X (see 6)         </td><td>               </td><td></td></tr>
+<tr><td>to parameters members to string     </td><td>               </td><td>               </td><td> C (see 5)     </td><td>               </td><td> X (see 6)         </td><td>               </td><td></td></tr>
+<tr><td>string or parameters                </td><td>               </td><td>               </td><td> X             </td><td>               </td><td> X                 </td><td>               </td><td></td></tr>
 <tr><td>valid                               </td><td> X             </td><td> X             </td><td> X             </td><td> X             </td><td> X                 </td><td>               </td><td></td></tr>
 <tr><td>all                                 </td><td> X             </td><td> X             </td><td> X             </td><td> X             </td><td> X                 </td><td> X             </td><td></td></tr>
 </table><p>
 
 Notes:<br/>
-1. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_numeral.html">numeral</a>() function.<br/>
+1. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_num.html">num</a>() function.<br/>
 2. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_date.html">date</a>() function.<br/>
-3. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_literal.html">literal</a>() function.<br/>
+3. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_str.html">str</a>() function.<br/>
 4. Even if only one numeral is provided, the user function gets a <a class="bold_text" href="LIB_Function_for_all_parameters.html">parameter set</a> containing one numeric element.<br/>
-5. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_literal.html">literal</a>() function.<br/>
-6. The members in the parameter set will be converted to literal. Example: {1,2,true} -> {'1','2','true'}<br/>
+5. Conversion similar as implemented in the  <a class="bold_text" href="LIB_Function_str.html">str</a>() function.<br/>
+6. The members in the parameter set will be converted to string. Example: {1,2,true} -> {'1','2','true'}<br/>
 </p>
 	</div>
 </section>

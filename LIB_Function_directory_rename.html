@@ -88,18 +88,18 @@ Moving directories is only possible inside the same disk volume (i.e. same disk 
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>existing path and directory names</b><br/><p>Every parameter must refer to an existing directory.  Path name in front is needed if the directory is not located in the working directory.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>new path and directory names</b><br/><p>Destination paths and new directory names.  The number of existing and new path and directory names must match, otherwise an exception will be asserted.</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>numeral or literal</td>
+<td>numeral or string</td>
 <td><b>Feedback</b><br/><p>              <b>directory rename</b>: Always "OK", because all errors cause exceptions.<br>
               <b>directory rename silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>directory rename all</b>: Number of successful operations (directories renamed or moved) is returned.</p></td></tr>
@@ -121,7 +121,7 @@ Number of existing and new path and directory names are not equal</p>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directory delete recursive( "", "My Folder *" );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>&nbsp;Datenträger in Laufwerk C: ist Windows <br> Volumeseriennummer: 96E3-BA76<br><br> Verzeichnis von C:&#92;Users&#92;zur-b&#92;OneDrive&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;My Folder 2<br><br>[.]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[..]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[My Folder 3] <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Bytes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 Verzeichnis(se), 118’091’292’672 Bytes frei<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_directory_rename.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>&nbsp;Datenträger in Laufwerk C: ist Windows <br> Volumeseriennummer: 96E3-BA76<br><br> Verzeichnis von C:&#92;Users&#92;zur-b&#92;OneDrive&#92;Documents&#92;Programme&#92;Beyond4P&#92;B4P_Docu_Maker&#92;My Folder 2<br><br>[.]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[..]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[My Folder 3] <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Datei(en),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 Bytes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 Verzeichnis(se), 111’390’269’440 Bytes frei<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_directory_rename.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_file_rename.html">file rename ... Functions</a></p>
 	</div>

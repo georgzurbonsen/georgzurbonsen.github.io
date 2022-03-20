@@ -74,7 +74,7 @@
 <div class="white_background_color" ><code>tokenize</code></div>
 <h4> Description</h4>
 <p>
-This function breaks a string into individual token (pieces), returning them as a parameter set of literals or other types, depending on the
+This function breaks a string into individual token (pieces), returning them as a parameter set of strings or other types, depending on the
 settings provided in the 2nd function parameter.
 </p>
 <h4> Call as: <span class="black_text">function</span></h4>
@@ -85,13 +85,13 @@ settings provided in the 2nd function parameter.
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>input string</b><br/><p>This string will be tokenized</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Options</b><br/><p>Specify one or more options.  Formulation rules (applicable to 2nd-7th function parameters):
-</p><ul class="bullets"><li class="bullets">Use a literal to specify one value
+</p><ul class="bullets"><li class="bullets">Use a string to specify one value
 </li><li class="bullets">Use parameter set to specify multiple values
 </li><li class="bullets">No values can be provided by using an empty set {}
 </li></ul><p>
@@ -111,7 +111,7 @@ Following options are supported
 </table><p></p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Token separator strings</b><br/><p>Specify at least 1 separator string (e.g. blank, comma, tab, slash, etc).  The string may contain multiple characters.  In this case, the sequence of these multiple
 characters combined represent the separation, e.g. { "//", "..." } specified.
 
@@ -119,9 +119,9 @@ characters combined represent the separation, e.g. { "//", "..." } specified.
 <span class="black_text"><b> Default value: </b></span>{' ', new line } (blank and new line)
 </td></tr>
 <tr><td>Opt. 4<br/>input</td>
-<td>parameter set or literal</td>
-<td><b>Quotation marks</b><br/><p>If one literal used: considered for opening and closing.  Example:  "Hello World"<br>
-If 2 literals used: Separate for opening and closing.  Example: &lt;&lt;Hello World&gt;&gt;<br>
+<td>parameter set or string</td>
+<td><b>Quotation marks</b><br/><p>If one string used: considered for opening and closing.  Example:  "Hello World"<br>
+If 2 strings used: Separate for opening and closing.  Example: &lt;&lt;Hello World&gt;&gt;<br>
 If number of quotation marks provided is odd, then the last quotation mark applies both as opening and closing quotation marks.
 Multi-character quotation marks, e.g. &lt;TEXT&gt;Hello World&lt;/TEXT&gt; are also allowed.
 
@@ -129,7 +129,7 @@ Multi-character quotation marks, e.g. &lt;TEXT&gt;Hello World&lt;/TEXT&gt; are a
 <span class="black_text"><b> Default value: </b></span>(quotation marks not assumed)
 </td></tr>
 <tr><td>Opt. 5<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Additional tokens</b><br/><p>Collection of token symbols to be parsed separately and suitable for categorization.
 This is specifically important if these tokens follow without separators (e.g. white spaces) in-between.
 You can also assign multi-character tokens, e.g. "&lt;=", "&lt;&gt;", "while", "for", etc.
@@ -138,7 +138,7 @@ You can also assign multi-character tokens, e.g. "&lt;=", "&lt;&gt;", "while", "
 <span class="black_text"><b> Default value: </b></span>(none specified)
 </td></tr>
 <tr><td>Opt. 6<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Block comment symbols</b><br/><p>Pairwise collection of opening and closing block comment symbols, e.g. { "/&#42;", "&#42;/", "&lt;--", "--&gt;" }.
 Contents commented out will not be tokenized.
 
@@ -146,7 +146,7 @@ Contents commented out will not be tokenized.
 <span class="black_text"><b> Default value: </b></span>(none specified)
 </td></tr>
 <tr><td>Opt. 7<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Line comment symbols</b><br/><p>Specify all comment symbols which declare the rest of the line as comment, e.g. { "//", "#!" }.
 Contents commented out will not be tokenized.
 

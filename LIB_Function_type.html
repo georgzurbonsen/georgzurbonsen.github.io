@@ -33,14 +33,14 @@
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LIB_Function_literal.html"><div class="navi">+ 4.1 literal, quoted literal, softquoted literal </div></a></li>
-<li class="navi"><a href="LIB_Function_numeral.html"><div class="navi">4.2 numeral </div></a></li>
-<li class="navi"><a href="LIB_Function_clean_numeral.html"><div class="navi">4.3 clean (if) numeral </div></a></li>
-<li class="navi"><a href="LIB_Function_smart_numeral.html"><div class="navi">4.4 smart (if) numeral </div></a></li>
+<li class="navi"><a href="LIB_Function_str.html"><div class="navi">+ 4.1 str, soft </div></a></li>
+<li class="navi"><a href="LIB_Function_num.html"><div class="navi">4.2 num </div></a></li>
+<li class="navi"><a href="LIB_Function_clean_num.html"><div class="navi">4.3 clean num, clean if num </div></a></li>
+<li class="navi"><a href="LIB_Function_smart_num.html"><div class="navi">4.4 smart num, smart if num </div></a></li>
 <li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">4.6 time, pure time </div></a></li>
-<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_literals.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
-<li class="navi"><a href="LIB_Function_boolean.html"><div class="navi">4.8 boolean </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Function_bool.html"><div class="navi">4.8 bool </div></a></li>
 <li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
@@ -71,7 +71,7 @@
 <p>
 The function <b>type</b> returns one of the following string values:
 </p><ul class="bullets"><li class="bullets">numeral
-</li><li class="bullets">literal
+</li><li class="bullets">string
 </li><li class="bullets">boolean
 </li><li class="bullets">date
 </li><li class="bullets">parameter set
@@ -80,8 +80,8 @@ The function <b>type</b> returns one of the following string values:
 The function <b>subtype</b> returns one of the following string values:
 </p><ul class="bullets"><li class="bullets">numeral (contains an original text representation)
 </li><li class="bullets">plain numeral (contains no text representation)
-</li><li class="bullets">softquoted literal, (softquoted literal)
-</li><li class="bullets">quoted literal (quoted literal)
+</li><li class="bullets">softquoted string, (softquoted string)
+</li><li class="bullets">quoted string (quoted string)
 </li><li class="bullets">boolean
 </li><li class="bullets">date (contains an original text representation)
 </li><li class="bullets">plain date (contains no text representation)
@@ -104,16 +104,16 @@ The function <b>subtype</b> returns one of the following string values:
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>Type of value</b><br/><p>See main function desription</p></td></tr>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[num 1] = 1;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[num 2] = a[num 1] + 0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 1] = An unquoted literal;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 2] = 'A softquoted literal';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 3] = "A quoted literal";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 4] = softquoted literal( a[lit 3] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 1] = Plain text;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 2] = 'A softquoted string';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 3] = "A quoted string";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lit 4] = soft( a[lit 3] );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[date] = date(today);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[bool] = true;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[pset] = { 1,2,3 };<br/>
@@ -124,7 +124,7 @@ The function <b>subtype</b> returns one of the following string values:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( name[], ": ", value[], " --&gt; ", type( value[] ), ", ", subtype( value[] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br>date: 2022-02-27 --&gt; date, plain date<br>lit 1: An unquoted literal --&gt; literal, softquoted literal<br>lit 2: A softquoted literal --&gt; literal, softquoted literal<br>lit 3: A quoted literal --&gt; literal, quoted literal<br>lit 4: A quoted literal --&gt; literal, softquoted literal<br>num 1: 1 --&gt; numeral, numeral<br>num 2: 1 --&gt; numeral, plain numeral<br>pset: {1,2,3} --&gt; parameter set, parameter set<br>void: # Invalid Value # --&gt; void, void<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_type.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>bool: true --&gt; boolean, boolean<br>date: 2022-03-20 --&gt; date, plain date<br>lit 1: Plain text --&gt; string, softquoted string<br>lit 2: A softquoted string --&gt; string, softquoted string<br>lit 3: A quoted string --&gt; string, quoted string<br>lit 4: A quoted string --&gt; string, softquoted string<br>num 1: 1 --&gt; numeral, numeral<br>num 2: 1 --&gt; numeral, plain numeral<br>pset: {1,2,3} --&gt; parameter set, parameter set<br>void: # Invalid Value # --&gt; void, void<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_type.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

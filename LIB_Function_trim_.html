@@ -94,7 +94,7 @@ is unique.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( trim( { 1, {}, {a,b}, 1, {}, {b,a}, {a,b}, {a,b} } ) );&nbsp;&nbsp;&nbsp;// No difference made on quoted strings<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Note: {a,b} is considered different to {b,a} and will not be trimmed<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( trim( { 1, '1', 2, '2' } ) );&nbsp;&nbsp;&nbsp;// No trimming (numerals differ from literals)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( trim( { 1, '1', 2, '2' } ) );&nbsp;&nbsp;&nbsp;// No trimming (numerals differ from strings)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( trim( { } ), " / ", trim( { {},{},{} } ) ); // No element and 1 element<br/>
 </code></div>
 <h4> Output</h4>

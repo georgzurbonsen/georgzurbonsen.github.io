@@ -102,20 +102,20 @@ For CSV files, the following function names save the files differently:<br>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>parameter set or literal</td>
-<td><b>Name(s) of table(s)</b><br/><p>Provide 1 table as literal unless the function <b>table save multiple</b> is used.</p>
+<td>parameter set or string</td>
+<td><b>Name(s) of table(s)</b><br/><p>Provide 1 table as string unless the function <b>table save multiple</b> is used.</p>
 </td></tr>
 <tr><td>- / 2.<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Sheet name(s)</b><br/><p>Only applicable for <b>table save multiple</b>:  For each table provided in the 1st function parameter, a corresponding sheet name needs to be provided.
 When saving in Excel format, these sheet names will appar as tab names at the bottom of the displayed worksheets.</p>
 </td></tr>
 <tr><td>2. / 3.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>File name</b><br/><p>Specify the file name.  Add the path in front if the file is not located in the current working directory.</p>
 </td></tr>
 <tr><td>Opt. 3. / 4.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Format descriptor</b><br/><p></p><table class="bold_column_1" style = "width:750px"><col style = "width:150px"><col style = "width:600px">
 <tr><th>Value       </th><th> Description</th></tr>
 <tr><td>,           </td><td> CSV using comma as separator. (Put it into quotation marks ',' when specifying it in the function parameter)</td></tr>
@@ -134,7 +134,7 @@ When saving in Excel format, these sheet names will appar as tab names at the bo
 <span class="black_text"><b> Default value: </b></span>LOCAL (CSV using decimal symbol according to locale settings)
 </td></tr>
 <tr><td>Opt. 4. / 5.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Character set</b><br/><p></p><table class="bold_column_1" style = "width:750px"><col style = "width:150px"><col style = "width:600px">
 <tr><th>Value       </th><th> Character set</th></tr>
 <tr><td>ansi        </td><td> Text format in ANSI- Non-ASCII symbols are converted to question mark, including foreign symbols and the Euro symbol (€)</td></tr>
@@ -149,7 +149,7 @@ When saving in Excel format, these sheet names will appar as tab names at the bo
 <span class="black_text"><b> Default value: </b></span>utf-8 (UNICODE)
 </td></tr>
 <tr><td>Opt. 5. / 6.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Option</b><br/><p>At present, one option is defined in addition to the default option:
 </p><table class="bold_column_1" style = "width:750px"><col style = "width:200px"><col style = "width:550px">
 <tr><th>default                 </th><th> No specific option applies.</th></tr>

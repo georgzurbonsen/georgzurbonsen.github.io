@@ -67,17 +67,17 @@
 <p>
 Basic rules to not-equal-to comparisons which are a bit more relaxed than the <a class="bold_text" href="LAN_Features_strictly_not_equal_to.html">strictly not equal to</a> comparison operator:
 </p><ul class="bullets"><li class="bullets">The number of operands on the right-hand-side is not limited to 1.  A selection of multiple values may be specified as well as ranges.
-</li><li class="bullets"><a class="bold_text" href="LAN_Features_wildcards.html">Wildcards</a> are supported in the right-hand operand if the value is a <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literal</a> (e.g. <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">text inside single quotation marks</a>).
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_wildcards.html">Wildcards</a> are supported in the right-hand operand if the value is a <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a> (e.g. <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">text inside single quotation marks</a>).
 </li><li class="bullets">When comparing parameter sets, the same elements in both left and right hand side must exist, but they do not need to be in the same order
-</li><li class="bullets">Dates, Booleans and numerals can be compared with literals if they have the same text value / literal representation (e.g. if printed out). Example: '5' = 5, and 'true' = true are both true.
+</li><li class="bullets">Dates, Booleans and numerals can be compared with strings if they have the same text value / string representation (e.g. if printed out). Example: '5' = 5, and 'true' = true are both true.
 </li><li class="bullets">Comparing two void values will always return true.
 </li></ul><p>
 <br/><img src="Images/Description_Formulas_Not_Equal_to.jpg" alt="Comparison not Equal to"><br/>
 
 
-<sup>1</sup> If a numeral is compared with a literal, then a literal copy will be made of the numeral and both literals are compared.<br>
-<sup>2</sup> If a date is compared with a literal, then a literal copy will be made of the date and both literals are compared.  Depending on the state of the date, the format is "YYYY-MM-DD", "HH:II:SS", or "YYYY-MM-DD HH:II:SS".<br>
-<sup>3</sup> If a boolean value is compared with a literal, then a literal copy will be made of the boolean value and both literals are compared.<br>
+<sup>1</sup> If a numeral is compared with a string, then a string copy will be made of the numeral and both strings are compared.<br>
+<sup>2</sup> If a date is compared with a string, then a string copy will be made of the date and both strings are compared.  Depending on the state of the date, the format is "YYYY-MM-DD", "HH:II:SS", or "YYYY-MM-DD HH:II:SS".<br>
+<sup>3</sup> If a boolean value is compared with a string, then a string copy will be made of the boolean value and both strings are compared.<br>
 <sup>4</sup> Contents in both sets must be the same, but the ordering does not matter.  E.g. {1,2,3} <> {3,2,1} returns false, however strictly comparison {1,2,3} != {3,2,1} returns true.  Values (but not subsets) inside the parameter sets are compared with the <a class="bold_text" href="LAN_Features_strictly_not_equal_to.html">strictly not equal to</a> <b>!=</b> operator.
 </p>
 <h5> </h5>
@@ -94,7 +94,7 @@ Basic rules to not-equal-to comparisons which are a bit more relaxed than the <a
 <br/>
 &nbsp;&nbsp;for all variables( a[], x[] ) echo( x[] );<br/>
 <br/>
-&nbsp;&nbsp;echo("Literal with other types:");<br/>
+&nbsp;&nbsp;echo("String with other types:");<br/>
 <br/>
 &nbsp;&nbsp;b[0] = 123 &lt;&gt; "123";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// false<br/>
 &nbsp;&nbsp;b[1] = '123' &lt;&gt; 123;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// false<br/>
@@ -102,7 +102,7 @@ Basic rules to not-equal-to comparisons which are a bit more relaxed than the <a
 &nbsp;&nbsp;b[3] = false &lt;&gt; 'False';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// true<br/>
 &nbsp;&nbsp;b[4] = date("2020-08-01") &lt;&gt; "2020-08-01";&nbsp;&nbsp;// false<br/>
 &nbsp;&nbsp;b[5] = date("2020-08-01") &lt;&gt; "01.08.2020";&nbsp;&nbsp;// true<br/>
-&nbsp;&nbsp;// The last one is 'true' because literal representation of date is YYYY-MM-DD<br/>
+&nbsp;&nbsp;// The last one is 'true' because string representation of date is YYYY-MM-DD<br/>
 <br/>
 &nbsp;&nbsp;for all variables( b[], x[] ) echo( x[] );<br/>
 <br/>
@@ -115,7 +115,7 @@ Basic rules to not-equal-to comparisons which are a bit more relaxed than the <a
 <br/>
 &nbsp;&nbsp;for all variables( c[], x[] ) echo( x[] );</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Basic comparisons:<br>false<br>true<br>false<br>false<br>true<br>false<br>false<br>false<br>Literal with other types:<br>false<br>false<br>false<br>true<br>false<br>true<br>Compare with wildcards:<br>false<br>true<br>false<br>false<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_not_equal_to.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Basic comparisons:<br>false<br>true<br>false<br>false<br>true<br>false<br>false<br>false<br>String with other types:<br>false<br>false<br>false<br>true<br>false<br>true<br>Compare with wildcards:<br>false<br>true<br>false<br>false<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_not_equal_to.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Comparing Dates</h4>
 <p>
 Note that value of type date may assume 4 states: date only, time only, date and time combined and blank date (no value).  Even for the same operator,

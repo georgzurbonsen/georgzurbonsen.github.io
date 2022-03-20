@@ -75,7 +75,7 @@ be initialized implicitly with following values:
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:100px"><col style = "width:200px"><col style = "width:500px">
 <tr><th>Type        </th><th> Value     </th><th> Examples      </th><th> Equivalen traditional formulation</th></tr>
 <tr><td>Numeral     </td><td> 0     </td><td> a[] += 5;     </td><td> a[] = 0; a[] = a[] + 5;</td></tr>
-<tr><td>Literal     </td><td> '' (blank)    </td><td> a[] += 's';       </td><td> a[] = ''; a[] = a[] + 's';</td></tr>
+<tr><td>String      </td><td> '' (blank)    </td><td> a[] += 's';       </td><td> a[] = ''; a[] = a[] + 's';</td></tr>
 <tr><td>Date        </td><td> (blank date)  </td><td> a[] += date(today);   </td><td> a[] = date(''); a[] = a[] + date(today);</td></tr>
 <tr><td>Boolean     </td><td> false     </td><td> a[] &vert;= b[];  </td><td> a[] = false; a[] = a[] &vert; b[];</td></tr>
 <tr><td>parameter set   </td><td> {} (empty set)</td><td> a[] &vert;= {1,2};    </td><td> a[] = {}; a[] = a[] &vert; {1,2};</td></tr>
@@ -107,7 +107,7 @@ be initialized implicitly with following values:
 <div class="output_background_color" ><code>6<br>He<br>2020-10-13<br>true<br>{1,2,3,1,2,3}<br>0.5<br>-1<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Assignment_operator.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Assignment operators on table cells</h4>
 <p>
-Using assignment operators on tables is supported to a limited extent since the type of the destination is either a literal or
+Using assignment operators on tables is supported to a limited extent since the type of the destination is either a string or
 numeral (legitimate positive or negative number with or without decimal point recognized) unless the table has been configured
 differently using the <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() function.</p>
 <h5> </h5>
@@ -117,7 +117,7 @@ differently using the <a class="bold_text" href="LIB_Function_table_configure.ht
 &nbsp;&nbsp;[a:0,1] += 'Hello';<br/>
 &nbsp;&nbsp;[a:0,1] -= 'llo';<br/>
 &nbsp;&nbsp;[a:0,1] += 'y'; // Hey<br/>
-&nbsp;&nbsp;[a:0,2] = true; // converts to literal<br/>
+&nbsp;&nbsp;[a:0,2] = true; // converts to string<br/>
 &nbsp;&nbsp;[a:0,2] += ' false'; // 'true false'<br/>
 <br/>
 &nbsp;&nbsp;table list(a);</code></div>

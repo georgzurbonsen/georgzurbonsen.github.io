@@ -68,7 +68,7 @@
 Basic rules to strictly-equal-to comparisons:
 </p><ul class="bullets"><li class="bullets">The number of operands on the right-hand-side is always 1.  No risk of hijacking parameters.
 </li><li class="bullets">Contents are compared strictly, i.e. data type and contents must match perfectly.  No wildcards are supported here.
-</li><li class="bullets">Comparing values of different types, e.g. numerals with literals, will always be unequal.
+</li><li class="bullets">Comparing values of different types, e.g. numerals with strings, will always be unequal.
 </li><li class="bullets">When comparing parameter sets, the same elements in both left and right hand side must exist, and they need to be in the same order.
 </li><li class="bullets">Comparing two void values will always return true.
 </li></ul><p>
@@ -86,7 +86,7 @@ Basic rules to strictly-equal-to comparisons:
 <br/>
 &nbsp;&nbsp;for all variables( a[], x[] ) echo( x[] );<br/>
 <br/>
-&nbsp;&nbsp;echo("Literal with other types always return false:");<br/>
+&nbsp;&nbsp;echo("String with other types always return false:");<br/>
 <br/>
 &nbsp;&nbsp;b[0] = 123 != "123";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// true<br/>
 &nbsp;&nbsp;b[1] = '123' != 123;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// true<br/>
@@ -95,7 +95,7 @@ Basic rules to strictly-equal-to comparisons:
 <br/>
 &nbsp;&nbsp;for all variables( b[], x[] ) echo( x[] );</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>Basic comparisons:<br>false<br>true<br>true<br>false<br>Literal with other types always return false:<br>true<br>true<br>true<br>true<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_strictly_not_equal_to.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Basic comparisons:<br>false<br>true<br>true<br>false<br>String with other types always return false:<br>true<br>true<br>true<br>true<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_strictly_not_equal_to.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Comparing Dates</h4>
 <p>
 Note that value of type date may assume 4 states: date only, time only, date and time combined and blank date (no value).  Even for the same operator,

@@ -93,24 +93,24 @@ This function may also be called as a procedure in case only the processed follo
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>input parameter set</b><br/><p>If provided as a parameter set: Will be used for counting elements<br>
-If provided as a quoted literal: The string will be converted to a parameter set containing one element.<br>
-If provided as a unquoted or softquoted literal: The comma-separated substrings will be converted to parameter set elements. '' is equivalent to {}.<br></p>
+If provided as a quoted string: The string will be converted to a parameter set containing one element.<br>
+If provided as a unquoted or softquoted string: The comma-separated substrings will be converted to parameter set elements. '' is equivalent to {}.<br></p>
 </td></tr>
 <tr><td>2<br/>code</td>
-<td>comparison expression<br/>:literal</td>
+<td>comparison expression<br/>:string</td>
 <td><b>Right-hand Comparison expression</b><br/><p>This expression is used to compare every element of the parameter set from left to right.<br>
 This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '<>'.  Single values,
 ranges (e.g. 3..5), multiple values separated by commas are supported.  For text comparison, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> are supported if the
-literal is of type <a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a>.</p>
+string is of type <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>numeral</td>
 <td><b>Count</b><br/><p>This parameter applies to function names <b>filter n</b>, <b>filter start n</b> and <b>filter start n include</b>.
 If provided as a parameter set: Will be used for counting elements<br>
-If provided as a quoted literal: The string will be converted to a parameter set containing one element.<br>
-If provided as a unquoted or softquoted literal: The comma-separated substrings will be converted to parameter set elements. '' is equivalent to {}.<br></p>
+If provided as a quoted string: The string will be converted to a parameter set containing one element.<br>
+If provided as a unquoted or softquoted string: The comma-separated substrings will be converted to parameter set elements. '' is equivalent to {}.<br></p>
 </td></tr>
 <tr><td>Opt. 3+ / Opt. 4+<br/>io</td>
 <td>parameter set</td>

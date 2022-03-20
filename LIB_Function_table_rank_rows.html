@@ -98,11 +98,11 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>Opt. 2.<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Expression to select rows</b><br/><p>Applicable to <b>table rank selected rows</b> only:<br>
 Specify the conditions or rules to select the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
 
@@ -130,7 +130,7 @@ Specific rules apply for this function:
 <span class="black_text"><b> Default value: </b></span>alphabetic
 </td></tr>
 <tr><td>Opt. 4 / 5<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Ranking option</b><br/><p>See <a class="bold_text" href="LIB_Features_Sorting_options.html">sorting options</a> for available values.</p>
 <span class="black_text"><b> Default value: </b></span>alphabetic
 </td></tr>
@@ -178,7 +178,7 @@ you want to continue with the next lower ranking number in the 2nd or further ra
 &nbsp;&nbsp;echo("Different ranking schemes on names using alphabetic ordering, ignoring case, start with rank 0:");<br/>
 &nbsp;&nbsp;table process ( names, for all parameters( { 123, 213, 112, 113, 223 }, scheme[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table rank rows( names, literal(scheme[]), Name, alphabetic ignore case, scheme[], 0 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table rank rows( names, str(scheme[]), Name, alphabetic ignore case, scheme[], 0 );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>
 &nbsp;&nbsp;table list ( names );</code></div>
 <h4> Output</h4>

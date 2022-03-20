@@ -85,7 +85,7 @@ This function extracts a right part of the string either with a character positi
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>valid types</td>
-<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_right_.html">right [parameter set function]</a> instead.  Values of types other than literal will be converted to literals first.</p>
+<td><b>input string or value</b><br/><p><u>Attention</u>: If 1st parameter is a parameter set, please refer to <a class="bold_text" href="LIB_Function_right_.html">right [parameter set function]</a> instead.  Values of types other than string will be converted to strings first.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>numeral</td>
@@ -97,7 +97,7 @@ Zero: Empty string returned<br><br>
 The function name ending '<b>... include</b>' will be ignored.  Using the function name part <b>'... last match ...'</b> will assert an error.</p>
 </td></tr>
 <tr><td>Alt. 2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>matching pattern</b><br/><p>Function <b>right ...</b>: Return the right part of the string <u>without</u> the matching pattern.<br>
 Function <b>right include ...</b>: Return the right part of the string <u>including</u> the matching pattern.<br>
 Function name ending <b>... last match</b>: Looks for the last matching pattern in the string and not the first one.<br>
@@ -105,15 +105,15 @@ Empty strings will be interpreted as positive match before the 1st character and
 
 <br><br>
 Matching patterns are case-sensitive.<br>
-<u>Attention:</u> The matching pattern parameter distinguishes between <a class="bold_text" href="LAN_Features_Data_type_literals.html">literals</a> and <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literals</a>.<br>
-In softquoted literals, following wildcard symbols act as placeholders: '?' for any character, '#' for any digit and '^' for any letter.
+<u>Attention:</u> The matching pattern parameter distinguishes between <a class="bold_text" href="LAN_Features_data_type_strings.html">strings</a> and <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted strings</a>.<br>
+In softquoted strings, following wildcard symbols act as placeholders: '?' for any character, '#' for any digit and '^' for any letter.
 </p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>Extracted substring</b><br/><p></p></td></tr>
 </table>
 <h4> Examples</h4>
@@ -126,8 +126,8 @@ In softquoted literals, following wildcard symbols act as placeholders: '?' for 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right( st[], ' ' ), " / ", right last match( st[], ' ' ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right last match include( st[], 'e' ) ); // Last 'e' and exclamation mark<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right( st[], 't?ste' ) ); // Softquoted literal (no or single quotation marks) - matched<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right( st[], "t?ste" ) ); // Quoted literal (double quotation marks) - not matched</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right( st[], 't?ste' ) ); // Softquoted string (no or single quotation marks) - matched<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( right( st[], "t?ste" ) ); // Quoted string (double quotation marks) - not matched</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;/ ! / e taste of the coffee! / he taste of the coffee!<br>The taste of the coffee! / <br><br> of the coffee! /&nbsp;&nbsp;taste of the coffee!<br>taste of the coffee! / coffee!<br>e!<br><br> of the coffee!<br>The taste of the coffee!<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_right.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

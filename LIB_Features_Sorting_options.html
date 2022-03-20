@@ -77,12 +77,12 @@ The sorting options are used (amongst others) by following functions:
 <tr><td>date                </td><td> Sorts by dates.  Fields containing no qualified dates are interpreted like blank dates.  See rules below the table.</td></tr>
 </table><p>
 
-Rules on literals:
-</p><ul class="bullets"><li class="bullets">Blank literal '' comes first
+Rules on strings:
+</p><ul class="bullets"><li class="bullets">Blank string '' comes first
 </li><li class="bullets">One space symbol ' ' (UNICODE 32) comes next.
 </li><li class="bullets">Sorting is done based on UNICODE character codes.
 </li><li class="bullets">Sorting takes no cultural implications into consideration (e.g. Spanish: LL follows L).
-</li><li class="bullets">Numbers are also treated as literals: 0100 comes before 10.
+</li><li class="bullets">Numbers are also treated as strings: 0100 comes before 10.
 </li></ul><p>
 Rules on numerals:
 </p><ul class="bullets"><li class="bullets">For contents beginning a number: The 1st number will be recognized.

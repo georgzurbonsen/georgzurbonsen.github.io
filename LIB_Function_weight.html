@@ -86,11 +86,11 @@ the weight fore every level found.
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>Variable name</b><br/><p>This variable including all its members and sub-members will be weighed.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Option</b><br/><p>The following options are supported to calculate the weight:
 </p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>all             </td><td> All variables will be counted, including base variable, both intermediate nodes (structure and array members als containing further sub-members) and leaf nodes (those not containing further sub-members).</td></tr>
@@ -100,7 +100,7 @@ the weight fore every level found.
 <tr><td>leaves          </td><td> Like 'all', but only the leave variables (without further sub-members variables) will be counted</td></tr>
 <tr><td>valid leaves    </td><td> Like 'leaves', but only the leave variables containing valid data (without further sub-members variables) will be counted</td></tr>
 </table><p>
-<u>Note:</u>All data of any type will be counted as 1, regardless if is is just a boolean or numeric value, a very long literal or a sophisticated parameter set.</p>
+<u>Note:</u>All data of any type will be counted as 1, regardless if is is just a boolean or numeric value, a very long string or a sophisticated parameter set.</p>
 <span class="black_text"><b> Default value: </b></span>all
 </td></tr>
 </table>

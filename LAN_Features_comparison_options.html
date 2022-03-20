@@ -130,7 +130,7 @@ The following overview illustrates how the epsilon comparison tolerance is appli
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Formulate the coparison expression in a string and use 'compare' to use it. Colon required for this.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// [0,0] = Current table (overview), column 0, row 0.&nbsp;&nbsp;&nbsp;[0] = Current table, column 0, current row<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[col[]] = compare ( [0,0], : [0] + literal( [col[],0] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[col[]] = compare ( [0,0], : [0] + str( [col[],0] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>
 <br/>
 &nbsp;&nbsp;table list( overview ); </code></div>

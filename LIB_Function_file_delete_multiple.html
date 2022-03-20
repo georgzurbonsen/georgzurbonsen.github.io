@@ -88,13 +88,13 @@ These functions delete multiple files in specified directories.  <a class="bold_
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>path name(s)</b><br/><p>Names of existing directory paths to delete.
 Nothing is deleted if the parameter is empty.  If the parameter contains a blank string, then current directory is assumed.
 If the 2nd parameter is not specified, then all files in the specified path are affected.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>file name(s) or patterns</b><br/><p>If number of names or patterns in this function parameter equals to number of path names, then a 1:1 relationship is assumed, i.e.
 1st path relates to 1st name, 2nd path to 2nd name, etc.  If this parameter contains fewer elemeents, then the last element
 will apply for the remaining path names.  If this parameter contains more elements, then the excess names or patterns will be ignored.<br>

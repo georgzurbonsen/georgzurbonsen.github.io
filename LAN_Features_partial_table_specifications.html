@@ -91,8 +91,8 @@ With such a context available, the row number can also be retrieved directly wit
 </p>
 <h4> Syntax for Partial Table Specification</h4>
 <p>
-The table must be referenced inside brackets using a combination of literals and/or numerals.  These may be constant strings and numbers
-or expressions providing literals and numerals.
+The table must be referenced inside brackets using a combination of strings and/or numerals.  These may be constant strings and numbers
+or expressions providing strings and numerals.
 <br><br>
 
 Example 1: Current table name, current row number, specified column
@@ -107,7 +107,7 @@ Example 1: Current table name, current row number, specified column
 <br>Example 2: Other table name, current row number, specified column
 </p><table class="noframe table_syntax" style = "width:490px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Column Specifier      </th><th>  ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name(s)      </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Header name(s)      </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Column number(s)        </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - : Wildcards         </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Ranges          </td><td></td></tr>
@@ -116,7 +116,7 @@ Example 1: Current table name, current row number, specified column
 <br>Example 3: Current table name, specified row number, specified column
 </p><table class="noframe table_syntax" style = "width:490px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Column Specifier      </th><th> , </th><th> Row Specifier             </th><th> ]</th></tr>
-<tr><td></td><td> - Header name(s)      </td><td>   </td><td> - Matching contents (literal), or     </td><td></td></tr>
+<tr><td></td><td> - Header name(s)      </td><td>   </td><td> - Matching contents (string), or  </td><td></td></tr>
 <tr><td></td><td> - Column number(s)        </td><td>   </td><td> - Row numbers             </td><td></td></tr>
 <tr><td></td><td> - : Wildcards         </td><td>   </td><td> : Wildcards               </td><td></td></tr>
 <tr><td></td><td> - Ranges          </td><td>   </td><td> - Ranges              </td><td></td></tr>
@@ -125,7 +125,7 @@ Example 1: Current table name, current row number, specified column
 <br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
 </p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Column Specifier      </th><th> , </th><th> Row Specifier             </th><th> , </th><th> Column Specifier 2    </th><th> ]</th></tr>
-<tr><td></td><td> - Header name(s)      </td><td>   </td><td> - Matching contents (literal), or     </td><td>   </td><td> - Header name(s)  </td><td></td></tr>
+<tr><td></td><td> - Header name(s)      </td><td>   </td><td> - Matching contents (string), or  </td><td>   </td><td> - Header name(s)  </td><td></td></tr>
 <tr><td></td><td> - Column number(s)        </td><td>   </td><td> - Row numbers             </td><td>   </td><td> - Column number(s)    </td><td></td></tr>
 <tr><td></td><td> - : Wildcards         </td><td>   </td><td> : Wildcards               </td><td>   </td><td> - : Wildcards     </td><td></td></tr>
 <tr><td></td><td> - Ranges          </td><td>   </td><td> - Ranges              </td><td>   </td><td> - Ranges      </td><td></td></tr>
@@ -168,9 +168,9 @@ Example 1: Current table name, current row number, specified column
 <h4> Specifying Current Columns</h4>
 <p>
 If the context information is also providing the current column number, then the lone point (<b>.</b>) acts as a shortcut
-to reference the current column.  Please note that the lone point is interpreted as a literal string consisting of 1
+to reference the current column.  Please note that the lone point is interpreted as a string string consisting of 1
 character (unless it is part of a numeral acting as a decimal point) and not a programming language specific symbol.
-This does even apply if the point is a softquoted or quoted literal ( <b>'.'</b> or <b>"."</b> ).
+This does even apply if the point is a softquoted or quoted string ( <b>'.'</b> or <b>"."</b> ).
 Alternatively, you can use the function <a class="bold_text" href="LIB_Function_col.html">col</a>() to get the current column number.
 
 <br><br>

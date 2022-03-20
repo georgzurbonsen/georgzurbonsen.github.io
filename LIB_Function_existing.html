@@ -97,7 +97,7 @@ Do not use <b>existing</b> as it may provide false results if an equally named g
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>Variable to check</b><br/><p></p>
 </td></tr>
 </table>
@@ -111,7 +111,7 @@ Do not use <b>existing</b> as it may provide false results if an equally named g
 <div class="code_background_color" ><code>gbl[] = Hello;<br/>
 table initialize( result, {{ Context, Variable, 'existing()', 'existing here()', 'existing and valid()', 'existing here and valid()' }} );<br/>
 <br/>
-define procedure ( ho, {{ par, literal }} )<br/>
+define procedure ( ho, {{ par, string }} )<br/>
 {<br/>
 &nbsp;&nbsp;table append( result, {{ ho, Function parameter,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(par[]),&nbsp;&nbsp;existing here&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(par[]),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing and valid(par[]),&nbsp;&nbsp;existing here and valid(par[]) }} );<br/>

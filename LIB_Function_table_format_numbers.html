@@ -87,7 +87,7 @@
 <div class="white_background_color" ><code>table format numbers</code></div>
 <h4> Description</h4>
 <p>All numbers in specified columns of the specified table will be identified and formatted according to specifications provided.
-The mechanism is the same as in the function  <a class="bold_text" href="LIB_Function_literal.html">literal</a>() where numbers are provided.  Non-numeric data, e.g. text, dates and blank fields,
+The mechanism is the same as in the function  <a class="bold_text" href="LIB_Function_str.html">str</a>() where numbers are provided.  Non-numeric data, e.g. text, dates and blank fields,
 remain unchanged.</p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
@@ -97,7 +97,7 @@ remain unchanged.</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>2<br/>input</td>
@@ -110,16 +110,16 @@ Specific rules apply for this function:
 </li></ul><p></p>
 </td></tr>
 <tr><td>3.<br/>input</td>
-<td>literal</td>
-<td><b>Formatting template</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_literal_conversion_and_formatting.html">numeral to literal conversion and formatting</a></p>
+<td>string</td>
+<td><b>Formatting template</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_string_conversion_and_formatting.html">numeral to string conversion and formatting</a></p>
 </td></tr>
 <tr><td>Opt 4.<br/>input</td>
-<td>literal</td>
-<td><b>Locale (formatting option)</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_literal_conversion_and_formatting.html">numeral to literal conversion and formatting</a>, to specify a valid <a class="bold_text" href="LAN_Features_Locales.html">locale</a>,</p>
+<td>string</td>
+<td><b>Locale (formatting option)</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_string_conversion_and_formatting.html">numeral to string conversion and formatting</a>, to specify a valid <a class="bold_text" href="LAN_Features_Locales.html">locale</a>,</p>
 </td></tr>
 <tr><td>Opt 5.<br/>input</td>
-<td>literal</td>
-<td><b>Placeholder symbol</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_literal_conversion_and_formatting.html">numeral to literal conversion and formatting</a>, to specify a placeholder symbol.</p>
+<td>string</td>
+<td><b>Placeholder symbol</b><br/><p>Refer to section on <a class="bold_text" href="LIB_Features_numeral_to_string_conversion_and_formatting.html">numeral to string conversion and formatting</a>, to specify a placeholder symbol.</p>
 </td></tr>
 </table>
 <h4> Examples</h4>
@@ -135,7 +135,7 @@ Specific rules apply for this function:
 <h4> Output</h4>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Product | Price per 100kg | Discount<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Apples&nbsp;&nbsp;| EUR ***45,50&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;5,00 % <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Oranges | EUR ***90,50&nbsp;&nbsp;&nbsp;&nbsp;| 10,00 % <br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Durian&nbsp;&nbsp;| EUR 1.240,00&nbsp;&nbsp;&nbsp;&nbsp;| none&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_format_numbers.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
-<p><a class = "bold_text" href="LIB_Function_literal.html">Literal conversion</a></p>
+<p><a class = "bold_text" href="LIB_Function_str.html">String conversion</a></p>
 	</div>
 </section>
 

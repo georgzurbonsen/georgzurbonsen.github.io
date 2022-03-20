@@ -84,13 +84,13 @@ The formatting attributes are always tuples which consist of generic attribue na
 <tr><td>top border<br>bottom border<br>left border<br>right border<br>borders                     </td><td> border specificaction<sup>1</sup> </td><td> "                </td><td> Applies cell borders.  The attribute name <b>borders</b> applies to all four sides. </td><td> HTML: 'hairline' thickness is same as 'thin' thickness</td></tr>
 <tr><td>underscore<br>boldface<br>italic</td><td> Boolean: true / false         </td><td> "                </td><td> Applies text formatting           </td><td></td></tr>
 <tr><td>wrap text           </td><td> Boolean: true / false         </td><td> "                </td><td> Text inside the cell will wrap to next row if too long </td><td></td></tr>
-<tr><td>comment             </td><td> Literal: text contents        </td><td> cell              </td><td> Adds comments which are visible in Excel when holding the mouse cursor above the red triangle symbol </td><td> See <sup>2</sup><br>Not yet supported for Excel (.xlsx).</td></tr>
-<tr><td>font name           </td><td> Literal: font name            </td><td> table, row, column, cell  </td><td> Sets the font name                </td><td> The font name must be known to Excel or the web browser</td></tr>
+<tr><td>comment             </td><td> string: text contents     </td><td> cell              </td><td> Adds comments which are visible in Excel when holding the mouse cursor above the red triangle symbol </td><td> See <sup>2</sup><br>Not yet supported for Excel (.xlsx).</td></tr>
+<tr><td>font name           </td><td> string: font name         </td><td> table, row, column, cell  </td><td> Sets the font name                </td><td> The font name must be known to Excel or the web browser</td></tr>
 <tr><td>font size           </td><td> Numeral: size in points       </td><td> "                </td><td> Sets the font size                </td><td></td></tr>
-<tr><td>number format           </td><td> Literal: Excel number format      </td><td> "                </td><td> Applies Excel number format           </td><td> See <sup>3</sup>. It differs from B4P formatting.  Web browsers do not support this. Output the values as text if they should contain formatting.</td></tr>
-<tr><td>type              </td><td> Literal: default, literal, numeral, boolean   </td><td> "            </td><td> default: No special rules<br>  literal: All contents are treated as literals, incl. numbers<br> numeral: Contents are treated as numerals<br> boolean: Contents are treated as booleans, e.g. 0 and 1 are TRUE and FALSE in Excel.                                                                                </td><td> <u>Attention</u>: Forcing text as numerals or booleans may result to unsuccessful file loading by Excel.</td></tr>
-<tr><td>horizontal align        </td><td> Literal: automatic, left, middle, right   </td><td> "            </td><td> Alignment of cell contents            </td><td></td></tr>
-<tr><td>vertical align          </td><td> Literal: automatic, top, center, bottom   </td><td> "            </td><td> Alignment of cell contents            </td><td></td></tr>
+<tr><td>number format           </td><td> string: Excel number format       </td><td> "                </td><td> Applies Excel number format           </td><td> See <sup>3</sup>. It differs from B4P formatting.  Web browsers do not support this. Output the values as text if they should contain formatting.</td></tr>
+<tr><td>type              </td><td> string: default, string, numeral, boolean     </td><td> "            </td><td> default: No special rules<br>  string: All contents are treated as strings, incl. numbers<br> numeral: Contents are treated as numerals<br> boolean: Contents are treated as booleans, e.g. 0 and 1 are TRUE and FALSE in Excel.                                                                                  </td><td> <u>Attention</u>: Forcing text as numerals or booleans may result to unsuccessful file loading by Excel.</td></tr>
+<tr><td>horizontal align        </td><td> string: automatic, left, middle, right    </td><td> "            </td><td> Alignment of cell contents            </td><td></td></tr>
+<tr><td>vertical align          </td><td> string: automatic, top, center, bottom    </td><td> "            </td><td> Alignment of cell contents            </td><td></td></tr>
 <tr><td>column width            </td><td> Numeral: width (1..255)           </td><td> column        </td><td> Sets column width using Excel units       </td><td></td></tr>
 <tr><td>row height          </td><td> Numeral: height (1..255)          </td><td> row           </td><td> Sets row height using Excel units     </td><td> Not 100% accurate if using HTML format (Difference by +/- 1 is possible)</td></tr>
 <tr><td>autofilter          </td><td> Numeral: row number               </td><td> table         </td><td> Use 0 for header row. No pre-filtering made   </td><td></td></tr>
@@ -102,7 +102,7 @@ The formatting attributes are always tuples which consist of generic attribue na
 <tr><td>gridlines           </td><td> Boolean: true, false              </td><td> table         </td><td> Shows or hides Excel gridlines        </td><td> Excel (.xlsx) only</td></tr>
 </table><p>
 
-<sup>1</sup>Parameter set with two values: thickness (literal) and <a class="bold_text" href="LIB_Features_Defining_User_Specific_Colors.html">color specification</a>, e.g. <b>{ thin, red }</b>.  Valid thicknesses: hairline, thin, medium, thick<br>
+<sup>1</sup>Parameter set with two values: thickness (string) and <a class="bold_text" href="LIB_Features_Defining_User_Specific_Colors.html">color specification</a>, e.g. <b>{ thin, red }</b>.  Valid thicknesses: hairline, thin, medium, thick<br>
 <sup>2</sup>Comments in HTML files loaded with Excel will work on the 1st table only in case multiple table are saved.</br>
 <sup>3</sup>See: <a href="https://exceljet.net/custom-number-formats" target="_blank"><b>Info about Excel number format codes</b></a><br>
 
@@ -123,7 +123,7 @@ The following table summarizes some of the identified differences between HTML a
 <tr><td>Text colors         </td><td> May be degraded (e.g. crimson shown in red)                   </td><td> Normally not, but some browers may act differently</td></tr>
 <tr><td>Formulas            </td><td> Not supported                                 </td><td> Supported, but language specific.  Formulate as you work in Excel.  All formulas must begin with an equal sign. <br> Function names must be specified in the local language configured for Excel.  If it's German, use a function name like "SUMME" instead of "SUM".</td></tr>
 <tr><td>Output boolean values       </td><td> Not supported                                 </td><td> Supported, but language specific, and not case sensitive. Use "WAHR" and "FALSCH" if Excel is configured in German.</td></tr>
-<tr><td>Forcing data to literal format, including numbers </td><td> Use attribute name 'type' and value 'text'. e.g.<br><b>table style table( test, sheet, type, literal);</b> </td><td> The same rule applies</td></tr>
+<tr><td>Forcing data to string format, including numbers </td><td> Use attribute name 'type' and value 'text'. e.g.<br><b>table style table( test, sheet, type, string);</b> </td><td> The same rule applies</td></tr>
 </table><p></p>
 <h5> Different interpretation of numeric, date and boolean values</h5>
 <div class="code_background_color" ><code><br/>
@@ -140,7 +140,7 @@ The following table summarizes some of the identified differences between HTML a
 &nbsp;&nbsp;table style cells&nbsp;&nbsp;( t, Dates Num,&nbsp;&nbsp;&nbsp;2, single, number format, "DD.MMM.YYYY" );<br/>
 &nbsp;&nbsp;table style cells&nbsp;&nbsp;( t, Dates Lit 1, 2, single, number format, "DD.MMM.YYYY" );<br/>
 &nbsp;&nbsp;table style cells&nbsp;&nbsp;( t, Dates Lit 2, 2, single, number format, "DD.MMM.YYYY" );<br/>
-&nbsp;&nbsp;table style rows&nbsp;&nbsp;&nbsp;( t, 3, sheet, type, literal );<br/>
+&nbsp;&nbsp;table style rows&nbsp;&nbsp;&nbsp;( t, 3, sheet, type, string );<br/>
 &nbsp;&nbsp;table style cells&nbsp;&nbsp;( t, Boolean Num, 4, single, type, boolean );<br/>
 <br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Number_Formats.html", HTML );<br/>

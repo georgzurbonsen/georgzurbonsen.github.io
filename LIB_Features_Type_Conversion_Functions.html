@@ -18,7 +18,7 @@
 
 <div class="header">
 <h3>Type Conversion and Formatting</h3>
-<a accesskey="p" href="LIB_Function_list_variables.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_literal.html"><span>Next</span></a> 
+<a accesskey="p" href="LIB_Function_list_variables.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_str.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -33,14 +33,14 @@
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi navi-selected">4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LIB_Function_literal.html"><div class="navi">+ 4.1 literal, quoted literal, softquoted literal </div></a></li>
-<li class="navi"><a href="LIB_Function_numeral.html"><div class="navi">4.2 numeral </div></a></li>
-<li class="navi"><a href="LIB_Function_clean_numeral.html"><div class="navi">4.3 clean (if) numeral </div></a></li>
-<li class="navi"><a href="LIB_Function_smart_numeral.html"><div class="navi">4.4 smart (if) numeral </div></a></li>
+<li class="navi"><a href="LIB_Function_str.html"><div class="navi">+ 4.1 str, soft </div></a></li>
+<li class="navi"><a href="LIB_Function_num.html"><div class="navi">4.2 num </div></a></li>
+<li class="navi"><a href="LIB_Function_clean_num.html"><div class="navi">4.3 clean num, clean if num </div></a></li>
+<li class="navi"><a href="LIB_Function_smart_num.html"><div class="navi">4.4 smart num, smart if num </div></a></li>
 <li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">4.6 time, pure time </div></a></li>
-<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_literals.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
-<li class="navi"><a href="LIB_Function_boolean.html"><div class="navi">4.8 boolean </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Function_bool.html"><div class="navi">4.8 bool </div></a></li>
 <li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
@@ -67,22 +67,22 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-A set of functions are available to convert data in one type (e.g. <a class="bold_text" href="LAN_Features_Data_type_literals.html">literals</a>) into other types (e.g. <a class="bold_text" href="LAN_Features_data_types_dates.html">dates</a> and <a class="bold_text" href="LAN_Features_data_types_numerals.html">numerals</a>).
-Converting values to <a class="bold_text" href="LIB_Function_literal.html">literal</a> type supports a broad library of smart formatting features in order to output numbers, dates, etc.
+A set of functions are available to convert data in one type (e.g. <a class="bold_text" href="LAN_Features_data_type_strings.html">strings</a>) into other types (e.g. <a class="bold_text" href="LAN_Features_data_types_dates.html">dates</a> and <a class="bold_text" href="LAN_Features_data_types_numerals.html">numerals</a>).
+Converting values to <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> type supports a broad library of smart formatting features in order to output numbers, dates, etc.
 in a desirable format.
 
 <br><br><hr><h4>Procedures and Functions Provided:</h4>
-<br>literal conversion, formatting template, literal conversion functions:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_literal.html">literal</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a> <br>
+<br>string conversion, formatting template, string conversion functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_str.html">soft</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_str.html">str</a> <br>
 <br>numeral conversion function:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_numeral.html">numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_num.html">num</a> <br>
 <br>clean numerals:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_clean_numeral.html">clean if numeral</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_clean_num.html">clean if num</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_clean_num.html">clean num</a> <br>
 <br>smart numerals:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_smart_numeral.html">smart if numeral</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_smart_numeral.html">smart numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_smart_num.html">smart if num</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_smart_num.html">smart num</a> <br>
 <br>date conversion functions:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_date.html">date</a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_date.html">date time</a> <br>
@@ -91,7 +91,7 @@ in a desirable format.
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_time.html">pure time</a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_time.html">time</a> <br>
 <br>boolean conversion function:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_boolean.html">boolean</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_bool.html">bool</a> <br>
 <br>parameter set conversion function:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_parameters.html">parameter set</a> <br>
 <br>Identify optimum data type for value provided:<br>

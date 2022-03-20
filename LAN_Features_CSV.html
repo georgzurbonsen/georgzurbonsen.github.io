@@ -73,7 +73,7 @@ applicable separators by checking for commas, semicolons and tabs.
 Regarding decimal symbols, the standard function <a class="bold_text" href="LIB_Function_table_load.html">table load</a>() will check for numerals in text and CSV files (but not HMTL files and likes) with decimal
 commas and convert them to decimal points.  The new function <a class="bold_text" href="LIB_Function_table_load.html">table load unchanged</a>() will not do the conversion.  You may need this if you need to
 discriminate between actual numbers and other numeric data separated with commas but not considered as regular numeric data.
-<br/>Consider using the <a class="bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a>()
+<br/>Consider using the <a class="bold_text" href="LIB_Function_clean_num.html">clean num</a>()
 function to prepare numbers containing commas (and possibly more, such as thousand separators, currency symbols, etc.).
 <br/>Consider using <a class="bold_text" href="LIB_Function_table_save.html">table save with local decimal separator</a>() to save CSV files using the decimal separator symbol applicable with your country settings (comma or point).
 <br/>Consider using <a class="bold_text" href="LIB_Function_table_save.html">table save with decimal comma</a>() to make sure all numbers use decimal commas.

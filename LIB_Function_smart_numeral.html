@@ -33,13 +33,13 @@
 <li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">4 Type Conversion and Formatting </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LIB_Function_literal.html"><div class="navi">+ 4.1 literal, quoted literal, softquoted literal </div></a></li>
+<li class="navi"><a href="LIB_Function_string.html"><div class="navi">+ 4.1 string, quoted string, softquoted string </div></a></li>
 <li class="navi"><a href="LIB_Function_numeral.html"><div class="navi">4.2 numeral </div></a></li>
 <li class="navi"><a href="LIB_Function_clean_numeral.html"><div class="navi">4.3 clean (if) numeral </div></a></li>
 <li class="navi"><a href="LIB_Function_smart_numeral.html"><div class="navi navi-selected">4.4 smart (if) numeral </div></a></li>
 <li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">4.6 time, pure time </div></a></li>
-<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_literals.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
 <li class="navi"><a href="LIB_Function_boolean.html"><div class="navi">4.8 boolean </div></a></li>
 <li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
@@ -108,7 +108,7 @@ the numbers.   These stanard units are not case sensitive.<br><br>
 The different prefixes can be combined, e.g. <b>smart numeral ( 1 kEUR % )</b> returns 10.
 
 <br><br>
-The function <b>smart if numeral</b> behaves similarly like <b>clean if numeral</b>: Contents without numbers inside are passed through as literals.
+The function <b>smart if numeral</b> behaves similarly like <b>clean if numeral</b>: Contents without numbers inside are passed through as strings.
 
 <br><br>
 Application hint: After loading a table from a different source, apply this function on all applicable number columns in order to clean
@@ -123,19 +123,19 @@ them up and do necessary scalings.
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>numeral or literal</td>
-<td><b>Value</b><br/><p>If literal and containing digits: Conversion to numeral.<br>
-If literal and containing no digits or literal is blank: Conversion to 0 (<b>clean numeral</b>) or literal returned (function <b>clean if numeral</b>)
+<td>numeral or string</td>
+<td><b>Value</b><br/><p>If string and containing digits: Conversion to numeral.<br>
+If string and containing no digits or string is blank: Conversion to 0 (<b>clean numeral</b>) or string returned (function <b>clean if numeral</b>)
 If numeral: Will be passed through.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Decimal symbol</b><br/><p>Use single character symbol, e.g. '.' or ','. <br>
 Specify 'local' to use currently applicable locale settings.  Examples: It chooses '.' for countries like USA, United Kingdom and Switzerland, and ',' for Germany and Austria.</p>
 <span class="black_text"><b> Default value: </b></span>. (point)
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
-<td>parameter set containing literals</td>
+<td>parameter set containing strings</td>
 <td><b>Custom units</b><br/><p>Specify at least 1 unit name.  The units provided will be used instead (and not in addition) of the standard units.
 <u>Attention:</u>Comparison of these units is <u>case-sensitive</u>. This allows to distinguish lower-case letters like "m" for milli and upper-case leeters like "M" for mega.
 <br>Attention: 4th parameter must also be specified.</p>
@@ -150,8 +150,8 @@ Specify 'local' to use currently applicable locale settings.  Examples: It choos
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>numeral<br/>literal</td>
-<td><b>number</b><br/><p>Contains resulting number.  Literals may be returned by the function <b>smart if numeral</b> if the input value contains no digits.</p></td></tr>
+<td>numeral<br/>string</td>
+<td><b>number</b><br/><p>Contains resulting number.  Strings may be returned by the function <b>smart if numeral</b> if the input value contains no digits.</p></td></tr>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( smart numeral( "5.0 MUSD" )); // 5,000,000<br/>

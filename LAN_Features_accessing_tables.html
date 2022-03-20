@@ -85,11 +85,11 @@ Data can only read from tables if they are existing or initialized.
 
 By default, following read access rules apply:
 </p><ul class="bullets"><li class="bullets">Numeric contents (excl. scientific notation) will be read as numerals
-</li><li class="bullets">Text contents (incl. blanks) will be read as literals
-</li><li class="bullets">Dates, 'true', 'false', etc. will also be read as literal.
+</li><li class="bullets">Text contents (incl. blanks) will be read as strings
+</li><li class="bullets">Dates, 'true', 'false', etc. will also be read as string.
 </li></ul><p>
 However, the function <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() lets you decide whether to read dates, booleans, etc. as dates and not as
-literals.  Oppositely, this function can also force reading numbers as literals.
+strings.  Oppositely, this function can also force reading numbers as strings.
 
 <br><br>
 Attempting to read values which lie outside the table (except if referencing above the header row or left of the first column)
@@ -100,7 +100,7 @@ will return blanks (empty strings).
 Data can only written to tables if the tables are existing or initialized.
 <br><br>
 
-All data written to tables will be converted to literals (strings) first. This also includes for numbers, dates, times, parameter sets, etc.
+All data written to tables will be converted to strings first. This also includes for numbers, dates, times, parameter sets, etc.
 For boolean values, the text values 'true' and 'false' will be used.  If you want to read the text values 'true' and 'false' as booleans,
 the use <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() to activate this: <b>table configure(<i>table name</i>, read booleans, yes );</b>
 

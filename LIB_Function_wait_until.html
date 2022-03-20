@@ -77,15 +77,15 @@ immediately.
 <td><b>Target date / time</b><br/><p>Waiting takes place until specified date and time has been reached</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Prompt</b><br/><p>Prompts a message that waiting is in progress</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
-<td><b>Time in seconds</b><br/><p>Entered character, or blank literal if no key has been pressed to stop waiting.</p></td></tr>
+<td>string</td>
+<td><b>Time in seconds</b><br/><p>Entered character, or blank string if no key has been pressed to stop waiting.</p></td></tr>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait until countdown ("07:30", "Wait until 07:30. Press any key to coninue immediately");</code></div>

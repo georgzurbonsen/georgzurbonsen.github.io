@@ -115,11 +115,11 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of target table</b><br/><p>This table will be checked and validated</p>
 </td></tr>
 <tr><td>2.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of reference table</b><br/><p>The table contains the rules to apply for the validation procedure</p>
 </td></tr>
 <tr><td>3.<br/>input</td>
@@ -200,7 +200,7 @@ In the reference table, the data below this header may contain the following val
 <span class="black_text"><b> Default value: </b></span>{} (no columns specified) - Value 'min 0' applies for all rows
 </td></tr>
 <tr><td>Opt. 9.<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Expression to select rows</b><br/><p>The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
 <u>Attention</u>: Comparison operators = and &lt;&gt; (instead of == and !=) may <a class="bold_text" href="LAN_Features_Language_pitfalls.html">hijack</a> the next function parameters for its own use as additional comparison operands,
 e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function parameter, then put parentheses around them, e.g. <b>... , (a[]=1,3,5), ...</b>.</p>

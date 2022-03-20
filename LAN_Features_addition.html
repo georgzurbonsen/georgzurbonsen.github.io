@@ -66,7 +66,7 @@
 Basic rules to additions:
 </p><ul class="bullets"><li class="bullets">Numbers are added together as learnt in 1st grade.
 </li><li class="bullets">Boolean values are converted to 0 and 1 first.
-</li><li class="bullets">Literal strings are catenated.
+</li><li class="bullets">Strings are catenated.
 </li><li class="bullets">The elements in parameter sets are also catenated.
 </li><li class="bullets">Special rules apply on arithmetics with dates and times which are described further below.
 </li><li class="bullets">Special rules apply to some operations with different data types.  See the table below for details.
@@ -93,7 +93,7 @@ the rules of calculating dates and numeric operands differ.
 'Date 1' and 'Time 1' refer to the data from the left operand whereas 'Date 2' and 'Time 2' refer to the right operand.<br>
 <sup>1</sup> Only fractional part (digits behind decimal point) are used to add time value.  Value must be between 0 and (24*60*60-1)/(24*60*60).  Calculated sum must lie within 00:00:00 and 23:59:59.<br>
 <sup>2</sup> Only the integer (whole number before decimal point) is used for the calculation.<br>
-<sup>3</sup> Sorting order across different data types: parameter set > literal > date > numeral > boolean, then followed by contents if types are equal. For sets with common contents and different lengths,
+<sup>3</sup> Sorting order across different data types: parameter set > string > date > numeral > boolean, then followed by contents if types are equal. For sets with common contents and different lengths,
 the longer one is considered as the "greater" one.  Nested sets will also be sorted.
 </p>
 <h5> </h5>

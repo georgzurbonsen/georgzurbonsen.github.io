@@ -78,7 +78,7 @@ because February lies in the 4th quarter in the fiascal year ending in March.  I
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>date or literal converted to date</td>
+<td>date or string converted to date</td>
 <td><b>Date</b><br/><p>Value to extract as described above</p>
 </td></tr>
 <tr><td>2<br/>input</td>
@@ -89,7 +89,7 @@ because February lies in the 4th quarter in the fiascal year ending in March.  I
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>numeral<br/>literal</td>
+<td>numeral<br/>string</td>
 <td><b>Result</b><br/><p>Quarter (1..4)</p></td></tr>
 </table>
 <h4> Examples</h4>
@@ -97,7 +97,7 @@ because February lies in the 4th quarter in the fiascal year ending in March.  I
 &nbsp;&nbsp;echo( "Date is ", date[] );<br/>
 <br/>
 &nbsp;&nbsp;for (month[]=1, month[]&lt;=12, month[]++ )<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", literal( date(2022,month[],1),"Mmmm" ), ": ", fq( date[], month[] ) );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Year ending in ", str( date(2022,month[],1),"Mmmm" ), ": ", fq( date[], month[] ) );</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>Date is 2022-05-01<br>Year ending in January: 2<br>Year ending in February: 1<br>Year ending in March: 1<br>Year ending in April: 1<br>Year ending in May: 4<br>Year ending in June: 4<br>Year ending in July: 4<br>Year ending in August: 3<br>Year ending in September: 3<br>Year ending in October: 3<br>Year ending in November: 2<br>Year ending in December: 2<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_fq.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

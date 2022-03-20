@@ -87,7 +87,7 @@ will be returned.  If no errors have been encountered, "OK" will be returned.<br
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1, etc.<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>file name(s)</b><br/><p>Specify file name.  Add path name in front if needed.  With indirect parameter passing enabled, the files to delete can also be provided in one
 parameter set.  Example: <b>file delete</b>( { file1.txt, file.txt, .. } );</p>
 </td></tr>
@@ -95,7 +95,7 @@ parameter set.  Example: <b>file delete</b>( { file1.txt, file.txt, .. } );</p>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>numeral or literal</td>
+<td>numeral or string</td>
 <td><b>Feedback</b><br/><p>              <b>file delete</b>: Always "OK", because all errors cause exceptions.<br>
               <b>file delete silently</b>: "OK", or <a class="bold_text" href="LIB_Features_directory_and_file_system_functions.html">short error messages on directories and files</a>.<br>
               <b>file delete all</b>: Number of successful operations (files deleted) is returned.</p></td></tr>

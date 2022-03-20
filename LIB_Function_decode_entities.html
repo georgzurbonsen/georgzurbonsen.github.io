@@ -65,7 +65,7 @@
 This function decodes <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> entities (like &amp;#8364; &amp;#20ac; &amp;euro;) into actual characters.
 
 <br><br>
-<u>Note:</u> Character entities specified as string constants inside single quotation marks (as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literals</a>) in the B4P code
+<u>Note:</u> Character entities specified as string constants inside single quotation marks (as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted strings</a>) in the B4P code
 will be converted automatically, quasi at compile time, and do not reuqire this function to be called.
 
 </p>
@@ -77,23 +77,23 @@ will be converted automatically, quasi at compile time, and do not reuqire this 
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>input string</b><br/><p>This string contains entity-encoded special characters</p>
 </td></tr>
 </table>
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>String with decoded characters</b><br/><p>          Converted string with decoded characters</p></td></tr>
 </table>
 <h4> Exceptions</h4>
 <p>Invalid character code (outside 0 - 1114111 range)</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( decode entities( "4.50 &amp;euro; / 4.50 &amp;#8364; / 4.50 &amp;#x20ac; / 4.50 &amp;#X20AC;" ) );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "4.50 &amp;euro;" ); // Quoted literal are not decoded.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( '4.50 &amp;euro;' ); // Softquoted literal is already decoded implicitly.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( '4.50 &amp;eur' + 'o;' ); // This one is not because full entity is not in one softquoted literal value</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "4.50 &amp;euro;" ); // Quoted string are not decoded.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( '4.50 &amp;euro;' ); // Softquoted string is already decoded implicitly.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( '4.50 &amp;eur' + 'o;' ); // This one is not because full entity is not in one softquoted string value</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>4.50 € / 4.50 € / 4.50 € / 4.50 €<br>4.50 &amp;euro;<br>4.50 €<br>4.50 &amp;euro;<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_decode_entities.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

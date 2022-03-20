@@ -130,9 +130,9 @@ If you want to apply different style and formatting on the same table, then use 
 <br/>
 &nbsp;&nbsp;// How to apply number formats in HTML for browsers<br/>
 <br/>
-&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Inhabitants] = literal([Inhabitants], '#,##0', local) );&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;table process selected rows( t, ['Alt. (m)'] != '',&nbsp;&nbsp;['Alt. (m)']&nbsp;&nbsp;= literal(['Alt. (m)'] , '#,##0', local) );<br/>
-&nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;type, literal );<br/>
+&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Inhabitants] = str([Inhabitants], '#,##0', local) );&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;table process selected rows( t, ['Alt. (m)'] != '',&nbsp;&nbsp;['Alt. (m)']&nbsp;&nbsp;= str(['Alt. (m)'] , '#,##0', local) );<br/>
+&nbsp;&nbsp;table style columns( t, {Inhabitants,"Alt. (m)"},body,&nbsp;&nbsp;type, string );<br/>
 <br/>
 &nbsp;&nbsp;table save( t, "Images/Style_Function_table_style_professionally.html", HTML );<br/>
 &nbsp;&nbsp;file copy overwrite( "Images/Style_Function_table_style_professionally.html", "Images/Style_Function_table_style_professionally_in_html.xls" );<br/>

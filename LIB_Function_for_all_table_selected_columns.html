@@ -84,11 +84,11 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>table name</b><br/><p>Name of existing table</p>
 </td></tr>
 <tr><td>2<br/>code</td>
-<td>comparison expression<br/>:literal</td>
+<td>comparison expression<br/>:string</td>
 <td><b>comparison expression</b><br/><p>This expression is applied to compare the column header names, regardless of row number specified in the 2nd parameter.
 The checking is done once before the loop starts.  The loop behavior will not be affected if the header names are changed afterwards,
 for example renamed.  Attention to inserting and deleting columns: The loop has memorized the actual column numbers
@@ -109,15 +109,15 @@ The negative number must not be smaller than the negated number of rows.
 </p>
 </td></tr>
 <tr><td>Opt. 4<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator column number</b><br/><p>This value refers to the current column number</p>
 </td></tr>
 <tr><td>Opt. 5<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator header name</b><br/><p>This value refers to the current column header name</p>
 </td></tr>
 <tr><td>Opt. 6<br/>code</td>
-<td>variable<br/>:literal</td>
+<td>variable<br/>:string</td>
 <td><b>iterator counter</b><br/><p>This variable is updated by this function and provdes the index. It always begins with 0 and continues with 1, 2, etc.</p>
 </td></tr>
 </table>

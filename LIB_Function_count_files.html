@@ -81,14 +81,14 @@ Searches the disk for a particular files and/or directories and counts them
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>Opt. 1<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>drive or path name</b><br/><p>Specify a disk drive (e.g. C:\) or a path name (/usr/local, or \\server_name\path_name\...).
 If no additional parameters are provided, then the path name may also contain a file name (to list 1 file) or matching pattern to list specific files.<br>
 <u>Note:</u> Wildcard symbols are supported here for the file name, but not for the path name (OK: C:\Subdir\*.txt,  Not OK: C:\Sub*\*.txt)</p>
 <span class="black_text"><b> Default value: </b></span>Current working directory
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>pattern name</b><br/><p>Specify a disk drive (e.g. C:\) or a path name (/usr/local, or \\server_name\path_name\...).
 If no additional parameters are provided, then the path name may also contain a file name (to list 1 file) or matching pattern to list specific files.<br>
 <u>Note:</u> Wildcard symbols are supported here for the file name, but not for the path name (OK: C:\Subdir\*.txt,  Not OK: C:\Sub*\*.txt)</p>
@@ -102,7 +102,7 @@ If no additional parameters are provided, then the path name may also contain a 
 <span class="black_text"><b> Default value: </b></span><0 (no limit)
 </td></tr>
 <tr><td>Opt. 4<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>search option</b><br/><p>One of the following:
 </p><table class="noframe_1stcolbold" style = "width:650px"><col style = "width:150px"><col style = "width:500px">
 <tr><td>files                   </td><td> Files only</td></tr>
@@ -131,7 +131,7 @@ If no additional parameters are provided, then the path name may also contain a 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("All .b4p/.txt recursively&nbsp;&nbsp;: ",<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count files recursive( "C:&#92;Program Files&#92;B4P", "*.txt,*.b4p", -1, files&nbsp;&nbsp;) );</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>All files in a directory&nbsp;&nbsp;&nbsp;: 9<br><br>All files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 8<br>1st file only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 1<br>1st file only (same)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 1<br>3 files only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 3<br><br>All subdirectories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>All .b4p/.txt recursively&nbsp;&nbsp;: 10<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_count_files.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>All files in a directory&nbsp;&nbsp;&nbsp;: 9<br><br>All files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>1st file only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 1<br>1st file only (same)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 1<br>3 files only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 3<br><br>All subdirectories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>All .b4p/.txt recursively&nbsp;&nbsp;: 10<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_count_files.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_search_files.html">search files</a><br/>
 <a class = "bold_text" href="LIB_Function_directory_listing.html">directory listing</a></p>

@@ -79,10 +79,10 @@ switch/check ( expression ) { case ( comparison expression ) { statements }; cas
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>code</td>
-<td>comparison expression<br/>:literal</td>
+<td>comparison expression<br/>:string</td>
 <td><b>Values to compare with</b><br/><p>This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '<>'.  Single values,
 ranges (e.g. 3..5), multiple values separated by commas are supported.  For text comparison, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> are supported if the
-literal is of type <a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a>.
+string is of type <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
 <br><br>
 <u>Attention</u>: To avoid hijacking further function parameters as additional values to be compared, put the expression into parentheses
 if no operators, = or <> have been used.  Not an issue if <, >, == or != operators are used.</p>

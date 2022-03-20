@@ -66,18 +66,18 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-Instead of specifying one column header name (literal) or column number (numeral), a parameter set can be used to specify
+Instead of specifying one column header name (string) or column number (numeral), a parameter set can be used to specify
 multiple columns in order to access multiple cells in a specific row at a time.  The resulting data read out is a parameter set
 containing the data which corresponds to the headers specified accordingly.
 </p>
 <h4> Syntax for Full Table Specification</h4>
 <p>
-The table must be referenced inside brackets using a combination of literals and/or numerals and/or parameter sets.  These may be constant strings and numbers
-or expressions providing literals and numerals, as well as parameter sets.
+The table must be referenced inside brackets using a combination of strings and/or numerals and/or parameter sets.  These may be constant strings and numbers
+or expressions providing strings and numerals, as well as parameter sets.
 
 </p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Multiple Column Specifier </th><th> , </th><th> Simple Row Specifier          </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Parameter set containing    </td><td>   </td><td> - Matching contents (literal), or     </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Parameter set containing    </td><td>   </td><td> - Matching contents (string), or  </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> header names and/or positive  </td><td>   </td><td> - Positive row number, or     </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> or negative column numbers    </td><td>   </td><td> - Negative row number         </td><td></td></tr>
 </table><p>
@@ -85,11 +85,11 @@ or expressions providing literals and numerals, as well as parameter sets.
 <br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
 </p><table class="noframe table_syntax" style = "width:970px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier   </th><th> , </th><th> Simple Row Specifier          </th><th> , </th><th> Multiple Column Specifier 2       </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (literal), or     </td><td>   </td><td> - Parameter set containing        </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (string), or  </td><td>   </td><td> - Parameter set containing        </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> - Positive row number, or     </td><td>   </td><td> header names and/or positive      </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Negative column number  </td><td>   </td><td> - Negative row number         </td><td>   </td><td> or negative column numbers        </td><td></td></tr>
 </table><p>
-Lookup access: If a parameter set is encountered in the Simple Column Specifier instead of a simple value (literal or numeral), then the 1st parameter element will be used
+Lookup access: If a parameter set is encountered in the Simple Column Specifier instead of a simple value (string or numeral), then the 1st parameter element will be used
 identifying the row.  If it contains no elements, then no lookup can be made and an empty set will be returned.
 </p>
 <h4> Principle</h4>

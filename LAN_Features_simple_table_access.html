@@ -65,12 +65,12 @@ The <b>simple table access</b> is one of the four basic <a class="bold_text" hre
 </p>
 <h4> Syntax for Full Table Specification</h4>
 <p>
-The table must be referenced inside brackets using a combination of literals and/or numerals.  These may be constant strings and numbers
-or expressions providing literals and numerals.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported for both rows and columns.
+The table must be referenced inside brackets using a combination of strings and/or numerals.  These may be constant strings and numbers
+or expressions providing strings and numerals.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported for both rows and columns.
 
 </p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier   </th><th> , </th><th> Simple Row Specifier          </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (literal), or     </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (string), or  </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> - Positive row number, or     </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Negative column number  </td><td>   </td><td> - Negative row number         </td><td></td></tr>
 </table><p>
@@ -78,7 +78,7 @@ or expressions providing literals and numerals.  <a class="bold_text" href="LAN_
 <br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
 </p><table class="noframe table_syntax" style = "width:970px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
 <tr><th>[   </th><th> Table Name            </th><th> : </th><th> Simple Column Specifier   </th><th> , </th><th> Simple Row Specifier          </th><th> , </th><th>  Simple Column Specifier 2        </th><th> ]</th></tr>
-<tr><td></td><td> Must be a literal     </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (literal), or     </td><td>   </td><td> - Header name, or         </td><td></td></tr>
+<tr><td></td><td> Must be a string      </td><td>   </td><td> - Header name, or     </td><td>   </td><td> - Matching contents (string), or  </td><td>   </td><td> - Header name, or         </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Positive column number, or  </td><td>   </td><td> - Positive row number, or     </td><td>   </td><td> - Positive row number, or     </td><td></td></tr>
 <tr><td></td><td>               </td><td>   </td><td> - Negative column number  </td><td>   </td><td> - Negative row number         </td><td>   </td><td> - Negative row number         </td><td></td></tr>
 </table><p>
@@ -111,7 +111,7 @@ or expressions providing literals and numerals.  <a class="bold_text" href="LAN_
 <h4> Rule on Column Header Names</h4>
 <p>You have full freedom to specify the header names as you wish.  Some rules need to be followed:
 </p><ul class="bullets"><li class="bullets">If the header name contains 1 or more words and optionally single spaces inbetween, and they contain no special symbol which could be interpreted by      B4P otherwise (e.g. hypen as minus sign), then the name can be used without quotation marks.
-</li><li class="bullets">If you want to refer a header name which is a number (e.g. 1, 24.12, etc.), then make sure to provided these numbers as literals, e.g. with quotation     marks or using the <a class="bold_text" href="LIB_Function_literal.html">literal</a>() function to convert numeric results to literals.</li></ul><p></p>
+</li><li class="bullets">If you want to refer a header name which is a number (e.g. 1, 24.12, etc.), then make sure to provided these numbers as strings, e.g. with quotation      marks or using the <a class="bold_text" href="LIB_Function_str.html">str</a>() function to convert numeric results to strings.</li></ul><p></p>
 	</div>
 </section>
 

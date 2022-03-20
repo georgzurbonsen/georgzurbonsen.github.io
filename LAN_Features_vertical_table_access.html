@@ -82,7 +82,7 @@ one of the two conditions are met:
 an empty set is returned.  Coming to write access, writing to the destination will stop whenever <u>either one of the two conditions is met first</u>:
 </p><ul class="bullets"><li class="bullets">All elements in the parameter set have been written (not all specified cells in the table are updated).  Writing empty parameter sets will not result in a write opration because there is nothing to write.
 </li><li class="bullets">The specified number of cells in the table is smaller than the number of elements in the parameter set (not all elements are written to the table).
-</li></ul><p><u>Note</u>:If an element in the parameter set is in turn a parameter set, then it will be converted to a literal in order to visualize the parameter set contents (with braces around, elements separated with commas).<br>
+</li></ul><p><u>Note</u>:If an element in the parameter set is in turn a parameter set, then it will be converted to a string in order to visualize the parameter set contents (with braces around, elements separated with commas).<br>
 
 Alternatively, when writing a value (not parameter set) to a table, then the same value will be written into all cells as specified with the vertical table access.</p>
 	</div>

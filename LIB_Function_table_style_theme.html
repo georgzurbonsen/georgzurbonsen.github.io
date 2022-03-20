@@ -109,7 +109,7 @@ to set the column widths in an easiyl readable form.
 
 A simpler alternative to editing the Excel file is to provide additional parameters to the function call, which are formulated in pairs of
 two consecutive parameters: attribute names and attribute values.  You can add further formatting, change theme colors, and do all kind of
-adjustments and enhancements.  Following attributes are supported where all attribute values must be provided as literals, with exception for
+adjustments and enhancements.  Following attributes are supported where all attribute values must be provided as strings, with exception for
 attribute name <b>pattern</b> where numerals are expected instead.
 
 
@@ -126,7 +126,7 @@ attribute name <b>pattern</b> where numerals are expected instead.
 </table><p>
 
 <sup>1</sup> Specify the the color either by supported color name (e.g. rad, orange, chestnut, navy, etc.), hexadecimal value (e.g. "#FF8040")
-or parameter set containing three values, but must be converted to a literal in this case (e.g. "{255,128,64}" ).
+or parameter set containing three values, but must be converted to a string in this case (e.g. "{255,128,64}" ).
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
@@ -137,19 +137,19 @@ Don't forget to include 'Style Library' at the top of your program</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name fo existing table</b><br/><p></p>
 </td></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Theme name</b><br/><p>A supported theme name must be specified,  Example: "Zebra", or "Zebra Vertical Lines".  Theme names are case sensitive.</p>
 </td></tr>
 <tr><td>Opt. 3, 5, ...<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>attribute name</b><br/><p>See table above for supported attribute names.</p>
 </td></tr>
 <tr><td>Opt. 4, 6, ...<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>attribute value</b><br/><p>See table above for supported attribute values.</p>
 </td></tr>
 </table>

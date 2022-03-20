@@ -78,21 +78,21 @@ Applies a discounting on a sequence of values (typically annual cashflow figures
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>io</td>
 <td>parameter set</td>
-<td><b>values to discount</b><br/><p>Set of numerals (blank literals are allowed and recognized as zero) to be discounted using the WACC value</p>
+<td><b>values to discount</b><br/><p>Set of numerals (blank strings are allowed and recognized as zero) to be discounted using the WACC value</p>
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>numeral</td>
 <td><b>WACC</b><br/><p>Working average Cost of Capital (WACC)</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>time base</b><br/><p>Accepts following three values: <b>years</b>, <b>semesters</b>, <b>quarters</b>, and <b>months</b> in order to identify wheter the values provided are on an annual, quarterly or monthly base.
 If quarter or month are chosen, then the compound avarage growth rate will be automatically adjusted to years.</p>
 <span class="black_text"><b> Default value: </b></span>years
 </td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>Input parameter set contains values of invalid type (e.g. literals)</p>
+<p>Input parameter set contains values of invalid type (e.g. strings)</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcf [ ] = { 100, 150, 200, 250 };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;discount ( fcf[ ] , 0.1);<br/>

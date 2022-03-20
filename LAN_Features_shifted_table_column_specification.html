@@ -62,7 +62,7 @@
 <h4> Introduction</h4>
 <p>
 In some situations, you know a specific column number for orientation, and want to use this column to reference a different
-column nearby, i.e. further to the left or to the right.  In this case, provide the header name as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literal</a>, for example with
+column nearby, i.e. further to the left or to the right.  In this case, provide the header name as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>, for example with
 <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">Text inside single quotation marks</a>, and start the text with one or multiple '&lt;' or '&gt' symbols.
 Multiple consecutive symobls can be cascaded to refer to nearby columns which are not immediate neighbors.
 
@@ -75,7 +75,7 @@ Multiple consecutive symobls can be cascaded to refer to nearby columns which ar
 <tr><td>&gt;&lt;    </td><td> Same here</td></tr>
 </table><p>
 <u>Attention</u>: The &lt; and &gt; symbols must be the 1st characters after the quotation marks.  If spaces lie inbetween, then these symbols are considered as part of header names.<br>
-<u>Attention</u>: Shifting does not happen in quoted literals, e.g. "&gt;Last Name". It assumes the header name containing the &gt; symbol.<br>
+<u>Attention</u>: Shifting does not happen in quoted strings, e.g. "&gt;Last Name". It assumes the header name containing the &gt; symbol.<br>
 
 <br><br>
 Left-shifting stops at column 0.  Attempts to go beyond will also refer to column 0. Attempting to right-shift beyond the last column is OK as long

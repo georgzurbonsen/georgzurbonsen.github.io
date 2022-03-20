@@ -100,7 +100,7 @@ Otherwise, the further data entries will be written to the table in the identifi
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>name of new or existing table</b><br/><p>Table must be existing when using <b>table append...</b> functions.  Otherwise, it does not matter.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
@@ -110,13 +110,13 @@ Specific rules apply for this function:
 </p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li></ul><p></p>
 </td></tr>
 <tr><td>3<br/>input</td>
-<td>parameter set or literal</td>
+<td>parameter set or string</td>
 <td><b>Comparison values or patterns</b><br/><p>The nummber of elements must match with the number of headers (2nd function parameter).
 Specify the comparison patterns.<br>
-</p><ul class="bullets"><li class="bullets">Unquoted or quoted literals as elements in parameter set: True comparison of contents without wildcards, e.g. { Name, "Street" }<br>
-</li><li class="bullets">Softquoted literals in parameter set: You can use <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a>, e.g. { '* Name', 'City,Town' }<br>
-</li><li class="bullets">One quoted literal specifies just one item to compare, e.g. "Last Name"<br>
-</li><li class="bullets">One softquoted literal converts the contents into a parameter set and treats contents as unquoted resp. quoted literals.</li></ul><p></p>
+</p><ul class="bullets"><li class="bullets">Unquoted or quoted strings as elements in parameter set: True comparison of contents without wildcards, e.g. { Name, "Street" }<br>
+</li><li class="bullets">Softquoted strings in parameter set: You can use <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a>, e.g. { '* Name', 'City,Town' }<br>
+</li><li class="bullets">One quoted string specifies just one item to compare, e.g. "Last Name"<br>
+</li><li class="bullets">One softquoted string converts the contents into a parameter set and treats contents as unquoted resp. quoted strings.</li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 4.<br/>input</td>
 <td>table columns</td>

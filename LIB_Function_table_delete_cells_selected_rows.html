@@ -88,7 +88,7 @@
 <h4> Description</h4>
 <p>
 This function extracts a column from the table and places the values in the parameter set from the selected rows where the calculated expression returns true.
-All blank or non-existing entries will be translated to blank literals.  Automatic type conversion (e.g. numbers to numerals) can be adjusted with the
+All blank or non-existing entries will be translated to blank strings.  Automatic type conversion (e.g. numbers to numerals) can be adjusted with the
 <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() function.
 </p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
@@ -100,11 +100,11 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Name of existing table</b><br/><p></p>
 </td></tr>
 <tr><td>2.<br/>code</td>
-<td>expression<br/>:literal</td>
+<td>expression<br/>:string</td>
 <td><b>Expression to select rows</b><br/><p>Specify the conditions or rules to select the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
 
 The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
@@ -119,7 +119,7 @@ Specific rules apply for this function:
 </li></ul><p></p>
 </td></tr>
 <tr><td>Opt. 4.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Count</b><br/><p>Number of cells to delete (with contents to the right shifting to the left accordingly)<br>
 <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported, i.e. -1 removes all cells till end of row, -2 removes all cells except last column (which will left-shift accordingly), etc.
 The position of the last column relates to the last column of the widest row in the table, and not the header row or current row alone.</p>

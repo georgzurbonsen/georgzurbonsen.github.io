@@ -64,23 +64,23 @@ Following rules apply:
 
 </p><ul class="bullets"><li class="bullets">It must contain at least 1 digit (0..9)
 </li><li class="bullets">Negative numebers start with a minus sign (see: <a class="bold_text" href="LAN_Features_unary_operators.html">unary operators</a>)
-</li><li class="bullets">The number must not contain spaces and/or thousand separator symbols.  Use <a class="bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a>() to remove such symbols automatically.
+</li><li class="bullets">The number must not contain spaces and/or thousand separator symbols.  Use <a class="bold_text" href="LIB_Function_clean_num.html">clean num</a>() to remove such symbols automatically.
 </li><li class="bullets">At most one decimal point may be used.  More points inside make the value look like a <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a>.
 <ul class="bullets"><li class="bullets">A lone decimal describes a <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a> containing one character.
 </li><li class="bullets">At least one digit must be added before or after the decimal point, e.g. <b>5.</b> or <b>.5</b> are OK, specifying 5 and 0.5.
 </li></ul></li><li class="bullets">Leading zeros in front and trailing zeros after the digits after the comma are OK
 </li><li class="bullets">Scientific notation is not allowed in the B4P code.
-<ul class="bullets"><li class="bullets"> However, use <a class="bold_text" href="LIB_Function_numeral.html">numeral</a>() or <a class="bold_text" href="LIB_Function_clean_numeral.html">clean numeral</a>() to specify scientific notations.
+<ul class="bullets"><li class="bullets"> However, use <span class="red_text">num</span>() or <a class="bold_text" href="LIB_Function_clean_num.html">clean num</a>() to specify scientific notations.
 </li><li class="bullets">Exceptions: Table entries may contain numbers in scientific notation, but use <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() to activate reading scientific notation.
 </li><li class="bullets">Scientific notation is also supported in numbers in JSON files.  See <a class="bold_text" href="LIB_Function_variable_load.html">variable load</a>() to load JSON files.
 </li></ul></li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo( 1 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simple numeral<br/>
-&nbsp;&nbsp;echo( 1 1 + 2 2 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Attention: These two numbers are literals : '1 12 2' is returned, not '33' or '3 3'<br/>
+&nbsp;&nbsp;echo( 1 1 + 2 2 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Attention: These two numbers are strings : '1 12 2' is returned, not '33' or '3 3'<br/>
 &nbsp;&nbsp;echo( 123.45 );<br/>
 &nbsp;&nbsp;echo( 0123.450 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same value as above<br/>
 &nbsp;&nbsp;echo( 0123.450 *1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Operation applied (multplied by 1), therefore text representation has been dropped<br/>
-&nbsp;&nbsp;echo( numeral( '1.2E+3' ) ); // Scientific notation (must contain capital or lower-case E, + is optional, use - (minus) for small numbers)</code></div>
+&nbsp;&nbsp;echo( num( '1.2E+3' ) ); // Scientific notation (must contain capital or lower-case E, + is optional, use - (minus) for small numbers)</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>1<br>1 12 2<br>123.45<br>0123.450<br>123.45<br>1200<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Number.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

@@ -92,16 +92,16 @@ Following rules apply for plain text:
 <ul class="bullets"><li class="bullets">The lone point is also used to reference a current column in <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a>.
 </li><li class="bullets">Note: Two consecutive points is a B4P <span class="red_text">range</span> symbol and does not consitute a text.
 </li></ul></li><li class="bullets">Reserved keywords are automatically interpreted as part of the B4P syntax, e.g. <b>true</b> as Boolean <i>true</i>, and <a class="bold_text" href="LIB_Features_else.html">else</a> is also part of the B4P language.
-</li><li class="bullets">If the text is assigned to B4P variables, then the variable assumes the subtype <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_literals.html">softquoted literal</a>.
+</li><li class="bullets">If the text is assigned to B4P variables, then the variable assumes the subtype <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
 </li></ul><p></p>
 <h5> Examples</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;echo( Hello World );<br/>
 &nbsp;&nbsp;echo(&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;// Same as above (Spaces outside the strings are ignored, so are multiple spaces inside)<br/>
 &nbsp;&nbsp;echo( One + One );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// + sign is an operator, result is 'OneOne'<br/>
 &nbsp;&nbsp;echo( 'One + One' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This one is OK.<br/>
-&nbsp;&nbsp;echo( Baden-Baden );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Empty string.&nbsp;&nbsp;Hyphen is treated as minus sign (subtraction of literals)<br/>
+&nbsp;&nbsp;echo( Baden-Baden );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Empty string.&nbsp;&nbsp;Hyphen is treated as minus sign (subtraction of strings)<br/>
 &nbsp;&nbsp;echo( 'Baden-Baden' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This one is OK.<br/>
-&nbsp;&nbsp;echo( 1. 23 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This is a literal because a space is inside.<br/>
+&nbsp;&nbsp;echo( 1. 23 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This is a string because a space is inside.<br/>
 &nbsp;&nbsp;echo( 1 200 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same here.&nbsp;&nbsp;Use function 'clean numeral' to extract 1200 as a number from here<br/>
 &nbsp;&nbsp;echo( Dial 555 1212 );<br/>
 &nbsp;&nbsp;echo( this is on, new line, the next line );&nbsp;&nbsp;// new line is a reserved keyword<br/>

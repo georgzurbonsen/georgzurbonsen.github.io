@@ -83,7 +83,7 @@ The suffix <b>... ignore blanks</b> excludes blank values, but includes zeros.<b
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>parameter set</td>
-<td><b>input values</b><br/><p>The parameter set shall contain numerals and/or blank literals.</p>
+<td><b>input values</b><br/><p>The parameter set shall contain numerals and/or blank strings.</p>
 </td></tr>
 <tr><td>Opt. 2<br/>code</td>
 <td>variable</td>
@@ -97,7 +97,7 @@ The suffix <b>... ignore blanks</b> excludes blank values, but includes zeros.<b
 <td><b>Gini coefficient</b><br/><p></p></td></tr>
 </table>
 <h4> Exceptions</h4>
-<p>1st parameter is not a parameter set containing positive numerals and/or blank literals.</p>
+<p>1st parameter is not a parameter set containing positive numerals and/or blank strings.</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( gini( { 1,1,1,1,1 } ) ); // Everyone is equal, returns 1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( gini( { 1, 1.2, 1.3, 1, 1.4, 1.2 } ) ); // ca 0.93, some dispartiy<br/>

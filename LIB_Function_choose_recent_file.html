@@ -80,22 +80,22 @@ This function will either identify the <i>most recent file</i> according to a sp
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Prompt text</b><br/><p>A prompt text is needed if the count (provided in the last function parameter) is not 1.
 The prompt will be displayed if needed so you can select from of the <i>n</i> recent files displayed.</p>
 </td></tr>
 <tr><td>2.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Path name</b><br/><p>Specify the path name to the directory where the files to be searched are located.  No wildcards are supported here.</p>
 </td></tr>
 <tr><td>3.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>File name pattern to match</b><br/><p>Specify file name pattern where the file name part may contain wildcard symbols such as
 '*' and '?'. The pattern will be used to obtain a listing of matching files which will then be prioritzed
 by the ordering criteria.  Exammple: "b4p*.txt" covers all files beginning wtih "b4p" and ending with file type ".txt".</p>
 </td></tr>
 <tr><td>4.<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Ordering criteria</b><br/><p>One of the following values apply:
 </p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
 <tr><td>oldest  </td><td> Selects the oldest file or list <i>n</i> (count) oldest files you can choose from.</td></tr>
@@ -115,7 +115,7 @@ If 1 is chosen, then no menu will be displayed because the first match according
 <h4> Return value</h4>
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
-<td>literal</td>
+<td>string</td>
 <td><b>Identified file name</b><br/><p>          The file name contains no directory path.  If no file has been found, then a blank string is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>

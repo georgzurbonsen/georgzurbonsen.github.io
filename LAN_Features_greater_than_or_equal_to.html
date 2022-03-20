@@ -67,12 +67,12 @@
 <p>
 Basic rules to greater than / greater than or equal to comparisons:
 </p><ul class="bullets"><li class="bullets">Contents are compared strictly, i.e. data type and contents must match perfectly.  No wildcards are supported here.
-</li><li class="bullets">Comparing values of different types, e.g. numerals with literals, will always return false.
+</li><li class="bullets">Comparing values of different types, e.g. numerals with strings, will always return false.
 </li><li class="bullets">When comparing parameter sets, the sorting order of the parameter is compared.
 </li></ul><p>
 <br/><img src="Images/Description_Formulas_Greater_than_or_Equal_to.jpg" alt="Comparison Greater than (or Equal to)"><br/>
 
-<sup>1</sup> When comparing parameter sets, the following sorting order across different data types applies: parameter set > literal > date > numeral > boolean,
+<sup>1</sup> When comparing parameter sets, the following sorting order across different data types applies: parameter set > string > date > numeral > boolean,
 then followed by contents if types are equal. For sets with common contents and different lengths,
 the longer one is considered as the "greater" one.  Nested sets will also be compared.
 </p>

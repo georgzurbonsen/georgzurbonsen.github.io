@@ -86,26 +86,26 @@ is available to provide the initial text contents.
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>valid types</td>
-<td><b>Initial contents</b><br/><p>The intial contents will be provided after the prompt and can be completed, modified or replaed by other input.  Non-literal values such as numbers will be converted to literals first.</p>
+<td><b>Initial contents</b><br/><p>The intial contents will be provided after the prompt and can be completed, modified or replaed by other input.  Non-string values such as numbers will be converted to strings first.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Prompt</b><br/><p>The prompt will be displayed before input is requested</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
-<td>literal</td>
+<td>string</td>
 <td><b>Checked value type</b><br/><p>See 2nd function parameter in <a class="bold_text" href="LIB_Function_input.html">input</a>().</p>
-<span class="black_text"><b> Default value: </b></span>literal
+<span class="black_text"><b> Default value: </b></span>string
 </td></tr>
 <tr><td>Opt. 4<br/>code</td>
-<td>comparison expression<br/>:literal</td>
+<td>comparison expression<br/>:string</td>
 <td><b>Validation expression</b><br/><p>If the entered value does not match with the type, then the user will be requested to repeat the input.
 
 <br><br>
 
 This parameter is a piece of code typically found on the right-hand side of a comparison with '=' or '<>'.  Single values,
 ranges (e.g. 3..5), multiple values separated by commas are supported.  For text comparison, <a class="bold_text" href="LAN_Features_wildcards.html">wildcards</a> are supported if the
-literal is of type <a class="bold_text" href="LIB_Function_literal.html">softquoted literal</a>.</p>
+string is of type <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.</p>
 <span class="black_text"><b> Default value: </b></span>true (no limitations)
 </td></tr>
 </table>
@@ -116,7 +116,7 @@ literal is of type <a class="bold_text" href="LIB_Function_literal.html">softquo
 <td><b>Entered value</b><br/><p>The value entered is returned, using the appropriate type.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;a[] = input("The weather is ", "Please complete following sentence: ", literal );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;a[] = input("The weather is ", "Please complete following sentence: ", string );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;echo("Entered value is : ", a[],"&nbsp;&nbsp;&nbsp;The type is : ", type (a[]) );<br/>
 </code></div>
 <h4> Output</h4>
