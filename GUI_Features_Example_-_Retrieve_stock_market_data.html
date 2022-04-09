@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Stock Markets - Program</h3>
+<a accesskey="p" href="GUI_Features_Example__Merge_football_clubs.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Example_-_U.S._Presidents_from_Wikipedia.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Anlytics Engine</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 B4P Analytics Engine - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_Engine.html"><div class="navi">+ 3 Starting the Engine </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">6 Examples </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html"><div class="navi">6.1 Football Club Merger - Interactive </div></a></li>
+<li class="navi"><a href="GUI_Features_Example__Merge_football_clubs.html"><div class="navi">6.2 Football Club Merger - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_Retrieve_stock_market_data.html"><div class="navi navi-selected">6.3 Stock Markets - Program </div></a></li>
+<li class="navi"><a href="GUI_Features_Example_-_U.S._Presidents_from_Wikipedia.html"><div class="navi">6.4 U.S. Presidents from Wikipedia </div></a></li>
+</ul></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; B4P Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_use_cases.html"><div class="navi"> Use Cases </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Obtain S&amp;P 500 and NASDAQ 100 listings</h4>
+<p>
+The following program example demonstrates downloading some stock market data from a web page and combine
+both listings in one Excel files.  Negative values will appear in red.
+
+<br><br>
+<img src="Images/GUI_Stock_Market_Data.png" alt="Guide-Tutorial-Merging Football teams">
+<br><br>
+Information source: <a href="https://www.slickcharts.com/nasdaq100" target="_blank"><b>slickcharts.com NASDAQ 100</b></a> and
+<a href="https://www.slickcharts.com/sp500" target="_blank"><b>slickcharts.com SP500</b></a>
+</p>
+<h5> The Full Program</h5>
+<div class="code_background_color" ><code>include ( Style Library );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Include this library if you want to use the 'table style ...' functions.<br/>
+//&nbsp;&nbsp;Step 1: Download two web pages.<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo("Stock market originates from slickcharts.&nbsp;&nbsp;Date downloaded: ", str( date(today), "Tttt DD. Mmmm. YYYY", en_US ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;for all parameters ( {nasdaq100, sp500} , listing[] )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://www.slickcharts.com/" + listing[], listing[] + .html);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( listing[] ,listing[] + .html,&nbsp;&nbsp;HTML, "Components of the" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table rename column headers ( listing[], "Weight", "Weight " + listing[] ); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Weight info are specific to SP and Nasdaq, so add the listing name<br/>
+<br/>
+//&nbsp;&nbsp;Step 2: Combine the two tables<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table merge extend columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( nasdaq100, sp500, Symbol );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table rename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( sp500, stocks );<br/>
+<br/>
+//&nbsp;&nbsp;Step 3: Cleanup<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table correct headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, '*Price*', Price );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table rearrange columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, { '#', Company, Symbol, Price, Chg, '% Chg' } ); // Weightings follow afterwards<br/>
+&nbsp;&nbsp;<br/>
+//&nbsp;&nbsp;Percent value gets converted to regular number, price value is claned up<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, ['% Chg'] = smart num( middle(['% Chg'],'(',')')); [Price] = clean num([Price]) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table sort rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, Company );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, ['#'] = row() );<br/>
+<br/>
+//&nbsp;&nbsp;Step 4: Add some color<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style auto width&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style theme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, Zebra Vertical Lines, pattern, 2, table, "gridlines, false" ); // Double zebra patterns<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, // Negative numbers: red, positive numbers: navy blue<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table style cells&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, {'Chg', '% Chg'}, {2:row()}, single, text color, select if ( [Chg]&gt;0, navy, red ) ) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, '% Chg', sheet, number format, "0.00%" ); // Value to show as percent. EXCEL only<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table style table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, sheet, freeze rows, 1, autofilter, 0);<br/>
+<br/>
+//&nbsp;&nbsp;Step 5: Save the artwork<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table save excel file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, "NASDAQ and SP500", "Images/Stock Market Listing.xlsx" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, briefly, 5 ); // Show top and bottom 5 rows on the console<br/>
+<br/>
+//&nbsp;&nbsp;Step 6: Also demonstrate saving results in HTML<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table format numbers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, '% Chg', "0.00%" ); // For HTML, the number must be physically reformulated with %-sign<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;translate style attributes for html (stocks);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;table save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, "Images&#92;Stock Market Listing.html", HTML );<br/>
+</code></div>
+<h5> The Output</h5>
+<div class="output_background_color" ><code>Stock market originates from slickcharts.&nbsp;&nbsp;Date downloaded: Saturday 09. April. 2022<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Images/Stock Market Listing.xlsx' containing 1 sheets.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : #&nbsp;&nbsp;&nbsp;| Company&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Symbol | Price&nbsp;&nbsp;| Chg&nbsp;&nbsp;&nbsp;| % Chg&nbsp;&nbsp;&nbsp;| Weight sp500 | Weight nasdaq100<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : 1&nbsp;&nbsp;&nbsp;| 3M Company&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| MMM&nbsp;&nbsp;&nbsp;&nbsp;| 149.81 | 0.00&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.225175&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : 2&nbsp;&nbsp;&nbsp;| A. O. Smith Corporation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| AOS&nbsp;&nbsp;&nbsp;&nbsp;| 62.87&nbsp;&nbsp;| 0.00&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.0221&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : 3&nbsp;&nbsp;&nbsp;| ABIOMED Inc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ABMD&nbsp;&nbsp;&nbsp;| 310&nbsp;&nbsp;&nbsp;&nbsp;| -4.53 | -0.0144 | 0.03774&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : 4&nbsp;&nbsp;&nbsp;| AES Corporation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| AES&nbsp;&nbsp;&nbsp;&nbsp;| 24.83&nbsp;&nbsp;| 0.00&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.044041&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : 5&nbsp;&nbsp;&nbsp;| AMETEK Inc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| AME&nbsp;&nbsp;&nbsp;&nbsp;| 131.82 | 0.00&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.080129&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;... :<br>&nbsp;&nbsp;526 : 526 | Zions Bancorporation N.A.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ZION&nbsp;&nbsp;&nbsp;| 63.45&nbsp;&nbsp;| -0.44 | -0.0069 | 0.025188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;527 : 527 | Zoetis Inc. Class A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ZTS&nbsp;&nbsp;&nbsp;&nbsp;| 200.09 | 0.00&nbsp;&nbsp;| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.245763&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;528 : 528 | Zoom Video Communications Inc | ZM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 111&nbsp;&nbsp;&nbsp;&nbsp;| 0.10&nbsp;&nbsp;| 0.0009&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.206&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;529 : 529 | Zscaler Inc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ZS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 227&nbsp;&nbsp;&nbsp;&nbsp;| 0.21&nbsp;&nbsp;| 0.0009&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.242&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;530 : 530 | eBay Inc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| EBAY&nbsp;&nbsp;&nbsp;| 54.8&nbsp;&nbsp;&nbsp;| -0.23 | -0.0042 | 0.089295&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 0.238&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Example_-_Retrieve_stock_market_data.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> View the generated HTML file with the formatting included:</h4>
+<p>
+
+Test Click on the file name open the file with Excel (.xlsx) :<br>
+<a href="Images/Stock Market Listing.xlsx" >Stock Market Listing.xlsx</a>, and <br>
+<a href="Images/Stock Market Listing.html" >Stock Market Listing.html</a>.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

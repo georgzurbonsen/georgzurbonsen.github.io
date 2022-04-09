@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table lookup ...</h3>
+<a accesskey="p" href="LIB_Features_Looking_up_other_tables.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_lookup_once.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">9 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+ 9.1 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+ 9.2 Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+ 9.3 Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+ 9.4 Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+ 9.5 Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+ 9.6 Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">+ 9.7 Processing Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">9.8 Multi-Table Integration </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Comparing_and_validating_tables.html"><div class="navi">+ 9.8.1 Comparing and Validating Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Looking_up_other_tables.html"><div class="navi">9.8.2 Looking up Other Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_lookup.html"><div class="navi navi-selected">9.8.2.1 table lookup ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_once.html"><div class="navi">9.8.2.2 table lookup once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_fast.html"><div class="navi">9.8.2.3 table lookup fast ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_smart.html"><div class="navi">9.8.2.4 table lookup smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_smart_once.html"><div class="navi">9.8.2.5 table lookup smart once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_with_rules.html"><div class="navi">9.8.2.6 table lookup with rules ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_lookup_with_rules_once.html"><div class="navi">9.8.2.7 table lookup with rules once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate.html"><div class="navi">9.8.2.8 table integrate ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_once.html"><div class="navi">9.8.2.9 table integrate once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_fast.html"><div class="navi">9.8.2.10 table integrate fast ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_smart.html"><div class="navi">9.8.2.11 table integrate smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_smart_once.html"><div class="navi">9.8.2.12 table integrate smart once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_with_rules.html"><div class="navi">9.8.2.13 table integrate with rules ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_integrate_with_rules_once.html"><div class="navi">9.8.2.14 table integrate with rules once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand.html"><div class="navi">9.8.2.15 table expand ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast.html"><div class="navi">9.8.2.16 table expand fast ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_smart.html"><div class="navi">9.8.2.17 table expand smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast_smart.html"><div class="navi">9.8.2.18 table expand fast smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_with_rules.html"><div class="navi">9.8.2.19 table expand with rules ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_with_rules_once.html"><div class="navi">9.8.2.20 table expand with rules once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast_with_rules.html"><div class="navi">9.8.2.21 table expand fast with rules ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast_with_rules_once.html"><div class="navi">9.8.2.22 table expand fast with rules once ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest.html"><div class="navi">9.8.2.23 table digest ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest_smart.html"><div class="navi">9.8.2.24 table digest smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest_with_rules.html"><div class="navi">9.8.2.25 table digest with rules ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest_with_rules_once.html"><div class="navi">9.8.2.26 table digest with rules once ... </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_integration_operation_identifiers.html"><div class="navi">9.8.2.27 Table Integration Operation Identifiers </div></a></li>
+<li class="navi"><a href="LIB_Function_table_describe.html"><div class="navi">9.8.2.28 table describe ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Combining_multiple_tables.html"><div class="navi">+ 9.8.3 Combining Multiple Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+ 9.9 Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; B4P Analytics Engine Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table lookup, table lookup ignore case, table lookup top down, table lookup top down ignore case</code></div>
+<h4> Description</h4>
+<p>
+This function processes the specified <b>target table</b> (1st function parameter) row-by-row by looking up data from a <b>lookup table</b>
+(4th function parameter).  The lookup procedure takes place as follows:
+</p><ul class="bullets"><li class="bullets">The data specified in one or more <b>input columns</b> will be compared with corresponding <b>search columns</b> (5th function parameter)     in the lookup table.
+</li><li class="bullets">When a matching row in the lookup table has been identified (ie. contents in the input and search columns match), then the contents specified  in one or more <b>output columns</b> (6th function parameter) in the lookup table will be retrieved and written into the <b>destination columns</b>        (3rd function parameter) in the target table.
+</li><li class="bullets">These two steps will be repeated for every row in the target table.
+</li></ul><p>
+If the suffix <b>ignore case</b> is added to the function name, then all comparisons made are case insensitive.
+
+<br/><br/><img src="Images/Function_table_lookup.jpg" alt="Function 'table lookup'"><br/><br/>
+
+The lookup function contains powerful comparison algorithms which will index the lookup table and accelerate the lookup performance significantly
+if it exceeds a size where the time overhead of creating an internal indexation starts paying off.  This scheme accelerates the lookup procedure
+to a search time ratio versus table size <i>n</i> to <b><i>O</i></b> ( log(<i>n</i>) ). <br>
+For example, looking up a table containing ca 64,000 entries requires 16 comparisons only.  For small tables, indexing will be skipped in order to avoid the
+initial overhead to create an indexation and the lookup takes place in a simple top-down approach beginning with row 1.
+
+<br><br>
+If a large lookup table is considered, but you know that most items looked up lie in to rows (say: roughly first 30 rows), then you may
+experience a performance improvement using the function name <b>table lookup top down ...</b> instead.  The output is the same in both cases.
+
+<br><br>
+Additional features:
+</p><ul class="bullets"><li class="bullets">An <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expression to select rows</a> (7th function parameter) can be specified to limit the lookup process to selected rows.
+</li><li class="bullets">An additional column (8th function parameter) can be specified in the lookup table to count the number of matches.
+</li></ul><p></p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled<br/>
+This function provides a <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> with table name and row number for selected function parameters</p>
+<h4> Parameter count</h4>
+<p>6 - 8</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Name of target table</b><br/><p>The table referred here is assumed to be the more recent table.</p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>table columns</td>
+<td><b>Input columns</b><br/><p>Specify 1 or more columns in the input table which contains the information to compare with the search columns in the lookup table.<br>
+Example: { Family Name, First Name } when looking up a phone directory table.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">At least one header name or column number must be specified
+</li><li class="bullets">The number of input columns in the target table must equal to the number of search columns in the lookup table
+</li></ul><p></p>
+</td></tr>
+<tr><td>3.<br/>input</td>
+<td>table columns</td>
+<td><b>Destination columns</b><br/><p>Specify columns in the input table where to copy the information retrieved from output columns in the lookup table.
+The column header names do not need to be the same the corresponding headers in the lookup table.
+Example: { Phone Number, Fax Number } when looking up a phone directory table.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names or column numbers may be specified (0 columns means pick up nothing, in case you need to count the lookups only)
+</li><li class="bullets">The number of destination columns in the target table must equal to the numer of output columns in the lookup table
+</li><li class="bullets">Missing columns will be created.
+</li></ul><p></p>
+</td></tr>
+<tr><td>4.<br/>input</td>
+<td>string</td>
+<td><b>Name of lookup table</b><br/><p>The table referred here is assumed to be the more recent table.</p>
+</td></tr>
+<tr><td>5.<br/>input</td>
+<td>table columns</td>
+<td><b>Search columns</b><br/><p>Specify 1 or more columns in the lookup table which contains the information to compare with the corresponding inputs columns in the target table.<br>
+Example: { Last Name, Given Name } when looking up a phone directory table.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">At least one header name or column number must be specified
+</li><li class="bullets">The number of search columns in the loookup table must equal to the number of input columns in the target table
+</li></ul><p></p>
+</td></tr>
+<tr><td>6.<br/>input</td>
+<td>table columns</td>
+<td><b>Output columns</b><br/><p>Specify columns in the lookup table for the information to be retrieved and copied to the destination columns in the target table.
+The column header names do not need to be the same the corresponding headers in the lookup table.
+Example: { Phone Number, Fax Number } when looking up a phone directory table.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names or column numbers may be specified (0 columns means pick up nothing, in case you need to count the lookups only)
+</li><li class="bullets">The number of output columns in the lookup table must equal to the numer of destination columns in the target table
+</li><li class="bullets">Exception: Specify '#row' to retrieve the row number from the lookup table. <br><u>Note:</u> "#row" in double quotation marks (quoted string) is excluded from this exception and treated as a header name.
+</li></ul><p></p>
+</td></tr>
+<tr><td>Opt. 7.<br/>code</td>
+<td>expression<br/>:string</td>
+<td><b>Expression to select rows</b><br/><p>This function parameter allows you to select the rows in the target table in order to limit the lookups to those rows only.
+<br><br>
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
+<u>Attention</u>: Comparison operators = and &lt;&gt; (instead of == and !=) may <a class="bold_text" href="LAN_Features_Language_pitfalls.html">hijack</a> the next function parameters for its own use as additional comparison operands,
+e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function parameter, then put parentheses around them, e.g. <b>... , (a[]=1,3,5), ...</b>.</p>
+<span class="black_text"><b> Default value: </b></span>true (all rows selected)
+</td></tr>
+<tr><td>Opt. 8.<br/>input</td>
+<td>table column</td>
+<td><b>Counter column</b><br/><p>Specify 1 column in the lookup table which shall be used to count the successful lookup made.  This function is useful in order to
+get an idea of the data in the lookup table searched frequently, rarely or not at all.  If the column already contains numbers, then
+the existing numbers will be incremented, i.e. no reset to zero.
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">At most one header name or column number must be specified
+</li><li class="bullets">If the column is missing in the lookup table, then it will be created.
+</li></ul><p>
+<u>Hint:</u> If you need this function parameter, but not the 7th function parameter, then write <b>true</b> into the 7th parameter.</p>
+<span class="black_text"><b> Default value: </b></span>{} (no column selected)
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Number of lookups made</b><br/><p>              Every row successfully matched in the lookup table counts 1.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;table load( lookup, "Examples/Table Lookup Example 1.csv" );<br/>
+&nbsp;&nbsp;table initialize( target, { Town, Florence, Venice, Florence, Edinburgh, New York, Hamburg, Florence, Munich, New York } );<br/>
+<br/>
+&nbsp;&nbsp;table copy table( target, t1 );<br/>
+&nbsp;&nbsp;count[] = table lookup ( t1&nbsp;&nbsp;&nbsp;&nbsp;, Town, { Food or Beverage, Recommended, Row Number },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookup, City, { Meal or Drink, Recommendation, '#row' }, true, Counter );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;echo("Lookup table after 1st lookup, note the 'Counter' column added:");<br/>
+&nbsp;&nbsp;table list( lookup );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;echo("Target table after lookup (", count[], " items found):");<br/>
+&nbsp;&nbsp;table list( t1 );<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;count[] = table lookup ( target&nbsp;&nbsp;&nbsp;&nbsp;, Town, { Food or Beverage, Recommended, Row Number },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookup, City, { Meal or Drink, Recommendation, '#row' }, ([Town]=Florence,Venice), Counter );<br/>
+<br/>
+&nbsp;&nbsp;echo("Target table after lookup (Florence and Venice only) (", count[], " items found):");<br/>
+&nbsp;&nbsp;table list( target );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Lookup table after 1st lookup, note the 'Counter' column added:<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Country&nbsp;&nbsp;&nbsp;&nbsp;| Meal or Drink | Recommendation | Rating | Counter<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Hamburg&nbsp;&nbsp;&nbsp;| Germany&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Hamburg&nbsp;&nbsp;&nbsp;| Germany&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Seafood&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : New York&nbsp;&nbsp;| USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pizza&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : New York&nbsp;&nbsp;| USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hamburger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Florence&nbsp;&nbsp;| Italy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Florence&nbsp;&nbsp;| Italy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Tagliatelli&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Edinburgh | G. Britain | Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Single Malt&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Edinburgh | G. Britain | Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fish &amp; Chips&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : New York&nbsp;&nbsp;| USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Lager&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : Camarque&nbsp;&nbsp;| France&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cheese&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Camarque&nbsp;&nbsp;| France&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Spice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fleur du sel&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : Boston&nbsp;&nbsp;&nbsp;&nbsp;| USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Lobster&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 : Plzen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Czech Rep. | Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pils&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;14 : Munich&nbsp;&nbsp;&nbsp;&nbsp;| Germany&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pork&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;15 : Munich&nbsp;&nbsp;&nbsp;&nbsp;| Germany&nbsp;&nbsp;&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Weissbier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>Target table after lookup (8 items found):<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Food or Beverage | Recommended | Row Number<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Venice&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Edinburgh | Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Single Malt | 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : New York&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pizza&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Hamburg&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Munich&nbsp;&nbsp;&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pork&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : New York&nbsp;&nbsp;| Meal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Pizza&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>Target table after lookup (Florence and Venice only) (3 items found):<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Food or Beverage | Recommended | Row Number<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Venice&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Edinburgh |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : New York&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Hamburg&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Florence&nbsp;&nbsp;| Drink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Chianti&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Munich&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : New York&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_lookup.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_lookup_fast.html">table lookup fast</a><br/>
+<a class = "bold_text" href="LIB_Function_table_lookup_once.html">table lookup once</a><br/>
+<a class = "bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart</a><br/>
+<a class = "bold_text" href="LIB_Function_table_lookup_smart_once.html">table lookup smart once</a><br/>
+<a class = "bold_text" href="LIB_Function_table_lookup_with_rules.html">table lookup with rules</a><br/>
+<a class = "bold_text" href="LIB_Function_table_integrate.html">table integrate</a><br/>
+<a class = "bold_text" href="LIB_Function_table_expand.html">table expand</a><br/>
+<a class = "bold_text" href="LIB_Function_table_digest.html">table digest</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>String Functions</h3>
+<a accesskey="p" href="LIB_Function_distribute.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_string_search_and_extraction.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi navi-selected">6 String Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_string_search_and_extraction.html"><div class="navi">+ 6.1 String Search and Extraction Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_character_coding.html"><div class="navi">+ 6.2 Character Encoding and Decoding </div></a></li>
+<li class="navi"><a href="LIB_Features_Other_string_functions.html"><div class="navi">+ 6.3 Miscellaneous String Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; B4P Analytics Engine Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+This section describes procedures and functions for character and string manipulations.
+
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>find [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_find.html">find</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_find.html">find ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_find.html">find ignore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_find.html">find ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_replace.html">replace</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_replace.html">replace all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_substitute.html">substitute</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_substitute.html">substitute all</a> <br>
+<br>length [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_length.html">length</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_width.html">width</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_height.html">height</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_text_row.html">text row</a> <br>
+<br>left [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_left.html">left</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_left.html">left include</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_left.html">left last match</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_left.html">left last match include</a> <br>
+<br>right [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_right.html">right</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_right.html">right include</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_right.html">right last match</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_right.html">right last match include</a> <br>
+<br>middle [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_middle.html">middle</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_middle.html">middle include</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_middle.html">middle until</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_middle.html">middle until include</a> <br>
+<br>outside [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_outside.html">outside</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_outside.html">outside exclude</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_outside.html">outside until</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_outside.html">outside until exclude</a> <br>
+<br>trim [string function]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_trim.html">trim</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_trim.html">trim all</a> <br>
+<br>clean up exotic spaces and line breaks in strings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_clean.html">clean</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_tokenize.html">tokenize</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_get_differences.html">get differences</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_locate_differences.html">locate differences</a> <br>
+<br>character encoding:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_chr.html">chr</a> <br>
+<br>character decoding:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_code.html">code</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_decode_entities.html">decode entities</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_encode_entities.html">encode entities</a> <br>
+<br>replicate strings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_replicate.html">replicate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_replicate.html">replicate characters</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_random_string.html">random letters</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_random_string.html">random string</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_describe.html">describe</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_abbreviate_name.html">abbreviate name</a> <br>
+<br>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

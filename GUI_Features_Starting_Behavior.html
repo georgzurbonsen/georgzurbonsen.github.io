@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Starting Behavior Basics</h3>
+<a accesskey="p" href="GUI_Features_MacOS_Getting_Started.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Command_Line_Arguments_and_Options.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Anlytics Engine</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 B4P Analytics Engine - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_Engine.html"><div class="navi">3 Starting the Engine </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_Windows.html"><div class="navi">+ 3.1 Starting on Windows </div></a></li>
+<li class="navi"><a href="GUI_Features_Linux_Getting_Started.html"><div class="navi">3.2 Starting on Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Getting_Started.html"><div class="navi">3.3 Starting on MacOS </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior.html"><div class="navi navi-selected">3.4 Starting Behavior Basics </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_Line_Arguments_and_Options.html"><div class="navi">+ 3.5 Command Line Arguments and Options </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior_Advanced.html"><div class="navi">+ 3.6 Starting Behavior Advanced </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; B4P Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_use_cases.html"><div class="navi"> Use Cases </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+As long B4P is started with a specified B4P program file, then the program file will start running immediately.
+If the B4P Analytics Engine is started without a B4P file, then it does the following:
+
+</p><ul class="bullets"><li class="bullets">Look for "main.b4p" in the current directory (if B4P engine is started from command line)
+</li><li class="bullets">If not successful, then look for "main.b4p" in the starting directory.
+</li><li class="bullets">If still not successful, the <a class="bold_text" href="GUI_Features_interactive_mode.html">interactive mode</a> is started.
+</li></ul><p>
+If "main.b4p" is found, then B4P waits for 1-2 seconds allowing you to interrupt program execution to force entering into
+<a class="bold_text" href="GUI_Features_interactive_mode.html">interactive mode</a> directly.
+
+<br><br>
+<b>For advanced users:</b> For more details on the starting behavior, see section <a class="bold_text" href="GUI_Features_Starting_Behavior_Advanced.html">Starting Behavior Advanced</a>.
+
+</p>
+<h4> What is a Starting Directory</h4>
+<p>
+B4P can memorize a starting directory where it will look for "main.b4p" whenever B4P is started without a program file name.
+Two options are possible:
+
+</p><ul class="bullets"><li class="bullets">Use the file <b>start B4P here.b4p</b>
+</li><li class="bullets">Use the function <a class="bold_text" href="LIB_Function_starting_directory.html">starting directory</a> interactively
+</li></ul><p></p>
+<h4> Using 'start B4P here.b4p'</h4>
+<p>
+This file is found in your initial working directory (if enabled during installation process) or in the installation directory.
+Make a copy of this program into the target directory and run it.
+
+</p>
+<h5> Example Output</h5>
+<div class="output_background_color" ><code>B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version 10.00 Release Candidate 2 (2022-03-27)<br/>
+Copyright (C) 2012..2022 Georg zur Bonsen, all rights reserved.<br/>
+Licensing info ...<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;When starting, then Beyond4P now looks for 'Main.b4p'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;in the following directory:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;C:&#92;Users&#92;username&#92;Documents&#92;Programs&#92;B4P<br/>
+Done - Press ENTER key</code></div>
+<h4> Using starting directory Function</h4>
+<p>
+In interactive mode, enter <b>starting directory("<i>full path name</i>")</b> to specify and memorize the starting directory.
+For more details, see the B4P function description for <a class="bold_text" href="LIB_Function_starting_directory.html">starting directory</a>.
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
