@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Release 8.03</h3>
+<a accesskey="p" href="GUI_Features_Release_8.02.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Release_8.04.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Anlytics Engine</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 B4P Analytics Engine - Overview </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_Engine.html"><div class="navi">+ 3 Starting the Engine </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">7 Recent Releases </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Release_8.00.html"><div class="navi">7.1 Release 8.00 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_8.01.html"><div class="navi">7.2 Release 8.01 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_8.02.html"><div class="navi">7.3 Release 8.02 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_8.03.html"><div class="navi navi-selected">7.4 Release 8.03 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_8.04.html"><div class="navi">7.5 Release 8.04 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_9.00.html"><div class="navi">7.6 Release 9.00 </div></a></li>
+<li class="navi"><div>7.7 Release 9.01 tbd </div></li>
+<li class="navi"><a href="GUI_Features_Release_9.01_Golden_Cut.html"><div class="navi">7.8 Release 9.01 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_9.02_Release_Candiate.html"><div class="navi">7.9 Release 9.02 RC </div></a></li>
+</ul></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; B4P Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+<b>Release 8.03, issued 2021-05-27, "The Tabulating Machine"</b><br>
+<i>Herman Hollerith's invention in 1890 doing mechanical data import, processing, tabulation and sorting for analyzing U.S. census data.</i>
+</p>
+<h4> Bugfixes</h4>
+<p>
+</p><ul class="bullets"><li class="bullets">Loading JSON files into B4P tables: Loading refused if JSON begins with array and not with object.  Has been fixed.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup.html">table lookup</a>() family: Stabilization (eliminated a potential bug)
+</li><li class="bullets">Release 8.02 induced an error in the function <a class="bold_text" href="LIB_Function_table_distribute.html">table distribute</a>() which prevented doing the work.  Has been fixed.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_list.html">table list</a>() generates wrong output in some cases when table fields contain mulitple lines of data.  Has been fixed.
+</li><li class="bullets">Loading HTML tables also loaded details on styles if &lt;STYLE&gt; tags including contents are inside table cells.  Has been fixed.
+</li></ul><p></p>
+<h4> New Functions</h4>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_digest.html">table digest</a>() function family: New variant of lookup and integration functionality
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup_with_rules.html">table lookup with rules</a>() (also ... digest, ... expand, ... integrate) introduced.
+</li><li class="bullets">Additional help functions, e.g. <a class="bold_text" href="LIB_Function_help_welcome.html">help keywords</a>, <a class="bold_text" href="LIB_Function_help_welcome.html">help functions</a>, etc.  Recommended for interactive use
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_height.html">height</a>() returns number of rows a string contains
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_clean.html">clean</a>() cleans a string by substituting exotic UNICODE line breaks and spaces into ANSI new line spaces (codes 10 and 32).
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_clean.html">table clean</a>() caries cleanup work as described above and can also trim out unnecessary spaces and line breaks.
+</li></ul><p></p>
+<h4> Improvements in Existing Functions</h4>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart</a>() (also ... digest, ... expand, ... integrate): Added option to specify B4P expression for more flexible comparisons
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_substitute.html">substitute</a>() and <a class="bold_text" href="LIB_Function_replace.html">replace</a>(): Single-character wildcard symbols are now supported if the matching string is not a hard quoted literal.
+</li></ul><p></p>
+<h4> New Language Features (e.g. syntax and semantics)</h4>
+<p>
+None in this release.
+</p>
+<h4> Performance Improvements</h4>
+<p>
+</p><ul class="bullets"><li class="bullets">Did a spring-season clean-up of the existing function family <a class="bold_text" href="LIB_Function_table_lookup.html">table lookup</a>() / <a class="bold_text" href="LIB_Function_table_integrate.html">table integrate</a>() / <a class="bold_text" href="LIB_Function_table_expand.html">table expand</a>() and shoud show minor performance improvements.
+</li></ul><p>
+</p>
+<h4> Depreciated and retired features</h4>
+<p>
+</p><ul class="bullets"><li class="bullets">Converting strings to dates: Months in roman numbers are discontinued.  They are used very rarely, and create confusion with structured       section numbers like 1.v.20.
+</li></ul><p></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
