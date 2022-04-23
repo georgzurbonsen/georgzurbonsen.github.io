@@ -25,7 +25,7 @@
 	<div class="nav">
 <div class="booktitle_field">B4P Language</div>
 <ul>
-<li class="navi"><div> Table of Contents </div></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
 <li class="navi"><a href="LAN_Features_Variable.html"><div class="navi navi-selected">2 Variables </div></a></li>
 <li class="navi"><ul>
@@ -36,7 +36,7 @@
 <li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">2.5 Protecting Variables </div></a></li>
 </ul></li>
 <li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
 <li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
 <li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
 <li class="navi"><div>  </div></li>
@@ -46,8 +46,8 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
-<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; B4P Analytic Engine Guide </div></a></li>
-<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; B4P Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 </ul>
 	</div>
 
@@ -93,13 +93,13 @@ or expressions.  And the contents inside the bracket allows for additional freed
 <h4> Basic Variable Naming Rules</h4>
 <p>
 Naming variables:
-</p><ul class="bullets"><li class="bullets">The naming rule applies to <a class="bold_text" href="LAN_Features_Variable_forms.html">base variables</a> as well as member variables in <a class="bold_text" href="LAN_Features_structures.html">structures</a>.
+</p><ul class="bullets"><li class="bullets">The naming rule applies to <a class="bold_text" href="LAN_Features_Variable_forms.html">base variables</a> as well as <a class="bold_text" href="LAN_Features_Variable_forms.html">member variables</a> in <a class="bold_text" href="LAN_Features_structures.html">structures</a>.
 </li><li class="bullets">Table names must be of type <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> and may take practially any contents, even spaces, special symbols and foreign and non-ANSI characters
 </li><li class="bullets">Table names may be referenced as string constants (with or without single or double quotation marks) or as expressions returing strings (e.g. variables, string calculations, etc.)
 </li><li class="bullets">Multiple consecutive spaces (and tabs) in names not put into quotation marks will collapse to 1 space.  Example: <b>Last&nbsp;&nbsp;&nbsp;Name</b> collapses to <b>Last Name</b>.
 </li><li class="bullets">Quotation marks must be used for table name if they contain special symbols which confuse with B4P code syntax, e.g. hyphens misinterpreted as minus signs.
 </li><li class="bullets">Names may or end with numbers, even with spaces inbetween, e.g. <b>4200 Pennsylvania Ave.</b>.
-</li><li class="bullets">Blank variable names are also allowed, e.g. <b>''[]</b>.  Attention: Inside <a class="bold_text" href="LAN_Features_structures.html">structures</a>, blank member names will be referred as default member variables, e.g. <b>names[''] = All others;</b>.
+</li><li class="bullets">Blank variable names are also allowed, e.g. <b>''[]</b>.  Attention: Inside <a class="bold_text" href="LAN_Features_structures.html">structures</a>, blank member names will be referred as default <a class="bold_text" href="LAN_Features_Variable_forms.html">member variables</a>, e.g. <b>names[''] = All others;</b>.
 </li><li class="bullets">Any expression returning a string is allowed, e.g. <b>("Hel" + "lo")[]</b> are allowed.
 </li><li class="bullets">Indirect variable referencingis supported, e.g. <b>(a[])[] = 1; echo( a[][] );</b> meaning writing 1 to variable with name retrieved from variable a.
 </li></ul><p>
