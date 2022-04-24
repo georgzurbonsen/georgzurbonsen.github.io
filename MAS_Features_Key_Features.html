@@ -36,68 +36,56 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="Images/B4P_Introduction.pdf"><div class="navi"> &#8594; Presentation </div></a></li>
-<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
-<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; B4P Analytics Engine Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; B4P Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; B4P Function Library Guide </div></a></li>
+<li class="navi"><div> A - Import </div></li>
+<li class="navi"><div> B - Clean </div></li>
+<li class="navi"><div> C - Validate </div></li>
+<li class="navi"><div> D - Merge </div></li>
+<li class="navi"><div> E - Augment </div></li>
+<li class="navi"><div> Examples </div></li>
+<li class="navi"><div> F - Analyze </div></li>
+<li class="navi"><div> G - Format </div></li>
+<li class="navi"><div> Getting Help </div></li>
+<li class="navi"><div> H - Export </div></li>
+<li class="navi"><div> Typical Workflow </div></li>
 </ul>
 	</div>
 
 	<div class="article">
-<h4> Overview</h4>
+<h4> Key Benefits</h4>
 <p>
-<b> B4P includes an <i>interpreted programming language</i> with powerful syntax, highly flexible data structures, and a large function library which enables immediate results with
-a minimum of code.</b>  Programs containing just a few statements can perform sophisticated operations such as merging two tables with very different data arrangements and formats
-or analyzing big amounts of data.  The following key features makes the B4P language distinct from other popular programming languages:
+The overall intention is to provide a tool for you which helps to solve sophisticated problems with large amounts of data involved:
+</p><ul class="bullets"><li class="bullets"><b>Simple</b> procedural language easy to read, understand and lear.
+</li><li class="bullets">Powerful langauge semantics <b>minimizes the number of statements</b> needed to solve the problem.
+</li><li class="bullets"><b>Tables</b> of any size are one of the main data storage models and B4P is optimized for this
+</li><li class="bullets"><b>No programming bureaucracy</b> such as declaring all the variables you need.
+</li><li class="bullets">Significantly less need for <i>fine grained</i> programming like formulating loops, detailed algorithms, etc.
+</li><li class="bullets">B4P understands data formats such as <b>Excel, HTML, XML, JSON, CSV</b>, etc. to retrieve data from Excel, database and the Internet directly
+</li><li class="bullets">Extremely <b>flexible in naming</b> variables, tables, functions, procedures, etc. (natural language).
+</li><li class="bullets">The execution engine and all libary files are very lean, very robust and start quickly.
+<ul class="bullets"><li class="bullets">Powerful table processing functions available such as merging, consolidating and applying pivots on tables
+</li><li class="bullets">Powerful vector and matrix operations available for high-performance calculations on your tables and data
+</li></ul></li><li class="bullets">High focus on <b>cross-platform portability</b> (Windows, LINUX, etc.), enabling to run the same B4P program on different platforms.
+</li></ul><p>
+You will get to full speed quickly if you have some basic programming experience with a high level programming language or a macro
+language such as Visual Basic inside Excel.  B4P requires no knowledge about object oriented programming and specific algorithms to manage
+big data (e.g. indexing).  The syntax is, even though looking differently from other langauges, incredibly easy to understand and to use.
+In contrast to other programming langages, much fewer statements and time are needed, no additional libraries need to be installed
+separately (like Panda for Python) and you experience unparalleled machine performance, forgetting the fact that B4P is an interpreted language.
 
-<br><br>
-
-</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
-<tr><td></td></tr>
-<tr><td>Cross Platform Compatible       </td><td> B4P runs on  WINDOWS, LINUX and MAC-OS using  Intel and ARM CPUs.  The language allows execution on different targets without modifying the code.</td></tr>
-<tr><td>Flexible Naming               </td><td> You are allowed to use spaces and special characters in function names, variable names, table names, column header names, etc.   <b>max value[]</b> and <b>'1%'[]</b> are valid variable names. This allows you to use typical column headers, e.g. "Total Costs",  without modifying them or putting quotations around. A valid function call could be " table create (customer table, supplier table, etc. );                          " Function names like <a class="bold_text" href="LIB_Function_table_process.html">table process selected rows</a>() is easier to read than "TableProcessSelectedRows"</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Variable.html">Variables</a>                 </td><td> All simple variables end with brackets <b>[]</b>  Example: <b>value[]</b>. If you forget them, then the name is just a string value.<br/> You can create child variables with any nesting, <br/>e.g. <b>animal[dog]=poodle; animal[cat]=tiger; animal[dog,leg count]=4;</b>.<br/>                           You can also define arrays, e.g. <b>matrix[2,3]</b> or the combination of both structures and arrays to develop sophisticated variable storage models.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Number.html">Numbers</a> and <a class="bold_text" href="LAN_Features_Text.html">text</a>        </td><td> <a class="bold_text" href="LAN_Features_Number.html">Numbers</a> and <a class="bold_text" href="LAN_Features_Text.html">text</a> are seen as values.  In the example <b>a[] = bull dog ;  b[] = ' bull   dog ';</b> a[] is assiged with <i>'bull dog'</i> containing one space between the two words, whare as b[] is assigned with <i>' bull   dog '</i> where all spaces are preserved.  Without quotation marks, outside spaces and repeated spaces betwen words are ignored.</td></tr>
-<tr><td>Full <a class="bold_text" href="LAN_Features_Full_UNICODE_Support.html">UNICODE</a> characters     </td><td> Every character counts as 1 character, including the foreign and non-ANSI ones.  The full UNICODE including the Basic Multilingual Plane (like &eacute; and &euro;), and all the other UNICODE planes (e.g. &#x1F609;) are supported.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Basic_data_types.html">Basic data types</a>            </td><td> They are <a class="bold_text" href="LAN_Features_data_types_numerals.html">numeral</a>, <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a>, <a class="bold_text" href="LAN_Features_data_types_booleans.html">boolean</a>, <a class="bold_text" href="LAN_Features_data_types_dates.html">date</a> (for both dates and time of day), <a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">parameter sets</a>, and <a class="bold_text" href="LAN_Features_data_types_voids.html">void</a>.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_data_types_parameter_sets.html">Parameter sets</a>          </td><td> Very powerful type to combine any number of variables and nested parameter sets into one parameter set.<br>Example: <b>names[] = {Abel, Beata, Charly};</b></td></tr>
-<tr><td>Dynamic weak typing             </td><td> B4P uses dynamic weak typing.  The type is set once a value is assigned. Example: <b>a[] = 1;</b> automatically declares a[] as a numeric variable. <br>The type will change if something non-numeric is assigned, eg. <b>a[] = Hello;</b>.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_tables.html">Tables</a>              </td><td> They are the DNA of B4P.  Typically referenced as <b>[table name : row , column ]</b>.<br/>If a conext with table name and row number is given, e.g. inside a loop, then a simple reference like <b>[column]</b> is sufficient.<br>Example: <b>table process</b>( membership list, <b>echo</b>( [Family Name], ", ", [First Name] );</td></tr>
-<tr><td>Accessing multiple values in tables     </td><td> Powerful methods are available to access individual cells, entire rows or parts of them, entire columsn or parts of them, or combination of all.</td></tr>
-<tr><td>Powerful table processing function library </td><td> A large number of procedures and functions is available to analyze, process and combine tables as you wish.  These functions deliver highest machine performance.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Transactions.html">Transactions</a>            </td><td> Very smart assignments for variables and table rows. You can replicate variables including all child members, or combine two variables including their member variables.</td></tr>
-<tr><td>Function parameters accept <a class="bold_text" href="LAN_Features_Code_piece.html">code pieces</a> </td><td> Unlike in other languages, some functions accept pieces of code such as expressions and statements as input parameters.  These codes may be executed several time. <br/>Good example: <b>table process( members, [full name] = [1st name] + ' ' + [last name] );</b></td></tr>
-<tr><td>Variable count function parameters  </td><td> Some functions accept a variable number of parameters, with minimum, maximum and incrementals given.</td></tr>
-<tr><td>User definable procedures and functions </td><td> You can defined own procedures and functions.  Functions provide return values whereas procedures don't.  You can assign multiple function names to the same user-defined code. In this case, the pre-defined local variable <b>function name[]</b> allows to identify the function name used to call the code.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Indirect_parameter_passing.html">Indirect parameter passing</a>      </td><td> Some procedures and functions allow one <i>parameter set</i> variable to be used to provide all function parameters in one.<br/>Example: a[] = { 2,3,4 }; <b>echo</b>( <b>min</b>( 2,3,4 ), ' and ', <b>min</b>( a[] ) ); // Output in both cases is 2.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_deep_operators.html">Deep operators</a>          </td><td> Deep operators (supplemented with the circumflex '^' symbol) can be used to calculate with elements inside parameter sets. <br/>Example: { 1,2,3 } +^ { 4,5,6 } results in { 5,7,9 }.  However, { 1,2,3 } + { 4,5,6 } results in {1,2,3,4,5,6} instead.  Deep operations are analogous to vector and matrix operations.</td></tr>
-<tr><td><a class="bold_text" href="LIB_Features_Control_flow_functions.html">Control flow functions</a>        </td><td> Different from other programming languages, control flow features like <a class="bold_text" href="LIB_Function_if.html">if</a>(), <a class="bold_text" href="LIB_Function_for.html">for</a>(), <a class="bold_text" href="LIB_Function_while.html">while</a>(), <a class="bold_text" href="LIB_Function_return.html">return</a>, etc. are actually procedure and function calls.                            These functions are governing the execution of the next <a class="bold_text" href="LAN_Features_Statements.html">statement</a> or <span class="red_text">block</span>.</td></tr>
-<tr><td>Portable directory paths        </td><td> B4P accepts both '/' and '\' for path separators. They will be adjusted automatically to match with the operating system requirements.</td></tr>
-</table><p>
-</p>
-<h4> Think Big to be Successful</h4>
-<p>
-You can unleash the full power of B4P if you are thinking big.  Writing a complete end-to-end solution (with loops, variable assignments, comparisons
-of individual values, etc.) is straighforward to learn with no special programming background.  Other languages like Python can do similar processing, but requires one to learn object-oriented programming, and does not scale for complexity.
-
-
-</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:60px"><col style = "width:940px">
-<tr><td>Hint 1 </td><td> Use the rich B4P function library to process these tables and big data.  Large tables will be analyzed and processed at naked machine performance.<br/></td></tr>
-<tr><td>Hint 2 </td><td> Use deep operations (vector and matrix operations) to process large amount of data inside tables and parameter sets.<br/></td></tr>
-<tr><td>Hint 3 </td><td> Think how you can formulate your code in a very compact manner without compromising comprehensibility.  Doing great things with 5-20 lines of code is within reach.<br/></td></tr>
-</table><p>
 </p>
 <h4> No Graphic Gadgets</h4>
 <p>
-Intentionally, B4P does not make use of any visual features such as graphical user interfaces as they compromise cross-platform compatibility.
-For visualization purposes, powerful and highly standardized tools such as Microsoft Excel providie all features to do the visualziation, creating all required charts, etc.
+Intentionally, B4P does not make use of any visual features such as graphical user interfaces.  For visualization purposes, powerful
+and highly standardized tools such as Microsoft Excel providie all features to do the visualziation, creating all required charts, etc.
 to round up you presentation.   The philosophy of B4P is to do all data processing first and very rapidly, and creating final Excel files
 for visualization purposes.
 
 <br><br>
-
 However, B4P is able to save tables into Excel files, with multiple sheets in one workbook, and, if needed, some formatting and styling already
-included (e.g. column widths, fonts, colors, number formats, autofilter, freezing panes, etc.).  And various formatting features are available for
-console output such as text colors.</p>
+included (e.g. column widths, fonts, colors, number formats, autofilter, freezing panes, etc.).</p>
 	</div>
 </section>
 
