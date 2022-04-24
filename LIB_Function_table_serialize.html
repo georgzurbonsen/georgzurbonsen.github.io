@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table serialize ...</h3>
+<a accesskey="p" href="LIB_Function_table_transpose.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_spread.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">9 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+ 9.1 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+ 9.2 Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+ 9.3 Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+ 9.4 Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+ 9.5 Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+ 9.6 Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">9.7 Processing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Checking_headers.html"><div class="navi">+ 9.7.1 Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_columns.html"><div class="navi">+ 9.7.2 Processing Table Columns </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_rows.html"><div class="navi">+ 9.7.3 Processing Table Rows </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_contents.html"><div class="navi">+ 9.7.4 Processing Table Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Pivoting_and_consolidating_tables.html"><div class="navi">9.7.5 Pivoting and Conosolidating Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_transpose.html"><div class="navi">9.7.5.1 table transpose </div></a></li>
+<li class="navi"><a href="LIB_Function_table_serialize.html"><div class="navi navi-selected">9.7.5.2 table serialize ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_spread.html"><div class="navi">9.7.5.3 table spread ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_spread_given_headers.html"><div class="navi">9.7.5.4 table spread given headers ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_consolidate.html"><div class="navi">9.7.5.5 table consolidate ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_distribute.html"><div class="navi">9.7.5.6 table distribute ... </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Copying_and_renaming_and_spitting_tables.html"><div class="navi">+ 9.7.6 Copying, Renaming and Splitting Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">+ 9.8 Multi-Table Integration </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+ 9.9 Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table serialize, table serialize all, table serialize ignore zero</code></div>
+<h4> Description</h4>
+<p>
+This is a pivot function which moves horizontally spread data (typically looking like schedules across timelines, or other tables with horizontally spread categories)
+to a sequential listing with one affected data item per row.
+<br><br>
+
+<b>table serialize all</b> will do a full serialization of the table, including all blank fields
+<b>table serialize</b> only serialize non-blank fields in order to avoid generating unnecessary rows.
+<b>serialize ignore zero</b> will also skip serializing fiels representing zero.  Values such as 0, -0, ., 0.0, .00 are also considered 0, but '0 EUR' is not (text inside).
+
+<br/><img src="Images/Function_table_serialize.jpg" alt="Function 'table serialize'"><br/>
+
+<u>Hint</u>:The opposite action of <b>table serialize</b> is to use <a class="bold_text" href="LIB_Function_table_spread.html">table spread</a>() to spread the data horizontally
+and then apply <a class="bold_text" href="LIB_Function_table_consolidate.html">table consolidate</a>() to reduce the nubmer of rows to the minimum necessary.
+</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>5-6</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Name of existing  table</b><br/><p></p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>table columns</td>
+<td><b>Identifier columns to repeat</b><br/><p>Specifies all columns which data shall be replicated downwards for all corresponding data being serialized.
+This is useful for identifiers and descriptions related to the serialized values so meanings are given to every row.
+It is not recommended to include columns containing numbers which need to be added up (or used in a similar way) at a later time because the serialization would affect the final result.
+Even if you want an easily readable table (e.g. describe once, keep following rows blank), then do not include this header.
+
+<br><br>
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of header names and column numbers may be specified</li></ul><p></p>
+</td></tr>
+<tr><td>3.<br/>input</td>
+<td>table column</td>
+<td><b>Column for sequence names</b><br/><p>Assign a meaningful sequence name.  Naming examples:
+</p><ul class="bullets"><li class="bullets"><b>Months</b> for horizontal headers containing Jan, Feb, Mar, ... Dec
+</li><li class="bullets"><b>Years</b> for horizontal headers containing year numbers
+</li><li class="bullets"><b>Countries</b> for a set of countries listed horizontally
+</li></ul><p></p>
+</td></tr>
+<tr><td>4.<br/>input</td>
+<td>parameter set containing strings</td>
+<td><b>Sequence names</b><br/><p>These values will be applied as data entries under the column which header name is specified in the 2nd parameter. Examples:
+</p><ul class="bullets"><li class="bullets">{ Jan, Feb, March, April } for 'Months'
+</li><li class="bullets">{ '2018', '2019', '2020', '2021' } for 'Years' (Quotation marks required because strings are expected)
+</li><li class="bullets">{ AT, BE, CH, DE, ES, FR, GB, HU, IT, JP } for 'Countries'
+</li></ul><p></p>
+</td></tr>
+<tr><td>5.<br/>input</td>
+<td>table columns</td>
+<td><b>Category names</b><br/><p>Categories related to the data in the original table
+Examples
+</p><ul class="bullets"><li class="bullets">Orders
+</li><li class="bullets">Revenues
+</li><li class="bullets">Gross Margin
+</li></ul><p>
+<br><br>
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">At leaset one header name may be specified
+</li><li class="bullets">Column numbers are not allowed
+</li><li class="bullets">If the columns are not yet existing, then they will be created</li></ul><p></p>
+</td></tr>
+<tr><td>Opt 6.<br/>input</td>
+<td>string</td>
+<td><b>Original header template</b><br/><p>This string depicts the first example how the original header looks like where it must contain the word "[Sequence]" and (optionally if only 1 category
+name provided, otherwise mandatory), the word "[Category]".  "Sequence" and "Category" are case sensitive.
+
+<br>The following table shows a few template examples and examples of the corresponding headers expected in the table
+</p><table style = "width:800px"><col style = "width:100px"><col style = "width:300px"><col style = "width:400px">
+<tr><th>Sequence Name       </th><th> Original header template  </th><th> Example of a valid header in the original table</th></tr>
+<tr><td>Years               </td><td> "[Category]/[Sequence]" </td><td> "Orders/2018"</td></tr>
+<tr><td>Quarters            </td><td> "[Sequence] [Category]" </td><td> "Q1 Orders"</td></tr>
+<tr><td>Countries           </td><td> "[Category] in [Sequence]"</td><td> "Orders in AT"</td></tr>
+<tr><td>(1 category name)   </td><td> "Year [Sequence]         </td><td> "Year 2018"</td></tr>
+</table><p>
+
+The function will actually look for these headers and expects that each of them sequence names and Category names will be mentioned at least once.
+Sufficient example for quarters / 3 Category names:
+</p><ul class="bullets"><li class="bullets">Q1 Orders, Q2 Revenues, Q3 Earnings, Q4 Orders
+</li></ul><p>Not sufficient example:
+</p><ul class="bullets"><li class="bullets">Q1 Orders, Q2 Revenues, Q3 Revenues, Q4 Orders    ("Earnings" missing)
+</li><li class="bullets">Q1 Orders, Q2 Revenues, Q3 Revenues, Q1 Earnings  ("Q4" missing)
+</li></ul><p>
+The 6th parameter is not required if only 1 category name is specified.  In this case, the function looks for column names equaling to the sequence names,
+e.g. "2018", "2019", "Q1", "Q2", "AT", "BE" related to the various examples above.
+</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Column count</b><br/><p>          Number of columns found with header names comprised of values in 4th, 5th and 6th parameters.</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>0 Sequence and/ or 0 category names provided<br/>
+No columns with data to spread have been found.</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;// An easy one<br/>
+<br/>
+&nbsp;&nbsp;table initialize( bils, // Swedisch for 'cars', aka 'automo-bils'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Product, "2020-Q1".."2020-Q4" },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Sedans,&nbsp;&nbsp;&nbsp;24, 34, 44, 14 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Pickpus,&nbsp;&nbsp;11, 21, 31, 21 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Cabrios,&nbsp;&nbsp;'',&nbsp;&nbsp;5, 10, '' },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ SUVs,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;35, 25, 45, 55 } } );<br/>
+<br/>
+&nbsp;&nbsp;echo("Car sales in sequential order (including blanks here):");<br/>
+&nbsp;&nbsp;table serialize all( bils, Product, Quarter, { "2020-Q1".."2020-Q4" }, Cars sold );<br/>
+&nbsp;&nbsp;table list ( bils );<br/>
+<br/>
+&nbsp;&nbsp;// Serializing order intake (OI) and revenues (Rev) over quarters<br/>
+<br/>
+&nbsp;&nbsp;table initialize( kpi, // Key Performance Indicators<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Region,&nbsp;&nbsp;&nbsp;"OI 2018", "Rev 2018", "OI 2019", "Rev 2019", "OI 2020", "Rev 2020"&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Americas, 1000,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;950,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1100,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1050,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1200,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1150&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Europe,&nbsp;&nbsp;&nbsp;&nbsp;800,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;700,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;900,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;950,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1100,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1050&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Antarctica, '',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} } );<br/>
+<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;echo("Key performance indicator values (excluding blanks and zero:");<br/>
+&nbsp;&nbsp;table serialize ignore zero( kpi, Region, Year, { "2018".."2020" },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ OI, Rev }, "[Category] [Sequence]" );<br/>
+&nbsp;&nbsp;table list ( kpi );<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Car sales in sequential order (including blanks here):<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Product | Quarter | Cars sold<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Sedans&nbsp;&nbsp;| 2020-Q1 | 24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Sedans&nbsp;&nbsp;| 2020-Q2 | 34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Sedans&nbsp;&nbsp;| 2020-Q3 | 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Sedans&nbsp;&nbsp;| 2020-Q4 | 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Pickpus | 2020-Q1 | 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Pickpus | 2020-Q2 | 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Pickpus | 2020-Q3 | 31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Pickpus | 2020-Q4 | 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Cabrios | 2020-Q1 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : Cabrios | 2020-Q2 | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Cabrios | 2020-Q3 | 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : Cabrios | 2020-Q4 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 : SUVs&nbsp;&nbsp;&nbsp;&nbsp;| 2020-Q1 | 35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;14 : SUVs&nbsp;&nbsp;&nbsp;&nbsp;| 2020-Q2 | 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;15 : SUVs&nbsp;&nbsp;&nbsp;&nbsp;| 2020-Q3 | 45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;16 : SUVs&nbsp;&nbsp;&nbsp;&nbsp;| 2020-Q4 | 55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>Key performance indicator values (excluding blanks and zero:<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Region&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Year | OI&nbsp;&nbsp;&nbsp;| Rev <br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Americas&nbsp;&nbsp;&nbsp;| 2018 | 1000 | 950 <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Americas&nbsp;&nbsp;&nbsp;| 2019 | 1100 | 1050<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Americas&nbsp;&nbsp;&nbsp;| 2020 | 1200 | 1150<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Europe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2018 | 800&nbsp;&nbsp;| 700 <br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Europe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2019 | 900&nbsp;&nbsp;| 950 <br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Europe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2020 | 1100 | 1050<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Antarctica | 2020 | 20&nbsp;&nbsp;&nbsp;| 15&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_serialize.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_spread.html">table spread</a><br/>
+<a class = "bold_text" href="LIB_Function_table_spread_given_headers.html">table spread given headers</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>view</h3>
+<a accesskey="p" href="LIB_Function_variable_view.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_view_reset.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">13 Help and Support Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_help.html"><div class="navi">13.1 help </div></a></li>
+<li class="navi"><a href="LIB_Function_help_welcome.html"><div class="navi">13.2 help ... </div></a></li>
+<li class="navi"><a href="LIB_Function_docs.html"><div class="navi">13.3 docs </div></a></li>
+<li class="navi"><a href="LIB_Function_openweb.html"><div class="navi">13.4 openweb </div></a></li>
+<li class="navi"><div>13.5 docs search </div></li>
+<li class="navi"><a href="LIB_Function_browser.html"><div class="navi"> browser </div></a></li>
+<li class="navi"><a href="LIB_Function_table_view.html"><div class="navi">13.6 table view </div></a></li>
+<li class="navi"><a href="LIB_Function_variable_view.html"><div class="navi">13.7 variable view </div></a></li>
+<li class="navi"><a href="LIB_Function_view.html"><div class="navi navi-selected">13.8 view </div></a></li>
+<li class="navi"><a href="LIB_Function_view_reset.html"><div class="navi">13.9 view reset </div></a></li>
+<li class="navi"><a href="LIB_Function_list_functions.html"><div class="navi">13.10 list / explain functions </div></a></li>
+<li class="navi"><a href="LIB_Function_dump_functions.html"><div class="navi">13.11 dump functions </div></a></li>
+<li class="navi"><a href="LIB_Function_dump_entities.html"><div class="navi">13.12 dump entities </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>view</code></div>
+<h4> Library</h4>
+<p>Support Library</p>
+<h4> Description</h4>
+<p>This function provides a more elaborate approach to view tables than the function <a class="bold_text" href="LIB_Function_table_list.html">table list</a>() which is just outputting some or all
+rows and columns of the table to the console.  You have the choice to view and scan through the table in B4P (using the console) or
+the web browser.  For the web browser, you can view the table either in conventional manner (static HTML file) or as a browsable
+data table (Data table functionaltiy is craeted and provided by: SpryMedia Ltd, Scotland, MIT license).
+
+<br><br>
+<u>Note</u>: Every time you view a table with this function, a copy of the table will be saved in the current working directory.
+The file name begins with "_b4p_view... .html" containing the table name.  The function <a class="bold_text" href="LIB_Function_view_reset.html">view reset</a>() will do the clean-up by deleting all such files created.
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>Under normal conditions, the 'Support Library' is loaded automatically, so no 'include(...)' call is needed.</p>
+<h4> Parameter count</h4>
+<p>1-2</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Name of existing table</b><br/><p></p>
+</td></tr>
+<tr><td>Opt. 2.<br/>input</td>
+<td>string</td>
+<td><b>Visualization tool</b><br/><p></p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:100px"><col style = "width:550px"><col style = "width:150px">
+<tr><th>Tool    </th><th> Functionality                                         </th><th> Restrictions</th></tr>
+<tr><td>here  </td><td> The table will be visualized on the console, providing interactive navigation features                          This is the default choice if the 2nd parameter is not specified.                 </td><td></td></tr>
+<tr><td>excel   </td><td> Saves the table as a ".xlsx" file and opens Microsoft Excel for viewing.                </td><td> Windows only</td></tr>
+<tr><td>csv </td><td> Saves the table as a ".csv" file and opens Microsoft Excel for viewing.             </td><td> Windows only</td></tr>
+<tr><td>html    </td><td> Saves the table as a ".html" file and opens Microsoft Excel for viewing.                </td><td> Windows only</td></tr>
+<tr><td>xml </td><td> Saves the table as a ".xls" file (EXCEL 2003 XML) and opens Micirosoft Excel for viewing.       </td><td> Depreciated format</td></tr>
+<tr><td>browser </td><td> Saves the table as a ".html" file and opens a web browser for direct viewing.               </td><td></td></tr>
+<tr><td>datatables </td><td> Saves the table as a ".html" file and opens the web browser and uses the Datatable feature as provided                   by SpryMedia Ltd under the MIT license                                </td><td></td></tr>
+</table><p>
+</p>
+<span class="black_text"><b> Default value: </b></span>here
+</td></tr>
+</table>
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_view.html">table view</a><br/>
+<a class = "bold_text" href="LIB_Function_table_list.html">table list</a><br/>
+<a class = "bold_text" href="LIB_Function_view_reset.html">view reset</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

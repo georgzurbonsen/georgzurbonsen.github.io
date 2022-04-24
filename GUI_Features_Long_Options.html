@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Long Options</h3>
+<a accesskey="p" href="GUI_Features_Command_line_switches.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_User_initialization_program.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Anlytics Engine</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 B4P Analytics Engine - User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_Engine.html"><div class="navi">3 Starting the Engine </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_Windows.html"><div class="navi">+ 3.1 Starting on Windows </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_Linux.html"><div class="navi">+ 3.2 Starting on Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_MacOS.html"><div class="navi">+ 3.3 Starting on MacOS </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior.html"><div class="navi">+ 3.4 Starting Behavior Basics </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_Line_Arguments_and_Options.html"><div class="navi">3.5 Command Line Arguments and Options </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Command_line_arguments.html"><div class="navi">3.5.1 Command Line Arguments </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_line_switches.html"><div class="navi">3.5.2 Command Line Switches </div></a></li>
+<li class="navi"><a href="GUI_Features_Long_Options.html"><div class="navi navi-selected">3.5.3 Long Options </div></a></li>
+<li class="navi"><a href="GUI_Features_User_initialization_program.html"><div class="navi">3.5.4 User Initialization Program </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+ 7 Recent Releases </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+<i>Long options</i> are command line options beginning wtih two consecutive minus signs (--) followed by an option name.  In addition, option values
+may be assigned to that name if immediately followed by an equal sign and further values.  For example <b>b4p test.b4p --silent --use_value=3</b>
+specifies two long options.
+
+<br><br>
+Following rules apply:
+</p><ul class="bullets"><li class="bullets">All long options must start with two consecutive minus signs (--)
+</li><li class="bullets">Spaces are not allowed.  <b>--use_value=3</b> is OK, but <b>--use_value = 3</b> is not.
+</li><li class="bullets">The sequential order is not relevant
+</li><li class="bullets">The long options may be placed anywhere before, between or after the <a class="bold_text" href="GUI_Features_Command_line_arguments.html">command line arguments</a>
+</li><li class="bullets">Long options are solely available for your B4P programs. They do not influence the starting and execution behavior of the B4P engine.
+</li></ul><p></p>
+<h4> Accessibility to B4P Programs</h4>
+<p>
+THe long options do not influence the ordering and contents of the  <span class="red_text">command line parameters</span> as they are treated independently.<br>
+See the B4P function description of <a class="bold_text" href="LIB_Function_get_long_options.html">get long options</a>() where some code examples are shown.
+</p>
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_get_long_options.html">get long options</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

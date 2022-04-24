@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>time, pure time</h3>
+<a accesskey="p" href="LIB_Function_date.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_Detects_dates_correctly_in_strings.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_str.html"><div class="navi">+ 4.1 str, soft </div></a></li>
+<li class="navi"><a href="LIB_Function_num.html"><div class="navi">4.2 num </div></a></li>
+<li class="navi"><a href="LIB_Function_clean_num.html"><div class="navi">4.3 clean num, clean if num </div></a></li>
+<li class="navi"><a href="LIB_Function_smart_num.html"><div class="navi">4.4 smart num, smart if num </div></a></li>
+<li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
+<li class="navi"><a href="LIB_Function_time.html"><div class="navi navi-selected">4.6 time, pure time </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Function_bool.html"><div class="navi">4.8 bool </div></a></li>
+<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
+<li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
+<li class="navi"><a href="LIB_Function_type.html"><div class="navi">4.12 type, subtype </div></a></li>
+<li class="navi"><a href="LIB_Function_hash_signature.html"><div class="navi">4.13 hash signature </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_column.html"><div class="navi">4.14 excel column </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_coordinates.html"><div class="navi">4.15 excel coordinates </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_validate_sheet_name.html"><div class="navi">4.16 excel validate sheet name </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>time, pure time</code></div>
+<h4> Description</h4>
+<p>
+This function converts time information contained in strings or numeric date information into B4P <a class="bold_text" href="LAN_Features_data_types_dates.html">plain date</a> type.  The differences
+of the two function names are described below:
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><td>time            </td><td> Dates without time info convert to blank dates.  Dates with time info are converted as expected.</td></tr>
+<tr><td>pure time       </td><td> Result will always contain a time.  Blank dates and date-only information convert to 00:00:00 (midnight).</td></tr>
+</table><p>
+<br><br>
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:200px"><col style = "width:600px">
+<tr><th>Input Form              </th><th> # Parameters required </th><th> Description</th></tr>
+<tr><td>String input            </td><td> 1 or 2                </td><td> Converts a string to date.  Locale settings (referring to system variable 'local settings[date format short]' rule the year/month/day sequence if the date is ambiguous, e.g. "10.11.12".  Change that value prior to the call if dates are ambiguous and need to use a different format assumption. See <a class="bold_text" href="LIB_Features_Detects_dates_correctly_in_strings.html">Date and Time Detection Rules</a> for details.</td></tr>
+<tr><td>today                   </td><td> 1                     </td><td> Meaningless, because it contains no time info.</td></tr>
+<tr><td>now                     </td><td> 1                     </td><td> Uses today's time (local time, today's date is ignored)</td></tr>
+<tr><td>utc                     </td><td> 1                     </td><td> Uses today's date and time (UTC)</td></tr>
+<tr><td>numeric date            </td><td> 1                     </td><td> Meaningless, because it contains no time info</td></tr>
+<tr><td>serial date             </td><td> 1                     </td><td> Microsoft serial date and time, as used in Excel.  Only the fraction is used E.g. 44000.75 translates to 18:00:00.</td></tr>
+<tr><td>numeric time            </td><td> 1                     </td><td> Values between 0 and 1/(24+60+60), i.e. below 1, convert to time-only information</td></tr>
+<tr><td>time in numbers         </td><td> 1 or 2 or 3           </td><td> Provide hour, minute and optonally second to convert to time</td></tr>
+<tr><td>date and time in numbers</td><td> 4 or 5 or 6           </td><td> Like above, but also include hours, minutes and seconds</td></tr>
+<tr><td>variable in date format </td><td> 1                     </td><td> Time info of the date will be passed through.  Text representations will be elimnated.</td></tr>
+<tr><td>parameter set           </td><td> 1                     </td><td> Indirect parameter passing scheme: Put the 1-6 parameters into a parameter set, e.g. date( { 23,59,59 } );</td></tr>
+</table><p>
+
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Parameter count</h4>
+<p>1-3</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>input</td>
+<td>string</td>
+<td><b>Time</b><br/><p>Convert a time in a string to a date variable containing time information only. The keyword 'now' returns the current time of day.<br>See <a class="bold_text" href="LIB_Features_Detects_dates_correctly_in_strings.html">Date and Time Detection Rules</a> for ruling details.</p>
+</td></tr>
+<tr><td>Alt. 1<br/>input</td>
+<td>numeral</td>
+<td><b>Hour</b><br/><p>Range: 0 .. 23</p>
+</td></tr>
+<tr><td>Opt. 2<br/>input</td>
+<td>numeral</td>
+<td><b>Minute</b><br/><p>Range: 0 .. 59</p>
+<span class="black_text"><b> Default value: </b></span>0
+</td></tr>
+<tr><td>Opt. 3<br/>input</td>
+<td>numeral</td>
+<td><b>Second</b><br/><p>Range: 0 .. 59</p>
+<span class="black_text"><b> Default value: </b></span>0
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>string</td>
+<td><b>Date and/or time</b><br/><p>Contains date, time, date and time combined or blank date.  No string context of the date is preserved or included.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( time ( now ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( pure time ( today ) );&nbsp;&nbsp;&nbsp;// 00:00:00<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( time ( "08:30 p.m." ));&nbsp;&nbsp;// 20:30:00<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { 20, 15, 30 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( time ( a[] ));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 20:15:30<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( time ( '2020-12-31' ) ); // Blank date value<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( time ( 19/24 ));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 19:00:00</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>00:20:49<br>00:00:00<br>20:30:00<br>20:15:30<br><br>19:00:00<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_time.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_date.html">date conversion functions</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">date</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">pure date</a><br/>
+<a class = "bold_text" href="LIB_Function_date.html">date time</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

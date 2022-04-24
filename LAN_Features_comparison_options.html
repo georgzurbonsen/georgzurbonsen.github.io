@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Comparison Options</h3>
+<a accesskey="p" href="LAN_Features_greater_than_or_equal_to.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_wildcards.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">4 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">4.1 Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+ 4.2 Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">4.3 Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_unary_operators.html"><div class="navi">4.3.1 Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_binary_operators.html"><div class="navi">4.3.2 Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_arithmetic_operator.html"><div class="navi">+ 4.3.3 Arithmetic Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_operators.html"><div class="navi">+ 4.3.4 Comparison Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_options.html"><div class="navi navi-selected">4.3.5 Comparison Options </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_wildcards.html"><div class="navi">4.3.5.1 Wildcards </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_logical_operators.html"><div class="navi">+ 4.3.6 Logical Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">4.4 Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 4.5 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">4.6 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">4.7 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+ 4.8 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Comparison options provide further adjustments on the comparison rules.  The rules affect the following:
+</p><ul class="bullets"><li class="bullets">String comparisons: Ignoring case and/or blanks
+</li><li class="bullets">Numeric comparisons: Using epsilon as tolerance value.
+</li></ul><p>
+<br/><img src="Images/Description_Formulas_Comparison_Options.jpg" alt="Comparison Options"><br/></p>
+<h4> Options for String Comparisons</h4>
+<p>Specify '+' after the comparison operator to ignore upper/lower case checking, and '~' to ignore all blanks.
+Both symbols may be used where it does not matter if specified as '+~' or the '~+'.
+</p>
+<h5> Comparing varieties of ahorns and the F horn (an instrument)</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;runtime settings[ epsilon ] = 0.001; // Make comparisons very tolerant for now to show how it works<br/>
+<br/>
+&nbsp;&nbsp;// 1st number is on left side of comparison, the others are on the right sides<br/>
+&nbsp;&nbsp;numbers[] = { A horn, A Horn, AHorn, A horn, Ahorn, a horn, ahorn, F horn };<br/>
+&nbsp;&nbsp;symbols[] = { '=',&nbsp;&nbsp;'=~',&nbsp;&nbsp;'=+',&nbsp;&nbsp;'=+~',&nbsp;&nbsp;'', // Blanks cause line breaks for better visibility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;&gt;', '&lt;&gt;~', '&lt;&gt;+', '&lt;&gt;+~', '',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&gt;',&nbsp;&nbsp;&nbsp;'&gt;~', '&gt;+',&nbsp;&nbsp;'&gt;+~',&nbsp;&nbsp;'',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&gt;=',&nbsp;&nbsp;'&gt;=~','&gt;=+', '&gt;=+~', '',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;',&nbsp;&nbsp;&nbsp;'&lt;~', '&lt;+',&nbsp;&nbsp;'&lt;+~',&nbsp;&nbsp;'',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;=',&nbsp;&nbsp;'&lt;=~','&lt;=+', '&lt;=+~' };<br/>
+<br/>
+&nbsp;&nbsp;table initialize( overview, {numbers[]} + symbols[] );<br/>
+<br/>
+&nbsp;&nbsp;table process selected rows( overview, [0]!='',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (col[] = 1, col[] &lt; table row width( overview, 0 ), col[]++ )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Formulate the coparison expression in a string and use 'compare' to use it. Colon required for this.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// [0,0] = Current table (overview), column 0, row 0.&nbsp;&nbsp;&nbsp;[0] = Current table, column 0, current row<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[col[]] = compare ( [0,0], : [0] + [col[],0] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>
+<br/>
+&nbsp;&nbsp;table list( overview ); </code></div>
+<h4> Output 02</h4>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : A horn | A Horn | AHorn | A horn | Ahorn | a horn | ahorn | F horn<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : =~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;&nbsp;3 : =+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;&nbsp;4 : =+~&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false <br>&nbsp;&nbsp;&nbsp;&nbsp;5 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : &lt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : &lt;&gt;~&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : &lt;&gt;+&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : &lt;&gt;+~&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;12 : &gt;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;13 : &gt;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;14 : &gt;+~&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;15 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;16 : &gt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;17 : &gt;=~&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;18 : &gt;=+&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| false | false <br>&nbsp;&nbsp;&nbsp;19 : &gt;=+~&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| false <br>&nbsp;&nbsp;&nbsp;20 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;21 : &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;22 : &lt;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;23 : &lt;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;24 : &lt;+~&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | false&nbsp;&nbsp;| false | true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;25 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;26 : &lt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;27 : &lt;=~&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;| false | true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;28 : &lt;=+&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;29 : &lt;=+~&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;| true&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_comparison_options.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Options for Numeric Comparisons</h4>
+<p>For numeric comparisons, the plus sign is ignored.  However, the '~' sign provides a numeric tolerance of value epsilon.
+This value is maintained in the system variable <b>run time settings[epsilon]</b> and may be changed to a different
+meaningful value if needed.  Tolerant comparisons make sense for comparing two values which have gone through some
+calculatons and minor numeric imprecisions may have occurred which should not adversely influence numeric comparisons.
+
+The following overview illustrates how the epsilon comparison tolerance is applied for the different operators:
+
+<br/><img src="Images/Description_Formulas_Comparison_Epsilon.jpg" alt="Comparison Options"><br/>
+</p>
+<h5> Simple example of comparisons dealing with minor imperfections from calculations</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[] = 1.2156;<br/>
+&nbsp;&nbsp;b[] = a[] * 1.9123 * 2.591271 / 1.9123 / 2.591271; // Result should be unchanged&nbsp;&nbsp;...theoretically.<br/>
+<br/>
+&nbsp;&nbsp;echo( a[], ", ", b[] );<br/>
+&nbsp;&nbsp;echo( "Epsilon: ", runtime settings[epsilon] );<br/>
+&nbsp;&nbsp;echo( "Hard comparison&nbsp;&nbsp;&nbsp;&nbsp;: ", a[] = b[] );&nbsp;&nbsp;&nbsp;// Falsely outputting false<br/>
+&nbsp;&nbsp;echo( "Tolerant comparison: ", a[] = ~b[] );&nbsp;&nbsp;// Now it's OK (both values are within epsilon tolerance)</code></div>
+<h4> Output 03</h4>
+<div class="output_background_color" ><code>1.2156, 1.2156<br>Epsilon: 0.0000000001<br>Hard comparison&nbsp;&nbsp;&nbsp;&nbsp;: false<br>Tolerant comparison: true<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_comparison_options_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h5> Comprehensive overview</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;runtime settings[ epsilon ] = 0.001; // Make comparisons very tolerant for now to show how it works<br/>
+<br/>
+&nbsp;&nbsp;// 1st number is on left side of comparison, the others are on the right sides<br/>
+&nbsp;&nbsp;numbers[] = { 15.0000, 14.9989, 14.9990, 14.9991, 15.0000, 15.0009, 15.0010, 15.0011 };<br/>
+&nbsp;&nbsp;symbols[] = { '=', '=~', '&lt;&gt;', '&lt;&gt;~', '&gt;', '&gt;~', '&gt;=', '&gt;=~', '&lt;', '&lt;~', '&lt;=', '&lt;=~' };<br/>
+<br/>
+&nbsp;&nbsp;table initialize( overview, {numbers[]} + symbols[] );<br/>
+<br/>
+&nbsp;&nbsp;table process( overview, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (col[] = 1, col[] &lt; table row width( overview, 0 ), col[]++ )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Formulate the coparison expression in a string and use 'compare' to use it. Colon required for this.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// [0,0] = Current table (overview), column 0, row 0.&nbsp;&nbsp;&nbsp;[0] = Current table, column 0, current row<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[col[]] = compare ( [0,0], : [0] + str( [col[],0] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>
+<br/>
+&nbsp;&nbsp;table list( overview ); </code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : 15.0000 | 14.9989 | 14.9990 | 14.9991 | 15.0000 | 15.0009 | 15.0010 | 15.0011<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : =~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : &lt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : &lt;&gt;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : &gt;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : &gt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : &gt;=~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : &lt;~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : &lt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : &lt;=~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| false&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;&nbsp;| true&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_comparison_options_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

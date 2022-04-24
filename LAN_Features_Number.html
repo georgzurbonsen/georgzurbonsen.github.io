@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Numbers</h3>
+<a accesskey="p" href="LAN_Features_Multi-line_text.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Scientific_Notation.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">1.1 Basics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Text.html"><div class="navi">+ 1.1.1 Text </div></a></li>
+<li class="navi"><a href="LAN_Features_Number.html"><div class="navi navi-selected">1.1.2 Numbers </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Scientific_Notation.html"><div class="navi">1.1.2.1 Scientific Notation </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Symbols.html"><div class="navi">1.1.3 Symbols </div></a></li>
+<li class="navi"><a href="LAN_Features_comments.html"><div class="navi">1.1.4 Comments </div></a></li>
+<li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">+ 1.1.5 Characters </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+ 1.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks.html"><div class="navi">1.3 Blocks </div></a></li>
+<li class="navi"><a href="LAN_Features_Statements.html"><div class="navi">1.4 Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+ 1.5 Miscellaneous Features </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">1.6 Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+In the B4P language, numbers are numeric values which optionally contain decimal points.  The same applies to reading numbers from <a class="bold_text" href="LAN_Features_tables.html">tables</a>.
+Following rules apply:
+
+</p><ul class="bullets"><li class="bullets">It must contain at least 1 digit (0..9)
+</li><li class="bullets">Negative numebers start with a minus sign (see: <a class="bold_text" href="LAN_Features_unary_operators.html">unary operators</a>)
+</li><li class="bullets">The number must not contain spaces and/or thousand separator symbols.  Use <a class="bold_text" href="LIB_Function_clean_num.html">clean num</a>() to remove such symbols automatically.
+</li><li class="bullets">At most one decimal point may be used.  More points inside make the value look like a <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a>.
+<ul class="bullets"><li class="bullets">A lone decimal describes a <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a> containing one character.
+</li><li class="bullets">At least one digit must be added before or after the decimal point, e.g. <b>5.</b> or <b>.5</b> are OK, specifying 5 and 0.5.
+</li></ul></li><li class="bullets">Leading zeros in front and trailing zeros after the digits after the comma are OK
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Scientific_Notation.html">Scientific notation</a>: Not supported, but see next section.
+<ul class="bullets"><li class="bullets"> However, use <a class="bold_text" href="LIB_Function_num.html">num</a>() or <a class="bold_text" href="LIB_Function_clean_num.html">clean num</a>() to specify scientific notations.
+</li><li class="bullets">Exceptions: Table entries may contain numbers in scientific notation, but use <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() to activate reading scientific notation.
+</li><li class="bullets">Scientific notation is also supported in numbers in JSON files.  See <a class="bold_text" href="LIB_Function_variable_load.html">variable load</a>() to load JSON files.
+</li></ul></li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;echo( 1 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simple numeral<br/>
+&nbsp;&nbsp;echo( 1 1 + 2 2 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Attention: These two numbers are strings : '1 12 2' is returned, not '33' or '3 3'<br/>
+&nbsp;&nbsp;echo( 123.45 );<br/>
+&nbsp;&nbsp;echo( 0123.450 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Same value as above<br/>
+&nbsp;&nbsp;echo( 0123.450 *1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Operation applied (multplied by 1), therefore text representation has been dropped</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>1<br>1 12 2<br>123.45<br>0123.450<br>123.45<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Number.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_data_types_numerals.html">Numerals</a><br/>
+<a class = "bold_text" href="LAN_Features_Scientific_Notation.html">Scientific Notation</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

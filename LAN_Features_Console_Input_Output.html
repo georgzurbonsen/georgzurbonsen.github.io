@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Console Input / Output</h3>
+<a accesskey="p" href="LAN_Features_Character_Entities.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Special_keys.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">1 The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">1.1 Basics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Text.html"><div class="navi">+ 1.1.1 Text </div></a></li>
+<li class="navi"><a href="LAN_Features_Number.html"><div class="navi">+ 1.1.2 Numbers </div></a></li>
+<li class="navi"><a href="LAN_Features_Symbols.html"><div class="navi">1.1.3 Symbols </div></a></li>
+<li class="navi"><a href="LAN_Features_comments.html"><div class="navi">1.1.4 Comments </div></a></li>
+<li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">1.1.5 Characters </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Full_UNICODE_Support.html"><div class="navi">1.1.5.1 Full UNICODE Support </div></a></li>
+<li class="navi"><a href="LAN_Features_New_Line.html"><div class="navi">1.1.5.2 New Line </div></a></li>
+<li class="navi"><a href="LAN_Features_case_sensitivity.html"><div class="navi">1.1.5.3 Case Sensitivity </div></a></li>
+<li class="navi"><a href="LAN_Features_Character_Entities.html"><div class="navi">1.1.5.4 Character Entities </div></a></li>
+<li class="navi"><a href="LAN_Features_Console_Input_Output.html"><div class="navi navi-selected">1.1.5.5 Console Input / Output </div></a></li>
+<li class="navi"><a href="LAN_Features_Special_keys.html"><div class="navi">1.1.5.6 Special Keyboard Input Characters </div></a></li>
+<li class="navi"><a href="LAN_Features_Special_Console_Output_Characters.html"><div class="navi">1.1.5.7 Special Console Output Characters </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+ 1.2 Basic Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks.html"><div class="navi">1.3 Blocks </div></a></li>
+<li class="navi"><a href="LAN_Features_Statements.html"><div class="navi">1.4 Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+ 1.5 Miscellaneous Features </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">1.6 Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Console Output</h4>
+<p>
+Good news: The consoles under Windows, LINUX and MacOS support full UNICODE.<br>
+Bad news: Most console and terminal programs do not display all available UNICODE characters properly
+
+<br><br>
+
+All consoles support the ANSI (formerly: ASCII) chracter set.  Most consoles support additional character sets such as
+
+</p><ul class="bullets"><li class="bullets">Basic Latin
+</li><li class="bullets">Latin-1 Supplement (To ensure Düsseldorf is not written as Dusseldorf - translated as "village of fools")
+</li><li class="bullets">Latin Extended A
+</li><li class="bullets">Greek (for language enthsiasts and fraternity/sorority members in North America)
+</li><li class="bullets">Cyrillic (Russian)
+</li><li class="bullets">A set of additional symbols (also found in win1252 character set) including the Euro currency sign
+</li></ul><p>
+Some modern console programs support an increasing number of UNICODE symbols, including various Asian fonts and emojies.
+Unsupported symbols will automatically be shown using question marks or placeholder boxes.
+</p>
+<h4> Console Input</h4>
+<p>
+Consoles under Windows have only limited capabilities to input non-ANSI characters.  Under Windows, foreign characters are accepted, but the EURO-symbol is not.<br>
+<u>Hint:</u> Consider using <a class="bold_text" href="LAN_Features_Character_Entities.html">character entities</a> to specify special characters which you do cannot find on your keyboard.
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
