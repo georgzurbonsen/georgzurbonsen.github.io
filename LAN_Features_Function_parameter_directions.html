@@ -68,9 +68,8 @@ B4P distinguishes among following function parameter directions which are descri
 </p>
 <h4> Input Parameters</h4>
 <p>
-The parameters supplied to the function are values.  They can be constants, existing <a class="bold_text" href="LAN_Features_Variable.html">variables</a>, <a class="bold_text" href="LAN_Features_accessing_tables.html">table references</a>,
-and any form of right-hand expressions containing calculations and/or other function calls.  Variables passed as paramters
-must be defined (i.e. values assigned) prior to calling the function.
+For input parameters, <a class="bold_text" href="LAN_Features_Right-Hand_Side_Expression.html">right-hand side expressions</a> are expected, for exmpple <a class="bold_text" href="LAN_Features_Basic_language_elements.html">values</a>, <a class="bold_text" href="LAN_Features_Variable.html">variables</a>, <a class="bold_text" href="LAN_Features_accessing_tables.html">table references</a>, <a class="bold_text" href="LAN_Features_Calculations.html">calculations</a>, etc.
+All variables used in these input parameters must be existing, i.e. values assigned.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;a[] = World;<br/>
@@ -79,9 +78,9 @@ must be defined (i.e. values assigned) prior to calling the function.
 <div class="output_background_color" ><code>Hello World 6<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Function_parameter_directions.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Output Parameters</h4>
 <p>
-The parameters must either be a <a class="bold_text" href="LAN_Features_Variable.html">variable</a> or <a class="bold_text" href="LAN_Features_accessing_tables.html">table reference</a>, similar to left-hand side of assignment statements.
+For output parameters, <a class="bold_text" href="LAN_Features_Left-Hand_Side_Expression.html">left-hand side expressions</a> are expected in order to specify a destination location in a table or variable.
 Constants and calculated expressions are not allowed.  Before the function is called, variables which are not yet existing,
-will be defined automatically. After the function call has been completed, the value will be written back to the variable or table.
+will be defined automatically. After the function call has been completed, the value will be written back to the variable or table location.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;a[] = find( 'Say Hi!', { Ha, Hä, He, Hi, Ho }, 0, which[] );<br/>
@@ -90,10 +89,11 @@ will be defined automatically. After the function call has been completed, the v
 <div class="output_background_color" ><code>3<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Function_parameter_directions_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Input / Output Parameters</h4>
 <p>
-The parameters must either be an existing <a class="bold_text" href="LAN_Features_Variable.html">variable</a> or <a class="bold_text" href="LAN_Features_accessing_tables.html">table reference</a>, similar to left-hand side of assignment statements.
-Constants and calculated expressions are not allowed.
-Before the function is called, the value will be retrieved from the variable or table.  After the function call has been completed,
-the value will be written back to the table.
+
+For output parameters, <a class="bold_text" href="LAN_Features_Left-Hand_Side_Expression.html">left-hand side expressions</a> are expected in order to specify a destination location in a table or variable.
+Constants and calculated expressions are not allowed.  Specified variables must be existing.  Before the function is called, the specified
+parameter will be applied to retrieve the input value. After the call has been completed, the value will be written back to the variable or table location.
+
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;table initialize( t, {{ Hi, He }} );<br/>

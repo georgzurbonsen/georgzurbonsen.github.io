@@ -55,30 +55,20 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-B4P provides an extensive library of standard functions with an emphasis on processing complex tables and data structures.
+B4P provides an extensive library of standard functions with an emphasis on processing complex tables and data structures.  Some of the standard functions
+are part of the B4P Data Engine where other functions are provided in B4P function libraries (which are coded in B4P).   You can also define your own functions.
 
-<br><br>
-
-Functions and procedures are subroutines that can be called up using their name.  For simplicity, all such subroutines are referred to
-as <i>functions</i> throughout the B4P documentation, regardless of whether they provide a return value (as functions) or not (as procedures).
-
+<br/><br/><img src="Images/LAN_Functions.png" alt="Functions"><br/>
 </p>
-<h4> Procedure and Function Calls</h4>
-<p>
-Various B4P functions can only be called as functions in <a class="bold_text" href="LAN_Features_Expressions.html">expressions</a>, standalone <b>procedure calls</b>, or both are allowed.
-In procedure calls, no return values are made use of.
-Functions may require either none, a fixed number, or a variable number of <a class="bold_text" href="LAN_Features_Function_Parameters.html">function parameters</a> with different <a class="bold_text" href="LAN_Features_Function_parameter_directions.html">function parameter directions</a>.
-
-<br><br>
-
-</p><table class="bold_column_1 bold_column_3" style = "width:1000px"><col style = "width:200px"><col style = "width:600px"><col style = "width:200px">
-<tr><th>Function Nature     </th><th> Description                   </th><th> Examples</th></tr>
-<tr><td>Function        </td><td> * Always provides a return value <br) * Must be called inside expressions where the return value is used further. </td><td> a[] = abs( 1.5 );<br>echo( sqrt( 81 ) );</td></tr>
-<tr><td>Procedure       </td><td> * Does not provide return values  <br> * Must be called as procedures. <br> * If no parameters are supplied, then the function name can be used alone with semicolon at the end. </td><td> echo;<br>echo();<br>echo(Hello);</td></tr>
-<tr><td>Procedure or function   </td><td> * The function can be called as procedrues or functions. <br> * Use of return value is voluntary. </td><td> table rename headers(...);<br>a[] = table rename headers(...);</td></tr>
-<tr><td>Control flow functions  </td><td> <a class="bold_text" href="LIB_Features_Control_flow_functions.html">Control flow functions</a> require a succeeding statement or code block which will be executed as specified by these functions.  The <a class="bold_text" href="LIB_Function_if.html">if</a>() statement is one of them. </td><td> if (a[]=1) echo("is 1");</td></tr>
-</table><p>
-</p>
+<h4> Rules</h4>
+<p></p><ul class="bullets"><li class="bullets">The term <b>Function</b> is the generic term related to all B4P procedures and functions defined.
+</li><li class="bullets">Function names support spaces.  More info, see seciton on <a class="bold_text" href="LAN_Features_Procedure_Names.html">Function Naming</a>.
+</li><li class="bullets">Some of them can only be called as procedures, as functions, and as both procedures and functions.
+</li><li class="bullets">Some functions require a fixed number of <a class="bold_text" href="LAN_Features_Function_Parameters.html">function parameters</a> where other functions provide allow a variable number of parameters.
+<ul class="bullets"><li class="bullets">Procedure calls with zero parameters require not parentheses.  Example: <b>print bar;</b>
+</li><li class="bullets">Function calls witzh zero parameters require parentheses.  Example: <b>sum()</b>
+</li></ul></li><li class="bullets">The function parameters may have different <a class="bold_text" href="LAN_Features_Function_parameter_directions.html">function parameter directions</a> (input, output, etc.).
+</li></ul><p></p>
 <h4> User-Defined Procedures and Functions</h4>
 <p>
 B4P provide a convenient method to create <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined procedures</a> and <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a> and call them up as if they would be part of the standard B4P function library.

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>MacOS Start B4P Data Engine</h3>
+<a accesskey="p" href="GUI_Features_MacOS_Start_B4P_to_run_B4P_programs.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Starting_Behavior.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Anlytics Engine</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 B4P Data Engine - User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_and_Setup.html"><div class="navi">+ 2 Installation and Setup </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_Engine.html"><div class="navi">3 Starting the Engine </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_Windows.html"><div class="navi">+ 3.1 Starting on Windows </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_Linux.html"><div class="navi">+ 3.2 Starting on Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_on_MacOS.html"><div class="navi">3.3 Starting on MacOS </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Edit_B4P_Programs_on_MacOS.html"><div class="navi">3.3.1 MacOS Edit B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_a_B4P_Program_with_MacOS.html"><div class="navi">+ 3.3.2 MacOS Start B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_the_B4P_Data_Engine_with_MacOS.html"><div class="navi navi-selected"> MacOS Start B4P Data Engine </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior.html"><div class="navi">+ 3.4 Starting Behavior Basics </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_Line_Arguments_and_Options.html"><div class="navi">+ 3.5 Command Line Arguments and Options </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+ 7 Recent Releases </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Starting a B4P Program on MacOS</h4>
+<p>
+B4P can also be started without specifying a dedicated file name.  In this case, it will first look for "main.b4p" in the current
+directory (if started from command line).  If the file is not found, then it will look for "main.b4p" in <a class="bold_text" href="LIB_Function_starting_directory.html">starting directory</a>.
+If not successful, then interactive mode is started.
+
+<br><br>
+
+In the next example, B4P starts and finds 'main.b4p' in the initial starting directory which is the subdirectory 'b4p' in your home directory.
+</p>
+<h5> Start B4P Data Engine</h5>
+<div class="code_background_color" ><code>[~]$ b4p</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version 10.00 Release Candidate 2 (2022-03-27)<br/>
+Copyright (C) 2012..2022 Georg zur Bonsen, all rights reserved.<br/>
+Licensing info ...<br/>
+<br/>
+Starting 'Main.b4p' in two seconds...&nbsp;&nbsp;Press any key to interrupt. <br/>
+<br/>
+Started Main.b4p.<br/>
+This is the main program<br/>
+Feel free to add some code here ...<br/>
+<br/>
+Type 'help' for help, 'docs' for online B4P documentation.<br/>
+&gt;&gt; </code></div>
+<h4> B4P started</h4>
+<p>
+You are in interactive mode. The next example shows that B4P as entered into the starting directory (subdirectory b4p)
+and that you can start 'hello world'.
+</p>
+<h5> Start B4P Program from Interactive mode</h5>
+<div class="code_background_color" ><code>&gt;&gt; $ pwd</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>/home/username/b4p</code></div>
+<h5> </h5>
+<div class="code_background_color" ><code>&gt;&gt; start(hello world.b4p)</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Hello World</code></div>
+<h5> </h5>
+<div class="code_background_color" ><code>&gt;&gt; exit</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Done - Press Enter Key<br/>
+[~]$</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
