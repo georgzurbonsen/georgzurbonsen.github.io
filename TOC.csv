@@ -464,8 +464,9 @@ OK;Body;1;4: Function Library Guide;B 9;Table Functions;LIB_Features_table_funct
 OK;Body;2;4: Function Library Guide;B 9.01;Loading and Saving Tables;LIB_Features_Loading_and_saving_tables.html;Loading and saving tables;Loading and saving tables;
 OK;Body;3;4: Function Library Guide;B 9.01.01;table load ...;LIB_Function_table_load.html;table load,table load unchanged;table load,table load unchanged,Loading and saving tables;
 OK;Body;4;4: Function Library Guide;B 9.01.01.01;Loading HTML files;LIB_Features_Loading_HTML_files.html;Loading HTML files;Loading HTML files;
-OK;Body;4;4: Function Library Guide;B 9.01.01.02;Loading XML files;LIB_Features_Loading_XML_files.html;Loading XML files;Loading XML files;
-OK;Body;4;4: Function Library Guide;B 9.01.01.03;Loading JSON files;LIB_Features_Loading_JSON_files.html;Loading JSON files;Loading JSON files;
+OK;Body;4;4: Function Library Guide;B 9.01.01.02;Loading FULL HTML files;LIB_Features_Loading_FULL_HTML_files.html;Loading FULL HTML files;Loading FULL HTML files;
+OK;Body;4;4: Function Library Guide;B 9.01.01.03;Loading XML files;LIB_Features_Loading_XML_files.html;Loading XML files;Loading XML files;
+OK;Body;4;4: Function Library Guide;B 9.01.01.04;Loading JSON files;LIB_Features_Loading_JSON_files.html;Loading JSON files;Loading JSON files;
 OK;Body;3;4: Function Library Guide;B 9.01.02;table save ...;LIB_Function_table_save.html;table save,table save with local decimal separator,table save with decimal comma,table save multiple;table save,table save with local decimal separator,table save with decimal comma,table save multiple;
 OK;Body;4;4: Function Library Guide;B 9.01.02.01;Saving JSON files;LIB_Features_Saving_JSON_files.html;Saving JSON files;Saving JSON files;
 OK;Body;3;4: Function Library Guide;B 9.01.03;excel list sheets;LIB_Function_excel_list_sheets.html;excel list sheets;excel list sheets;
