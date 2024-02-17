@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Comparison Operators</h3>
+<a accesskey="p" href="LAN_Features_division.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_equal_to.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">4 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">4.1 Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+ 4.2 Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">4.3 Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_unary_operators.html"><div class="navi">4.3.1 Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_binary_operators.html"><div class="navi">4.3.2 Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_arithmetic_operator.html"><div class="navi">+ 4.3.3 Arithmetic Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_operators.html"><div class="navi navi-selected">4.3.4 Comparison Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_equal_to.html"><div class="navi">4.3.4.1 Equal to </div></a></li>
+<li class="navi"><a href="LAN_Features_not_equal_to.html"><div class="navi">4.3.4.2 Not Equal to </div></a></li>
+<li class="navi"><a href="LAN_Features_strictly_equal_to.html"><div class="navi">4.3.4.3 Strictly Equal to </div></a></li>
+<li class="navi"><a href="LAN_Features_strictly_not_equal_to.html"><div class="navi">4.3.4.4 Strictly Not Equal to </div></a></li>
+<li class="navi"><a href="LAN_Features_smaller_than_or_equal_to.html"><div class="navi">4.3.4.5 Smaller than (or Equal to) </div></a></li>
+<li class="navi"><a href="LAN_Features_greater_than_or_equal_to.html"><div class="navi">4.3.4.6 Greater than (or Equal to) </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_comparison_options.html"><div class="navi">+ 4.3.5 Comparison Options </div></a></li>
+<li class="navi"><a href="LAN_Features_logical_operators.html"><div class="navi">+ 4.3.6 Logical Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">4.4 Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 4.5 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">4.6 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">4.7 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+ 4.8 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>Unlike other programming languages which define 6 comparison operators, B4P supports 8 comparison operators which can be combined with <a class="bold_text" href="LAN_Features_comparison_options.html">comparison options</a>
+to make adjustments on the comparison rules:
+</p><ul class="bullets"><li class="bullets"><b>&lt;</b> Less than
+</li><li class="bullets"><b>&lt;=</b> Less than or equal to
+</li><li class="bullets"><b>&gt;</b> Greater than
+</li><li class="bullets"><b>&gt;=</b> Greater than or equal to
+</li><li class="bullets"><b>=</b> Equal to, expecting 1 or more operands separated by comma (comparing with a <b>selection of multiple values</b> separated with commas) and/or <b>ranges</b>.
+</li><li class="bullets"><b>&lt;&gt;</b> Not equal to, expecting 1 or more operands separated by comma (comparing with a <b>selection of multiple values<b> separated with commas) and/or <b>ranges</b>.
+</li><li class="bullets"><b>==</b> <a class="bold_text" href="LAN_Features_strictly_equal_to.html">strictly Equal to</a>, expecting 1 operand only
+</li><li class="bullets"><b>!=</b> <a class="bold_text" href="LAN_Features_strictly_not_equal_to.html">strictly not equal to</a>, expecting 1 operand only
+</li></ul><p>
+Comparisons with b>=</b> and <b>&gt;&lt;</b> are more tolerant in comparing numbers and strings containing numbers, and also support
+wildcard symbols on the right-hand operands if they are defined as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted strings</a> (e.g. <a class="bold_text" href="LAN_Features_Text_inside_single_quotation_marks.html">text inside single quotation marks</a>).
+
+</p>
+<h4> Attention! = and &lt;&gt; may Hijack Parameters</h4>
+<p>
+<u>Attention</u>: As the two comparison operators <b>=</b> and <b>&gt;&lt;</b> expect 1 or more operands on the right hand side,
+you may risk situations where the comparison hijacks the remaining comma-separated values on the right-hand-side typically encountered
+in function parameters and values in parameter sets.  To avoid this, put the comparison into parentheses, or use the <b>==</b> and <b>!=</b>
+symbols.</p>
+<h4> Examples 02</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;b[] = 12; <br/>
+&nbsp;&nbsp;// Want to compare b[] == 9 and include the result in the parameter set between 'false' and 12<br/>
+&nbsp;&nbsp;// Good luck!<br/>
+<br/>
+&nbsp;&nbsp;a[0] = { 3, 6, false, b[] =&nbsp;&nbsp;9 , 12, 15 }; // Comparison has hijacked the last two parameters<br/>
+&nbsp;&nbsp;a[1] = { 3, 6, false,(b[] =&nbsp;&nbsp;9), 12, 15 }; // OK<br/>
+&nbsp;&nbsp;a[2] = { 3, 6, false, b[] == 9 , 12, 15 }; // OK<br/>
+<br/>
+&nbsp;&nbsp;for all variables( a[], b[] ) echo( b[] );</code></div>
+<h4> Output 02</h4>
+<div class="output_background_color" ><code>{3,6,false,true}<br>{3,6,false,false,12,15}<br>{3,6,false,false,12,15}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_comparison_operators.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2021 Georg zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
