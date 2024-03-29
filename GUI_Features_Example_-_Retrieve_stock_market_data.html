@@ -43,13 +43,11 @@
 <li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+ 7 Recent Releases </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
-<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
 	</div>
 
@@ -112,7 +110,7 @@ Information source: <a href="https://www.slickcharts.com/nasdaq100" target="_bla
 &nbsp;&nbsp;&nbsp;&nbsp;table save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( stocks, "Images&#92;Stock Market Listing.html", HTML );<br/>
 </code></div>
 <h5> The Output</h5>
-<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Saved table(s) to EXCEL file 'Stocks.xlsx' containing 1 sheets.<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Example_-_Retrieve_stock_market_data.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Row #: Code Text _______________________________________________________<br>&nbsp;&nbsp;&nbsp;&nbsp;1: include ( Support Library );<br>&nbsp;&nbsp;&nbsp;&nbsp;2: include ( Utility Library );<br>&nbsp;&nbsp;&nbsp;&nbsp;3: include ( Office Library );<br>&nbsp;&nbsp;&nbsp;&nbsp;4: include ( Style Library );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Include this library if you want to use the 'table style ...' functions.<br>&nbsp;&nbsp;&nbsp;&nbsp;5: //&nbsp;&nbsp;Step 1: Download two web pages.<br>&nbsp;&nbsp;&nbsp;&nbsp;6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters ( {nasdaq100, sp500} , listing[] )<br>&nbsp;&nbsp;&nbsp;&nbsp;7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://www.slickcharts.com/" + listing[], listing[] + .html);<br>&nbsp;&nbsp;&nbsp;&nbsp;9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( listing[],listing[] + .html,&nbsp;&nbsp;HTML, "Components" );<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>Calling: table load (nasdaq100,nasdaq100.html,HTML,Components<br><br>HTML file, row 217: Expected a number after 'rowspan' / 'colspan' attribute<br>Syntax error in HTML-coded file being loaded.<br>Code execution will stop.&nbsp;&nbsp;Going to interactive mode<br>-------------------------------------------------------------------------------<br>Type 'help' for help, 'docs' or 'toc' for online B4P documentation.<br>&gt;&gt; </code></div><u>Try it yourself:</u> Open <b>GUI_Features_Example_-_Retrieve_stock_market_data.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> View the generated HTML file with the formatting included:</h4>
 <p>
 

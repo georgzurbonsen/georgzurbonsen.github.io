@@ -60,12 +60,10 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
-<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
 	</div>
 
@@ -79,6 +77,8 @@ inside the screen.  Attempting to go beyond the screen will not lead to scrollin
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:150px"><col style = "width:150px"><col style = "width:700px">
 <tr><th>1st parameter   </th><th> 2nd parameter     </th><th> Description</th></tr>
+<tr><td>all             </td><td> not applicable    </td><td> Clears the entire screen, but in contrast to <a class="bold_text" href="LIB_Function_cls.html">cls</a>() the buffer above the screen window will be preserved.  Applicable if no parameter sepcified.</td></tr>
+<tr><td>all below       </td><td> not applicable    </td><td> Clears the entire screen, but all contents on the screen will be preserved in the buffer above the screen window.                                               This is implemented by scrolling down one full screen size, followed by a <b>clear(all)</b> function call.</td></tr>
 <tr><td>left            </td><td> horizontal offset </td><td> Clears the row contents from the first column to the cursor position and possibly shifted by the offset value.<br> Offset = 0 includes clearing the contents underneath the cursor.  Positive (and negative) offsets shift the position to the right (and left).<br>                                               Example: <b>clear( left, 3 );</b> with cursor position at column 40 clears columns 1-43 in the current row.</td></tr>
 <tr><td>right           </td><td> horizontal offset </td><td> Clears the row contents from the cursor position and possibly shifted by the offset value till end of row.<br> Offset = 0 includes clearing the contents underneath the cursor.  Positive (and negative) offsets shift the position to the right (and left).<br>                                               Example: <b>clear( left, -5 );</b> with cursor position at column 20 clears columns 15 till end of row.</td></tr>
 <tr><td>above           </td><td> vertical offset   </td><td> Clears row 1 till current row and possibly shifted by the offset value. <br> Offset = 0 includes clearing the current row.  Positive (and negative) offsets shift the position a specified number of rows down (and up).<br>                                               Ëxample: <b>clear( above, -2 );</b> with cursor on row 10 clears rows 1-8.</td></tr>
@@ -88,8 +88,6 @@ inside the screen.  Attempting to go beyond the screen will not lead to scrollin
 <tr><td>row             </td><td> vertical offset   </td><td> The current row, and possibly shifted by the offset value, will be cleared.<br>  <b>clear(row, 3);</b> clears the entire row which is 3 rows below the cursor position. <br>                                               Negative numbers refer to rows above the current cursor position.  Positive numbers refer to rows below the current cursor position.</td></tr>
 <tr><td>rows above      </td><td> row count         </td><td> A specified number of rows above the current row  will be cleared.  The current row remains untouched. <br>                                                <b>clear(rows above, 5);</b> clears 5 rows above the current row.</td></tr>
 <tr><td>rows below      </td><td> row count         </td><td> A specified number of rows below the current row  will be cleared.  The current row remains untouched. <br>                                               <b>clear(rows below, 5);</b> clears 5 rows belowthe current row.</td></tr>
-<tr><td>all             </td><td> not applicable    </td><td> Clears the entire screen, but in contrast to <a class="bold_text" href="LIB_Function_cls.html">cls</a>() the buffer above the screen window will be preserved.</td></tr>
-<tr><td>all below       </td><td> not applicable    </td><td> Clears the entire screen, but all contents on the screen will be preserved in the buffer above the screen window.                                               This is implemented by scrolling down one full screen size, followed by a <b>clear(all)</b> function call.</td></tr>
 <tr><td>alt             </td><td> not applicable    </td><td> Activates the alternative screen buffer and clears the screen.  The alternative screen has only one full screen size without scrollable buffer space.  This feature is often used in LINUX when starting a text editor (like <i>vi</i> and manpages under LINUX) and the original screen returns when leaving that editor.  <br><u>Note:</u> Calling <b>clear</b>(alt) for a 2nd time has no effect.                                                <br><u>Note:</u> Colors and other settings such as underscore continue to be effective.</td></tr>
 <tr><td>back            </td><td> not applicable    </td><td> Returns from the alternative screen buffer to the main buffer, making all previous contents and work visible again.  <br><u>Note:</u> Calling <b>clear</b>(back) without alternative screen activated before has no impact.                                                <br><u>Note:</u> Colors and other settings such as underscore continue to be effective, even if set or changed in the alternative screen buffer..</td></tr>
 <tr><td></td></tr>
@@ -101,12 +99,13 @@ inside the screen.  Attempting to go beyond the screen will not lead to scrollin
 <h4> OS differences</h4>
 <p>The consoles under Windows, LINUX and MacOS and even different console or terminal programs may show some deviating behaviors.</p>
 <h4> Parameter count</h4>
-<p>1, 2</p>
+<p>0-2</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1.<br/>input</td>
+<tr><td>Opt. 1.<br/>input</td>
 <td>string</td>
 <td><b>Option</b><br/><p>The options indicate the rows and/or screen areas to be cleared.  See the table above for details.</p>
+<span class="black_text"><b> Default value: </b></span>all
 </td></tr>
 <tr><td>Opt. 2<br/>input</td>
 <td>numeral</td>
