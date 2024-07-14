@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Through-Referencing</h3>
+<a accesskey="p" href="LAN_Features_simple_references_to_variables.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_redirecting_references.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">2 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">2.1 Variables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">2.2 Creating Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">+ 2.3 Variable Scopes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">2.4 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+ 2.5 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">2.6 References to Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_references_to_variables.html"><div class="navi">2.6.1 Simple References </div></a></li>
+<li class="navi"><a href="LAN_Features_through-referencing.html"><div class="navi navi-selected">2.6.2 Through-Referencing </div></a></li>
+<li class="navi"><a href="LAN_Features_redirecting_references.html"><div class="navi">2.6.3 Redirecting References </div></a></li>
+<li class="navi"><a href="LAN_Features_copying_references.html"><div class="navi">2.6.4 Copying References </div></a></li>
+<li class="navi"><a href="LAN_Features_Releasing_references.html"><div class="navi">2.6.5 Releasing References </div></a></li>
+<li class="navi"><a href="LAN_Features_References_in_member_variables.html"><div class="navi">2.6.6 References in Member Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">2.7 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Note that the variable name used to establish a reference must either be vacant (no variable defined yet) or just a <a class="bold_text" href="LAN_Features_simple_variables.html">simple variable</a> containing no members.
+This rules is insofar relevant because member (and subname) names and array index numbers specified in the references will be applied on the target variables directly.
+The following examples shows a typical through-referencing:
+
+<br/><img src="Images/Description_Variables_Through_References.jpg" alt="Through-Referencing"><br/>
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Hello;<br/>
+&nbsp;&nbsp;ref1[]&nbsp;&nbsp;=^ a[]; // ref1[] references a[]<br/>
+<br/>
+&nbsp;&nbsp;ref1[b] = Ho;&nbsp;&nbsp;&nbsp;// Both assignments build members on a[]<br/>
+&nbsp;&nbsp;a[c]&nbsp;&nbsp;&nbsp;&nbsp;= Hi;<br/>
+<br/>
+&nbsp;&nbsp;echo( a[b],", ",ref1[b] ); // Ho, Ho<br/>
+&nbsp;&nbsp;echo( a[c],", ",ref1[c] ); // Hi, Hi</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Ho, Ho<br>Hi, Hi<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_through-referencing.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Execute B4P Statements Interactively</h3>
+<a accesskey="p" href="GUI_Features_Operating_System_Commands.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Execute_B4P_expressions_interactively.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+ 2 Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi">+ 3 Starting B4P </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">4 Interactive Mode </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Interactive_input.html"><div class="navi">4.1 Interactive Input and Editing </div></a></li>
+<li class="navi"><a href="GUI_Features_entering_interactive_mode.html"><div class="navi">4.2 Entering Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Interactive_help.html"><div class="navi">4.3 Interactive Help </div></a></li>
+<li class="navi"><a href="GUI_Features_Basic_Commands.html"><div class="navi">4.4 Basic Commands </div></a></li>
+<li class="navi"><a href="GUI_Features_Operating_System_Commands.html"><div class="navi">4.5 Operating System Commands </div></a></li>
+<li class="navi"><a href="GUI_Features_Execute_B4P_statements_interactively.html"><div class="navi navi-selected">4.6 Execute B4P Statements Interactively </div></a></li>
+<li class="navi"><a href="GUI_Features_Execute_B4P_expressions_interactively.html"><div class="navi">4.7 Execute B4P Expressions Interactively </div></a></li>
+<li class="navi"><a href="GUI_Features_View_directory_listings.html"><div class="navi">+ 4.8 View Directory Listings </div></a></li>
+<li class="navi"><a href="GUI_Features_View_Tables_Interactively.html"><div class="navi">4.9 View Tables Interactively </div></a></li>
+<li class="navi"><a href="GUI_Features_View_variables_interactively.html"><div class="navi">4.10 View Variables Interactively </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+ 5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+ 7 Recent Releases </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+In interactive mode, you can enter any valid B4P program statement which will be executed immediately after pressing the [Enter] key.
+You are able to specfify multiple statements (example: <b>for (a[]=1, a[]<5, a[]++) echo(a[]); echo(Done.)</b>) in one line and they will
+be executed like a small B4P program.  Even angular braces <b>{ ... }</b> are allowed here to put multiple statements into one block.
+
+<br><br>
+A semicolon is not required at the end of the last statement entered interactively.
+<br>
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&gt;&gt; a[] = 5<br/>
+&gt;&gt; b[] = 3; echo( a[]*b[] + 5)<br/>
+20<br/>
+&gt;&gt; for (a[] = 1, a[]&lt;=5, a[]++) print (a[]," "); echo(Done.)<br/>
+1 2 3 4 5 Done.&nbsp;&nbsp;&nbsp;<br/>
+&gt;&gt; echo( average( 1,2,3,4 ) )<br/>
+2.5<br/>
+&gt;&gt; table load ( t, 'Examples&#92;Cities.csv' )<br/>
+&gt;&gt; echo( [t: City, Boston, 'State/Province' ])<br/>
+Massachusetts<br/>
+&gt;&gt; exit // Leave B4P<br/>
+</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

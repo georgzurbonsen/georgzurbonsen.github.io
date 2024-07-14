@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>depth</h3>
+<a accesskey="p" href="LIB_Function_weight.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_structure_to_array.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">10 Variables Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_variables_functions.html"><div class="navi">+ 10.1 Basic Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Arrays_and_Structures.html"><div class="navi">10.2 Arrays and Structures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_dim.html"><div class="navi">10.2.1 dim / redim </div></a></li>
+<li class="navi"><a href="LIB_Function_dim_protect.html"><div class="navi">10.2.2 dim / redim protect </div></a></li>
+<li class="navi"><a href="LIB_Function_array.html"><div class="navi">10.2.3 array, array protect </div></a></li>
+<li class="navi"><a href="LIB_Function_structure.html"><div class="navi">10.2.4 structure, structure protect </div></a></li>
+<li class="navi"><a href="LIB_Function_member_count.html"><div class="navi">10.2.5 member count </div></a></li>
+<li class="navi"><a href="LIB_Function_weight.html"><div class="navi">10.2.6 weight, weight profile </div></a></li>
+<li class="navi"><a href="LIB_Function_depth.html"><div class="navi navi-selected">10.2.7 depth </div></a></li>
+<li class="navi"><a href="LIB_Function_structure_to_array.html"><div class="navi">10.2.8 structure to array ... </div></a></li>
+<li class="navi"><a href="LIB_Function_array_to_structure.html"><div class="navi">10.2.9 array to structure ... </div></a></li>
+<li class="navi"><a href="LIB_Function_set.html"><div class="navi">10.2.10 set, set names </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_variables.html"><div class="navi">+ 10.3 Loading and Saving Variables </div></a></li>
+<li class="navi"><a href="LIB_Features_Variable_references_functions.html"><div class="navi">+ 10.4 Variable References Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Resident_attributes_functions.html"><div class="navi">+ 10.5 Resident Attributes Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>depth</code></div>
+<h4> Description</h4>
+<p>The function <b>depth</b>() returns the nesting depth of a specified variable.  1 is returned for all variables not containing any array or
+structure members.  2 is returned if one level of members, e.g. a simple array or structure without nesting is provided. 3 is returned if
+further sub-members are specified, and so forth.
+
+
+<br><br>
+The function <b>weight profile</b> provides more detailed weight information for every level in the variable tree.  The base variable is
+level 0, its array and structure members are at level 1, their sub-members at level 2, etc.  The value returned is a parameter set containing
+the weight fore every level found.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>1</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1<br/>code</td>
+<td>variable<br/>:string</td>
+<td><b>Variable name</b><br/><p>This variable including all its members and sub-members will be weighed.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Depth value</b><br/><p>Number of levels.  The value returned is at least 1.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;dim( a[], 10, 0 ); // Level 1<br/>
+&nbsp;&nbsp;dim( a[3], 5, 0 ); // Level 2<br/>
+&nbsp;&nbsp;structure( a[3,2], { Ha, He, Hi, Ho }, { 1, 2, 3, 4 } ); // Level 3<br/>
+<br/>
+&nbsp;&nbsp;echo( "Variable a[]&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;", depth(a[]), "&nbsp;&nbsp;The entire variable tree" );<br/>
+&nbsp;&nbsp;echo( "Variable a[1]&nbsp;&nbsp;: ", depth(a[1]), "&nbsp;&nbsp;Member variable of a[], but has no sub-members" );<br/>
+&nbsp;&nbsp;echo( "Variable a[3]&nbsp;&nbsp;: ", depth(a[3]), "&nbsp;&nbsp;This one has sub-members" );<br/>
+&nbsp;&nbsp;echo( "Variable a[3,2]: ", depth(a[3,2]), "&nbsp;&nbsp;This variable contains 4 leaf variables" );<br/>
+&nbsp;&nbsp;echo( "Variable a[3,2,Ha]: ", depth(a[3,2,Ha]), "&nbsp;&nbsp;This leaf variable has depth 1 (no further variables)" );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Variable a[]&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;4&nbsp;&nbsp;The entire variable tree<br>Variable a[1]&nbsp;&nbsp;: 1&nbsp;&nbsp;Member variable of a[], but has no sub-members<br>Variable a[3]&nbsp;&nbsp;: 3&nbsp;&nbsp;This one has sub-members<br>Variable a[3,2]: 2&nbsp;&nbsp;This variable contains 4 leaf variables<br>Variable a[3,2,Ha]: 1&nbsp;&nbsp;This leaf variable has depth 1 (no further variables)<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_depth.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_weight.html">weight</a><br/>
+<a class = "bold_text" href="LIB_Function_weight.html">weight profile</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Protecting Variables</h3>
+<a accesskey="p" href="LAN_Features_References_in_member_variables.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_tables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">2 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">2.1 Variables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">2.2 Creating Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">+ 2.3 Variable Scopes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">2.4 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+ 2.5 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 2.6 References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi navi-selected">2.7 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The functions <a class="bold_text" href="LIB_Function_protect.html">protect</a>(), <a class="bold_text" href="LIB_Function_dim_protect.html">dim protect</a>(), <a class="bold_text" href="LIB_Function_dim_protect.html">redim protect</a>(), <a class="bold_text" href="LIB_Function_array.html">array protect</a>(), and structure protect(__) are available apply
+protection rules on the target variables.  It is always possible to change protection settings on local variable.  For global variables, this
+is only allwed in the global context (i.e. not in the code of user-defined procedures and functions and B4P programs started with <a class="bold_text" href="LIB_Function_start.html">start</a>() or <a class="bold_text" href="LIB_Function_include.html">include</a>()).
+Protection settings of system variables cannot be altered. If not specified otherwise, all newly created variables bear the protection setting <i>full access</i>.
+
+The follwoing table provides an overview of the available protection settings and their functional impacts:
+
+</p><table style = "width:1000px"><col style = "width:400px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px"><col style = "width:100px">
+<tr><th>Protection Settings         </th><th> full access       </th><th> prvent deleting   </th><th> limited access            </th><th> read only     </th><th> locked        </th><th> tightly locked</th></tr>
+<tr><td>Read variables              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> -         </td><td> -</td></tr>
+<tr><td>Read member variables <sup>1</sup>  </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> -</td></tr>
+<tr><td>Use as input parameter to functions </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> -         </td><td> -</td></tr>
+<tr><td>Write variables             </td><td> &#x2714;      </td><td> &#x2714;      </td><td> Data of same type only <sup>2</sup>   </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Write member variables <sup>1</sup> </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> -</td></tr>
+<tr><td>Use as I/O paramters to functions   </td><td> &#x2714;      </td><td> &#x2714;      </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Delete varibles             </td><td> local variables only  </td><td> -         </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Create / add member variables       </td><td> &#x2714;      </td><td> &#x2714;      </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Modify <a class="bold_text" href="LAN_Features_Variable_forms.html">variable forms</a> <sup>3</sup>  </td><td> &#x2714;      </td><td> -         </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Create arrays               </td><td> &#x2714;      </td><td> &#x2714; <sup>4</sup> </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Do <a class="bold_text" href="LAN_Features_Transactions.html">Transactions</a>         </td><td> &#x2714;      </td><td> -         </td><td> -                 </td><td> -         </td><td> -         </td><td> -</td></tr>
+<tr><td>Use <a class="bold_text" href="LIB_Function_protect.html">protect</a>() to check settings </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;              </td><td> &#x2714;      </td><td> &#x2714;      </td><td> &#x2714;</td></tr>
+</table><p>
+<sup>1</sup> Provided no additional protection seetings restrict usage of the member variables.<br>
+<sup>2</sup> E.g. forbidden to overwrite string contents with numeric contents.  Additional restrictions may apply on system variables, e.g. only specific values may be written.<br>
+<sup>3</sup> E.g. converting structures to arrays and back using <a class="bold_text" href="LIB_Function_array_to_structure.html">array to structure</a>() or <a class="bold_text" href="LIB_Function_structure_to_array.html">structure to array</a>() functions.<br>
+<sup>4</sup> Only possible if variable contains no other members so far.<br>
+</p>
+<h4> Variables temporarily locked with Blocking Notices</h4>
+<p>
+Variables may be temporarily locked with blocking notices in order to prevent adverse system behavior if they are deleted.  All other accesses are possible.  Blocking notices
+are temporarily applied in following cases:
+</p><ul class="bullets"><li class="bullets">Target variable is blocked during the time an assignment is calculated
+</li><li class="bullets">A <a class="bold_text" href="LAN_Features_Transactions.html">transaction</a> is applied between target and source variable
+</li><li class="bullets">The variable is referenced as an I/O or reference function parameter to a B4P or user-defined function
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_references_to_variables.html">References to variables</a> refer to the affected variable.
+</li></ul><p>Only if all block notices are removed again (assignment resp. transactions completed, function execution finished, references released), then the variable may be deleted again.
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

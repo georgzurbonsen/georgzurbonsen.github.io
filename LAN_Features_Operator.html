@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Operators</h3>
+<a accesskey="p" href="LAN_Features_Calculations.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_unary_operators.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">4 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">4.1 Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+ 4.2 Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi navi-selected">4.3 Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_unary_operators.html"><div class="navi">4.3.1 Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_binary_operators.html"><div class="navi">4.3.2 Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_arithmetic_operator.html"><div class="navi">+ 4.3.3 Arithmetic Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_operators.html"><div class="navi">+ 4.3.4 Comparison Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_comparison_options.html"><div class="navi">+ 4.3.5 Comparison Options </div></a></li>
+<li class="navi"><a href="LAN_Features_logical_operators.html"><div class="navi">+ 4.3.6 Logical Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">4.4 Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 4.5 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">4.6 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">4.7 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+ 4.8 Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+Operators are symbols which represent an action or process and are basic elements in arithmetics.
+B4P distinguishes between following semantic operator types:
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LAN_Features_unary_operators.html">Unary operators</a> are simple operators added in front of a value or expression, e.g. a minus sign for negation, logical NOT, etc.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_binary_operators.html">Binary operators</a> are operators between two expressions, e.g. to describe additions, multiplications, etc.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Assignment_operator.html">Assignment operators</a> allow a simplified formulation such as <b>a[] -= b[];</b> which is equivalent to <b>a[] = a[] - b[];</b>
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_ad-hoc_operators.html">Ad-hoc operators</a> can be applied on <a class="bold_text" href="LAN_Features_Left-Hand_Side_Expression.html">LHS expressions</a> able to reference to tables and variables.  Example: <b>a[]++;</b> is equivalent to <b>a[] = a[] + 1;</b>
+</li></ul><p>
+In a different dimension, B4P distinguishes between follwoing algorithmic operator types applicable to both binary operators and assignment operators:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LAN_Features_arithmetic_operator.html">Arithmetic operators</a> covers the four basic arithmetic operators
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_logical_operators.html">Logical operators</a> covers lgoical AND and OR
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_comparison_operators.html">Comparison operators</a> covers equal, less and greater-than, etc.
+</li></ul><p></p>
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_unary_operators.html">Unary operators</a><br/>
+<a class = "bold_text" href="LAN_Features_binary_operators.html">Binary operators</a><br/>
+<a class = "bold_text" href="LAN_Features_Assignment_operator.html">Assignment operators</a><br/>
+<a class = "bold_text" href="LAN_Features_ad-hoc_operators.html">Ad-hoc operators</a><br/>
+<a class = "bold_text" href="LAN_Features_arithmetic_operator.html">Arithmetic operators</a><br/>
+<a class = "bold_text" href="LAN_Features_logical_operators.html">Logical operators</a><br/>
+<a class = "bold_text" href="LAN_Features_comparison_operators.html">Comparison operators</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

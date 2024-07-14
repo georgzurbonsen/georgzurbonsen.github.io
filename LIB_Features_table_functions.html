@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Table Functions</h3>
+<a accesskey="p" href="LIB_Function_filter.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_Loading_and_saving_tables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+ 4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi navi-selected">9 Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+ 9.1 Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+ 9.2 Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+ 9.3 Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+ 9.4 Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+ 9.5 Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+ 9.6 Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">+ 9.7 Processing Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">+ 9.8 Multi-Table Integration </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+ 9.9 Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The chapter on table functions covers following four sections
+</p><ul class="bullets"><li class="bullets">Loading, saving and console I/O
+</li><li class="bullets">Basic table access (creating, writing, reading, deleting)
+</li><li class="bullets">Searching and expoorig tables
+</li><li class="bullets">Processing tables with powerful functions
+</li><li class="bullets">Multi-Table Integration (comparing, validating, lookups, merging, etc.)
+</li><li class="bullets">Formatting and Styling Tables (color, column widths, fonts, borders, setting autofilters, etc.)
+</li></ul><p>
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>Loading and saving tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load.html">table load</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load.html">table load unchanged</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save multiple</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save with decimal comma</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save.html">table save with local decimal separator</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_load_excel_file.html">table load excel file</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a> <br>
+<br>Table console I/O:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_list.html">table list</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_menu.html">table menu</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_menu.html">table menu quick</a> <br>
+<br>Create and initialize tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_create.html">table create</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_create.html">table create if not existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_initialize.html">table initialize</a> <br>
+<br>Table configuration settings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_configure.html">table configure</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_forget_memorized_table_columns.html">forget memorized table columns</a> <br>
+<br>Writing tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_append.html">table append</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_append.html">table append on same field</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_append.html">table append on same row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_append_blank_rows.html">table append blank rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_add_row.html">table add row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_add_row.html">table write row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_add_missing_row.html">table add missing row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_add_missing_row.html">table write or add missing row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_write_column_selected_rows.html">table write column selected rows</a> <br>
+<br>Reading tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_read_row.html">table read row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_read_column_selected_rows.html">table read column selected rows</a> <br>
+<br>Clearing and deleting tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_clear.html">table clear</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete.html">table delete</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete.html">table delete silently</a> <br>
+<br>Access table information:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_list_tables.html">list tables</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_existing.html">table existing</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_length.html">table length</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_row_width.html">table row width</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_min_width.html">table max width</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_min_width.html">table min width</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_row.html">row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_col.html">col</a> <br>
+<br>Searching tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_search.html">table search</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_search.html">table search vertically</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_search_row.html">table search row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_find_row.html">table find row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_selected_rows.html">table all selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_selected_rows.html">table selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_selected_columns.html">table selected column numbers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_selected_columns.html">table selected columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_selected_columns.html">table selected headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_search_header_row.html">table search header row</a> <br>
+<br>Explore, filter and extract tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_explore.html">table explore</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_filter.html">table filter</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_filter.html">table filter ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_extract.html">table extract</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_with_table.html">with table</a> <br>
+<br>for-loop through table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_table_rows.html">for all table rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_table_selected_rows.html">for all table selected rows</a> <br>
+<br>for-loop through table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_table_columns.html">for all table columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_table_selected_columns.html">for all table selected columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_current_table_columns.html">for all current table columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_for_all_current_table_selected_columns.html">for all current table selected columns</a> <br>
+<br>Checking and processing headers:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_header.html">table check header</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_column_number.html">table column number</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_headers.html">table check headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_headers.html">table check headers silently</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rename_headers.html">table rename column headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rename_headers.html">table rename existing headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rename_headers.html">table rename headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_correct_headers.html">table correct headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_correct_headers.html">table correct headers ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lift_header_row.html">table lift contents</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lift_header_row.html">table lift header row</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lift_header_row.html">table lift headers</a> <br>
+<br>Inserting table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_columns.html">table insert columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_columns.html">table insert missing columns</a> <br>
+<br>Copying table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_columns.html">table copy columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_columns.html">table copy columns selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_duplicate_columns.html">table duplicate columns</a> <br>
+<br>Sorting and rearranging table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_sort_columns.html">table sort columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rearrange_columns.html">table rearrange columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rearrange_columns.html">table rearrange existing columns</a> <br>
+<br>Keeping and deleting table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_keep_columns.html">table keep columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_keep_columns.html">table keep existing columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_columns.html">table delete columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_remaining_columns.html">table delete remaining columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete all blank columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete all empty columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete all unnamed columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete blank columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete empty columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_columns.html">table delete unnamed columns</a> <br>
+<br>Insert table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_rows.html">table insert rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_rows.html">table insert rows if needed</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_selected_rows.html">table insert above selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_insert_selected_rows.html">table insert selected rows</a> <br>
+<br>Deleting table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_rows.html">table delete rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_rows.html">table delete rows if needed</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_remaining_rows.html">table delete remaining rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_remaining_rows.html">table delete remaining rows if needed</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_selected_rows.html">table delete selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_keep_selected_rows.html">table keep selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_blank_rows.html">table delete blank rows</a> <br>
+<br>Check table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_row.html">table check row</a> <br>
+<br>Move and rearrange table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_move_rows.html">table move rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_move_selected_rows.html">table move selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rearrange_selected_rows.html">table rearrange selected rows</a> <br>
+<br>Sort and rearrange table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_sort_rows.html">table sort rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_sort_rows.html">table sort selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rank_rows.html">table rank rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rank_rows.html">table rank selected rows</a> <br>
+<br>Process table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process.html">table process</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process.html">table process all rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process.html">table process all selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process.html">table process rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process.html">table process selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_selected_rows_fast.html">table process selected rows fast</a> <br>
+<br>Process table columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_columns.html">table process columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_columns.html">table process selected columns</a> <br>
+<br>Process table cells:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_cells.html">table process all cells</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_cells_in_columns.html">table process cells in columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_process_cells_in_columns.html">table process cells in columns selected rows</a> <br>
+<br>Manipulate table contents:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_manipulate.html">table manipulate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_manipulate.html">table manipulate selected rows</a> <br>
+<br>Table filling and substitution functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_fill_vertically.html">table fill vertically</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_fill_vertically.html">table fill vertically selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_fill_horizontally.html">table fill horizontally</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_fill_horizontally.html">table fill horizontally selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_substitute_vertically.html">table substitute vertically</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_substitute_vertically.html">table substitute vertically selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_substitute_horizontally.html">table substitute horizontally</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_substitute_horizontally.html">table substitute horizontally selected rows</a> <br>
+<br>Delete table contents:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_cells_selected_rows.html">table delete cells selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_delete_cells_selected_columns.html">table delete cells selected columns</a> <br>
+<br>Cleaning up and miscellaneous table functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_format_numbers.html">table format numbers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_clean.html">table clean</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_fit.html">table fit</a> <br>
+<br>Transpose tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_transpose.html">table transpose</a> <br>
+<br>Change tabular contents to serialized contents:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_serialize.html">table serialize</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_serialize.html">table serialize all</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_serialize.html">table serialize ignore zero</a> <br>
+<br>Spread serialized data across specified columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_spread.html">table spread</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_spread.html">table spread accumulating</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_spread_given_headers.html">table spread given headers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_spread_given_headers.html">table spread given headers accumulating</a> <br>
+<br>Consolidate table rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_consolidate.html">table consolidate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_consolidate.html">table consolidate selected rows</a> <br>
+<br>Distribute quantities over timeline, e.g. for production planning:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_distribute.html">table distribute</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_distribute.html">table distribute accumulate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_distribute.html">table distribute advance</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_distribute.html">table distribute advance accumulate</a> <br>
+<br>Renaming tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_rename.html">table rename</a> <br>
+<br>Copy and split tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_table.html">table copy table</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_table_selected_rows.html">table copy table selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_table_selected_rows.html">table split table selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_table_columns.html">table copy table columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_copy_table_columns.html">table copy table columns selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_split_table_columns.html">table split table columns</a> <br>
+<br>Compare two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_compare.html">table compare</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_compare.html">table compare ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_compare.html">table compare ignore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_compare.html">table compare ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_[This_is_a_user-defined_function_you_need_to_create].html">[This is a user-defined function you need to create]</a> <br>
+<br>Validation functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_validate.html">table validate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ignore blanks selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ignore case selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ingore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates ingore both selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates selected rows</a> <br>
+<br>Looking up data from other tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup.html">table lookup</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup.html">table lookup ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup.html">table lookup top down</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup.html">table lookup top down ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_once.html">table lookup once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_once.html">table lookup once ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_fast.html">table lookup fast</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_fast.html">table lookup fast ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_smart_once.html">table lookup smart once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_smart_once.html">table lookup smart once ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_with_rules.html">table lookup with rules</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_with_rules.html">table lookup with rules ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_with_rules_once.html">table lookup with rules once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_lookup_with_rules_once.html">table lookup with rules once ignore case</a> <br>
+<br>Looking up data from other tables and integrating their results:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate.html">table integrate</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate.html">table integrate ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate.html">table integrate top down</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate.html">table integrate top down ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_once.html">table integrate once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_once.html">table integrate once ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_fast.html">table integrate fast</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_fast.html">table integrate fast ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_smart.html">table integrate smart</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_smart.html">table integrate smart ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_smart_once.html">table integrate smart once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_smart_once.html">table integrate smart once ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_with_rules.html">table integrate with rules</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_with_rules.html">table integrate with rules ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_with_rules_once.html">table integrate with rules once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_integrate_with_rules_once.html">table integrate with rules once ignore case</a> <br>
+<br>Looking up data from other tables, integrate results, add rows in case of multiple matches:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand.html">table expand</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand.html">table expand ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast.html">table expand fast</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast.html">table expand fast ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_smart.html">table expand smart</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_smart.html">table expand smart ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_smart.html">table expand fast smart</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_smart.html">table expand fast smart ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_with_rules.html">table expand with rules</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_with_rules.html">table expand with rules ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_with_rules_once.html">table expand with rules once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_with_rules_once.html">table expand with rules once ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_with_rules.html">table expand fast with rules</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_with_rules.html">table expand fast with rules ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_with_rules_once.html">table expand fast with rules ignore case once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_expand_fast_with_rules_once.html">table expand fast with rules once</a> <br>
+<br>Looking up data from other tables, integrate results from one or more matching row into target table row:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest.html">table digest</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest.html">table digest ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_smart.html">table digest smart</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_smart.html">table digest smart ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_with_rules.html">table digest with rules</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_with_rules.html">table digest with rules ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_with_rules_once.html">table digest with rules ignore case once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_digest_with_rules_once.html">table digest with rules once</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_describe.html">table describe</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_describe.html">table describe ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_describe.html">table describe selected rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_describe.html">table describe selected rows ignore case</a> <br>
+<br>Merge two tables with union-set principle:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge intersect columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge subtract columns</a> <br>
+<br>One table overlays the other table, without adding rows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay intersect columns</a> <br>
+<br>Row-wise intersection made from two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect intersect columns</a> <br>
+<br>One table does row-subtraction on other table:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract subtract columns</a> <br>
+<br>Derive disjoint union (exclusive or) from both tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude exclude columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude extend columns</a> <br>
+<br>Relational multiplication of two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_multiply.html">table multiply</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_multiply.html">table multiply selected rows</a> <br>
+<br>Relational division of two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_divide.html">table divide</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_divide.html">table divide selected rows</a> <br>
+<br>Arrange multiple tables side-by-side:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_arrange.html">table arrange</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_arrange.html">table arrange with spacing</a> <br>
+<br>Color functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add_color.html">add color</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_rgb.html">rgb</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_darken_color.html">darken color</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_lighten_color.html">lighten color</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_weaken_color.html">weaken color</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_lighten_colors.html">lighten colors</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_darken_colors.html">darken colors</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_weaken_colors.html">weaken colors</a> <br>
+<br>Apply style on tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_table.html">table style table</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_rows.html">table style rows</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_columns.html">table style columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_cells.html">table style cells</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_auto_width.html">table style auto width</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_theme.html">table style theme</a> <br>
+<br>Translate applied style to target file format:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_translate_style_attributes_for_excel.html">translate style attributes for excel</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_translate_style_attributes_for_excel.html">translate style attributes for excel xml 2003</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_translate_style_attributes_for_excel.html">translate style attributes for html</a> <br>
+<br>Remove all style attributes from the table:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_style_reset.html">table style reset</a> <br>
+<br></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

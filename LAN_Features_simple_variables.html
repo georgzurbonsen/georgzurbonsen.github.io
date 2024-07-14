@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Simple Variables</h3>
+<a accesskey="p" href="LAN_Features_Variable_forms.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_arrays.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">2 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">2.1 Variables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">2.2 Creating Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">+ 2.3 Variable Scopes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">2.4 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">2.5 Variable Forms and Trees </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_variables.html"><div class="navi navi-selected">2.5.1 Simple Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_arrays.html"><div class="navi">2.5.2 Arrays </div></a></li>
+<li class="navi"><a href="LAN_Features_structures.html"><div class="navi">2.5.3 Structures </div></a></li>
+<li class="navi"><a href="LAN_Features_zero_members.html"><div class="navi">2.5.4 Zero Members Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_specifying_members_with_parameter_sets.html"><div class="navi">2.5.5 Parameter Sets Specifying Members </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 2.6 References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">2.7 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Simple Variables</h4>
+<p>
+Simple variables contain only one value and posesses no further member variables in form of structures or arrays.  Syntax:
+
+
+</p><table class="noframe table_syntax" style = "width:250px"><col style = "width:230px"><col style = "width:10px"><col style = "width:10px">
+<tr><th>Base Variable Name      </th><th> [     </th><th> ]</th></tr>
+<tr><td>- String value or expression    </td><td>   </td><td></td></tr>
+<tr><td>as variable name      </td><td>   </td><td></td></tr>
+</table><p>
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[] = Hello;<br/>
+&nbsp;&nbsp;(a[])[] = Hi; // Parentheses required on left hand side, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// otherwise seen as "right hand" expression and not "left hand" expression<br/>
+&nbsp;&nbsp;(a[] + ' World')[] = Ahoi;<br/>
+&nbsp;&nbsp;echo("a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ", a[] );<br/>
+&nbsp;&nbsp;echo("a[][]&nbsp;&nbsp;&nbsp;= ", a[][] ); // Here it's OK<br/>
+&nbsp;&nbsp;echo("Hello[] = ", Hello[] );<br/>
+&nbsp;&nbsp;echo("Hello World[] = ", Hello World[], new line );<br/>
+<br/>
+&nbsp;&nbsp;'1'[] = One; // Even these variable names are valid !<br/>
+&nbsp;&nbsp;' '[] = Space;<br/>
+&nbsp;&nbsp;''[] = Blank;<br/>
+&nbsp;&nbsp;'a[]'[] = aaaah;<br/>
+&nbsp;&nbsp;echo('1'[], " ", ' '[], " ", ''[], " ", 'a[]'[], new line );<br/>
+<br/>
+&nbsp;&nbsp;me too[] = Hmm;<br/>
+&nbsp;&nbsp;me&nbsp;&nbsp;too[] = Me;&nbsp;&nbsp;&nbsp;// Plain text ignores redundant spaces, same as 'me too'<br/>
+&nbsp;&nbsp;'me&nbsp;&nbsp;too'[] = Mee too;<br/>
+&nbsp;&nbsp;echo( me too[], ", ", me&nbsp;&nbsp;too[], ", ", 'me&nbsp;&nbsp;too'[] );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Hello<br>a[][]&nbsp;&nbsp;&nbsp;= Hi<br>Hello[] = Hi<br>Hello World[] = Ahoi<br><br>One Space Blank aaaah<br><br>Me, Me, Mee too<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_simple_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

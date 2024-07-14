@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Date and Time Detection Rules</h3>
+<a accesskey="p" href="LIB_Function_time.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_bool.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi">1 Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+ 2 Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+ 3 Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">4 Type Conversion and Formatting </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_str.html"><div class="navi">+ 4.1 str, soft </div></a></li>
+<li class="navi"><a href="LIB_Function_num.html"><div class="navi">4.2 num </div></a></li>
+<li class="navi"><a href="LIB_Function_clean_num.html"><div class="navi">4.3 clean num, clean if num </div></a></li>
+<li class="navi"><a href="LIB_Function_smart_num.html"><div class="navi">4.4 smart num, smart if num </div></a></li>
+<li class="navi"><a href="LIB_Function_date.html"><div class="navi">4.5 date, pure date, date time </div></a></li>
+<li class="navi"><a href="LIB_Function_time.html"><div class="navi">4.6 time, pure time </div></a></li>
+<li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi navi-selected">4.7 Date and Time Detection Rules </div></a></li>
+<li class="navi"><a href="LIB_Function_bool.html"><div class="navi">4.8 bool </div></a></li>
+<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">4.9 parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">4.10 best type </div></a></li>
+<li class="navi"><a href="LIB_Function_join.html"><div class="navi">4.11 join ... </div></a></li>
+<li class="navi"><a href="LIB_Function_type.html"><div class="navi">4.12 type, subtype </div></a></li>
+<li class="navi"><a href="LIB_Function_hash_signature.html"><div class="navi">4.13 hash signature </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_column.html"><div class="navi">4.14 excel column </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_coordinates.html"><div class="navi">4.15 excel coordinates </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_validate_sheet_name.html"><div class="navi">4.16 excel validate sheet name </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+ 5 Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+ 6 String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+ 7 Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+ 8 Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+ 9 Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+ 10 Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+ 11 Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+ 12 System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+ 13 Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+ 14 Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The date and time detecion rules in strings is applied in following functions
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_date.html">date</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_date.html">pure date</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_date.html">date time</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_time.html">time</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_time.html">pure time</a>()
+</li><li class="bullets">Retriving values from tables with automatic date conversion enabled ( system variable <b>table conversion[date]</b> = true ).
+</li></ul><p>
+<br><br>
+Please pay attention to ambiguous dates, e.g. '10/11/12' which can be interpreted differently with different locale settings (YY/MM/DD, MM/DD/YY, DD/MM/YY in this case).
+The universal YYYY-MM-DD format (e.g. 2020-12-31) is robust and shows same behavior regardless of locale settings applied.
+
+<br><br>
+Input format legend for following table:
+</p><ul class="bullets"><li class="bullets">xx = 1 or 2 numeric digits
+</li><li class="bullets">yyyy = 4 numeric digits (year)
+</li><li class="bullets">MMM = min 3 letters to describe month. Multiple languages are supported.
+</li><li class="bullets">h = Time related suffix, not case sensitive (h, time, o'clock, am, pm, a.m., p.m., a, p). Different languages are supported, e.g. "Uhr".<br>
+</li></ul><p>am/pm and related formulation influence the hour values.
+</p><ul class="bullets"><li class="bullets">Symbols between values, e.g. ., -, /, are not relevant unless indicated explicitly.
+</li><li class="bullets">Values between colons (:) relate to time info
+</li><li class="bullets">Spaces between letters and numbers are ignored, e.g. 23August is accepted.
+</li></ul><p>
+
+</p><table style = "width:1000px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px"><col style = "width:250px">
+<tr><th>Input Formats                       </th><th> Examples                          </th><th> Outputs                                                           </th><th> Remarks</th></tr>
+<tr><td>Blank                               </td><td> '' (e.g. in date(''))             </td><td> Blank date                                                        </td><td></td></tr>
+<tr><td>Irrelvant information               </td><td> Hello (e.g. in date(Hello))       </td><td> Blank date                                                        </td><td> Wrong contents ignored</td></tr>
+<tr><td>Reserved keywords: today, now, utc  </td><td> today, now, utc                   </td><td> Today's date, full date and time, and full date and time in UTC   </td><td> Allowed to combine with time, e.g. 'today 13:30'.<br>Various languages supported.</td></tr>
+<tr><td>xx                                  </td><td> 1, 04, 2020                       </td><td> Error                                                             </td><td> Date is incomplete</td></tr>
+<tr><td>xx xx                               </td><td> 10-11, 10.11, 10 11, 10/11        </td><td> Depends on local settings<br>MDY: 2020-10-11<br>else: 2020-11-10  </td><td> Assumes current year</td></tr>
+<tr><td>xx xx MMM                           </td><td> 10-11 April                       </td><td> Error                                                             </td><td> Invalid date format</td></tr>
+<tr><td>xx xx yyyy                          </td><td> 10 11 2012                        </td><td> Depends on local settings<br>MDY: 2012-10-11<br>else: 2012-11-10  </td><td> Fully specified date. See <sup>1</sup></td></tr>
+<tr><td>xx xx xx                            </td><td> 10 11 12                          </td><td> Depends on local settings<br>MDY: 2012-10-11<br>DMY: 2012-11-10<br>else:2010-11-12 </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>xx xx xx yyyy                       </td><td> 10 11 12 2013                     </td><td> Error                                                             </td><td> Invalid date format</td></tr>
+<tr><td>xx xx xx MMM                        </td><td> 10 11 12 April                    </td><td> Error                                                             </td><td> Invalid date format</td></tr>
+<tr><td>xx xx yyyy yyyy                     </td><td> 10 11 2012 2013                   </td><td> Error                                                             </td><td> Invalid date format</td></tr>
+<tr><td>xx xx yyyy MMM                      </td><td> 10 11 2012 April                  </td><td> Error                                                             </td><td> Invalid date format</td></tr>
+<tr><td>xx xx xx h                          </td><td> 10 11 12 am                       </td><td> Time only: 10:11:12                                               </td><td> See <sup>4</sup></td></tr>
+<tr><td>xx xx xx h xx, xx xx xx : xx, <br>xx xx xx : xx h       </td><td> 10.11 12 h 30 </td><td> Depends on local settings<br>MDY: 2020-10-11 13:30:00<br>else: 2020-11-10 12:30:00    </td><td> Assumes current year</td></tr>
+<tr><td>xx xx xx h YYYY                     </td><td> 10 11 12 h 2013                   </td><td> 2013-01-01, 10:11:12                                              </td><td> Assumes January 1, see <sup>2</sup></td></tr>
+<tr><td>xx xx xx h MMM                      </td><td> 10 11 12 h April                  </td><td> 2020-04-01, 10:11:12                                              </td><td> Assumes 1st day of specified month in current year, see <sup>3</sup></td></tr>
+<tr><td>xx xx xx :                          </td><td> 10 11 12 :                        </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>xx yyyy                             </td><td> 10 2011                           </td><td> 2011-10-01                                                        </td><td> Assumes 1st day of specified month, see <sup>1</sup></td></tr>
+<tr><td>xx MMM                              </td><td> 10 April                          </td><td> 2020-04-10                                                        </td><td> Assumes current year</td></tr>
+<tr><td>xx MMM xx                           </td><td> 10 Nov 12                         </td><td> Depends on local settings<br>YMD: 2010-11-12<br>else: 2012-11-10  </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>xx MMM xx h                         </td><td> 10 Nov 12 h                       </td><td> 2020-11-10, 12:00:00                                              </td><td> Assumes current year, see <sup>4</sup></td></tr>
+<tr><td>xx xx h                             </td><td> 10 11 h, 10 11 am                 </td><td> Time only: 10:11:00                                               </td><td></td></tr>
+<tr><td>xx xx h xx                          </td><td> 10 11 h 12                        </td><td> Time only: 10:11:12                                               </td><td></td></tr>
+<tr><td>xx xx h MMM                         </td><td> 10 11 h April                     </td><td> 2020-04-01 10:11:00                                               </td><td> Assumes 1st day of specified month in current year, see <sup>3</sup></td></tr>
+<tr><td>xx xx h yyyy                        </td><td> 10 11 h 2012                      </td><td> 2012-01-01 10:11:00                                               </td><td> Assumes January 1, see <sup>2</sup></td></tr>
+<tr><td>yyyy                                </td><td> 2012                              </td><td> 2012-01-01                                                        </td><td> Assumes January 1</td></tr>
+<tr><td>yyyy xx                             </td><td> 2012 11                           </td><td> 2012-11-01                                                        </td><td> Assumes 1st day of specified month</td></tr>
+<tr><td>yyyy xx xx                          </td><td> 2012 11 10                        </td><td> 2012-11-01                                                        </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>yyyy xx MMM                         </td><td> 2012 11 April                     </td><td> 2012-04-01                                                        </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>yyyy xx xx h, YYYY xx xx :          </td><td> 2013 12 11 h, 2013 12 11 :        </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>yyyy xx xx h xx, yyyy xx xx : xx, <br>yyyy xx xx : xx h     </td><td> 2012 11 10 h 09   </td><td> 2012-11-01 10:09:00                                       </td><td> Assumes 1st day of specified month</td></tr>
+<tr><td>yyyy MMM                            </td><td> 2012 Nov                          </td><td> 2012-11-01                                                        </td><td> Assumes 1st day of specified month</td></tr>
+<tr><td>yyyy MMM xx                         </td><td> 2012 Nov 10                       </td><td> 2012-11-10                                                        </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>yyyy MMM xx h                       </td><td> 2012 Nov 10 am                    </td><td> 2012-11-01 10:00:00                                               </td><td> Assumes 1st day of specified month, see <sup>4</sup></td></tr>
+<tr><td>yyyy MMM xx :                       </td><td> 2012 Nov 10 :                     </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>yyyy xx h                           </td><td> 2012 11 h                         </td><td> 2012-01-01 11:00:00                                               </td><td> Assumes January 1, see <sup>4</sup></td></tr>
+<tr><td>yyyy xx :                           </td><td> 2012 11 :                         </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>yyyy xx : MMM                       </td><td> 2012 10 : November                </td><td> 2012-11-10                                                        </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>MMM                                 </td><td> April                             </td><td> 2020-04-01                                                        </td><td> Assumes 1st day of specified month in current year</td></tr>
+<tr><td>MMM xx                              </td><td> Dec 11                            </td><td> Depends on local settings<br>MDY: 2020-12-11<br>else: 2011-12-01  </td><td> MDY: Assumes current year.<br>else: Assumes 1st day of specified month</td></tr>
+<tr><td>MMM xx xx, MMM xx yyyy, <br>MMM xx : yyyy </td><td> Dec 11 13, Dec 11 2013, Dec 11 : 2013 </td><td> 2013-12-11                                              </td><td> Fully specified date, see <sup>1</sup></td></tr>
+<tr><td>MMM xx xx h, MMM xx xx :            </td><td> Dec 11 h                          </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>MMM xx xx h xx, MMM xx xx h xx :<br>MMM xx xx : xx, MMM xx xx : xx </td><td> Oct 11 12 h 13, Oct 11 12 h 13:<br>Oct 11 12:13, Oct 11 12 h 13: </td><td> Depends on local settings<br>MDY: 2020-10-11 12:13:00<br>else: 2011-10-01 12:13:00  </td><td> MDY: Assumes current year.<br>else: Assumes 1st day of specified month, see <sup>5</sup></td></tr>
+<tr><td>MMM yyyy                            </td><td> Dec 11                            </td><td> 2020-12-11                                                        </td><td> Assumes current year, see <sup>1</sup></td></tr>
+<tr><td>MMM xx h                            </td><td> Dec 11 h                          </td><td> 2020-12-01 11:00:00                                               </td><td> Assumes 1st day of specified month in current year, see <sup>4</sup></td></tr>
+<tr><td>MMM xx :                            </td><td> Dec 11 :                          </td><td> Error                                                             </td><td> Invalid date format (ambiguity)</td></tr>
+<tr><td>MMM xx : xx, MMM xx : xx h, <br>MMM xx : xx : </td><td> Dec 11 : 10             </td><td> 2020-12-01 11:10:00                                               </td><td> Assumes January 1, see <sup>5</sup></td></tr>
+<tr><td>xx h, xx :                          </td><td> 15 h, 15 :                        </td><td> Time only: 15:00:00                                               </td><td> See <sup>4</sup></td></tr>
+<tr><td>xx h xx, xx h xx :<br>xx : xx, xx : xx h, xx : xx : </td><td> 15h30, 15h30:<br>15:30h, 15:30: </td><td> Time only: 15:30:00                                 </td><td> See <sup>5</sup></td></tr>
+<tr><td>xx h xx xx, xx : xx xx              </td><td> 15 h 20 30, 15 : 20 30            </td><td> Time only: 15:20:30                                               </td><td></td></tr>
+<tr><td>xx h xx : xx, xx : xx : xx<br> xx : xx h xx, xx : xx xx h<br>xx : xx : xx h </td><td> 15h20:30, 15:20:30<br> 15:20h30<br>15h20 30h, 15:20:30h   </td><td> Time only: 15:30:30   </td><td> See <sup>6</sup></td></tr>
+<tr><td>Above values with additional colon behind </td><td> e.g. 15 h 20 30 :           </td><td> Error                                                             </td><td> Invalid time format</td></tr>
+<tr><td>xx h yyyy                           </td><td> 15 h 2020                         </td><td> 2020-01-01 15:00:00                                               </td><td> Assumes January 1, see <sup>2</sup></td></tr>
+<tr><td>xx h MMM                            </td><td> 15 h October                      </td><td> 2020-10-01 15:00:00                                               </td><td> Assumes 1st day of specified month in current year, see <sup>3</sup></td></tr>
+<tr><td>xx : xx yyyy, xx : xx h yyyy        </td><td> 15 : 20 2020, 15 : 20 h 2020      </td><td> 2020-01-01 15:20:00                                               </td><td> Assumes 1st day of specified month in current year, see <sup>2</sup></td></tr>
+<tr><td>xx h xx yyyy                        </td><td> 15 h 20 2020                      </td><td> Error                                                             </td><td> Invalid time format</td></tr>
+<tr><td>xx : xx : yyyy, xx : xx : MMM       </td><td> 15 : 30 : 2020                    </td><td> Error                                                             </td><td> Invalid time format</td></tr>
+<tr><td>xx : xx MMM, xx : xx h MMM          </td><td> 15 : 20 Oct, 15 : 20 h Oct        </td><td> 2020-01-01 15:20:00                                               </td><td> Assumes 1st day of specified month in current year, see <sup>2</sup></td></tr>
+<tr><td>... MMM ... MMM ...<br>Multiple months identified       </td><td> 15 Jan Feb 2020       </td><td> Error                                                     </td><td> Invalid time format</td></tr>
+<tr><td>... yyyy ... yyyy<br>Multiple years identified          </td><td> 13. Feb 2019 or 2020  </td><td> Error                                                     </td><td> Invalid time format</td></tr>
+<tr><td>Year is not 00-99 and not 1900-9999 </td><td> 04. July 1776                     </td><td> Error                                                             </td><td> Invalid year value (before 1900)</td></tr>
+<tr><td>Month is not 01-12                  </td><td> 2012-13-14                        </td><td> Error                                                             </td><td> Invalid month value</td></tr>
+<tr><td>Day is out of range<br> 1-28,29,30,31                   </td><td> 2013-02-29    </td><td> Error (Leapyear: 2012-02-09 would be correct)                     </td><td> Invalid day value</td></tr>
+<tr><td>Time values out of range<br>hours: 1-23, min,sec: 0-59  </td><td> 24:00:00, 15:60:00    </td><td> Error                                                     </td><td> Invlaid time value</td></tr>
+<tr><td>More than 6 values recognized       </td><td> 2012 11 10 15:20:30 40            </td><td> Error                                                             </td><td> Invalid date and time format</td></tr>
+<tr><td>Multiple time-related suffices      </td><td> 10:30 h p.m.                      </td><td> Error (Either use 'h' or 'p.m.')                                  </td><td> Invalid time format</td></tr>
+</table><p>
+
+<sup>1</sup> 1-3 additional numbers following afterwards are recognized as hours, minutes and seconds<br>
+<sup>2</sup> The date has been started with year.  Month and day may be specified afterwards to complete the date<br>
+<sup>3</sup> The date has been started with month.  Day and year may be specified afterwards to complete the date<br>
+<sup>4</sup> The date has been completed with hour.  Minute and second values may be specified afterwards to complete the time<br>
+<sup>5</sup> The date has been completed with hour and minute.  Second value may be specified afterwards to complete the time<br>
+<sup>6</sup> A complete time has been specified in a valid and unambiguous format.  A date may follow afterwards, e.g. '20:30:40 2020-02-02'<br>
+</p>
+<h5> Some code examples</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;set locale( en_us );<br/>
+&nbsp;&nbsp;echo( date("10-11-12 8:15p") );<br/>
+&nbsp;&nbsp;set locale( de_ch );<br/>
+&nbsp;&nbsp;echo( date("10-11-12 8:15p") );<br/>
+</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>2012-10-11 20:15:00<br>2012-11-10 20:15:00<br></code></div><u>Try it yourself:</u> Open <b>LIB_Features_Detects_dates_correctly_in_strings.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

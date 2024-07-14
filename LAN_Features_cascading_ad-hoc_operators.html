@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Cascading ad-hoc Operators</h3>
+<a accesskey="p" href="LAN_Features_ad-hoc_operators.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_ad-hoc_operators_overview.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">4 Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">4.1 Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+ 4.2 Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">+ 4.3 Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">4.4 Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+ 4.5 Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">4.6 Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">4.7 Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">4.8 Ad-hoc Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_cascading_ad-hoc_operators.html"><div class="navi navi-selected">4.8.1 Cascading ad-hoc Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators_overview.html"><div class="navi">4.8.2 Ad-hoc Operators Overview </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Unlike in other common programming languages, B4P supports cascaded ad-hoc operators.  Cascading is realized
+by applying multiple ad-hoc operators in sequence which are then always calculated from left to right.
+Cascading may be used for both prefix and postfix usages.
+<br>
+Some examples:
+</p><table class="noframe bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><td>++ ++       </td><td> Increment twice</td></tr>
+<tr><td>++ --       </td><td> Makes no sense (original value)</td></tr>
+<tr><td>-- --       </td><td> Decrements twice</td></tr>
+<tr><td>++(3) ++    </td><td> Adds 4</td></tr>
+<tr><td>++ ++(3)    </td><td> Adds 4</td></tr>
+<tr><td>**(2) ++    </td><td> Multiplies 2, adds 1</td></tr>
+<tr><td>++ **(2)    </td><td> Syntax error. Scaling not allowed after ad-hoc incrementing or decrementing</td></tr>
+<tr><td>**(2) **(3) </td><td> This combination is OK.  Multiples by 6</td></tr>
+<tr><td>**(1/2)     </td><td> Divides by 2</td></tr>
+</table><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;a[] = 10;<br/>
+&nbsp;&nbsp;b[] = date( "2020-05-01 15:00:00" );<br/>
+&nbsp;&nbsp;c[] = { { 1, 2 }, { 3, 4 }, 5 };<br/>
+<br/>
+&nbsp;&nbsp;a[] ++ ++ ++ -- ++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Becomes 13, even if code appears less meaningful<br/>
+&nbsp;&nbsp;b[] ++(3.75) ++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 4 days and 18 hours later<br/>
+&nbsp;&nbsp;c[] **(2) ++(2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Double all elements, then add 2 on all of them<br/>
+<br/>
+&nbsp;&nbsp;echo("a[] = ", a[],"&nbsp;&nbsp;b[] = ", b[] );<br/>
+&nbsp;&nbsp;echo("c: ", c[] );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>a[] = 13&nbsp;&nbsp;b[] = 2020-05-06 09:00:00<br>c: {{4,6},{8,10},12}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_cascading_ad-hoc_operators.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Regional Variables</h3>
+<a accesskey="p" href="LAN_Features_Local_variables.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_system_variables.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">2 Variables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">2.1 Variables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">2.2 Creating Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">2.3 Variable Scopes </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Global_variables.html"><div class="navi">2.3.1 Global Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Local_variables.html"><div class="navi">2.3.2 Local Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Regional_variables.html"><div class="navi navi-selected">2.3.3 Regional Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_system_variables.html"><div class="navi">+ 2.3.4 System Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">2.4 Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+ 2.5 Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 2.6 References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">2.7 Protecting Variables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>Local variables created inside <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined procedures</a> and <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a>, as well as in B4P programs can be made visible as regional
+variable in the code of user-defined functions called from here.  This approach is useful if you want to provide numerous variables to the function,
+but don't want to create processing overhead for passing them as function parameters, nor using global variables as other side effects cannot be
+avoided.
+</p>
+<h5> Demonstrating regional variables</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;define procedure( zoo )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Zoo in ', city[], ' ', country[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city[] = Cambridge;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// city and country are regional variables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country[] = United Kingdom;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "&nbsp;&nbsp;&nbsp;Scope of country[] in 'zoo': ", scope(country[]), " and city[]: ", scope( city[]) );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;define procedure( bar )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country[] = USA;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// country is a local variable, but city is not<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Bar in ', city[], ' ', country[]);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regional&nbsp;&nbsp;// Alternative formulation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Bar in ', city[], ' ', country[]); // Cambridge, UK<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "&nbsp;&nbsp;&nbsp;Scope of country[] in 'bar': ", scope(country[]), " and city[]: ", scope( city[]) );<br/>
+<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;define procedure( foo )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city[] = Boston;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regional() bar;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo('Foo(d) in ', city[]); // Cambridge<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;// Main program<br/>
+&nbsp;&nbsp;foo;</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Bar in Boston USA<br>Zoo in Boston USA<br>&nbsp;&nbsp;&nbsp;Scope of country[] in 'zoo': regional and city[]: regional<br>Bar in Cambridge United Kingdom<br>&nbsp;&nbsp;&nbsp;Scope of country[] in 'bar': local and city[]: regional<br>Foo(d) in Cambridge<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Regional_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_regional.html">regional</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Lookup Access Exception Handling</h3>
+<a accesskey="p" href="LAN_Features_header_name_exception_handling.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_memory_effect.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">3 Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Tables_-_Example_used_in_the_Following_Sections.html"><div class="navi">3.1 Tables - Example File </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">3.2 Tables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi">3.3 Table Properties </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">3.4 Creating Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi">3.5 Accessing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_table_access.html"><div class="navi">3.5.1 Simple Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_horizontal_table_access.html"><div class="navi">+ 3.5.2 Horizontal Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_vertical_table_access.html"><div class="navi">+ 3.5.3 Vertical Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_matrix_table_access.html"><div class="navi">3.5.4 Matrix Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_partial_table_specifications.html"><div class="navi">3.5.5 Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_nested_partial_table_specification.html"><div class="navi">3.5.6 Nested Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_shifted_table_column_specification.html"><div class="navi">3.5.7 Shifted Table Column Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_header_name_exception_handling.html"><div class="navi">3.5.8 Header Name Exception Handling </div></a></li>
+<li class="navi"><a href="LAN_Features_lookup_access_exception_handling.html"><div class="navi navi-selected">3.5.9 Lookup Access Exception Handling </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi">3.6 Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Exception on rows not found</h4>
+<p>
+Normally, exceptions will be asserted when a table reference with lookup access fails, e.g. <b>[ cities : City, Tokyo ]</b>
+would assert an error message and stops program execution.
+
+However, the function <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() allows differnt options such as
+</p><ul class="bullets"><li class="bullets">Referring to the header row and returning the header name
+</li><li class="bullets">Referring to the 1st row (below the header row) to return some default value
+</li><li class="bullets">Referring to the last row (below the header row) to return some default value
+</li><li class="bullets">Create a new row. Useful for write access.  E.g. <b>[ cities: City, Toyko, Moving along ]</b> would add a new row.</li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code><br/>
+&nbsp;&nbsp;table load( table, "Examples&#92;Cities.csv" );<br/>
+<br/>
+&nbsp;&nbsp;table keep columns( table, { City, Famous attraction, Moving along} );<br/>
+<br/>
+&nbsp;&nbsp;table configure( table, row not found, header row );<br/>
+&nbsp;&nbsp;echo( [ table : City, Boston&nbsp;&nbsp;&nbsp;, Moving along]&nbsp;&nbsp;); // 'Walking'<br/>
+&nbsp;&nbsp;echo( [ table : City, New Haven, Moving along]&nbsp;&nbsp;); // 'Moving along' (Header row)<br/>
+&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;table configure( table, row not found, new row );<br/>
+&nbsp;&nbsp;[ table : City, Kiruna, Moving along ] = Cross Country Skis; // Adds new row<br/>
+<br/>
+&nbsp;&nbsp;table list( table, 1st row, -3 ); // List last 3 rows</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Walking<br>Moving along<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : City&nbsp;&nbsp;&nbsp;| Famous attraction | Moving along&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 : Paris&nbsp;&nbsp;| Eiffel Tower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Métro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;14 : Davos&nbsp;&nbsp;| Weissfluhgipfel&nbsp;&nbsp;&nbsp;| Ski lift&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;15 : Kiruna |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cross Country Skis<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_lookup_access_exception_handling.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
