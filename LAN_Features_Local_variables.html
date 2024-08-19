@@ -26,27 +26,27 @@
 <div class="booktitle_field">B4P Language</div>
 <ul>
 <li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
-<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">2 Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi"+>-  Variables </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">2.1 Variables - Naming Rules </div></a></li>
-<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">2.2 Creating Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi">2.3 Variable Scopes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_names.html"><div class="navi">    Variables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_Variables.html"><div class="navi">    Creating Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_scopes.html"><div class="navi"+>-  Variable Scopes </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Global_variables.html"><div class="navi">2.3.1 Global Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_Local_variables.html"><div class="navi navi-selected">2.3.2 Local Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_Regional_variables.html"><div class="navi">2.3.3 Regional Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_system_variables.html"><div class="navi">+ 2.3.4 System Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Global_variables.html"><div class="navi">    Global Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Local_variables.html"><div class="navi navi-selected">    Local Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Regional_variables.html"><div class="navi">    Regional Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_system_variables.html"><div class="navi">+  System Variables </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">2.4 Variable Attributes </div></a></li>
-<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+ 2.5 Variable Forms and Trees </div></a></li>
-<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+ 2.6 References to Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">2.7 Protecting Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_attributes.html"><div class="navi">    Variable Attributes </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable_forms.html"><div class="navi">+  Variable Forms and Trees </div></a></li>
+<li class="navi"><a href="LAN_Features_references_to_variables.html"><div class="navi">+  References to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_protecting_variables.html"><div class="navi">    Protecting Variables </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
-<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
@@ -69,23 +69,23 @@ Variables may be deleted using the <a class="bold_text" href="LIB_Function_delet
 procedures and functions or called programs.
 </p>
 <h5> Demonstrating global and local variables</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;define procedure( foo, { { a, numeral } } )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a[] &lt; 4) // If a[] exists a local variable, then the local variable will be used preferentially.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo( 4 ); // Recursive call<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = 5;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 3rd: 5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure( foo, { { a, numeral } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a[] &lt; 4) // If a[] exists a local variable, then the local variable will be used preferentially.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo( 4 ); // Recursive call<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = 5;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 3rd: 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 1st and 4th: 4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = 3;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 2nd and 5th: 3<br/>
-&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 1st and 4th: 4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = 3;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] ); // Called 2nd and 5th: 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;a[] = 1;<br/>
-&nbsp;&nbsp;foo( 2 );<br/>
-&nbsp;&nbsp;echo(a[] ); // Called 6th: 1 (Global variable)</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = 1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo( 2 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(a[] ); // Called 6th: 1 (Global variable)</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>4<br>3<br>5<br>5<br>3<br>1<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Local_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>

@@ -26,25 +26,25 @@
 <div class="booktitle_field">B4P Language</div>
 <ul>
 <li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
-<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+ 3 Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">5 Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi"+>-  Transactions </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Transaction_Syntax.html"><div class="navi">5.1 Transactions - Syntax and Operators </div></a></li>
-<li class="navi"><a href="LAN_Features_Without_Transaction_Assignment_Operators.html"><div class="navi">5.2 Without Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Transaction_Syntax.html"><div class="navi">    Transactions - Syntax and Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Without_Transaction_Assignment_Operators.html"><div class="navi"+>-  Without Transaction Assignment Operators </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Transactions_between_variables.html"><div class="navi">5.2.1 Transactions between Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions_from_tables_to_variables.html"><div class="navi navi-selected">5.2.2 Transactions from Tables to Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions_from_variables_to_tables.html"><div class="navi">5.2.3 Transactions from Variables to Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions_between_tables.html"><div class="navi">5.2.4 Transactions between Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_between_variables.html"><div class="navi">    Transactions between Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_from_tables_to_variables.html"><div class="navi navi-selected">    Transactions from Tables to Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_from_variables_to_tables.html"><div class="navi">    Transactions from Variables to Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_between_tables.html"><div class="navi">    Transactions between Tables </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+ 5.3 &amp; Transaction Assignment Operators </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+ 5.4 &vert; Transaction Assignment Operators </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+ 5.5 &#43; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_with_AND_assignment_operator.html"><div class="navi">+  &amp; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_with_OR_assignment_operator.html"><div class="navi">+  &vert; Transaction Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions_with_ADD_assignment_operator.html"><div class="navi">+  &#43; Transaction Assignment Operators </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
@@ -73,73 +73,73 @@ member variable variable.  The following rules apply for these transactions:
 </li></ul><p>
 The following table applies to transactions from a table row (example: table name 't', row 1, all columns) to a variable.
 </p><table class="bold_column_1 bold_column_2 bold_column_3" style = "width:1000px"><col style = "width:100px"><col style = "width:100px"><col style = "width:150px"><col style = "width:650px">
-<tr><th>Transaction </th><th> Symbol    </th><th> Explanation       </th><th> Description</th></tr>
-<tr><td>Copy      </td><td> &lt;==    </td><td> a[] &lt;== [t:..,1];  </td><td> Step 1: If a[] does not yet exist, then it will be created.  Otherwise, the variable will  be initialized, including deleting all members.<br> Step 2: The table name will be copied into the base variable a[].<br> Step 3: For every cell retrieved from the table, a dedicated member will be created.  The header name (row 0) will                                 be used for the member name and the contents will be written into the member variables.</td></tr>
-<tr><td>Copy Members  </td><td> &lt;==^   </td><td> a[] &lt;==^ [t:..,1]; </td><td> Step 1: If a[] does not yet exist, then it will be created.  Otherwise all members will be deleted.  The base variable will be preserved.<br> Step 2: Will be skipped.<br>                                  Step 3: Like above.</td></tr>
-<tr><td>Move      </td><td> &lt;&lt;= </td><td> a[] &lt;&lt;= [t:..,1];</td><td> Steps 1-3: Like the copy-transaction<br>                                   Step 4: The specified row in the table will be deleted.  The rows below will shift upwards.</td></tr>
-<tr><td>Move Members  </td><td> &lt;&lt;=^    </td><td> a[] &lt;&lt;=^ [t:..,1];  </td><td> Steps 1-3: Like the copy-members-transaction<br>                                    Step 4: The specified row in the table will be deleted.  The rows below will shift upwards.</td></tr>
-<tr><td>Swap        </td><td> &lt;=&gt; </td><td> a[] &lt;=&gt; [t:..,1];   </td><td> The contents in the member variable and the table row will be exchanged.  Void value will be assigned to the base variable.</td></tr>
-<tr><td>Swap Members    </td><td> &lt;=&gt;^    </td><td> a[] &lt;=&gt;^ [t:..,1];  </td><td> The contents in the member variable and the table row will be exchanged.  The base variable will be preserved.</td></tr>
+<tr><th>Transaction     </th><th> Symbol        </th><th> Explanation           </th><th> Description</th></tr>
+<tr><td>Copy           </td><td> &lt;==        </td><td> a[] &lt;== [t:..,1];  </td><td> Step 1: If a[] does not yet exist, then it will be created.  Otherwise, the variable will  be initialized, including deleting all members.<br> Step 2: The table name will be copied into the base variable a[].<br> Step 3: For every cell retrieved from the table, a dedicated member will be created.  The header name (row 0) will                                                                 be used for the member name and the contents will be written into the member variables.</td></tr>
+<tr><td>Copy Members   </td><td> &lt;==^       </td><td> a[] &lt;==^ [t:..,1]; </td><td> Step 1: If a[] does not yet exist, then it will be created.  Otherwise all members will be deleted.  The base variable will be preserved.<br> Step 2: Will be skipped.<br>                                                              Step 3: Like above.</td></tr>
+<tr><td>Move           </td><td> &lt;&lt;=     </td><td> a[] &lt;&lt;= [t:..,1];</td><td> Steps 1-3: Like the copy-transaction<br>                                                               Step 4: The specified row in the table will be deleted.  The rows below will shift upwards.</td></tr>
+<tr><td>Move Members   </td><td> &lt;&lt;=^    </td><td> a[] &lt;&lt;=^ [t:..,1];      </td><td> Steps 1-3: Like the copy-members-transaction<br>                                                                        Step 4: The specified row in the table will be deleted.  The rows below will shift upwards.</td></tr>
+<tr><td>Swap            </td><td> &lt;=&gt;     </td><td> a[] &lt;=&gt; [t:..,1];       </td><td> The contents in the member variable and the table row will be exchanged.  Void value will be assigned to the base variable.</td></tr>
+<tr><td>Swap Members    </td><td> &lt;=&gt;^    </td><td> a[] &lt;=&gt;^ [t:..,1];      </td><td> The contents in the member variable and the table row will be exchanged.  The base variable will be preserved.</td></tr>
 </table><p>
 
 In the swap transaction, all members in the original variable will be written back to the table.  For further details, see <a class="bold_text" href="LAN_Features_Transactions_from_variables_to_tables.html">transactions from variables to tables</a>
 how members are transferred to the table row.
 </p>
 <h5> Copy Transaction Example</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize( animals,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize( animals,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
 <br/>
-&nbsp;&nbsp;animal1[] = "My animal";&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;animal2[] = "My animal";&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] = "My animal";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] = "My animal";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-&nbsp;&nbsp;animal1[] &lt;==&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
-&nbsp;&nbsp;animal2[] &lt;==^ [ animals: Name, Ape, {Name, Leg count} ]; // Pick up 2 fields only<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] &lt;==&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] &lt;==^ [ animals: Name, Ape, {Name, Leg count} ]; // Pick up 2 fields only<br/>
 <br/>
-&nbsp;&nbsp;see( animal1[] );<br/>
-&nbsp;&nbsp;see( animal2[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal1[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal2[] );<br/>
 </code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>animal1[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;"4"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Special ability&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br>animal2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My animal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 or 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ape&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Transactions_from_tables_to_variables.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Move Transaction Example</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize( animals,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize( animals,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
 <br/>
-&nbsp;&nbsp;animal1[] = "My animal";&nbsp;&nbsp;<br/>
-&nbsp;&nbsp;animal2[] = "My animal";&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] = "My animal";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] = "My animal";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <br/>
-&nbsp;&nbsp;animal1[] &lt;&lt;=&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
-&nbsp;&nbsp;animal2[] &lt;&lt;=^ [ animals: Name, Ape, {Name, Leg count} ]; // Pick up 2 fields only<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] &lt;&lt;=&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] &lt;&lt;=^ [ animals: Name, Ape, {Name, Leg count} ]; // Pick up 2 fields only<br/>
 <br/>
-&nbsp;&nbsp;see( animal1[] );<br/>
-&nbsp;&nbsp;see( animal2[] );<br/>
-&nbsp;&nbsp;table list( animals ); // The owl is left over</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal1[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal2[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( animals ); // The owl is left over</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>animal1[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;"4"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Special ability&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br>animal2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My animal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 or 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ape&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Name | Leg count | Special ability<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Owl&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Night vision&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Transactions_from_tables_to_variables_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Swap Transaction Example</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize( animals,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize( animals,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Name,&nbsp;&nbsp;Leg count, Special ability&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Owl,&nbsp;&nbsp;&nbsp;2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Dog,&nbsp;&nbsp;&nbsp;4,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Ape,&nbsp;&nbsp;&nbsp;2 or 4,&nbsp;&nbsp;&nbsp;&nbsp;Relatively smart } } );<br/>
 <br/>
-&nbsp;&nbsp;structure( animal1[], { Name, Leg count, Weapon }, { Snake, 0, poison } );<br/>
-&nbsp;&nbsp;structure( animal2[], { Name, Leg count, Weapon, Special ability }, { Wolf, 4, teeth, teamwork } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structure( animal1[], { Name, Leg count, Weapon }, { Snake, 0, poison } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structure( animal2[], { Name, Leg count, Weapon, Special ability }, { Wolf, 4, teeth, teamwork } );<br/>
 <br/>
-&nbsp;&nbsp;animal1[] = "Was a snake";<br/>
-&nbsp;&nbsp;animal2[] = "Was a wolf";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] = "Was a snake";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] = "Was a wolf";<br/>
 <br/>
-&nbsp;&nbsp;animal1[] &lt;=&gt;&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
-&nbsp;&nbsp;animal2[] &lt;=&gt;^ [ animals: Name, Owl,&nbsp;&nbsp;&nbsp;&nbsp;]; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal1[] &lt;=&gt;&nbsp;&nbsp;[ animals: Name, Dog, .. ]; // Pick up entire row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animal2[] &lt;=&gt;^ [ animals: Name, Owl,&nbsp;&nbsp;&nbsp;&nbsp;]; <br/>
 <br/>
-&nbsp;&nbsp;see( animal1[] );<br/>
-&nbsp;&nbsp;see( animal2[] );<br/>
-&nbsp;&nbsp;table list( animals ); // Snake, Wolf, Ape.&nbsp;&nbsp;Additional column included (weapon)</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal1[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see( animal2[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( animals ); // Snake, Wolf, Ape.&nbsp;&nbsp;Additional column included (weapon)</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>animal1[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;"4"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Special ability&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive nose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br>animal2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Was a wolf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Leg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;"2"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Owl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br>Special ability&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(quoted string,full access)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Name&nbsp;&nbsp;| Leg count | Special ability&nbsp;&nbsp;| Weapon<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Wolf&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| teamwork&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| teeth <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Snake | 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| poison<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Ape&nbsp;&nbsp;&nbsp;| 2 or 4&nbsp;&nbsp;&nbsp;&nbsp;| Relatively smart |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Transactions_from_tables_to_variables_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>

@@ -26,26 +26,26 @@
 <div class="booktitle_field">User Guide</div>
 <ul>
 <li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi">1 User Guide </div></a></li>
-<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+ 2 Installation </div></a></li>
-<li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi">+ 3 Starting B4P </div></a></li>
-<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+ 4 Interactive Mode </div></a></li>
-<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">5 Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+  Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi">+  Starting B4P </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi"+>-  Typical Workflow </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="GUI_Features_Import_source_data.html"><div class="navi navi-selected">5.1 A - Import </div></a></li>
-<li class="navi"><a href="GUI_Features_Clean_Data.html"><div class="navi">5.2 B - Clean </div></a></li>
-<li class="navi"><a href="GUI_Features_Validate_and_Explore.html"><div class="navi">5.3 C - Validate </div></a></li>
-<li class="navi"><a href="GUI_Features_Merge_and_Consolidate.html"><div class="navi">5.4 D - Merge </div></a></li>
-<li class="navi"><a href="GUI_Features_Enrichment.html"><div class="navi">5.5 E - Augment </div></a></li>
-<li class="navi"><a href="GUI_Features_Align_and_Process.html"><div class="navi">5.6 F - Analyze </div></a></li>
-<li class="navi"><a href="GUI_Features_Format_the_results.html"><div class="navi">5.7 G - Format </div></a></li>
-<li class="navi"><a href="GUI_Features_Save_and_Export.html"><div class="navi">5.8 H - Export </div></a></li>
+<li class="navi"><a href="GUI_Features_Import_source_data.html"><div class="navi navi-selected">    A - Import </div></a></li>
+<li class="navi"><a href="GUI_Features_Clean_Data.html"><div class="navi">    B - Clean </div></a></li>
+<li class="navi"><a href="GUI_Features_Validate_and_Explore.html"><div class="navi">    C - Validate </div></a></li>
+<li class="navi"><a href="GUI_Features_Merge_and_Consolidate.html"><div class="navi">    D - Merge </div></a></li>
+<li class="navi"><a href="GUI_Features_Enrichment.html"><div class="navi">    E - Augment </div></a></li>
+<li class="navi"><a href="GUI_Features_Align_and_Process.html"><div class="navi">    F - Analyze </div></a></li>
+<li class="navi"><a href="GUI_Features_Format_the_results.html"><div class="navi">    G - Format </div></a></li>
+<li class="navi"><a href="GUI_Features_Save_and_Export.html"><div class="navi">    H - Export </div></a></li>
 </ul></li>
-<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+ 6 Examples </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
-<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+ 7 Recent Releases </div></a></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+  Recent Releases </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
@@ -78,10 +78,10 @@ Only two function calls are needed to retrieve tables from the web:
 <h4> Example with Country Table from Wikipedia</h4>
 <p></p>
 <h5> Simple Example</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes", ISO_Codes.html );<br/>
-&nbsp;&nbsp;table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, ISO_Codes.html, HTML, Current ISO 3166 country codes);<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes", ISO_Codes.html );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( countries, ISO_Codes.html, HTML, Current ISO 3166 country codes);<br/>
 <br/>
-&nbsp;&nbsp;table list( countries, briefly, 5, 1st col, 0, last col, 1 ); // List first and last 5 rows and 2 columns only</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( countries, briefly, 5, 1st col, 0, last col, 1 ); // List first and last 5 rows and 2 columns only</code></div>
 <h5> Original table as retrieved from Wikipedia</h5>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : ISO 3166[1] name[5]&nbsp;&nbsp;| World Factbook[6] official state name[a]&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 :  Afghanistan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Islamic Republic of Afghanistan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 :  Åland Islands&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Åland&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 :  Albania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Republic of Albania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 :  Algeria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| People's Democratic Republic of Algeria&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;... :<br>&nbsp;&nbsp;268 :  Wallis and Futuna&nbsp;&nbsp;&nbsp;| Territory of the Wallis and Futuna Islands<br>&nbsp;&nbsp;269 :  Western Sahara [aj] | Sahrawi Arab Democratic Republic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;270 :  Yemen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Republic of Yemen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;271 :  Zambia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Republic of Zambia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;272 :  Zimbabwe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Republic of Zimbabwe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Import_source_data.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> </h4>

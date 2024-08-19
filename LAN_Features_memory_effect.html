@@ -26,20 +26,20 @@
 <div class="booktitle_field">B4P Language</div>
 <ul>
 <li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+ 1 The Language </div></a></li>
-<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+ 2 Variables </div></a></li>
-<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">3 Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi"+>-  Tables </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Tables_-_Example_used_in_the_Following_Sections.html"><div class="navi">3.1 Tables - Example File </div></a></li>
-<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">3.2 Tables - Naming Rules </div></a></li>
-<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi">3.3 Table Properties </div></a></li>
-<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">3.4 Creating Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi">+ 3.5 Accessing Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi navi-selected">3.6 Header Names - Memory Effect </div></a></li>
+<li class="navi"><a href="LAN_Features_Tables_-_Example_used_in_the_Following_Sections.html"><div class="navi">    Tables - Example File </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">    Tables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi">    Table Properties </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">    Creating Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi">+  Accessing Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi navi-selected">    Header Names - Memory Effect </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+ 4 Assignments and Expressions </div></a></li>
-<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+ 5 Transactions </div></a></li>
-<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+ 6 Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
@@ -72,16 +72,16 @@ In a different case, you create a user-defined function which proceses a particu
 the the colum numbers.  See following example:
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
-&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
-&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;legs( table 1 );<br/>
-&nbsp;&nbsp;legs( table 2 ); // Note: Weapons are listed and not the legs</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 1 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 2 ); // Note: Weapons are listed and not the legs</code></div>
 <h5> </h5>
 <div class="output_background_color" ><code>Bird&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>Fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>Snake&nbsp;&nbsp;&nbsp;: poison<br>Tiger&nbsp;&nbsp;&nbsp;: teeth<br>Lobster : claws<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_memory_effect.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Solving the Drawback</h4>
@@ -96,16 +96,16 @@ Three different approches are available to solve this issue:
 </li><li class="bullets">Deactivate memorizing by changing runtime settings
 </li></ul><p></p>
 <h5> Using Parentheses:</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
-&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [(leg count)] ) );<br/>
-&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [(leg count)] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;legs( table 1 );<br/>
-&nbsp;&nbsp;legs( table 2 );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 1 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 2 );</code></div>
 <h5> Note the right output of leg count</h5>
 <div class="output_background_color" ><code>Bird&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>Fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>Snake&nbsp;&nbsp;&nbsp;: 0<br>Tiger&nbsp;&nbsp;&nbsp;: 4<br>Lobster : 8<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_memory_effect_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> </h4>
@@ -121,17 +121,17 @@ function is called again.  The advantage of this compared to adding simple algor
 ill not have a performance comprormise particularly for very large tables since the header positions will only be calculated once after
 having them forgotten.</p>
 <h5> Let B4P forget memorized columns:</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
-&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forget memorized table columns; // All memorized columns in this B4P program file will be forgotten<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
-&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forget memorized table columns; // All memorized columns in this B4P program file will be forgotten<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;legs( table 1 );<br/>
-&nbsp;&nbsp;legs( table 2 ); </code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 1 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 2 ); </code></div>
 <h5> The output is OK</h5>
 <div class="output_background_color" ><code>Bird&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>Fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>Snake&nbsp;&nbsp;&nbsp;: 0<br>Tiger&nbsp;&nbsp;&nbsp;: 4<br>Lobster : 8<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_memory_effect_02.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Deactivate Memorizing</h4>
@@ -140,17 +140,17 @@ overall performance a bit, particularly if the tables contain many columns, beca
 table header names every time.  You can disable it by setting the <a class="bold_text" href="LAN_Features_system_variables.html">system variable</a> <b>runtime settings[memorize table columns]</b> to <b>false</b>.
 This setting will apply until the B4P program has ended or the variable has been enabled again.</p>
 <h5> Disable memorizing</h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
-&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 1, { { Animal, leg count }, { Bird, 2 }, { Dog, 4 }, { Fly, 6 } } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 2, { { Animal, weapon, leg count }, { Snake, poison, 0 }, { Tiger, teeth, 4 }, { Lobster, claws, 8 } } );<br/>
 <br/>
-&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
-&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure ( legs, { { table name, string } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process( table name[], echo( str([Animal],"8#" ),": ", [leg count] ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;runtime settings[memorize table columns] = false;<br/>
-&nbsp;&nbsp;legs( table 1 );<br/>
-&nbsp;&nbsp;legs( table 2 );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runtime settings[memorize table columns] = false;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 1 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;legs( table 2 );</code></div>
 <h5> The output is OK</h5>
 <div class="output_background_color" ><code>Bird&nbsp;&nbsp;&nbsp;&nbsp;: 2<br>Dog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>Fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6<br>Snake&nbsp;&nbsp;&nbsp;: 0<br>Tiger&nbsp;&nbsp;&nbsp;: 4<br>Lobster : 8<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_memory_effect_03.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
