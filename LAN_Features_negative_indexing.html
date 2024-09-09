@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Negative Indexing</h3>
+<a accesskey="p" href="LAN_Features_verbose.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Directory_and_files.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"+>-  The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">+  Basics </div></a></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+  Basic Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi"+>-  Miscellaneous Features </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Locales.html"><div class="navi">    Locales </div></a></li>
+<li class="navi"><a href="LAN_Features_verbose.html"><div class="navi">    Verbose Levels </div></a></li>
+<li class="navi"><a href="LAN_Features_negative_indexing.html"><div class="navi navi-selected">    Negative Indexing </div></a></li>
+<li class="navi"><a href="LAN_Features_Directory_and_files.html"><div class="navi">+  Directories and Files </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">    Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Python, a common programming language, supports negative indexing for arrays.  B4P applies negative indexing on a broader range.  Typically, the -1
+refers to the last element, with -2, -3, etc. referring to the elements further up (or leftward).  At present, negative indexing is used in the following:
+
+</p><ul class="bullets"><li class="bullets">Arrays (-1 = last element)
+</li><li class="bullets">Table row numbers (-1 = last row)
+</li><li class="bullets">Table column number (-1 = last column.  Few exceptions exists where -1 refers to a vacant column after the last one, and is documented so if it applies)
+</li><li class="bullets">Set elements (-1 = last set element)
+</li><li class="bullets">Function parameters (in selected functions where documented)
+</li></ul><p>
+Negative numbers must be at least big enough in order to access the first element / row / column.  Going further will result in exceptions (error messages).
+</p>
+<h5> Programming example</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array( a[], { ha, he, hi, ho, hu } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structure( b[], { reptile, mammal, bird, fish }, { turtle, deer, swallow, dorade } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[] = { Hah, Heh, Hih, Hoh, Huh };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[-2], "&nbsp;&nbsp;", a[-1] ); // ho, hu<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( b[-2], "&nbsp;&nbsp;", b[-1] ); // deer, turtle (last two acc. to alphabetic order of structure members)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( c[]{-2}, "&nbsp;&nbsp;", c[]{-1} ); // Hoh, Huh<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Example with tables:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize( t, { { Last Name, First Name, Street, City, Country }, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Adams, Abel, Main St, S. Francisco, USA }, { Billson, Bill, South St, London, UK } } );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [t:-2,-1] ); // Last row, 2nd last column.&nbsp;&nbsp;It's 'London'.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [t:-1,-1] ); // Last row, last column.&nbsp;&nbsp;It's 'UK'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
+<h5> Outcome</h5>
+<div class="output_background_color" ><code>ho&nbsp;&nbsp;hu<br>deer&nbsp;&nbsp;turtle<br>Hoh&nbsp;&nbsp;Huh<br><br>Example with tables:<br>London<br>UK<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_negative_indexing.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

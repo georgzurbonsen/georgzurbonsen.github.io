@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Sorting and Ranking Options</h3>
+<a accesskey="p" href="LIB_Features_Cross-functional_info.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_consolidation_actions.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi"+>-  Cross-Functional Info </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Sorting_options.html"><div class="navi navi-selected">    Sorting and Ranking Options </div></a></li>
+<li class="navi"><a href="LIB_Features_consolidation_actions.html"><div class="navi">    Consolidation Actions </div></a></li>
+</ul></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The sorting options are used (amongst others) by following functions:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_sort_columns.html">table sort columns</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_sort_rows.html">table sort rows</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_sort_rows.html">table sort selected rows</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_rank_rows.html">table rank rows</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_rank_rows.html">table rank selected rows</a>()
+</li></ul><p></p>
+<h4> Overview of Available Options</h4>
+<p>
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>Sorting / Ranking Option                </th><th> Description</th></tr>
+<tr><td>alphabetic                                      </td><td> Alphabetic order by UNICODE character set.</td></tr>
+<tr><td>alphabetic down                         </td><td> Opposite direction of above</td></tr>
+<tr><td>alphabetic ignore case          </td><td> Alphabetic order, but ignores case (e.g. 'the Hague' comes before 'Uruguay')</td></tr>
+<tr><td>alphabetic down ignore case     </td><td> Opposite direction of above</td></tr>
+<tr><td>alphabetic ignore blanks                </td><td> Same as alphabetic. Blanks (incl. new line, tabs, space) are ignored.  'St. Moritz' and 'St.Moritz' are equivalent.</td></tr>
+<tr><td>alphabetic down ignore blanks   </td><td> Opposite direction of above</td></tr>
+<tr><td>alphabetic ignore both          </td><td> Same as alphabetic, ignoring both case and blanks</td></tr>
+<tr><td>alphabetic down ignore both     </td><td> Opposite direction of above</td></tr>
+<tr><td>numeric                                 </td><td> Sorts by numbers.  Non-numeric contents are interpreted like zero.  Smallest number comes first.</td></tr>
+<tr><td>numeric down                            </td><td> Opposite direction of above</td></tr>
+<tr><td>date                                            </td><td> Sorts by dates.  Fields containing no qualified dates are interpreted like blank dates.  See rules below the table.</td></tr>
+<tr><td>date down                                       </td><td> Opposite direction of above</td></tr>
+<tr><td>time                                            </td><td> Sorts by dates.  Fields containing no qualified dates are interpreted like blank dates.  See rules below the table.</td></tr>
+<tr><td>time down                                       </td><td> Opposite direction of above</td></tr>
+<tr><td>date and time                           </td><td> Sorts by dates.  Fields containing no qualified dates are interpreted like blank dates.  See rules below the table.</td></tr>
+<tr><td>date and time down                      </td><td> Opposite direction of above</td></tr>
+</table><p>
+
+Rules on strings:
+</p><ul class="bullets"><li class="bullets">Blank string '' comes first
+</li><li class="bullets">One space symbol ' ' (UNICODE 32) comes next.
+</li><li class="bullets">Sorting is done based on UNICODE character codes.
+</li><li class="bullets">Sorting takes no cultural implications into consideration (e.g. Spanish: LL follows L).
+</li><li class="bullets">Numbers are also treated as strings: 0100 comes before 10.
+</li></ul><p>
+Rules on numerals:
+</p><ul class="bullets"><li class="bullets">For contents beginning a number: The 1st number will be recognized.
+</li><li class="bullets">For contents beginning with non-numeric symbols: Interpreted as zero.
+</li></ul><p>
+Rules on dates:
+</p><ul class="bullets"><li class="bullets">Blank dates come first.
+</li><li class="bullets">If year is missing, current year is assumed.
+</li><li class="bullets">If day is missing, the 1st day of month is assumed.
+</li><li class="bullets">Month names in key languages like "Jan", "feb", "MÃ¤rz", "avril", "May", "juni", etc. are recognized as months and sorted accordingly.
+</li><li class="bullets">Local settings are used as rules to resolve country dependent date formats like 01/02/2015 (day and month ordering: 2. Jan 2015 or 1. Feb 2015).  Local settings are in the system variables and can be changed.
+</li><li class="bullets">Time values in the date are ignored.  E.g. "14.07.2016 10:00" and "14.07.2016 11:00" are treated as identical values
+</li></ul><p>
+Rules on dates and times:
+</p><ul class="bullets"><li class="bullets">Blank dates come first.
+</li><li class="bullets">Date values without time come before date values with time (e.g. "00:00:00") if date are on the same day.
+</li><li class="bullets">Time values are not ignored
+</li></ul><p>
+Rules on times:
+</p><ul class="bullets"><li class="bullets">Blank dates come first.
+</li><li class="bullets">Date values are ignored.  "14.07.2016 10:00â€? and â€œ15.07.2016 10:00â€? are treated as identical values
+</li></ul><p>
+Following example shows a ranking based on the different options applied.</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( t,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Scheme, alphabetic, alphabetic down, alphabetic ignore case, alphabetic down ignore case, numeric, numeric down, date, date down, time, time down },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"02-Dec-2020 10:00", "02-Nov-2020 11:00", "05", "1", "Dec", "apr 15", "-1", "", "begin" } );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( [t:1..,0], option[] )&nbsp;&nbsp;table rank rows( t, option[], Scheme, option[], 113 ); // 113 - Same ranking share same ranking position<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table transpose (t);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list (t);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Scheme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 02-Dec-2020 10:00 | 02-Nov-2020 11:00 | 05 | 1 | Dec | apr 15 | -1 |&nbsp;&nbsp;&nbsp;| begin<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : alphabetic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 6 | 7&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;| 1 | 9&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : alphabetic down&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 4 | 3&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;| 9 | 1&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : alphabetic ignore case&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 6 | 9&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;| 1 | 8&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : alphabetic down ignore case | 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 4 | 1&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;| 9 | 2&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : numeric&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;| 6 | 2&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;| 2 | 2&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : numeric down&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;| 4 | 5&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;| 5 | 5&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;| 1 | 9&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;| 1 | 1&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : date down&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 5 | 1&nbsp;&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 5 | 5&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 5 | 1&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;| 1 | 1&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : time down&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;| 3 | 6&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;| 6 | 6&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Features_Sorting_options.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Vectorization</h3>
+<a accesskey="p" href="LAN_Features_Expressions_to_select_columns.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Indirect_parameter_passing.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi"+>-  Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Procedure_Names.html"><div class="navi">    Function Naming </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_Parameters.html"><div class="navi">    Function Parameters </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_directions.html"><div class="navi">    Function Parameter Directions </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_types.html"><div class="navi">+  Function Parameter Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Vectorization.html"><div class="navi navi-selected">    Vectorization </div></a></li>
+<li class="navi"><a href="LAN_Features_Indirect_parameter_passing.html"><div class="navi">    Indirect Parameter Passing </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction_to_User-Defined_Functions.html"><div class="navi">    Introduction to User-Defined Functions </div></a></li>
+</ul></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+Most mathematical, type conversion, string and date functions, as well as various additional B4P functions, support vectorization in the
+first and, in a few cases, second function parameters.  This feature enables functions, which accept single values
+and return single values, to process <span class="red_text">parameter sets</span> and also nested parameter sets containing multiple values in any structure and
+return parameter sets in the corresponding structure containing the results.
+
+<br><br>
+<u>Example:</u>  sqrt( {4, 16, { 9, 81 }} ) returns { 2, 4, { 3, 9 }}.
+
+<br><br>
+<b>Key benefits:</b>
+</p><ul class="bullets"><li class="bullets">Vectors, defined in 1-level parameter sets, can be processed with a single function call
+</li><li class="bullets">Matrices, defined in 2-level parameter, can also be processed with a single function call
+</li><li class="bullets">Same applies to any form of nested parameter sets
+</li><li class="bullets">Complete table columns can be processed with a single assignment without using the <a class="bold_text" href="LIB_Function_table_process.html">table process</a>() function.
+</li><li class="bullets">The cumbersome functions <a class="bold_text" href="LIB_Function_deep.html">deep</a>() and <a class="bold_text" href="LIB_Function_deep.html">deepr</a>() become unneccessary.
+</li></ul><p>
+<br><br>
+Some functions, including, but not limited to, <a class="bold_text" href="LIB_Function_mod.html">mod</a>(), <a class="bold_text" href="LIB_Function_pow.html">pow</a>(), <a class="bold_text" href="LIB_Function_excel_coordinates.html">excel coordinates</a>(), <a class="bold_text" href="LIB_Function_round.html">round</a>(), support
+vectorization on both first two parameters.  In these cases, either the two parameter sets must contain the same number
+of elements, or a parameter set in one function parameter can be matched with a scalar in the other function parameter
+where the scalar will be used repeatedly.
+
+
+<br><br>
+Allowed examples with 2 vectorized parameters:
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><th>Formulation                             </th><th> Functionality</th></tr>
+<tr><td>pow( {1, 2, 3}, {4, 5, 6 )              </td><td> Calculates 1^4, 2^5 and 3^6</td></tr>
+<tr><td>pow( 10, {1, 2, 3} )                    </td><td> Calculates 10^1, 10^2 and 10^3</td></tr>
+<tr><td>pow( { 1, 2, 3 }, 2 )                   </td><td> Calculates 1^2, 2^2 and 3^2</td></tr>
+<tr><td>pow( { 1, {2, 3}}, {4, 5} )             </td><td> Calculates 1^4, 2^5 and 3^5</td></tr>
+<tr><td>pow( { 1, 2, 3}, { 4, 5 } )             </td><td> Error: Sizes of parameter sets do not match</td></tr>
+</table><p>
+<br><br>
+
+<br>Following functions share the same names for processing strings and parameter sets, so alternative function names
+beginning with the prefix letter <b>v</b> have been introduced to support vectorization and avoid confusing between
+processing strings and parameter sets.
+
+<br><br>
+Deviating function names to support vectorization on processing parameter sets with multiple strings inside:
+</p><table style = "width:1000px"><col style = "width:200px"><col style = "width:200px"><col style = "width:600px">
+<tr><th>Original Functions                      </th><th> Vectorizable Functions                </th><th> Explanation</th></tr>
+<tr><td><a class="bold_text" href="LIB_Function_left.html">left</a>()                              </td><td> <a class="bold_text" href="LIB_Function_left.html">vleft</a>()                           </td><td> Extract left parts of strings</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_left.html">left include</a>()                      </td><td> <a class="bold_text" href="LIB_Function_left.html">vleft include</a>()                   </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_left.html">left last match</a>()                   </td><td> <a class="bold_text" href="LIB_Function_left.html">vleft last match</a>()                </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_left.html">left last match include</a>()           </td><td> <a class="bold_text" href="LIB_Function_left.html">vleft last match include</a>()        </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_right.html">right</a>()                             </td><td> <a class="bold_text" href="LIB_Function_right.html">vright</a>()                          </td><td> Extract right parts of strings</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_right.html">right include</a>()                     </td><td> <a class="bold_text" href="LIB_Function_right.html">vright include</a>()                  </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_right.html">right last match</a>()                  </td><td> <a class="bold_text" href="LIB_Function_right.html">vright last match</a>()               </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_right.html">right last match include</a>()          </td><td> <a class="bold_text" href="LIB_Function_right.html">vright last match include</a>()       </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_middle.html">middle</a>()                            </td><td> <a class="bold_text" href="LIB_Function_middle.html">vmiddle</a>()                         </td><td> Extract middle parts of strings</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_middle.html">middle include</a>()                    </td><td> <a class="bold_text" href="LIB_Function_middle.html">vmiddle include</a>()                 </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_middle.html">middle until</a>()                      </td><td> <a class="bold_text" href="LIB_Function_middle.html">vmiddle until</a>()                   </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_middle.html">middle until include</a>()              </td><td> <a class="bold_text" href="LIB_Function_middle.html">vmiddle until include</a>()           </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_outside.html">outside</a>()                           </td><td> <a class="bold_text" href="LIB_Function_outside.html">voutside</a>()                        </td><td> Remove middle parts of strings</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_outside.html">outside exclude</a>()                   </td><td> <a class="bold_text" href="LIB_Function_outside.html">voutside exclude</a>()                </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_outside.html">outside until</a>()                     </td><td> <a class="bold_text" href="LIB_Function_outside.html">voutside until</a>()                  </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_outside.html">outside until exclude</a>()             </td><td> <a class="bold_text" href="LIB_Function_outside.html">voutside until exclude</a>()          </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_length.html">length</a>()                            </td><td> <a class="bold_text" href="LIB_Function_length.html">vlength</a>()                         </td><td> Note: No 'v' prefix is needed for <a class="bold_text" href="LIB_Function_width.html">width</a>() and <a class="bold_text" href="LIB_Function_height.html">height</a>()</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_trim.html">trim</a>()                              </td><td> <a class="bold_text" href="LIB_Function_trim.html">vtrim</a>()                           </td><td> Trim strings</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_trim.html">trim all</a>()                          </td><td> <a class="bold_text" href="LIB_Function_trim.html">vtrim all</a>()                       </td><td> "</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_str.html">str</a>()                               </td><td> <a class="bold_text" href="LIB_Function_str.html">vstr</a>()                            </td><td> Convert to <a class="bold_text" href="LAN_Features_Data_subtype_quoted_strings.html">quoted string</a> type</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_str.html">soft</a>()                              </td><td> <a class="bold_text" href="LIB_Function_str.html">vsoft</a>()                           </td><td> Convert to <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a> type</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_type.html">type</a>()                              </td><td> <a class="bold_text" href="LIB_Function_type.html">vtype</a>()                           </td><td> Identify types</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_type.html">subtype</a>()                           </td><td> <a class="bold_text" href="LIB_Function_type.html">vsubtype</a>()                        </td><td> Identify subtypes</td></tr>
+</table><p>
+
+<u>Note:</u> Vectorization cannot be activated for user-defined procedures and functions.</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Simple example with vectorization");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p[] = { 0, 30, 60, 90 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "With vectorization: ", sin deg( p[] ) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// And the old way: Same results, but supports 1-level parameter sets only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "with deep function: ", deep ( sin deg, {p[]} ) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( new line, "Example with nested parameters:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( log( { 1, 10, { 100, 1000 }, { 0.01, 0.001 } } ) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Example with matrices:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m[]&nbsp;&nbsp;= { { 1, 2 }, { 3, 4 } };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m[] *^^= m[]; // Square the four values in the matrix (^^ is 2 level deep operator prefix)<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Original value: ", m[], "&nbsp;&nbsp;Square root: ", sqrt(m[]));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "2 vectorized parameters");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "x^y repeated 4x: ", pow( { 1, 2, 3, 4 }, { 4, 3, 2, 1 } ) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "All squared&nbsp;&nbsp;&nbsp;&nbsp;: ", pow( { 1, 2, 3, 4 }, 2 ) ); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Powers of ten&nbsp;&nbsp;: ", pow( 10, { 1, 2, 3, 4 } ) ); <br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Do something more sophisticated:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( " Mod(x,7) on all values except the first one: ");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( mod( { 10, { 20, 30, { 8, 9 } }}, { 5, 7 } ) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( " Mod(100,x) on all values: ");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( mod( 100, { 10, { 20, 30, { 40, 50 } }} ) );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Simple example with vectorization<br>With vectorization: {0,0.5,0.8660254038,1}<br>with deep function: {0,0.5,0.8660254038,1}<br><br>Example with nested parameters:<br>{0,1,{2,3},{-2,-3}}<br><br>Example with matrices:<br>Original value: {{1,4},{9,16}}&nbsp;&nbsp;Square root: {{1,2},{3,4}}<br><br>2 vectorized parameters<br>x^y repeated 4x: {1,8,9,4}<br>All squared&nbsp;&nbsp;&nbsp;&nbsp;: {1,4,9,16}<br>Powers of ten&nbsp;&nbsp;: {10,100,1000,10000}<br><br>Do something more sophisticated:<br> Mod(x,7) on all values except the first one: <br>{0,{6,2,{1,2}}}<br> Mod(100,x) on all values: <br>{0,{0,10,{20,0}}}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Vectorization.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

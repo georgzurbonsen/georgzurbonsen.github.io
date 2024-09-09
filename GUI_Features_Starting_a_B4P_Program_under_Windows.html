@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Windows Start B4P Programs</h3>
+<a accesskey="p" href="GUI_Features_Edit_B4P_Programs_under_Windows.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Starting_B4P_Directly_under_Windows.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+  Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi"+>-  Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_Windows.html"><div class="navi"+>-  Starting B4P under Windows </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Edit_B4P_Programs_under_Windows.html"><div class="navi">    Windows Edit B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_a_B4P_Program_under_Windows.html"><div class="navi navi-selected">    Windows Start B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_Directly_under_Windows.html"><div class="navi">    Windows Start B4P Directly </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_Linux.html"><div class="navi">+  Starting B4P under Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_MacOS.html"><div class="navi">+  Starting B4P under MacOS </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior.html"><div class="navi">+  Starting Behavior Basics </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_Line_Arguments_and_Options.html"><div class="navi">+  Command Line Arguments and Options </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+  Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+  Recent Releases </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Starting a B4P Program under Windows - Hello World</h4>
+<p>
+Two possibilites exist to start B4P programs:
+
+</p><ul class="bullets"><li class="bullets">Double-click on the file "Hello World.b4p" using the left mouse button
+</li><li class="bullets">Click the file "Hello World.b4p" with the right mouse button and choose the 1st menu entry <b>Open</b>.
+</li></ul><p>
+<br/><img src="Images/GUI_Windows_Example_Files.png" alt="Windows Start in Explorer"><br/>
+
+<br><br>
+The program will start and you will see the following output:</p>
+<h5> In the very first run, B4P searches the 7-Zip utility and memorizes its whereabouts:</h5>
+<div class="output_background_color" ><code>B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version 10.00 Release Candidate 2 (2022-03-27)<br/>
+Copyright (C) 2012..2022 Georg zur Bonsen, all rights reserved.<br/>
+Licensing info ...<br/>
+<br/>
+<br/>
+Look for the 7Z compression/decomopression utility<br/>
+<br/>
+Found following program file paths: {'C:&#92;Program Files','C:&#92;Program Files (x86)'}<br/>
+&nbsp;- 7z.exe Zip-utility found in {'C:&#92;Program Files&#92;7-Zip&#92;7z.exe'} (OK)<br/>
+Hello World<br/>
+Today, the date is 2024-02-15<br/>
+Done - Press ENTER key</code></div>
+<h5> Outcome if this is not the very first run:</h5>
+<div class="output_background_color" ><code>B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version 10.00 Release Candidate 2 (2022-03-27)<br/>
+Copyright (C) 2012..2022 Georg zur Bonsen, all rights reserved.<br/>
+Licensing info ...<br/>
+<br/>
+Hello World<br/>
+Today, the date is 2024-02-15<br/>
+Done - Press ENTER key<br/>
+</code></div>
+<h4> Start B4P Program with Windows Commands</h4>
+<p>
+Start <b>cmd</b> or alternatively <b>powershell</b> and type <b>b4p</b> or <b>B4P</b>.
+
+Following two appraoches are possible: Type <b>B4P</b> followed by full B4P program file with file type, or just
+type the B4P file.  The command and files are not case sensitive.  Quotation marks are required if the file names contain spaces.
+
+</p><ul class="bullets"><li class="bullets">B4P "Hello World.b4p"
+</li><li class="bullets">"Hello World.b4p"
+</li></ul><p>
+If you want to suppress the "Press [Enter] ..." before finishing, add the <a class="bold_text" href="GUI_Features_Command_line_switches.html">command line switch</a> <b>-x</b>, for example
+</p><ul class="bullets"><li class="bullets">B4P -x "Hello World.b4p"
+</li></ul><p></p>
+<h5> </h5>
+<div class="output_background_color" ><code>PS C:&#92;Users&#92;username&gt; cd "C:&#92;Users&#92;username&#92;B4P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+PS C:&#92;Users&#92;userame&#92;B4P&gt; ls *.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Verzeichnis: C:&#92;Users&#92;username&#92;B4P<br/>
+<br/>
+Mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LastWriteTime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Length Name<br/>
+----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ ----<br/>
+-a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06.11.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22:18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;482 Hello World.b4p<br/>
+-a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02.10.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21:52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 interactive.b4p<br/>
+-a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15.08.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23:52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 Main.b4p<br/>
+-a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06.11.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;555 Start B4P here.b4p<br/>
+<br/>
+<br/>
+PS C:&#92;Users&#92;username&#92;B4P&gt; b4p "Hello World.b4p"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+B4P - Beyond Former Performance<br/>
+_______________________________________________________________________________<br/>
+<br/>
+Version 10.04RC1 Release Candidate (2023-12-31)<br/>
+Copyright (C) 2012..2024 Georg zur Bonsen, all rights reserved.<br/>
+Licensed (local machine) ...<br/>
+<br/>
+Hello World<br/>
+Today, the date is 2024-02-15<br/>
+Done - Press ENTER key<br/>
+<br/>
+PS C:&#92;Users&#92;username&#92;B4P&gt;</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

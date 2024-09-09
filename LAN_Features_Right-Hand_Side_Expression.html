@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Right-Hand Side Expressions</h3>
+<a accesskey="p" href="LAN_Features_Left-Hand_Side_Expression.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Calculations.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi"+>-  Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">    Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi"+>-  Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Left-Hand_Side_Expression.html"><div class="navi">    Left-Hand Side Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Right-Hand_Side_Expression.html"><div class="navi navi-selected">    Right-Hand Side Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi">    Calculations </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">+  Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">    Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi">+  Deep Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">    Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">    Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+  Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+The <b>RHS Expressions</b> are expressions on the <i>Right-Hand Side</i> of the assignment symbol or <a class="bold_text" href="LAN_Features_Assignment_operator.html">assignment operator</a> which
+are used to specify, retrieve and/or calculate values. Following rules apply:
+</p><ul class="bullets"><li class="bullets">Constant values like <a class="bold_text" href="LAN_Features_Number.html">numbers</a> (for <a class="bold_text" href="LAN_Features_data_types_numerals.html">numeral</a> values) and <a class="bold_text" href="LAN_Features_Text.html">text</a> (for <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> and <a class="bold_text" href="LAN_Features_data_types_booleans.html">boolean</a> values)
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_data_types_Sets.html">Sets</a>,
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Variable.html">Variables</a>,
+<ul class="bullets"><li class="bullets">For variables, individual <a class="bold_text" href="LAN_Features_Variable_forms.html">Member variables</a> using array subscripts and member names may be referenced:
+</li></ul></li><li class="bullets"><a class="bold_text" href="LAN_Features_accessing_tables.html">Table references</a>,
+<ul class="bullets"><li class="bullets">For tables, either single cells or a combination of mulitple cells (including whole rows and columns) may be specified:
+</li></ul></li><li class="bullets"><a class="bold_text" href="LAN_Features_Functions_and_Procedures.html">Function calls</a> to functions which return values of any type,
+</li><li class="bullets">Any calcualations:
+<ul class="bullets"><li class="bullets">With <a class="bold_text" href="LAN_Features_unary_operators.html">unary operators</a>, <a class="bold_text" href="LAN_Features_binary_operators.html">binary operators</a> and/or <a class="bold_text" href="LAN_Features_Operator_Precedence.html">parentheses</a>:
+</li><li class="bullets">Parentheses are useful to overrule <a class="bold_text" href="LAN_Features_Operator_Precedence.html">operator precedence</a>.
+</li></ul></li><li class="bullets"><a class="bold_text" href="LAN_Features_ad-hoc_operators.html">Ad-hoc operations</a> are allowed on specified variables and table entries.  Example: <b>a[]++ = 5;</b>. The 5 will be incremented by 1 to 6 after the assignment.
+</li></ul><p>
+RHS Expressions are applicable in following cases:
+</p><ul class="bullets"><li class="bullets">On the right-hand-side of all <a class="bold_text" href="LAN_Features_assignments.html">Assignments</a>,
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Function_parameter_directions.html">Input Parameters</a> in procedure and function calls
+</li><li class="bullets">Variable names, example: <b>('Category '+name[])[]</b>
+<ul class="bullets"><li class="bullets">Parentheses are mandatory if the variable specified as a <a class="bold_text" href="LAN_Features_Left-Hand_Side_Expression.html">LHS expression</a>, e.g. <b>(name[])[] = Hello;</b>
+</li><li class="bullets">Otherwise, parentheses are mandatory if any calculations are applied in order to encompass the whole result, e.g. <b>('My '+name[])[] = Nick;</b> where        it is ensured that 'My ' is part of the variable name to use.
+</li></ul></li></ul><p>
+The following are not allowed in RHS expressions:
+</p><ul class="bullets"><li class="bullets">Applying <a class="bold_text" href="LAN_Features_ad-hoc_operators.html">ad-hoc operations</a> on calculated expressions and function calls, e.g. <b>(a[]+4)++</b>.
+</li><li class="bullets">Applying them on the left-hand-side of assignment symbols, as I/O parameters in function and procedure calls, and transactions
+</li></ul><p>
+<br>
+<u>Note:</u> Whenever the term <b>Expression</b> is referred without indications on left/right-hand sides, then <u>the right-hand-side is assumed</u>.
+</p>
+<h5> Examples</h5>
+<div class="code_background_color" ><code><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(RHS Examples with variables);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 10;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[name]&nbsp;&nbsp;&nbsp;&nbsp;= 'My Name';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[four]&nbsp;&nbsp;&nbsp;&nbsp;= (a[] - 2)/2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[colors]&nbsp;&nbsp;= { red, yellow, green, blue };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[nine]&nbsp;&nbsp;&nbsp;&nbsp;= sqrt(81);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see(a[]);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(RHS Examples with a table);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( List, {{Name, Score}, { Amy, 10}, { Bea, 20}, {Claus, 30}} );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [List: Name, 2] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Bea<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [List: Name, Amy, Score] ); // Amy's Score: 10<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [List: Name, ..] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// All names in a set<br/>
+</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>RHS Examples with variables<br>a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;"10"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(numeral,full access)<br>colors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 elements:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(set,full access)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(softquoted string)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yellow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(softquoted string)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(softquoted string)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(softquoted string)<br>four&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(plain numeral,full access)<br>name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(softquoted string,full access)<br>nine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(plain numeral,full access)<br><br>RHS Examples with a table<br>Bea<br>10<br>{'Amy','Bea','Claus'}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Right-Hand_Side_Expression.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_Left-Hand_Side_Expression.html">Left-Hand Side Expressions</a><br/>
+<a class = "bold_text" href="LAN_Features_Expressions.html">Expressions</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

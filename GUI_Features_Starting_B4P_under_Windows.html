@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Starting B4P under Windows</h3>
+<a accesskey="p" href="GUI_Features_Starting_B4P.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Edit_B4P_Programs_under_Windows.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">User Guide</div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+  Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi"+>-  Starting B4P </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_Windows.html"><div class="navi navi-selected"+>-  Starting B4P under Windows </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Edit_B4P_Programs_under_Windows.html"><div class="navi">    Windows Edit B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_a_B4P_Program_under_Windows.html"><div class="navi">    Windows Start B4P Programs </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_Directly_under_Windows.html"><div class="navi">    Windows Start B4P Directly </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_Linux.html"><div class="navi">+  Starting B4P under Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_B4P_under_MacOS.html"><div class="navi">+  Starting B4P under MacOS </div></a></li>
+<li class="navi"><a href="GUI_Features_Starting_Behavior.html"><div class="navi">+  Starting Behavior Basics </div></a></li>
+<li class="navi"><a href="GUI_Features_Command_Line_Arguments_and_Options.html"><div class="navi">+  Command Line Arguments and Options </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Typical_Workflow.html"><div class="navi">+  Typical Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Recent_Releases.html"><div class="navi">+  Recent Releases </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+This section provides an introduction on how to <a class="bold_text" href="GUI_Features_Edit_B4P_Programs_under_Windows.html">edit B4P Programs under Windows</a> as well
+as different variants to start the B4P interpreter and B4P Programs:
+
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="GUI_Features_Starting_a_B4P_Program_under_Windows.html">Starting a B4P Program under Windows</a>
+</li><li class="bullets"><a class="bold_text" href="GUI_Features_Starting_B4P_Directly_under_Windows.html">Starting B4P Directly under Windows</a>
+</li></ul><p></p>
+<h4> Starting Diretory - Your personal B4P folder</h4>
+<p>
+Under Windows, a personal B4P foldler has been created in <b>C:\users\<i>your user name</i>\B4P</b>. This is the
+original <a class="bold_text" href="LIB_Function_starting_directory.html">starting directory</a> which you can change afterwards if needed.  You will find the following 3 programs:
+
+</p><ul class="bullets"><li class="bullets"><b>hello world.b4p</b> - Displays 'Hello World'
+</li><li class="bullets"><b>start B4P here.b4p</b> - Simple utility to change starting directory.  Copy this file into a different directory and run it from there to set the new starting directory.
+</li><li class="bullets"><b>main.b4p</b> - Started automatically if B4P is started by typing the command "B4P -m" in a console or a batch script.
+</li><li class="bullets"><b>interactive.b4p</b> - Start B4P in interactive mode in the folder where this file is located.
+</li></ul><p>
+Feel free to create further B4P programs in this folder.
+
+<img src="Images/GUI_Windows_B4P_Folder.png" alt="Personal B4P Folder"><br/>
+
+</p>
+<h4> Changing Starting Directory</h4>
+<p>
+You can do one of the following to change the starting directory to another existing folder.
+
+</p><ul class="bullets"><li class="bullets">Copy <b>start B4P here.b4p</b> into a different folder and run it
+</li><li class="bullets">Start B4P, interactive mode appears and type '<a class="bold_text" href="LIB_Function_starting_directory.html">starting directory</a>( "<i>Full path name to the folder</i>" );
+</li></ul><p>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>histogram</h3>
+<a accesskey="p" href="LIB_Features_Interpolation_Examples.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_sum_if.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi"+>-  Mathematics and Statistics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_math_functions.html"><div class="navi">+  Basic Math Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_transcendental_functions.html"><div class="navi">+  Transcendental Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_series_functions.html"><div class="navi">+  Series Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_matrix_functions.html"><div class="navi">+  Matrix Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_statistics_functions.html"><div class="navi"+>-  Statistics Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_average.html"><div class="navi">    Basic Statistics Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_quantile.html"><div class="navi">    quantile ... </div></a></li>
+<li class="navi"><a href="LIB_Function_covariance.html"><div class="navi">    covariance, correlation </div></a></li>
+<li class="navi"><a href="LIB_Function_gini.html"><div class="navi">    gini Coefficient Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_regression.html"><div class="navi">    Linear and Exponential Regression </div></a></li>
+<li class="navi"><a href="LIB_Function_linear_interpolation.html"><div class="navi">+  Interpolation Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_histogram.html"><div class="navi navi-selected">    histogram </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Function_sum_if.html"><div class="navi">    Conditional Combination Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_finance_functions.html"><div class="navi">+  Finance and Business Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>histogram</code></div>
+<h4> Description</h4>
+<p>
+This function creates a 1- or multi-dimensional histogram from a sequence of input values.  A histogram is a visual
+representation of the distribution of the values across a defined set of intervals, also known as bins.  This function
+allows to define intervals freely, even with different widths
+
+<br><br>
+
+1-dimensional histograms are the simplest form:  All input values are put into a simple set like
+{ 4, 3, 9, ... }, or into a nested set like {{ 4, 3, 9, ... }} and provided as the 1st function parameter.
+Then a set of intervals need to be defined      in the 2nd function parameter.
+A total of <i>n+2</i> bins will be created for <i>n</i> interval values.  The first bin covers the values below the
+first interval, and the last bin counts all non-numeric and invalid values, for example blanks.
+The 3rd function parameter provides a comparison rule.
+Return value: The countings will be put into a set containing <i>n+2</i> values corresponding to the bins described above.
+
+<br><br>
+
+For multi-dimensional histograms (e,g, 2, 3, 4, any dimension you wish!), multiplie sets of input values need to be provided
+in form of a nested sets.  For example, for a 2-dimensional histogram, create a nested set containing
+two sets of values of same count.  Different counts will flag errors.  You also need to provide two sets of intervals in
+a nested set, but the intervals and the count may differ.  The result will be an n-dimensional matrix in form of
+a nested set containing the counts.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>3</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>set</td>
+<td><b>Input values</b><br/><p>The input values may contain both numeric and non-numeric values.  Simple nesting is allowed.<br>
+Valid examples:
+</p><ul class="bullets"><li class="bullets">{ 15, 21, 13, '',   19, ... }
+</li><li class="bullets">{{ 15, 21, 13, 'n/a', 19, ... }}
+</li></ul><p>For multi-dimsionsonal histograms, provide multiple sets of values in separate sets and enclose them in an
+overall nested paramter set.  The values in each set must be the same. <br>
+Valid examples for 2 dimensions:
+</p><ul class="bullets"><li class="bullets">{{ 10, 20, 30 }, { 25, 3, 5 }}
+</li><li class="bullets">{{ 10, '', 30 }, { 25, NA, 5 }}</li></ul><p></p>
+</td></tr>
+<tr><td>Opt. 2.<br/>input</td>
+<td>set</td>
+<td><b>Intervals</b><br/><p>The interval values define the distribution of the input values into the different bins.  For <i>n</i> intervals provided, <i>n+2</i> bins will be provided.
+The first bin covers all values below the first interval.  The next bins are for the values above the intervals.  And the last bin is used to count all
+non-numeric values, for example blanks and text.  All interval values must be numeric (For example dates are allowed) and in ascending order.  Violations
+result in error messages and execution will stop.<br>
+Valid examples:
+</p><ul class="bullets"><li class="bullets">{ 10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100 }
+</li><li class="bullets">{ -50 .. -40 .. +50 }
+</li><li class="bullets">{ 0.1, 1, 10, 100, 1000 }
+</li><li class="bullets">{{ 10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100 }, { 0.1, 1, 10, 100, 1000 }}  (Valid for a 2-dimensional histogram)
+</li></ul><p>Invalid examples:
+</p><ul class="bullets"><li class="bullets">{ 10, 20, 30, 25, 40 }   (Not all values are ascending)
+</li><li class="bullets">{ below, 1..10, above }  (Texts are not allowed.  First bin will cover the 'below' values anyway)
+</li><li class="bullets">{ 10, 20, 30, 'n/a' }   (The last bin will cover all non-numeric values, so do no specify this last 'n/a' entry)
+</li></ul><p></p>
+<span class="black_text"><b> Default value: </b></span>0
+</td></tr>
+<tr><td>Opt. 3.<br/>input</td>
+<td>string</td>
+<td><b>Comparison Rule</b><br/><p>Following values are allowed: '>=' and '>'.  In the first case, the values are compared with '>='. For exmaple 10 is compared with interval value 10
+and the bin related to 10 is incremented.  In the second case, the values are compared with '>'.  For example 10 would associate to bin before the
+interval value 10 and the value in that bin will be incremented accordingly.</p>
+<span class="black_text"><b> Default value: </b></span>>=
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>set</td>
+<td><b>Histogram</b><br/><p>                    An n-dimensional matrix modeled with (nested) sets contain the histogram results.  For 1-dimensional histograms,
+                        a simple set containing <i>n+2</i> values will be returned, where <i>n</i> is the number of intervals specified.
+                        Note that the 1st value covers the range below the first interval, and the last value the counts of all non-numeric input values.
+                        For 2-dimsnional historgram, a 2-dimensional matrix (nested set) will be returned.  For higher dimensions, the
+                        matrix consists of additional dimensions, e.g. a cubic matrix for 3-dimensional histograms.
+                        <br><br>
+                        Overall, the sum of all values returned equals to the number of input value sets provided in the 1st function parameter.</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Multiple sets of input values contain different number of values<br/>
+Interval values are not numeric or in ascending order<br/>
+Invalid comparison choice<br/>
+No interval values specified<br/>
+Number of input value sets differe from number of interval values (histogram dimensions)</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code><br/>
+echo("1-dimensional histogram:", new line);<br/>
+<br/>
+values[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 0, -1, b,c,'',3.5, 4.5, 4.5, 5, 5.5, 5.5, 6, 7, 8, 12 };<br/>
+bins[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 0 .. 2 .. 10 };<br/>
+echo("Input values: ", values[], new line );<br/>
+<br/>
+a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= histogram( values[], bins[], '&gt;=' );<br/>
+b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= histogram( values[], bins[], '&gt;' );<br/>
+<br/>
+bins a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {'&lt;0' } + bins[] + { 'n/a' };<br/>
+bins b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {'&lt;0' } + ( '&gt;' +^ vstr(bins[]) ) + { 'n/a' };<br/>
+<br/>
+print matrix&nbsp;&nbsp;&nbsp;("0", 3, "|", "&gt;= case: ", bins a[], a[], "&nbsp;&nbsp;&nbsp;&gt; case: ", bins b[], b[] );<br/>
+<br/>
+echo(new line, "2-dimensional histograms:", new line);<br/>
+<br/>
+values 1[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 1,&nbsp;&nbsp;1.5, 2,&nbsp;&nbsp;&nbsp;2.5, 2.6,&nbsp;&nbsp;3, ''&nbsp;&nbsp;&nbsp;};<br/>
+values 2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 5,&nbsp;&nbsp;9,&nbsp;&nbsp;&nbsp;10, 11,&nbsp;&nbsp;&nbsp;20,&nbsp;&nbsp;10, 20&nbsp;&nbsp;&nbsp;};<br/>
+echo("Input values 1: ", values 1[] );<br/>
+echo("Input values 2: ", values 2[], new line );<br/>
+<br/>
+bins 1[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 0..5 };<br/>
+bins 2[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { 0..10..20 };<br/>
+<br/>
+a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= histogram( { values 1[], values 2[] }, { bins 1[], bins 2[] }, '&gt;=' );<br/>
+b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= histogram( { values 1[], values 2[] }, { bins 1[], bins 2[] }, '&gt;'&nbsp;&nbsp;);<br/>
+<br/>
+bins 1a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {Bins, '&lt;0'&nbsp;&nbsp;} + bins 1[] + { 'n/a' };<br/>
+bins 1b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {Bins, '&lt;=0' } + ( '&gt;' +^ vstr(bins 1[]) ) + { 'n/a' };<br/>
+bins 2a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { '&lt;0'&nbsp;&nbsp;} + bins 2[] + { 'n/a' };<br/>
+bins 2b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= { '&lt;=0' } + bins 2[] + { 'n/a' };<br/>
+<br/>
+a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {bins 2a[]} + a[]; // Before outputting as matrix, add bin legend to the top<br/>
+b[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {bins 2b[]} + b[]; // "<br/>
+<br/>
+print matrix( "0", 4, "|", "&gt;= case: ", bins 1a[], a[], "&nbsp;&nbsp;&nbsp;&gt; case: ", bins 1b[],&nbsp;&nbsp;b[] );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>1-dimensional histogram:<br><br>Input values: {0,-1,'b','c','',3.5,4.5,4.5,5,5.5,5.5,6,7,8,12}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &lt;0||&nbsp;&nbsp;1|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &lt;0||&nbsp;&nbsp;2|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;0||&nbsp;&nbsp;1|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &gt;0||&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2||&nbsp;&nbsp;1|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &gt;2||&nbsp;&nbsp;1|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;4||&nbsp;&nbsp;5|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &gt;4||&nbsp;&nbsp;6|<br>&gt;= case: |&nbsp;&nbsp;6||&nbsp;&nbsp;2|&nbsp;&nbsp;&nbsp;&gt; case: | &gt;6||&nbsp;&nbsp;2|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;8||&nbsp;&nbsp;1|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &gt;8||&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 10||&nbsp;&nbsp;1|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&gt;10||&nbsp;&nbsp;1|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|n/a||&nbsp;&nbsp;3|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|n/a||&nbsp;&nbsp;3|<br><br>2-dimensional histograms:<br><br>Input values 1: {1,1.5,2,2.5,2.6,3,''}<br>Input values 2: {5,9,10,11,20,10,20}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Bins||&nbsp;&nbsp;&lt;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;n/a|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Bins|| &lt;=0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;n/a|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&lt;0||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &lt;=0||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;0||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&gt;0||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&gt;1||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&gt;= case: |&nbsp;&nbsp;&nbsp;2||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&gt; case: |&nbsp;&nbsp;&gt;2||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&gt;3||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;4||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&gt;4||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&gt;5||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| n/a||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| n/a||&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0|<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_histogram.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

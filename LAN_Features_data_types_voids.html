@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Voids</h3>
+<a accesskey="p" href="LAN_Features_data_types_booleans.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_data_types_Sets.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"+>-  The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">+  Basics </div></a></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi"+>-  Basic Data Types </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_data_type_strings.html"><div class="navi">+  Strings </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_numerals.html"><div class="navi">    Numerals </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_dates.html"><div class="navi">    Dates </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_booleans.html"><div class="navi">    Booleans </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi navi-selected">    Voids </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">    Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Voids</h4>
+<p>
+The void data type typically indicates an invalid value returned from a function or a variable with undefined values.
+The following table lists few approaches how to obtain a void value intentionally.
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>Method                  </th><th> Description</th></tr>
+<tr><td><a class="bold_text" href="LIB_Function_null.html">null</a>()              </td><td> Call the null function</td></tr>
+<tr><td>Undefined array member  </td><td> Create an array implicity, e.g. by assigning a[1] = 1;  Read-accessing a[0] will return <i>void</i></td></tr>
+<tr><td>Reading JSON data       </td><td> Intermediate nodes carry no values and are <i>void</i>.  End nodes with value 'null' are also interpreted as <i>void</i>.</td></tr>
+</table><p>
+
+Please try to use void values as little as possible in your B4P programs.</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[1] = 1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[0] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( null() );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( type(null()) );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code># Invalid Value #<br># Invalid Value #<br>void<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_voids.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
