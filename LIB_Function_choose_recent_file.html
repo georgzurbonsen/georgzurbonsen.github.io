@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>choose recent file</h3>
+<a accesskey="p" href="LIB_Function_search_files.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_count_files.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">Function Library Guide</div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_parameter_set_functions.html"><div class="navi">+  Parameter Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi"+>-  Directory and File System Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_directory_and_file_functions.html"><div class="navi">+  Basic Directory and File Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_listing_directories_and_files.html"><div class="navi"+>-  Listing and Searching Directories and Files </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_directory_listing.html"><div class="navi">    directory listing ... </div></a></li>
+<li class="navi"><a href="LIB_Function_advanced_directory_listing.html"><div class="navi">    advanced directory listing ... </div></a></li>
+<li class="navi"><a href="LIB_Function_file_browser.html"><div class="navi">    file browser </div></a></li>
+<li class="navi"><a href="LIB_Function_dir.html"><div class="navi">    dir </div></a></li>
+<li class="navi"><a href="LIB_Function_search_files.html"><div class="navi">    search files ... </div></a></li>
+<li class="navi"><a href="LIB_Function_choose_recent_file.html"><div class="navi navi-selected">    choose recent file </div></a></li>
+<li class="navi"><a href="LIB_Function_count_files.html"><div class="navi">    count files ... </div></a></li>
+<li class="navi"><a href="LIB_Function_resolve_path_name.html"><div class="navi">    resolve path/directory/file name </div></a></li>
+<li class="navi"><a href="LIB_Function_office_document_properties.html"><div class="navi">    office document properties </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_manipulating_directories_and_files.html"><div class="navi">+  Manipulating Directories and Files </div></a></li>
+<li class="navi"><a href="LIB_Features_file_compression_decompression.html"><div class="navi">+  File Compression and Decompression </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>choose recent file</code></div>
+<h4> Library</h4>
+<p>Utility Library</p>
+<h4> Description</h4>
+<p>
+This function will either identify the <i>most recent file</i> according to a specified ordering criteria.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Under normal conditions, the 'Utility Library' is loaded automatically, so no 'include(...)' call is needed.</p>
+<h4> Parameter count</h4>
+<p>5</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Prompt text</b><br/><p>A prompt text is needed if the count (provided in the last function parameter) is not 1.
+The prompt will be displayed if needed so you can select from of the <i>n</i> recent files displayed.</p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>string</td>
+<td><b>Path name</b><br/><p>Specify the path name to the directory where the files to be searched are located.  No wildcards are supported here.</p>
+</td></tr>
+<tr><td>3.<br/>input</td>
+<td>string</td>
+<td><b>File name pattern to match</b><br/><p>Specify file name pattern where the file name part may contain wildcard symbols such as
+'*' and '?'. The pattern will be used to obtain a listing of matching files which will then be prioritzed
+by the ordering criteria.  Exammple: "b4p*.txt" covers all files beginning wtih "b4p" and ending with file type ".txt".</p>
+</td></tr>
+<tr><td>4.<br/>input</td>
+<td>string</td>
+<td><b>Ordering criteria</b><br/><p>One of the following values apply:
+</p><table class="noframe_1stcolbold" style = "width:800px"><col style = "width:200px"><col style = "width:600px">
+<tr><td>oldest  </td><td> Selects the oldest file or list <i>n</i> (count) oldest files you can choose from.</td></tr>
+<tr><td>newest  </td><td> Selects the newest file or list <i>n</i> (count) newest files you can choose from.</td></tr>
+<tr><td>first   </td><td> Selects the first file or list the first <i>n</i> (count) files in alphabetical order you can choose from.</td></tr>
+<tr><td>last    </td><td> Selects the last file or list the last <i>n</i> (count) files in alphabetical order you can choose from.</td></tr>
+<tr><td>biggest </td><td> Selects the biggest file (file size) or list the <i>n</i> biggest files you can choose from.7</td></tr>
+<tr><td>smallest</td><td> Selects the smallest file (file size) or list the <i>n</i> smallest files you can choose from.7</td></tr>
+</table><p></p>
+</td></tr>
+<tr><td>5.<br/>input</td>
+<td>numeral</td>
+<td><b>Count</b><br/><p>Valid range: 1-35<br>
+If 1 is chosen, then no menu will be displayed because the first match according to the prioritization (e.g. newest file) is returned.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>string</td>
+<td><b>Identified file name</b><br/><p>                       The file name contains no directory path.  If no file has been found, then a blank string is returned.</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>If no file is found, and verbose level is not 'quiet', then an error message will warn you about no files found.  You have the choice to stop or continue</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = choose recent file( "", "Examples&#92;", "*table*.b4p", first, 1 ); // No user interaction<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("First file in alphabetic order containing 'table' is ", a[] );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = choose recent file( "", "Examples&#92;", "*table*.b4p", last, 1 ); // No user interactino<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("First file in alphabetic order containing 'table' is ", a[] );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = choose recent file( "Please choose one of the newest files: ", "Examples&#92;", "*.b4p", newest, 5 );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Chosen file is: ", a[] );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>First file in alphabetic order containing 'table' is REF_Features_Table_columns.b4p<br/>
+First file in alphabetic order containing 'table' is REF_Function_with_table.b4p<br/>
+Found 382 files.<br/>
+<br/>
+Please choose one of the newest files:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 :&nbsp;&nbsp;REF_Function_variable_to_json.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2020-10- 3 17:57:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 kB)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 :&nbsp;&nbsp;REF_Function_vertical.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2020-10- 3 17:57:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 kB)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 :&nbsp;&nbsp;REF_Function_week.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2020-10- 3 17:57:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 kB)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 :&nbsp;&nbsp;REF_Function_weekday.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2020-10- 3 17:57:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 kB)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 :&nbsp;&nbsp;REF_Function_while.b4p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2020-10- 3 17:57:34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 kB)<br/>
+Please select: 3<br/>
+Chosen file is: REF_Function_week.b4p</code></div><u>Try it yourself:</u> Open <b>LIB_Function_choose_recent_file.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_directory_listing.html">directory listing</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

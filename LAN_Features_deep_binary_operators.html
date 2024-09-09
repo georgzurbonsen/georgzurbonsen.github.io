@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Deep Binary Operators</h3>
+<a accesskey="p" href="LAN_Features_deep_unary_operators.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_matrix_operations_summary.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi"+>-  Assignments and Expressions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">    Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">+  Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">    Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi"+>-  Deep Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_deep_unary_operators.html"><div class="navi">    Deep Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_binary_operators.html"><div class="navi navi-selected">    Deep Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_matrix_operations_summary.html"><div class="navi">    Matrix Operations Summary </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Assignment_operator.html"><div class="navi">    Assignment operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_assignment_operators.html"><div class="navi">    Deep Assignment Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+  Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+All valid <a class="bold_text" href="LAN_Features_binary_operators.html">binary operators</a> can be applied as deep operators in order to address the parameter set elements directly.
+The number of accent circumflex symbols behind the operator determines the depth to use.
+A mix of combining simple values (scalars) and parameter sets (vectors, matrics) is supported.  In this case, the scalar
+provided as one operand will be calculated with every element in the parameter set specified as the other operand.
+
+<br><br>
+If parameter sets are specified in both sides of the operator, and the number of elements differ, then the shorter parameter
+set will be stuffed with neutral values to match the length of the longer parameter set before doing the calculation.<br>
+Example: { 3, 4 } * { 2, 1, 3, 2 } extends to { 3, 4, 1, 1 } * { 2, 1, 3, 2 } where 1 is used as a neutral value for
+multiplication.
+
+<br><br>
+List of neutral values:
+</p><ul class="bullets"><li class="bullets">String:  Blank string
+</li><li class="bullets">Numeral:  0 for + and -; 1 for * and /
+</li><li class="bullets">Dates: 0
+</li><li class="bullets">Boolean: true (for AND: &amp;), 0 (for OR: &vert;)
+</li><li class="bullets">Parameter set: Empty set {}
+</li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Deep binary operators on simple parameter sets (vectors):");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = {&nbsp;&nbsp;1, 2, 3, 4, 5 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[] = { 10,15,20,25,30 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[] = {&nbsp;&nbsp;2,-2,'',-2, 2 };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[] = { Ha, He, Ho, Hu, Hi };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t[] = { ngar, ring, ney, nger, ll };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] + b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Conventional way: Concatenates vectors<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] *^ b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Multiplies the elements together<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( s[] +^ t[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Combines strings<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( { rein, 1, date("2020-04-30") } +^ { deer, 2, 1 } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Mixed types are OK<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Vectors of different sizes");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] *^ { 10, 100, 1000 } );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First 3 elements are multiplied<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( b[] -^ { 2,4,5} );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First 3 elements are negated<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( { 3,3,3,} -^ a[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First 3 elements are calculated, remaining ones negated<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] /^ { 2,4,6 } );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First 3 elemnts are divided<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] +^ c[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Like with normal arithmetic operators, blank strings<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// are interpreted as zero.<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Matrices");<br/>
+<br/>
+a[] =&nbsp;&nbsp;{&nbsp;&nbsp;{ 1,&nbsp;&nbsp;2, 3 }, { 4,&nbsp;&nbsp;5,&nbsp;&nbsp;6 } };<br/>
+b[] =&nbsp;&nbsp;{&nbsp;&nbsp;{ 1, -1, 0 }, { 2, -2, 10 } };<br/>
+<br/>
+echo matrix( "0", 3, " | ", "a[]=", a[], " b[]=", b[] );<br/>
+echo matrix( "0", 3, " | ", "a[] +&nbsp;&nbsp;&nbsp;b[] = ",&nbsp;&nbsp;a[] +&nbsp;&nbsp;&nbsp;b[] );<br/>
+echo matrix( "0", 3, " | ", "a[] +^&nbsp;&nbsp;b[] = ",&nbsp;&nbsp;a[] +^&nbsp;&nbsp;b[] );<br/>
+echo matrix( "0", 3, " | ", "a[] +^^ b[] = ",&nbsp;&nbsp;a[] +^^ b[] );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Deep binary operators on simple parameter sets (vectors):<br>{1,2,3,4,5,10,15,20,25,30}<br>{10,30,60,100,150}<br>{'Hangar','Hering','Honey','Hunger','Hill'}<br>{'reindeer',3,'2020-05-01'}<br><br>Vectors of different sizes<br>{10,200,3000,4,5}<br>{8,11,15,25,30}<br>{2,1,0,-4,-5}<br>{0.5,0.5,0.5,4,5}<br>{3,0,3,2,7}<br><br>Matrices<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;-1&nbsp;&nbsp;&nbsp;&nbsp;0 | <br>a[]= |&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 |&nbsp;&nbsp;b[]= |&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;10 | <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3 | <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 | <br>a[] +&nbsp;&nbsp;&nbsp;b[] =&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;-1&nbsp;&nbsp;&nbsp;&nbsp;0 | <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;10 | <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;-1&nbsp;&nbsp;&nbsp;&nbsp;0 | <br>a[] +^&nbsp;&nbsp;b[] =&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;10 | <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;3 | <br>a[] +^^ b[] =&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;16 | <br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_deep_binary_operators.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Repetition Suffix</h4>
+<p>
+Particularly useful for operations with matrices of differen length is the repetition suffix which is a colon <b>:</b>.
+Add the colon after the last accent circumflex symbol to repeat the values in the shorter parameter set until all
+values in the longer parameter set have been calculated.
+</p>
+<h5> Adding the colon as repetition suffix</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { 1, 2, 4, 8, 16 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[] = { 2, 3 };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] +^ b[] );&nbsp;&nbsp;// 3, 5, 4,&nbsp;&nbsp;8, 16<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] +^:b[] );&nbsp;&nbsp;// 3, 5, 6, 11, 18</code></div>
+<h5> Combining vectors and matrices with scalars</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Deep binary operators on simple parameter sets (vectors) and scalars:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = {&nbsp;&nbsp;1, 2, 3, 4, 5 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[] = { 10,15,20,25,30 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[] = {&nbsp;&nbsp;2,-2,'',-2, 2 };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[] = { Ha, He, Ho, Hu, Hi };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t[] = { ngar, ring, ney, nger, ll };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[] +^ 1 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Add 1 to all elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( 120 /^ b[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Divide 120 by all elements<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Matrices combined with vectors and scalars");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { {1,2},{3,4} };&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[] = { {5,6},{7,8} };<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +&nbsp;&nbsp;&nbsp;", b[], " = ", a[] +&nbsp;&nbsp;&nbsp;b[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^&nbsp;&nbsp;", b[], " = ", a[] +^&nbsp;&nbsp;b[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", b[], " = ", a[] +^^ b[] );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", 10, " = ", a[] +^^ 10 ); // Add 10 to all scalars<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {10}, " = ", a[] +^^ {10} ); // Added to top row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^:", {10}, " = ", a[] +^^:{10} ); // Repetition rule, add to both rows<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {10,20}, " = ", a[] +^^{10,20} ); // Top row + 10, bottom row +20<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^:", {10,20}, " = ", a[] +^^:{10,20} ); // Same results<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {{10}}, " = ", a[] +^^ {{10}} ); // Add to 1st element only<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^:", {{10}}, " = ", a[] +^^:{{10}} ); // Repetition rule, add to all elements<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {10,20}, " = ", a[] +^^{10,20} ); // Top row + 10, bottom row +20<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {{10,20}}, " = ", a[] +^^{{10,20}} ); // Addition to upper row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^:", {{10,20}}, " = ", a[] +^^:{{10,20}} ); // Repetition rule, Done on both rows<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^ ", {{10},{20}}, " = ", a[] +^^{{10},{20}} ); // Addition to left column<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo matrix( "0", 3, " | ", a[], " +^^:", {{10},{20}}, " = ", a[] +^^:{{10},{20}} ); // Addition to both columns</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Deep binary operators on simple parameter sets (vectors) and scalars:<br>{2,3,4,5,6}<br>{12,8,6,4.8,4}<br><br>Matrices combined with vectors and scalars<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 | <br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 | <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;8 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;8 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;12 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^ 10 =&nbsp;&nbsp;|&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;14 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^: |&nbsp;&nbsp;10 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;14 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;24 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^: |&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;24 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;2 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^: |&nbsp;&nbsp;10 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;14 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;24 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;22 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;22 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^: |&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;24 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;2 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^&nbsp;&nbsp;|&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;4 | <br><br> |&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;10 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;12 | <br> |&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4 |&nbsp;&nbsp;+^^: |&nbsp;&nbsp;20 |&nbsp;&nbsp;=&nbsp;&nbsp;|&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;24 | <br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_deep_binary_operators_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_deep_assignment_operators.html">Deep assignment operators</a><br/>
+<a class = "bold_text" href="LAN_Features_matrix_operations_summary.html">Matrix Operations Summary</a><br/>
+<a class = "bold_text" href="LIB_Function_print_matrix.html">echo matrix</a><br/>
+<a class = "bold_text" href="LIB_Function_print_matrix.html">print matrix</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+

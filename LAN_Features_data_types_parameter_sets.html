@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Parameter sets</h3>
+<a accesskey="p" href="LAN_Features_data_types_voids.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_data_types_parameter_sets_indexing.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field">B4P Language</div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"+>-  The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">+  Basics </div></a></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi"+>-  Basic Data Types </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_data_type_strings.html"><div class="navi">+  Strings </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_numerals.html"><div class="navi">    Numerals </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_dates.html"><div class="navi">    Dates </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_booleans.html"><div class="navi">    Booleans </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi">    Voids </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_parameter_sets.html"><div class="navi navi-selected"+>-  Parameter sets </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_data_types_parameter_sets_indexing.html"><div class="navi">    Indexing Parameter Sets </div></a></li>
+<li class="navi"><a href="LAN_Features_Slicing_Parameter_sets.html"><div class="navi">    Slicing Parameter Sets </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_parameter_sets_value_ranges.html"><div class="navi">    Parameter sets - Value Ranges </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_parameter_sets_value_repetitions.html"><div class="navi">    Parameter sets - Value Repetitions </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">    Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Parameter Sets</h4>
+<p>
+Parameter sets is be considered as the sixth Basic Data Type which allows to hold 0, 1 or more elements.
+Each element is again a value of any of the six Data Types, including nested parameter sets.
+
+In the program code, sets can be defined with any number of values or expressions inside braces <b>{ }</b> and separated with commas. Nested parameter sets are supported.
+
+</p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:250px"><col style = "width:750px">
+<tr><td>Number of elements              </td><td> At least zero (empty set)</td></tr>
+<tr><td>Empty sets                      </td><td> Empty parameter sets { } are not the same as blank or void values</td></tr>
+<tr><td>Mixed data types                </td><td> A parameter set may contain data of different types, e.g. { 1, Abc, true, date(31.12.2020) }</td></tr>
+<tr><td>Nesting                         </td><td> Parameter sets support nesting, e.g. { { 1, 2 }, { 3, 4 }, 5 }</td></tr>
+<tr><td>Nested empty sets               </td><td> Nested empty sets are allowed.  E.g. { {} } is not the same as { } or { { {} } }.</td></tr>
+<tr><td>Sequence of elements            </td><td> The sequence of elements is preserved, i.e. {a,b,c,d} and {d,c,b,a} are different.<br>Comparing them with '=' returns true (ordering does not care), but with '==' returns false (elements must be in same order).</td></tr>
+<tr><td>Mulitple identical elements     </td><td> Parameter sets may contain multiple identical elements, e.g. { a, b, a, a, c, c }.  You can use the <a class="bold_text" href="LIB_Function_trim.html">trim</a>() function to eliminate duplicates.</td></tr>
+<tr><td>Embedding                       </td><td> A paramter set can be embedded into another parameter set, e.g. a[] = {1,2}; b[] = {a[]};</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_data_types_parameter_sets_indexing.html">Indexing Parameter Sets</a>     </td><td> One element can be extracted by indexing.  1st element begins wtih 0. Example:  a[] = {a,b,c,d}{1}; Here, the 1st element is accessed, a[] gets value 'b'.</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a>           </td><td> Negative indexing supported here. a[] = { a,b,c,d,e }{-2} assigns 'd' to a[].</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_Slicing_Parameter_sets.html">Slicing Parameter Sets</a>      </td><td> Specify multiple index values and ranges to extract subsets.</td></tr>
+<tr><td>Arithmetics                     </td><td> A broad range of arithmetic operators are available to manipulate parameter sets, for example intersections and unions.</td></tr>
+</table><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { 1, a, 2, {b,c}, true, date(today) };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[], " / ", type(a[]) );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "First element: ", a[]{0}, " and last element: ", a[]{1} );</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>{1,'a',2,{'b','c'},true,'2024-08-18'} / parameter set<br>First element: 1 and last element: a<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_parameter_sets.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
+
