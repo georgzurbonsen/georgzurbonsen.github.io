@@ -51,6 +51,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -74,7 +75,7 @@ The expressions may return values of following types:
 <tr><td>boolean                </td><td> If it is an expression returning boolean values, then this expression will be calculated for every column, starting from the left with column 0.                        Typically, processing will be done on the corresponding columns if the outcome is <b>true</b>.</td></tr>
 <tr><td>string          </td><td> if the expression returns a string, then a header name is assumed.  Only existing header names will be accepted.</td></tr>
 <tr><td>numeral         </td><td> If the expression returns a numeral, then one single column number is meant.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is allowed, e.g. -1 refers to the last column with respect to the header row.</td></tr>
-<tr><td>parameter set  </td><td> If the expression returns a parameter set, the the column  numbers inside the parameter sets will be used.  Negative indexing is allowed as described above.                            The parameter set may also contain existing header names.  No columns will be processed if an empty set is provided.</td></tr>
+<tr><td>set            </td><td> If the expression returns a set, the the column  numbers inside the sets will be used.  Negative indexing is allowed as described above.                        The set may also contain existing header names.  No columns will be processed if an empty set is provided.</td></tr>
 </table><p>
 
 <br>

@@ -38,7 +38,7 @@
 <li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi navi-selected">    Voids </div></a></li>
 <li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -52,6 +52,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -59,15 +60,19 @@
 	</div>
 
 	<div class="article">
-<h4> Voids</h4>
+<h4> Introduction</h4>
 <p>
-The void data type typically indicates an invalid value returned from a function or a variable with undefined values.
+The void data type typically indicates an invalid or missing value returned from a function or a variable with undefined values.
+Voids will also appear when loading JSON files containing <i>null</i> values.
+
+<br><br>
+
 The following table lists few approaches how to obtain a void value intentionally.
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
 <tr><th>Method                  </th><th> Description</th></tr>
 <tr><td><a class="bold_text" href="LIB_Function_null.html">null</a>()              </td><td> Call the null function</td></tr>
-<tr><td>Undefined array member  </td><td> Create an array implicity, e.g. by assigning a[1] = 1;  Read-accessing a[0] will return <i>void</i></td></tr>
+<tr><td>Undefined array member  </td><td> Create an array implicity, e.g. by assigning <b>a[1] = 1</b>;  Read-accessing a[0] will return <i>void</i></td></tr>
 <tr><td>Reading JSON data       </td><td> Intermediate nodes carry no values and are <i>void</i>.  End nodes with value 'null' are also interpreted as <i>void</i>.</td></tr>
 </table><p>
 

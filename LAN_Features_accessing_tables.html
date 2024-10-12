@@ -54,6 +54,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -103,12 +104,11 @@ Data can only written to tables if the tables are existing or initialized.
 <br><br>
 
 All data written to tables will be converted to strings first. This also includes for numbers, dates, times, sets, etc.
-For boolean values, the text values 'true' and 'false' will be used.  If you want to read the text values 'true' and 'false' as booleans,
-the use <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>() to activate this: <b>table configure(<i>table name</i>, read booleans, yes );</b>
+For boolean values, the text values using lower-case letters 'true' and 'false' will be used.
 
 <br><br>
-Attempting to write values which lie outside the table (except if referencing above the header row or left of the first column) will work successfully.
-If necessary, the size of the table will be extended accordingly.  Valid example: <b>[ table: 999, 999] = "nine nine nine";</b>
+Attempting to write values which lie outside the table (except if referencing above the header row or left of the first column) is
+allowed and will extend the size of the table where needed. Valid example: <b>[ table: 999, 999] = "nine nine nine";</b>
 </p>
 <h4> Advanced Features</h4>
 <p>

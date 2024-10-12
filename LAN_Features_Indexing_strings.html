@@ -44,7 +44,7 @@
 <li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi">    Voids </div></a></li>
 <li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -58,6 +58,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -65,20 +66,19 @@
 	</div>
 
 	<div class="article">
-<h4> Strings - Simple Indexing</h4>
+<h4> Introduction</h4>
 <p>
 <i>Simple indexing</i> is used to retrieve single characters from the string.  Indexing begins with 0 which refers to the 1st
-character.  The index value is specified in braces and shall not be confused with a set as such.
+character.  The index value is specified in braces added behind the string value, string variable or expression providing a string.
 
 <br><br>
 Following rules apply to the indexing strings:
 </p><ul class="bullets"><li class="bullets">The index must always be a numeric value.
-</li><li class="bullets">Specifying just braces <b>{}</b> without an index will retrieve the length (character count) of the string.  Alternatively, use <a class="bold_text" href="LIB_Function_length.html">length [string function]</a>.
+</li><li class="bullets">Specifying just braces <b>{}</b> without an index will retrieve the length (character count).  Alternatively, use <a class="bold_text" href="LIB_Function_length.html">length [string function]</a>.
 </li><li class="bullets">Indexing begins with 0 (zero).
 </li><li class="bullets">The value will be rounded in case it does not contain an integer value.  Example: <b>a[]{2.99}</b> accesses the same member as <b>a[3]</b>.
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported. -1 refers to the last character in the string. -2, -3, etc. refer to the previous ones, and so forth.
-</li><li class="bullets">Empty sets are returned when accessing with index values which lie out of bounds.  Example: <b>{a,b,c}{5}</b> returnss <b>{}</b> (empty set).
-</li><li class="bullets">Updating individual elements on the left hand side of assignments is not possible.  Wrong exmaple: <b>a[]{3} = 'E';</b>.
+</li><li class="bullets">Updating individual characters in the string on the left hand side of assignments is not possible.  Wrong exmaple: <b>a[]{3} = 'E';</b>.
 </li></ul><p></p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{} );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Returns 5 (character count)<br/>

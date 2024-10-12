@@ -44,7 +44,7 @@
 <li class="navi"><a href="LAN_Features_data_types_sets_value_repetitions.html"><div class="navi">    Sets - Value Repetitions </div></a></li>
 </ul></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -58,6 +58,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -67,22 +68,26 @@
 	<div class="article">
 <h4> Sets</h4>
 <p>
-Sets is be considered as the sixth Basic Data Type which allows to hold 0, 1 or more elements.
-Each element is again a value of any of the six Data Types, including nested sets.
+Sets are used to store multiple basic data items, known as elements, into a single variable.  Every element may consist of numerals, strings, dates, booleans, voids
+and sets as well.  The embedded sets are also known as nested sets and are useful to create and process multi-dimensional vectors and matrices.
 
-In the program code, sets can be defined with any number of values or expressions inside braces <b>{ }</b> and separated with commas. Nested sets are supported.
+<br><br>
+
+Sets are coded with elements inside braces and separated with commas, e.g. <b>{ ape, bee, cat }</b>.
+
+<br>
 
 </p><table class="noframe_1stcolbold" style = "width:1000px"><col style = "width:250px"><col style = "width:750px">
 <tr><td>Number of elements              </td><td> At least zero (empty set)</td></tr>
-<tr><td>Empty sets                      </td><td> Empty sets { } are not the same as blank or void values</td></tr>
-<tr><td>Mixed data types                </td><td> A set may contain data of different types, e.g. { 1, Abc, true, date(31.12.2020) }</td></tr>
-<tr><td>Nesting                         </td><td> Sets support nesting, e.g. { { 1, 2 }, { 3, 4 }, 5 }</td></tr>
-<tr><td>Nested empty sets               </td><td> Nested empty sets are allowed.  E.g. { {} } is not the same as { } or { { {} } }.</td></tr>
-<tr><td>Sequence of elements            </td><td> The sequence of elements is preserved, i.e. {a,b,c,d} and {d,c,b,a} are different.<br>Comparing them with '=' returns true (ordering does not care), but with '==' returns false (elements must be in same order).</td></tr>
-<tr><td>Mulitple identical elements     </td><td> Sets may contain multiple identical elements, e.g. { a, b, a, a, c, c }.  You can use the <a class="bold_text" href="LIB_Function_trim.html">trim</a>() function to eliminate duplicates.</td></tr>
-<tr><td>Embedding                       </td><td> A paramter set can be embedded into another set, e.g. a[] = {1,2}; b[] = {a[]};</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_data_types_sets_indexing.html">Indexing Sets</a>               </td><td> One element can be extracted by indexing.  1st element begins wtih 0. Example:  a[] = {a,b,c,d}{1}; Here, the 1st element is accessed, a[] gets value 'b'.</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a>           </td><td> Negative indexing supported here. a[] = { a,b,c,d,e }{-2} assigns 'd' to a[].</td></tr>
+<tr><td>Empty sets                      </td><td> Empty sets <b>{ }</b> are not the same as blank or void values</td></tr>
+<tr><td>Mixed data types                </td><td> A set may contain data of different types, e.g. <b>{ 1, Abc, true, date(31.12.2020) }</b></td></tr>
+<tr><td>Nesting                         </td><td> Sets support nesting, e.g. <b>{ { 1, 2 }, { 3, 4 }, 5 }</b></td></tr>
+<tr><td>Nested empty sets               </td><td> Nested empty sets are allowed.  E.g. <b>{ {} }</b> is not the same as <b>{ }</b> or <b>{ { {} } }</b>.</td></tr>
+<tr><td>Sequence of elements            </td><td> The sequence of elements is preserved, i.e. <b>{a,b,c,d}</b> and <b>{d,c,b,a}</b> are different.<br>Comparing them with '=' returns true (ordering does not care), but with '==' returns false (elements must be in same order).</td></tr>
+<tr><td>Mulitple identical elements     </td><td> Sets may contain multiple identical elements, e.g. <b>{ a, b, a, a, c, c }</b>.  You can use the <a class="bold_text" href="LIB_Function_trim.html">trim</a>() function to eliminate duplicates.</td></tr>
+<tr><td>Embedding                       </td><td> A paramter set can be embedded into another set, e.g. <b>a[] = {1,2}; b[] = {a[]};</b> Result: b[] contains {{1,2}}</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_data_types_sets_indexing.html">Indexing Sets</a>               </td><td> One element can be extracted by indexing.  1st element begins wtih 0. Example:  <b>a[] = {a,b,c,d}{1};</b> Here, the 1st element is accessed, a[] gets value 'b'.</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a>           </td><td> Negative indexing supported here. <b>a[] = { a,b,c,d,e }{-2}</b> assigns 'd' to a[].</td></tr>
 <tr><td><a class="bold_text" href="LAN_Features_Slicing_Sets.html">Slicing Sets</a>                </td><td> Specify multiple index values and ranges to extract subsets.</td></tr>
 <tr><td>Arithmetics                     </td><td> A broad range of arithmetic operators are available to manipulate sets, for example intersections and unions.</td></tr>
 </table><p></p>
@@ -91,7 +96,7 @@ In the program code, sets can be defined with any number of values or expression
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( a[], " / ", type(a[]) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "First element: ", a[]{0}, " and last element: ", a[]{1} );</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>{1,'a',2,{'b','c'},true,'2024-09-09'} / set<br>First element: 1 and last element: a<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_Sets.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>{1,'a',2,{'b','c'},true,'2024-10-12'} / set<br>First element: 1 and last element: a<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_Sets.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

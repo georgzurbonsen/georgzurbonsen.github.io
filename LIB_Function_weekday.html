@@ -61,6 +61,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -107,13 +108,13 @@ All other values are treated as 2.</p>
 <td><b>Weekday number</b><br/><p>Returned value as described above. -1 returned if no appropriate date found. If <a class="bold_text" href="LAN_Features_Vectorization.html">vectorization</a> is applied, then the function returns a set containing mulitple values.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( { date(today) .. date(today)+10, date("15:00:00") }, date[] )<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all( { date(today) .. date(today)+10, date("15:00:00") }, date[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( str( date[], "Ttt, DD.Mmm.YYYY: " ), weekday(date[], 1), " ",<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weekday(date[], 2), " ", weekday(date[], 3) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Mon, 09.Sep.2024: 2 1 0<br>Tue, 10.Sep.2024: 3 2 1<br>Wed, 11.Sep.2024: 4 3 2<br>Thu, 12.Sep.2024: 5 4 3<br>Fri, 13.Sep.2024: 6 5 4<br>Sat, 14.Sep.2024: 7 6 5<br>Sun, 15.Sep.2024: 1 7 6<br>Mon, 16.Sep.2024: 2 1 0<br>Tue, 17.Sep.2024: 3 2 1<br>Wed, 18.Sep.2024: 4 3 2<br>Thu, 19.Sep.2024: 5 4 3<br>___, __.___.____: -1 -1 -1<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_weekday.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Sat, 05.Oct.2024: 7 6 5<br>Sun, 06.Oct.2024: 1 7 6<br>Mon, 07.Oct.2024: 2 1 0<br>Tue, 08.Oct.2024: 3 2 1<br>Wed, 09.Oct.2024: 4 3 2<br>Thu, 10.Oct.2024: 5 4 3<br>Fri, 11.Oct.2024: 6 5 4<br>Sat, 12.Oct.2024: 7 6 5<br>Sun, 13.Oct.2024: 1 7 6<br>Mon, 14.Oct.2024: 2 1 0<br>Tue, 15.Oct.2024: 3 2 1<br>___, __.___.____: -1 -1 -1<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_weekday.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

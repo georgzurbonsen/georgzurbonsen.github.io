@@ -59,6 +59,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -74,13 +75,13 @@ Multiple columns can be specified with following approaches:
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_Horizontal_table_access_using_wildcards.html">Horizontal table access using wildcards</a> with the colon (:) prefix
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_Horizontal_table_access_using_ranges.html">Horizontal table access using ranges</a> with the '..' or leaving out the column specification to access all exsting columns
 </li></ul><p>
-The value(s) read from the table will be provided in a <a class="bold_text" href="LIB_Function_for_all_characters.html">set</a>.  This does also apply if only one or even no value being retrieved.  In the latter case,
+The value(s) read from the table will be provided in a <a class="bold_text" href="LIB_Function_set.html">set</a>.  This does also apply if only one or even no value being retrieved.  In the latter case,
 an empty set is returned.  Coming to write access, writing to the destination will stop whenever <u>either one of the two conditions is met first</u>:
 </p><ul class="bullets"><li class="bullets">All elements in the set have been written (not all specified cells in the table are updated),
 </li><li class="bullets">The specified number of cells in the table is smaller than the number of elements in the set (not all elements are written to the table).
 </li></ul><p></p>
 <h4> Read Accesses</h4>
-<p>The value(s) read from the table will be provided in a <a class="bold_text" href="LIB_Function_for_all_characters.html">set</a>, regardless of the number of cells accessed. Empty sets are returned
+<p>The value(s) read from the table will be provided in a <a class="bold_text" href="LIB_Function_set.html">set</a>, regardless of the number of cells accessed. Empty sets are returned
 if the read access results in no matches (e.g. empty set for headers specified, wildcard yields no match, specified range is in the wrong
 (right to left) direction.</p>
 <h4> Write Accesses</h4>

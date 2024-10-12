@@ -39,7 +39,7 @@
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">    time, pure time </div></a></li>
 <li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">    Date and Time Detection Rules </div></a></li>
 <li class="navi"><a href="LIB_Function_bool.html"><div class="navi">    bool </div></a></li>
-<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">    parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_set.html"><div class="navi">    set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">    best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">    join ... </div></a></li>
 <li class="navi"><a href="LIB_Function_type.html"><div class="navi">    type, subtype </div></a></li>
@@ -63,6 +63,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -98,10 +99,10 @@ at least 1 character and not more than 31 characters, and the following characte
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;good examples[] = { "Table 1", "T.1", "It contains 31 Characters .....", "1", "Section §1 - About Cafés" };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bad&nbsp;&nbsp;examples[] = { "", "a/b", "Section 1:1", "It contains 32 Characters ......", Two + new line + lines };<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( good examples[], st[] ) print( excel validate sheet name( st[] ), "&nbsp;&nbsp;" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all( good examples[], st[] ) print( excel validate sheet name( st[] ), "&nbsp;&nbsp;" );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( bad examples[], st[] )&nbsp;&nbsp;print( excel validate sheet name( st[] ), " " );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all( bad examples[], st[] )&nbsp;&nbsp;print( excel validate sheet name( st[] ), " " );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;</code></div>
 <h4> Output</h4>
 <div class="output_background_color" ><code>true&nbsp;&nbsp;true&nbsp;&nbsp;true&nbsp;&nbsp;true&nbsp;&nbsp;true&nbsp;&nbsp;<br>false false false false false <br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_excel_validate_sheet_name.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.

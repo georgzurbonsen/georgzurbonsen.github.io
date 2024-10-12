@@ -44,7 +44,7 @@
 <li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">+  Characters </div></a></li>
 </ul></li>
 <li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+  Basic Data Types </div></a></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -58,6 +58,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -67,6 +68,10 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
+In B4P, plain text is any kind of text which is specified without any quotation marks.  Such text contents are limited to one line and the
+character set is limited to avoid confusion with B4P specific symbols such as operators, for example text hyphens with minus signs.
+Plain text may contains spaces, however multiple consecutive spaces and tabs are condensed to one space.
+
 Plain text can be used for
 </p><ul class="bullets"><li class="bullets"><b>String values</b>
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_Variable_names.html">Variable names</a>
@@ -77,8 +82,11 @@ Plain text can be used for
 <h4> Rules</h4>
 <p>
 Following rules apply for plain text:
-</p><ul class="bullets"><li class="bullets">It may consist of any character which does not interfere with the B4P code syntax: Letters, letters combined with numbers, and special symbols not interfering with B4P code syntax (e.g. parentheses, commas, operators, etc.).
-<ul class="bullets"><li class="bullets">Good example: <b>A.1</b> (The single point is not a dedicated B4P symbol).
+</p><ul class="bullets"><li class="bullets">Choice of characters
+<ul class="bullets"><li class="bullets">Alphabetic letters, including foreign letters and characters
+</li><li class="bullets">All characters which do not interfere with B4P code elements and symbols such as mathematical operators.  A single point (.) is OK, however hyphens,           parentheses, brackets, commas create issues as they are interpreted as B4P symbols.
+</li><li class="bullets">Numerals only OK if combined with spaces or letters or other characters described above.
+</li><li class="bullets">Good example: <b>A.1</b> (The single point is not a dedicated B4P symbol).
 </li><li class="bullets">Bad example: <b>Baden-Baden</b> (The hyphen is interpreted as a minus sign and results in a successful string subtraction.  The outcome would be a blank string.
 </li></ul></li><li class="bullets">The text may contain white <i>white spaces</i> (space bar, tab, etc.)
 <ul class="bullets"><li class="bullets">Example 1: <b>4200 Pennsylvania Avenue</b> or <b>Number 1</b>
@@ -93,7 +101,7 @@ Following rules apply for plain text:
 <ul class="bullets"><li class="bullets">The lone point is also used to reference a current column in <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a>.
 </li><li class="bullets">Note: Two consecutive points are used for <a class="bold_text" href="LAN_Features_comparison_operators.html">value ranges</a> and do not consitute text contents.
 </li></ul></li><li class="bullets">Reserved keywords are automatically interpreted as part of the B4P syntax, e.g. <b>true</b> as Boolean <i>true</i>, and <a class="bold_text" href="LIB_Features_else.html">else</a> is also part of the B4P language.
-</li><li class="bullets">If the text is assigned to B4P variables, then the variable assumes the subtype <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
+</li><li class="bullets">If the text is assigned to B4P variables or used inside expressions, then the variable assumes the type <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> and subtype <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
 </li></ul><p></p>
 <h5> Examples</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( Hello World );<br/>

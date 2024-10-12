@@ -39,7 +39,7 @@
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">    time, pure time </div></a></li>
 <li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">    Date and Time Detection Rules </div></a></li>
 <li class="navi"><a href="LIB_Function_bool.html"><div class="navi">    bool </div></a></li>
-<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">    parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_set.html"><div class="navi">    set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">    best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">    join ... </div></a></li>
 <li class="navi"><a href="LIB_Function_type.html"><div class="navi">    type, subtype </div></a></li>
@@ -63,6 +63,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -103,7 +104,7 @@ Optionally, use <a class="bold_text" href="LAN_Features_Vectorization.html">vect
                        If <a class="bold_text" href="LAN_Features_Vectorization.html">Vectorization</a> is used, then a set containing multiple results is returned.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all parameters( { A, B5, Z23, AA1, ZZ, AAA, AAB, XFD, C A, '123 D', '123', ' B', '...' }, c[] )<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all ( { A, B5, Z23, AA1, ZZ, AAA, AAB, XFD, C A, '123 D', '123', ' B', '...' }, c[] )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(c[],": ", excel column ( c[] ) );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Note: -1 is returned if no appropriate letter is recognized.<br/>

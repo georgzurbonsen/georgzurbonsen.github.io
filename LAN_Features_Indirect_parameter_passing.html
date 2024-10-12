@@ -44,6 +44,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -54,7 +55,7 @@
 <h4> Introduction</h4>
 <p>
 Some functions which only use input parameters support <i>indirect parameter passing</i> where instead of providing
-the function parameters directly, the function parameters are put into a <a class="bold_text" href="LIB_Function_parameter_set.html">parameter set</a> and then pass as one
+the function parameters directly, the function parameters are put into a <a class="bold_text" href="LIB_Function_set.html">set</a> and then pass as one
 single function parameter instead.
 
 <br><br>
@@ -67,7 +68,7 @@ input/output parameters, references and/or code pieces.  Indirect parameter pass
 <a class="bold_text" href="LIB_Features_Control_flow_functions.html">control flow functions</a> and <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a>.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table create( table1, table 2 ); // The direct way<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table create( table 1, table 2 ); // The direct way<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indirect[]= { table 1, table 2 }; // The indirect way<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table create( indirect[] );<br/>

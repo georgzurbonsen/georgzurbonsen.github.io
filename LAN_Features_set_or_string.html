@@ -51,6 +51,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -69,8 +70,8 @@ put into sets.
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:150px"><col style = "width:500px"><col style = "width:350px">
 <tr><th>Type                    </th><th> Description                                                                                           </th><th> Example</th></tr>
 <tr><td><a class="bold_text" href="LAN_Features_Data_subtype_quoted_strings.html">Quoted strings</a>     </td><td> The content of the entire string is interpreted as <b>one single string value</b> <br>                                  Empty strings "" are treated as they are.                                                           </td><td> "Last,First Name" is such an example</td></tr>
-<tr><td><a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">Softquoted strings</a> </td><td> The content of the entire string is interpreted as <b>one single string value</b> <br>                                  Empty strings '' are treated as they are.                                                             </td><td> 'Last,First Name' is such an example</td></tr>
-<tr><td><a class="bold_text" href="LIB_Function_for_all_characters.html">Set</a>                        </td><td> Sets can contain any number of values <br>                              Empty sets {} provide zero values.                                                                    </td><td> { Last Name, First Name, "Value [EUR]", 123 }</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">Softquoted strings</a> </td><td> The content of the entire string is interpreted as <b>one single string value</b>,too <br>                              Empty strings '' are treated as they are.                                                             </td><td> 'Last,First Name' is such an example</td></tr>
+<tr><td><a class="bold_text" href="LAN_Features_data_types_Sets.html">Sets</a>                       </td><td> Sets can contain any number of values <br>                              Empty sets {} provide zero values.                                                                    </td><td> { Last Name, First Name, "Value [EUR]", 123 }</td></tr>
 </table><p>
 
 <br><br>
@@ -78,7 +79,7 @@ The following code example demonstrates this parameter type ruling using a user-
 values in form of sets and prints the contents.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure( demonstrate, { { parameter 1, to parameters } }, 1, unlimited )<br/>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure( demonstrate, { { parameter 1, to set } }, 1, unlimited )<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i[] = 1, i[] &lt;= parameter count[], i[]++)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
@@ -92,6 +93,7 @@ values in form of sets and prints the contents.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( Hello World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;); // Both are same<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( "A,B", " A, B " ); // Both are different<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( 'A,B', ' A , B '); // Both are same<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( set('A,B'), set(' A , B ')); // The function 'set' breaks this softquoted string into 2 parts<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( "", '', '&nbsp;&nbsp;' ); // Blank, empty, empty<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( 'Hello World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;,"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"');<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate( { Hello&nbsp;&nbsp;&nbsp;World, '&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;',"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"}); // Note the differences<br/>
@@ -105,7 +107,7 @@ values in form of sets and prints the contents.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demonstrate 2 ( { 1, 2, '3' } ); // Note: All numbers are converted to strings<br/>
 </code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>{'A'}&nbsp;&nbsp;(1 items) {'B'}&nbsp;&nbsp;(1 items) <br>{'Hello World'}&nbsp;&nbsp;(1 items) {'Hello World'}&nbsp;&nbsp;(1 items) <br>{'A,B'}&nbsp;&nbsp;(1 items) {' A, B '}&nbsp;&nbsp;(1 items) <br>{'A,B'}&nbsp;&nbsp;(1 items) {' A , B '}&nbsp;&nbsp;(1 items) <br>{''}&nbsp;&nbsp;(1 items) {''}&nbsp;&nbsp;(1 items) {'&nbsp;&nbsp;'}&nbsp;&nbsp;(1 items) <br>{'Hello World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;,"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"'}&nbsp;&nbsp;(1 items) <br>{'Hello World','&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;'}&nbsp;&nbsp;(3 items) <br><br>{1,2,'3'}&nbsp;&nbsp;(3 items) <br>{'1','2','3'}&nbsp;&nbsp;(3 items) <br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_set_or_string.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>{'A'}&nbsp;&nbsp;(1 items) {'B'}&nbsp;&nbsp;(1 items) <br>{'Hello World'}&nbsp;&nbsp;(1 items) {'Hello World'}&nbsp;&nbsp;(1 items) <br>{'A,B'}&nbsp;&nbsp;(1 items) {' A, B '}&nbsp;&nbsp;(1 items) <br>{'A,B'}&nbsp;&nbsp;(1 items) {' A , B '}&nbsp;&nbsp;(1 items) <br>{'A','B'}&nbsp;&nbsp;(2 items) {'A','B'}&nbsp;&nbsp;(2 items) <br>{''}&nbsp;&nbsp;(1 items) {''}&nbsp;&nbsp;(1 items) {'&nbsp;&nbsp;'}&nbsp;&nbsp;(1 items) <br>{'Hello World,&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;,"&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;"'}&nbsp;&nbsp;(1 items) <br>{'Hello World','&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;Hello&nbsp;&nbsp;&nbsp;World&nbsp;&nbsp;&nbsp;'}&nbsp;&nbsp;(3 items) <br><br>{1,2,'3'}&nbsp;&nbsp;(3 items) <br>{'1','2','3'}&nbsp;&nbsp;(3 items) <br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_set_or_string.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

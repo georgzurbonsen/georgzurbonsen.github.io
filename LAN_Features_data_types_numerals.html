@@ -38,7 +38,7 @@
 <li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi">    Voids </div></a></li>
 <li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -52,6 +52,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -59,19 +60,21 @@
 	</div>
 
 	<div class="article">
-<h4> Numerals</h4>
+<h4> Introduction</h4>
 <p>
-B4P handles all numerals as double precision floating point numbers.  This means that numerals can handle both whole numbers and
-numbers with decimal digits behind.  Two subtypes are suppported:
+B4P handles all numerals as double precision floating point numbers, regardless of the uses, ranging from loop
+indices to scientific calculations.  Two subtypes are suppported:
 
-</p><ul class="bullets"><li class="bullets"><b>Numerals</b> with text represenatations
+</p><ul class="bullets"><li class="bullets"><b>Numerals</b> with preserved text represenatations
 </li><li class="bullets"><b>Plain numerals</b>
 </li></ul><p>
 Numerals picked up from the B4P program code or read in from tables will initially carry along their original
 text representations, for example 0123.40. They are useful in case the leading and trailing zeros in numbers (like in postal codes and
 section numbers in document structures) need to be preserved.  The string representation will be discarded immediately when any kind
-of algorithmic operations is applied, for exmaple additions (including adding 0) and even negations.  In all these cases, the
-subtype changes from <b>numeral</b> to <b>plain numeral</b>.
+of algorithmic operations is applied, for exmaple additions (including adding 0), negations and mathematical functions.  In all these cases, the
+subtype changes from <b>numeral</b> to <b>plain numeral</b>.  No discardings take place on direct <a class="bold_text" href="LAN_Features_assignments.html">assignments</a>
+and <a class="bold_text" href="LAN_Features_Transactions.html">transactions</a> without calculations done, e.g. <b>a[] = b[];</b>.
+
 
 </p>
 <h5> </h5>

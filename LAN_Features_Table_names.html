@@ -43,6 +43,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -50,15 +51,32 @@
 	</div>
 
 	<div class="article">
-<h4> Table Naming Rules</h4>
-<p></p><ul class="bullets"><li class="bullets">All tables are identified with table names which are string values
+<h4> Introduction</h4>
+<p>
+In B4P, referencing tables do always begin with the opening bracket <b>[</b>, typically followed by the table name, specifying the columns and
+finally the rows.  The table reference will eventually end with <b>]</b>.  The different methods and formulations for <a class="bold_text" href="LAN_Features_accessing_tables.html">Accessing tables</a>
+are described in the next sections.
+
+<br><br>
+The top table row is row 0.  Column counting also starts with 0.
+<br>
+</p>
+<h4> Rules</h4>
+<p></p><ul class="bullets"><li class="bullets">All tables are identified with table names which are string values.
 </li><li class="bullets">You can either use table names with or without quotation marks.
-</li><li class="bullets">Similar to variable names, speaces are supported.  Use quotation marks if the name contains multiple consecutive spaces and/or special symbols
-<ul class="bullets"><li class="bullets">Multiple consecutive white spaces in strings without quotation marks reduce to one space.
+</li><li class="bullets">Similar to variable names, spaces are supported.
+<ul class="bullets"><li class="bullets">If no quotation marks are used, then multiple consecutive white spaces inside the name will be treated as 1 space.
+</li><li class="bullets">If you need table names with multiple consecutive spaces, then put the name into quotation marks.
 </li></ul></li><li class="bullets">You can also specify an <a class="bold_text" href="LAN_Features_Right-Hand_Side_Expression.html">RHS Expression</a> which returns a string containing the retrieved or calculated name
 </li><li class="bullets">Names may begin or end with numbers, even with spaces inbetween, e.g. <b>4200 Pennsylvania Ave.</b>.
 </li><li class="bullets">Blank table names are also allowed, e.g. <b>['':0,0]</b>, but not recommended if you want to keep code quality high.
 </li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load( table, "Examples&#92;Cities.csv" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [table: City, 2 ] );&nbsp;&nbsp;// Retrieve row 2 from column 'City'</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Washington<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Table_names.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

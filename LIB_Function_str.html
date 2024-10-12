@@ -48,7 +48,7 @@
 <li class="navi"><a href="LIB_Function_time.html"><div class="navi">    time, pure time </div></a></li>
 <li class="navi"><a href="LIB_Features_Detects_dates_correctly_in_strings.html"><div class="navi">    Date and Time Detection Rules </div></a></li>
 <li class="navi"><a href="LIB_Function_bool.html"><div class="navi">    bool </div></a></li>
-<li class="navi"><a href="LIB_Function_parameter_set.html"><div class="navi">    parameter set </div></a></li>
+<li class="navi"><a href="LIB_Function_set.html"><div class="navi">    set </div></a></li>
 <li class="navi"><a href="LIB_Function_best_type.html"><div class="navi">    best type </div></a></li>
 <li class="navi"><a href="LIB_Function_join.html"><div class="navi">    join ... </div></a></li>
 <li class="navi"><a href="LIB_Function_type.html"><div class="navi">    type, subtype </div></a></li>
@@ -72,6 +72,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -91,7 +92,7 @@ If only one parameter containing the value to provide, then following default ru
 <tr><td><a class="bold_text" href="LAN_Features_data_types_booleans.html">boolean</a>                     </td><td> Converts to <b>true</b> or <b>false</b>, using lower case letters</td></tr>
 <tr><td><a class="bold_text" href="LIB_Function_date.html">date</a>                        </td><td> Converts to dates in text format using universal format YYYY-MM-DD, e.g 2020-12-31</td></tr>
 <tr><td><a class="bold_text" href="LAN_Features_data_types_numerals.html">numeral</a>                     </td><td> Converts to numbers in text format using decimal point "." and without thousand spearators.</td></tr>
-<tr><td><a class="bold_text" href="LIB_Function_for_all_characters.html">set</a> </td><td> Converts to values arranged inside braces and separated with commas.  Strings and dates are put into single quotation marks.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_set.html">set</a> </td><td> Converts to values arranged inside braces and separated with commas.  Strings and dates are put into single quotation marks.</td></tr>
 <tr><td><a class="bold_text" href="LAN_Features_data_type_strings.html">string</a>                      </td><td> Contents stay unchanged</td></tr>
 <tr><td><a class="bold_text" href="LAN_Features_data_types_voids.html">void</a>                        </td><td> Converts to '# Invalid Value #', in case the void value does not come along with a different message inside '#' signs.</td></tr>
 </table><p>
@@ -137,7 +138,7 @@ decimal points, etc, where date formatting rules things like arranging date/mont
 <tr><td>Alt. 2<br/>input</td>
 <td>set</td>
 <td><b>Smart formatting parameters</b><br/><p>In some cases, you wish to convert values of different types to <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> and need to apply different formatting templatess for them.
-In this case, put the following contents into a 2-level nested <a class="bold_text" href="LIB_Function_for_all_characters.html">set</a> and pass it as 2nd function parameter to this function.<br>
+In this case, put the following contents into a 2-level nested <a class="bold_text" href="LIB_Function_set.html">set</a> and pass it as 2nd function parameter to this function.<br>
 { Original data type, optionally a formatting template, optionally a formatting option or locale, and optionally a placeholder character },
 like the function parameters described above and below.  The function will first check the type of the data to convert, and then use the
 appropriate function call.
@@ -187,7 +188,7 @@ conversion.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( {a,1,date(today),false} ); // void<br/>
 </code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Abc, 123.45, true<br>2020-07-14, 2020-08-01 22:30:00, 10:15:00<br># Invalid Value #<br>{'a',1,'2024-09-09',false}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_str.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Abc, 123.45, true<br>2020-07-14, 2020-08-01 22:30:00, 10:15:00<br># Invalid Value #<br>{'a',1,'2024-10-05',false}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_str.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

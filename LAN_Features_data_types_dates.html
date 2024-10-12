@@ -38,7 +38,7 @@
 <li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi">    Voids </div></a></li>
 <li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -52,6 +52,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -59,30 +60,29 @@
 	</div>
 
 	<div class="article">
-<h4> Dates</h4>
+<h4> Introduction</h4>
 <p>
+The date type can store the following:
+</p><ul class="bullets"><li class="bullets">Dates (beginning 1990-01-01) only,
+</li><li class="bullets">Times of day (hours, minutes and seconds),
+</li><li class="bullets">Combination of date and time, and
+</li><li class="bullets">Empty values, referred to as <b>blank dates</b>.
+</li></ul><p>
+Internally B4P handles dates and times as separate variable, which is different from Excel where time is coded as the fractional part
+of the date.  Similar to <a class="bold_text" href="LAN_Features_data_types_numerals.html">numerals</a>, two subtypes are suppported:
 
-The date type can store dates (beginning 1990-01-01), time of day (down to the second), combination of both (date and time) and an empty
-values called <b>blank dates</b>.
-
-B4P handles all numerals as double precision floating point numbers.  This means that numerals can handle both whole numbers and
-numbers with decimal digits behind.  Two subtypes are suppported:
-
-</p><ul class="bullets"><li class="bullets">Dates with text represenatations
+</p><ul class="bullets"><li class="bullets">Dates with preserved text represenatations
 </li><li class="bullets">Plain dates (don't confuse with blank dates)
 </li></ul><p>
-
 This data type can store pure dates (beginning 1990-01-01), time of day (down to the second), combination of both date and time of day, or <i>blank dates</i> which
 are blank values neither containing dates or times.
 
-Following sub-types are supported for dates:
+<br><br>
 
-<br>
-
-Dates read in from tables (if reading data as dates is activated with the function <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>()) will automatically include their
+Dates read in from tables (must activate it with calling the function <a class="bold_text" href="LIB_Function_table_configure.html">table configure</a>()) will automatically include their
 text representations.  The string representation will be discarded immediately when any kind of algorithmic operation
-is applied, even if 0 days are added.  No discardings take place on direct assignments
-and transactions without calculations done, e.g. <b>a[] = b[];</b>.
+is applied, even if 0 days are added.  No discardings take place on direct <a class="bold_text" href="LAN_Features_assignments.html">assignments</a>
+and <a class="bold_text" href="LAN_Features_Transactions.html">transactions</a> without calculations done, e.g. <b>a[] = b[];</b>.
 
 In B4P code, dates are created using the following functions listed below and the dates are created as plain dates without memorized text representation.
 
@@ -126,7 +126,7 @@ minus signs where 7 and 4 are subtracted from 2020.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(time("2020-12-31 15:00")+1/24);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Time, 1 hour later<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(pure date("31. Dezember 2021")+1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Numeral</code></div>
 <h5> </h5>
-<div class="output_background_color" ><code>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: July 14. 2021<br>&nbsp;&nbsp;Date: 2021-07-14&nbsp;&nbsp;Date only: 2021-07-14&nbsp;&nbsp;Time only: <br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 20:15:00<br>&nbsp;&nbsp;Date: 20:15:00&nbsp;&nbsp;Date only:&nbsp;&nbsp;&nbsp;Time only: 20:15:00<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 2022 August 01 22:15<br>&nbsp;&nbsp;Date: 2022-08-01 22:15:00&nbsp;&nbsp;Date only: 2022-08-01&nbsp;&nbsp;Time only: 22:15:00<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: today<br>&nbsp;&nbsp;Date: 2024-09-09&nbsp;&nbsp;Date only: 2024-09-09&nbsp;&nbsp;Time only: <br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: now<br>&nbsp;&nbsp;Date: 2024-09-09 21:01:12&nbsp;&nbsp;Date only: 2024-09-09&nbsp;&nbsp;Time only: 21:01:12<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <br>&nbsp;&nbsp;Date:&nbsp;&nbsp;&nbsp;Date only:&nbsp;&nbsp;&nbsp;Time only: <br><br>Additional Features<br>2021-01-01 15:00:00<br>2020-12-31 00:00:00<br>15:00:00<br>16:00:00<br>2022-01-01<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_dates.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: July 14. 2021<br>&nbsp;&nbsp;Date: 2021-07-14&nbsp;&nbsp;Date only: 2021-07-14&nbsp;&nbsp;Time only: <br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 20:15:00<br>&nbsp;&nbsp;Date: 20:15:00&nbsp;&nbsp;Date only:&nbsp;&nbsp;&nbsp;Time only: 20:15:00<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 2022 August 01 22:15<br>&nbsp;&nbsp;Date: 2022-08-01 22:15:00&nbsp;&nbsp;Date only: 2022-08-01&nbsp;&nbsp;Time only: 22:15:00<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: today<br>&nbsp;&nbsp;Date: 2024-10-12&nbsp;&nbsp;Date only: 2024-10-12&nbsp;&nbsp;Time only: <br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: now<br>&nbsp;&nbsp;Date: 2024-10-12 16:18:02&nbsp;&nbsp;Date only: 2024-10-12&nbsp;&nbsp;Time only: 16:18:02<br><br>For input value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <br>&nbsp;&nbsp;Date:&nbsp;&nbsp;&nbsp;Date only:&nbsp;&nbsp;&nbsp;Time only: <br><br>Additional Features<br>2021-01-01 15:00:00<br>2020-12-31 00:00:00<br>15:00:00<br>16:00:00<br>2022-01-01<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_data_types_dates.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 	</div>
 </section>
 

@@ -75,6 +75,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -87,7 +88,7 @@
 <p>
 This function facilitates applying the <a class="bold_text" href="LIB_Function_distribute.html">distribute</a>() function on entire tables.  It integrates all necessary preparations such as inserting vacant columns
 for the results and does distribution work on every table row automatically, and all with one single function call.  The function names ending with the
-suffix <b>accumulate</b> will add up on values (rather than overwriting them) if the columns are already existing.  In this case, specify as unquoted or softquoted
+suffix <b>accumulate</b> will add up on values (rather than overwriting them) if the columns are already existing.  In this case, specify softquoted
 string '#existing' (single quotation marks are OK, but not double) in the 11th function parameter.
 
 <br><br>
@@ -185,7 +186,7 @@ of the table.  <br>
 <u>Attention</u>: Column insertion takes place regardless if the column with same date line names do already exist or not.  All other columns further to the right will
 be shifted accordingly to avoid overwriting existing contents.
 
-<u>Exception to the rule</u>: If the unquoted or softquoted string '#existing' (use no quotation or single quotation marks, but not double quotation marks) is specified,
+<u>Exception to the rule</u>: If the softquoted string '#existing' (use no quotation or single quotation marks, but not double quotation marks) is specified,
 then B4P looks for the existing column names along the time line.  The existing columns must be in the same sequence as the new ones being created.  This allows you to
 call the function <b>table distribute</b> followed by <b>table distribute accumulate</b> on the same table where the distributed values are added up.
 

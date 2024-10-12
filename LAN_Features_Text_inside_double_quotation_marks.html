@@ -44,7 +44,7 @@
 <li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">+  Characters </div></a></li>
 </ul></li>
 <li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+  Basic Data Types </div></a></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -58,6 +58,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -67,6 +68,11 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
+Text inside quotation marks allows practically all characters except the same double quotation mark symbol inside the text.
+If this is needed, you put the <a class="bold_text" href="LAN_Features_Text_inside_double_quotation_marks.html">text inside double quotation marks</a> instead.
+
+<br><br>
+
 Text inside double quotation marks can be used for
 </p><ul class="bullets"><li class="bullets"><b>String values</b>
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_Variable_names.html">Variable names</a>
@@ -82,9 +88,9 @@ Text inside double quotation marks can be used for
 <ul class="bullets"><li class="bullets">Exception: Use  <a class="bold_text" href="LAN_Features_Multi-line_text.html">Multi-line text</a> using 3 consecutive quotation marks """ as delimiatersto formulate a text requiring multiple lines.
 </li></ul></li><li class="bullets">Reserved keywords inside quotation marks are treated as text, e.g. 'true'.
 </li><li class="bullets">Various functions and comparisons support <a class="bold_text" href="LAN_Features_wildcards.html">wildcard symbols</a>
-<ul class="bullets"><li class="bullets">Example 1: <b>ABC = 'A*'</b> returns true.
+<ul class="bullets"><li class="bullets">Example 1: <b>ABC = "A*"</b> returns false.
 </li></ul></li><li class="bullets"><a class="bold_text" href="LAN_Features_Character_Entities.html">Character entities</a> are not supported in texts inside double quotation marks.  Any such specification is part of the quoted text.
-</li><li class="bullets">If the text is assigned to B4P variables, then the variable assumes the subtype <a class="bold_text" href="LAN_Features_Data_subtype_quoted_strings.html">quoted string</a>.
+</li><li class="bullets">If the text is assigned to B4P variables or used inside expressions, then the variable assumes the type <a class="bold_text" href="LAN_Features_data_type_strings.html">string</a> and subtype <a class="bold_text" href="LAN_Features_Data_subtype_quoted_strings.html">quoted string</a>.
 </li></ul><p></p>
 <h5> Examples</h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Hello World" );<br/>

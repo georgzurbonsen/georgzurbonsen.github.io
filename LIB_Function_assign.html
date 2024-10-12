@@ -63,6 +63,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> &#8594; Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
 </ul>
@@ -72,37 +73,71 @@
 <h4> Function Names</h4>
 <div class="white_background_color" ><code>assign</code></div>
 <h4> Description</h4>
-<p>This function assigns a value to a variable which is specified in the 1st function parameter containing a code piece or string containing the assignment destination.
-<a class="bold_text" href="LAN_Features_ad-hoc_operators.html">Ad-hoc operations</a> (like ++, --, etc. next to the destination variable) are not allowed here.</p>
-<h4> Call as: <span class="black_text">procedure</span></h4>
+<p>This function assigns a value to one or multiple variable which are specified in the 2nd and further parameters containing a code piece or
+string containing the assignment destination.
+<a class="bold_text" href="LAN_Features_ad-hoc_operators.html">Ad-hoc operations</a> (like ++, --, etc. next to the destination variable) are not allowed here.
+
+<br><br>
+You can use <b>assign</b> as a function call to branch off an intermeditate calculation into a separate variable.  The variable is immediately available
+while calculating the expression is still in progress, i.e. you can use the assigned variable further to the right in side the expression.  See example further below.
+</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
 <h4> Parameter count</h4>
 <p>2</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
-<tr><td>1<br/>code</td>
-<td>variable<br/>:string</td>
-<td><b>destination variable</b><br/><p>Make sure to add a ':' in front of the string expression if you want to execute string. Ad-hoc operations are not allowed here.</p>
-</td></tr>
 <tr><td>2<br/>input</td>
 <td>all types</td>
 <td><b>Value to assign</b><br/><p>The specified value provided in this parameter will be assigned in the target variable.</p>
 </td></tr>
+<tr><td>2, ..<br/>code</td>
+<td>variable<br/>:string</td>
+<td><b>destination variables</b><br/><p>Make sure to add a ':' in front of the string expression if you want to execute string. Ad-hoc operations are not allowed here.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>all types</td>
+<td><b>Value in 1st parameter is passed through the return value.</b><br/><p>Useful when branching off an intermediate calculation in the expression into one or more destination variables.</p></td></tr>
 </table>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v[] = "b[]";<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign(&nbsp;&nbsp;c[]&nbsp;&nbsp;, 456 );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( :v[]&nbsp;&nbsp;, 123 );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( :"d[]", 789 );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Calling 'assign' as a procedure call:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( 456, c[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( 123, :v[]&nbsp;&nbsp;); // Write to variable b[]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( 789, :"d[]");<br/>
+<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Note the required colon.&nbsp;&nbsp;Otherwise v[] is the variable to assign to.<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Variable b[] = ", b[] );<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Variable c[] = ", c[] );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Variable d[] = ", d[] );</code></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Variable d[] = ", d[], new line );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Calling 'assign' as a function call:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[] = assign( sqrt(81), b[] ) *2;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Branch off value: ", b[]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Full calculation: ", c[], new line );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d[] = assign( sqrt(81), x[] ) * (x[]-1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Use assigned variable in same expression: ", x[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Result is: ", d[], new line );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "Assigning to multiple variables in a single statement:");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v[] = 'c[]'; // :v[] means writeing to c[]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assign( 100, b[], :v[], :'d[]', e[thousand] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( b[], ' ', c[], ' ', d[], ' ', e[thousand] );<br/>
+</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>Variable b[] = 123<br>Variable c[] = 456<br>Variable d[] = 789<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_assign.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>Calling 'assign' as a procedure call:<br>Variable b[] = 123<br>Variable c[] = 456<br>Variable d[] = 789<br><br>Calling 'assign' as a function call:<br><br>Branch off value: 9<br>Full calculation: 18<br><br>Use assigned variable in same expression: 9<br>Result is: 72<br><br><br>Assigning to multiple variables in a single statement:<br>100 100 100 100<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_assign.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_table_assign.html">table assign</a><br/>
 <a class = "bold_text" href="LIB_Function_exec.html">exec</a><br/>

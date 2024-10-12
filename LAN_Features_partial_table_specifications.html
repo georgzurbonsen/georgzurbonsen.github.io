@@ -54,6 +54,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -85,11 +86,14 @@ Examples of some functions which provide table contexts with table names and row
 </li><li class="bullets">All standard table functions which contain the ending <b>... selected rows</b>.  In this case, partial table specifciation is allowed in the <a class="bold_text" href="LAN_Features_Expressions.html">expression</a> calculated for every row
 </li></ul><p>
 Examples of some functions which do also provide the table colums:
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_with_table.html">with table</a>() with 3 function parameters (table name and row and column)
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_with_table.html">with table</a>() with 3 function parameters (table name, row and column)
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a>() and likes
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process_columns.html">table process columns</a>() and  <a class="bold_text" href="LIB_Function_table_process_columns.html">table process selected columns</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_for_all_table_columns.html">for all table columns</a>()
 </li></ul><p>
-With such a context available, the row number can also be retrieved directly with the function <a class="bold_text" href="LIB_Function_row.html">row</a>().
+With such a context available, the row number can also be retrieved directly with the function <a class="bold_text" href="LIB_Function_row.html">row</a>().<br>
+The current column number can be tretrived with <a class="bold_text" href="LIB_Function_col.html">col</a>().<br>
+Inside table references, the column can be referred using a point <b>.</b> specified directly or as a <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
 </p>
 <h4> Syntax for Partial Table Specification</h4>
 <p>

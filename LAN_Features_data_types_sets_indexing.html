@@ -44,7 +44,7 @@
 <li class="navi"><a href="LAN_Features_data_types_sets_value_repetitions.html"><div class="navi">    Sets - Value Repetitions </div></a></li>
 </ul></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Abstracts.html"><div class="navi">    Data Storage Abstracts </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
 <li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
 <li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
 <li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
@@ -58,6 +58,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -74,7 +75,7 @@ set element.  The index value is specified in braces and shall not be confused w
 <br><br>
 Following rules apply to the indexing sets:
 </p><ul class="bullets"><li class="bullets">The index must always be a numeric value.
-</li><li class="bullets">Specifying just braces {} without an index will retrieve number of elements (nested elements count 1) of the set.
+</li><li class="bullets">Specifying just braces <b>{ }</b> without an index will retrieve number of elements (nested elements count 1) of the set.
 </li><li class="bullets">Indexing begins with 0 (zero).
 </li><li class="bullets">The value will be rounded in case it does not contain an integer value.  Example: <b>a[]{2.99}</b> accesses the same member as <b>a[3]</b>.
 </li><li class="bullets"><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported. -1 refers to the last element. -2, -3, etc. refer to the previous elements.
@@ -97,7 +98,7 @@ Following rules apply to the indexing sets:
 <p>
 <i>Simple indexing</i> also works with write accesses in <a class="bold_text" href="LAN_Features_assignments.html">assignments</a>.  The target variable must contain an existing set.  Values of other types
 are not allowed and will cause error messages.  Any data type may be assigned. For example, a numeric element can be replaced by a string or set
-(a subset).  Using multiple indexes as allowed for read accesses is not possible (e.g. [a]{1,2} = {A,B};).
+(a subset).  Using multiple indexes as allowed for read accesses is not possible (e.g. <b>[a]{1,2} = {A,B};</b>).
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { a,b,c, {d,e,f}, g };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Assign a set to variable a[]<br/>

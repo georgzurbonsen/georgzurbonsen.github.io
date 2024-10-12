@@ -44,6 +44,7 @@
 <li class="navi"><div>  </div></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> &#8594; User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> &#8594; Tables and Big Data </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> &#8594; Function Library Guide </div></a></li>
 <li class="navi"><div>  </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
@@ -55,24 +56,24 @@
 <p>
 Most mathematical, type conversion, string and date functions, as well as various additional B4P functions, support vectorization in the
 first and, in a few cases, second function parameters.  This feature enables functions, which accept single values
-and return single values, to process <span class="red_text">parameter sets</span> and also nested parameter sets containing multiple values in any structure and
-return parameter sets in the corresponding structure containing the results.
+and return single values, to process <a class="bold_text" href="LAN_Features_data_types_Sets.html">sets</a> and also nested sets containing multiple values in any structure and
+return sets in the corresponding structure containing the results.
 
 <br><br>
-<u>Example:</u>  sqrt( {4, 16, { 9, 81 }} ) returns { 2, 4, { 3, 9 }}.
+<u>Example:</u>  <b>sqrt( {4, 16, { 9, 81 }} )</b> returns <b>{ 2, 4, { 3, 9 }}</b>.
 
 <br><br>
 <b>Key benefits:</b>
-</p><ul class="bullets"><li class="bullets">Vectors, defined in 1-level parameter sets, can be processed with a single function call
+</p><ul class="bullets"><li class="bullets">Vectors, defined in 1-level sets, can be processed with a single function call
 </li><li class="bullets">Matrices, defined in 2-level parameter, can also be processed with a single function call
-</li><li class="bullets">Same applies to any form of nested parameter sets
+</li><li class="bullets">Same applies to any form of nested sets
 </li><li class="bullets">Complete table columns can be processed with a single assignment without using the <a class="bold_text" href="LIB_Function_table_process.html">table process</a>() function.
 </li><li class="bullets">The cumbersome functions <a class="bold_text" href="LIB_Function_deep.html">deep</a>() and <a class="bold_text" href="LIB_Function_deep.html">deepr</a>() become unneccessary.
 </li></ul><p>
 <br><br>
 Some functions, including, but not limited to, <a class="bold_text" href="LIB_Function_mod.html">mod</a>(), <a class="bold_text" href="LIB_Function_pow.html">pow</a>(), <a class="bold_text" href="LIB_Function_excel_coordinates.html">excel coordinates</a>(), <a class="bold_text" href="LIB_Function_round.html">round</a>(), support
-vectorization on both first two parameters.  In these cases, either the two parameter sets must contain the same number
-of elements, or a parameter set in one function parameter can be matched with a scalar in the other function parameter
+vectorization on both first two parameters.  In these cases, either the two sets must contain the same number
+of elements, or a set in one function parameter can be matched with a scalar in the other function parameter
 where the scalar will be used repeatedly.
 
 
@@ -84,16 +85,16 @@ Allowed examples with 2 vectorized parameters:
 <tr><td>pow( 10, {1, 2, 3} )                    </td><td> Calculates 10^1, 10^2 and 10^3</td></tr>
 <tr><td>pow( { 1, 2, 3 }, 2 )                   </td><td> Calculates 1^2, 2^2 and 3^2</td></tr>
 <tr><td>pow( { 1, {2, 3}}, {4, 5} )             </td><td> Calculates 1^4, 2^5 and 3^5</td></tr>
-<tr><td>pow( { 1, 2, 3}, { 4, 5 } )             </td><td> Error: Sizes of parameter sets do not match</td></tr>
+<tr><td>pow( { 1, 2, 3}, { 4, 5 } )             </td><td> Error: Sizes of sets do not match</td></tr>
 </table><p>
 <br><br>
 
-<br>Following functions share the same names for processing strings and parameter sets, so alternative function names
+<br>Following functions share the same names for processing strings and sets, so alternative function names
 beginning with the prefix letter <b>v</b> have been introduced to support vectorization and avoid confusing between
-processing strings and parameter sets.
+processing strings and sets.
 
 <br><br>
-Deviating function names to support vectorization on processing parameter sets with multiple strings inside:
+Deviating function names to support vectorization on processing sets with multiple strings inside:
 </p><table style = "width:1000px"><col style = "width:200px"><col style = "width:200px"><col style = "width:600px">
 <tr><th>Original Functions                      </th><th> Vectorizable Functions                </th><th> Explanation</th></tr>
 <tr><td><a class="bold_text" href="LIB_Function_left.html">left</a>()                              </td><td> <a class="bold_text" href="LIB_Function_left.html">vleft</a>()                           </td><td> Extract left parts of strings</td></tr>
@@ -127,7 +128,7 @@ Deviating function names to support vectorization on processing parameter sets w
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p[] = { 0, 30, 60, 90 };<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "With vectorization: ", sin deg( p[] ) );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// And the old way: Same results, but supports 1-level parameter sets only.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// And the old way: Same results, but supports 1-level sets only.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "with deep function: ", deep ( sin deg, {p[]} ) );<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( new line, "Example with nested parameters:");<br/>
