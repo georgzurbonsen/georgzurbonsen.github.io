@@ -17,8 +17,8 @@
 </div>
 
 <div class="header">
-<h3>License Activation</h3>
-<a accesskey="p" href="GUI_Features_Terms_and_Conditions.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Starting_B4P.html"><span>Next</span></a> 
+<h3>Uninstallation</h3>
+<a accesskey="p" href="GUI_Features_Updates_and_Upgrades.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Terms_and_Conditions.html"><span>Next</span></a> 
 </div>
 
 <section>
@@ -34,9 +34,9 @@
 <li class="navi"><a href="GUI_Features_Installation_on_MacOS.html"><div class="navi">+  MacOS </div></a></li>
 <li class="navi"><a href="GUI_Features_VS_Code_Extension_for_B4P.html"><div class="navi">    VS Code Extension for B4P </div></a></li>
 <li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">    Updates and Upgrades </div></a></li>
-<li class="navi"><a href="GUI_Features_Uninstallation.html"><div class="navi">    Uninstallation </div></a></li>
+<li class="navi"><a href="GUI_Features_Uninstallation.html"><div class="navi navi-selected">    Uninstallation </div></a></li>
 <li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">    Terms and Conditions </div></a></li>
-<li class="navi"><a href="GUI_Features_License_Activation.html"><div class="navi navi-selected">    License Activation </div></a></li>
+<li class="navi"><a href="GUI_Features_License_Activation.html"><div class="navi">    License Activation </div></a></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Starting_B4P.html"><div class="navi">+  Starting B4P </div></a></li>
 <li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
@@ -59,10 +59,16 @@
 	<div class="article">
 <h4> Introduction</h4>
 <p>
-If you are interested for obtaining a license, please get in touch with the author.
-Typically, you will be asked to provide an identification file which contains a short
-hexadicmal signature together with the proposed license holder name.  The example below shows how to
-provide such an identfication</p>
+Use the same installation software to de-install B4P. All program an library images will be cleared.
+Under Windwos, all registry configurations will be retracted, for example assigning the ".b4p" file type to the B4P
+icon and removing B4P in the path environment variable.
+
+<br><br>
+
+Your personal B4P program folder created by the installer will not be removed.
+You can always re-install B4P after a deinstallation has been made
+
+</p>
 <h5> </h5>
 <div class="code_background_color" ><code>B4P - Installation Program<br/>
 _______________________________________________________________________________<br/>
@@ -85,30 +91,35 @@ B4P installation program is starting ...<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D :&nbsp;&nbsp;De-install B4P<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I :&nbsp;&nbsp;Do Identification for acquiring a license<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E :&nbsp;&nbsp;Exit installer without actions<br/>
-Please select: I<br/>
+Please select: D<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Getting system identfication for license generation ...<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Specify a personal name and/or company name as license holder name<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Enter the name: Joe Public</code></div>
+A t t e n t i o n<br/>
+Are you sure you want to de-install B4P? Y</code></div>
 <h4> </h4>
-<p>Once you have received the license, then this name will show up in the
-welcoming message when you start B4P with the license activated.</p>
+<p>The de-installation process runs and takes only a fraction of a second.</p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;The identification info is stored in this file: B4P Identification File.json<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;--&gt; Please send this .JSON file out by mail in order to receive the license key.<br/>
+<div class="code_background_color" ><code>3 &gt;&gt; Check that all required files are available for installation ...<br/>
+...<br/>
+4.1 &gt;&gt; Remove legacy files ...<br/>
+...<br/>
+...<br/>
+4.2 &gt;&gt; Identify locations for the program files ...<br/>
+...<br/>
+5 &gt;&gt; Deleting B4P program and application data subdirectories (if existing) ...<br/>
+...<br/>
+6. &gt;&gt; Windows - Identify desktop and start menu locations ...<br/>
+...<br/>
+7 &gt;&gt; Windows - Delete old contents in desktop and start menu locations ...<br/>
+...<br/>
+8 &gt;&gt; Windows - Delete old registry settings (e.g. assignment of file extension) ...<br/>
 <br/>
+De-Installation completed.<br/>
+<br/>
+exit (); called<br/>
+Code execution will stop.&nbsp;&nbsp;Exiting program.<br/>
 _______________________________________________________________________________<br/>
-Done - Press ENTER key</code></div>
-<h4> Submit the identification code</h4>
-<p>In the directory where the installation is located, you will find the file <b>B4P Identification File.json</b>
-which you need to send to us.  The file typically looks like the one shown below:</p>
-<h5> </h5>
-<div class="output_background_color" ><code>{<br/>
-&nbsp;&nbsp;"Holder" : "Joe Public",<br/>
-&nbsp;&nbsp;"Identification" : "13 5E 3E DE&nbsp;&nbsp;C0 CE 99 E8&nbsp;&nbsp;D2 CC 4B AE&nbsp;&nbsp;8E 67 9D 92&nbsp;&nbsp;",<br/>
-&nbsp;&nbsp;"Timestamp" : "2020-11-15 18:09:59"<br/>
-}</code></div>
+Done - Press ENTER key<br/>
+</code></div>
 	</div>
 </section>
 

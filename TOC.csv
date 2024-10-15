@@ -25,9 +25,9 @@ OK;Body;3;2: User Guide;B 2.03.01;MacOS - Prerequisites;GUI_Features_MacOS_Prere
 OK;Body;3;2: User Guide;B 2.03.02;MacOS - Download;GUI_Features_MacOS_Download.html;MacOS Download;MacOS Download;
 OK;Body;3;2: User Guide;B 2.03.03;MacOS - Installation;GUI_Features_MacOS_Installation.html;MacOS Installation;MacOS Installation;
 OK;Body;3;2: User Guide;B 2.03.04;MacOS - Batch Installation;GUI_Features_MacOS_-_Batch_Installation.html;MacOS - Batch Installation;MacOS - Batch Installation;
-OK;Body;2;2: User Guide;B 2.04;B4P Extension in VS Code;GUI_Features_B4P_Extension_in_VS_Code.html;B4P Extension in VS Code;B4P Extension in VS Code,Visual Studio Code;
+OK;Body;2;2: User Guide;B 2.04;VS Code Extension for B4P;GUI_Features_VS_Code_Extension_for_B4P.html;VS Code Extension for B4P;VS Code Extension for B4P,Visual Studio Code;
 OK;Body;2;2: User Guide;B 2.05;Updates and Upgrades;GUI_Features_Updates_and_Upgrades.html;Updates and Upgrades;Updates and Upgrades;
-OK;Body;2;2: User Guide;B 2.06;De-installing B4P;GUI_Features_De-installing_B4P.html;De-installing B4P;De-installing B4P;
+OK;Body;2;2: User Guide;B 2.06;Uninstallation;GUI_Features_Uninstallation.html;Uninstallation;Uninstallation;
 OK;Body;2;2: User Guide;B 2.07;Terms and Conditions;GUI_Features_Terms_and_Conditions.html;Terms and Conditions;Terms and Conditions;
 OK;Body;2;2: User Guide;B 2.08;License Activation;GUI_Features_License_Activation.html;License Activation;License Activation;
 OK;Body;1;2: User Guide;B 3;Starting B4P;GUI_Features_Starting_B4P.html;Starting B4P;Starting B4P;
@@ -65,7 +65,7 @@ OK;Body;2;2: User Guide;B 4.08;View Directory Listings;GUI_Features_View_directo
 OK;Body;3;2: User Guide;B 4.08.01;Interactive Visualization;GUI_Features_Interactive_Visualization.html;Interactive Visualization;Interactive Visualization;
 OK;Body;2;2: User Guide;B 4.09;View Tables Interactively;GUI_Features_View_Tables_Interactively.html;View Tables Interactively;View Tables Interactively;
 OK;Body;2;2: User Guide;B 4.10;View Variables Interactively;GUI_Features_View_variables_interactively.html;View variables interactively;View variables interactively;
-OK;Body;1;2: User Guide;B 5;Typical Workflow;GUI_Features_Typical_Workflow.html;Typical Workflow;Typical Workflow;
+OK;Body;1;2: User Guide;B 5;Workflow;GUI_Features_Workflow.html;Workflow;Workflow;
 OK;Body;1;2: User Guide;B 6;Examples;GUI_Features_Examples.html;Examples;Examples;
 OK;Body;2;2: User Guide;B 6.01;Football Club Merger - Interactive;GUI_Features_Example__Merging_football_clubs_-_interactive_approach.html;Example: Merging football clubs - interactive approach;Example: Merging football clubs - interactive approach;
 OK;Body;2;2: User Guide;B 6.02;Football Club Merger - Program;GUI_Features_Example__Merge_football_clubs.html;Example: Merge football clubs;Example: Merge football clubs;
