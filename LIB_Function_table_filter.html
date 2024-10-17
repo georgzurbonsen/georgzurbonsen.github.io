@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table filter ...</h3>
+<a accesskey="p" href="LIB_Function_table_explore.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_extract.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi"+>-  Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+  Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+  Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+  Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+  Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi"+>-  Searching and Exploring Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Search_and_replace_functions.html"><div class="navi">+  Search and Replace Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Explore_and_filter_and_extract_sub-tables.html"><div class="navi"+>-  Explore, Filter, Extract Sub-Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_explore.html"><div class="navi">    table explore </div></a></li>
+<li class="navi"><a href="LIB_Function_table_filter.html"><div class="navi navi-selected">    table filter ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_extract.html"><div class="navi">    table extract ... </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+  Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">+  Processing Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">+  Multi-Table Integration </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+  Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table filter, table filter ignore case</code></div>
+<h4> Description</h4>
+<p>
+This function takes the coordinates from <a class="bold_text" href="LIB_Function_table_explore.html">table explore</a>() and filters those out which do not qualify the selection criteria.
+Four ifferent selection criteria are supported.
+</p><ul class="bullets"><li class="bullets">Checking for header names to exist in the header row(s) in the sub-tables
+</li><li class="bullets">Checking sub-tables entirely located in the <i>Inside Area</i>.
+</li><li class="bullets">Checking sub-tables partially located in the <i>Overlay Area</i>.
+</li><li class="bullets">Checking sub-tables for minimum and maximum number of rows and columns
+</li></ul><p>
+
+<br/><img src="Images/Function_table_filter.jpg" alt="Function 'table filter'"><br/><br/>
+
+The coordinates of all sub-tables not meeting the specified filter criteria will be removed.  Optionally, the size of the
+sub-tables can be adjusted in order to include or excluded selected contents.
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>2-6</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Name of existing table</b><br/><p>It is assumed that this table contains one or more sub-tables.</p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>matrix of numerals</td>
+<td><b>Coordinates of identified sub-tables</b><br/><p>The matrix of numerals is a set which contains 0, 1 or more sets where each of them refers to a found sub-table and contain 4 numerals
+marking top left and bottom right coordinates: <b>{ { x start, y start, x end, y end }, { x start, y start, x end, y end }, ... }</b>.
+Normally, provide the return value from <a class="bold_text" href="LIB_Function_table_explore.html">table explore</a>() in this parameter.</p>
+</td></tr>
+<tr><td>Opt. 3<br/>input</td>
+<td>set or string</td>
+<td><b>Header search pattern</b><br/><p>Specify the header names wich must exist in the sub-tables.  All sub-tables not containing these header names will be removed from the coordinates list.
+The ordering of the header names does not matter.
+If no value is provided, then no sub-tables will be disqualified here.  The function <b>table filter ignore case</b> will ignore cases in the comparison.
+</p><ul class="bullets"><li class="bullets">Use a string to specify one value
+</li><li class="bullets">Use set to specify multiple values
+</li><li class="bullets">No values can be provided by using an empty set {}
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_wildcards.html">Wildcard symbols</a> are supported when using single quotation marks (softquoted strings).  Example: { '* Name', 'City,Town' } accepts sub-tables with header "Last Name" or "First Name" and "City" or "Town".</li></ul><p></p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
+</td></tr>
+<tr><td>Opt. 4<br/>input</td>
+<td>numeral</td>
+<td><b>Header rows</b><br/><p>Number of header rows assumed in the sub-tables.  The comparison described above is applied on all header rows.<br>
+Specify 1 if you need further parameters and not this and the previous one.</p>
+<span class="black_text"><b> Default value: </b></span>1
+</td></tr>
+<tr><td>Opt. 5<br/>input</td>
+<td>set of numerals</td>
+<td><b>Inside area filter</b><br/><p>The <i>Inside area</i> describes a rectangular area in the table where only those entire sub-tables located inside this area will be kept and the other sub-tables filtered out.<br>
+The set must contain at most 4 numerals represent the 4 coordinates <b>{ x start, y start, x end, y end }</b>.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported here.
+If the set contains fewer elements, then the 0 are assumed for the first two elements and -1 (last column, last row) for the latter two elements.</p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
+</td></tr>
+<tr><td>Opt. 6<br/>input</td>
+<td>set of numerals</td>
+<td><b>Overlay area filter</b><br/><p>The <i>Overlay area</i> describes a rectangular area in the table where at least parts (min. 1 field) of the sub-tables located inside this area will be kept and the other sub-tables filtered out.<br>
+The set must contain at most 4 numerals represent the 4 coordinates <b>{ x start, y start, x end, y end }</b>.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported here.
+If the set contains fewer elements, then the 0 are assumed for the first two elements and -1 (last column, last row) for the latter two elements.</p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
+</td></tr>
+<tr><td>Opt. 7<br/>input</td>
+<td>set of numerals</td>
+<td><b>Size filter</b><br/><p>The <i>Size filter</i> rules the minimum and maximum number of rows and columns the sub-tables must have.  All smaller and larger sub-tables will be filtered out.
+For example, you can filter out some text fields otherwise interpreted as very small tables consisting of a small number of rows and columns.<br>
+The set must contain at most 4 numerals represent the 4 coordinates <b>{ x min, y min, x max, y max}</b>.
+If the set contains fewer elements, then the 0 are assumed for the first two elements and unlimited size for the latter two elements.</p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
+</td></tr>
+<tr><td>Opt. 8<br/>input</td>
+<td>set of numerals</td>
+<td><b>Size adjustment</b><br/><p>The <i>Size adjustment</i> is not a filter criterion like in the previous parameters.  You can specify and maximum for both columns and rows.  If the remaining
+sub-tables are larger, then the size will be reduced.  If the sub-tables are smaller, then the size will be increased.<br>
+<u>Attention:</u> The size adjustment happens on the coordinate values only.  The actual table will not be touched<br>
+<u>Attention:</u> When forcing sizes to increase, be aware that the sub-tables may overlap into neighboring subtables on the right or below.<br>
+<a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported here where -1 relates to the number of rows and columns of the sub-tables being worked on.<br>
+The set must contain at most 4 numerals represent the 4 coordinates <b>{ x min, y min, x max, y max}</b>.
+If the set contains fewer elements, then the 0 are assumed for the first two elements and unlimited size for the latter two elements.</p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>matrix of numerals</td>
+<td><b>Coordinates of identified sub-tables</b><br/><p>                   The return value contains the remaining coordinates as provided in the 2nd function parameters and possibly some of the sub-table coordinates removed.<br>
+                       The matrix of numerals is a set which contains 0, 1 or more sets where each of them refers to a found sub-table and contain 4 numerals:
+                       <b>{ { x start, y start, x end, y end }, { x start, y start, x end, y end }, ... }</b>.  See return value of <a class="bold_text" href="LIB_Function_table_explore.html">table explore</a>() for more details.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure( print coordinates, { { coordinates, set }, { msg, string } } )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( msg[] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for all ( coordinates[], c[], i[] )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("&nbsp;&nbsp;&nbsp;&nbsp;Table ", i[], ":&nbsp;&nbsp;(", c[]{0}, ", ", c[]{1},") ... ( ", c[]{2}, ", ", c[]{3},") " );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo ("&nbsp;&nbsp;&nbsp;&nbsp;('", [test:c[]{0},c[]{1}],"', ...)" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load( test, "Examples/Table Explore Demo.csv" );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list ( test );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coords[] = table explore ( test, 1, 2 ); // 2 = left table includes the lone row at the bottom<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coords 2[] = table filter( test, coords[], '*Name' );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print coordinates ( coords 2[], "All tables with at least 1 header containing 'Name'" );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coords 2[] = table filter( test, coords[], {}, 1, { 2,2, 6,13 } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print coordinates ( coords 2[], "All tables in 'Inside Area': Given Name and Cities" );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coords 2[] = table filter( test, coords[], {}, 1, {}, { 2,2, 6,13 } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print coordinates ( coords 2[], "All tables in 'Overlay Area': All except Country" );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coords 2[] = table filter( test, coords[], {}, 1, {}, {}, { 2, 2, 3, 4 } );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print coordinates ( coords 2[], "2 tables meet size specs (2-3 columns, 2-4 rows)" );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Last Name | First Name | Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Family Name | First Name | Town&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Country<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Andersson | Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Boston&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Andersson&nbsp;&nbsp;&nbsp;| Andy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Boston&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| USA&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Bethel&nbsp;&nbsp;&nbsp;&nbsp;| Betty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cambridge |&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Bethel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Betty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cambridge |&nbsp;&nbsp;| U.S.&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Charlsson | Charles&nbsp;&nbsp;&nbsp;&nbsp;| Baltimore |&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Dickson&nbsp;&nbsp;&nbsp;| Dieter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| W. DC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Given Name&nbsp;&nbsp;| Profession |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Emmerich&nbsp;&nbsp;| Elana&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Brussels&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Girolamo&nbsp;&nbsp;&nbsp;&nbsp;| Acteur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Cities&nbsp;&nbsp;&nbsp;&nbsp;| Dominique&nbsp;&nbsp;&nbsp;| Dompteur&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Prague&nbsp;&nbsp;&nbsp;&nbsp;| Dimitri&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Clown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Warsaw&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Bucharest |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Budapest&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Istanbul&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| Cairo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>All tables with at least 1 header containing 'Name'<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 0:&nbsp;&nbsp;(0, 0) ... ( 2, 6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Last Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 1:&nbsp;&nbsp;(5, 0) ... ( 7, 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Family Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 2:&nbsp;&nbsp;(5, 5) ... ( 6, 8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Given Name', ...)<br>All tables in 'Inside Area': Given Name and Cities<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 0:&nbsp;&nbsp;(5, 5) ... ( 6, 8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Given Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 1:&nbsp;&nbsp;(4, 7) ... ( 4, 13)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Cities', ...)<br>All tables in 'Overlay Area': All except Country<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 0:&nbsp;&nbsp;(0, 0) ... ( 2, 6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Last Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 1:&nbsp;&nbsp;(5, 0) ... ( 7, 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Family Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 2:&nbsp;&nbsp;(5, 5) ... ( 6, 8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Given Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 3:&nbsp;&nbsp;(4, 7) ... ( 4, 13)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Cities', ...)<br>2 tables meet size specs (2-3 columns, 2-4 rows)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 0:&nbsp;&nbsp;(5, 0) ... ( 7, 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Family Name', ...)<br>&nbsp;&nbsp;&nbsp;&nbsp;Table 1:&nbsp;&nbsp;(5, 5) ... ( 6, 8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('Given Name', ...)<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_filter.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_explore.html">table explore</a><br/>
+<a class = "bold_text" href="LIB_Function_table_extract.html">table extract</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

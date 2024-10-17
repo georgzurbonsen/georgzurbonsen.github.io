@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Series Functions</h3>
+<a accesskey="p" href="LIB_Function_sinh.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_add.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi"+>-  Mathematics and Statistics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_math_functions.html"><div class="navi">+  Basic Math Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_transcendental_functions.html"><div class="navi">+  Transcendental Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_series_functions.html"><div class="navi navi-selected"+>-  Series Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_add.html"><div class="navi">    Arithmetic and Boolean Series Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_min.html"><div class="navi">    min, max Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_vmin.html"><div class="navi">    vmin ..., vmax ... </div></a></li>
+<li class="navi"><a href="LIB_Function_min_abc.html"><div class="navi">    min, max Functions on Strings </div></a></li>
+<li class="navi"><a href="LIB_Function_min_123.html"><div class="navi">    min, max Functions on Numerals </div></a></li>
+<li class="navi"><a href="LIB_Function_limit.html"><div class="navi">    limit </div></a></li>
+<li class="navi"><a href="LIB_Function_count.html"><div class="navi">    count Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_matrix_functions.html"><div class="navi">+  Matrix Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_statistics_functions.html"><div class="navi">+  Statistics Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_sum_if.html"><div class="navi">    Conditional Combination Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_finance_functions.html"><div class="navi">+  Finance and Business Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+This section covers all functions which can process value series of variable sizes.
+
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>Arithmetic and Boolean Series Functions, Two parameter passing methods for series functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">add</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">and</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">div</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">mul</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">or</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">sub</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">xnor</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_add.html">xor</a> <br>
+<br>min and max functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">max</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">max ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">max ignore zero</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">max ignore zero</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">min</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min.html">min ignore blanks</a> <br>
+<br>Vectorizable min and max functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax 123</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax abc</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax abc ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax string</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmax string ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin 123</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin abc</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin abc ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin string</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_vmin.html">vmin string ignore case</a> <br>
+<br>min and max functions on strings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">max abc</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">max abc ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">max string</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">max string ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min abc</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min abc ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min abc ignore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min abc ignore case</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min string</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min string ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min string ignore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_abc.html">min string ignore case</a> <br>
+<br>min and max functions on numerals:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">max 123</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">max 124 ignore zero</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">max numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">max numeral ignore zero</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">min 123</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">min 123 ignore zero</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">min numeral</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_min_123.html">min numeral ignore zero</a> <br>
+<br>Limit values within lower and upper boundaries:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_limit.html">limit</a> <br>
+<br>count functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_count.html">count</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_count.html">count ignore blanks</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_count.html">count ignore both</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_count.html">count ignore zero</a> <br>
+<br>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

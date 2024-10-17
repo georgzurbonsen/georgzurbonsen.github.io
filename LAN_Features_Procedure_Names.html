@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Function Naming</h3>
+<a accesskey="p" href="LAN_Features_Functions_and_Procedures.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Function_Parameters.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LAN_Features_Language_Guide.html">Language Guide</a></div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi"+>-  Functions and Procedures </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Procedure_Names.html"><div class="navi navi-selected">    Function Naming </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_Parameters.html"><div class="navi">    Function Parameters </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_directions.html"><div class="navi">    Function Parameter Directions </div></a></li>
+<li class="navi"><a href="LAN_Features_Function_parameter_types.html"><div class="navi">+  Function Parameter Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Vectorization.html"><div class="navi">    Vectorization </div></a></li>
+<li class="navi"><a href="LAN_Features_Indirect_parameter_passing.html"><div class="navi">    Indirect Parameter Passing </div></a></li>
+<li class="navi"><a href="LAN_Features_Introduction_to_User-Defined_Functions.html"><div class="navi">    Introduction to User-Defined Functions </div></a></li>
+</ul></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+B4P function names must be formulated <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a> and may consist of multiple words with spaces inbetween and allow special characters as long they do not interfere
+with the B4P syntax (For example single points ( <b>.</b> ) and underscore symbols (<b>_</b>) are OK).  This makes function names easy to read and memorize, for example
+<a class="bold_text" href="LIB_Function_table_lookup.html">table lookup ignore case</a>().  Quotation marks (e.g. to force up multiple consecutive spaces in function names) are not allowed.
+
+
+<br><br>
+Please note the following rules for function names, especially when creating <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined procedures</a> and <a class="bold_text" href="LIB_Features_User-defined_procedures_and_functions.html">user-defined functions</a> on your own:
+</p><ul class="bullets"><li class="bullets">Function names are case sensitive
+</li><li class="bullets">Function names are always specified as <a class="bold_text" href="LAN_Features_Plain_Text.html">plain text</a>, i.e. always without quotation marks
+<ul class="bullets"><li class="bullets">Multiple words sparated with spaces are allowed
+</li><li class="bullets">Multiple spaces and tabs are interpreted as one single space
+</li><li class="bullets">Special symbols may be used as long they do not interfere with the B4P syntax.  Example: single points ( <b>.</b> ) and underscore symbols (<b>_</b>) are OK, but the hypen (minus sign) is not.
+</li></ul></li><li class="bullets">Function names do not interfere with <a class="bold_text" href="LAN_Features_Variable_names.html">variable names</a> and <a class="bold_text" href="LAN_Features_Table_names.html">table names</a>, i.e. table and variable names 'echo' are allowed like in this valid example: <br><b>echo( echo[], [echo:1,2] );</b>
+</li></ul><p>
+</p>
+<h4> Function Naming Examples</h4>
+<p>
+The first two function names listed below are equivalent, but all the remaining ones are not.
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:800px">
+<tr><th>Function call   </th><th> Explanation</th></tr>
+<tr><td>table process(...)                                              </td><td> Calls <a class="bold_text" href="LIB_Function_table_process.html">table process</a>() which is a valid function in this B4P library</td></tr>
+<tr><td>&nbsp;&nbsp;table&nbsp;&nbsp;&nbsp;process&nbsp;&nbsp;(...);    </td><td> Same function as above: Multiple spaces collapse to 1 space, leading and trailing spaces are ignored</td></tr>
+<tr><td>Table process(...)                                              </td><td> Function names are case sensitive.  This is a different funtion name.</td></tr>
+<tr><td>table_process(...)                                              </td><td> <i>Snake-case</i> formulation: Underscore and other symbols differ from spaces.</td></tr>
+<tr><td>table-process(...)                                              </td><td> <u>Attention</u>: <i>Kebab-case</i> does not work.  It attempts to execute 'process(...)', then do a text subtraction of 'table' minus return value of process(...).</td></tr>
+<tr><td>tableprocess(...)                                               </td><td> Single-word 'tableprocess' differs from double-word 'table process'</td></tr>
+<tr><td>TableProcess(...)                                               </td><td> <i>Camel case</i> formulation: Capitalized letter for each word makes it a distinct function name from 'tableprocess'</td></tr>
+<tr><td>'table process'(...)                                            </td><td> Syntax error (only plain text is allowed)</td></tr>
+<tr><td>"table process"(...)                                          </td><td> Syntax error (see above)</td></tr>
+</table><p>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Saving Files - Character sets</h3>
+<a accesskey="p" href="LAN_Features_loading_files.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_CSV.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LAN_Features_Language_Guide.html">Language Guide</a></div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"+>-  The Language </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi">+  Basics </div></a></li>
+<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+  Basic Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
+<li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
+<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi"+>-  Miscellaneous Features </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Locales.html"><div class="navi">    Locales </div></a></li>
+<li class="navi"><a href="LAN_Features_verbose.html"><div class="navi">    Verbose Levels </div></a></li>
+<li class="navi"><a href="LAN_Features_negative_indexing.html"><div class="navi">    Negative Indexing </div></a></li>
+<li class="navi"><a href="LAN_Features_Directory_and_files.html"><div class="navi"+>-  Directories and Files </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_path_names.html"><div class="navi">    Path and File Names </div></a></li>
+<li class="navi"><a href="LAN_Features_loading_files.html"><div class="navi">    Loading Files - Character sets </div></a></li>
+<li class="navi"><a href="LAN_Features_saving_files.html"><div class="navi navi-selected">    Saving Files - Character sets </div></a></li>
+<li class="navi"><a href="LAN_Features_CSV.html"><div class="navi">    CSV File Format </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">    Language Pitfalls </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The chosen file format either depends on the format specified in a parameter in the <a class="bold_text" href="LIB_Function_table_save.html">table save</a>() function call,
+or it refers to the default setting stored in the <a class="bold_text" href="LAN_Features_system_variables.html">system variable</a> <b>local settings [ output file character set ]</b>. If not modified by the user,
+this file contains the value UTF-8. Files saved in UNICODE-format (UTF-8 and UTF-16 formats) will always begin start with corresponding Byte Order Marks.
+This allows other applications to recognize and interpret the contents correctly.  This does effectively apply to Excel when reading comma or tab separated
+file formats (.csv format).<br>
+<br>Text files under Windows contain "carriage return + line feed" line breaks.
+<br>Text files under LINUX contain "line feed" line breaks.
+<br>You can change the setting with by setting system variable <b>runtime settings [ crlf ]</b> to true (enabled) or false (disabled)
+
+<br><br>
+JSON files are always saved in UTF-8 format.
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>MacOS - Batch Installation</h3>
+<a accesskey="p" href="GUI_Features_MacOS_Installation.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_VS_Code_Extension_for_B4P.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="GUI_Features_User_Guide.html">User Guide</a></div>
+<ul>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi"+>-  Installation </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Installation_on_Windows.html"><div class="navi">+  Windows </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_on_Linux.html"><div class="navi">+  Linux </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation_on_MacOS.html"><div class="navi"+>-  MacOS </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_MacOS_Prerequisites.html"><div class="navi">    MacOS - Prerequisites </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Download.html"><div class="navi">    MacOS - Download </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_Installation.html"><div class="navi">    MacOS - Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_MacOS_-_Batch_Installation.html"><div class="navi navi-selected">    MacOS - Batch Installation </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_VS_Code_Extension_for_B4P.html"><div class="navi">    VS Code Extension for B4P </div></a></li>
+<li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">    Updates and Upgrades </div></a></li>
+<li class="navi"><a href="GUI_Features_Uninstallation.html"><div class="navi">    Uninstallation </div></a></li>
+<li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">    Terms and Conditions </div></a></li>
+<li class="navi"><a href="GUI_Features_License_Activation.html"><div class="navi">    License Activation </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Getting_Started.html"><div class="navi">+  Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_Release_History.html"><div class="navi">+  Release History </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The installation script can also be executed as a batch so all user interaction (keyboard or mouse input) during the
+the installation process is suppressed.  The automated installation process is made possible using <a class="bold_text" href="GUI_Features_Long_Options.html">long options</a> when
+starting the installation using a command typed interactively or executed from a batch file.
+
+<br><br>
+Example:  <b>sudo ./setup --choice=machine --locale=en-US</b><br>
+Required super user (administrator) privileges are enabled with the 'sudo' prefix.
+
+<br><br>
+The example above initiates a software installation for the local machine using the locale settings "en-US" (English /
+United States).  Using the long option '--choice' in the command will automatically treat the installation process
+as a batch process.  The other options can be used alone in order to skip individual queries, for exmaple getting asked
+for locale settings
+
+<br><br>
+
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
+<tr><th>Option                          </th><th> Explanation</th></tr>
+<tr><td>--help                          </td><td> Help text about the options will be shown on the console.  No installation will be initiated, even if other options are provided.</td></tr>
+<tr><td>--choice=machine<br> --choice=deinstall<br> --choice=info<br> --choice=exit<br>                </td><td> Do installation on local machine for all users<br> De-install B4P<br> Provide information for generating a license<br> Exit installation program without any actions<br>                                        The option '--choice' will ensure that the whole installation process is suitable for batch processing.</td></tr>
+<tr><td>--keep-user-settings            </td><td> The user settings from the previous installation (e.g. prompt) will be kept.</td></tr>
+<tr><td>--keep-my-init                  </td><td> Keep own 'My B4P Init.b4p' file which can carry out user-specific initialization sequences</td></tr>
+<tr><td>--keep-my-themes                </td><td> Keep own 'B4P Style Themes.xlsx' file and do not use the newest one provided in the installation.</td></tr>
+<tr><td>--create-personal-folder        </td><td> Create a personal folder for own programs.</td></tr>
+<tr><td>--license=keep<br> --license=new<br> --license=no<br> --license="<i>Lic. File Name.json</i>" </td><td> Keep the existing license from the previous installation, if applicable <br> Use the new license file as provided in the installation directory (B4P License File.json)<br> Do not apply the license.  B4P shall run in demo mode only<br>                                      Use specified path and file name (.json) containing the license information.</td></tr>
+<tr><td>--locale=keep<br> --locale=xx_YY                       </td><td> Keep the existing locale settings from the previous installation<br> Specify the combination of ISO 2-character language and country code.  The locale will be accepted if supported  in the file "List of Locales.csv".  For a first-time batch installation on a new target, the local must be specified. <br>                                      <u>Note:</u> Use the locale settings as used by Excel since you want to align on number formats, date formats and list separators.</td></tr>
+</table><p>
+
+When the installer is finalizing, then it will pause for 3 seconds, giving users the chance to see the last info shown, in case the console
+window closes automatically after installation.
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

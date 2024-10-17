@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>table process cells (selected rows) in columns</h3>
+<a accesskey="p" href="LIB_Function_table_process_cells.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Features_Additional_info_on_fast_processing_of_rows.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi"+>-  Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+  Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+  Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+  Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+  Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+  Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+  Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi"+>-  Processing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Checking_headers.html"><div class="navi">+  Checking and Processing Headers </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_columns.html"><div class="navi">+  Processing Table Columns </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_rows.html"><div class="navi">+  Processing Table Rows </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_table_contents.html"><div class="navi"+>-  Processing Table Contents </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_process.html"><div class="navi">    table process (all) (selected rows) </div></a></li>
+<li class="navi"><a href="LIB_Function_table_process_selected_rows_fast.html"><div class="navi">    table process selected rows fast </div></a></li>
+<li class="navi"><a href="LIB_Function_table_process_columns.html"><div class="navi">    table process (selected) columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_process_cells.html"><div class="navi">    table process cells (selected rows) </div></a></li>
+<li class="navi"><a href="LIB_Function_table_process_cells_in_columns.html"><div class="navi navi-selected"+>-  table process cells (selected rows) in columns </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Additional_info_on_fast_processing_of_rows.html"><div class="navi">    Addt'l Info on fast rows processing </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Function_table_manipulate.html"><div class="navi">    table manipulate (selected rows) </div></a></li>
+<li class="navi"><a href="LIB_Function_table_fill_vertically.html"><div class="navi">    table fill vertically ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_fill_horizontally.html"><div class="navi">    table fill horizontally ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_substitute_vertically.html"><div class="navi">    table substitute vertically ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_substitute_horizontally.html"><div class="navi">    table substitute horizontally ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_insert_cells_selected_rows.html"><div class="navi">    table insert cells selected rows </div></a></li>
+<li class="navi"><a href="LIB_Function_table_insert_cells_in_columns.html"><div class="navi">    table insert cells in columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete_cells_selected_rows.html"><div class="navi">    table delete cells selected rows </div></a></li>
+<li class="navi"><a href="LIB_Function_table_delete_cells_in_columns.html"><div class="navi">    table delete cells in columns </div></a></li>
+<li class="navi"><a href="LIB_Function_table_flip_horizontally.html"><div class="navi">    table flip horizontally / vertically </div></a></li>
+<li class="navi"><a href="LIB_Function_table_rotate_left.html"><div class="navi">    table rotate left / right </div></a></li>
+<li class="navi"><a href="LIB_Function_table_format_numbers.html"><div class="navi">    table format numbers </div></a></li>
+<li class="navi"><a href="LIB_Function_table_clean.html"><div class="navi">    table clean </div></a></li>
+<li class="navi"><a href="LIB_Function_table_fit.html"><div class="navi">    table fit </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Pivoting_and_consolidating_tables.html"><div class="navi">+  Pivoting and Conosolidating Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Copying_and_renaming_and_spitting_tables.html"><div class="navi">+  Copying, Renaming and Splitting Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi">+  Multi-Table Integration </div></a></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+  Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>table process cells in columns, table process cells selected rows in columns</code></div>
+<h4> Description</h4>
+<p>
+These functions are derivatives of <a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a>() and <a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells selected rows</a>() with the only difference that
+an additiona function parameter specifies the columns to be processed.  All other columns remain untouched.  As an example, this
+function is suitable for processing a table containing many columns with dates and you want to use one single statement to reschedule or
+reformat all dates.
+
+<br><br>
+
+For this function, the enabled <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> also includes referencing the current column number by simply specifying a '.' (point)
+and you can use the function <a class="bold_text" href="LIB_Function_col.html">col</a>() to retrieve the current column number.
+
+<br><br>
+This feature allows simple formulation of instructions without writinng a 2-dimensional loop.
+The closest relative of this function is the combination of <a class="bold_text" href="LIB_Function_for_all_table_rows.html">for all table rows</a>()  and <a class="bold_text" href="LIB_Function_for_all_table_selected_columns.html">for all table selected columns</a>() which describe two nested loops.
+
+<br><br>
+<u>Note:</u> The statements will be applied on all rows underneath the specified columns, even if some table rows are shorter than the column positions
+used.
+</p>
+<h4> Call as: <span class="black_text">procedure or function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled<br/>
+This function provides a <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> with table name, row number and column number for selected function parameters</p>
+<h4> Parameter count</h4>
+<p>3-5</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1.<br/>input</td>
+<td>string</td>
+<td><b>Name of existing table</b><br/><p></p>
+</td></tr>
+<tr><td>2.<br/>input</td>
+<td>table columns</td>
+<td><b>Header names and/or column numbers</b><br/><p>This parameter specifies the columns which shall be processed with the statements provided in the following parameter(s).  All other columns remain unaffected.
+Nothing will be executed if no columns are specified.
+
+<br><br>
+
+See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
+Specific rules apply for this function:
+</p><ul class="bullets"><li class="bullets">Any number of existing header names and column numbers may be specified
+</li></ul><p></p>
+</td></tr>
+<tr><td>Opt. 3.<br/>code</td>
+<td>expression<br/>:string</td>
+<td><b>Expression to select rows</b><br/><p>Applicable to <b>table process selected rows</b> only:<br>
+Specify the conditions or rules to select the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.  It will be calculated only once per row (and not for every cell).<br>
+
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
+<u>Attention</u>: Comparison operators = and &lt;&gt; (instead of == and !=) may <a class="bold_text" href="LAN_Features_Language_pitfalls.html">hijack</a> the next function parameters for its own use as additional comparison operands,
+e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function parameter, then put parentheses around them, e.g. <b>... , (a[]=1,3,5), ...</b>.</p>
+</td></tr>
+<tr><td>3. / 4.<br/>code</td>
+<td>statements<br/>:string</td>
+<td><b>Statements (applicable where rows are selected)</b><br/><p><b>table process cells</b>: The statements provided will be executed for every row.<br>
+
+<b>table process cells selected rows</b>: The statements provided will be executed for every row where the condition calculated before returned <b>true</b>.<br><br>
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Full Name]=[First Name]+' '+[Last Name];</b>.<br>
+<u>Hint</u>: If you encounter an error message at the very end of the program after you worked on a statement, you may proabably have forgotton to add the closing parentheses to close the function call.</p>
+</td></tr>
+<tr><td>5.<br/>code</td>
+<td>statements<br/>:string</td>
+<td><b>Statements (otherwise)</b><br/><p><b>table process cells</b>: Not applicable. This function accepts 3 parameters only.
+<b>table process cells selected rows</b>: The statements provided will be executed for every cell in every row where the condition calculated for that row returned <b>false</b>.<br><br>
+The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Full Name]=[First Name]+' '+[Last Name];</b>.<br>
+<u>Hint</u>: If you encounter an error message at the very end of the program after you worked on a statement, you may proabably have forgotton to add the closing parentheses to close the function call.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>numeral</td>
+<td><b>Number of cells processed</b><br/><p>With <b>table process selected rows</b>, the number of selected rows (and processed with statements from 3rd function parameter) are counted.</p></td></tr>
+</table>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( animals, { {Animal, Group, Special abilities},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ parakeet, bird, can fly },&nbsp;&nbsp;{ moose, mammal },&nbsp;&nbsp;{ ape, mammal, quite samrt },&nbsp;&nbsp;{ sparrow, bird } , { trout, fish }, { bass, fish },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ canary, bird }, { penguin, bird }, { beluga, mammal, submarine sonar} } );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process cells in columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( animals, { Group, Special abilities},&nbsp;&nbsp;&nbsp;[.] += '!' );&nbsp;&nbsp;&nbsp;&nbsp;// 2 named columns affected<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process cells selected rows in columns ( animals, [Group]=='mammal!', { 0, -1 }, [.] = +[.] );&nbsp;&nbsp;&nbsp;&nbsp;// 1st and last column affected, mammals only<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list ( animals );</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Animal&nbsp;&nbsp;&nbsp;| Group&nbsp;&nbsp;&nbsp;| Special abilities<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : parakeet | bird!&nbsp;&nbsp;&nbsp;| can fly!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : MOOSE&nbsp;&nbsp;&nbsp;&nbsp;| mammal! | !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : APE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| mammal! | QUITE SAMRT!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : sparrow&nbsp;&nbsp;| bird!&nbsp;&nbsp;&nbsp;| !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : trout&nbsp;&nbsp;&nbsp;&nbsp;| fish!&nbsp;&nbsp;&nbsp;| !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : bass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| fish!&nbsp;&nbsp;&nbsp;| !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : canary&nbsp;&nbsp;&nbsp;| bird!&nbsp;&nbsp;&nbsp;| !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : penguin&nbsp;&nbsp;| bird!&nbsp;&nbsp;&nbsp;| !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : BELUGA&nbsp;&nbsp;&nbsp;| mammal! | SUBMARINE SONAR! <br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_process_cells_in_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_table_process_cells.html">table process cells</a><br/>
+<a class = "bold_text" href="LIB_Function_table_process_cells.html">table process cells selected rows</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

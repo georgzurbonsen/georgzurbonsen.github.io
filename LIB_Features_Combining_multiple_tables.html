@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Combining Multiple Tables</h3>
+<a accesskey="p" href="LIB_Function_table_describe.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_merge.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi"+>-  Table Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Loading_and_saving_tables.html"><div class="navi">+  Loading and Saving Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_with_tables.html"><div class="navi">+  Console I/O with Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Create___read___write___delete_tables.html"><div class="navi">+  Creating, Writing, Reading, Deleting </div></a></li>
+<li class="navi"><a href="LIB_Features_Accessing_table_information.html"><div class="navi">+  Accessing Table Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Searching_and_exploring_tables.html"><div class="navi">+  Searching and Exploring Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_Flow_Functions_for_Tables.html"><div class="navi">+  Control Flow Functions for Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Processing_tables.html"><div class="navi">+  Processing Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Multi-table_integration.html"><div class="navi"+>-  Multi-Table Integration </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Comparing_and_validating_tables.html"><div class="navi">+  Comparing and Validating Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Looking_up_other_tables.html"><div class="navi">+  Looking up Other Tables </div></a></li>
+<li class="navi"><a href="LIB_Features_Combining_multiple_tables.html"><div class="navi navi-selected"+>-  Combining Multiple Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_table_merge.html"><div class="navi">    table merge ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_overlay.html"><div class="navi">    table overlay/subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_intersect.html"><div class="navi">    table intersect ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_subtract.html"><div class="navi">    table subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_exclude.html"><div class="navi">    table exclude ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_multiply.html"><div class="navi">    table multiply ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_divide.html"><div class="navi">    table divide ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_arrange.html"><div class="navi">    table arrange ... </div></a></li>
+</ul></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+  Formatting and Styling Tables </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The functions described next cover the art of combining two (or more) tables using the fine arts of <a href="https://en.wikipedia.org/wiki/Relational_algebra" target="_blank">relational algebra</a>
+where different algebraic rules can be applied to rows and columns.
+
+<br><br>
+
+In a simple example, two tables with members of two clubs (e.g. tennis and squash) need to be merged into one where the last and first names of the
+members shall act as matching identifiers.  In case no person has a membership in both clubs, no overlap applies, and the list will simply be
+appended where the data are aligned to the right columns, using header names as orientation.  The columns in both tables do not need to be aligned
+before the merger.  If one or more persons possess memberships in both clubs, then the information will be consolidated where the same
+<a class="bold_text" href="LIB_Features_consolidation_actions.html">consolidation actions</a> rules are available as used by <a class="bold_text" href="LIB_Function_table_consolidate.html">table consolidate</a>.  As an example, the account receivable (e.g.
+indoor court reservation fees to be balanced) can be added up whereas the preferences at the club bar can be consolidated with <b>append once</b>
+so the preference for tonic water at one club and beer at the other club will appended into "tonic water, beer".
+
+<br><br>
+
+If no identifier columns are defined in the functions described next, then every row will be considered unique.  Merging the table is treated appending two tables,
+with aligning the data into the right columns.
+
+<br><br>
+
+The following table summarizes the 25 functions in a 5 x 5 matrix with specifc rules to be applied on rows as wll as columns.
+The table contains illustrations on how the rows are combined (shades of red / orange / yellow) and how columns are combined (shades of
+gray and light blue).  The syntax of the function name does first describe the operation on the rows (e.g. <a class="bold_text" href="LIB_Function_table_merge.html">table merge</a>) followed by
+the operation on the columns (e.g. <a class="bold_text" href="LIB_Function_table_merge.html">table merge extend columns</a>()).  If no extension like <b>... extend columns</b> is specified, then
+no additional columns are added in the target table and the data in the source table not fitting in the target table structure will not be taken over.
+
+
+<br/><img src="Images/Description_Combining_Multiple_Tables.jpg" alt="Combining Multiple Tables"><br/><br/>
+
+The term <i>exclusivity</i> is also known as <i>symmetric difference</i> and <i>disjunctive union</i>.
+
+</p>
+<h4> Additional Functions</h4>
+<p>
+Following table operations are also described in this section:
+</p><ul class="bullets"><li class="bullets">Multiplying tables
+</li><li class="bullets">Dividing tables (binary division in relational algebra)
+</li><li class="bullets">Arranging tables sideways.
+</li></ul><p>
+<br><br><hr><h4>Procedures and Functions Provided:</h4>
+<br>Merge two tables with union-set principle:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge intersect columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_merge.html">table merge subtract columns</a> <br>
+<br>Table overlays the other table:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_overlay.html">table overlay intersect columns</a> <br>
+<br>Row-wise intersection made from two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_intersect.html">table intersect intersect columns</a> <br>
+<br>One table does row-subtraction on other table:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract extend columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_subtract.html">table subtract subtract columns</a> <br>
+<br>Derive disjoint union from both tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude exclude columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude exclusive columns</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_exclude.html">table exclude extend columns</a> <br>
+<br>Relational multiplication of two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_multiply.html">table multiply</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_multiply.html">table multiply selected rows</a> <br>
+<br>Relational division of two tables:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_divide.html">table divide</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_divide.html">table divide selected rows</a> <br>
+<br>Arrange multiple tables side-by-side:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_arrange.html">table arrange</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="bold_text" href="LIB_Function_table_arrange.html">table arrange with spacing</a> <br>
+<br>
+</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

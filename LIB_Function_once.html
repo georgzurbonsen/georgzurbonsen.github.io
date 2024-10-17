@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>once</h3>
+<a accesskey="p" href="LIB_Features_else.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_switch.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi"+>-  Control Flow Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_Branches.html"><div class="navi"+>-  Branches </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_if.html"><div class="navi">    if, unless </div></a></li>
+<li class="navi"><a href="LIB_Features_else.html"><div class="navi">    else </div></a></li>
+<li class="navi"><a href="LIB_Function_once.html"><div class="navi navi-selected">    once </div></a></li>
+<li class="navi"><a href="LIB_Function_switch.html"><div class="navi">    switch, check </div></a></li>
+<li class="navi"><a href="LIB_Function_case.html"><div class="navi">    case </div></a></li>
+<li class="navi"><a href="LIB_Function_break.html"><div class="navi">    break, continue </div></a></li>
+<li class="navi"><a href="LIB_Function_break_loop.html"><div class="navi">    break loop, continue loop </div></a></li>
+<li class="navi"><a href="LIB_Function_break_case.html"><div class="navi">    break case, continue case </div></a></li>
+<li class="navi"><a href="LIB_Function_continue_with_next_case.html"><div class="navi">    continue with next case </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Loops.html"><div class="navi">+  Loops </div></a></li>
+<li class="navi"><a href="LIB_Features_User-defined_procedures_and_functions.html"><div class="navi">+  User-Defined Procedures and Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Launch_other_B4P_programs.html"><div class="navi">+  Launch other B4P programs </div></a></li>
+<li class="navi"><a href="LIB_Features_Exception_functions.html"><div class="navi">+  Exception Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Comparison_and_selection_functions.html"><div class="navi">+  Comparison and Selection Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Code_Execution_Functions.html"><div class="navi">+  Code Execution Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi">+  Mathematics and Statistics </div></a></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>once</code></div>
+<h4> Synopsis</h4>
+<div class="white_background_color" ><code>once { statements; } else { statements }<br/>
+once () statement; else: statement<br/>
+once () { statements; }</code></div>
+<h4> Description</h4>
+<p>Executes the following statement or block only for the first time and once.
+Further executions of this function will skip that code. This feature is very
+useful for repeated invocations of code (with <b>start()</b> or <b>include()</b>) or user defined
+functions and procedures where specific code should executed only once during the first invocation,
+e.g. blocks where variables are initialized and functions being defined.
+</p>
+<h4> Call as: <span class="black_text">procedure</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled</p>
+<h4> Parameter count</h4>
+<p>0</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define procedure ( hi )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;once()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(Hey folks);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(Good bye);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Main program part: Call 'hi' three times:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hi;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hi;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hi;</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>Hey folks<br>Good bye<br>Good bye<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_once.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

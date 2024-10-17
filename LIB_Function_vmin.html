@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>vmin ..., vmax ...</h3>
+<a accesskey="p" href="LIB_Function_min.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_min_abc.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+<ul>
+<li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Console_I_O_Functions.html"><div class="navi">+  Console I/O Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Type_Conversion_Functions.html"><div class="navi">+  Type Conversion and Formatting </div></a></li>
+<li class="navi"><a href="LIB_Features_Mathematics_and_Statistics.html"><div class="navi"+>-  Mathematics and Statistics </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Features_basic_math_functions.html"><div class="navi">+  Basic Math Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_transcendental_functions.html"><div class="navi">+  Transcendental Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_series_functions.html"><div class="navi"+>-  Series Functions </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LIB_Function_add.html"><div class="navi">    Arithmetic and Boolean Series Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_min.html"><div class="navi">    min, max Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_vmin.html"><div class="navi navi-selected">    vmin ..., vmax ... </div></a></li>
+<li class="navi"><a href="LIB_Function_min_abc.html"><div class="navi">    min, max Functions on Strings </div></a></li>
+<li class="navi"><a href="LIB_Function_min_123.html"><div class="navi">    min, max Functions on Numerals </div></a></li>
+<li class="navi"><a href="LIB_Function_limit.html"><div class="navi">    limit </div></a></li>
+<li class="navi"><a href="LIB_Function_count.html"><div class="navi">    count Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_matrix_functions.html"><div class="navi">+  Matrix Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_statistics_functions.html"><div class="navi">+  Statistics Functions </div></a></li>
+<li class="navi"><a href="LIB_Function_sum_if.html"><div class="navi">    Conditional Combination Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_finance_functions.html"><div class="navi">+  Finance and Business Functions </div></a></li>
+</ul></li>
+<li class="navi"><a href="LIB_Features_string_functions.html"><div class="navi">+  String Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_date_and_time_functions.html"><div class="navi">+  Date and Time Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Set_functions.html"><div class="navi">+  Set Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_table_functions.html"><div class="navi">+  Table Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_variables_functions.html"><div class="navi">+  Variables Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_directory_and_file_system_functions.html"><div class="navi">+  Directory and File System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
+<li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Function Names</h4>
+<div class="white_background_color" ><code>vmin, vmax, vmin 123, vmax 123, vmin numeral, vmax numeral, vmin abc, vmax abc, vmin abc ignore case, vmax abc ignore case, vmin string, vmax string, vmin string ignore case, vmax string ignore case</code></div>
+<h4> Description</h4>
+<p>
+The <b>vmin / vmax (...) </b> functions take exactly two function parameters and compare their contents.  The contents can either be single values
+or sets with multiple values.  See below on <a class="bold_text" href="LAN_Features_Vectorization.html">vectorization</a> for this.
+
+</p><ul class="bullets"><li class="bullets"><b>vmin, vmax:</b> Compares values of the same type.  Errors are asserted if the types differ, e.g. comparing numbers with strings.
+</li><li class="bullets"><b>vmin 123, vmax 123:</b> Contents are converted to numbers and compared afterwards
+</li><li class="bullets"><b>vmin numeral, vmax numeral:</b> Compares two numbers.  Other types will be rejected and result in errors.
+</li><li class="bullets"><b>vmin abc, vmax abc:</b> Contents are converted to strings and compared afterwards.  e.g. 30 is string-wise greater than 200.
+</li><li class="bullets"><b>vmin abc ignore case, vmax abc ignore case:</b> Like above, but ignores cases.
+</li><li class="bullets"><b>vmin string, vmax string:</b> Compares two strings.  Other types will be rejected and result in errors.
+</li><li class="bullets"><b>vmin string ignore case, vmax string ignore case:</b> Like above, but ignores cases.
+</li></ul><p>
+<br><br>
+<b>vmin abc</b> and <b>vmax abc</b> compares strings.  Numerals and other types will be converted to strings before comparing.  If the numerals or dates
+contain text representations, e.g. <b>vmin abc(02, 1)</b> then 1 is alphabetically the bigger value.  The results are always strings.
+
+<br><br>
+<a class="bold_text" href="LAN_Features_Vectorization.html">Vectorization</a>: This function supports vectorization in the 1st and 2nd function parameters.
+Instead of providing a single value, you can provide a set or even a nested set which contain multiple values.
+The function will then process every value and its  return value contains a corresponding set containing all results.
+
+</p>
+<h4> Call as: <span class="black_text">function</span></h4>
+<h4> Restrictions</h4>
+<p>Indirect parameter passing is disabled<br/>
+Vectorization is allowed in the 1st and 2nd function parameters</p>
+<h4> Parameter count</h4>
+<p>2</p>
+<h4> Parameters</h4>
+<table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
+<tr><td>1, 2<br/>input</td>
+<td>valid types<br/>set</td>
+<td><b>2 Values to compare</b><br/><p>The two values or set of values will be compared.</p>
+</td></tr>
+</table>
+<h4> Return value</h4>
+<table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
+<tr>
+<td>valid types<br/>set</td>
+<td><b>Result</b><br/><p>Calculated result.  If <a class="bold_text" href="LAN_Features_Vectorization.html">vectorization</a> is used, then a set containing the results is returned.</p></td></tr>
+</table>
+<h4> Exceptions</h4>
+<p>Attempting to compare incompatible types, e.g. numerals with strings</p>
+<h4> Examples</h4>
+<div class="code_background_color" ><code>a[] = { { 1, 2, 3 }, { 6, 5, 4 }};<br/>
+b[] = { { 4, 2, 0 }, { 1, 3, 5 }};<br/>
+s[] = { Hello, Ahoi, He, Huh };<br/>
+t[] = { Hallo, Ho,&nbsp;&nbsp;&nbsp;Hi, Hey };<br/>
+<br/>
+echo( new line, "vmin:");<br/>
+echo( vmin( 1, 2 ) ); // The simple way<br/>
+echo( vmin( a[], b[] ) );<br/>
+echo( vmin( a[], 3 ) );<br/>
+echo( vmin( a[], {{ 2, 1, 4 }, 5 } ) );<br/>
+echo( vmin( s[], t[] ) );<br/>
+echo( vmin( {10.02.2024, 02.08.2024}, {11.02.2024,01.08.2024} ) );<br/>
+echo( vmin( {true, false}, {false, true} ) );<br/>
+<br/>
+echo( new line, "vmax:");<br/>
+echo( vmax( 1, 2 ) ); // The simple way<br/>
+echo( vmax( a[], b[] ) );<br/>
+echo( vmax( a[], 3 ) );<br/>
+echo( vmax( a[], {{ 2, 1, 4 }, 5 } ) );<br/>
+echo( vmax( {10.02.2024, 02.08.2024}, {11.02.2024,01.08.2024} ) );<br/>
+echo( vmax( {true, false}, {false, true} ) );<br/>
+<br/>
+a[] = { 100, "100", 30,&nbsp;&nbsp;&nbsp;5, abc, Text };<br/>
+b[] = { 2,&nbsp;&nbsp;&nbsp;"2",&nbsp;&nbsp;&nbsp;200, 05, DEF, ''&nbsp;&nbsp;&nbsp;};<br/>
+<br/>
+echo(new line, "Comparing ", a[], " with ", b[] );<br/>
+echo( "vmin abc: ", vmin abc( a[], b[] ), ' ignore case: ', vmin abc ignore case( a[], b[] ) );<br/>
+echo( "vmax abc: ", vmax abc( a[], b[] ), ' ignore case: ', vmax abc ignore case( a[], b[] ) );<br/>
+echo( "vmin 123: ", vmin 123( a[], b[] ) );<br/>
+echo( "vmax 123: ", vmax 123( a[], b[] ) );<br/>
+</code></div>
+<h4> Output</h4>
+<div class="output_background_color" ><code>vmin:<br>1<br>{{1,2,0},{1,3,4}}<br>{{1,2,3},{3,3,3}}<br>{{1,1,3},{5,5,4}}<br>{'Hallo','Ahoi','He','Hey'}<br>{'10.02.2024','01.08.2024'}<br>{false,false}<br><br>vmax:<br>2<br>{{4,2,3},{6,5,5}}<br>{{3,3,3},{6,5,4}}<br>{{2,2,4},{6,5,5}}<br>{'11.02.2024','02.08.2024'}<br>{true,true}<br><br>Comparing {100,'100',30,5,'abc','Text'} with {2,'2',200,05,'DEF',''}<br>vmin abc: {'100','100','200','05','DEF',''} ignore case: {'100','100','200','05','abc',''}<br>vmax abc: {'2','2','30','5','abc','Text'} ignore case: {'2','2','30','5','DEF','Text'}<br>vmin 123: {2,2,30,5,0,0}<br>vmax 123: {100,100,200,5,0,0}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_vmin.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LIB_Function_min.html">min</a><br/>
+<a class = "bold_text" href="LIB_Function_min.html">max</a><br/>
+<a class = "bold_text" href="LIB_Function_min_123.html">min 123</a><br/>
+<a class = "bold_text" href="LIB_Function_min_123.html">max 123</a><br/>
+<a class = "bold_text" href="LIB_Function_min_123.html">min numeral</a><br/>
+<a class = "bold_text" href="LIB_Function_min_123.html">max numeral</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">min abc</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">max abc</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">min string</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">max string</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">min abc ignore case</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">max abc ignore case</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">min string ignore case</a><br/>
+<a class = "bold_text" href="LIB_Function_min_abc.html">max string ignore case</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

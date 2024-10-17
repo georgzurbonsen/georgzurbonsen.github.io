@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Vertical Table Access</h3>
+<a accesskey="p" href="LAN_Features_Horizontal_table_access_using_ranges.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Vertical_table_access_using_sets.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LAN_Features_Language_Guide.html">Language Guide</a></div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi"+>-  Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Tables_-_Example_used_in_the_Following_Sections.html"><div class="navi">    Tables - Example File </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">    Tables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi">    Table Properties </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">    Creating Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi"+>-  Accessing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_table_access.html"><div class="navi">    Simple Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_horizontal_table_access.html"><div class="navi">+  Horizontal Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_vertical_table_access.html"><div class="navi navi-selected"+>-  Vertical Table Access </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Vertical_table_access_using_sets.html"><div class="navi">    Vertical Table Access with Sets </div></a></li>
+<li class="navi"><a href="LAN_Features_Vertical_table_access_using_wildcards.html"><div class="navi">    Vertical Table Access with Wildcards </div></a></li>
+<li class="navi"><a href="LAN_Features_Vertical_table_access_using_ranges.html"><div class="navi">    Vertical Table Access with Ranges </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_matrix_table_access.html"><div class="navi">    Matrix Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_partial_table_specifications.html"><div class="navi">    Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_nested_partial_table_specification.html"><div class="navi">    Nested Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_shifted_table_column_specification.html"><div class="navi">    Shifted Table Column Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_header_name_exception_handling.html"><div class="navi">    Header Name Exception Handling </div></a></li>
+<li class="navi"><a href="LAN_Features_lookup_access_exception_handling.html"><div class="navi">    Lookup Access Exception Handling </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi">    Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+The <b>vertical table access</b> is one of the four basic <a class="bold_text" href="LAN_Features_accessing_tables.html">table access methods</a> where this one accesses multiple cells in the same table column.
+Multiple columns can be specified with following approaches:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LAN_Features_Vertical_table_access_using_sets.html">Vertical table access using sets</a>
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Vertical_table_access_using_wildcards.html">Vertical table access using wildcards</a> with the colon (:) prefix
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_Vertical_table_access_using_ranges.html">Vertical table access using ranges</a> with the '..' or leaving out the column specification to access all exsting columns
+</li></ul><p></p>
+<h4> Read Accesses</h4>
+<p>The value(s) read from the table will be provided in a <a class="bold_text" href="LIB_Function_set.html">set</a>, regardless of the number of cells accessed. Empty sets are returned
+if the read access results in no matches (e.g. empty set for headers specified, wildcard yields no match, specified range is in the wrong
+(right to left) direction.</p>
+<h4> Write Accesses</h4>
+<p>When writing a set vertically to a table, then the elements of the set will be written.  The write access stops prematurely if
+one of the two conditions are met:
+an empty set is returned.  Coming to write access, writing to the destination will stop whenever <u>either one of the two conditions is met first</u>:
+</p><ul class="bullets"><li class="bullets">All elements in the set have been written (not all specified cells in the table are updated).  Writing empty sets will not result in a write opration because there is nothing to write.
+</li><li class="bullets">The specified number of cells in the table is smaller than the number of elements in the set (not all elements are written to the table).
+</li></ul><p><u>Note</u>:If an element in the set is in turn a set, then it will be converted to a string in order to visualize the set contents (with braces around, elements separated with commas).<br>
+
+Alternatively, when writing a value (not set) to a table, then the same value will be written into all cells as specified with the vertical table access.</p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

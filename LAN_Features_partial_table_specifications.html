@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Partial Table Specifications</h3>
+<a accesskey="p" href="LAN_Features_matrix_table_access.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_nested_partial_table_specification.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+<div class="booktitle_field"><a style="color:white;" href="LAN_Features_Language_Guide.html">Language Guide</a></div>
+<ul>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi"+>-  Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Tables_-_Example_used_in_the_Following_Sections.html"><div class="navi">    Tables - Example File </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_names.html"><div class="navi">    Tables - Naming Rules </div></a></li>
+<li class="navi"><a href="LAN_Features_Table_properties.html"><div class="navi">    Table Properties </div></a></li>
+<li class="navi"><a href="LAN_Features_Creating_tables.html"><div class="navi">    Creating Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_accessing_tables.html"><div class="navi"+>-  Accessing Tables </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_simple_table_access.html"><div class="navi">    Simple Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_horizontal_table_access.html"><div class="navi">+  Horizontal Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_vertical_table_access.html"><div class="navi">+  Vertical Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_matrix_table_access.html"><div class="navi">    Matrix Table Access </div></a></li>
+<li class="navi"><a href="LAN_Features_partial_table_specifications.html"><div class="navi navi-selected">    Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_nested_partial_table_specification.html"><div class="navi">    Nested Partial Table Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_shifted_table_column_specification.html"><div class="navi">    Shifted Table Column Specifications </div></a></li>
+<li class="navi"><a href="LAN_Features_header_name_exception_handling.html"><div class="navi">    Header Name Exception Handling </div></a></li>
+<li class="navi"><a href="LAN_Features_lookup_access_exception_handling.html"><div class="navi">    Lookup Access Exception Handling </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_memory_effect.html"><div class="navi">    Header Names - Memory Effect </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><div>  </div></li>
+<li class="navi"><div> <br><br><hr> </div></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+<b>Partial table specifications</b> provide a method to access table contents in a simpler way, for example by only mentioning the
+table column.  This is only possible if a current <b>table context</b> is provided.
+</p>
+<h4> Table Context</h4>
+<p>
+The table context provides and makes use of following default information for partial table specifications:
+</p><ul class="bullets"><li class="bullets">The current table name
+</li><li class="bullets">The current table row
+</li><li class="bullets">Optionally, (but not in all cases) the current table column
+</li></ul><p>
+Various B4P functions provide the <b>table context</b> for the code which does either follow these functions inside a statement or block,
+or apply to the code provided as function parameters to these functions.
+
+<br><br>
+
+Examples of some functions which provide table contexts with table names and rows:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_with_table.html">with table</a>() with 2 function parameters (table name and row)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_for_all_table_rows.html">for all table rows</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process.html">table process</a>() and <a class="bold_text" href="LIB_Function_table_process.html">table process selected rows</a>()
+</li><li class="bullets">All standard table functions which contain the ending <b>... selected rows</b>.  In this case, partial table specifciation is allowed in the <a class="bold_text" href="LAN_Features_Expressions.html">expression</a> calculated for every row
+</li></ul><p>
+Examples of some functions which do also provide the table colums:
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_with_table.html">with table</a>() with 3 function parameters (table name, row and column)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a>() and likes
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process_columns.html">table process columns</a>() and  <a class="bold_text" href="LIB_Function_table_process_columns.html">table process selected columns</a>()
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_for_all_table_columns.html">for all table columns</a>()
+</li></ul><p>
+With such a context available, the row number can also be retrieved directly with the function <a class="bold_text" href="LIB_Function_row.html">row</a>().<br>
+The current column number can be tretrived with <a class="bold_text" href="LIB_Function_col.html">col</a>().<br>
+Inside table references, the column can be referred using a point <b>.</b> specified directly or as a <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a>.
+</p>
+<h4> Syntax for Partial Table Specification</h4>
+<p>
+The table must be referenced inside brackets using a combination of strings and/or numerals.  These may be constant strings and numbers
+or expressions providing strings and numerals.
+<br><br>
+
+Example 1: Current table name, current row number, specified column
+</p><table class="noframe table_syntax" style = "width:250px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[       </th><th> Column Specifier              </th><th>  ]</th></tr>
+<tr><td></td><td> - Header name(s)              </td><td></td></tr>
+<tr><td></td><td> - Column number(s)            </td><td></td></tr>
+<tr><td></td><td> - : Wildcards                 </td><td></td></tr>
+<tr><td></td><td> - Ranges                      </td><td></td></tr>
+</table><p>
+
+<br>Example 2: Other table name, current row number, specified column
+</p><table class="noframe table_syntax" style = "width:490px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[       </th><th> Table Name                    </th><th> :     </th><th> Column Specifier              </th><th>  ]</th></tr>
+<tr><td></td><td> Must be a string              </td><td>       </td><td> - Header name(s)              </td><td></td></tr>
+<tr><td></td><td>                               </td><td>       </td><td> - Column number(s)            </td><td></td></tr>
+<tr><td></td><td>                               </td><td>       </td><td> - : Wildcards                 </td><td></td></tr>
+<tr><td></td><td>                               </td><td>       </td><td> - Ranges                      </td><td></td></tr>
+</table><p>
+
+<br>Example 3: Current table name, specified row number, specified column
+</p><table class="noframe table_syntax" style = "width:490px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[       </th><th> Column Specifier              </th><th> ,     </th><th> Row Specifier                         </th><th> ]</th></tr>
+<tr><td></td><td> - Header name(s)              </td><td>       </td><td> - Matching contents (string), or      </td><td></td></tr>
+<tr><td></td><td> - Column number(s)            </td><td>       </td><td> - Row numbers                         </td><td></td></tr>
+<tr><td></td><td> - : Wildcards                 </td><td>       </td><td> : Wildcards                           </td><td></td></tr>
+<tr><td></td><td> - Ranges                      </td><td>       </td><td> - Ranges                              </td><td></td></tr>
+</table><p>
+
+<br>Syntax for lookup access (Choose column, followed by the row, and pick up data from a different column):
+</p><table class="noframe table_syntax" style = "width:730px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px"><col style = "width:230px"><col style = "width:10px">
+<tr><th>[       </th><th> Column Specifier              </th><th> ,     </th><th> Row Specifier                         </th><th> ,     </th><th> Column Specifier 2    </th><th> ]</th></tr>
+<tr><td></td><td> - Header name(s)              </td><td>       </td><td> - Matching contents (string), or      </td><td>       </td><td> - Header name(s)      </td><td></td></tr>
+<tr><td></td><td> - Column number(s)            </td><td>       </td><td> - Row numbers                         </td><td>       </td><td> - Column number(s)    </td><td></td></tr>
+<tr><td></td><td> - : Wildcards                 </td><td>       </td><td> : Wildcards                           </td><td>       </td><td> - : Wildcards         </td><td></td></tr>
+<tr><td></td><td> - Ranges                      </td><td>       </td><td> - Ranges                              </td><td>       </td><td> - Ranges              </td><td></td></tr>
+</table><p>
+</p>
+<h4> Principle</h4>
+<p>
+<br/><img src="Images/Description_Table_Simple_Access_Partial.jpg" alt="Simple table access, partial table specification"><br/>
+</p>
+<h5> Programming Examples</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load( table, "Examples&#92;Cities.csv");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with table( table, 5 ) // Row 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ 1 ] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ -7 ], new line );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ City ], new line );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ City, San Francisco], new line ); // Exception to rule: Returns row number<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ City, San Francisco, Famous attraction] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ 1, row(), 4] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [ -7, row(), -4] );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Horizontal access:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[table row width( table, row() )] = Street roller;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [0.."State/Province"] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [..] ); // Entire row (till column with last header on top row)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [] )&nbsp;&nbsp;; // Entire row (all elements, inclding the Street roler)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [,6] )&nbsp;&nbsp;; // Read data in next row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [,row()-1] )&nbsp;&nbsp;; // Read data in previous row<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( [,0] ); // All header names<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Vertical access:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( trim( [0,] ) ); // Column 0, including header ( trim: Countries listed only once )<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></div>
+<h5> Output - Staying in San Francisco</h5>
+<div class="output_background_color" ><code>San Francisco<br>San Francisco<br><br>San Francisco<br><br>5<br><br>Golden Gate<br>Golden Gate<br>Golden Gate<br>Horizontal access:<br>{'USA','San Francisco','California'}<br>{'USA','San Francisco','California',805000,'Golden Gate',16,'SFMOMA','Cable car'}<br>{'USA','San Francisco','California',805000,'Golden Gate',16,'SFMOMA','Cable car','Street roller'}<br>{'CAN','Montréal','Quebec',1700000,'Hôtel du Parlement','','Rialto Theater','Skidoo'}<br>{'USA','Boston','Massachusetts',620000,'Freedom trail',43,'','Walking'}<br>{'Country','City','State/Province','Inhabitants','Famous attraction','Alt. (m)','Famous cultural place','Moving along'}<br>Vertical access:<br>{'Country','USA','CAN','DAN','ITA','AUT','THA','SWI','FRA'}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_partial_table_specifications.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Specifying Current Columns</h4>
+<p>
+If the context information is also providing the current column number, then the lone point (<b>.</b>) acts as a shortcut
+to reference the current column.  Please note that the lone point is interpreted as a string string consisting of 1
+character (unless it is part of a numeral acting as a decimal point) and not a programming language specific symbol.
+This does even apply if the point is a softquoted or quoted string ( <b>'.'</b> or <b>"."</b> ).
+Alternatively, you can use the function <a class="bold_text" href="LIB_Function_col.html">col</a>() to get the current column number.
+
+<br><br>
+
+If you use the point in single quotation marks, then <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are also supported here.
+For example '<.' refers to the next column to the left of the current column.
+
+</p>
+<h5> Programming Examples</h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load( table, "Examples&#92;Cities.csv");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ table: Inhabitants&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, 0] = '&gt;.'; // Change header to "&gt;." for the test below<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ table: Famous attraction, 0] = '.';&nbsp;&nbsp;// Change header to '.' for the test below<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( table );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with table( table, 5, City ) // Row 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "City: ", [.] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Single quotation marks not needed for lone point<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "City: ", ['.'], " and State: ", ['&gt;.'] );&nbsp;&nbsp;// Next column after current one is referenced<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Attraction: ", ["."], " and inhabitants: ", ["&gt;."] );&nbsp;&nbsp;// Note: Header "&gt;." is referenced instead<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Do the same without column context.&nbsp;&nbsp;Lookig fore header called '.':<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo(new line, "And Philadelphia:");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with table( table, 3 ) // Row 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( "Attraction: ", ["."], " and inhabitants: ", ["&gt;."] );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Country | City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| State/Province | &gt;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Alt. (m) | Famous cultural place | Moving along <br>&nbsp;&nbsp;&nbsp;&nbsp;1 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| New York City | New York&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8300000 | St. of Liberty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Guggenheim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Taxi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Washington&nbsp;&nbsp;&nbsp;&nbsp;| D.C.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 650000&nbsp;&nbsp;| Lincoln Statue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Smithsonian Inst.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| The Beast&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Philadelphia&nbsp;&nbsp;| Pennsylvania&nbsp;&nbsp;&nbsp;| 1500000 | Independence hall&nbsp;&nbsp;| 12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| PCC streetcar<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Boston&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Massachusetts&nbsp;&nbsp;| 620000&nbsp;&nbsp;| Freedom trail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Walking&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| San Francisco | California&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 805000&nbsp;&nbsp;| Golden Gate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| SFMOMA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Cable car&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : CAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Montréal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Quebec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1700000 | Hôtel du Parlement |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Rialto Theater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Skidoo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : DAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Copenhagen&nbsp;&nbsp;&nbsp;&nbsp;| Hovedstaten&nbsp;&nbsp;&nbsp;&nbsp;| 580000&nbsp;&nbsp;| Little Mermaid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Royal Theater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Bicycle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : ITA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Venice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Venetia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 260000&nbsp;&nbsp;| Doge's Palace&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Theatro la Fenice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Gondola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Los Angeles&nbsp;&nbsp;&nbsp;| California&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3800000 | Hollywood&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Getty Center&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Car&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : AUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Vienna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1800000 | Prater&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Opera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fiacre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : THA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Bangkok&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8250000 | Wat Phra Kaeo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| National Museum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Longtail boat<br>&nbsp;&nbsp;&nbsp;12 : SWI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Zürich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Kt. Zürich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 404000&nbsp;&nbsp;| Street Parade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 408&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Kunsthaus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Tram&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;13 : FRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Paris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Île de France&nbsp;&nbsp;| 2240000 | Eiffel Tower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Louvre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Métro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;14 : SWI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Davos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Grisons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 11000&nbsp;&nbsp;&nbsp;| Weissfluhgipfel&nbsp;&nbsp;&nbsp;&nbsp;| 1650&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Kirchner Museum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ski lift&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>City: San Francisco<br>City: San Francisco and State: California<br>Attraction: Golden Gate and inhabitants: 805000<br><br>And Philadelphia:<br>Attraction: Independence hall and inhabitants: 1500000<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_partial_table_specifications_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> See also</h4>
+<p><a class = "bold_text" href="LAN_Features_nested_partial_table_specification.html">Nested partial table specifications</a><br/>
+<a class = "bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
