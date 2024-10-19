@@ -251,6 +251,7 @@ OK;Body;2;4: Table Processing;B 1.05;E - Augment;TAB_Features_Enrichment.html;En
 OK;Body;2;4: Table Processing;B 1.06;F - Analyze;TAB_Features_Align_and_Process.html;Align and Process;Align and Process;
 OK;Body;2;4: Table Processing;B 1.07;G - Format;TAB_Features_Format_the_results.html;Format the results;Format the results;
 OK;Body;2;4: Table Processing;B 1.08;H - Export;TAB_Features_Save_and_Export.html;Save and Export;Save and Export;
+OK;Body;2;4: Table Processing;B 1.09;The Whole Program;TAB_Features_The_Whole_Program.html;The Whole Program;The Whole Program;
 OK;Body;1;5: Function Library;B 1;Function Library;LIB_Features_Function_Library.html;Function Library,Function Library Guide;Function Library,Function Library Guide;
 OK;Body;1;5: Function Library;B 2;Control Flow Functions;LIB_Features_Control_flow_functions.html;Control flow functions,Control flow statements;Control flow functions,Control flow statements;
 OK;Body;2;5: Function Library;B 2.01;Branches;LIB_Features_Branches.html;Branches;Branches;
@@ -608,6 +609,7 @@ OK;Body;4;5: Function Library;B 9.07.05.06;table spread ...;LIB_Function_table_s
 OK;Body;4;5: Function Library;B 9.07.05.07;table spread given headers ...;LIB_Function_table_spread_given_headers.html;table spread given headers,table spread given headers accumulating;table spread given headers,table spread given headers accumulating;
 OK;Body;4;5: Function Library;B 9.07.05.08;table consolidate ...;LIB_Function_table_consolidate.html;table consolidate,table consolidate selected rows;table consolidate,table consolidate selected rows,Consolidate table rows;
 OK;Body;4;5: Function Library;B 9.07.05.09;table distribute ...;LIB_Function_table_distribute.html;table distribute,table distribute advance,table distribute accumulate,table distribute advance accumulate;table distribute,table distribute advance,table distribute accumulate,table distribute advance accumulate,Distribute quantities over timeline;
+OK;Body;4;5: Function Library;B 9.07.05.10;table histogram;LIB_Function_table_histogram.html;table histogram;table histogram,Create histograms from tables;
 OK;Body;3;5: Function Library;B 9.07.06;Copying, Renaming and Splitting Tables;LIB_Features_Copying_and_renaming_and_spitting_tables.html;Copying and renaming and spitting tables;Copying and renaming and spitting tables;
 OK;Body;4;5: Function Library;B 9.07.06.01;table rename;LIB_Function_table_rename.html;table rename;table rename,Renaming tables;
 OK;Body;4;5: Function Library;B 9.07.06.02;table copy table;LIB_Function_table_copy_table.html;table copy table;table copy table,Copy and split tables;
