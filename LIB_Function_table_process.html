@@ -17,7 +17,7 @@
 </div>
 
 <div class="header">
-<h3>table process (all) (selected rows)</h3>
+<h3>table process ...</h3>
 <a accesskey="p" href="LIB_Features_Processing_table_contents.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_process_selected_rows_fast.html"><span>Next</span></a> 
 </div>
 
@@ -49,7 +49,7 @@
 <li class="navi"><a href="LIB_Features_Processing_table_rows.html"><div class="navi">+  Processing Table Rows </div></a></li>
 <li class="navi"><a href="LIB_Features_Processing_table_contents.html"><div class="navi"+>-  Processing Table Contents </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LIB_Function_table_process.html"><div class="navi navi-selected">    table process (all) (selected rows) </div></a></li>
+<li class="navi"><a href="LIB_Function_table_process.html"><div class="navi navi-selected">    table process ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_process_selected_rows_fast.html"><div class="navi">    table process selected rows fast </div></a></li>
 <li class="navi"><a href="LIB_Function_table_process_columns.html"><div class="navi">    table process (selected) columns </div></a></li>
 <li class="navi"><a href="LIB_Function_table_process_cells.html"><div class="navi">    table process cells (selected rows) </div></a></li>
@@ -92,22 +92,67 @@
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>table process, table process rows, table process all rows, table process selected rows, table process all selected rows</code></div>
+<div class="white_background_color" ><code>table process, table process rows, table process all rows, table process selected rows, table process all selected rows, table process rows up, table process all rows up, table process selected rows up, table process all selected rows up, table process rows start, table process all rows start, table process rows stop, table process all rows stop, table process rows up start, table process all rows up start, table process rows up stop, table process all rows up stop</code></div>
 <h4> Description</h4>
 <p>
-These are one of the most powerful functions in the B4P language: The ability to process the contents in tables row-by-row
-without formulating loops or complex algorithms.  The statements for processing the data in every row are provided
+The function family beginning with <b>table process...</b> is one of the most powerful functions in B4P which allows you to avoid specifying loops and
+multiple variables when processing a selection of or all rows in a table.  The processing statements and optionally the conditions to check whether to
+process the rows are passed as function parameters and applied repeatedly.
+
+<br><br>
+
+Following selection criteria may be applied to decide whether to process each row:
+</p><ul class="bullets"><li class="bullets">A single row number number
+</li><li class="bullets">a <a class="bold_text" href="LIB_Function_set.html">set</a> containing multiple row numbers
+</li><li class="bullets">An <a class="bold_text" href="LAN_Features_Expressions.html">expression</a> which is calculated for revery row which returns a boolean value serving as decision base
+</li><li class="bullets">All rows in the table.
+</li></ul><p>
+Additional features are provided:
+</p><ul class="bullets"><li class="bullets">If the function name contains the word <b>up</b>, then the processing begins with the last line and works the way to the top of the table.
+</li><li class="bullets">If the function name contains the word <b>all</b>, then processing will also include the header row (row 0).
+</li><li class="bullets">If the function name contains the word <b>start</b>, then processing begins at the row where the expression applies for the first time.  Onwards, the expression       will no longer be reacalculated because all remaining rows will be processed anyway.
+</li><li class="bullets">If the function name contains the word <b>stop</b>, then all rows are processed until the expression applies.  Processing will stop immediately for the remaining rows.
+</li></ul><p>
+The expressions and/or the statements for processing the data in every row are provided
 as function parameters and will be executed for every single row selected.  Combined with already available <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a>,
 you can do powerful algorithms with minimum amount of simple code text.  See code examples further below.
 
-<br><br>
-The <b>all</b> in the function name indicates that row 0 (header row) is to be included for processing.
+
+</p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:100px"><col style = "width:100px"><col style = "width:500px">
+<tr><th>Function Name                                                   </th><th> Direction             </th><th> Include row 0 </th><th> Remarks</th></tr>
+<tr><td>table process                                                   </td><td> Top down              </td><td> No                    </td><td> All rows will be processed.  Only the statement and no selection expressions are provided.</td></tr>
+<tr><td>table process rows                                              </td><td> Top down              </td><td> No                    </td><td> See above.</td></tr>
+<tr><td>table process rows up                                   </td><td> Bottom up             </td><td> No                    </td><td> See above.</td></tr>
+<tr><td>table process all rows                                  </td><td> Top down              </td><td> Yes                   </td><td> See above.</td></tr>
+<tr><td>table process all rows up                               </td><td> Bottom up             </td><td> Yes                   </td><td> See above.</td></tr>
+<tr><td>table process selected rows                             </td><td> Top down              </td><td> No                    </td><td> The function requires an expression to select the rows, followed by the statements to be executed if true, and optionally followed by statemetns to be executed if false.</td></tr>
+<tr><td>table process selected rows up                  </td><td> Bottom up             </td><td> No                    </td><td> See above.</td></tr>
+<tr><td>table process all selected rows                 </td><td> Top down              </td><td> Yes                   </td><td> See above.</td></tr>
+<tr><td>table process all selected rows up              </td><td> Bottom up             </td><td> Yes                   </td><td> See above.</td></tr>
+<tr><td>table process rows start                                </td><td> Top down              </td><td> No                    </td><td> See above and <sup>1</sup>.</td></tr>
+<tr><td>table process rows up start                             </td><td> Bottom up             </td><td> No                    </td><td> See above and <sup>1</sup>.</td></tr>
+<tr><td>table process all rows start                    </td><td> Top down              </td><td> Yes                   </td><td> See above and <sup>1</sup>.</td></tr>
+<tr><td>table process all rows up start                 </td><td> Bottom up             </td><td> Yes                   </td><td> See above and <sup>1</sup>.</td></tr>
+<tr><td>table process rows stop                                 </td><td> Top down              </td><td> No                    </td><td> See above and <sup>2</sup>.</td></tr>
+<tr><td>table process rows up stop                              </td><td> Bottom up             </td><td> No                    </td><td> See above and <sup>2</sup>.</td></tr>
+<tr><td>table process all rows stop                             </td><td> Top down              </td><td> Yes                   </td><td> See above and <sup>2</sup>.</td></tr>
+<tr><td>table process all rows up stop                  </td><td> Bottom up             </td><td> Yes                   </td><td> See above and <sup>2</sup>.</td></tr>
+</table><p>
+
+<sup>1</sup> The <b>start</b> functionality: At the first time the selection criteria affects the the row (true), then all remaining rows to be checked
+will also apply.  For this reason, the expression will no longer be calculated till the table has been completed.
+
+<br>
+
+<sup>2</sup> The <b>stop</b> functionality: If the selection criteria does not affect the row (false), then  the row will be processed.  Once the selection criteria
+applies, then the current and all remaining ones to do row will no longer be porcessed.  For this reason, the expression will no longer be calculated till the table has been completed.
 
 <br><br>
-For consistency with related function names, <b>table process rows</b> has been added and is identical to <b>table process</b>
 
-<br><br>
-The closest relative of this function is <a class="bold_text" href="LIB_Function_for_all_table_rows.html">for all table rows</a>() which describes a loop using  loop index
+An additional parameter containing statements (referred as 'Statements (otherwise)') can be specified for all functions except first five function names listed in the
+table above.  These optional statements will be executed if the specified rows are not selected.  This even applies to the function names containing <b>start</b>
+and <b>stop</b>.
+
 </p>
 <h4> Call as: <span class="black_text">procedure or function</span></h4>
 <h4> Restrictions</h4>
@@ -123,7 +168,7 @@ This function provides a <a class="bold_text" href="LAN_Features_partial_table_s
 </td></tr>
 <tr><td>Opt. 2.<br/>code</td>
 <td>expression<br/>:string</td>
-<td><b>Expression to select rows</b><br/><p>Applicable to <b>table process selected rows</b> only:<br>
+<td><b>Expression to select rows</b><br/><p>Applicable to all functions <u>except</u> <b>table process</b> and <b>table process rows</b>:<br>
 Specify the conditions or rules to select the rows.  See <a class="bold_text" href="LAN_Features_Expression_to_select_rows.html">expressions to select rows</a>.<br>
 
 The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Year]>=2022</b>.<br>
@@ -132,17 +177,21 @@ e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function
 </td></tr>
 <tr><td>2. / 3.<br/>code</td>
 <td>statements<br/>:string</td>
-<td><b>Statements (applicable where rows are selected)</b><br/><p><b>table process / table process rows</b>: The statements provided will be executed for every row.<br>
-<b>table process selected rows</b>: The statements provided will be executed for every row where the condition calculated before returned <b>true</b>.<br><br>
-
+<td><b>Statements (applicable where rows are selected)</b><br/><p>Applicable to the functions <b>table process</b> and <b>table process rows</b>: Statements are processed on every row<br>
+Applicable to all other function names: Statement are processed according to the expression provided in the previous function parameter.<br>
+<u>Note:</u>If the chosen function name involves processing the header row (row 0), then the header names will also be affected.<br>
+<u>Note:</u> Processing the statements in this function parameter not counted in the return value.
+<br><br>
 The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Full Name]=[First Name]+' '+[Last Name];</b>.<br>
 <u>Hint</u>: If you encounter an error message at the very end of the program after you worked on a statement, you may proabably have forgotton to add the closing parentheses to close the function call.</p>
 </td></tr>
 <tr><td>4.<br/>code</td>
 <td>statements<br/>:string</td>
-<td><b>Statements (otherwise)</b><br/><p><b>table process / table process rows</b>: Not applicable. This function accepts 3 parameters only.
-<b>table process selected rows</b>: The statements provided will be executed for every row where the condition calculated before returned <b>false</b>.<br><br>
-
+<td><b>Statements (otherwise)</b><br/><p>Applicable to the functions <b>table process</b> and <b>table process rows</b>: Not appicable.  Providing a 4th parameter reuslts in an error.<br>
+Applicable to all other function names: If provided, then these statements will be executed if the condition is not given to execute the statements in the previous function parameter.<br>
+<u>Note:</u> If the chosen function name involves processing the header row (row 0), then the header names will also be affected.<br>
+<u>Note:</u> Processing the statements in this function parameter are not counted in the return value.
+<br><br>
 The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">table context</a> for <a class="bold_text" href="LAN_Features_partial_table_specifications.html">partial table specifications</a> is available for referencing just the columns easily. Example: <b>[Full Name]=[First Name]+' '+[Last Name];</b>.<br>
 <u>Hint</u>: If you encounter an error message at the very end of the program after you worked on a statement, you may proabably have forgotton to add the closing parentheses to close the function call.</p>
 </td></tr>
@@ -151,26 +200,55 @@ The <a class="bold_text" href="LAN_Features_partial_table_specifications.html">t
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Number of rows processed</b><br/><p>With <b>table process selected rows</b>, the number of selected rows (and processed with statements from 3rd function parameter) are counted.  With the function <b>table process selected rows</b>, only the processing for 'true' matches are counted.</p></td></tr>
+<td><b>Number of rows processed</b><br/><p>The number of times the statements in the 2nd resp. 3rd paramter (but not 4th paramter) are processed.</p></td></tr>
 </table>
 <h4> Examples</h4>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( animals, { {Animal, Group, Characteristics},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ parakeet, bird },&nbsp;&nbsp;{ moose, mammal },&nbsp;&nbsp;{ ape, mammal },&nbsp;&nbsp;{ sparrow, bird } , { trout, fish }, { bass, fish },<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ canary, bird }, { penguin, bird }, { beluga, mammal} } );<br/>
+<div class="code_background_color" ><code><br/>
+table initialize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( table, {{ Name, Out 1, Out 2, Out 3, Out 4, Out 5, Out 6, Out 7, Out 8 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abel, Brigitte, Charles, Daniela, Emily, Fred, Gregor, Hella, Ingo, Jan, Klaus, Linda } );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( animals, [Animal] = ![Animal] ); // Capitalize<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( animals, ([Group] = bird), [Characteristics] = "Can fly", [Characteristics] = "Can't fly" );<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table process selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( animals, ([Group] = fish) | ([Animal]=Penguin,Beluga), [Characteristics] = "Can swim" );<br/>
+table copy table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( table, t );<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list ( animals );</code></div>
+i[] = 1;<br/>
+<br/>
+table process rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, [Out 1] = i[]++ );<br/>
+table process all rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, [Out 2] = i[]++ ); // Note: Header 'Out 2' will be verwritten<br/>
+table process rows up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, [Out 3] = i[]++ );<br/>
+table process all rows up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, [Out 4] = i[]++ ); // Note: Header 'Out 4' will be verwritten<br/>
+<br/>
+i[] = 1;<br/>
+table process selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, {2..5,9,-1},&nbsp;&nbsp;[Out 5] = i[]++, [Out 5] = No ); // Rows 2-5,9,last row<br/>
+table process all selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, 0,&nbsp;&nbsp;[Out 6] = i[]++ ); // Just row 0<br/>
+table process selected rows up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]&lt;&gt;'*a*'), [Out 7] = i[]++, [Out 7] = No );<br/>
+table process all selected rows up&nbsp;&nbsp;&nbsp;( t, ([Name]='*m*',Linda), [Out 8] = i[]++ );<br/>
+// Note the parentheses around the expressions: = and &lt;&gt; may expect multiple operands separated by comma like<br/>
+// the last example above: Containing 'm' or eqal to 'Linda'.<br/>
+<br/>
+table list (t);<br/>
+<br/>
+<br/>
+echo( new line, "Demonstrate the 'start' and 'stop' features:");<br/>
+table copy table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( table, t );<br/>
+<br/>
+table process rows start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*n*'), [Out 1] = i[]++, [Out 1] = No );<br/>
+table process rows stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*n*'), [Out 2] = i[]++, [Out 2] = No );<br/>
+table process all rows start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*m*'), [Out 3] = i[]++ );<br/>
+table process all rows stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*a'),&nbsp;&nbsp;[Out 4] = i[]++ );<br/>
+<br/>
+i[] = 1;<br/>
+table process rows up start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*y'),&nbsp;&nbsp;[Out 5] = i[]++, [Out 5] = No );<br/>
+table process rows up stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*y'),&nbsp;&nbsp;[Out 6] = i[]++, [Out 6] = No );<br/>
+table process all rows up start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*y'),&nbsp;&nbsp;[Out 7] = i[]++ );<br/>
+table process all rows up stop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( t, ([Name]='*y'),&nbsp;&nbsp;[Out 8] = i[]++ );<br/>
+<br/>
+table list (t);</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Animal&nbsp;&nbsp;&nbsp;| Group&nbsp;&nbsp;| Characteristics<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Parakeet | bird&nbsp;&nbsp;&nbsp;| Can fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Moose&nbsp;&nbsp;&nbsp;&nbsp;| mammal | Can't fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Ape&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| mammal | Can't fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Sparrow&nbsp;&nbsp;| bird&nbsp;&nbsp;&nbsp;| Can fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Trout&nbsp;&nbsp;&nbsp;&nbsp;| fish&nbsp;&nbsp;&nbsp;| Can swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Bass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| fish&nbsp;&nbsp;&nbsp;| Can swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Canary&nbsp;&nbsp;&nbsp;| bird&nbsp;&nbsp;&nbsp;| Can fly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Penguin&nbsp;&nbsp;| bird&nbsp;&nbsp;&nbsp;| Can swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Beluga&nbsp;&nbsp;&nbsp;| mammal | Can swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_process.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Out 1 | 13 | Out 3 | 50 | Out 5 | 7 | Out 7 | 16<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 14 | 37&nbsp;&nbsp;&nbsp;&nbsp;| 49 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 13&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Brigitte | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 15 | 36&nbsp;&nbsp;&nbsp;&nbsp;| 48 | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 12&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Charles&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 16 | 35&nbsp;&nbsp;&nbsp;&nbsp;| 47 | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Daniela&nbsp;&nbsp;| 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 17 | 34&nbsp;&nbsp;&nbsp;&nbsp;| 46 | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Emily&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 18 | 33&nbsp;&nbsp;&nbsp;&nbsp;| 45 | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 11&nbsp;&nbsp;&nbsp;&nbsp;| 15<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Fred&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 19 | 32&nbsp;&nbsp;&nbsp;&nbsp;| 44 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Gregor&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 20 | 31&nbsp;&nbsp;&nbsp;&nbsp;| 43 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Hella&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 21 | 30&nbsp;&nbsp;&nbsp;&nbsp;| 42 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Ingo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 22 | 29&nbsp;&nbsp;&nbsp;&nbsp;| 41 | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : Jan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;| 23 | 28&nbsp;&nbsp;&nbsp;&nbsp;| 40 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Klaus&nbsp;&nbsp;&nbsp;&nbsp;| 11&nbsp;&nbsp;&nbsp;&nbsp;| 24 | 27&nbsp;&nbsp;&nbsp;&nbsp;| 39 | No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : Linda&nbsp;&nbsp;&nbsp;&nbsp;| 12&nbsp;&nbsp;&nbsp;&nbsp;| 25 | 26&nbsp;&nbsp;&nbsp;&nbsp;| 38 | 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 14<br><br><br>Demonstrate the 'start' and 'stop' features:<br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Out 1 | Out 2 | 29 | 42 | Out 5 | Out 6 | 18 | Out 8<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 26&nbsp;&nbsp;&nbsp;&nbsp;| 30 | 43 | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 17 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Brigitte | No&nbsp;&nbsp;&nbsp;&nbsp;| 27&nbsp;&nbsp;&nbsp;&nbsp;| 31 | 44 | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 16 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Charles&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 28&nbsp;&nbsp;&nbsp;&nbsp;| 32 | 45 | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 15 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Daniela&nbsp;&nbsp;| 17&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 33 |&nbsp;&nbsp;&nbsp;&nbsp;| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 14 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Emily&nbsp;&nbsp;&nbsp;&nbsp;| 18&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 34 |&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 13 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Fred&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 19&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 35 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 12&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 25&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Gregor&nbsp;&nbsp;&nbsp;| 20&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 36 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 11&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 24&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Hella&nbsp;&nbsp;&nbsp;&nbsp;| 21&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 37 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 23&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Ingo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 22&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 38 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 22&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : Jan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 23&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 39 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 21&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Klaus&nbsp;&nbsp;&nbsp;&nbsp;| 24&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 40 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 20&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;12 : Linda&nbsp;&nbsp;&nbsp;&nbsp;| 25&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 41 |&nbsp;&nbsp;&nbsp;&nbsp;| No&nbsp;&nbsp;&nbsp;&nbsp;| 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;| 19&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_process.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_table_process_selected_rows_fast.html">table process selected rows fast</a><br/>
 <a class = "bold_text" href="LIB_Function_table_process_cells.html">table process cells</a><br/>
 <a class = "bold_text" href="LIB_Function_table_process_cells.html">table process cells selected rows</a><br/>
 <a class = "bold_text" href="LIB_Function_table_process_columns.html">table process columns</a><br/>
-<span class="red_text">table process columns selected rows</span><br/>
 <a class = "bold_text" href="LIB_Function_table_manipulate.html">table manipulate</a></p>
 	</div>
 </section>

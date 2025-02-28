@@ -130,11 +130,11 @@ echo( limit( a[], Eel, Eel ) ); // All results = 7<br/>
 echo( limit( a[], Eel, Cow ) ); // No limitations<br/>
 echo;<br/>
 <br/>
-a[] = date( { 01.01.2024, 01.04.2024, 01.07.2024, 01.10.2024, 31.12.2024 } );<br/>
+a[] = date( { 01.01.2025, 01.04.2025, 01.07.2025, 01.10.2025, 31.12.2025 } );<br/>
 <br/>
-echo( limit( a[], date(28.02.2024), date(01.09.2024) ) ); // Limitation to specifeid dates<br/>
-echo( limit( a[], date(14.07.2024), date(14.07.2024) ) ); // All results set to limit values<br/>
-echo( limit( a[], date(01.09.2024), date(28.02.2024) ) ); // No Limitation<br/>
+echo( limit( a[], date(28.02.2025), date(01.09.2025) ) ); // Limitation to specifeid dates<br/>
+echo( limit( a[], date(14.07.2025), date(14.07.2025) ) ); // All results set to limit values<br/>
+echo( limit( a[], date(01.09.2025), date(28.02.2025) ) ); // No Limitation<br/>
 echo;<br/>
 <br/>
 a[] = { false, true };<br/>
@@ -143,7 +143,7 @@ echo( limit( a[], false, true ) ); // Limitation<br/>
 echo( limit( a[], true, true ) ); // All results = true<br/>
 echo( limit( a[], true, false ) ); // No limitations</code></div>
 <h4> Output</h4>
-<div class="output_background_color" ><code>{3,3,4,6,7,7,7}<br>{7,7,7,7,7,7,7}<br>{0,2,4,6,8,10,12}<br><br>{'Cow','Cow','Cow','Dog','Elk','Fly','Fox','Fox'}<br>{'Eel','Eel','Eel','Eel','Eel','Eel','Eel','Eel'}<br>{'Ape','Bee','Cat','Dog','Elk','Fly','Gnu','Hen'}<br><br>{'2024-02-28','2024-04-01','2024-07-01','2024-09-01','2024-09-01'}<br>{'2024-07-14','2024-07-14','2024-07-14','2024-07-14','2024-07-14'}<br>{'2024-01-01','2024-04-01','2024-07-01','2024-10-01','2024-12-31'}<br><br>{false,true}<br>{true,true}<br>{false,true}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_limit.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<div class="output_background_color" ><code>{3,3,4,6,7,7,7}<br>{7,7,7,7,7,7,7}<br>{0,2,4,6,8,10,12}<br><br>{'Cow','Cow','Cow','Dog','Elk','Fly','Fox','Fox'}<br>{'Eel','Eel','Eel','Eel','Eel','Eel','Eel','Eel'}<br>{'Ape','Bee','Cat','Dog','Elk','Fly','Gnu','Hen'}<br><br>{'2025-02-28','2025-04-01','2025-07-01','2025-09-01','2025-09-01'}<br>{'2025-07-14','2025-07-14','2025-07-14','2025-07-14','2025-07-14'}<br>{'2025-01-01','2025-04-01','2025-07-01','2025-10-01','2025-12-31'}<br><br>{false,true}<br>{true,true}<br>{false,true}<br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_limit.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_min.html">min</a><br/>
 <a class = "bold_text" href="LIB_Function_min.html">max</a><br/>

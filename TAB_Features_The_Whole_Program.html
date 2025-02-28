@@ -56,8 +56,7 @@ Below you see the whole program described above.
 
 <br></p>
 <h5> Whole Program</h5>
-<div class="code_background_color" ><code><br/>
-// Part 1: Import<br/>
+<div class="code_background_color" ><code>// Part 1: Import<br/>
 <br/>
 file download overwrite&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( "https://de.wikipedia.org/wiki/Liste_der_Staaten_der_Erde", countries 1.html );<br/>
 table load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, countries 1.html, HTML, "international gebr" );<br/>
@@ -104,8 +103,8 @@ table lookup smart ignore case&nbsp;&nbsp;( c1, Country, Country, country names 
 <br/>
 most recent population[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= filter( [c2:..,0], 'Population*' ) { -1 }; // Take right most matching header name from row 0<br/>
 <br/>
+table correct headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, { 'Country*', most recent population[], '*tinent*' }, { Country, Population, Continent } );<br/>
 table delete selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, [Country]=World );<br/>
-table correct headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, { most recent population[], '*Continent*' }, { Population, Continent } );<br/>
 table process cells in columns&nbsp;&nbsp;( c2, Population, [.] = str([.]) / ',' );<br/>
 table keep columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, { Country, Continent, Population } );<br/>
 table delete selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, [Country]='*(*)*' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Overseas departements with home countries in parentheses<br/>
@@ -119,7 +118,8 @@ table delete selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, [Continent]=
 <br/>
 // Part 5: Augment<br/>
 <br/>
-[c1:Country,{China,Denmark},Area] = {9597000,42952}; // km2&nbsp;&nbsp;(Denmark without Greenland, and CN without China South Sea)<br/>
+[c1:Country,{China,Denmark,'Timor-Leste'},Area] = {9597000,42952,14950}; // km2 <br/>
+//&nbsp;&nbsp;(Denmark without Greenland, and CN without China South Sea, and area was missing for East Timor<br/>
 <br/>
 table insert columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, { Inhabitants Variation, Inhabitants per km2 } );<br/>
 table process selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, [Inhabitants] == '', [Inhabitants] = [Population]);<br/>
