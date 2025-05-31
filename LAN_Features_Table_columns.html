@@ -66,13 +66,32 @@ Whenever a function expects a <a class="bold_text" href="LAN_Features_Function_P
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:200px"><col style = "width:500px"><col style = "width:300px">
 <tr><th>Type                    </th><th> Description                           </th><th> Example</th></tr>
 <tr><td>Numeral                 </td><td> Specifies a <a class="bold_text" href="LIB_Function_table_column_number.html">table column number</a>, beginning with 0.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
-<tr><td>Quoted string          </td><td> The content of the entire string is interpreted as one header name. <br>                                Empty strings ("") refer to the first column with blank header name.                 </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
-<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br>                                Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
-<tr><td>Set                     </td><td> Sets contain a colection of header names and/or column numbers         </td><td> { 1, Last Name, first Name, "Value [EUR]" }</td></tr>
+<tr><td>Quoted string          </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers.<br>                            Empty strings ("") refer to the first column with blank header name.                 </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
+<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br> Two consecutive points ('..') define <b>column specification ranges</b> in order to cover multiple consecutive columns<br>                                Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
+<tr><td>Set                     </td><td> Sets contain a collection of header names and/or column numbers        </td><td> { 1, Last Name, first Name, "Value [EUR]" }</td></tr>
 </table><p>
+</p>
+<h4> Column Specification Ranges</h4>
+<p>
+'..' provided as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a> defines a range covering multiple columns.
+<br>
 
+</p><ul class="bullets"><li class="bullets">If '..' is specified as sole value, then all existing columns are included.
+</li><li class="bullets">If '..' is followed after a specified column, then all remaining columns till the end of the table are included.
+</li><li class="bullets">If '..' is specified as first value, followed by a column, then the 1st table column (column 0) till the specified column are included.
+</li><li class="bullets">If '..' is specified between two columns, then all columns inbetween are included, as long the 2nd column lies behind (further to the right to) the 1st column.
+</li><li class="bullets">Multipe ranges are allowd, e.g. <b>{ a, '..', b, c, '..', d }</b>.
+</li><li class="bullets">Two consecutive ranges <b>{ a, '..' ,'..', b }</b> are not permiited and result in exceptions.
+</li><li class="bullets">Ranges on both sides of a specified column <b>{ a, '..', 'b', '..', 'c'}</b> are not permiited and result in exceptions.
+</li><li class="bullets">Ranges in quoted strings are interpreted as header names to look for, e.g. <b>{ a, "..", b }</b>.
+</li><li class="bullets">Following syntax will not work unless you want to create a set containing typical <a class="bold_text" href="LAN_Features_Data_types_sets_value_ranges.html">ranges</a>:  <b> {a .. e} </b> which translates into <b>{ a,b,c,d,e }</b>.
+</li><li class="bullets">Following syntax is worng and flags a syntax error as '..' is the B4P range symbol for sets to be used without commas: <b>{a, .. , b}</b>.
+</li></ul><p></p>
+<h4> Function-Specific Rules</h4>
+<p>
+Addtional function-specific rules may apply depending on the function called and are documented accordingly.  Below are some examples:
+<br>
 
-Addtional function-specific rules may apply.  Below are some examples:
 </p><ul class="bullets"><li class="bullets">Header names must exist
 </li><li class="bullets">Header names may exist (missing ones may be created as additinal columns in the table)
 </li><li class="bullets">Header names must not exist (e.g. to check if specific header names are <i>not</i> used in a specific table
