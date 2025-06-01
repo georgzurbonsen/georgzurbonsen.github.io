@@ -74,41 +74,80 @@ access rights in order to run the B4P installation program as a <i>super user</i
 The follwoing contents will appear:</p>
 <h5> </h5>
 <div class="code_background_color" ><code>username@domain:~/b4p_installation$ sudo ./setup<br/>
+[sudo] Password for username: <br/>
 <br/>
 B4P - Installation Program<br/>
+Version 12.00 'Johann Carl Friedrich Gauss' (2025-06-01)<br/>
+Copyright (C) 2012..2025 Georg zur Bonsen, all rights reserved.<br/>
 _______________________________________________________________________________<br/>
 <br/>
-Version 8.00 Candidate (2020-11-08)<br/>
-Copyright (C) 2012..2020 Georg zur Bonsen, all rights reserved.<br/>
 <br/>
-B4P installation program is starting (Linux and MacOS platforms) ... <br/>
+B4P installation program 12.00 2025-06-01 (Linux &amp; MacOS) is starting ... <br/>
 <br/>
 1 &gt;&gt; Check the B4P privileges to run installation program ...<br/>
 <br/>
 <br/>
 2 &gt;&gt; Installation program - Main Menu ...<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I :&nbsp;&nbsp;Install B4P<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D :&nbsp;&nbsp;De-install B4P<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I :&nbsp;&nbsp;Install B4P on your machine<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U :&nbsp;&nbsp;Un-install B4P<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E :&nbsp;&nbsp;Exit installer without actions<br/>
 Please select: </code></div>
 <h4> </h4>
-<p>Choice 'M' makes the installation visible for all users and puts the executable file into a subdirectory of <b>C:\Program Files\B4P</b>.
+<p>Choice 'I' does the installation for all users and puts the executable file into a subdirectory of <b>/usr/local/bin/b4p</b>.
 
 <br><br>
 The output shown below has been shortened in this documentation.  The installer will list all working steps and files processed.
 </p>
 <h5> </h5>
 <div class="code_background_color" ><code>3 &gt;&gt; Check that all required files are available for installation ...<br/>
-...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check lib<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check weblib<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check List of Locales.csv<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check B4P Style Themes.xlsx<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check setup<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check B4P Reference Manual.b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Check b4p<br/>
+<br/>
 4 &gt;&gt; Identify locations for the program files ...<br/>
-...<br/>
-5 &gt;&gt; Deleting B4P program and application data subdirectories (if existing) ...<br/>
-...<br/>
-6 &gt;&gt; Create new folders for B4P program ...<br/>
-...<br/>
-7 &gt;&gt; Copy all files to destination directory '/usr/local/etc/b4p ...<br/>
-...</code></div>
+<br/>
+Identified following directories:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For executable program:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/local/bin<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For program related files (e.g. libraries): /usr/local/etc/b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;For user application data:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/home/georg/.config/b4p<br/>
+<br/>
+5 &gt;&gt; Check for exisintg user, local and themes setting ...<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Found following settings files:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;settings :&nbsp;&nbsp;No.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Locale settings :&nbsp;&nbsp;No.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;My B4P init file:&nbsp;&nbsp;No.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;B4P Style Themes:&nbsp;&nbsp;No.<br/>
+<br/>
+6 &gt;&gt; Deleting B4P program and application data subdirectories (if existing) ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Deleted /usr/local/etc/b4p<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Done.<br/>
+<br/>
+7 &gt;&gt; Create new folders for B4P program ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Created /usr/local/etc/b4p/lib.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Created /home/georg/.config/b4p.<br/>
+<br/>
+8 &gt;&gt; Copy all files to destination directory '/usr/local/etc/b4p ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying file List of Locales.csv ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying file B4P Style Themes.xlsx ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying directory lib ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying directory weblib ...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Copying b4p to /usr/local/bin ...<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Info: User settings file not found. Skipped copying<br/>
+</code></div>
 <h4> Select Country and Language Settings</h4>
 <p>The B4P installaion program asks for both language and country.  This combination is a <i>locale</i> information which rules
 things like number and date format, currency symbols, month and weekday names in the specified language, etc.
@@ -121,15 +160,15 @@ the CSV files may either use commas or semicolons as separators (In excel, take 
 more parameters and check how the parameters are separated), and numbers may either make use of decimal points or commas.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>8 &gt;&gt; Restore user and locale settings (if available) ...<br/>
+<div class="code_background_color" ><code><br/>
+9 &gt;&gt; Restore user settings (where available) ...<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Info: User settings file not found. Skipped copying<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Info: No locale settings have been defined yet.<br/>
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Loaded CSV/TSV file 'List of Locales.csv':<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;31 rows, max 28 columns, 28 columns in 1st row, 868 fields, list separator: ;<br/>
+10 &gt;&gt; Define locale settings ...<br/>
 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;No locale settings have been defined yet.<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Step 1 - Choose language:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A :&nbsp;&nbsp;none<br/>
@@ -140,15 +179,18 @@ more parameters and check how the parameters are separated), and numbers may eit
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F :&nbsp;&nbsp;Italian<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G :&nbsp;&nbsp;Spanish<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H :&nbsp;&nbsp;Swedish<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I :&nbsp;&nbsp;Dutch<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J :&nbsp;&nbsp;Swiss<br/>
 Please select: D<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Step 2 - Choose country:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A :&nbsp;&nbsp;Germany<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B :&nbsp;&nbsp;Switzerland<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C :&nbsp;&nbsp;Austria<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D :&nbsp;&nbsp;Italy<br/>
-Please select: B<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Locale chosen: de_CH<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C :&nbsp;&nbsp;Switzerland HP<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D :&nbsp;&nbsp;Austria<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E :&nbsp;&nbsp;Italy<br/>
+Please select: C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Locale chosen: de_CH_HP ( German / Switzerland HP.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Done setting locale.<br/>
 </code></div>
 <h4> Option - Create a personal folder</h4>
@@ -164,8 +206,14 @@ and contains the following files:
 In case the folder is already existing, then only the missing files will be overwritten.  This is the case if you redo the installation.
 </p>
 <h5> </h5>
-<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;Do you want to create a personal B4P program folder ?&nbsp;&nbsp;Y<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Creating directory: /home/georg/b4p<br/>
+<div class="code_background_color" ><code><br/>
+<br/>
+11 &gt;&gt; Opion: Creating a personal folder ...<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Do you want to create a personal B4P program folder ?&nbsp;&nbsp;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;Creating directory: /home/georg/b4p<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;If directory or files already exist, then existing files<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;will not be overwritten.<br/>
 <br/>
@@ -173,7 +221,10 @@ In case the folder is already existing, then only the missing files will be over
 &nbsp;&nbsp;&nbsp;&nbsp;When you start B4P without file specified, 'Main.b4p' in this directory will be started.<br/>
 <br/>
 <br/>
+&gt;&gt;&nbsp;&nbsp;Congratulations! Installation has completed.<br/>
+<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Highly advisable to restart your machine so all configuration settings for this installation are in effect.<br/>
+<br/>
 <br/>
 <br/>
 Done - Press ENTER key<br/>
