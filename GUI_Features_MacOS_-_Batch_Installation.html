@@ -42,7 +42,6 @@
 <li class="navi"><a href="GUI_Features_Updates_and_Upgrades.html"><div class="navi">    Updates and Upgrades </div></a></li>
 <li class="navi"><a href="GUI_Features_Uninstallation.html"><div class="navi">    Uninstallation </div></a></li>
 <li class="navi"><a href="GUI_Features_Terms_and_Conditions.html"><div class="navi">    Terms and Conditions </div></a></li>
-<li class="navi"><a href="GUI_Features_License_Activation.html"><div class="navi">    License Activation </div></a></li>
 </ul></li>
 <li class="navi"><a href="GUI_Features_Getting_Started.html"><div class="navi">+  Getting Started </div></a></li>
 <li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
@@ -57,6 +56,8 @@
 <li class="navi"><div> <br><hr> </div></li>
 <li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
 <li class="navi"><div> <br><hr> </div></li>
+<li class="navi"><a href="https://github.com/georgzurbonsen/b4p-download"><div class="navi"> Download B4P </div></a></li>
+<li class="navi"><div> <br> </div></li>
 <li class="navi"><a href="GUI_Features_Release_History.html"><div class="navi">+  Release History </div></a></li>
 </ul></li>
 </ul>
@@ -85,12 +86,11 @@ for locale settings
 </p><table class="bold_column_1" style = "width:1000px"><col style = "width:300px"><col style = "width:700px">
 <tr><th>Option                          </th><th> Explanation</th></tr>
 <tr><td>--help                          </td><td> Help text about the options will be shown on the console.  No installation will be initiated, even if other options are provided.</td></tr>
-<tr><td>--choice=machine<br> --choice=deinstall<br> --choice=info<br> --choice=exit<br>                </td><td> Do installation on local machine for all users<br> De-install B4P<br> Provide information for generating a license<br> Exit installation program without any actions<br>                                        The option '--choice' will ensure that the whole installation process is suitable for batch processing.</td></tr>
+<tr><td>--choice=machine<br> --choice=deinstall<br> --choice=info<br> --choice=exit<br>                </td><td> Do installation on local machine for all users<br> De-install B4P<br> Exit installation program without any actions<br>                                         The option '--choice' will ensure that the whole installation process is suitable for batch processing.</td></tr>
 <tr><td>--keep-user-settings            </td><td> The user settings from the previous installation (e.g. prompt) will be kept.</td></tr>
 <tr><td>--keep-my-init                  </td><td> Keep own 'My B4P Init.b4p' file which can carry out user-specific initialization sequences</td></tr>
 <tr><td>--keep-my-themes                </td><td> Keep own 'B4P Style Themes.xlsx' file and do not use the newest one provided in the installation.</td></tr>
 <tr><td>--create-personal-folder        </td><td> Create a personal folder for own programs.</td></tr>
-<tr><td>--license=keep<br> --license=new<br> --license=no<br> --license="<i>Lic. File Name.json</i>" </td><td> Keep the existing license from the previous installation, if applicable <br> Use the new license file as provided in the installation directory (B4P License File.json)<br> Do not apply the license.  B4P shall run in demo mode only<br>                                      Use specified path and file name (.json) containing the license information.</td></tr>
 <tr><td>--locale=keep<br> --locale=xx_YY                       </td><td> Keep the existing locale settings from the previous installation<br> Specify the combination of ISO 2-character language and country code.  The locale will be accepted if supported  in the file "List of Locales.csv".  For a first-time batch installation on a new target, the local must be specified. <br>                                      <u>Note:</u> Use the locale settings as used by Excel since you want to align on number formats, date formats and list separators.</td></tr>
 </table><p>
 

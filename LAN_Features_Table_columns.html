@@ -67,26 +67,45 @@ Whenever a function expects a <a class="bold_text" href="LAN_Features_Function_P
 <tr><th>Type                    </th><th> Description                           </th><th> Example</th></tr>
 <tr><td>Numeral                 </td><td> Specifies a <a class="bold_text" href="LIB_Function_table_column_number.html">table column number</a>, beginning with 0.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
 <tr><td>Quoted string          </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers.<br>                            Empty strings ("") refer to the first column with blank header name.                 </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
-<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br> Two consecutive points ('..') define <b>column specification ranges</b> in order to cover multiple consecutive columns<br>                                Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
+<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br> Two consecutive points ('..') define <b>column ranges</b> in order to cover multiple consecutive columns<br>                              Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
 <tr><td>Set                     </td><td> Sets contain a collection of header names and/or column numbers        </td><td> { 1, Last Name, first Name, "Value [EUR]" }</td></tr>
 </table><p>
 </p>
-<h4> Column Specification Ranges</h4>
+<h4> Column Ranges</h4>
 <p>
-'..' provided as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a> defines a range covering multiple columns.
+'..' provided as <a class="bold_text" href="LAN_Features_Data_subtype_softquoted_strings.html">softquoted string</a> defines a range covering multiple columns in a <i>from..to</i> approach.
 <br>
 
-</p><ul class="bullets"><li class="bullets">If '..' is specified as sole value, then all existing columns are included.
-</li><li class="bullets">If '..' is followed after a specified column, then all remaining columns till the end of the table are included.
-</li><li class="bullets">If '..' is specified as first value, followed by a column, then the 1st table column (column 0) till the specified column are included.
-</li><li class="bullets">If '..' is specified between two columns, then all columns inbetween are included, as long the 2nd column lies behind (further to the right to) the 1st column.
-</li><li class="bullets">Multipe ranges are allowd, e.g. <b>{ a, '..', b, c, '..', d }</b>.
-</li><li class="bullets">Two consecutive ranges <b>{ a, '..' ,'..', b }</b> are not permiited and result in exceptions.
-</li><li class="bullets">Ranges on both sides of a specified column <b>{ a, '..', 'b', '..', 'c'}</b> are not permiited and result in exceptions.
-</li><li class="bullets">Ranges in quoted strings are interpreted as header names to look for, e.g. <b>{ a, "..", b }</b>.
+</p><ul class="bullets"><li class="bullets"><b>'..'</b> specified alone selects all columns as defined in the header row.
+</li><li class="bullets"><b><i>Column</i>, '..'</b> includes the specified column plus all further ones to the right.
+</li><li class="bullets"><b>'..', <i>Column</i></b> includes the first column till the specified column.
+</li><li class="bullets"><b><i>Column A</i>, '..', <i>Column B</i></b> specifies all columns between and including the specified columns.  If the first column lies further to the right to the second column, then no columns will be included.
+</li><li class="bullets">Multipe column ranges are allowd, e.g. <b>{ a, '..', b, c, '..', d }</b>.
+</li></ul><p><br>
+Items to watch out for.
+<br>
+</p><ul class="bullets"><li class="bullets">Two consecutive ranges <b>{ a, '..' ,'..', b }</b> are not permiited and result in exceptions.
+</li><li class="bullets">Ranges on both sides of a specified column <b>{ a, '..', 'b', '..', 'c'}</b> are not permitted and flag exceptions.
+</li><li class="bullets">Ranges in quoted strings are interpreted as header names to look for, e.g. <b>{ a, "..", b }</b>.  The example looks for a header containing <b>".."</b>.
 </li><li class="bullets">Following syntax will not work unless you want to create a set containing typical <a class="bold_text" href="LAN_Features_Data_types_sets_value_ranges.html">ranges</a>:  <b> {a .. e} </b> which translates into <b>{ a,b,c,d,e }</b>.
-</li><li class="bullets">Following syntax is worng and flags a syntax error as '..' is the B4P range symbol for sets to be used without commas: <b>{a, .. , b}</b>.
-</li></ul><p></p>
+</li><li class="bullets">Following syntax is wrong and flags a syntax error as <b>..</b> is the B4P range symbol for sets to be used without commas: <b>{a, .. , b}</b>.
+</li></ul><p>
+</p>
+<h5> Different ways to specify Column Ranges</h5>
+<div class="code_background_color" ><code>table initialize( t, {{ Red, Orange, Yellow, Green, Turquoise, Blue, Purple, Brown, Black, ".." },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Rot, Orange, Gelb,&nbsp;&nbsp;&nbsp;Grün,&nbsp;&nbsp;Türkis,&nbsp;&nbsp;&nbsp;&nbsp;Blau, Purpur, Braun, Schwarz, Joker}} );<br/>
+<br/>
+echo( table read row( t, { Green, Red }, 1 ) ); <br/>
+echo( table read row( t, { Yellow, '..', Blue }, 1 ) ); <br/>
+echo( table read row( t, { '..' }, 1 ) ); // Reads all columns<br/>
+echo( table read row( t, { ".." }, 1 ) ); // Reads the column named "..", returning Joker only<br/>
+echo( table read row( t, { Yellow, '..' }, 1 ) ); <br/>
+<br/>
+echo( table read row( t, { '..', Green }, 1 ) ); <br/>
+echo( table read row( t, { Brown, '..', Green }, 1 ) );&nbsp;&nbsp;// Returns empty set because Brown lies past Green.<br/>
+echo( table read row( t, { Yellow, '..', Blue, Brown, '..', Green }, 1 ) ); </code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>{'Grün','Rot'}<br>{'Gelb','Grün','Türkis','Blau'}<br>{'Rot','Orange','Gelb','Grün','Türkis','Blau','Purpur','Braun','Schwarz','Joker'}<br>{'Joker'}<br>{'Gelb','Grün','Türkis','Blau','Purpur','Braun','Schwarz','Joker'}<br>{'Rot','Orange','Gelb','Grün'}<br>{}<br>{'Gelb','Grün','Türkis','Blau'}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Table_columns.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> Function-Specific Rules</h4>
 <p>
 Addtional function-specific rules may apply depending on the function called and are documented accordingly.  Below are some examples:
