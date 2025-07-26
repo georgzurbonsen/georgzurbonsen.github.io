@@ -36,6 +36,13 @@ code
     font-weight: bold;
 }
 
+.big_navy:text
+{
+  color: navy;
+  font-size: 175%;
+}
+
+
 
 a {
     color: navy;

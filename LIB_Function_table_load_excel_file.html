@@ -18,13 +18,21 @@
 
 <div class="header">
 <h3>table load excel file</h3>
-<a accesskey="p" href="LIB_Function_excel_list_sheets.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_save_excel_file.html"><span>Next</span></a> 
+<a accesskey="p" href="LIB_Function_excel_list_tables.html"><span>Prev</span></a> <a accesskey="n" href="LIB_Function_table_save_excel_file.html"><span>Next</span></a> 
 </div>
 
 <section>
 	<div class="nav">
-<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+
 <ul>
+<li class="navi"><a href="MAS_Features_Overview.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi navi-selected"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
@@ -41,6 +49,8 @@
 <li class="navi"><a href="LIB_Function_table_load.html"><div class="navi">+  table load ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_save.html"><div class="navi">+  table save ... </div></a></li>
 <li class="navi"><a href="LIB_Function_excel_list_sheets.html"><div class="navi">    excel list sheets </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_list_pivot_tables.html"><div class="navi">    excel list pivot tables </div></a></li>
+<li class="navi"><a href="LIB_Function_excel_list_tables.html"><div class="navi">    excel list tables </div></a></li>
 <li class="navi"><a href="LIB_Function_table_load_excel_file.html"><div class="navi navi-selected">    table load excel file </div></a></li>
 <li class="navi"><a href="LIB_Function_table_save_excel_file.html"><div class="navi">    table save excel file </div></a></li>
 </ul></li>
@@ -58,13 +68,7 @@
 <li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div> <br><br><hr> </div></li>
-<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
-<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
-<li class="navi"><div> <br><hr> </div></li>
-<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -73,32 +77,30 @@
 <div class="white_background_color" ><code>table load excel file</code></div>
 <h4> Description</h4>
 <p>
-This function loads Excel files (Open Office format) directly into B4P tables.  Following features are
-supported:
-
-</p><ul class="bullets"><li class="bullets">One or multiple Excel sheets can be loaded into one or multiple B4P tables using one function call only.  In this case, an equal number of  tables and Excel sheet names need to be specified.  Loading multiple sheets with one function call takes less time than calling this function multiple times for every table. <br>                 Example: <b>table load excel file( { table 1, table 2 }, "Example.xlsx", { Base Data, My Calculations } );</b>
-</li><li class="bullets">Instead of sheet names, sheet numbers (The left-most sheet seen in Excel begins with 1) can be loaded instead.
-</li><li class="bullets">The sheet number 0 refers to the active (visible) sheet in Excel at the time the Excel file has been saved
-</li><li class="bullets">If no sheet name or number is specified, then the active (visible) sheet will be loaded, too.
-</li><li class="bullets">If only one table is loaded from one Excel sheet, then additional options can be applied, such as loading formulas into a separate table.
+This function loads Excel files (Open Office format) directly into one or more B4P tables with a single function call.
+It provides the choice of loading
+</p><ul class="bullets"><li class="bullets">Complete sheets specified by name or number
+</li><li class="bullets">Excel tables
+</li><li class="bullets">Pivot tables
 </li></ul><p>
 <br><br>
 
 B4P is able to distinguish properly between strings (strings), numerals, boolean values (true, false), dates, times and date-time combinations
-(YYYY-MM-DD hh:mm:ss format). Other information such as formulas, cell formatting, color information, etc. are not loaded into the target tables.
+(YYYY-MM-DD hh:mm:ss format). Other information such as formulas, cell formatting, color information, etc. are not loaded into the target tables,
+however additional function parameters allows to load Excel formulas into separate B4P tables.
 
 <br><br>
 
-<u>Note:</u> In Excel files, various numeric data are shown in different formats, e.g. monetary values with only two digits behind
-decimal point (e.g. 'EUR 1.25'), thousand separators, currency symbols, etc.  B4P loads the original and unformatted value.
+<u>Note:</u> In Excel files, various numeric data are shown in various elaborate formats, e.g. monetary values with only two digits behind
+decimal point (e.g. 'EUR 1.25'), thousand separators, currency symbols, etc.  B4P loads the original and unformatted value not constrained
+by the output format.
 Example: If 'EUR 1.25' is seen, but the actual value is 1.2488, then 1.2488 will be loaded.  The same applies to percentages, e.g. 15% is loaded as 0.15.<br>
 In fields which contain formulas, the calculated value will be loaded.
 
-
-
 <br><br>
+
 <u>Attention</u>: Encrypted Excel files (e.g. marked confidential with the confidentiality-stamp where supported), binary and proprietary legacy file
-types (e.g. .xlsb, .xls) cannot be processed.  File types .xlsx, .xlsm and .xlst are fine.
+types (e.g. .xlsb, .xls) cannot be loaded processed.  File types .xlsx, .xlsm and .xlst are fine.
 
 <br><br>
 
@@ -111,20 +113,26 @@ Excel table.  For example, if row 5 / column 3 contains 10, the formula table ma
 has the lazy habit of writing the formula only 1-3 times, followed by a <i>shared</i> notification, probably attempting to save disk space.
 In these cases, the string value "(Shared)" will be written into the coresponding table location.
 
+<br><br>
+<b>Loading pivot tables:</b>
+B4P loads the pivot table including all headers, but not including the filter settings typically listed above the pivot table.
+The pivot tables are loaded as seen, i.e. only contents as seen on Excel and then saved will be loaded.
+To avoid any ambiguities, I suggest you to specify sheet and table names togetherand separated with a shals '/'.
+You can use the more simple approch by specifying <b>pivot:<i>Pivot table name</i></b> if the pivot table name is fully unique, e.g.
+defined only once.
 </p>
 <h4> Call as: <span class="black_text">procedure</span></h4>
 <h4> Restrictions</h4>
 <p>Indirect parameter passing is disabled</p>
 <h4> Parameter count</h4>
-<p>2,3,5,7,9,...(odd numbers)</p>
+<p>2-4</p>
 <h4> Parameters</h4>
 <table class="simple"><col style = "width:80px"><col style = "width:120px"><col style = "width:800px"><tr><th>No.</th><th>Type</th><th>Description</th></tr>
 <tr><td>1<br/>input</td>
 <td>string<br/>set</td>
-<td><b>name of target table</b><br/><p>If only one table needs to be loaded, then it is OK to provide the table name as a string.  If more tables need to be loaded
-from the file, then include the names into a set.  In case more than 1 table shall be loaded, then precisely
-3 function paramters need to be provided, not more and not less.  In case an empty set (zero tables) is provided, then nothing will be loaded.
-If target tables are existing, then they will be initialized before loading.</p>
+<td><b>name of target table(s)</b><br/><p>Specify the B4P table names for the Excel sheets and/or tables to be loaded.  Use a string if only one table name needs to be loaded.
+Use a set containing strigs for mulitple table names.  Every table name must be unique.  B4P will create or initialize these tables
+before loading the contents.  In case an empty set (zero tables) is provided, then nothing will be loaded.</p>
 </td></tr>
 <tr><td>2<br/>input</td>
 <td>string</td>
@@ -134,30 +142,31 @@ If target tables are existing, then they will be initialized before loading.</p>
 </td></tr>
 <tr><td>Opt. 3<br/>input</td>
 <td>string<br/>numeral<br/>set</td>
-<td><b>Excel sheet name</b><br/><p>This parameter specifies the Excel sheets in the workbook to be loaded.  It is optional when loading only one sheet.
-in this case, the active (visible) Excel sheet will be loaded.
-Otherwise, the name number of sheet names or sheet numbers specified must equal to the number of target tables specified.
+<td><b>Excel sheet and table names</b><br/><p>This parameter specifies the Excel sheets, tables and pivot tables to be loaded. in the workbook to be loaded.
+If more than 1 item shall be loaded, then specify the names and numbers in a set.  The number of elements specified here must match
+with the number of B4P tables specified in the 1st function parameter.
 <br><br>
+</p><ul class="bullets"><li class="bullets">If this parameter is not specified, then the currently active sheet as saved last time will be opened.
+</li><li class="bullets">If a number is specified, then the sheet number is meant.  Sheet numbers begin with 1 (left-most tab).  Invisible sheets are also accessible.
+</li><li class="bullets">Sheet number 0 refers to the active sheet, as if no parameter is specified.
+</li><li class="bullets">If a name is specified, then B4P looks for the matching sheet name.  If not found, then it will search for a matching table name, excluding pivot tables.
+</li><li class="bullets">If <b>sheet:<i>sheet name</i></b> is specified, then B4P will look for matching sheet names only.
+</li><li class="bullets">If <b>table:<i>table name</i></b> is specified, then B4P will look for matching table names only, but not pivot tables.
+</li><li class="bullets">If <b>pivot:<i>pivot table name</i></b> is specified, then B4P will look for matching pivot table names only.<br>                      <u>Attention:</u> Pivot table names need to be unique in their Excel sheets only and may be used repeatedly across different sheets.
+</li><li class="bullets">If <b><i>sheet name</i>/<i>table name</i></b> is specified, then B4P will look for the pivot table in the specified sheet.
+</li></ul><p><br><br>
 <u>Note:</u> Excel sheets which are not worksheets (e.g. chart sheets) cannot be loaded.
 <br><br>
-If the sheet names are not known, then use the function <a class="bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a>() to obtain all sheet names.
-<br><br>
-Regarding sheet numbers: 0 refers to the active and visible sheet.  1 is the left-most sheet, with 2,3, etc. further
-to the right.</p>
-<span class="black_text"><b> Default value: </b></span>0 (Open the currently active and visible sheet in the Excel workbook)
+If the sheet or table names are not known, then use the function <a class="bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a>() and <a class="bold_text" href="LIB_Function_excel_list_tables.html">excel list tables</a>() to obtain all sheet resp. table names.</p>
+<span class="black_text"><b> Default value: </b></span>0 (Open the currently active and visible sheet in the Excel workbook saved last time)
 </td></tr>
 <tr><td>Opt. 4<br/>input</td>
-<td>string</td>
-<td><b>Attribute name</b><br/><p>Following attribute names are supported:
-</p><ul class="bullets"><li class="bullets"><b>formulas</b>  Specify table name in <i>attribute value</i> parameter which shall be used to read all Excel formulas.
-</li></ul><p><u>Note</u>: Attribute value in the next function parameter is required.<br>
-<u>Note</u>: This feature and function parameter is only supported when loading only one sheet.</p>
-</td></tr>
-<tr><td>Opt. 5<br/>input</td>
-<td>string</td>
-<td><b>Attribute value</b><br/><p>Specify the attribute value as defined by the previous function parameter <i>attribute name</i>.
-<br>
-<u>Note</u>: This feature and function parameter is only supported when loading only one sheet.</p>
+<td>string<br/>set</td>
+<td><b>Name of target tables for formulas</b><br/><p>Specify the B4P table names for the Excel sheets and/or tables to be loaded with formulas.  Use a string if only one table name needs to be loaded.
+Use a set containing strigs for mulitple table names.  Every table name must be unique.  B4P will create or initialize these tables
+before loading the contents.  In case an empty set (zero tables) is provided, then nothing will be loaded.
+The number of tables specified must equal to the number of tables in the first function parameter.  If formulas are needed for fewer
+tables, then specify blank strings ('') for tables to skip.</p>
 </td></tr>
 </table>
 <h5> </h5>
@@ -167,7 +176,7 @@ to the right.</p>
 <div class="output_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;0 : First Name | Family Name | City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Level&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Abel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Amberstone&nbsp;&nbsp;| Amsterdam&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Beata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Berghill&nbsp;&nbsp;&nbsp;&nbsp;| Barcelona&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Corinne&nbsp;&nbsp;&nbsp;&nbsp;| Carlson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Copenhagen&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Dietmar&nbsp;&nbsp;&nbsp;&nbsp;| Davis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Dublin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : Ellen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Evans&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Essen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : Fred&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Fisher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Frankfurt&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;7 : Gregory&nbsp;&nbsp;&nbsp;&nbsp;| Green&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Gaza City&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Henry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hansson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Hamburg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Experienced<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : Ida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Ingelberg&nbsp;&nbsp;&nbsp;| Ingolstadt&nbsp;&nbsp;&nbsp;| Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;10 : John&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Janssen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Johannesburg | Beginner&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;11 : Karl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Karlsson&nbsp;&nbsp;&nbsp;&nbsp;| Kansas City&nbsp;&nbsp;| Experienced<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_load_excel_file.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h5> Excel file with formulas</h5>
 <div class="code_background_color" ><code><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load excel file( table, "Examples&#92;Formulas_Inside.xlsx", 0, formulas, formula table);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table load excel file( table, "Examples&#92;Formulas_Inside.xlsx", 1, formula table);<br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Values: ");<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table list( table );<br/>
@@ -179,8 +188,9 @@ to the right.</p>
 <div class="output_background_color" ><code>Values: <br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Today:&nbsp;&nbsp;| 2021-03-13 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Numbers repeated&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Values&nbsp;&nbsp;| Double+1&nbsp;&nbsp;&nbsp;| Sq-Roots&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | (with matrix formula) <br>&nbsp;&nbsp;&nbsp;&nbsp;2 : 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2.2360679775&nbsp;&nbsp;| Text | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 : 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 7.0710678119&nbsp;&nbsp;| Text | 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 : 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 201&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Text | 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sum of products&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 : Totals: |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Intermediate vectors)<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : 181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 367&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 25.3071357894 | 0&nbsp;&nbsp;&nbsp;&nbsp;| 181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>Formulas: <br>&nbsp;&nbsp;&nbsp;&nbsp;0 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =TODAY()&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;1 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A3*2+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =SQRT(A3) | =D2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A3:A7&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =A4*2+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| =SQRT(A4) | =D3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;5 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;6 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;&nbsp;&nbsp;| (Shared)&nbsp;&nbsp;| (Shared) |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;7 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;8 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;9 : =SUM(A3:A7) | =SUM(B3:B7) | (Shared)&nbsp;&nbsp;| (Shared) | (Shared)<br><br></code></div><u>Try it yourself:</u> Open <b>LIB_Function_table_load_excel_file_01.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
 <h4> See also</h4>
 <p><a class = "bold_text" href="LIB_Function_excel_list_sheets.html">excel list sheets</a><br/>
-<a class = "bold_text" href="LIB_Function_table_load.html">table load</a><br/>
-<a class = "bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a></p>
+<a class = "bold_text" href="LIB_Function_excel_list_tables.html">excel list tables</a><br/>
+<a class = "bold_text" href="LIB_Function_table_save_excel_file.html">table save excel file</a><br/>
+<a class = "bold_text" href="LIB_Function_table_load.html">table load</a></p>
 	</div>
 </section>
 

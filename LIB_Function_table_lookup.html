@@ -23,8 +23,16 @@
 
 <section>
 	<div class="nav">
-<div class="booktitle_field"><a style="color:white;" href="LIB_Features_Function_Library.html">Function Library</a></div>
+
 <ul>
+<li class="navi"><a href="MAS_Features_Overview.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi navi-selected"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LIB_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
 <li class="navi"><a href="LIB_Features_Control_flow_functions.html"><div class="navi">+  Control Flow Functions </div></a></li>
@@ -74,10 +82,19 @@
 <li class="navi"><a href="LIB_Function_table_digest_smart.html"><div class="navi">    table digest smart ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest_with_rules.html"><div class="navi">    table digest with rules ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest_with_rules_once.html"><div class="navi">    table digest with rules once ... </div></a></li>
-<li class="navi"><a href="LIB_Features_Table_integration_operation_identifiers.html"><div class="navi">    Table Integration Operation Identifiers </div></a></li>
 <li class="navi"><a href="LIB_Function_table_describe.html"><div class="navi">    table describe ... </div></a></li>
+<li class="navi"><a href="LIB_Features_Table_integration_operation_identifiers.html"><div class="navi">    Table Integration Operation Identifiers </div></a></li>
+<li class="navi"><a href="LIB_Features_Lookup_Feedback_Information.html"><div class="navi">    Collecting Lookup Feedback Information </div></a></li>
+<li class="navi"><a href="LIB_Features_Combining_multiple_tables.html"><div class="navi">    Combining Multiple Tables </div></a></li>
+<li class="navi"><a href="LIB_Function_table_merge.html"><div class="navi">    table merge ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_overlay.html"><div class="navi">    table overlay/subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_intersect.html"><div class="navi">    table intersect ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_subtract.html"><div class="navi">    table subtract ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_exclude.html"><div class="navi">    table exclude ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_multiply.html"><div class="navi">    table multiply ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_divide.html"><div class="navi">    table divide ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_arrange.html"><div class="navi">    table arrange ... </div></a></li>
 </ul></li>
-<li class="navi"><a href="LIB_Features_Combining_multiple_tables.html"><div class="navi">+  Combining Multiple Tables </div></a></li>
 </ul></li>
 <li class="navi"><a href="LIB_Features_Formatting_and_styling_tables.html"><div class="navi">+  Formatting and Styling Tables </div></a></li>
 </ul></li>
@@ -86,13 +103,7 @@
 <li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
-<li class="navi"><div>  </div></li>
-<li class="navi"><div> <br><br><hr> </div></li>
-<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
-<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
-<li class="navi"><div> <br><hr> </div></li>
-<li class="navi"><a href="LIB_Features_Index.html"><div class="navi"> Index </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -177,7 +188,7 @@ Example: { Last Name, Given Name } when looking up a phone directory table.
 See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
 Specific rules apply for this function:
 </p><ul class="bullets"><li class="bullets">At least one header name or column number must be specified
-</li><li class="bullets">The number of search columns in the loookup table must equal to the number of input columns in the target table
+</li><li class="bullets">The number of search columns in the lookup table must equal to the number of input columns in the target table
 </li></ul><p></p>
 </td></tr>
 <tr><td>6.<br/>input</td>
@@ -205,18 +216,9 @@ e.g. <b>a[]=1,3,5</b>.  As long this comparison is not made in the last function
 </td></tr>
 <tr><td>Opt. 8.<br/>input</td>
 <td>table column</td>
-<td><b>Counter column</b><br/><p>Specify 1 column in the lookup table which shall be used to count the successful lookup made.  This function is useful in order to
-get an idea of the data in the lookup table searched frequently, rarely or not at all.  If the column already contains numbers, then
-the existing numbers will be incremented, i.e. no reset to zero.
-<br><br>
-
-See <a class="bold_text" href="LAN_Features_Table_columns.html">table columns as function parameters</a> for general ruling for this parameter.<br>
-Specific rules apply for this function:
-</p><ul class="bullets"><li class="bullets">At most one header name or column number must be specified
-</li><li class="bullets">If the column is missing in the lookup table, then it will be created.
-</li></ul><p>
-<u>Hint:</u> If you need this function parameter, but not the 7th function parameter, then write <b>true</b> into the 7th parameter.</p>
-<span class="black_text"><b> Default value: </b></span>{} (no column selected)
+<td><b>Lookup feedback parameters</b><br/><p>Specify 1 parameter as string or column number, or 1 - 6 parameters in order to obtain feedback information on the lookup procedure, i.e. number of lookups made and number
+of values actually changed when lookin up.  For more info, please see <a class="bold_text" href="LIB_Features_Lookup_Feedback_Information.html">lookup feedback information</a>.</p>
+<span class="black_text"><b> Default value: </b></span>{} (nothing specified)
 </td></tr>
 </table>
 <h4> Return value</h4>
