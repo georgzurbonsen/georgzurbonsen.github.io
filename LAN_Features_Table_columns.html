@@ -25,21 +25,25 @@
 	<div class="nav">
 
 <ul>
-<li class="navi"><a href="MAS_Features_Overview.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi navi-selected"> Language Guide </div></a></li>
-<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
 <li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
 <li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi">+  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Fundamental_language_elements.html"><div class="navi">+  Fundament </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_types.html"><div class="navi">+  Data Types </div></a></li>
 <li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
 <li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi">+  Calculations, Comparisons </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+  Assignments </div></a></li>
 <li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
-<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi"+>-  Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi"+>-  Procedures, Functions, Control Flow </div></a></li>
 <li class="navi"><ul>
 <li class="navi"><a href="LAN_Features_Procedure_Names.html"><div class="navi">    Function Naming </div></a></li>
 <li class="navi"><a href="LAN_Features_Function_Parameters.html"><div class="navi">    Function Parameters </div></a></li>
@@ -56,6 +60,9 @@
 <li class="navi"><a href="LAN_Features_Indirect_parameter_passing.html"><div class="navi">    Indirect Parameter Passing </div></a></li>
 <li class="navi"><a href="LAN_Features_Introduction_to_User-Defined_Functions.html"><div class="navi">    Introduction to User-Defined Functions </div></a></li>
 </ul></li>
+<li class="navi"><a href="LAN_Features_Language_Framework.html"><div class="navi">+  Language Framework </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">+  Programs, Files </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -68,7 +75,7 @@ Whenever a function expects a <a class="bold_text" href="LAN_Features_Function_P
 <tr><th>Type                    </th><th> Description                           </th><th> Example</th></tr>
 <tr><td>Numeral                 </td><td> Specifies a <a class="bold_text" href="LIB_Function_table_column_number.html">table column number</a>, beginning with 0.  <a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is allowed, i.e. -1 is last column in the top row, counting leftward. </td><td> 0 (left most column)<br> -2 (2nd. last column)</td></tr>
 <tr><td>Quoted string          </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers.<br>                            Empty strings ("") refer to the first column with blank header name.                 </td><td> "Last,First Name" refers to one header name<br>"" is a blank header name</td></tr>
-<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br> Two consecutive points ('..') define <b>column ranges</b> in order to cover multiple consecutive columns<br>                              Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
+<tr><td>Softquoted string      </td><td> The content of the entire string is interpreted as one header name, even if it contains numbers. <br> Empty strings ('') refer to the first column with blank header name.<br> <a class="bold_text" href="LAN_Features_shifted_table_column_specification.html">shifted table column specifications</a> are allowed here to reference neighboring columns.<br> Two consecutive points ('..') define <b>column ranges</b> in order to cover multiple consecutive columns.<br> Some functions permit asterisks ('*') to select all columns.  The asterisk must be used alone and without combination with other column names and/or numbers.<br>                                   Some function-specific exceptions may apply and are explicitly documented in the function library documentation. </td><td> 'Last,First Name' refers to one header name<br>'' is a blank header name</td></tr>
 <tr><td>Set                     </td><td> Sets contain a collection of header names and/or column numbers        </td><td> { 1, Last Name, first Name, "Value [EUR]" }</td></tr>
 </table><p>
 </p>
@@ -82,8 +89,9 @@ Whenever a function expects a <a class="bold_text" href="LAN_Features_Function_P
 </li><li class="bullets"><b>'..', <i>Column</i></b> includes the first column till the specified column.
 </li><li class="bullets"><b><i>Column A</i>, '..', <i>Column B</i></b> specifies all columns between and including the specified columns.  If the first column lies further to the right to the second column, then no columns will be included.
 </li><li class="bullets">Multipe column ranges are allowd, e.g. <b>{ a, '..', b, c, '..', d }</b>.
+</li><li class="bullets">Some functions allow <b>'*'</b> (asterisk as softquoted string) to select all columns as specified in the header row.  In this case, the table column parameter must only contain '*' as a single value. Otherwise it looks for the header named '*'.
 </li></ul><p><br>
-Items to watch out for.
+Items to watch out for:
 <br>
 </p><ul class="bullets"><li class="bullets">Two consecutive ranges <b>{ a, '..' ,'..', b }</b> are not permiited and result in exceptions.
 </li><li class="bullets">Ranges on both sides of a specified column <b>{ a, '..', 'b', '..', 'c'}</b> are not permitted and flag exceptions.
@@ -127,7 +135,7 @@ Addtional function-specific rules may apply depending on the function called and
 </section>
 
 <div class="footer">
-Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
 </div>
 
 </div>

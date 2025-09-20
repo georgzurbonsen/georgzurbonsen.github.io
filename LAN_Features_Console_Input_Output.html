@@ -25,21 +25,20 @@
 	<div class="nav">
 
 <ul>
-<li class="navi"><a href="MAS_Features_Overview.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
 <li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
 <li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi navi-selected"> Language Guide </div></a></li>
-<li class="navi"><a href="TAB_Features_Processing_Tables_and_Big_Data.html"><div class="navi"> Table Processing </div></a></li>
 <li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
 <li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
 <li class="navi"><div> <hr> </div></li>
 <li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"+>-  The Language </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Fundamental_language_elements.html"><div class="navi"+>-  Fundament </div></a></li>
 <li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Basic_language_elements.html"><div class="navi"+>-  Basics </div></a></li>
-<li class="navi"><ul>
-<li class="navi"><a href="LAN_Features_Text.html"><div class="navi">+  Text </div></a></li>
 <li class="navi"><a href="LAN_Features_Number.html"><div class="navi">+  Numbers </div></a></li>
+<li class="navi"><a href="LAN_Features_Text.html"><div class="navi">+  Text </div></a></li>
 <li class="navi"><a href="LAN_Features_Symbols.html"><div class="navi">    Symbols </div></a></li>
 <li class="navi"><a href="LAN_Features_comments.html"><div class="navi">    Comments </div></a></li>
 <li class="navi"><a href="LAN_Features_Characters.html"><div class="navi"+>-  Characters </div></a></li>
@@ -53,18 +52,16 @@
 <li class="navi"><a href="LAN_Features_Special_Console_Output_Characters.html"><div class="navi">    Special Console Output Characters </div></a></li>
 </ul></li>
 </ul></li>
-<li class="navi"><a href="LAN_Features_Basic_data_types.html"><div class="navi">+  Basic Data Types </div></a></li>
-<li class="navi"><a href="LAN_Features_Data_Storage_Model.html"><div class="navi">    Data Storage Model </div></a></li>
-<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">    Programs </div></a></li>
-<li class="navi"><a href="LAN_Features_Blocks_and_Statements.html"><div class="navi">+  Blocks and Statements </div></a></li>
-<li class="navi"><a href="LAN_Features_Miscellaneous_Features.html"><div class="navi">+  Miscellaneous Features </div></a></li>
-<li class="navi"><a href="LAN_Features_Language_pitfalls.html"><div class="navi">    Language Pitfalls </div></a></li>
-</ul></li>
+<li class="navi"><a href="LAN_Features_Data_types.html"><div class="navi">+  Data Types </div></a></li>
 <li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
 <li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
-<li class="navi"><a href="LAN_Features_Assignments_and_expressions.html"><div class="navi">+  Assignments and Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi">+  Calculations, Comparisons </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+  Assignments </div></a></li>
 <li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
-<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Functions and Procedures </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Procedures, Functions, Control Flow </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Framework.html"><div class="navi">+  Language Framework </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">+  Programs, Files </div></a></li>
 </ul></li>
 </ul>
 	</div>
@@ -72,23 +69,9 @@
 	<div class="article">
 <h4> Console Output</h4>
 <p>
-Good news: The consoles under Windows, LINUX and MacOS support full UNICODE.<br>
-Bad news: Most console and terminal programs do not display all available UNICODE characters properly
-
-<br><br>
-
-All consoles support the ANSI (formerly: ASCII) chracter set.  Most consoles support additional character sets such as
-
-</p><ul class="bullets"><li class="bullets">Basic Latin
-</li><li class="bullets">Latin-1 Supplement (To ensure Düsseldorf is not written as Dusseldorf - translated as "village of fools")
-</li><li class="bullets">Latin Extended A
-</li><li class="bullets">Greek (for language enthsiasts and fraternity/sorority members in North America)
-</li><li class="bullets">Cyrillic (Russian)
-</li><li class="bullets">A set of additional symbols (also found in win1252 character set) including the Euro currency sign
-</li></ul><p>
-Some modern console programs support an increasing number of UNICODE symbols, including various Asian fonts and emojies.
-Unsupported symbols will automatically be shown using question marks or placeholder boxes.
-</p>
+The consoles make use of the UNICODE character set.  Some older or specialized consoles may not support
+all characters found in the UNIOCDE space and may output placeholders or substitute characters.
+Some modern consoles support the extended multilingual planes which include emojies.</p>
 <h4> Console Input</h4>
 <p>
 Consoles under Windows have only limited capabilities to input non-ANSI characters.  Under Windows, foreign characters are accepted, but the EURO-symbol is not.<br>
@@ -98,7 +81,7 @@ Consoles under Windows have only limited capabilities to input non-ANSI characte
 </section>
 
 <div class="footer">
-Copyright (C) 2007 - 2024 Georg A. zur Bonsen, All Rights Reserved
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
 </div>
 
 </div>
