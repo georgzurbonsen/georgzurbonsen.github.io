@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Comments</h3>
+<a accesskey="p" href="LAN_Features_Symbols.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Characters.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+
+<ul>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi navi-selected"> Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Fundamental_language_elements.html"><div class="navi"+>-  Fundament </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Number.html"><div class="navi">+  Numbers </div></a></li>
+<li class="navi"><a href="LAN_Features_Text.html"><div class="navi">+  Text </div></a></li>
+<li class="navi"><a href="LAN_Features_Symbols.html"><div class="navi">    Symbols </div></a></li>
+<li class="navi"><a href="LAN_Features_comments.html"><div class="navi navi-selected">    Comments </div></a></li>
+<li class="navi"><a href="LAN_Features_Characters.html"><div class="navi">+  Characters </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Data_types.html"><div class="navi">+  Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi">+  Calculations, Comparisons </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+  Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Procedures, Functions, Control Flow </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Framework.html"><div class="navi">+  Language Framework </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">+  Programs, Files </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction to Comments</h4>
+<p>Documenting comments is very similar as in C/C++. The language supports following comment symbols:
+
+
+</p><table class="bold_column_1 bold_column_2" style = "width:1000px"><col style = "width:150px"><col style = "width:150px"><col style = "width:700px">
+<tr><th>Comment Types   </th><th> Examples </th><th> Description</th></tr>
+<tr><td>Line comment    </td><td> // </td><td> Comment starting with double slashes and effective until end of line. The symbols for comment blocks /* and */ are ignored inside line comments.</td></tr>
+<tr><td>Comment block   </td><td> /* ... */ </td><td> Commented code section, max include multiple lines. Nested comments are not supported, e.g. /* … /* … */ … */.</td></tr>
+</table><p>
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This is a commment<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Bla Bla /* Bla Bla<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( This statement is outside a comment block );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Bla Bla */ Bla Bla</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>This statement is outside a comment block<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_comments.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+<h4> Github Markdown Files</h4>
+<p>B4P <i>understands</i> markdown files (with filenames ending '.md') where it only executes code lines which inside the code blocks.  All other contents
+outside the code blocks are treated like comments.  Code blocks must be delimited with three accent-grave symbols ```. Multiple such code blocks in one
+markdown file are supported.
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# This is a markdown header<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And some text to describe it<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```program code<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( This statement is inside a code block );<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# This is the next header<br/>
+</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>This statement is inside a block</code></div>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

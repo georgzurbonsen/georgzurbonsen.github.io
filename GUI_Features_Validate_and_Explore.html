@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>C - Validate</h3>
+<a accesskey="p" href="GUI_Features_Clean_Data.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Merge_and_Consolidate.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+
+<ul>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi navi-selected"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+  Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_Started.html"><div class="navi">+  Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Workflow_Steps.html"><div class="navi"+>-  Workflow Steps </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Import_source_data.html"><div class="navi">    A - Import </div></a></li>
+<li class="navi"><a href="GUI_Features_Clean_Data.html"><div class="navi">    B - Clean </div></a></li>
+<li class="navi"><a href="GUI_Features_Validate_and_Explore.html"><div class="navi navi-selected">    C - Validate </div></a></li>
+<li class="navi"><a href="GUI_Features_Merge_and_Consolidate.html"><div class="navi">    D - Merge </div></a></li>
+<li class="navi"><a href="GUI_Features_Enrichment.html"><div class="navi">    E - Augment </div></a></li>
+<li class="navi"><a href="GUI_Features_Align_and_Process.html"><div class="navi">    F - Analyze </div></a></li>
+<li class="navi"><a href="GUI_Features_Format_the_results.html"><div class="navi">    G - Format </div></a></li>
+<li class="navi"><a href="GUI_Features_Save_and_Export.html"><div class="navi">    H - Export </div></a></li>
+<li class="navi"><a href="GUI_Features_The_Whole_Program.html"><div class="navi">    The Whole Program </div></a></li>
+</ul></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_History.html"><div class="navi">+  Release History </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+In the third step, consider carrying out further checks and alignments.  Such steps may include the following:
+</p><ul class="bullets"><li class="bullets">Check if all columns are existing and assert exceptions (automatic error messages) right not and not later.
+</li><li class="bullets">Clean up and align header names.
+</li><li class="bullets">Insert missing columns (in case you want to combine multiple tables later on).
+</li><li class="bullets">Remove any inconsistencies or disturbing contents.
+</li><li class="bullets">Fill in gaps, e.g. repeating contents from the rows above
+</li><li class="bullets">Align contents.  Example: You merge 2 country tables, one lists <i>Swasiland</i> and the other <i>Eswatini</i>. Decide for one.
+</li></ul><p></p>
+<h4> Checking and Aligning Columns and Header Names</h4>
+<p>
+<hr>
+</p><table class="noframe" style = "width:1000px"><col style = "width:250px"><col style = "width:750px">
+<tr><td><a class="bold_text" href="LIB_Function_table_check_headers.html">table check headers</a>()               </td><td> Check if all columns are existing.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_correct_headers.html">table correct headers</a>()            </td><td> Check for header names matching with specified patterns and correct them.  Useful if tables originate from different                                                    sources and everyone uses slightly different header names.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_insert_columns.html">table insert columns</a>()              </td><td> Insert additional columns.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_insert_columns.html">table insert missing columns</a>()      </td><td> Insert additional columns only if they are still missing.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_rearrange_columns.html">table rearrange columns</a>()           </td><td> Put the columns in the order you desire.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_check_duplicates.html">table check duplicates</a>()            </td><td> Checks repeated entries in case redundant entries need to be removed or consolidated.</td></tr>
+</table><p>
+<hr><br></p>
+<h4> Useful Processing functions to validate the Tables</h4>
+<p>
+<hr>
+</p><table class="noframe" style = "width:1000px"><col style = "width:250px"><col style = "width:750px">
+<tr><td><a class="bold_text" href="LIB_Function_table_process.html">table process</a>()                     </td><td> Process every row in the table with the assignments specified.  No loops and variables need to be specified.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_process.html">table process selected rows</a>()       </td><td> Same as above, but only on the rows fulfilling the condition critiera</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a>()               </td><td> General-purpose function to process all table cells: Example: <a class="bold_text" href="LIB_Function_table_process_cells.html">table process cells</a><b>( [.] = <a class="bold_text" href="LIB_Function_trim.html">trim</a>([.]) );</b></td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_process_columns.html">table process columns</a>()             </td><td> Work through the table columns.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_describe.html">table describe</a>()                   </td><td> B4P checks the contents in selected columns and provides description.  E.g. you can easily identify if a particular                                             column contains telephone numbers, simple names, dates, and not something else.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_compare.html">table compare</a>()                     </td><td> is useful to check a current and an older data and isolate all relevant differences for further processing.</td></tr>
+</table><p>
+<hr><br></p>
+<h4> Look up Contents from other Tables</h4>
+<p>
+<hr>
+</p><table class="noframe" style = "width:1000px"><col style = "width:250px"><col style = "width:750px">
+<tr><td><a class="bold_text" href="LIB_Function_table_lookup.html">table lookup</a>()                      </td><td> Look up for data from other tables.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_lookup.html">table lookup ignore case</a>()          </td><td> Also useful, as lookup comparisons ignore cases.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart</a>()                </td><td> In this case, the lookup table allows wildcards, commas for multiple choices, etc.</td></tr>
+<tr><td><a class="bold_text" href="LIB_Function_table_lookup_smart.html">table lookup smart ignore case</a>()    </td><td> Also useful, as lookup comparisons ignore cases.</td></tr>
+</table><p>
+<hr><br></p>
+<h4> Wikipedia Example (continued from step 2)</h4>
+<p>
+Do some validations
+
+</p><ul class="bullets"><li class="bullets">Change column headers to more meaningful names in English.
+</li><li class="bullets">Remove disturbing thousad comma signs and decimal points in the numbers
+</li><li class="bullets">Remove summary rows applicable to the whole world.
+</li><li class="bullets">For table c2: Use the most recent population data (multiple heders exist)
+</li><li class="bullets">Some rows contain messy data.  Remove these rows in table c1.  Aplies to Denmark and China.
+</li><li class="bullets">Use a lookup table to align diverting or ambiguous country names
+</li></ul><p></p>
+<h5> Simple Example</h5>
+<div class="code_background_color" ><code><br/>
+<br/>
+table correct headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, { 'Einwohner*', 'Fläche*', Englischer Name }, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ Inhabitants,&nbsp;&nbsp;Area,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Country,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} );<br/>
+table keep columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, { Country, Area, Inhabitants } );<br/>
+table process cells in columns&nbsp;&nbsp;( c1, { Area, Inhabitants }, [.] = replace(str([.]) / '.',',','.') );<br/>
+// Let's ignore messy data in CHINA and DENMARK (Free text on HK, Macao, Greenland, Faroer Is.)<br/>
+<br/>
+table keep selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, is numeric( [Area] ) );<br/>
+table process&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, [Country] = left([Country],' oder ') ); // Remove country name in other language after ' oder'<br/>
+table lookup smart ignore case&nbsp;&nbsp;( c1, Country, Country, country names resolved, Country Name Pattern, Country Name to use );<br/>
+<br/>
+<br/>
+most recent population[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= filter( [c2:..,0], 'Population*' ) { -1 }; // Take right most matching header name from row 0<br/>
+<br/>
+table correct headers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, { 'Country*', most recent population[], '*tinent*' }, { Country, Population, Continent } );<br/>
+table delete selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, [Country]=World );<br/>
+table process cells in columns&nbsp;&nbsp;( c2, Population, [.] = str([.]) / ',' );<br/>
+table keep columns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, { Country, Continent, Population } );<br/>
+table delete selected rows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c2, [Country]='*(*)*' );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Overseas departements with home countries in parentheses<br/>
+table lookup smart ignore case&nbsp;&nbsp;( c2, Country, Country, country names resolved, Country Name Pattern, Country Name to use );<br/>
+<br/>
+echo( "Table C1: ");<br/>
+table list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( c1, briefly, 4, last col, 2 ); // List just 3 columns and first and last 4 rows<br/>
+<br/>
+</code></div>
+<h5> The table has been validated.</h5>
+<div class="output_background_color" ><code>Table C1: <br>&nbsp;&nbsp;&nbsp;&nbsp;0 : Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Area&nbsp;&nbsp;&nbsp;&nbsp;| Inhabitants<br>&nbsp;&nbsp;&nbsp;&nbsp;1 : Abkhazia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8600&nbsp;&nbsp;&nbsp;&nbsp;| 240000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2 : Afghanistan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 652230&nbsp;&nbsp;| 42600000&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;3 : Egypt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1001450 | 106300000&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4 : Albania&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 28748&nbsp;&nbsp;&nbsp;| 2800000&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;... :<br>&nbsp;&nbsp;200 : Vietnam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 331210&nbsp;&nbsp;| 101100000&nbsp;&nbsp;<br>&nbsp;&nbsp;201 : Western Sahara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 266000&nbsp;&nbsp;| 600000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;202 : Central African Republic | 622984&nbsp;&nbsp;| 6400000&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;203 : Cyprus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9251&nbsp;&nbsp;&nbsp;&nbsp;| 1400000&nbsp;&nbsp;&nbsp;&nbsp;<br><br></code></div><u>Try it yourself:</u> Open <b>GUI_Features_Validate_and_Explore.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

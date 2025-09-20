@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Deep Unary Operators</h3>
+<a accesskey="p" href="LAN_Features_deep_operators.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_deep_binary_operators.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+
+<ul>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi navi-selected"> Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Fundamental_language_elements.html"><div class="navi">+  Fundament </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_types.html"><div class="navi">+  Data Types </div></a></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi"+>-  Calculations, Comparisons </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Operator.html"><div class="navi">+  Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_Operator_Precedence.html"><div class="navi">    Operator Precedence and Parentheses </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_operators.html"><div class="navi"+>-  Deep Operators </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_deep_unary_operators.html"><div class="navi navi-selected">    Deep Unary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_deep_binary_operators.html"><div class="navi">    Deep Binary Operators </div></a></li>
+<li class="navi"><a href="LAN_Features_matrix_operations_summary.html"><div class="navi">    Matrix Operations Summary </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_ad-hoc_operators.html"><div class="navi">+  Ad-hoc Operators </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+  Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Procedures, Functions, Control Flow </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Framework.html"><div class="navi">+  Language Framework </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">+  Programs, Files </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+All valid <a class="bold_text" href="LAN_Features_unary_operators.html">unary operators</a> can be applied as deep operators in order to address the set elements directly.
+The number of accent circumflex symbols behind the operator determines the depth to use.
+</p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Deep unary operators on simple sets (vectors):");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { 1,2,3,4,5 };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[] = { hu, ha, he, ho, hi };<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( -a[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Descending sorting order<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( -^a[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Negating elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( + b[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Ascending sorting order<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( +^b[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Upper case on elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( !^b[] );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Capitalizing elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo("Deep unary operators on nested sets (matrices):");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[] = { { 5, 15, 10 }, { 16, 6, 26 }, { 37, 17, 7 } };&nbsp;&nbsp;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( - a [] );&nbsp;&nbsp;&nbsp;&nbsp;// Descending sorting of all elements<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( -^a [] );&nbsp;&nbsp;&nbsp;&nbsp;// Desending sorting of each marix row<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( -^^a[] );&nbsp;&nbsp;&nbsp;&nbsp;// Negating the elements</code></div>
+<h5> </h5>
+<div class="output_background_color" ><code>Deep unary operators on simple sets (vectors):<br>{5,4,3,2,1}<br>{-1,-2,-3,-4,-5}<br><br>{'ha','he','hi','ho','hu'}<br>{'HU','HA','HE','HO','HI'}<br>{'Hu','Ha','He','Ho','Hi'}<br><br>Deep unary operators on nested sets (matrices):<br>{{37,17,7},{26,16,6},{15,10,5}}<br>{{15,10,5},{26,16,6},{37,17,7}}<br>{{-5,-15,-10},{-16,-6,-26},{-37,-17,-7}}<br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_deep_unary_operators.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

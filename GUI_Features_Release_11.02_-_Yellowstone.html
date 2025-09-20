@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Release 11.02</h3>
+<a accesskey="p" href="GUI_Features_Release_11.00_-_Sydney_Opera_House.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Release_12.00_-_Johann_C._F._Gauss.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+
+<ul>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi navi-selected"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="GUI_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="GUI_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="GUI_Features_Installation.html"><div class="navi">+  Installation </div></a></li>
+<li class="navi"><a href="GUI_Features_Getting_Started.html"><div class="navi">+  Getting Started </div></a></li>
+<li class="navi"><a href="GUI_Features_interactive_mode.html"><div class="navi">+  Interactive Mode </div></a></li>
+<li class="navi"><a href="GUI_Features_Workflow_Steps.html"><div class="navi">+  Workflow Steps </div></a></li>
+<li class="navi"><a href="GUI_Features_Examples.html"><div class="navi">+  Examples </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_History.html"><div class="navi"+>-  Release History </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="GUI_Features_Release_11.00_-_Sydney_Opera_House.html"><div class="navi">    Release 11.00 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_11.02_-_Yellowstone.html"><div class="navi navi-selected">    Release 11.02 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_12.00_-_Johann_C._F._Gauss.html"><div class="navi">    Release 12.00 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_12.01_-_The_Last_Duck.html"><div class="navi">    Release 12.01 </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Overview</h4>
+<p>
+<b>Release 11.02, issued 2025-03-01, "Yellowstone"</b><br>
+<i>Park has been iunaugurated and opened on 01.03.1872 as first U.S. National Park ever</i>
+</p>
+<h4> Bugfixes</h4>
+<p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_reschedule.html">reschedule</a>() gave wrong result when appyling week number calculation in combination with other rescheduling operations.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_process.html">table process</a>() function family: Bug fixed with deciding whether to process row 0 or not.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_fy.html">fy</a>() crashed if used in combination of vectorization and format string.
+</li><li class="bullets">Attempting to assign a <a class="bold_text" href="LAN_Features_references_to_variables.html">reference</a> to a table makes B4P crash instead of returning an error message.
+</li><li class="bullets">Combination of assigning a <a class="bold_text" href="LAN_Features_references_to_variables.html">reference</a> with assignment operator was not issuing an error message.
+</li><li class="bullets">Comparison operator with wildcard was not always functioning properly with ends-with comparisons.
+</li></ul><p>
+</p>
+<h4> New Functions</h4>
+<p>
+</p><ul class="bullets"><li class="bullets">New members added to <a class="bold_text" href="LIB_Function_table_process.html">table process</a>() family, including start-stop and bottom-up processing.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_fm.html">fm</a>() has been added to calculate fiscal month
+</li></ul><p></p>
+<h4> Improvements in Existing Functions</h4>
+<p>
+</p>
+<h4> New Language Features (e.g. syntax and semantics)</h4>
+<p>
+</p>
+<h4> Other new Features</h4>
+<p>
+</p>
+<h4> Clean-ups and Streamlining</h4>
+<p>
+</p>
+<h4> Performance Improvements</h4>
+<p>
+</p><ul class="bullets"><li class="bullets">Comparing strings with wildcards should improve performance slightly
+</li></ul><p>
+</p>
+<h4> Depreciated and retired features</h4>
+<p>
+</p><ul class="bullets"><li class="bullets"><b>for all parameters</b>() is replaced by <a class="bold_text" href="LIB_Function_for_all.html">for all</a>()  (Still existing, but no longer recommended to use)
+</li></ul><p></p>
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+

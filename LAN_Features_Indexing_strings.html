@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">	
+
+<head>
+<meta charset="utf-8"/>
+<title>B4P Reference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="wrapper">
+
+<div class="logo">
+<a href="index.html">
+<img src="Images/B4P_Logo.png" alt="B4P">
+</a>
+</div>
+
+<div class="header">
+<h3>Indexing Strings</h3>
+<a accesskey="p" href="LAN_Features_Data_subtype_quoted_strings.html"><span>Prev</span></a> <a accesskey="n" href="LAN_Features_Slicing_strings.html"><span>Next</span></a> 
+</div>
+
+<section>
+	<div class="nav">
+
+<ul>
+<li class="navi"><a href="MAS_Features_Introduction.html"><div class="navi"> Introduction </div></a></li>
+<li class="navi"><a href="TAB_Features_Workflow.html"><div class="navi"> Workflow </div></a></li>
+<li class="navi"><a href="GUI_Features_User_Guide.html"><div class="navi"> User Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi navi-selected"> Language Guide </div></a></li>
+<li class="navi"><a href="LIB_Features_Function_Library.html"><div class="navi"> Function Library </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Index.html"><div class="navi"> Index </div></a></li>
+<li class="navi"><div> <hr> </div></li>
+<li class="navi"><a href="LAN_Features_Table_of_Contents.html"><div class="navi"> Table of Contents </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Guide.html"><div class="navi"> Language Guide </div></a></li>
+<li class="navi"><a href="LAN_Features_Fundamental_language_elements.html"><div class="navi">+  Fundament </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_types.html"><div class="navi"+>-  Data Types </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_data_types_numerals.html"><div class="navi">    Numerals </div></a></li>
+<li class="navi"><a href="LAN_Features_data_type_strings.html"><div class="navi"+>-  Strings </div></a></li>
+<li class="navi"><ul>
+<li class="navi"><a href="LAN_Features_Data_subtype_softquoted_strings.html"><div class="navi">    Softquoted Strings </div></a></li>
+<li class="navi"><a href="LAN_Features_Data_subtype_quoted_strings.html"><div class="navi">    Quoted Strings </div></a></li>
+<li class="navi"><a href="LAN_Features_Indexing_strings.html"><div class="navi navi-selected">    Indexing Strings </div></a></li>
+<li class="navi"><a href="LAN_Features_Slicing_strings.html"><div class="navi">    Slicing Strings </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_data_types_dates.html"><div class="navi">    Dates </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_booleans.html"><div class="navi">    Booleans </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_voids.html"><div class="navi">    Voids </div></a></li>
+<li class="navi"><a href="LAN_Features_data_types_Sets.html"><div class="navi">+  Sets </div></a></li>
+</ul></li>
+<li class="navi"><a href="LAN_Features_Variable.html"><div class="navi">+  Variables </div></a></li>
+<li class="navi"><a href="LAN_Features_tables.html"><div class="navi">+  Tables </div></a></li>
+<li class="navi"><a href="LAN_Features_Calculations.html"><div class="navi">+  Calculations, Comparisons </div></a></li>
+<li class="navi"><a href="LAN_Features_Expressions.html"><div class="navi">+  Expressions </div></a></li>
+<li class="navi"><a href="LAN_Features_assignments.html"><div class="navi">+  Assignments </div></a></li>
+<li class="navi"><a href="LAN_Features_Transactions.html"><div class="navi">+  Transactions </div></a></li>
+<li class="navi"><a href="LAN_Features_Functions_and_Procedures.html"><div class="navi">+  Procedures, Functions, Control Flow </div></a></li>
+<li class="navi"><a href="LAN_Features_Language_Framework.html"><div class="navi">+  Language Framework </div></a></li>
+<li class="navi"><a href="LAN_Features_Programs.html"><div class="navi">+  Programs, Files </div></a></li>
+</ul></li>
+</ul>
+	</div>
+
+	<div class="article">
+<h4> Introduction</h4>
+<p>
+<i>Simple indexing</i> is used to retrieve single characters from the string.  Indexing begins with 0 which refers to the 1st
+character.  The index value is specified in braces added behind the string value, string variable or expression providing a string.
+
+<br><br>
+Following rules apply to the indexing strings:
+</p><ul class="bullets"><li class="bullets">The index must always be a numeric value.
+</li><li class="bullets">Specifying just braces <b>{}</b> without an index will retrieve the length (character count).  Alternatively, use <a class="bold_text" href="LIB_Function_length.html">length [string function]</a>.
+</li><li class="bullets">Indexing begins with 0 (zero).
+</li><li class="bullets">The value will be rounded in case it does not contain an integer value.  Example: <b>a[]{2.99}</b> accesses the same member as <b>a[3]</b>.
+</li><li class="bullets"><a class="bold_text" href="LAN_Features_negative_indexing.html">Negative indexing</a> is supported. -1 refers to the last character in the string. -2, -3, etc. refer to the previous ones, and so forth.
+</li><li class="bullets">Updating individual characters in the string on the left hand side of assignments is not possible.  Wrong exmaple: <b>a[]{3} = 'E';</b>.
+</li></ul><p></p>
+<h5> </h5>
+<div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{} );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Returns 5 (character count)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{0} );&nbsp;&nbsp;&nbsp;// Access the 1st element<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{-2} );&nbsp;&nbsp;// Access the 2nd last element<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{10} );&nbsp;&nbsp;// Attempts to access characters outside the string returns blank strings.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo( abcde{-10} ); // Same case here.</code></div>
+<h5> Output:</h5>
+<div class="output_background_color" ><code>5<br>a<br>d<br><br><br></code></div><u>Try it yourself:</u> Open <b>LAN_Features_Indexing_strings.b4p</b> in <a class="bold_text" href="B4P_Examples.zip">B4P_Examples.zip</a>. Decompress before use.
+	</div>
+</section>
+
+<div class="footer">
+Copyright (C) 2007 - 2025 Georg A. zur Bonsen, All Rights Reserved
+</div>
+
+</div>
+
+</html>	
+
