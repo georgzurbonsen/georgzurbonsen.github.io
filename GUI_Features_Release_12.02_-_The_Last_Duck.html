@@ -17,8 +17,8 @@
 </div>
 
 <div class="header">
-<h3>Release 12.00</h3>
-<a accesskey="p" href="GUI_Features_Release_11.02_-_Yellowstone.html"><span>Prev</span></a> <a accesskey="n" href="GUI_Features_Release_12.01_-_The_Last_Duck.html"><span>Next</span></a> 
+<h3>Release 12.02</h3>
+<a accesskey="p" href="GUI_Features_Release_12.01_-_The_Last_Duck.html"><span>Prev</span></a> 
 </div>
 
 <section>
@@ -44,9 +44,9 @@
 <li class="navi"><ul>
 <li class="navi"><a href="GUI_Features_Release_11.00_-_Sydney_Opera_House.html"><div class="navi">    Release 11.00 </div></a></li>
 <li class="navi"><a href="GUI_Features_Release_11.02_-_Yellowstone.html"><div class="navi">    Release 11.02 </div></a></li>
-<li class="navi"><a href="GUI_Features_Release_12.00_-_Johann_C._F._Gauss.html"><div class="navi navi-selected">    Release 12.00 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_12.00_-_Johann_C._F._Gauss.html"><div class="navi">    Release 12.00 </div></a></li>
 <li class="navi"><a href="GUI_Features_Release_12.01_-_The_Last_Duck.html"><div class="navi">    Release 12.01 </div></a></li>
-<li class="navi"><a href="GUI_Features_Release_12.02_-_The_Last_Duck.html"><div class="navi">    Release 12.02 </div></a></li>
+<li class="navi"><a href="GUI_Features_Release_12.02_-_The_Last_Duck.html"><div class="navi navi-selected">    Release 12.02 </div></a></li>
 </ul></li>
 </ul>
 	</div>
@@ -54,37 +54,40 @@
 	<div class="article">
 <h4> Overview</h4>
 <p>
-<b>Release 12.00, issued 2025-06-01, "Johann C. F. Gauss"</b><br>
-<i>1777-1855, mathematican, geodetist, astronomer and physicist.</i>
+<b>Release 12.02, issued 2025-09-21, "Hermann Minkowski"</b><br>
+<i>On 21. September 1908, Hermann Minkowski introduced the space time model (4 dimensions) which served
+as a base for Albert Einstein's Theory of Relativity.</i>
+
 </p>
 <h4> Bugfixes</h4>
 <p>
-</p><ul class="bullets"><li class="bullets">Some error messages involving sets provided in variables referred to the wrong location in the code, making debugging more challenging. Has been fixed.
-</li></ul><p>
-</p>
+
+</p><ul class="bullets"><li class="bullets">Some error messages were wrong and have been corrected.
+</li></ul><p></p>
 <h4> New Functions</h4>
 <p>
-</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_column_numbers.html">table column numbers</a>() added to return positive table column numbers are providing (mix of) table header names and column numbers
-</li></ul><p></p>
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_extend.html">table extend</a>() extends tables by breaking apart data in selected columns, e.g. comma separated contents
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_scientific.html">scientific</a>() converts a numeral into a string containing scientific notation representation (16 decimal digits)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_working_days.html">working days</a>(), <a class="bold_text" href="LIB_Function_working_days.html">holidays</a>(), etc. to count number of days between two different dates, taking into acout configurable working days      workload percentage, full-day and half-day holidays
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_find_dates.html">find dates</a>() looks for dates in unstructured contents. Useful to retrieve dates from tables, etc.
+</li></ul><p>
+</p>
 <h4> Improvements in Existing Functions</h4>
 <p>
-</p>
+</p><ul class="bullets"><li class="bullets">Additional table functions support '..' in parameters asking for table columns.
+</li></ul><p></p>
 <h4> New Language Features (e.g. syntax and semantics)</h4>
 <p>
-</p><ul class="bullets"><li class="bullets">Function parameters table columns now support <a class="bold_text" href="LAN_Features_Table_columns.html">column ranges</a>, provided as softquoted strings, e.g. '..'.
-</li></ul><p>
 </p>
 <h4> Other new Features</h4>
 <p>
 </p>
 <h4> Clean-ups and Streamlining</h4>
 <p>
-</p><ul class="bullets"><li class="bullets">No license file required anymore when installing B4P
+</p><ul class="bullets"><li class="bullets">Improved overall document structure
 </li></ul><p></p>
 <h4> Performance Improvements</h4>
-<p>
-</p><ul class="bullets"><li class="bullets">No changes
-</li></ul><p></p>
+<p></p>
 <h4> Depreciated and retired features</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><b>for all parameters</b>() is replaced by <a class="bold_text" href="LIB_Function_for_all.html">for all</a>()  (Still existing, but no longer recommended to use)
