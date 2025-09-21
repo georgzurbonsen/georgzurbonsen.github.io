@@ -62,19 +62,23 @@ as a base for Albert Einstein's Theory of Relativity.</i>
 <h4> Bugfixes</h4>
 <p>
 
-</p><ul class="bullets"><li class="bullets">Some error messages were wrong and have been corrected.
+</p><ul class="bullets"><li class="bullets">Some error messages were wrong and have been corrected, particularly showing wrong function parameter names            if errors are recognized there.
 </li></ul><p></p>
 <h4> New Functions</h4>
 <p>
 </p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_extend.html">table extend</a>() extends tables by breaking apart data in selected columns, e.g. comma separated contents
-</li><li class="bullets"><a class="bold_text" href="LIB_Function_scientific.html">scientific</a>() converts a numeral into a string containing scientific notation representation (16 decimal digits)
-</li><li class="bullets"><a class="bold_text" href="LIB_Function_working_days.html">working days</a>(), <a class="bold_text" href="LIB_Function_working_days.html">holidays</a>(), etc. to count number of days between two different dates, taking into acout configurable working days      workload percentage, full-day and half-day holidays
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_scientific.html">scientific</a>() converts a numeral into a string containing scientific notation representation (16 decimal digits to preserve full precision)
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_working_days.html">working days</a>(), <a class="bold_text" href="LIB_Function_working_days.html">holidays</a>(), <a class="bold_text" href="LIB_Function_working_days.html">working day holidays</a>(), <a class="bold_text" href="LIB_Function_working_days.html">weekend days</a>(), <a class="bold_text" href="LIB_Function_working_days.html">weekend holidays</a>() count number of days between        two different dates, taking into acout configurable working days, workload percentage, full-day and half-day holidays.
 </li><li class="bullets"><a class="bold_text" href="LIB_Function_find_dates.html">find dates</a>() looks for dates in unstructured contents. Useful to retrieve dates from tables, etc.
 </li></ul><p>
 </p>
 <h4> Improvements in Existing Functions</h4>
 <p>
-</p><ul class="bullets"><li class="bullets">Additional table functions support '..' in parameters asking for table columns.
+</p><ul class="bullets"><li class="bullets"><a class="bold_text" href="LIB_Function_table_copy_table.html">table copy table</a>() now supports making more than two tables at once
+</li><li class="bullets">For several functions '*' can be used to specify all table headers instead of naming all of them, or using <b>[table name:..,0]</b>.
+</li><li class="bullets">Additional table functions support '..' in parameters asking for table columns.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_existing.html">table existing</a>() supports <a class="bold_text" href="LAN_Features_Vectorization.html">vectorization</a> so the check can be applied on multiple tables at once.
+</li><li class="bullets"><a class="bold_text" href="LIB_Function_table_style_columns.html">table style columns</a>() and <a class="bold_text" href="LIB_Function_table_style_cells.html">table style cells</a>(): Supports '*' and '..' when specifying multiple table columns
 </li></ul><p></p>
 <h4> New Language Features (e.g. syntax and semantics)</h4>
 <p>
@@ -84,8 +88,11 @@ as a base for Albert Einstein's Theory of Relativity.</i>
 </p>
 <h4> Clean-ups and Streamlining</h4>
 <p>
-</p><ul class="bullets"><li class="bullets">Improved overall document structure
-</li></ul><p></p>
+
+</p><ul class="bullets"><li class="bullets">Data type <a class="bold_text" href="LIB_Function_date.html">date</a> does no longer distinguish between <b>date</b> containing original text format (for example if read from tables)  and <b>plain date</b> without original text.  As of now, the new <a class="bold_text" href="LIB_Function_date.html">date</a> format is like the old <b>plain date</b> format.        The term <b>plain date</b> has been dropped entirely.
+</li><li class="bullets">Improved overall document structure
+</li></ul><p>
+</p>
 <h4> Performance Improvements</h4>
 <p></p>
 <h4> Depreciated and retired features</h4>
