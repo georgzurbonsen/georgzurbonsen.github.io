@@ -70,15 +70,21 @@
 <li class="navi"><a href="LIB_Function_table_integrate_with_rules.html"><div class="navi">    table integrate with rules ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_integrate_with_rules_once.html"><div class="navi">    table integrate with rules once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand.html"><div class="navi">    table expand ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_once.html"><div class="navi">    table expand once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_fast.html"><div class="navi">    table expand fast ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast_once.html"><div class="navi">    table expand fast once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_smart.html"><div class="navi">    table expand smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_smart_once.html"><div class="navi">    table expand smart once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_fast_smart.html"><div class="navi">    table expand fast smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_expand_fast_smart_once.html"><div class="navi">    table expand fast smart once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_with_rules.html"><div class="navi">    table expand with rules ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_with_rules_once.html"><div class="navi">    table expand with rules once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_fast_with_rules.html"><div class="navi">    table expand fast with rules ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_expand_fast_with_rules_once.html"><div class="navi">    table expand fast with rules once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest.html"><div class="navi">    table digest ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest_once.html"><div class="navi">    table digest once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest_smart.html"><div class="navi">    table digest smart ... </div></a></li>
+<li class="navi"><a href="LIB_Function_table_digest_smart_once.html"><div class="navi">    table digest smart once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest_with_rules.html"><div class="navi">    table digest with rules ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_digest_with_rules_once.html"><div class="navi">    table digest with rules once ... </div></a></li>
 <li class="navi"><a href="LIB_Function_table_describe.html"><div class="navi">    table describe ... </div></a></li>
@@ -102,7 +108,7 @@
 <li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
-<li class="navi"><a href="LIB_Function_table_column_number.html"><div class="navi"> table column number </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
@@ -119,7 +125,7 @@ This function processes the specified <b>target table</b> (1st function paramete
 </li></ul><p>
 If the suffix <b>ignore case</b> is added to the function name, then all comparisons made are case insensitive.
 
-<br/><br/><img src="Images/Function_table_lookup.jpg" alt="Function 'table lookup'"><br/><br/>
+<br/><br/><img src="Images/Function_table_lookup.png" alt="Function 'table lookup'"><br/><br/>
 
 The lookup function contains powerful comparison algorithms which will index the lookup table and accelerate the lookup performance significantly
 if it exceeds a size where the time overhead of creating an internal indexation starts paying off.  This scheme accelerates the lookup procedure
@@ -128,7 +134,7 @@ For example, looking up a table containing ca 64,000 entries requires 16 compari
 initial overhead to create an indexation and the lookup takes place in a simple top-down approach beginning with row 1.
 
 <br><br>
-If a large lookup table is considered, but you know that most items looked up lie in to rows (say: roughly first 30 rows), then you may
+If a large lookup table is considered, but you know that most items looked up lie in the top rows (say: roughly first 30 rows), then you may
 experience a performance improvement using the function name <b>table lookup top down ...</b> instead.  The output is the same in both cases.
 
 <br><br>

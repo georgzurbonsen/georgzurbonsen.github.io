@@ -68,23 +68,25 @@
 <li class="navi"><a href="LIB_Features_system_functions.html"><div class="navi">+  System Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_help_and_support_functions.html"><div class="navi">+  Help and Support Functions </div></a></li>
 <li class="navi"><a href="LIB_Features_Cross-functional_info.html"><div class="navi">+  Cross-Functional Info </div></a></li>
-<li class="navi"><a href="LIB_Function_table_column_number.html"><div class="navi"> table column number </div></a></li>
+</ul></li>
 </ul>
 	</div>
 
 	<div class="article">
 <h4> Function Names</h4>
-<div class="white_background_color" ><code>linear interpolation, nearest neighbor interpolation, nearest right neighbor interpolation, spline interpolation, polynomial interpolation</code></div>
+<div class="white_background_color" ><code>linear interpolation, nearest left neighbor interpolation, nearest right neighbor interpolation, spline interpolation, polynomial interpolation</code></div>
 <h4> Description</h4>
 <p>
 These functions calculate a value based on known points in a 2-dimensional space by applying one of the following interpolation schemes:
 </p><table class="bold_column_1" style = "width:700px"><col style = "width:200px"><col style = "width:500px">
-<tr><th>Function name                                   </th><th> Description</th></tr>
-<tr><td>linear interpolation                    </td><td> Straight lines are drawn between the points</td></tr>
-<tr><td>nearest neighbor interpolation  </td><td> Staircase pattern: Y-value takes value of nearest neighbor. If both distances are equal, then the nearest left neighbor is chosen.</td></tr>
-<tr><td>nearest right neighbor interpolation </td><td>  Same as above, nearest right neighbor chosen if distances are equal.</td></tr>
-<tr><td>spline interpolation                    </td><td> Natural cubic spline interpolation</td></tr>
-<tr><td>polynomial interpolation                </td><td> Creates n-th order polynomial (n = number of points - 1) which passes through all specified points.</td></tr>
+<tr><th>Function name                                                   </th><th> Description</th></tr>
+<tr><td>linear interpolation                                    </td><td> Straight lines are drawn between the points</td></tr>
+<tr><td>left neighbor interpolation                             </td><td> Staircase pattern, Y-value takes value of left neigbor</td></tr>
+<tr><td>right neighbor interpolation                    </td><td> Staircase pattern, Y-value takes value of right neigbor</td></tr>
+<tr><td>nearest left neighbor interpolation             </td><td> Staircase pattern: Y-value takes value of nearest neighbor. If both distances are equal, then the nearest left neighbor is chosen.</td></tr>
+<tr><td>nearest right neighbor interpolation    </td><td> Staircase pattern: Y-value takes value of nearest neighbor. If both distances are equal, then the nearest right neighbor is chosen.</td></tr>
+<tr><td>spline interpolation                                    </td><td> Natural cubic spline interpolation</td></tr>
+<tr><td>polynomial interpolation                                </td><td> Creates n-th order polynomial (n = number of points - 1) which passes through all specified points.</td></tr>
 </table><p>
 
 All interpolation functions ensure that the calculated lines cross the specified points.  If discontinuities are undesirable, use spine or polynomial interpolation.
