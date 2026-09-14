@@ -99,12 +99,11 @@ If a <a class="bold_text" href="LAN_Features_partial_table_specifications.html">
 <table class="simple"><col style = "width:120px"><col style = "width:880px"><tr><th>Type</th><th>Description</th></tr>
 <tr>
 <td>numeral</td>
-<td><b>Width</b><br/><p>Number of columns in the row</p></td></tr>
+<td><b>Width</b><br/><p>Number of columns in the row.  If specified row lies beyond the end of the table, -1 is returned.</p></td></tr>
 </table>
 <h4> Exceptions</h4>
 <p>Table not found<br/>
-No context available for partial table specifications<br/>
-row number is outside table boundaries</p>
+No context available for partial table specifications</p>
 <h4> Examples</h4>
 <div class="code_background_color" ><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table initialize ( table 1,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ { Animal, leg count, hair color }, { Worm,&nbsp;&nbsp;0}, { Bird, 2, white, brown, yellow }, { Dog, 4 }, { Fly }, {}, { Tick, 8 } } );<br/>
